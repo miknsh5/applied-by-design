@@ -1,0 +1,55 @@
+// 3.0 Icon Blocks
+// ----------------------------------
+@mixin icn-block($size) {
+  width: $size;
+  height: $size;
+  position: relative;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: top;
+  line-height: 2em;
+  margin: 5px;
+  @include background-image(linear-gradient(left top, rgba(250,250,250,0.2), rgba(0,0,0,0.2))); 
+
+  &.strategy {
+    background-color: $color-strategy;
+    color: $color-brightwhite;
+  }
+  &.design {
+    background-color: $color-design;
+    color: $color-darkgray;
+  }
+  &.development {
+    background-color: $color-development;
+    color: $color-brightwhite;
+  }
+}
+
+// when desktop, align the icon blocks to the right of the span
+// when mobile or tablet, icon block is on it's own row, align center
+.icn-block-pos {
+  @media (min-width: 980px) {
+    text-align: right;
+  }
+  @media (max-width: 979px) {
+    text-align: center;
+  }
+}
+
+.block-sm {
+  @include icn-block(40px);    
+  font-size: 1.5em;
+  line-height: 1.9em;
+  margin-top: 0px;
+  @include transition(margin-top .1s);
+}
+.block-sm:hover {
+  margin-top: -5px;
+  @include transition(margin-top .2s);
+}
+.block-lg {
+  @include icn-block(80px);
+  line-height: 2.2em;
+  font-size: 2.5em;    
+}

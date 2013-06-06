@@ -1,0 +1,50 @@
+
+// Navigation Arrows
+
+.nav-arrow {
+  // background-image: url('../images/more-arrow.png');
+  // background-size: 60px 60px;
+  background-color: rgba(61,70,80, 0.5);
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  position: relative;
+  border: solid 4px #CCC;
+  font-size: 2.0em;
+  line-height: 2.3em;
+  color: #CCC;
+  text-align: center;
+  @include border-radius(35px);
+  @include background-image(linear-gradient(left top, rgba(250,250,250,0.2), rgba(100,100,100,0.2))); 
+
+  &.nav-next-section {
+    top: -38px;
+    @include transition(top .1s);
+  }
+
+  &.nav-next-section:hover {
+    top: -33px;
+    background-color: rgba(61,70,80, 0.7);
+    @include transition(top .1s);
+    // @include transition(background-color .1s);
+  }
+
+  &.nav-more {
+    right: 60px;  
+    margin-top: 70px;
+    @include transition(right .2s);
+    // @include transform(rotate(270deg));  
+  }
+
+  &.nav-more:hover {
+    right: 55px;
+    background-color: rgba(61,70,80, 0.7);
+    @include transition(right .1s);
+    // @include transition(background-color .1s);
+  }
+
+  // i {
+  //   line-height: 2.0em;
+  // }
+
+}

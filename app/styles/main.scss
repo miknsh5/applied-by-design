@@ -1,1 +1,264 @@
 @import "compass_twitter_bootstrap";
+@import "compass_twitter_bootstrap_responsive";
+@import "compass/css3/background-size";
+@import "compass/layout/grid-background";
+@import "compass/css3/images";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+@import "compass/css3/border-radius";
+
+// Colors
+//primary color pallete
+$color-slateblue: rgb(61,70,80);
+$color-brightwhite: rgb(242,242,242);
+$color-lightgray: rgb(153,153,153);
+$color-darkgray: rgb(80,80,80);
+$color-tope: rgb(115,106,97);
+
+// map colors to service types
+$color-strategy: $color-slateblue;
+$color-design: $color-brightwhite;
+$color-development: $color-tope;
+
+// 0.0 Global Variables
+$section-height: 300px;
+$divider-height: 470px;
+
+// My Styles
+@import 'lib/nav-buttons';
+@import 'lib/icon-blocks';
+
+
+
+.logo {
+  background-image: url('../images/logo-01.png');
+  width: 120px;
+  height: 25px;
+  background-size: 110px;
+  background-repeat: no-repeat;
+  margin-top: 4px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 100;
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  padding: 0;
+  height: auto;
+  min-height: 100%;
+}
+
+// 2.1 - Global Helpers
+// ----------------------------------
+
+.page-wrap {
+    margin-top: 50px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.darktext {
+  color: $color-darkgray;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.skinny {
+  margin-left: 10px;
+
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) { 
+    margin-left: 0;
+  }
+
+}
+
+// 4.0 Homepage Formatting
+// __________________________________
+
+
+.landing {
+  background-image: url('../images/runway-02.jpg');
+  background-position: center top;
+  @media (min-width: 980px) {
+    @include background-size(cover);
+    text-align: right;
+    height: 800px;
+  }
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include background-size(cover);
+    text-align: center;
+    height: 500px;
+  }
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) { 
+    @include background-size(800px 500px);
+    text-align: center;
+    height: 500px;
+    // width: 110%;
+    // margin-left: -20px;
+  }
+
+  .title-block {
+    color: $color-brightwhite;
+    max-width: 450px;
+
+  }
+  .title-block-position {
+    position: relative;
+    @media (min-width: 980px) {
+      top: 320px;
+      text-align: left;
+      left: 10%;
+    }
+    @media (max-width: 979px) {
+      top: 100px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  .service-blocks {
+    margin-top: 10px;
+  }
+
+  h1 {
+    line-height: 0.9em;
+    @media (min-width: 980px) {
+      font-size: 5.0em;
+    }
+    @media (max-width: 979px) {
+      font-size: 4.0em;
+    }
+  }
+
+}
+
+section {
+  min-height: $section-height;
+  overflow: hidden;
+  // width: 110%;
+  // margin-left: -20px;
+  @include background-image(linear-gradient(center top, rgba(250,250,250,0.1), rgba(0,0,0,0.1))); 
+
+  &.strategy {
+    // background-color: $color-strategy;
+    background-color: $color-lightgray;
+  }
+  &.design {
+    // background-color: $color-design;
+    background-color: $color-lightgray;
+  }
+  &.development {
+    // background-color: $color-development;
+    background-color: $color-lightgray;
+  }
+  &.summary {
+    // text-align: center;
+  }
+
+  .content {
+    // width: 80%;
+    margin:0 auto;
+    padding: 40px;
+    color: #eee;
+    font-weight: 100;
+    // margin-right: 30px;
+    .text-block {
+      display: inline-block;
+
+      @media (min-width: 768px) {
+        text-align: left;
+        max-width: 400px;
+      }
+      @media (max-width: 767px) {
+        text-align: center;
+        width: 100%;
+      }
+
+    }
+
+    .text-center {
+      text-align: center !important;
+    }
+
+    h2 {
+      margin-top: 0px;
+      font-weight: 500;
+      // color: #eee;
+    }
+    p {
+      font-size: 1.2em;
+
+    }
+  }
+}
+
+
+
+
+.section-divider {
+  background-position: center top;
+  
+
+
+  /* Desktop+ */
+  @media (min-width: 980px) {
+    @include background-size(cover);
+    // text-align: right;
+    height: $divider-height;
+  }
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include background-size(cover);
+    text-align: center;
+    height: $divider-height * .8; 
+  }
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) { 
+    @include background-size(120% 180%);
+    text-align: center;
+    height: $divider-height / 2;
+    // width: 110%;
+    // margin-left: -20px;
+  }
+
+
+  &.img-strategy {
+    background-image: url('../images/signage-02.jpg');
+  }
+  &.img-design {
+    background-image: url('../images/plane-02.jpg');
+  }
+  &.img-development {
+    background-image: url('../images/engine-02.jpg');
+  }
+}
+
+
+.contact-us {
+  background-image: url('../images/seats-02.jpg');
+  background-repeat: no-repeat;
+  @include background-size(cover);
+  height: 760px;
+  text-align: center;
+
+  .contact-btn {
+    width: 200px;
+    height: 30px;
+  }
+}
+
+footer {
+  background-color: $color-brightwhite;
+  height: 150px;
+  margin-top: -150px;
+}
