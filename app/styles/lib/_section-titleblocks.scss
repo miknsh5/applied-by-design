@@ -1,0 +1,45 @@
+
+// homepage section title blocks
+
+.title-text {
+
+}
+
+.title-text-center {
+  text-align: center;
+  position: relative;
+}
+
+.line-left {
+  border-bottom: solid #eee 3px;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 30%;
+}
+.line-right {
+  border-bottom: solid #eee 3px;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  width: 30%;
+}
+
+.big-and-bold {
+  font-size: 4em;
+  font-weight: 800;
+  font-variant: small-caps;
+  line-height: 1.1em;
+}
+
+.italic-med {
+  font-size: 2.2em;
+  line-height: 1.1em;
+  font-weight: 200;
+}
+
+.bold-med {
+  font-weight: 600;
+  font-size: 2.5em;
+  line-height: 1.1em;
+}

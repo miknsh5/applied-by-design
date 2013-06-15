@@ -29,12 +29,11 @@
 // when desktop, align the icon blocks to the right of the span
 // when mobile or tablet, icon block is on it's own row, align center
 .icn-block-pos {
-  @media (min-width: 980px) {
-    text-align: right;
-  }
-  @media (max-width: 979px) {
-    text-align: center;
-  }
+  position: relative;
+  top: -80px;
+  height: 40px;
+  text-align: center;
+
 }
 
 .icn-block-leading {
