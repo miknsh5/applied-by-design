@@ -66,10 +66,9 @@ h1, h2, h3, h4 {
 // 2.1 - Global Helpers
 // ----------------------------------
 
-// .full-page {
-  // margin-left: 20px !important;
-  // margin-right: 20px !important;
-// }
+.full-page {
+  padding: 0 20px;
+}
 
 .page-wrap {
     margin-top: 50px;

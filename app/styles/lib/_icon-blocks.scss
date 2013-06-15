@@ -37,6 +37,10 @@
   }
 }
 
+.icn-block-leading {
+  float: left;
+}
+
 .block-sm {
   @include icn-block(40px);    
   font-size: 1.5em;
