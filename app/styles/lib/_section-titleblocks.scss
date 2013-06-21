@@ -1,29 +1,46 @@
 
 // homepage section title blocks
+.section-content{
+  max-width: 620px;
+  padding: 20px;
+  margin: auto;
+  color: $color-brightwhite;
 
-.title-text {
+  .pos-icon-block{
+    margin-top: -60px;
+  }
 
+  .header {
+    // color: $color-slateblue;
+    margin: 10px auto;
+    font-size: 4em;
+    font-weight: 100;
+    font-variant: small-caps;
+    line-height: 0.8em;
+  }
+
+  .lead {
+    font-size: 2.2em;
+    line-height: 1.1em;
+    font-weight: 200;
+  }
+
+  .paragraph {
+    font-size: 1.0rem;
+    font-weight: 100;
+    max-width: 460px;
+    margin: auto;
+  }
+  // .paragraph:after {
+  //   content: 'Hello!!!';
+  // }
 }
 
-.title-text-center {
-  text-align: center;
-  position: relative;
+
+.max-content-width{
+  max-width: 700px;
 }
 
-.line-left {
-  border-bottom: solid #eee 3px;
-  position: absolute;
-  top: 15px;
-  left: 0;
-  width: 30%;
-}
-.line-right {
-  border-bottom: solid #eee 3px;
-  position: absolute;
-  top: 15px;
-  right: 0;
-  width: 30%;
-}
 
 .big-and-bold {
   font-size: 4em;
@@ -32,10 +49,23 @@
   line-height: 1.1em;
 }
 
+.big-and-light {
+  font-size: 4em;
+  font-weight: 100;
+  font-variant: small-caps;
+  line-height: 0.8em;
+}
+
+.short-row {
+  height: 20px;
+  display: inline-block;
+}
+
 .italic-med {
   font-size: 2.2em;
   line-height: 1.1em;
   font-weight: 200;
+  // margin: 10px 0;
 }
 
 .bold-med {
