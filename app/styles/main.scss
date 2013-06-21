@@ -103,7 +103,7 @@ h1, h2, h3, h4 {
 
 
 .landing {
-  background-image: url('../images/runway-02.jpg');
+  background-image: url('../images/runway-02.jpg') ;
   background-position: center top;
   @media (min-width: 980px) {
     @include background-size(cover);
@@ -252,19 +252,19 @@ section {
 
 
   &.img-strategy {
-    background-image: url('../images/signage-02.jpg');
+    background-image: url('../images/signage-02.jpg') ;
   }
   &.img-design {
-    background-image: url('../images/plane-02.jpg');
+    background-image: url('../images/plane-02.jpg') ;
   }
   &.img-development {
-    background-image: url('../images/engine-02.jpg');
+    background-image: url('../images/engine-02.jpg') ;
   }
 }
 
 
 .contact-us {
-  background-image: url('../images/seats-02.jpg');
+  background-image: url('../images/seats-02.jpg') ;
   background-repeat: no-repeat;
   @include background-size(cover);
   height: 760px;
