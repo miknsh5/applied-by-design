@@ -14,6 +14,7 @@ $color-brightwhite: rgb(242,242,242);
 $color-lightgray: rgb(153,153,153);
 $color-darkgray: rgb(80,80,80);
 $color-tope: rgb(115,106,97);
+$color-footer: rgb(46, 53, 61);
 
 // map colors to service types
 $color-strategy: $color-slateblue;
@@ -29,6 +30,7 @@ $divider-height: 470px;
 @import 'lib/nav-buttons';
 @import 'lib/icon-blocks';
 @import 'lib/services';
+@import 'lib/about-us';
 
 
 
@@ -99,6 +101,12 @@ h1, h2, h3, h4 {
     margin-left: 0;
   }
 
+}
+
+.feature {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 // 4.0 Homepage Formatting
@@ -280,7 +288,29 @@ section {
 }
 
 footer {
-  background-color: $color-brightwhite;
-  height: 150px;
-  margin-top: -150px;
+  background-color: $color-footer;
+  min-height: 80px;
+  color: #666;
+  font-weight: 200;
+
+  .city {
+    // text-align: left;
+  }
+  .contact {
+    // text-align: right;
+
+    p {
+      line-height: 1em;
+    }
+  }
+  .foot {
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #444;
+  }
+  .copyright {
+    position: relative;
+    bottom: 10px;
+  }
 }
