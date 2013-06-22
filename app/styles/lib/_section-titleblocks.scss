@@ -1,7 +1,7 @@
 
 // homepage section title blocks
 .section-content{
-  max-width: 620px;
+  max-width: 680px;
   padding: 20px;
   margin: auto;
   color: $color-brightwhite;
@@ -26,9 +26,9 @@
   }
 
   .paragraph {
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     font-weight: 100;
-    max-width: 460px;
+    max-width: 540px;
     margin: auto;
   }
   // .paragraph:after {
@@ -36,40 +36,3 @@
   // }
 }
 
-
-.max-content-width{
-  max-width: 700px;
-}
-
-
-.big-and-bold {
-  font-size: 4em;
-  font-weight: 800;
-  font-variant: small-caps;
-  line-height: 1.1em;
-}
-
-.big-and-light {
-  font-size: 4em;
-  font-weight: 100;
-  font-variant: small-caps;
-  line-height: 0.8em;
-}
-
-.short-row {
-  height: 20px;
-  display: inline-block;
-}
-
-.italic-med {
-  font-size: 2.2em;
-  line-height: 1.1em;
-  font-weight: 200;
-  // margin: 10px 0;
-}
-
-.bold-med {
-  font-weight: 600;
-  font-size: 2.5em;
-  line-height: 1.1em;
-}
