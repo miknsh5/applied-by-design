@@ -72,8 +72,16 @@ h1, h2, h3, h4 {
 // 2.1 - Global Helpers
 // ----------------------------------
 
+.header-offset {
+  margin-top: -400px;
+}
+
 .full-page {
   padding: 0 20px;
+}
+
+.top-spacer {
+  margin-top: 50px;
 }
 
 .page-wrap {
@@ -107,6 +115,27 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid #ccc;
   margin-bottom: 40px;
   padding-bottom: 20px;
+  position: relative;
+
+  &.head {
+    min-height: 302px;
+  }
+
+  // shift the block to the left of the content (shift off screen for mobile)
+  .outset {
+    position: absolute;
+    left: -100px;
+  }
+}
+
+// dark text overlayed on a light background
+.dk-on-lt {
+  h1 {
+    color: #333;
+  }
+  p {
+    color: #333;
+  }
 }
 
 // 4.0 Homepage Formatting
@@ -270,6 +299,15 @@ section {
   }
   &.img-development {
     background-image: url('../images/engine-02.jpg') ;
+  }
+  &.img-contact-blur {
+    background-image: url('../images/plane-blur_03.jpg') ;
+  }
+  &.img-about-blur {
+    background-image: url('../images/gate-blur_03.jpg') ;
+  }
+  &.img-services-blur {
+    background-image: url('../images/runway-blur_30.jpg') ;
   }
 }
 

@@ -15,6 +15,10 @@ angular.module('appliedByDesignApp', [])
         templateUrl: 'views/services.html',
         controller: 'ServicesCtrl'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
