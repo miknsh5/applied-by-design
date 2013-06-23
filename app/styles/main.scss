@@ -7,6 +7,14 @@
 @import "compass/css3/transition";
 @import "compass/css3/border-radius";
 
+
+// Hotfix Glyphicons-halflings include
+$iconSpritePath:          "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath:     "../images/glyphicons-halflings-white.png";
+
+@import "sass-bootstrap/lib/bootstrap";
+@import "sass-bootstrap/lib/responsive";
+
 // Colors
 //primary color pallete
 $color-slateblue: rgb(61,70,80);
@@ -307,7 +315,7 @@ section {
     background-image: url('../images/gate-blur_03.jpg') ;
   }
   &.img-services-blur {
-    background-image: url('../images/runway-blur_30.jpg') ;
+    background-image: url('../images/runway-blur2_30.jpg') ;
   }
 }
 
