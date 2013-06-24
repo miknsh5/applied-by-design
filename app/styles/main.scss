@@ -46,7 +46,7 @@ $divider-height: 470px;
   background-image: url('../images/logo-01.png');
   width: 120px;
   height: 25px;
-  background-size: 155px;
+  @include background-size(155px 40px);
   background-repeat: no-repeat;
   margin-top: 4px;
 }
