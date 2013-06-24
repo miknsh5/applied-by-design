@@ -153,6 +153,9 @@ h1, h2, h3, h4 {
 .landing {
   background-image: url('../images/runway-02.jpg') ;
   background-position: center top;
+  height: 800px;
+  // @include background-size(cover);
+
   @media (min-width: 980px) {
     @include background-size(cover);
     text-align: right;
@@ -180,6 +183,10 @@ h1, h2, h3, h4 {
   }
   .title-block-position {
     position: relative;
+    top: 320px;
+    text-align: left;
+    left: 0;
+    
     @media (min-width: 980px) {
       top: 320px;
       text-align: left;
@@ -198,6 +205,8 @@ h1, h2, h3, h4 {
 
   h1 {
     line-height: 0.9em;
+    font-size: 5.0em;
+    
     @media (min-width: 980px) {
       font-size: 5.0em;
     }
@@ -241,6 +250,8 @@ section {
     // margin-right: 30px;
     .text-block {
       display: inline-block;
+      text-align: left;
+      max-width: 400px;
 
       @media (min-width: 768px) {
         text-align: left;
