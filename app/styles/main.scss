@@ -153,13 +153,13 @@ h1, h2, h3, h4 {
 .landing {
   background-image: url('../images/runway-02.jpg') ;
   background-position: center top;
-  height: 800px;
+  height: 640px;
   // @include background-size(cover);
 
   @media (min-width: 980px) {
     @include background-size(cover);
     text-align: right;
-    height: 800px;
+    height: 640px;
   }
   /* Portrait tablet to landscape and desktop */
   @media (min-width: 768px) and (max-width: 979px) {
@@ -183,12 +183,12 @@ h1, h2, h3, h4 {
   }
   .title-block-position {
     position: relative;
-    top: 320px;
+    top: 210px;
     text-align: left;
     left: 0;
     
     @media (min-width: 980px) {
-      top: 320px;
+      top: 210px;
       text-align: left;
       left: 10%;
     }
