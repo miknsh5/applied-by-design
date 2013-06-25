@@ -125,6 +125,26 @@ h1, h2, h3, h4 {
   padding-bottom: 20px;
   position: relative;
 
+  /* Desktop+ */
+  @media (min-width: 980px) {
+    h1 {
+      font-size: 6em;
+    }
+  }
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 979px) {
+    h1 {
+      font-size: 5em;
+    }
+  }
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) { 
+    h1 {
+      font-size: 3em;
+    }
+  }
+
+
   &.head {
     min-height: 302px;
   }
@@ -132,7 +152,7 @@ h1, h2, h3, h4 {
   // shift the block to the left of the content (shift off screen for mobile)
   .outset {
     position: absolute;
-    left: -100px;
+    left: -130px;
   }
 }
 
@@ -178,7 +198,7 @@ h1, h2, h3, h4 {
 
   .title-block {
     color: $color-brightwhite;
-    max-width: 450px;
+    max-width: 500px;
 
   }
   .title-block-position {
@@ -298,7 +318,7 @@ section {
     background-image: url('../images/engine-02.jpg') ;
   }
   &.img-contact-blur {
-    background-image: url('../images/plane-blur_03.jpg') ;
+    background-image: url('../images/plane-blur_05.jpg') ;
   }
   &.img-about-blur {
     background-image: url('../images/gate-blur_03.jpg') ;
@@ -316,11 +336,36 @@ section {
   height: 760px;
   text-align: center;
 
-  .contact-btn {
-    width: 200px;
-    height: 30px;
+  // set height of last image based on media query
+  /* Desktop+ */
+  @media (min-width: 980px) {
+    height: 760px;
+  }
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 979px) {
+    height: 440px;
+  }
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) { 
+    height: 400px;
+  }
+
+  .btn-contact {
+    width: 150px;
+    height: 35px;
+    font-size: 1.5em;
+    line-height: 33px;
+    top: 120px;
+    position: relative;
+    
+    i {
+      margin-top: 6px !important;
+    }
   }
 }
+
+
+
 
 footer {
   background-color: $color-footer;
