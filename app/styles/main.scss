@@ -40,19 +40,32 @@ $divider-height: 470px;
 @import 'lib/services';
 @import 'lib/about-us';
 
+.brand img{
+  width: 160px;
+  height: 37px;
+} 
 
+// .axd-menu {
+//   top: 7px;
+//   font-size: 1.3em !important;
+// }
 
-.logo {
-  background-image: url('../images/logo-01.png');
-  width: 120px;
-  height: 25px;
-  @include background-size(155px 40px);
-  background-repeat: no-repeat;
-  margin-top: 4px;
-}
+// .logo {
+//   background-image: url('../images/logo-01.png');
+//   width: 120px;
+//   height: 25px;
+//   @include background-size(155px 40px);
+//   background-repeat: no-repeat;
+//   margin-top: 4px;
+// }
 
 h1, h2, h3, h4 {
   font-weight: 100;
+}
+
+.navbar .nav {
+  top: 7px;
+  font-size: 1.3em;
 }
 
 .page-wrapper {
@@ -348,7 +361,7 @@ section {
     background-image: url('../images/engine-01.jpg') ;
   }
   &.img-contact-blur {
-    background-image: url('../images/plane-blur_06.jpg') ;
+    background-image: url('../images/plane-blur_07.jpg') ;
   }
   &.img-about-blur {
     background-image: url('../images/gate-blur_03.jpg') ;
