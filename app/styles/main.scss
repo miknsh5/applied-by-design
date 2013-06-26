@@ -334,6 +334,7 @@ section {
 
 .section-divider {
   background-position: center top;
+  background-repeat: no-repeat;
   @include background-size(cover);
   height: $divider-height;
 
@@ -347,7 +348,7 @@ section {
     background-image: url('../images/engine-01.jpg') ;
   }
   &.img-contact-blur {
-    background-image: url('../images/plane-blur_05.jpg') ;
+    background-image: url('../images/plane-blur_06.jpg') ;
   }
   &.img-about-blur {
     background-image: url('../images/gate-blur_03.jpg') ;
