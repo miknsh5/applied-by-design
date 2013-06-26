@@ -207,6 +207,15 @@ h1, h2, h3, h4 {
     color: #333;
   }
 }
+// light text overlayed on a dark background
+.lt-on-dk {
+  h1 {
+    color: #DDD;
+  }
+  p {
+    color: #CCC;
+  }
+}
 
 // 4.0 Homepage Formatting
 // __________________________________
@@ -361,13 +370,13 @@ section {
     background-image: url('../images/engine-01.jpg') ;
   }
   &.img-contact-blur {
-    background-image: url('../images/plane-blur_07.jpg') ;
+    background-image: url('../images/plane-blur_08.jpg') ;
   }
   &.img-about-blur {
-    background-image: url('../images/gate-blur_03.jpg') ;
+    background-image: url('../images/gate-blur_07.jpg') ;
   }
   &.img-services-blur {
-    background-image: url('../images/runway-blur2_30.jpg') ;
+    background-image: url('../images/runway-blur_07.jpg') ;
   }
 }
 
