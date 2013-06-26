@@ -124,8 +124,9 @@ h1, h2, h3, h4 {
 }
 .feature {
   border-bottom: 1px solid #ccc;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
+  // margin-bottom: 40px;
+  padding-bottom: 30px;
+  padding-top: 15px;
   position: relative;
 
   .service {
@@ -140,6 +141,13 @@ h1, h2, h3, h4 {
       line-height: 28px;
       font-weight: 200;
     }
+  }
+
+  h5 {
+    margin-bottom: 0;
+  }
+  h5:last-child {
+    margin-top: 0;
   }
 
   /* Desktop+ */
@@ -171,6 +179,10 @@ h1, h2, h3, h4 {
     position: absolute;
     left: -130px;
   }
+}
+
+.feature:first-child, .feature:last-child{
+  border-bottom: none;
 }
 
 // dark text overlayed on a light background
@@ -332,7 +344,7 @@ section {
     background-image: url('../images/plane-02.jpg') ;
   }
   &.img-development {
-    background-image: url('../images/engine-02.jpg') ;
+    background-image: url('../images/engine-01.jpg') ;
   }
   &.img-contact-blur {
     background-image: url('../images/plane-blur_05.jpg') ;
