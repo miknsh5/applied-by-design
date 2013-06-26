@@ -40,24 +40,24 @@ $divider-height: 470px;
 @import 'lib/services';
 @import 'lib/about-us';
 
-.brand img{
-  width: 160px;
-  height: 37px;
-} 
+// .brand img{
+//   width: 160px;
+//   height: 37px;
+// } 
 
 // .axd-menu {
 //   top: 7px;
 //   font-size: 1.3em !important;
 // }
 
-// .logo {
-//   background-image: url('../images/logo-01.png');
-//   width: 120px;
-//   height: 25px;
-//   @include background-size(155px 40px);
-//   background-repeat: no-repeat;
-//   margin-top: 4px;
-// }
+.logo {
+  background-image: url('../images/logo-01.png');
+  width: 160px;
+  height: 37px;
+  @include background-size(100%);
+  background-repeat: no-repeat;
+  margin-top: 4px;
+}
 
 h1, h2, h3, h4 {
   font-weight: 100;
@@ -66,6 +66,17 @@ h1, h2, h3, h4 {
 .navbar .nav {
   top: 7px;
   font-size: 1.3em;
+  @media (max-width: 767px) { 
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+.navbar .brand {
+  @media (max-width: 767px) { 
+    float: none;
+    margin: 0 auto;
+  } 
 }
 
 .page-wrapper {
@@ -95,6 +106,9 @@ h1, h2, h3, h4 {
 
 .header-offset {
   margin-top: -400px;
+  @media (max-width: 767px) { 
+      margin-top: -500px;
+  } 
 }
 
 .full-page {
@@ -425,6 +439,12 @@ footer {
   color: #666666;
   font-weight: 200;
 
+  a {
+    color: #888888;
+  }
+  a:hover {
+    color: #AAAAAA;
+  }
   .city {
   }
   .contact {
