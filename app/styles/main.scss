@@ -156,6 +156,11 @@ h1, h2, h3, h4 {
   padding-top: 15px;
   position: relative;
 
+  .inner-feature {
+    position: relative;
+    width: 100%;
+  }
+
   &.has-child {
     border-bottom: none !important;
     padding-bottom: 0;
@@ -172,6 +177,15 @@ h1, h2, h3, h4 {
       font-size: 16px;
       line-height: 28px;
       font-weight: 200;
+    }
+  }
+
+  &.contact-page {
+    // height: 560px;
+
+    a {
+      color: rgb(139, 196, 224);
+      font-size: 1.4em;
     }
   }
 
@@ -269,6 +283,7 @@ h1, h2, h3, h4 {
   .title-block {
     color: $color-brightwhite;
     max-width: 500px;
+    opacity: 1;
 
   }
   .title-block-position {
@@ -392,6 +407,7 @@ section {
   }
   &.img-contact-blur {
     background-image: url('../images/plane-blur_08.jpg') ;
+    height: 560px !important;
   }
   &.img-about-blur {
     background-image: url('../images/gate-blur_07.jpg') ;
