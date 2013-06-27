@@ -53,7 +53,7 @@ $divider-height: 470px;
 .logo {
   background-image: url('../images/logo-01.png');
   width: 160px;
-  height: 37px;
+  height: 40px;
   @include background-size(100%);
   background-repeat: no-repeat;
   margin-top: 4px;
@@ -152,9 +152,14 @@ h1, h2, h3, h4 {
 .feature {
   border-bottom: 1px solid #ccc;
   // margin-bottom: 40px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   padding-top: 15px;
   position: relative;
+
+  &.has-child {
+    border-bottom: none !important;
+    padding-bottom: 0;
+  }
 
   .service {
     text-align: center;
