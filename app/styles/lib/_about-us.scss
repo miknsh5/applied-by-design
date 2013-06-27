@@ -1,4 +1,54 @@
 
+.office {
+  background-image: url('../images/office-03.jpg') ;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: rgb(153,153,153);
+  height: 430px;  
+}
+
+
+.job-title {
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: -20px;
+}
+
+.divider {
+  position: absolute;
+  border-right: solid 1px #CCC;
+  left: 50%;
+  height: 80%;
+  top: 30px;
+}
+
+.split {
+
+  .inner {
+    padding: 0 10px;
+    
+    &.left {
+      text-align: right;
+    }
+  }
+}
+
+.feature {
+
+  .title-name {
+    font-size: 3em;
+    line-height: 1.3em;
+    font-weight: 500;
+  }
+
+  .description {
+    // height: 250px;
+  }
+
+}
+
+
+
 .skinny-content {
   max-width: 680px;
 }
@@ -38,6 +88,5 @@
     // max-width: 540px;
     margin: auto;
   }
-
 }
 

@@ -1,9 +1,9 @@
 // 3.0 Icon Blocks
 // ----------------------------------
 
-@mixin icn-block($size) {
-  width: $size;
-  height: $size;
+@mixin icn-block($size-w, $size-h) {
+  width: $size-w;
+  height: $size-h;
   position: relative;
   display: inline-block;
   font-weight: 100;
@@ -45,7 +45,7 @@
 }
 
 .block-sm {
-  @include icn-block(40px);    
+  @include icn-block(40px, 40px);    
   font-size: 1.5em;
   line-height: 1.9em;
   margin-top: 0px;
@@ -55,8 +55,44 @@
   margin-top: -5px;
   @include transition(margin-top .2s);
 }
-.block-lg {
-  @include icn-block(80px);
+
+.block-dynamic {
+  @include icn-block(220px, 80px);
+  transition: width 1.5s;
   line-height: 2.2em;
   font-size: 2.5em;    
+  position: relative;
+
+  .block-content {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+  }
+
+}
+.block-lg {
+  @include icn-block(80px, 80px);
+  line-height: 2.2em;
+  font-size: 2.5em;    
+}
+
+// the full title text before transition starts on the icon box
+.section-title {
+  @include transition(opacity 1s);
+  @include transition(margin-top 1s);
+  position: absolute;
+  z-index: 100;
+  font-weight: 100; 
+  line-height: 2.2em;
+  font-size: 2.5em; 
+  width: 100%;
+  margin-top: -59px; //-110px
+  left: 0;
+  opacity: 1;
+}
+
+.section-title-hide {
+  margin-top: -110px; 
+  opacity: 0;
 }
