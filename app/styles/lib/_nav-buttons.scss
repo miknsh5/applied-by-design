@@ -1,21 +1,39 @@
 
 // Navigation Arrows
 
-.nav-arrow {
-  // background-image: url('../images/more-arrow.png');
-  // background-size: 60px 60px;
-  background-color: rgba(61,70,80, 0.5);
-  width: 64px;
-  height: 64px;
-  display: inline-block;
+#nav-scroll-down {
+  @include transition(top .1s);
+  // background-image: url('../images/more-arrow.png') ;
+  background-image: url('../images/more-arrow-2.png') ;
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 110px;
+  left: 24px;
   position: relative;
-  border: solid 4px #CCC;
-  font-size: 2.0em;
-  line-height: 2.3em;
-  color: #CCC;
-  text-align: center;
-  @include border-radius(35px);
-  @include background-image(linear-gradient(left top, rgba(250,250,250,0.2), rgba(100,100,100,0.2))); 
+  top: 36px;
+
+}
+
+#nav-scroll-down:hover {
+  top: 40px;
+  cursor: pointer;
+}
+
+.nav-arrow {
+  background-image: url('../images/more-arrow.png');
+  background-size: 60px 60px;
+  // background-color: rgba(61,70,80, 0.5);
+  // width: 64px;
+  // height: 64px;
+  // display: inline-block;
+  // position: relative;
+  // border: solid 4px #CCC;
+  // font-size: 2.0em;
+  // line-height: 2.3em;
+  // color: #CCC;
+  // text-align: center;
+  // @include border-radius(35px);
+  // @include background-image(linear-gradient(left top, rgba(250,250,250,0.2), rgba(100,100,100,0.2))); 
 
   &.nav-next-section {
     top: -38px;

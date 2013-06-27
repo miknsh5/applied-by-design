@@ -3,7 +3,14 @@
 angular.module('appliedByDesignApp')
     .controller('MainCtrl', function ($scope) {
       $scope.awesomeThings = ['hello', 'he', 'dsfg'];
-
+      
+      // scroll to the strategy section
+      $("#nav-scroll-down").click(function (){
+        $.scrollTo('#nav-scroll-down',{duration: 'medium', offsetTop: '0'});
+          // $('html, body').animate({
+          //     scrollTop: $("#strategy").offset().top
+          //      }, 1000);
+      });
     });
     // .controller('MainCtrl', function ($scope) {
         // $scope.test = 'hey';

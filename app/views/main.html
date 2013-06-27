@@ -9,13 +9,15 @@
           <div class="block-sm design">Ds</div>
           <div class="block-sm development">Dv</div>
         </div>
+        <div id="nav-scroll-down" class="hidden-tablet hidden-phone"></div>
     </div>
   </div>
+
 </section>
 
 
 
-<section class="strategy">
+<section id="strategy" class="strategy">
   <div class="section-content">
     <div class="row center">
       <div class="block-lg strategy pos-icon-block">Strategy</div>
@@ -115,15 +117,9 @@
 <!-- Contact (Terminal Seats) -->
 
 <!-- where the link takes you -->
-<a name="bottom-anchor" id="bottom-anchor"></a>
+<!-- <a name="bottom-anchor" id="bottom-anchor"></a> -->
 
 <div class="contact-us" >
-  <a href="#bottom-anchor" id="scroll-bottom">
-    <div class="nav-arrow nav-next-section">
-      <i class="icon-chevron-down icon-white"></i>
-    </div>
-  </a>
-
   <div class="row">
     <div class="offset9 span3">
       <a href="#/contact/">
@@ -133,3 +129,18 @@
   </div>
 
 </div>
+
+<!--
+<script>
+  $(document).ready(function (){
+      $(".nav-scroll-down").click(function (){
+          //$(this).animate(function(){
+              $('html, body').animate({
+                  scrollTop: $("#strategy").offset().top
+                   }, 2000);
+          //});
+      console.log('yo');
+      });
+  });
+</script>
+-->

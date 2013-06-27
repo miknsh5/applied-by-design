@@ -283,7 +283,7 @@ h1, h2, h3, h4 {
       left: 10%;
     }
     @media (max-width: 979px) {
-      top: 100px;
+      top: 150px;
       text-align: center;
       margin: 0 auto;
     }
@@ -378,6 +378,8 @@ section {
   background-repeat: no-repeat;
   @include background-size(cover);
   height: $divider-height;
+  border-top: solid 1px #666;
+  border-bottom: solid 1px #666;
 
   &.img-strategy {
     background-image: url('../images/signage-02.jpg') ;
@@ -406,6 +408,8 @@ section {
   @include background-size(cover);
   height: 760px;
   text-align: center;
+  border-top: solid 1px #aaa;
+  border-bottom: solid 1px #aaa;
 
   // set height of last image based on media query
   /* Desktop+ */
