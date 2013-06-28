@@ -44,10 +44,10 @@ angular.module('appliedByDesignApp')
         isMobile = true;
       }
 
-      var $strategy = $('section.strategy');
-      var $design = $('section.design');
-      var $development = $('section.development');
-      var $summary = $('section.summary');
+      var $strategy = $('.section.strategy');
+      var $design = $('.section.design');
+      var $development = $('.section.development');
+      var $summary = $('.section.summary');
       var windowScroll;
 
       // Check window width - if less than 1000px disable parallax
