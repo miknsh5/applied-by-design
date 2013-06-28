@@ -9,26 +9,26 @@ angular.module('appliedByDesignApp')
         $.scrollTo('#nav-scroll-down',{duration: 'medium', offsetTop: '0'});
       });
 
+      //Disable for launch - goofy in IE8
+      // // initialize icon visibilities
+      // $scope.isStVisible = false;
+      // $scope.isDsVisible = false;
+      // $scope.isDvVisible = false;
 
-      // initialize icon visibilities
-      $scope.isStVisible = false;
-      $scope.isDsVisible = false;
-      $scope.isDvVisible = false;
-
-      $scope.toggleState = function(){
-        $scope.isStVisible = !$scope.isStVisible;
-        if ($scope.isStVisible) {
-          $('.block-dynamic').css({'width': '240px'});
-          $('.short-title').css({'opacity': 0});
-          $('.long-title').css({'opacity': 1});
-        } else {
-          $('.block-dynamic').css({'width': '80px'});
-          $('.short-title').css({'opacity': 1});
-          $('.long-title').css({'opacity': 0});
-        }
-
-      };
-      $scope.toggleState();
+      // // toggle the size of the section icons
+      // $scope.toggleState = function(){
+      //   $scope.isStVisible = !$scope.isStVisible;
+      //   if ($scope.isStVisible) {
+      //     $('.block-dynamic').css({'width': '240px'});
+      //     $('.short-title').css({'opacity': 0});
+      //     $('.long-title').css({'opacity': 1});
+      //   } else {
+      //     $('.block-dynamic').css({'width': '80px'});
+      //     $('.short-title').css({'opacity': 1});
+      //     $('.long-title').css({'opacity': 0});
+      //   }
+      // };
+      // $scope.toggleState();
 
 
       var isMobile;
@@ -50,7 +50,7 @@ angular.module('appliedByDesignApp')
       var $summary = $('section.summary');
       var windowScroll;
 
-      // Check window width - if lexx than 1000px disable parallax
+      // Check window width - if less than 1000px disable parallax
       function isLargeViewport() {
         if($(window).width() < 979) {
           return false;
@@ -58,6 +58,20 @@ angular.module('appliedByDesignApp')
           return true;
         }
       }
+
+      // initialize the margin-tops to '0'.  Only adjust if browser passes
+      $strategy.css({
+        'margin-top' : '0px'
+      });
+      $design.css({
+        'margin-top' : '0px'
+      });
+      $development.css({
+        'margin-top' : '0px'
+      });
+      $summary.css({
+        'margin-top' : '0px'
+      });
 
       // recalc parallax offsets if window size changes
       $(window).resize(function() {
@@ -70,20 +84,6 @@ angular.module('appliedByDesignApp')
           if(isLargeViewport()) {
             parallaxify();
           }
-        });
-      } else {
-        // ipad or mobile - set the margin-tops to '0'
-        $strategy.css({
-          'margin-top' : 0
-        });
-        $design.css({
-          'margin-top' : 0
-        });
-        $development.css({
-          'margin-top' : 0
-        });
-        $summary.css({
-          'margin-top' : 0
         });
       }
 
