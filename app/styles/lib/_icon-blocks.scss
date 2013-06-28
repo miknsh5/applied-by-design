@@ -72,7 +72,9 @@
 
 }
 .block-lg {
+  @include transition(width 1s);
   @include icn-block(80px, 80px);
+  width: 240px;
   line-height: 2.2em;
   font-size: 2.5em;    
 }
@@ -92,7 +94,31 @@
   opacity: 1;
 }
 
-.section-title-hide {
-  margin-top: -110px; 
+
+.short-title {
+  @include transition(opacity 1s);
   opacity: 0;
 }
+.long-title {
+  @include transition(opacity .8s);
+  opacity: 1;
+}
+.short-title, .long-title {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+// .icn-strategy {
+//   width: 200px;
+// }
+
+// .icn-design {
+//   width: 180px;
+// }
+
+// .icn-development {
+//   width: 240px;
+// }
+
+

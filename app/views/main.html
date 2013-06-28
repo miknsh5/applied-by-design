@@ -4,7 +4,7 @@
 <div id="skrollr-body">
   <section class="landing">
     <div class="container">
-      <div class="title-block title-block-position" data-0="background-color:rgb(0,0,255);" data-500="background-color:rgb(255,0,0);">
+      <div class="title-block title-block-position">
           <h1>Digital Strategy, Design, Development</h1>
           <div class="service-blocks">
             <div class="block-sm strategy">St</div>
@@ -22,7 +22,11 @@
   <section id="strategy" class="strategy">
     <div class="section-content">
       <div class="row center">
-        <div class="block-lg strategy pos-icon-block">Strategy</div>
+        <div class="block-lg strategy pos-icon-block" ng-click="toggleState('st')">
+          <span class="long-title">Strategy</span>
+          <span class="short-title">St</span>
+        </div>
+
         <div>
           <div class="lead">
             <span>
@@ -46,7 +50,10 @@
   <section class="design">
     <div class="section-content">
       <div class="row center">
-        <div class="block-lg design pos-icon-block">Design</div>
+        <div class="block-lg design pos-icon-block" ng-click="toggleState('ds')">
+          <span class="long-title">Design</span>
+          <span class="short-title">Ds</span>
+        </div>
         <div>
           <div class="lead">
             <span>
@@ -71,10 +78,9 @@
   <section class="development">
     <div class="section-content">
       <div class="row center">
-        <!-- <span class="section-title" ng-style="style_title_dev">Development</span> -->
-        <span class="section-title">Development</span>
-        <div class="block-dynamic development pos-icon-block">
-          <span class="block-content short">Dv</span>
+        <div class="block-lg development pos-icon-block" ng-click="toggleState('dv')">
+          <span class="long-title">Development</span>
+          <span class="short-title">Dv</span>
         </div>
         <div>
           <div class="lead">
