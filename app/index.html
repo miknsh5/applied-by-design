@@ -55,6 +55,14 @@
 
 
     <!-- Add your site or application content here -->
+
+    <!--[if lt IE 9]>
+      <p style="margin-top: 40px; background-color: red">
+        You are using an embarassingly outdated browser...(IE8) - so outdated that we needed to make an error message specifically for you!  Please upgrade to a more modern browser (Firefox, Chrome, IE9+, Safari)
+      </p>
+    <![endif]-->
+
+
     <div class="" ng-view></div>
 
 
@@ -87,7 +95,6 @@
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
     <script src="components/jquery/jquery.min.js"></script>
     <script src="components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
-    <script src="components/skrollr/dist/skrollr.min.js"></script>
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
