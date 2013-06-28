@@ -57,11 +57,11 @@
 }
 
 .block-dynamic {
-  @include icn-block(220px, 80px);
-  transition: width 1.5s;
+  @include icn-block(240px, 80px);
   line-height: 2.2em;
   font-size: 2.5em;    
   position: relative;
+  @include transition(width 1s);
 
   .block-content {
     position: absolute;
@@ -72,27 +72,26 @@
 
 }
 .block-lg {
-  @include transition(width 1s);
+  // @include transition(width 1s);
   @include icn-block(80px, 80px);
-  width: 240px;
   line-height: 2.2em;
   font-size: 2.5em;    
 }
 
 // the full title text before transition starts on the icon box
-.section-title {
-  @include transition(opacity 1s);
-  @include transition(margin-top 1s);
-  position: absolute;
-  z-index: 100;
-  font-weight: 100; 
-  line-height: 2.2em;
-  font-size: 2.5em; 
-  width: 100%;
-  margin-top: -59px; //-110px
-  left: 0;
-  opacity: 1;
-}
+// .section-title {
+//   @include transition(opacity 1s);
+//   @include transition(margin-top 1s);
+//   position: absolute;
+//   z-index: 100;
+//   font-weight: 100; 
+//   line-height: 2.2em;
+//   font-size: 2.5em; 
+//   width: 100%;
+//   margin-top: -59px; //-110px
+//   left: 0;
+//   opacity: 1;
+// }
 
 
 .short-title {
@@ -100,8 +99,11 @@
   opacity: 0;
 }
 .long-title {
-  @include transition(opacity .8s);
   opacity: 1;
+  // margin-top: 0;
+  @include transition(opacity .8s);
+  @include transition(margin-top 1s);
+  
 }
 .short-title, .long-title {
   position: absolute;

@@ -30,7 +30,7 @@ $color-design: $color-brightwhite;
 $color-development: $color-tope;
 
 // 0.0 Global Variables
-$section-height: 300px;
+$section-height: 270px;
 $divider-height: 470px;
 
 // My Styles
@@ -256,25 +256,25 @@ h1, h2, h3, h4 {
 
 .landing {
   background-image: url('../images/runway-02.jpg') ;
-  background-position: center top;
+  background-position: center 0px;
   height: 640px;
-  // @include background-size(cover);
+  text-align: center;
+  @include background-size(cover);
 
-  @media (min-width: 980px) {
-    @include background-size(cover);
-    text-align: right;
-    height: 640px;
-  }
-  /* Portrait tablet to landscape and desktop */
-  @media (min-width: 768px) and (max-width: 979px) {
-    @include background-size(cover);
-    text-align: center;
-    height: 500px;
-  }
+  // @media (min-width: 980px) {
+  //   text-align: right;
+  //   height: 640px;
+  // }
+  // /* Portrait tablet to landscape and desktop */
+  // @media (min-width: 768px) and (max-width: 979px) {
+  //   @include background-size(cover);
+  //   text-align: center;
+  //   height: 500px;
+  // }
   /* Landscape phone to portrait tablet */
   @media (max-width: 767px) { 
     @include background-size(800px 500px);
-    text-align: center;
+    // text-align: center;
     height: 500px;
     // width: 110%;
     // margin-left: -20px;
@@ -282,26 +282,26 @@ h1, h2, h3, h4 {
 
   .title-block {
     color: $color-brightwhite;
-    max-width: 500px;
+    max-width: 600px;
     opacity: 1;
 
   }
   .title-block-position {
     position: relative;
-    top: 210px;
-    text-align: left;
-    left: 0;
+    top: 200px;
+    text-align: center;
+    margin: 0 auto;
     
-    @media (min-width: 980px) {
-      top: 210px;
-      text-align: left;
-      left: 10%;
-    }
-    @media (max-width: 979px) {
-      top: 150px;
-      text-align: center;
-      margin: 0 auto;
-    }
+    // @media (min-width: 980px) {
+    //   top: 210px;
+    //   text-align: left;
+    //   left: 10%;
+    // }
+    // @media (max-width: 979px) {
+    //   top: 150px;
+    //   text-align: center;
+    //   margin: 0 auto;
+    // }
   }
 
   .service-blocks {
@@ -324,7 +324,7 @@ h1, h2, h3, h4 {
 }
 
 section {
-  min-height: $section-height;
+  // min-height: $section-height;
   // overflow: hidden;
   // width: 110%;
   // margin-left: -20px;
@@ -333,6 +333,7 @@ section {
   &.strategy {
     // background-color: $color-strategy;
     background-color: $color-lightgray;
+    margin-top: -20px; //compensate for whitespace on upscroll
   }
   &.design {
     // background-color: $color-design;
@@ -343,6 +344,7 @@ section {
     background-color: $color-lightgray;
   }
   &.summary {
+    background-color: #EEE;
     // text-align: center;
   }
 

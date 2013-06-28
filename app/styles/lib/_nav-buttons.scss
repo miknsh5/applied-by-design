@@ -3,19 +3,18 @@
 
 #nav-scroll-down {
   @include transition(top .1s);
-  // background-image: url('../images/more-arrow.png') ;
   background-image: url('../images/more-arrow-2.png') ;
   background-repeat: no-repeat;
   width: 110px;
   height: 110px;
-  left: 24px;
+  top: 20px;
   position: relative;
-  top: 36px;
+  margin: 0 auto;
 
 }
 
 #nav-scroll-down:hover {
-  top: 40px;
+  top: 25px;
   cursor: pointer;
 }
 
