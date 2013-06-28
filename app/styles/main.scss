@@ -109,6 +109,10 @@ h1, h2, h3, h4 {
   @media (max-width: 767px) { 
       margin-top: -500px;
   } 
+
+  &.contact {
+    margin-top: -500px;
+  }
 }
 
 .full-page {
@@ -166,7 +170,7 @@ h1, h2, h3, h4 {
   }
 
   &.contact-page {
-    // height: 560px;
+    // margin-top: -500px;
 
     a {
       color: rgb(139, 196, 224);
@@ -200,29 +204,16 @@ h1, h2, h3, h4 {
     }
   }
 
-
   &.head {
     min-height: 302px;
   }
-
-  // shift the block to the left of the content (shift off screen for mobile)
-  .outset {
-    position: absolute;
-    left: -130px;
-  }
-}
-
-.feature-inner {
-  text-align: left;
-  padding: 0 20px;
-
 
 }
 
 .feature-service {
   text-align: left;
   /* < Desktop */
-  @media (max-width: 979px) { 
+  @media (max-width: 767px) { 
     text-align: center;
   }
 
@@ -232,7 +223,7 @@ h1, h2, h3, h4 {
   margin-top: 15px;
   
   /* < Desktop */
-  @media (max-width: 979px) { 
+  @media (max-width: 767px) { 
     text-align: center;
   }
 }
@@ -274,24 +265,9 @@ h1, h2, h3, h4 {
   height: 640px;
   text-align: center;
   @include background-size(cover);
-
-  // @media (min-width: 980px) {
-  //   text-align: right;
-  //   height: 640px;
-  // }
-  // /* Portrait tablet to landscape and desktop */
-  // @media (min-width: 768px) and (max-width: 979px) {
-  //   @include background-size(cover);
-  //   text-align: center;
-  //   height: 500px;
-  // }
-  /* Landscape phone to portrait tablet */
   @media (max-width: 767px) { 
     @include background-size(800px 500px);
-    // text-align: center;
     height: 500px;
-    // width: 110%;
-    // margin-left: -20px;
   }
 
   .title-block {
@@ -302,20 +278,10 @@ h1, h2, h3, h4 {
   }
   .title-block-position {
     position: relative;
-    top: 200px;
+    top: 150px;
     text-align: center;
     margin: 0 auto;
-    
-    // @media (min-width: 980px) {
-    //   top: 210px;
-    //   text-align: left;
-    //   left: 10%;
-    // }
-    // @media (max-width: 979px) {
-    //   top: 150px;
-    //   text-align: center;
-    //   margin: 0 auto;
-    // }
+
   }
 
   .service-blocks {
@@ -423,7 +389,7 @@ section {
   }
   &.img-contact-blur {
     background-image: url('../images/plane-blur_08.jpg') ;
-    height: 560px !important;
+    height: 800px !important;
   }
   &.img-about-blur {
     background-image: url('../images/gate-blur_07.jpg') ;
@@ -432,6 +398,7 @@ section {
     background-image: url('../images/runway-blur_07.jpg') ;
   }
 }
+
 
 
 .contact-us {
