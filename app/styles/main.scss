@@ -111,7 +111,8 @@ h1, h2, h3, h4 {
   } 
 
   &.contact {
-    margin-top: -500px;
+    margin-top: -560px;
+    height: 500px;
   }
 }
 
@@ -156,7 +157,7 @@ h1, h2, h3, h4 {
 }
 .feature {
   border-bottom: 1px solid #ccc;
-  padding: 40px 0;
+  padding: 20px 0;
   position: relative;
 
   .inner-feature {

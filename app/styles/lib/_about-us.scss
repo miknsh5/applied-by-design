@@ -25,10 +25,17 @@
 .split {
   .inner {
     padding: 0 10px;
+    padding-bottom: 30px;
     
     &.left {
       text-align: right;
     }
+
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 767px) { 
+      text-align: center !important;
+    }
+
   }
 }
 
@@ -37,8 +44,8 @@
     padding-bottom: 30px;
   }
   .title-name {
-    font-size: 3em;
-    line-height: 1.3em;
+    font-size: 3.5em;
+    line-height: 1.2em;
     font-weight: 500;
   }
 

@@ -52,7 +52,7 @@ angular.module('appliedByDesignApp')
 
       // Check window width - if lexx than 1000px disable parallax
       function isLargeViewport() {
-        if($(window).width() < 1000) {
+        if($(window).width() < 979) {
           return false;
         } else {
           return true;
@@ -71,8 +71,21 @@ angular.module('appliedByDesignApp')
             parallaxify();
           }
         });
+      } else {
+        // ipad or mobile - set the margin-tops to '0'
+        $strategy.css({
+          'margin-top' : 0
+        });
+        $design.css({
+          'margin-top' : 0
+        });
+        $development.css({
+          'margin-top' : 0
+        });
+        $summary.css({
+          'margin-top' : 0
+        });
       }
-
 
 
       function parallaxify() {
