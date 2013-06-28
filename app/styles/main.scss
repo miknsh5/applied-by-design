@@ -253,7 +253,7 @@ h1, h2, h3, h4 {
 
 .landing {
   background-image: url('../images/runway-02.jpg') ;
-  background-position: center 0px;
+  background-position: center top;
   height: 640px;
   text-align: center;
   @include background-size(cover);
