@@ -148,12 +148,11 @@ h1, h2, h3, h4 {
 
 .slim {
   max-width: 800px;
+  margin: 0 auto;
 }
 .feature {
   border-bottom: 1px solid #ccc;
-  // margin-bottom: 40px;
-  padding-bottom: 20px;
-  padding-top: 15px;
+  padding: 40px 0;
   position: relative;
 
   .inner-feature {
@@ -164,20 +163,6 @@ h1, h2, h3, h4 {
   &.has-child {
     border-bottom: none !important;
     padding-bottom: 0;
-  }
-
-  .service {
-    text-align: center;
-    line-height: 2em;
-    float: left;
-    padding: 0 10px;
-
-    .label {
-      padding: 2px 25px;
-      font-size: 16px;
-      line-height: 28px;
-      font-weight: 200;
-    }
   }
 
   &.contact-page {
@@ -225,6 +210,35 @@ h1, h2, h3, h4 {
     position: absolute;
     left: -130px;
   }
+}
+
+.feature-inner {
+  text-align: left;
+  padding: 0 20px;
+
+
+}
+
+.feature-service {
+  text-align: left;
+  /* < Desktop */
+  @media (max-width: 979px) { 
+    text-align: center;
+  }
+
+}
+.feature-icon {
+  text-align: right;
+  margin-top: 15px;
+  
+  /* < Desktop */
+  @media (max-width: 979px) { 
+    text-align: center;
+  }
+}
+
+.feature-service.has-child {
+  padding-bottom: 20px;
 }
 
 .feature:first-child, .feature:last-child{
