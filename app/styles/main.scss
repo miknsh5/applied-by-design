@@ -25,10 +25,10 @@ $color-gray: #888888;
 $color-tope: rgb(115,106,97);
 $color-footer: rgb(46, 53, 61);
 
-$color-text-black: #222;
-$color-text-white: #EEE;
-$color-text-whitewhite: #FFF;
-$color-text-gray: #555;
+$color-text-black: #222222;
+$color-text-white: #EEEEEE;
+$color-text-whitewhite: #FFFFFF;
+$color-text-gray: #555555;
 
 // map colors to service types
 $color-strategy: $color-slateblue;
@@ -65,6 +65,9 @@ html {
   font-size: $sizeValue + rem;
 }
 
+body {
+  background-color: #eeeeee;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Helvetica;
@@ -135,7 +138,7 @@ p {
 }
 
 .skrollr-holder {
-  visibility: hidden;
+  // visibility: hidden;
   position: fixed;
   left: 0;
   height: 900px;
@@ -146,18 +149,18 @@ p {
 
   &.runway {
     background-image: url('../images/runway-02.jpg');
-    z-index: 4;
+    // z-index: 4;
   }
   &.signage {
     background-image: url('../images/signage-02.jpg');
-    z-index: 3;
+    z-index: 2;
   }
   &.plane {
     background-image: url('../images/plane-02.jpg');
-    z-index: 2;
+    z-index: -1;
   }
   &.engine {
-    z-index: 1;
+    z-index: 4;
     background-image: url('../images/engine-01.jpg');
   }
 }
@@ -173,16 +176,14 @@ p {
   .inner {
     max-width: 600px;
     margin: 0 auto;
-    
-    .service-blocks {
 
-    }
   }
 }
 
 
 
-section.feature {
+
+.feature {
   background-color: $color-text-whitewhite;
   min-height: 310px;
   // margin: 170px 0;
@@ -190,11 +191,14 @@ section.feature {
   position: relative;
 }
 
+
 .inner {
   padding: 20px;
   max-width: 600px;
   text-align: center;
   margin: auto;
+  margin-bottom: 10px;
+
 }
 
 .landing {

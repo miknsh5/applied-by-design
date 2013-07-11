@@ -13,40 +13,41 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-
     <!--[if lt IE 9]>
       <script>
-         document.createElement('section');
-         document.createElement('footer');
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('footer');
       </script>
-      <script src="components/es5-shim/es5-shim.js"></script>
-      <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
   </head>
   <body class="skrollr-body" ng-app="appliedByDesignApp">
 
+
     <!-- PRIMARY NAVIGATION -->
 
     <header>
       <div class="container">
-        <a class="logo">
-          <img src="../images/logo-01.png" alt="Applied by Design">
-        </a>
-          
-          <ul class="nav pull-right">
+        <nav>
+          <a class="logo" href="/#/">
+            <img src="../images/logo-01.png" alt="Applied by Design">
+          </a>
+            
+          <ul class="nav-list pull-right">
             <!-- <li class="active"><a href="#">Thoughts</a></li> -->
-            <li><a href="#/services/">Services</a></li>
-            <li><a href="#/about/">About</a></li>
-            <li><a href="#/contact/">Contact</a></li>
+            <li class="nav-btn"><a href="#/services/">Services</a></li>
+            <li class="nav-btn"><a href="#/about/">About</a></li>
+            <li class="nav-btn"><a href="#/contact/">Contact</a></li>
           </ul>
-
-        
-      </div>
-      <nav>
+        </div>
 
       </nav>
     </header> 
@@ -58,8 +59,8 @@
     <!-- Add your site or application content here -->
 
     <!--[if lt IE 9]>
-      <p style="margin-top: 40px; background-color: red">
-        You are using an embarassingly outdated browser...(IE8) - so outdated that we needed to make an error message specifically for you!  Please upgrade to a more modern browser (Firefox, Chrome, IE9+, Safari)
+      <p style="margin: 80px 40px; background-color: red; text-align: center; padding: 10px;">
+        Uh oh! You are using an embarassingly outdated browser - so outdated that we needed to make this error message just for you.  Get with the times!  Please upgrade to a more modern browser (Firefox, Chrome, IE9+, Safari).
       </p>
     <![endif]-->
 
@@ -95,9 +96,9 @@
     <script src="components/angular/angular.js"></script> 
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
     <script src="components/jquery/jquery.min.js"></script>
-    <script src="components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     <script src="components/modernizr/modernizr.js"></script>
     <script src="components/skrollr/dist/skrollr.min.js"></script>
+    <script src="components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 
     <!-- build:js scripts/scripts.js -->
     

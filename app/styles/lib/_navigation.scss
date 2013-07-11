@@ -2,11 +2,13 @@
 
 .logo {
   // background-image: url('../images/logo-01.png');
-  // width: 160px;
+  width: 220px;
   // height: 40px;
   // @include background-size(cover);
   // background-repeat: no-repeat;
   // margin-top: 4px;
+  position: relative;
+  left: 0;
   img {
     width: 190px;
     height: auto;
@@ -22,8 +24,36 @@ header {
   z-index: 1000;
   top: 0;
   left: 0;
+  background-color: rgb(0,0,0); //fallback for ie8
   background-color: rgba(0,0,0,0.8);
   border-top: solid 5px rgb(241,90,36);
+}
+
+nav {
+  position: relative;
+  display: inline;
+  
+  .nav-list {
+    margin: 20px 10px;
+    
+    .nav-btn {
+      display: inline-block;
+      font-variant: small-caps;
+      font-size: 1.3em;
+      margin: 0 0 0 15px;
+
+      a {
+        color: $color-text-white;
+      }
+
+      a:hover {
+        color: $color-text-whitewhite;
+        text-decoration: none;
+
+      }
+    }
+  }
+
 }
 
 .navbar .nav {
