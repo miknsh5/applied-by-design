@@ -1,0 +1,32 @@
+// footer styles
+
+footer {
+  background-color: $color-footer;
+  min-height: 80px;
+  color: #666666;
+  font-weight: 200;
+
+  a {
+    color: #888888;
+  }
+  a:hover {
+    color: #AAAAAA;
+  }
+  .city {
+  }
+  .contact {
+    p {
+      line-height: 1em;
+    }
+  }
+  .foot {
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #444;
+  }
+  .copyright {
+    position: relative;
+    bottom: 10px;
+  }
+}
