@@ -66,7 +66,7 @@ html {
 }
 
 body {
-  background-color: #eeeeee;
+  // background-color: #eeeeee;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -85,6 +85,10 @@ h2 {
   // section titles, blog post titles, service section titles
   @include font-size(5);
   font-weight: 800;
+
+  &.summary {
+    color: $color-text-gray;
+  }
 }
 
 
@@ -141,7 +145,8 @@ p {
   // visibility: hidden;
   position: fixed;
   left: 0;
-  height: 900px;
+  top: 0;
+  height: 980px;
   width: 100%;
   background-position: center top;
   background-repeat: no-repeat;
@@ -191,6 +196,18 @@ p {
   position: relative;
 }
 
+.section-summary {
+  background-color: rgba(0,0,0,0.8);
+
+  .summary-logo {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  p {
+    color: $color-text-white;
+  }
+}
 
 .inner {
   padding: 20px;
@@ -199,6 +216,9 @@ p {
   margin: auto;
   margin-bottom: 10px;
 
+  &.summary {
+    margin-top: 40px;
+  }
 }
 
 .landing {
