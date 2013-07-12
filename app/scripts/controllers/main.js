@@ -26,27 +26,6 @@ angular.module('appliedByDesignApp')
         $.scrollTo('#contact-anchor',{duration: 'medium'});
       });
 
-      //Disable for launch - goofy in IE8
-      // initialize icon visibilities
-      $scope.isStVisible = false;
-      $scope.isDsVisible = false;
-      $scope.isDvVisible = false;
-
-      // toggle the size of the section icons
-      $scope.toggleState = function(){
-        $scope.isStVisible = !$scope.isStVisible;
-        if ($scope.isStVisible) {
-          $('.block-dynamic').css({'width': '240px'});
-          $('.short-title').css({'opacity': 0});
-          $('.long-title').css({'opacity': 1});
-        } else {
-          $('.block-dynamic').css({'width': '80px'});
-          $('.short-title').css({'opacity': 1});
-          $('.long-title').css({'opacity': 0});
-        }
-      };
-      $scope.toggleState();
-
 
       var isMobile;
 

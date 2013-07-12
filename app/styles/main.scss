@@ -66,10 +66,19 @@ $divider-height: 470px;
 html {
   // controls REM sizing on all header styles
   font-size: 62.5%;
+
+  @media (max-width: 480px) {
+    font-size: 40%;
+    h1 {
+      @include font-size(5);
+    }
+  }
 }
 
 body {
   // background-color: #eeeeee;
+  // width: 100%;
+  // min-width: 1024px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -107,6 +116,7 @@ h3 {
   }
 }
 
+
 p {
   @include font-size(2);
   color: $color-text-black;
@@ -122,11 +132,13 @@ p {
   height: auto;
   min-height: 100%;
 }
-
-@media (max-width: 767px) { 
+body {
+  width: 100%;
+}
+@media (max-width: 979px) { 
   body { 
-      padding-left: 0; 
-      padding-right: 0; 
+    padding-left: 0; 
+    padding-right: 0; 
   } 
 } 
 
@@ -139,16 +151,25 @@ p {
   background-image: url('../images/runway-02.jpg');
   z-index: 9;
   height: 600px;
-  width: 100%;
+  max-width: 100%;
   position: relative;
   margin-top: 60px;
   border-bottom: solid 5px #eee;
+  @media (max-width: 480px) {
+    height: 400px;
+  }
+
 }
 
 .img-spacer {
   position: relative;
   height: 400px;
   z-index: -1;
+
+  @media (max-width: 480px) {
+    height: 200px;
+  }
+
 }
 
 .skrollr-holder {
@@ -192,12 +213,21 @@ p {
   margin-top: 220px;
   z-index: 10;
 
+  @media (max-width: 480px) {
+    margin-top: 150px;
+  }
+
   .inner {
     max-width: 600px;
     margin: 0 auto;
 
   }
 }
+
+// @media all and (max-width: 640px) {
+//   section
+
+// }
 
 .feature {
   @include box-shadow(black 0px 0px 5px); 
@@ -206,12 +236,15 @@ p {
   // margin: 170px 0;
   z-index: 10;
   position: relative;
+  // width: 100%;
 
 }
 
 .section-summary {
   background-color: rgba(0,0,0,0.8);
   height: 100%;
+  // width: 100%;
+
   .summary-logo {
     margin: 0 auto;
     max-width: 200px;
@@ -220,6 +253,9 @@ p {
   .inner.footer {
     margin: 0 auto;
     margin-top: 130px;
+    @media (max-width: 480px) {
+      margin-top: 0;
+    }
     // text-align: center;
   }
 
@@ -238,9 +274,11 @@ p {
     margin: 30px 0;
   }
 
-  .btn-contact {
-    margin-bottom: 30px;
-  }
+  // .btn-contact {
+    // margin-bottom: 30px;
+
+
+  // }
 }
 
 .section-first {
@@ -283,15 +321,24 @@ p {
   // }
 
   .btn-contact {
-    width: 150px;
+    width: 240px;
     height: 35px;
-    font-size: 1.5em;
-    line-height: 33px;
+    font-size: 1.3em;
+    line-height: 35px;
     top: 120px;
+    margin-bottom: 10px;
     // position: relative;
     
+    @media (max-width: 480px) {
+      width: 180px;  
+      font-size: 0.8em;
+      i {
+        margin-top: 0px !important;
+      }
+    }
+
     i {
-      margin-top: 6px !important;
+      // margin-top: 6px !important;
     }
   }
 }
