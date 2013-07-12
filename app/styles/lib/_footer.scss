@@ -1,32 +1,36 @@
 // footer styles
 
 footer {
-  background-color: $color-footer;
+  background-color: $color-black;
   min-height: 80px;
-  color: #666666;
+  color: $color-text-gray;
   font-weight: 200;
 
+  p {
+    @include font-size(1.7);
+    color: $color-text-gray;
+    text-align: center;
+    margin: 10px 0;
+  }
   a {
-    color: #888888;
+    color: $color-text-gray;
   }
   a:hover {
-    color: #AAAAAA;
-  }
-  .city {
-  }
-  .contact {
-    p {
-      line-height: 1em;
-    }
+    color: $color-text-gray;
   }
   .foot {
-    padding-top: 10px;
-    padding-bottom: 0;
-    margin-bottom: 20px;
+    padding: 10px 0;
     border-bottom: 1px solid #444;
   }
   .copyright {
+    text-align: center;
     position: relative;
-    bottom: 10px;
+    margin: 10px 0;
+
+    /* Desktop+ */
+    @media (min-width: 767px) {
+      // center the copyright notice on large displays when multiple columns in footer row
+      margin: 10px 0 10px 20px;
+    }
   }
 }

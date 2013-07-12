@@ -5,6 +5,7 @@
 @import "compass/css3/images";
 @import "compass/css3/transform";
 @import "compass/css3/transition";
+@import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
 
 
@@ -24,12 +25,15 @@ $color-darkgray: rgb(80,80,80);
 $color-gray: #888888;
 $color-tope: rgb(115,106,97);
 $color-footer: rgb(46, 53, 61);
-
-$color-text-black: #222222;
+$color-black: #222222;
+$color-text-black: $color-black;
 $color-text-white: #EEEEEE;
 $color-text-whitewhite: #FFFFFF;
 $color-text-gray: #555555;
 
+
+$color-blue: rgb(48,128,178);
+$color-orange: rgb(241,90,36);
 // map colors to service types
 $color-strategy: $color-slateblue;
 $color-design: $color-brightwhite;
@@ -39,15 +43,19 @@ $color-development: $color-tope;
 $section-height: 270px;
 $divider-height: 470px;
 
+// My Mixins
+//------------------
+// support for REM font sizing including IE8 fallback pixels
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
 // My Styles
-// @import 'lib/section-titleblocks';
-// @import 'lib/nav-buttons';
+//-------------------
 @import 'lib/icon-blocks';
-// @import 'lib/services';
 // @import 'lib/about-us';
 
-
-// @import 'lib/service-icons'; //icon blocks for the service types
 @import 'lib/navigation'; 
 @import 'lib/footer'; 
 
@@ -56,13 +64,8 @@ $divider-height: 470px;
 // ----------------------------------
 
 html {
+  // controls REM sizing on all header styles
   font-size: 62.5%;
-}
-
-// support for REM font sizing including IE8 fallback pixels
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
 }
 
 body {
@@ -70,7 +73,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica;
+  font-family: Helvetica Neue;
   color: $color-text-black;
   line-height: 1.1em;
 }
@@ -86,9 +89,7 @@ h2 {
   @include font-size(5);
   font-weight: 800;
 
-  &.summary {
-    color: $color-text-gray;
-  }
+
 }
 
 
@@ -96,13 +97,21 @@ h3 {
   // section bylines
   @include font-size(3);
   font-style: italic;
+  color: $color-blue;
+  font-weight: 200;
+
+  &.about {
+    font-style: normal;
+    @include font-size(2.5);
+    // color: $color-text-gray;
+  }
 }
 
 p {
   @include font-size(2);
   color: $color-text-black;
   font-weight: 200;
-  line-height: 1.3em;
+  line-height: 1.5em;
   margin: 20px 0;
 }
 
@@ -133,6 +142,7 @@ p {
   width: 100%;
   position: relative;
   margin-top: 60px;
+  border-bottom: solid 5px #eee;
 }
 
 .img-spacer {
@@ -146,7 +156,7 @@ p {
   position: fixed;
   left: 0;
   top: 0;
-  height: 980px;
+  height: 1180px;
   width: 100%;
   background-position: center top;
   background-repeat: no-repeat;
@@ -158,10 +168,14 @@ p {
   }
   &.signage {
     background-image: url('../images/signage-02.jpg');
-    z-index: 2;
+    z-index: -1;
   }
   &.plane {
     background-image: url('../images/plane-02.jpg');
+    z-index: -1;
+  }
+  &.seats {
+    background-image: url('../images/seats-02.jpg');
     z-index: -1;
   }
   &.engine {
@@ -175,7 +189,7 @@ p {
   top: 0;
   width: 100%;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 220px;
   z-index: 10;
 
   .inner {
@@ -185,23 +199,38 @@ p {
   }
 }
 
-
-
-
 .feature {
+  @include box-shadow(black 0px 0px 5px); 
   background-color: $color-text-whitewhite;
   min-height: 310px;
   // margin: 170px 0;
   z-index: 10;
   position: relative;
+
 }
 
 .section-summary {
   background-color: rgba(0,0,0,0.8);
-
+  height: 100%;
   .summary-logo {
     margin: 0 auto;
     max-width: 200px;
+  }
+
+  .inner.footer {
+    margin: 0 auto;
+    margin-top: 130px;
+    // text-align: center;
+  }
+
+  .inner.header {
+    margin: 0 auto;
+    margin-top: 10px;
+    // text-align: center;
+  }
+
+  .inner.has-nav {
+    margin-bottom: 40px;
   }
 
   p {
@@ -214,151 +243,18 @@ p {
   }
 }
 
+.section-first {
+  margin-top: 200px;
+}
+
 .inner {
-  padding: 20px;
-  max-width: 600px;
+  padding: 50px;
+  max-width: 680px;
   text-align: center;
   margin: auto;
   margin-bottom: 10px;
-
-  &.summary {
-    margin-top: 40px;
-  }
 }
 
-.landing {
-  text-align: center;
-
-  .title-block {
-    color: $color-brightwhite;
-    max-width: 600px;
-    opacity: 1;
-
-  }
-  .title-block-position {
-    position: relative;
-    top: 150px;
-    text-align: center;
-    margin: 0 auto;
-
-  }
-
-  .service-blocks {
-    margin-top: 10px;
-  }
-
-  h1 {
-    line-height: 0.9em;
-    font-size: 5.0em;
-    
-    @media (min-width: 980px) {
-      font-size: 5.0em;
-    }
-    @media (max-width: 979px) {
-      font-size: 3.2em;
-      padding: 0 10px;
-    }
-  }
-
-}
-
-.section {
-  // min-height: $section-height;
-  @include background-image(linear-gradient(center top, rgba(250,250,250,0.1), rgba(0,0,0,0.1))); 
-
-  &.strategy {
-    // background-color: $color-strategy;
-    background-color: $color-gray;
-    margin-top: -20px; //compensate for whitespace on upscroll
-  }
-  &.design {
-    // background-color: $color-design;
-    background-color: $color-gray;
-  }
-  &.development {
-    // background-color: $color-development;
-    background-color: $color-gray;
-  }
-  &.summary {
-    background-color: #EEE;
-    // text-align: center;
-  }
-
-  .content {
-    // width: 80%;
-    margin:0 auto;
-    padding: 40px;
-    color: #eee;
-    font-weight: 100;
-    // margin-right: 30px;
-    .text-block {
-      display: inline-block;
-      text-align: left;
-      max-width: 400px;
-
-      @media (min-width: 768px) {
-        text-align: left;
-        max-width: 400px;
-      }
-      @media (max-width: 767px) {
-        text-align: center;
-        width: 100%;
-      }
-
-    }
-
-    .text-center {
-      text-align: center !important;
-    }
-
-    h2 {
-      margin-top: 0px;
-      font-weight: 500;
-      // color: #eee;
-    }
-    p {
-      font-size: 1.2em;
-
-    }
-  }
-}
-
-
-
-
-.section-divider {
-  background-position: center top;
-  background-repeat: no-repeat;
-  @include background-size(cover);
-  height: $divider-height;
-  border-top: solid 1px #666;
-  border-bottom: solid 1px #666;
-
-  &.img-landing {
-    background-image: url('../images/runway-02.jpg') ;
-    height: 640px; 
-    // margin-top: 40px;
-  }
-  &.img-strategy {
-    background-image: url('../images/signage-02.jpg') ;
-  }
-  &.img-design {
-    background-image: url('../images/plane-02.jpg') ;
-  }
-  &.img-development {
-    background-image: url('../images/engine-01.jpg') ;
-  }
-  &.img-contact-blur {
-    background-image: url('../images/plane-blur_08.jpg') ;
-    height: 800px !important;
-  }
-  &.img-about-blur {
-    background-image: url('../images/gate-blur_07.jpg') ;
-  }
-  &.img-services-blur {
-    background-image: url('../images/runway-blur_07.jpg') ;
-  }
-}
 
 
 
@@ -366,24 +262,25 @@ p {
   background-image: url('../images/seats-02.jpg') ;
   background-repeat: no-repeat;
   @include background-size(cover);
-  height: 760px;
+  height: 580px;
   text-align: center;
   border-top: solid 1px #aaa;
-  border-bottom: solid 1px #aaa;
+  // border-bottom: solid 1px #aaa;
+  border-bottom: solid 5px #f15a24;
 
   // set height of last image based on media query
   /* Desktop+ */
-  @media (min-width: 980px) {
-    height: 760px;
-  }
-  /* Portrait tablet to landscape and desktop */
-  @media (min-width: 768px) and (max-width: 979px) {
-    height: 440px;
-  }
-  /* Landscape phone to portrait tablet */
-  @media (max-width: 767px) { 
-    height: 400px;
-  }
+  // @media (min-width: 980px) {
+  //   height: 760px;
+  // }
+  // /* Portrait tablet to landscape and desktop */
+  // @media (min-width: 768px) and (max-width: 979px) {
+  //   height: 440px;
+  // }
+  // /* Landscape phone to portrait tablet */
+  // @media (max-width: 767px) { 
+  //   height: 400px;
+  // }
 
   .btn-contact {
     width: 150px;
@@ -391,7 +288,7 @@ p {
     font-size: 1.5em;
     line-height: 33px;
     top: 120px;
-    position: relative;
+    // position: relative;
     
     i {
       margin-top: 6px !important;

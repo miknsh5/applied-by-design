@@ -85,19 +85,35 @@ nav {
 
 
 //navigation arrows - go to next section
-#nav-scroll-down {
+.nav-scroll-down {
   @include transition(top .1s);
-  background-image: url('../images/more-arrow-2.png') ;
   background-repeat: no-repeat;
   width: 110px;
   height: 110px;
-  top: 20px;
+  top: -55px;
   position: relative;
   margin: 0 auto;
-
+  z-index: 100;
 }
 
-#nav-scroll-down:hover {
-  top: 25px;
+.nav-scroll-down:hover {
+  top: -50px;
   cursor: pointer;
 }
+
+
+.nav-arrow-dark {
+  background-image: url('../images/more-arrow-dk.png') ;
+}
+.nav-arrow-light {
+  // background-image: url('../images/more-arrow-lt.png') ;
+  background-image: url('../images/nav-wedge-lt.png') ;
+}
+
+.anchor-strip {
+  height: 65px;
+  position: absolute;
+  width: 100%;
+  margin-top: -65px;
+}
+
