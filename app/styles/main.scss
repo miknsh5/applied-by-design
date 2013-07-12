@@ -91,14 +91,16 @@ h1 {
   color: $color-text-white;
   font-weight: 100;
   @include font-size(7);
+
+  &.services {
+    color: $color-blue;
+  }
 }
 
 h2 {
   // section titles, blog post titles, service section titles
   @include font-size(5);
   font-weight: 800;
-
-
 }
 
 
@@ -233,12 +235,17 @@ body {
   @include box-shadow(black 0px 0px 5px); 
   background-color: $color-text-whitewhite;
   min-height: 310px;
-  // margin: 170px 0;
   z-index: 10;
   position: relative;
-  // width: 100%;
 
+  .section-line {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+  }
 }
+
+
 
 .section-summary {
   background-color: rgba(0,0,0,0.8);
@@ -274,11 +281,6 @@ body {
     margin: 30px 0;
   }
 
-  // .btn-contact {
-    // margin-bottom: 30px;
-
-
-  // }
 }
 
 .section-first {
@@ -303,22 +305,8 @@ body {
   height: 580px;
   text-align: center;
   border-top: solid 1px #aaa;
-  // border-bottom: solid 1px #aaa;
-  border-bottom: solid 5px #f15a24;
+  border-bottom: solid 5px $color-blue;
 
-  // set height of last image based on media query
-  /* Desktop+ */
-  // @media (min-width: 980px) {
-  //   height: 760px;
-  // }
-  // /* Portrait tablet to landscape and desktop */
-  // @media (min-width: 768px) and (max-width: 979px) {
-  //   height: 440px;
-  // }
-  // /* Landscape phone to portrait tablet */
-  // @media (max-width: 767px) { 
-  //   height: 400px;
-  // }
 
   .btn-contact {
     width: 240px;
