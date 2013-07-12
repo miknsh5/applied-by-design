@@ -6,7 +6,7 @@ angular.module('appliedByDesignApp')
 
       // initialize Skrollr - only if not on a tablet or mobile device
       if (screen.width > 1000){
-        skrollr.init();
+        skrollr.init({forceHeight: false});
       }
 
       // smooth scroll to the strategy section
