@@ -22,6 +22,10 @@ angular.module('appliedByDesignApp', [])
       .when('/blog', {
         templateUrl: 'views/blog/index.html'
       })
+      .when('/routemap', {
+        templateUrl: 'views/routemap.html',
+        controller: 'RoutemapCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
