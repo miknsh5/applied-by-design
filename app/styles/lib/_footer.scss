@@ -5,6 +5,9 @@ footer {
   min-height: 80px;
   color: $color-text-gray;
   font-weight: 200;
+  border-top: solid 5px $color-orange;
+  // border-top: solid 5px $color-blue;
+
 
   p {
     @include font-size(1.7);

@@ -148,17 +148,27 @@ body {
 // 4.0 Homepage Formatting
 // __________________________________
 
-.landing-runway {
+.landing {
   @include background-size(cover);
-  background-image: url('../images/runway-02.jpg');
   z-index: 9;
   height: 600px;
   max-width: 100%;
   position: relative;
   margin-top: 60px;
   border-bottom: solid 5px #eee;
+
   @media (max-width: 480px) {
     height: 400px;
+  }
+
+  &.home {
+    background-image: url('../images/runway-02.jpg');
+
+  }
+
+  &.blog {
+    background-image: url('../images/seats-02.jpg');
+    height: 300px;
   }
 
 }
@@ -215,6 +225,10 @@ body {
   margin-top: 220px;
   z-index: 10;
 
+  &.blog {
+    margin-top: 80px;
+  }
+
   @media (max-width: 480px) {
     margin-top: 150px;
   }
@@ -226,10 +240,6 @@ body {
   }
 }
 
-// @media all and (max-width: 640px) {
-//   section
-
-// }
 
 .feature {
   @include box-shadow(black 0px 0px 5px); 
@@ -305,7 +315,6 @@ body {
   height: 580px;
   text-align: center;
   border-top: solid 1px #aaa;
-  border-bottom: solid 5px $color-blue;
 
 
   .btn-contact {
@@ -331,6 +340,12 @@ body {
   }
 }
 
+// BLOG
+//---------------
+
+.post-date {
+  
+}
 
 
 
