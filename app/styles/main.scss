@@ -34,7 +34,7 @@ $color-text-gray: #555555;
 
 $color-blue: rgb(48,128,178);
 $color-orange: rgb(241,90,36);
-// map colors to service types
+// mapping colors to service types
 $color-strategy: $color-slateblue;
 $color-design: $color-brightwhite;
 $color-development: $color-tope;
@@ -53,9 +53,7 @@ $divider-height: 470px;
 
 // My Styles
 //-------------------
-@import 'lib/icon-blocks';
-// @import 'lib/about-us';
-
+// @import 'lib/icon-blocks';
 @import 'lib/navigation'; 
 @import 'lib/footer'; 
 
@@ -76,8 +74,6 @@ html {
 }
 
 body {
-  // background-color: #eeeeee;
-  // width: 100%;
   // min-width: 1024px;
 }
 
@@ -377,10 +373,6 @@ body {
       i {
         margin-top: 0px !important;
       }
-    }
-
-    i {
-      // margin-top: 6px !important;
     }
   }
 }
