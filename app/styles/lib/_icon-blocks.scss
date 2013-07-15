@@ -61,6 +61,9 @@
   line-height: 2.2em;
   font-size: 2.5em;    
   position: relative;
+  margin: 0 auto;
+  display: block;
+  margin-top: -40px;
   @include transition(width 1s);
 
   .block-content {
@@ -78,22 +81,6 @@
   font-size: 2.5em;    
 }
 
-// the full title text before transition starts on the icon box
-// .section-title {
-//   @include transition(opacity 1s);
-//   @include transition(margin-top 1s);
-//   position: absolute;
-//   z-index: 100;
-//   font-weight: 100; 
-//   line-height: 2.2em;
-//   font-size: 2.5em; 
-//   width: 100%;
-//   margin-top: -59px; //-110px
-//   left: 0;
-//   opacity: 1;
-// }
-
-
 .short-title {
   @include transition(opacity 1s);
   opacity: 0;
@@ -110,17 +97,5 @@
   width: 100%;
   left: 0;
 }
-
-// .icn-strategy {
-//   width: 200px;
-// }
-
-// .icn-design {
-//   width: 180px;
-// }
-
-// .icn-development {
-//   width: 240px;
-// }
 
 

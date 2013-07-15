@@ -1,0 +1,39 @@
+// footer styles
+
+footer {
+  background-color: $color-black;
+  min-height: 80px;
+  color: $color-text-gray;
+  font-weight: 200;
+  border-top: solid 5px $color-orange;
+  // border-top: solid 5px $color-blue;
+
+
+  p {
+    @include font-size(1.7);
+    color: $color-text-gray;
+    text-align: center;
+    margin: 10px 0;
+  }
+  a {
+    color: $color-text-gray;
+  }
+  a:hover {
+    color: $color-text-gray;
+  }
+  .foot {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+  }
+  .copyright {
+    text-align: center;
+    position: relative;
+    margin: 10px 0;
+
+    /* Desktop+ */
+    @media (min-width: 767px) {
+      // center the copyright notice on large displays when multiple columns in footer row
+      margin: 10px 0 10px 20px;
+    }
+  }
+}

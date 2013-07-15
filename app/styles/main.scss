@@ -1,10 +1,11 @@
-@import "compass_twitter_bootstrap";
-@import "compass_twitter_bootstrap_responsive";
+// @import "compass_twitter_bootstrap";
+// @import "compass_twitter_bootstrap_responsive";
 @import "compass/css3/background-size";
 @import "compass/layout/grid-background";
 @import "compass/css3/images";
 @import "compass/css3/transform";
 @import "compass/css3/transition";
+@import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
 
 
@@ -24,7 +25,15 @@ $color-darkgray: rgb(80,80,80);
 $color-gray: #888888;
 $color-tope: rgb(115,106,97);
 $color-footer: rgb(46, 53, 61);
+$color-black: #222222;
+$color-text-black: $color-black;
+$color-text-white: #EEEEEE;
+$color-text-whitewhite: #FFFFFF;
+$color-text-gray: #555555;
 
+
+$color-blue: rgb(48,128,178);
+$color-orange: rgb(241,90,36);
 // map colors to service types
 $color-strategy: $color-slateblue;
 $color-design: $color-brightwhite;
@@ -34,443 +43,358 @@ $color-development: $color-tope;
 $section-height: 270px;
 $divider-height: 470px;
 
+// My Mixins
+//------------------
+// support for REM font sizing including IE8 fallback pixels
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
 // My Styles
-@import 'lib/section-titleblocks';
-@import 'lib/nav-buttons';
+//-------------------
 @import 'lib/icon-blocks';
-@import 'lib/services';
-@import 'lib/about-us';
+// @import 'lib/about-us';
+
+@import 'lib/navigation'; 
+@import 'lib/footer'; 
 
 
-// body {
-//   margin-top:40px;
-// }
+// 1.0 GLOBAL STYLES
+// ----------------------------------
 
-.logo {
-  background-image: url('../images/logo-01.png');
-  width: 160px;
-  height: 40px;
-  @include background-size(100%);
-  background-repeat: no-repeat;
-  margin-top: 4px;
-}
+html {
+  // controls REM sizing on all header styles
+  font-size: 62.5%;
 
-h1, h2, h3, h4 {
-  font-weight: 100;
-}
-
-.navbar .nav {
-  top: 7px;
-  font-size: 1.3em;
-  @media (max-width: 767px) { 
-    float: none;
-    margin: 0 auto;
+  @media (max-width: 480px) {
+    font-size: 40%;
+    h1 {
+      @include font-size(5);
+    }
   }
 }
 
-.navbar .brand {
-  @media (max-width: 767px) { 
-    float: none;
-    margin: 0 auto;
-  } 
+body {
+  // background-color: #eeeeee;
+  // width: 100%;
+  // min-width: 1024px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica Neue;
+  color: $color-text-black;
+  line-height: 1.1em;
+}
+h1 {
+  // page title, white font on dark background
+  color: $color-text-white;
+  font-weight: 100;
+  @include font-size(7);
+
+  &.services {
+    color: $color-blue;
+  }
+
+  &.name {
+    margin-left: -40px;
+  }
+}
+
+.nash-color {
+  color: $color-orange !important;
+}
+
+h2 {
+  // section titles, blog post titles, service section titles
+  @include font-size(5);
+  font-weight: 800;
+}
+
+
+h3 {
+  // section bylines
+  @include font-size(3);
+  font-style: italic;
+  color: $color-blue;
+  font-weight: 200;
+
+  &.about {
+    font-style: normal;
+    @include font-size(2.5);
+    // color: $color-text-gray;
+  }
+
+  &.title {
+    color: $color-black;
+    font-weight: 500;
+    @include font-size(1.8);
+  }
+}
+
+
+p {
+  @include font-size(2);
+  color: $color-text-black;
+  font-weight: 200;
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+
+// 1.1 GLOBAL LAYOUTS
+// ----------------------------------
 .page-wrapper {
-  margin: 0 auto;
-  padding: 0;
+  padding-top: 40px;
   height: auto;
   min-height: 100%;
 }
-
-@media (max-width: 767px) { 
-    body { 
-        padding-left: 0; 
-        padding-right: 0; 
-    } 
+body {
+  width: 100%;
+}
+@media (max-width: 979px) { 
+  body { 
+    padding-left: 0; 
+    padding-right: 0; 
+  } 
 } 
 
-.navbar { margin-left: 0; margin-right: 0; }
-.navbar-fixed-top {
-    margin-bottom: 0px !important;
-}
-
-.navbar-inner {
-  min-height: 50px;
-}
-// 2.1 - Global Helpers
-// ----------------------------------
-
-.header-offset {
-  margin-top: -400px;
-  @media (max-width: 767px) { 
-      margin-top: -500px;
-  } 
-
-  &.contact {
-    margin-top: -560px;
-    height: 500px;
-  }
-}
-
-.full-page {
-  padding: 0 20px;
-}
-
-.top-spacer {
-  margin-top: 50px;
-}
-
-.page-wrap {
-    margin-top: 50px;
-}
-
-.center {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.darktext {
-  color: $color-darkgray;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.skinny {
-  margin-left: 10px;
-
-  /* Landscape phone to portrait tablet */
-  @media (max-width: 767px) { 
-    margin-left: 0;
-  }
-
-}
-
-.slim {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.feature {
-  border-bottom: 1px solid #ccc;
-  padding: 20px 0;
-  position: relative;
-
-  .inner-feature {
-    position: relative;
-    width: 100%;
-  }
-
-  &.has-child {
-    border-bottom: none !important;
-    padding-bottom: 0;
-  }
-
-  &.contact-page {
-    // margin-top: -500px;
-
-    a {
-      color: rgb(139, 196, 224);
-      font-size: 1.4em;
-    }
-  }
-
-  h5 {
-    margin-bottom: 0;
-  }
-  h5:last-child {
-    margin-top: 0;
-  }
-
-  /* Desktop+ */
-  @media (min-width: 980px) {
-    h1 {
-      font-size: 6em;
-    }
-  }
-  /* Portrait tablet to landscape and desktop */
-  @media (min-width: 768px) and (max-width: 979px) {
-    h1 {
-      font-size: 5em;
-    }
-  }
-  /* Landscape phone to portrait tablet */
-  @media (max-width: 767px) { 
-    h1 {
-      font-size: 3em;
-    }
-  }
-
-  &.head {
-    min-height: 302px;
-  }
-
-}
-
-.feature-service {
-  text-align: left;
-  /* < Desktop */
-  @media (max-width: 767px) { 
-    text-align: center;
-  }
-
-}
-.feature-icon {
-  text-align: right;
-  margin-top: 15px;
-  
-  /* < Desktop */
-  @media (max-width: 767px) { 
-    text-align: center;
-  }
-}
-
-.feature-service.has-child {
-  padding-bottom: 20px;
-}
-
-.feature:first-child, .feature:last-child{
-  border-bottom: none;
-}
-
-// dark text overlayed on a light background
-.dk-on-lt {
-  h1 {
-    color: #333;
-  }
-  p {
-    color: #333;
-  }
-}
-// light text overlayed on a dark background
-.lt-on-dk {
-  h1 {
-    color: #DDD;
-  }
-  p {
-    color: #CCC;
-  }
-}
 
 // 4.0 Homepage Formatting
 // __________________________________
 
-
 .landing {
-  // background-image: url('../images/runway-02.jpg') ;
-  // background-position: center top;
-  // background-repeat: no-repeat;
-  // height: 640px;
-  text-align: center;
+  @include background-size(cover);
+  z-index: 9;
+  height: 600px;
+  max-width: 100%;
+  position: relative;
+  margin-top: 60px;
+  border-bottom: solid 5px #eee;
 
-  // @include background-size(cover);
-
-  // @media (max-width: 767px) { 
-    // @include background-size(800px 500px);
-    // height: 500px;
-  // }
-
-  .title-block {
-    color: $color-brightwhite;
-    max-width: 600px;
-    opacity: 1;
-
+  @media (max-width: 480px) {
+    height: 400px;
   }
-  .title-block-position {
-    position: relative;
-    top: 150px;
-    text-align: center;
-    margin: 0 auto;
+
+  &.home {
+    background-image: url('../images/runway-02.jpg');
 
   }
 
-  .service-blocks {
-    margin-top: 10px;
-  }
-
-  h1 {
-    line-height: 0.9em;
-    font-size: 5.0em;
-    
-    @media (min-width: 980px) {
-      font-size: 5.0em;
-    }
-    @media (max-width: 979px) {
-      font-size: 3.2em;
-      padding: 0 10px;
-    }
+  &.blog {
+    background-image: url('../images/seats-02.jpg');
+    height: 300px;
   }
 
 }
 
-.section {
-  // min-height: $section-height;
-  @include background-image(linear-gradient(center top, rgba(250,250,250,0.1), rgba(0,0,0,0.1))); 
+.img-spacer {
+  position: relative;
+  height: 400px;
+  z-index: -1;
 
-  &.strategy {
-    // background-color: $color-strategy;
-    background-color: $color-gray;
-    margin-top: -20px; //compensate for whitespace on upscroll
-  }
-  &.design {
-    // background-color: $color-design;
-    background-color: $color-gray;
-  }
-  &.development {
-    // background-color: $color-development;
-    background-color: $color-gray;
-  }
-  &.summary {
-    background-color: #EEE;
-    // text-align: center;
+  @media (max-width: 480px) {
+    height: 200px;
   }
 
-  .content {
-    // width: 80%;
-    margin:0 auto;
-    padding: 40px;
-    color: #eee;
-    font-weight: 100;
-    // margin-right: 30px;
-    .text-block {
-      display: inline-block;
-      text-align: left;
-      max-width: 400px;
-
-      @media (min-width: 768px) {
-        text-align: left;
-        max-width: 400px;
-      }
-      @media (max-width: 767px) {
-        text-align: center;
-        width: 100%;
-      }
-
-    }
-
-    .text-center {
-      text-align: center !important;
-    }
-
-    h2 {
-      margin-top: 0px;
-      font-weight: 500;
-      // color: #eee;
-    }
-    p {
-      font-size: 1.2em;
-
-    }
-  }
 }
 
-
-
-
-.section-divider {
+.skrollr-holder {
+  // visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 1180px;
+  width: 100%;
   background-position: center top;
   background-repeat: no-repeat;
   @include background-size(cover);
-  height: $divider-height;
-  border-top: solid 1px #666;
-  border-bottom: solid 1px #666;
 
-  &.img-landing {
-    background-image: url('../images/runway-02.jpg') ;
-    height: 640px; 
-    // margin-top: 40px;
+  &.runway {
+    background-image: url('../images/runway-02.jpg');
+    // z-index: 4;
   }
-  &.img-strategy {
-    background-image: url('../images/signage-02.jpg') ;
+  &.signage {
+    background-image: url('../images/signage-02.jpg');
+    z-index: -1;
   }
-  &.img-design {
-    background-image: url('../images/plane-02.jpg') ;
+  &.plane {
+    background-image: url('../images/plane-02.jpg');
+    z-index: -1;
   }
-  &.img-development {
-    background-image: url('../images/engine-01.jpg') ;
+  &.seats {
+    background-image: url('../images/seats-02.jpg');
+    z-index: -1;
   }
-  &.img-contact-blur {
-    background-image: url('../images/plane-blur_08.jpg') ;
-    height: 800px !important;
+  &.engine {
+    z-index: 4;
+    background-image: url('../images/engine-01.jpg');
   }
-  &.img-about-blur {
-    background-image: url('../images/gate-blur_07.jpg') ;
+}
+
+.greeting {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 220px;
+  z-index: 10;
+
+  &.blog {
+    margin-top: 80px;
   }
-  &.img-services-blur {
-    background-image: url('../images/runway-blur_07.jpg') ;
+
+  @media (max-width: 480px) {
+    margin-top: 150px;
+  }
+
+  .inner {
+    max-width: 600px;
+    margin: 0 auto;
+
   }
 }
 
 
+.feature {
+  @include box-shadow(black 0px 0px 5px); 
+  background-color: $color-text-whitewhite;
+  min-height: 310px;
+  z-index: 10;
+  position: relative;
+  padding-bottom: 20px;
+
+  .section-line {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin: 40px 0;
+    height: 20px;
+  }
+}
+
+.linkedin img {
+  vertical-align: bottom;
+}
+
+.section-summary {
+  background-color: rgba(0,0,0,0.8);
+  height: 100%;
+  // width: 100%;
+
+  .summary-logo {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  .inner.footer {
+    margin: 0 auto;
+    margin-top: 130px;
+    @media (max-width: 480px) {
+      margin-top: 0;
+    }
+    // text-align: center;
+  }
+
+  .inner.header {
+    margin: 0 auto;
+    // margin-top: 10px;
+    // text-align: center;
+  }
+
+  .inner.has-nav {
+    margin-bottom: 40px;
+  }
+
+  p {
+    color: $color-text-white;
+    margin: 30px 0;
+  }
+
+}
+
+.section-first {
+  margin-top: 200px;
+}
+
+.inner {
+  padding: 50px;
+  max-width: 680px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+
+
+
+.office {
+  @include background-size(cover);
+  background-image: url('../images/office-01.jpg') ;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: rgb(153,153,153);
+  height: 450px;
+  margin-bottom: -20px;  
+  border-top: solid 5px #ccc;
+
+}
+.profile-wedge {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 0 30px 30px;
+  display: inline-block;
+  margin-right: 10px;
+
+  &.ben {
+    border-color: transparent transparent $color-blue transparent;
+  }
+  &.nash {
+    border-color: transparent transparent $color-orange transparent;
+  }
+}
 
 .contact-us {
   background-image: url('../images/seats-02.jpg') ;
   background-repeat: no-repeat;
   @include background-size(cover);
-  height: 760px;
+  height: 580px;
   text-align: center;
   border-top: solid 1px #aaa;
-  border-bottom: solid 1px #aaa;
 
-  // set height of last image based on media query
-  /* Desktop+ */
-  @media (min-width: 980px) {
-    height: 760px;
-  }
-  /* Portrait tablet to landscape and desktop */
-  @media (min-width: 768px) and (max-width: 979px) {
-    height: 440px;
-  }
-  /* Landscape phone to portrait tablet */
-  @media (max-width: 767px) { 
-    height: 400px;
-  }
 
   .btn-contact {
-    width: 150px;
+    width: 240px;
     height: 35px;
-    font-size: 1.5em;
-    line-height: 33px;
+    font-size: 1.3em;
+    line-height: 35px;
     top: 120px;
-    position: relative;
+    margin-bottom: 10px;
+    // position: relative;
     
+    @media (max-width: 480px) {
+      width: 180px;  
+      font-size: 0.8em;
+      i {
+        margin-top: 0px !important;
+      }
+    }
+
     i {
-      margin-top: 6px !important;
+      // margin-top: 6px !important;
     }
   }
 }
 
-
-
-
-footer {
-  background-color: $color-footer;
-  min-height: 80px;
-  color: #666666;
-  font-weight: 200;
-
-  a {
-    color: #888888;
-  }
-  a:hover {
-    color: #AAAAAA;
-  }
-  .city {
-  }
-  .contact {
-    p {
-      line-height: 1em;
-    }
-  }
-  .foot {
-    padding-top: 10px;
-    padding-bottom: 0;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #444;
-  }
-  .copyright {
-    position: relative;
-    bottom: 10px;
-  }
+.btn-bio {
+  margin-top: 10px;
 }
+
+// BLOG
+//---------------
+
+.post-date {
+
+}
+
+
+

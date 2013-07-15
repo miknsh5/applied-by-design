@@ -1,9 +1,15 @@
 
 // Navigation Arrows
 
-#nav-scroll-down {
+.nav-arrow-dark {
+}
+.nav-arrow-light {
+  background-image: url('../images/more-arrow-lt.png') ;
+}
+
+.nav-scroll-down {
+  background-image: url('../images/more-arrow-dk.png') ;
   @include transition(top .1s);
-  background-image: url('../images/more-arrow-2.png') ;
   background-repeat: no-repeat;
   width: 110px;
   height: 110px;
