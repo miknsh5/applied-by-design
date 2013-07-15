@@ -1,4 +1,6 @@
 'use strict';
+/*global $:false */
+/*global skrollr:false */
 
 angular.module('appliedByDesignApp')
   .controller('ServicesCtrl', function ($scope) {

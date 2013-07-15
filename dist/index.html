@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -10,68 +11,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Applied by Design</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/6255e110.main.css">
 
+
+
+    <link rel="stylesheet" href="styles/4a552dbf.main.css">
     <!--[if lt IE 9]>
-      <script src="components/respond/respond.min.js"></script>
       <script>
-         document.createElement('section');
-         document.createElement('footer');
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('footer');
       </script>
-      <script src="components/es5-shim/es5-shim.js"></script>
-      <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
   </head>
   <body ng-app="appliedByDesignApp">
 
-    <!--[if lt IE 9]>
-      <script src="components/respond.min.js"></script>
-      <script>
-         document.createElement('section');
-         document.createElement('footer');
-      </script>
-      <script src="components/es5-shim/es5-shim.js"></script>
-      <script src="components/json3/lib/json3.min.js"></script>
-    <![endif]-->
 
     <!-- PRIMARY NAVIGATION -->
-    <div class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
 
-          <a class="brand logo" href="#"></a>
-
-          <ul class="nav pull-right">
-            <!-- <li class="active"><a href="#">AxD Blog</a></li> -->
-            <li><a href="#/services/">Services</a></li>
-            <li><a href="#/about/">About</a></li>
-            <li><a href="#/contact/">Contact</a></li>
+    <header>
+      <div class="container">
+        <nav>
+          <a class="logo" href="/#/">
+            <img src="../images/e29b90da.logo-blue-lt.png" alt="Applied by Design">
+            <!-- <img src="../images/20af8386.logo-04-lt.png" alt="Applied by Design"> -->
+          </a>
+            
+          <ul class="nav-list pull-right">
+            <!-- <li class="active"><a href="#">Thoughts</a></li> -->
+            <li class="nav-btn"><a href="#/services/">Services</a></li>
+            <li class="nav-btn"><a href="#/about/">About</a></li>
+            <!-- <li class="nav-btn"><a href="#/blog/">Thoughts</a></li> -->
+            <li id="contact-info" class="nav-btn"><a>Contact</a></li>
           </ul>
-
-        </div>
+        </nav>
       </div>
-    </div>
+
+    </header> 
+
     <!-- END PRIMARY NAVIGATION -->
+
 
 
     <!-- Add your site or application content here -->
 
     <!--[if lt IE 9]>
-      <p style="margin-top: 40px; background-color: red">
-        You are using an embarassingly outdated browser...(IE8) - so outdated that we needed to make an error message specifically for you!  Please upgrade to a more modern browser (Firefox, Chrome, IE9+, Safari)
+      <p style="margin: 80px 40px; background-color: red; text-align: center; padding: 10px;">
+        Uh oh! You are using an embarassingly outdated browser - so outdated that we needed to make this error message just for you.  Get with the times!  Please upgrade to a more modern browser (Firefox, Chrome, IE9+, Safari).
       </p>
     <![endif]-->
 
 
-    <div class="" ng-view=""></div>
+    <div ng-view=""></div>
 
 
     <!-- BEGIN FOOTER -->
     
-    <footer class="center">
+
+    <div id="contact-anchor" class="anchor-strip"></div>
+
+    <div class="contact-us">
+      <section class="section-summary">
+        <div class="container">
+
+          <div class="inner footer">
+            <div class="summary-logo">
+              <img src="../images/20af8386.logo-04-lt.png">
+            </div>
+              <p>A continuous and concurrent focus on project strategy, experience design and engineering development throughout the life of your project.</p>
+
+              <a href="mailto:info@appliedbydesign.com">
+                <div class="btn btn-info btn-large btn-contact">
+                  <i class="icon-envelope icon-white"> </i> info@appliedbydesign.com
+                </div>
+              </a>
+
+              <div class="btn btn-info btn-large btn-contact">
+                <i class="icon-signal icon-white"> </i> 206-331-4529
+              </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
       <div class="container">
         <div class="row foot">
           <div class="span4 city">
@@ -81,26 +109,28 @@
             <a href="mailto:info@appliedbydesign.com">
               <p><i class="icon-envelope"> </i> info@appliedbydesign.com</p>
             </a>
-
           </div>
+
           <div class="span4 phone">
             <a href="tel:+12063314529"><p> <i class="icon-signal"> </i> 206-331-4529</p></a>
           </div>
         </div>
         <div class="row">
-          <div class="span12 copyright">© Applied by Design 2013</div>
+          <div class="span12 copyright"><p>© Applied by Design 2013</p></div>
         </div>
       </div>
     </footer>
     <!-- END FOOTER -->
 
-    <script src="components/angular/angular.js"></script>
+    <script src="components/angular/angular.js"></script> 
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
     <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/modernizr/modernizr.js"></script>
+    <script src="components/skrollr/dist/skrollr.min.js"></script>
     <script src="components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 
 
-    <script src="scripts/24a5dccc.scripts.js"></script>
+    <script src="scripts/ad54a84e.scripts.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -116,3 +146,4 @@
 
 
   </body>
+</html>

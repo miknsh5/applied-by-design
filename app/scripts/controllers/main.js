@@ -1,8 +1,9 @@
 'use strict';
 /*global $:false */
+/*global skrollr:false */
 
 angular.module('appliedByDesignApp')
-    .controller('MainCtrl', function ($scope) {
+    .controller('MainCtrl', function () {
 
       // initialize Skrollr - only if not on a tablet or mobile device
       if (screen.width > 1000){
