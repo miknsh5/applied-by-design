@@ -94,7 +94,12 @@ h1 {
 
   &.services {
     color: $color-blue;
+    margin-left: -40px;
   }
+}
+
+.nash-color {
+  color: $color-orange !important;
 }
 
 h2 {
@@ -115,6 +120,12 @@ h3 {
     font-style: normal;
     @include font-size(2.5);
     // color: $color-text-gray;
+  }
+
+  &.title {
+    color: $color-black;
+    font-weight: 500;
+    @include font-size(1.8);
   }
 }
 
@@ -258,7 +269,7 @@ body {
 }
 
 .linkedin img {
-  vertical-align: top;
+  vertical-align: bottom;
 }
 
 .section-summary {
@@ -323,7 +334,21 @@ body {
   border-top: solid 5px #ccc;
 
 }
+.profile-wedge {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 0 30px 30px;
+  display: inline-block;
+  margin-right: 10px;
 
+  &.ben {
+    border-color: transparent transparent $color-blue transparent;
+  }
+  &.nash {
+    border-color: transparent transparent $color-orange transparent;
+  }
+}
 
 .contact-us {
   background-image: url('../images/seats-02.jpg') ;
