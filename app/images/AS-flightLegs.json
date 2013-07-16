@@ -1,0 +1,4760 @@
+[
+        {
+            "origin": {
+                "name": "Merle K Airport (Mudhole) Smith",
+                "city": "Cordova",
+                "country": "US",
+                "iata_code": "CDV",
+                "latitude_deg": 60.4916666666667,
+                "longitude_deg": -145.4775
+            },
+            "destination": {
+                "name": "Yakutat",
+                "city": "Yakutat",
+                "country": "US",
+                "iata_code": "YAK",
+                "latitude_deg": 59.5033333333333,
+                "longitude_deg": -139.660277777778
+            },
+            "route": {
+                "distance_mi": 213,
+                "distance_nm": 185.091888,
+                "heading_deg": 106.2,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 290.16,
+                "pax": 35,
+                "lf": 0.2433,
+                "revenue": 314823.6,
+                "fuel": 70361.568,
+                "maint": 26817.050445283,
+                "crew": 28144.6272,
+                "otherop": 21108.4704,
+                "nonop": 84433.8816,
+                "totalcost": 230865.597645283,
+                "profit": 83958.0023547171
+            }
+        },
+        {
+            "origin": {
+                "name": "Yakutat",
+                "city": "Yakutat",
+                "country": "US",
+                "iata_code": "YAK",
+                "latitude_deg": 59.5033333333333,
+                "longitude_deg": -139.660277777778
+            },
+            "destination": {
+                "name": "Merle K Airport (Mudhole) Smith",
+                "city": "Cordova",
+                "country": "US",
+                "iata_code": "CDV",
+                "latitude_deg": 60.4916666666667,
+                "longitude_deg": -145.4775
+            },
+            "route": {
+                "distance_mi": 213,
+                "distance_nm": 185.091888,
+                "heading_deg": 291.2,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 334.8,
+                "pax": 19,
+                "lf": 0.2625,
+                "revenue": 197197.2,
+                "fuel": 35180.784,
+                "maint": 13408.5252226415,
+                "crew": 14072.3136,
+                "otherop": 10554.2352,
+                "nonop": 42216.9408,
+                "totalcost": 115432.798822641,
+                "profit": 81764.4011773585
+            }
+        },
+        {
+            "origin": {
+                "name": "Yakutat",
+                "city": "Yakutat",
+                "country": "US",
+                "iata_code": "YAK",
+                "latitude_deg": 59.5033333333333,
+                "longitude_deg": -139.660277777778
+            },
+            "destination": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "route": {
+                "distance_mi": 198,
+                "distance_nm": 172.057248,
+                "heading_deg": 111.4,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 245.52,
+                "pax": 41,
+                "lf": 0.2813,
+                "revenue": 312055.92,
+                "fuel": 65406.528,
+                "maint": 24928.5257660377,
+                "crew": 26162.6112,
+                "otherop": 19621.9584,
+                "nonop": 78487.8336,
+                "totalcost": 214607.456966038,
+                "profit": 97448.4630339622
+            }
+        },
+        {
+            "origin": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "destination": {
+                "name": "Yakutat",
+                "city": "Yakutat",
+                "country": "US",
+                "iata_code": "YAK",
+                "latitude_deg": 59.5033333333333,
+                "longitude_deg": -139.660277777778
+            },
+            "route": {
+                "distance_mi": 198,
+                "distance_nm": 172.057248,
+                "heading_deg": 295.8,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 287.37,
+                "pax": 24,
+                "lf": 0.3375,
+                "revenue": 213803.28,
+                "fuel": 32703.264,
+                "maint": 12464.2628830189,
+                "crew": 13081.3056,
+                "otherop": 9810.9792,
+                "nonop": 39243.9168,
+                "totalcost": 107303.728483019,
+                "profit": 106499.551516981
+            }
+        },
+        {
+            "origin": {
+                "name": "Ralph Wien Memorial Airport",
+                "city": "Kotzebue",
+                "country": "US",
+                "iata_code": "OTZ",
+                "latitude_deg": 66.8847222222222,
+                "longitude_deg": -162.598611111111
+            },
+            "destination": {
+                "name": "Nome",
+                "city": "Nome",
+                "country": "US",
+                "iata_code": "OME",
+                "latitude_deg": 64.5122222222222,
+                "longitude_deg": -165.445277777778
+            },
+            "route": {
+                "distance_mi": 183,
+                "distance_nm": 159.022608,
+                "heading_deg": 207.6,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 12
+            },
+            "financial": {
+                "fare": 265.05,
+                "pax": 55,
+                "lf": 0.384,
+                "revenue": 174933,
+                "fuel": 23400.576,
+                "maint": 8918.71009811321,
+                "crew": 9360.2304,
+                "otherop": 7020.1728,
+                "nonop": 28080.6912,
+                "totalcost": 76780.3804981132,
+                "profit": 98152.6195018868
+            }
+        },
+        {
+            "origin": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "destination": {
+                "name": "Kodiak",
+                "city": "Kodiak",
+                "country": "US",
+                "iata_code": "ADQ",
+                "latitude_deg": 57.75,
+                "longitude_deg": -152.493888888889
+            },
+            "route": {
+                "distance_mi": 253,
+                "distance_nm": 219.850928,
+                "heading_deg": 201.4,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 482.67,
+                "pax": 56,
+                "lf": 0.3859,
+                "revenue": 189206.64,
+                "fuel": 18871.776,
+                "maint": 7192.63915471698,
+                "crew": 7548.7104,
+                "otherop": 5661.5328,
+                "nonop": 22646.1312,
+                "totalcost": 61920.789554717,
+                "profit": 127285.850445283
+            }
+        },
+        {
+            "origin": {
+                "name": "Wrangell",
+                "city": "Wrangell",
+                "country": "US",
+                "iata_code": "WRG",
+                "latitude_deg": 56.4844444444444,
+                "longitude_deg": -132.369722222222
+            },
+            "destination": {
+                "name": "Petersburg James A Johnson Airport",
+                "city": "Petersburg",
+                "country": "US",
+                "iata_code": "PSG",
+                "latitude_deg": 56.8013888888889,
+                "longitude_deg": -132.946111111111
+            },
+            "route": {
+                "distance_mi": 31,
+                "distance_nm": 26.938256,
+                "heading_deg": 315.2,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 142.29,
+                "pax": 57,
+                "lf": 0.3959,
+                "revenue": 251426.43,
+                "fuel": 10240.416,
+                "maint": 3902.95100377359,
+                "crew": 4096.1664,
+                "otherop": 3072.1248,
+                "nonop": 12288.4992,
+                "totalcost": 33600.1574037736,
+                "profit": 217826.272596226
+            }
+        },
+        {
+            "origin": {
+                "name": "Ketchikan Intl",
+                "city": "Ketchikan",
+                "country": "US",
+                "iata_code": "KTN",
+                "latitude_deg": 55.3541666666667,
+                "longitude_deg": -131.711111111111
+            },
+            "destination": {
+                "name": "Wrangell",
+                "city": "Wrangell",
+                "country": "US",
+                "iata_code": "WRG",
+                "latitude_deg": 56.4844444444444,
+                "longitude_deg": -132.369722222222
+            },
+            "route": {
+                "distance_mi": 82,
+                "distance_nm": 71.256032,
+                "heading_deg": 342.2,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 198.09,
+                "pax": 58,
+                "lf": 0.4003,
+                "revenue": 356165.82,
+                "fuel": 27087.552,
+                "maint": 10323.9349132075,
+                "crew": 10835.0208,
+                "otherop": 8126.2656,
+                "nonop": 32505.0624,
+                "totalcost": 88877.8357132075,
+                "profit": 267287.984286792
+            }
+        },
+        {
+            "origin": {
+                "name": "Kodiak",
+                "city": "Kodiak",
+                "country": "US",
+                "iata_code": "ADQ",
+                "latitude_deg": 57.75,
+                "longitude_deg": -152.493888888889
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 253,
+                "distance_nm": 219.850928,
+                "heading_deg": 19.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 493.83,
+                "pax": 59,
+                "lf": 0.4103,
+                "revenue": 174815.82,
+                "fuel": 16175.808,
+                "maint": 6165.1192754717,
+                "crew": 6470.3232,
+                "otherop": 4852.7424,
+                "nonop": 19410.9696,
+                "totalcost": 53074.9624754717,
+                "profit": 121740.857524528
+            }
+        },
+        {
+            "origin": {
+                "name": "Merle K Airport (Mudhole) Smith",
+                "city": "Cordova",
+                "country": "US",
+                "iata_code": "CDV",
+                "latitude_deg": 60.4916666666667,
+                "longitude_deg": -145.4775
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 160,
+                "distance_nm": 139.03616,
+                "heading_deg": 289.1,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 276.21,
+                "pax": 30,
+                "lf": 0.4134,
+                "revenue": 256875.3,
+                "fuel": 26426.88,
+                "maint": 10072.1316226415,
+                "crew": 10570.752,
+                "otherop": 7928.064,
+                "nonop": 31712.256,
+                "totalcost": 86710.0836226415,
+                "profit": 170165.216377358
+            }
+        },
+        {
+            "origin": {
+                "name": "Petersburg James A Johnson Airport",
+                "city": "Petersburg",
+                "country": "US",
+                "iata_code": "PSG",
+                "latitude_deg": 56.8013888888889,
+                "longitude_deg": -132.946111111111
+            },
+            "destination": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "route": {
+                "distance_mi": 123,
+                "distance_nm": 106.884048,
+                "heading_deg": 331.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 245.52,
+                "pax": 68,
+                "lf": 0.4709,
+                "revenue": 517556.16,
+                "fuel": 40631.328,
+                "maint": 15485.9023698113,
+                "crew": 16252.5312,
+                "otherop": 12189.3984,
+                "nonop": 48757.5936,
+                "totalcost": 133316.753569811,
+                "profit": 384239.406430189
+            }
+        },
+        {
+            "origin": {
+                "name": "Nome",
+                "city": "Nome",
+                "country": "US",
+                "iata_code": "OME",
+                "latitude_deg": 64.5122222222222,
+                "longitude_deg": -165.445277777778
+            },
+            "destination": {
+                "name": "Ralph Wien Memorial Airport",
+                "city": "Kotzebue",
+                "country": "US",
+                "iata_code": "OTZ",
+                "latitude_deg": 66.8847222222222,
+                "longitude_deg": -162.598611111111
+            },
+            "route": {
+                "distance_mi": 183,
+                "distance_nm": 159.022608,
+                "heading_deg": 25,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 359.91,
+                "pax": 68,
+                "lf": 0.4746,
+                "revenue": 244738.8,
+                "fuel": 19500.48,
+                "maint": 7432.25841509434,
+                "crew": 7800.192,
+                "otherop": 5850.144,
+                "nonop": 23400.576,
+                "totalcost": 63983.6504150943,
+                "profit": 180755.149584906
+            }
+        },
+        {
+            "origin": {
+                "name": "Nome",
+                "city": "Nome",
+                "country": "US",
+                "iata_code": "OME",
+                "latitude_deg": 64.5122222222222,
+                "longitude_deg": -165.445277777778
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 539,
+                "distance_nm": 468.378064,
+                "heading_deg": 108.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 549.63,
+                "pax": 70,
+                "lf": 0.4874,
+                "revenue": 384741,
+                "fuel": 57435.84,
+                "maint": 21890.6409056604,
+                "crew": 22974.336,
+                "otherop": 17230.752,
+                "nonop": 68923.008,
+                "totalcost": 188454.57690566,
+                "profit": 196286.42309434
+            }
+        },
+        {
+            "origin": {
+                "name": "Sitka Rocky Gutierrez Airport",
+                "city": "Sitka",
+                "country": "US",
+                "iata_code": "SIT",
+                "latitude_deg": 57.0472222222222,
+                "longitude_deg": -135.361666666667
+            },
+            "destination": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "route": {
+                "distance_mi": 95,
+                "distance_nm": 82.55272,
+                "heading_deg": 17.5,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 15
+            },
+            "financial": {
+                "fare": 234.36,
+                "pax": 70,
+                "lf": 0.4895,
+                "revenue": 246078,
+                "fuel": 15184.8,
+                "maint": 5787.41433962264,
+                "crew": 6073.92,
+                "otherop": 4555.44,
+                "nonop": 18221.76,
+                "totalcost": 49823.3343396226,
+                "profit": 196254.665660377
+            }
+        },
+        {
+            "origin": {
+                "name": "Petersburg James A Johnson Airport",
+                "city": "Petersburg",
+                "country": "US",
+                "iata_code": "PSG",
+                "latitude_deg": 56.8013888888889,
+                "longitude_deg": -132.946111111111
+            },
+            "destination": {
+                "name": "Wrangell",
+                "city": "Wrangell",
+                "country": "US",
+                "iata_code": "WRG",
+                "latitude_deg": 56.4844444444444,
+                "longitude_deg": -132.369722222222
+            },
+            "route": {
+                "distance_mi": 31,
+                "distance_nm": 26.938256,
+                "heading_deg": 134.7,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 153.45,
+                "pax": 38,
+                "lf": 0.5265,
+                "revenue": 180764.1,
+                "fuel": 5120.208,
+                "maint": 1951.47550188679,
+                "crew": 2048.0832,
+                "otherop": 1536.0624,
+                "nonop": 6144.2496,
+                "totalcost": 16800.0787018868,
+                "profit": 163964.021298113
+            }
+        },
+        {
+            "origin": {
+                "name": "Bethel",
+                "city": "Bethel",
+                "country": "US",
+                "iata_code": "BET",
+                "latitude_deg": 60.7786111111111,
+                "longitude_deg": -161.837222222222
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 399,
+                "distance_nm": 346.721424,
+                "heading_deg": 80.9,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 677.97,
+                "pax": 38,
+                "lf": 0.5342,
+                "revenue": 257628.6,
+                "fuel": 21258.72,
+                "maint": 8102.3800754717,
+                "crew": 8503.488,
+                "otherop": 6377.616,
+                "nonop": 25510.464,
+                "totalcost": 69752.6680754717,
+                "profit": 187875.931924528
+            }
+        },
+        {
+            "origin": {
+                "name": "Wrangell",
+                "city": "Wrangell",
+                "country": "US",
+                "iata_code": "WRG",
+                "latitude_deg": 56.4844444444444,
+                "longitude_deg": -132.369722222222
+            },
+            "destination": {
+                "name": "Ketchikan Intl",
+                "city": "Ketchikan",
+                "country": "US",
+                "iata_code": "KTN",
+                "latitude_deg": 55.3541666666667,
+                "longitude_deg": -131.711111111111
+            },
+            "route": {
+                "distance_mi": 82,
+                "distance_nm": 71.256032,
+                "heading_deg": 161.6,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 214.83,
+                "pax": 38,
+                "lf": 0.5343,
+                "revenue": 253069.74,
+                "fuel": 13543.776,
+                "maint": 5161.96745660377,
+                "crew": 5417.5104,
+                "otherop": 4063.1328,
+                "nonop": 16252.5312,
+                "totalcost": 44438.9178566038,
+                "profit": 208630.822143396
+            }
+        },
+        {
+            "origin": {
+                "name": "Fairbanks Intl",
+                "city": "Fairbanks",
+                "country": "US",
+                "iata_code": "FAI",
+                "latitude_deg": 64.815,
+                "longitude_deg": -147.856388888889
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 261,
+                "distance_nm": 226.802736,
+                "heading_deg": 195.9,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 337.59,
+                "pax": 78,
+                "lf": 0.5388,
+                "revenue": 184324.14,
+                "fuel": 19468.512,
+                "maint": 7420.07438490566,
+                "crew": 7787.4048,
+                "otherop": 5840.5536,
+                "nonop": 23362.2144,
+                "totalcost": 63878.7591849057,
+                "profit": 120445.380815094
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Ketchikan Intl",
+                "city": "Ketchikan",
+                "country": "US",
+                "iata_code": "KTN",
+                "latitude_deg": 55.3541666666667,
+                "longitude_deg": -131.711111111111
+            },
+            "route": {
+                "distance_mi": 680,
+                "distance_nm": 590.90368,
+                "heading_deg": 327,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 15
+            },
+            "financial": {
+                "fare": 571.95,
+                "pax": 83,
+                "lf": 0.5776,
+                "revenue": 712077.75,
+                "fuel": 108691.2,
+                "maint": 41425.7026415094,
+                "crew": 43476.48,
+                "otherop": 32607.36,
+                "nonop": 130429.44,
+                "totalcost": 356630.182641509,
+                "profit": 355447.567358491
+            }
+        },
+        {
+            "origin": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 909,
+                "distance_nm": 789.899184,
+                "heading_deg": 140.7,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 605.43,
+                "pax": 86,
+                "lf": 0.5952,
+                "revenue": 260334.9,
+                "fuel": 48431.52,
+                "maint": 18458.8057358491,
+                "crew": 19372.608,
+                "otherop": 14529.456,
+                "nonop": 58117.824,
+                "totalcost": 158910.213735849,
+                "profit": 101424.686264151
+            }
+        },
+        {
+            "origin": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 909,
+                "distance_nm": 789.899184,
+                "heading_deg": 140.7,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 605.43,
+                "pax": 86,
+                "lf": 0.5952,
+                "revenue": 260334.9,
+                "fuel": 48431.52,
+                "maint": 18458.8057358491,
+                "crew": 19372.608,
+                "otherop": 14529.456,
+                "nonop": 58117.824,
+                "totalcost": 158910.213735849,
+                "profit": 101424.686264151
+            }
+        },
+        {
+            "origin": {
+                "name": "Ketchikan Intl",
+                "city": "Ketchikan",
+                "country": "US",
+                "iata_code": "KTN",
+                "latitude_deg": 55.3541666666667,
+                "longitude_deg": -131.711111111111
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 680,
+                "distance_nm": 590.90368,
+                "heading_deg": 139.6,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 15
+            },
+            "financial": {
+                "fare": 569.16,
+                "pax": 44,
+                "lf": 0.6148,
+                "revenue": 375645.6,
+                "fuel": 54345.6,
+                "maint": 20712.8513207547,
+                "crew": 21738.24,
+                "otherop": 16303.68,
+                "nonop": 65214.72,
+                "totalcost": 178315.091320755,
+                "profit": 197330.508679245
+            }
+        },
+        {
+            "origin": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 571,
+                "distance_nm": 496.185296,
+                "heading_deg": 296.5,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 20
+            },
+            "financial": {
+                "fare": 552.42,
+                "pax": 90,
+                "lf": 0.6266,
+                "revenue": 994356,
+                "fuel": 121691.52,
+                "maint": 46380.5415849057,
+                "crew": 48676.608,
+                "otherop": 36507.456,
+                "nonop": 146029.824,
+                "totalcost": 399285.949584906,
+                "profit": 595070.050415094
+            }
+        },
+        {
+            "origin": {
+                "name": "Norman Y. Mineta San José Intl",
+                "city": "San José",
+                "country": "US",
+                "iata_code": "SJC",
+                "latitude_deg": 37.3627777777778,
+                "longitude_deg": -121.929166666667
+            },
+            "destination": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "route": {
+                "distance_mi": 1219,
+                "distance_nm": 1059.281744,
+                "heading_deg": 140,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 3
+            },
+            "financial": {
+                "fare": 292.95,
+                "pax": 96,
+                "lf": 0.6647,
+                "revenue": 84369.6,
+                "fuel": 38968.992,
+                "maint": 14852.3328,
+                "crew": 15587.5968,
+                "otherop": 11690.6976,
+                "nonop": 46762.7904,
+                "totalcost": 127862.4096,
+                "profit": -43492.8096
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "route": {
+                "distance_mi": 909,
+                "distance_nm": 789.899184,
+                "heading_deg": 330.6,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 613.8,
+                "pax": 48,
+                "lf": 0.6704,
+                "revenue": 235699.2,
+                "fuel": 38745.216,
+                "maint": 14767.0445886792,
+                "crew": 15498.0864,
+                "otherop": 11623.5648,
+                "nonop": 46494.2592,
+                "totalcost": 127128.170988679,
+                "profit": 108571.029011321
+            }
+        },
+        {
+            "origin": {
+                "name": "Juneau Intl",
+                "city": "Juneau",
+                "country": "US",
+                "iata_code": "JNU",
+                "latitude_deg": 58.355,
+                "longitude_deg": -134.576388888889
+            },
+            "destination": {
+                "name": "Petersburg James A Johnson Airport",
+                "city": "Petersburg",
+                "country": "US",
+                "iata_code": "PSG",
+                "latitude_deg": 56.8013888888889,
+                "longitude_deg": -132.946111111111
+            },
+            "route": {
+                "distance_mi": 123,
+                "distance_nm": 106.884048,
+                "heading_deg": 149.9,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 220.41,
+                "pax": 49,
+                "lf": 0.6758,
+                "revenue": 334802.79,
+                "fuel": 20315.664,
+                "maint": 7742.95118490566,
+                "crew": 8126.2656,
+                "otherop": 6094.6992,
+                "nonop": 24378.7968,
+                "totalcost": 66658.3767849057,
+                "profit": 268144.413215094
+            }
+        },
+        {
+            "origin": {
+                "name": "Palm Springs Intl",
+                "city": "Palm Springs",
+                "country": "US",
+                "iata_code": "PSP",
+                "latitude_deg": 33.8297222222222,
+                "longitude_deg": -116.506666666667
+            },
+            "destination": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "route": {
+                "distance_mi": 421,
+                "distance_nm": 365.838896,
+                "heading_deg": 310.1,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 11
+            },
+            "financial": {
+                "fare": 253.89,
+                "pax": 102,
+                "lf": 0.7102,
+                "revenue": 284864.58,
+                "fuel": 49347.936,
+                "maint": 18808.0812679245,
+                "crew": 19739.1744,
+                "otherop": 14804.3808,
+                "nonop": 59217.5232,
+                "totalcost": 161917.095667925,
+                "profit": 122947.484332075
+            }
+        },
+        {
+            "origin": {
+                "name": "John Wayne Airport-Orange County",
+                "city": "Santa Ana",
+                "country": "US",
+                "iata_code": "SNA",
+                "latitude_deg": 33.6755555555556,
+                "longitude_deg": -117.868333333333
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 978,
+                "distance_nm": 849.858528,
+                "heading_deg": 347.6,
+                "equipment": "BOEING 737-700",
+                "capacity": 124,
+                "frequency": 9
+            },
+            "financial": {
+                "fare": 382.23,
+                "pax": 89,
+                "lf": 0.7154,
+                "revenue": 306166.23,
+                "fuel": 80767.152,
+                "maint": 30782.9522716981,
+                "crew": 32306.8608,
+                "otherop": 24230.1456,
+                "nonop": 96920.5824,
+                "totalcost": 265007.693071698,
+                "profit": 41158.5369283019
+            }
+        },
+        {
+            "origin": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "destination": {
+                "name": "Chicago O'Hare Intl",
+                "city": "Chicago",
+                "country": "US",
+                "iata_code": "ORD",
+                "latitude_deg": 41.9816666666667,
+                "longitude_deg": -87.9066666666667
+            },
+            "route": {
+                "distance_mi": 1739,
+                "distance_nm": 1511.149264,
+                "heading_deg": 85.7,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 577.53,
+                "pax": 123,
+                "lf": 0.7161,
+                "revenue": 355180.95,
+                "fuel": 110669.96,
+                "maint": 42179.8715471698,
+                "crew": 44267.984,
+                "otherop": 33200.988,
+                "nonop": 132803.952,
+                "totalcost": 363122.75554717,
+                "profit": -7941.80554716982
+            }
+        },
+        {
+            "origin": {
+                "name": "Ralph Wien Memorial Airport",
+                "city": "Kotzebue",
+                "country": "US",
+                "iata_code": "OTZ",
+                "latitude_deg": 66.8847222222222,
+                "longitude_deg": -162.598611111111
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 548,
+                "distance_nm": 476.198848,
+                "heading_deg": 130.1,
+                "equipment": "BOEING 737-400 Mixed Config",
+                "capacity": 72,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 602.64,
+                "pax": 52,
+                "lf": 0.7163,
+                "revenue": 313372.8,
+                "fuel": 29197.44,
+                "maint": 11128.0809056604,
+                "crew": 11678.976,
+                "otherop": 8759.232,
+                "nonop": 35036.928,
+                "totalcost": 95800.6569056604,
+                "profit": 217572.14309434
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "John Wayne Airport-Orange County",
+                "city": "Santa Ana",
+                "country": "US",
+                "iata_code": "SNA",
+                "latitude_deg": 33.6755555555556,
+                "longitude_deg": -117.868333333333
+            },
+            "route": {
+                "distance_mi": 978,
+                "distance_nm": 849.858528,
+                "heading_deg": 164.7,
+                "equipment": "BOEING 737-700",
+                "capacity": 124,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 373.86,
+                "pax": 90,
+                "lf": 0.7243,
+                "revenue": 269179.2,
+                "fuel": 71793.024,
+                "maint": 27362.6242415094,
+                "crew": 28717.2096,
+                "otherop": 21537.9072,
+                "nonop": 86151.6288,
+                "totalcost": 235562.393841509,
+                "profit": 33616.8061584905
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Metropolitan Oakland Intl",
+                "city": "Oakland",
+                "country": "US",
+                "iata_code": "OAK",
+                "latitude_deg": 37.7213888888889,
+                "longitude_deg": -122.220833333333
+            },
+            "route": {
+                "distance_mi": 672,
+                "distance_nm": 583.951872,
+                "heading_deg": 179.6,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 318.06,
+                "pax": 105,
+                "lf": 0.7266,
+                "revenue": 1035285.3,
+                "fuel": 221985.792,
+                "maint": 84605.9056301887,
+                "crew": 88794.3168,
+                "otherop": 66595.7376,
+                "nonop": 266382.9504,
+                "totalcost": 728364.702430189,
+                "profit": 306920.597569811
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Sacramento Intl",
+                "city": "Sacramento",
+                "country": "US",
+                "iata_code": "SMF",
+                "latitude_deg": 38.6955555555556,
+                "longitude_deg": -121.590833333333
+            },
+            "route": {
+                "distance_mi": 605,
+                "distance_nm": 525.73048,
+                "heading_deg": 176.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 312.48,
+                "pax": 105,
+                "lf": 0.7274,
+                "revenue": 131241.6,
+                "fuel": 25787.52,
+                "maint": 9828.45101886792,
+                "crew": 10315.008,
+                "otherop": 7736.256,
+                "nonop": 30945.024,
+                "totalcost": 84612.2590188679,
+                "profit": 46629.3409811321
+            }
+        },
+        {
+            "origin": {
+                "name": "San Antonio Intl",
+                "city": "San Antonio",
+                "country": "US",
+                "iata_code": "SAT",
+                "latitude_deg": 29.5338888888889,
+                "longitude_deg": -98.4691666666667
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1774,
+                "distance_nm": 1541.563424,
+                "heading_deg": 320.8,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 460.35,
+                "pax": 126,
+                "lf": 0.7302,
+                "revenue": 580041,
+                "fuel": 225794.72,
+                "maint": 86057.6102641509,
+                "crew": 90317.888,
+                "otherop": 67738.416,
+                "nonop": 270953.664,
+                "totalcost": 740862.298264151,
+                "profit": -160821.298264151
+            }
+        },
+        {
+            "origin": {
+                "name": "Metropolitan Oakland Intl",
+                "city": "Oakland",
+                "country": "US",
+                "iata_code": "OAK",
+                "latitude_deg": 37.7213888888889,
+                "longitude_deg": -122.220833333333
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 672,
+                "distance_nm": 583.951872,
+                "heading_deg": 359.6,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 326.43,
+                "pax": 126,
+                "lf": 0.7331,
+                "revenue": 1275035.58,
+                "fuel": 265149.696,
+                "maint": 101057.05394717,
+                "crew": 106059.8784,
+                "otherop": 79544.9088,
+                "nonop": 318179.6352,
+                "totalcost": 869991.17234717,
+                "profit": 405044.40765283
+            }
+        },
+        {
+            "origin": {
+                "name": "Norman Y. Mineta San José Intl",
+                "city": "San José",
+                "country": "US",
+                "iata_code": "SJC",
+                "latitude_deg": 37.3627777777778,
+                "longitude_deg": -121.929166666667
+            },
+            "destination": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "route": {
+                "distance_mi": 569,
+                "distance_nm": 494.447344,
+                "heading_deg": 356.7,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 426.87,
+                "pax": 106,
+                "lf": 0.7347,
+                "revenue": 316737.54,
+                "fuel": 42442.8479999999,
+                "maint": 16176.3307471698,
+                "crew": 16977.1392,
+                "otherop": 12732.8544,
+                "nonop": 50931.4176,
+                "totalcost": 139260.58994717,
+                "profit": 177476.95005283
+            }
+        },
+        {
+            "origin": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "destination": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "route": {
+                "distance_mi": 550,
+                "distance_nm": 477.9368,
+                "heading_deg": 178.7,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 295.74,
+                "pax": 127,
+                "lf": 0.7356,
+                "revenue": 375589.8,
+                "fuel": 70004,
+                "maint": 26680.7698113208,
+                "crew": 28001.6,
+                "otherop": 21001.2,
+                "nonop": 84004.8,
+                "totalcost": 229692.369811321,
+                "profit": 145897.430188679
+            }
+        },
+        {
+            "origin": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "destination": {
+                "name": "Palm Springs Intl",
+                "city": "Palm Springs",
+                "country": "US",
+                "iata_code": "PSP",
+                "latitude_deg": 33.8297222222222,
+                "longitude_deg": -116.506666666667
+            },
+            "route": {
+                "distance_mi": 421,
+                "distance_nm": 365.838896,
+                "heading_deg": 126.6,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 13
+            },
+            "financial": {
+                "fare": 242.73,
+                "pax": 107,
+                "lf": 0.7414,
+                "revenue": 337637.43,
+                "fuel": 58320.288,
+                "maint": 22227.7324075472,
+                "crew": 23328.1152,
+                "otherop": 17496.0864,
+                "nonop": 69984.3456,
+                "totalcost": 191356.567607547,
+                "profit": 146280.862392453
+            }
+        },
+        {
+            "origin": {
+                "name": "Bob Hope Airport",
+                "city": "Burbank",
+                "country": "US",
+                "iata_code": "BUR",
+                "latitude_deg": 34.2005555555556,
+                "longitude_deg": -118.358611111111
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 937,
+                "distance_nm": 814.230512,
+                "heading_deg": 348.5,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 371.07,
+                "pax": 119,
+                "lf": 0.7466,
+                "revenue": 309101.31,
+                "fuel": 77658.56,
+                "maint": 29598.1681509434,
+                "crew": 31063.424,
+                "otherop": 23297.568,
+                "nonop": 93190.272,
+                "totalcost": 254807.992150943,
+                "profit": 54293.3178490566
+            }
+        },
+        {
+            "origin": {
+                "name": "Sacramento Intl",
+                "city": "Sacramento",
+                "country": "US",
+                "iata_code": "SMF",
+                "latitude_deg": 38.6955555555556,
+                "longitude_deg": -121.590833333333
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 605,
+                "distance_nm": 525.73048,
+                "heading_deg": 356.8,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 312.48,
+                "pax": 108,
+                "lf": 0.7498,
+                "revenue": 202487.04,
+                "fuel": 38681.28,
+                "maint": 14742.6765283019,
+                "crew": 15472.512,
+                "otherop": 11604.384,
+                "nonop": 46417.536,
+                "totalcost": 126918.388528302,
+                "profit": 75568.6514716981
+            }
+        },
+        {
+            "origin": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "destination": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "route": {
+                "distance_mi": 933,
+                "distance_nm": 810.754608,
+                "heading_deg": 343.5,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 9
+            },
+            "financial": {
+                "fare": 312.48,
+                "pax": 108,
+                "lf": 0.7504,
+                "revenue": 303730.56,
+                "fuel": 89478.432,
+                "maint": 34103.1004981132,
+                "crew": 35791.3728,
+                "otherop": 26843.5296,
+                "nonop": 107374.1184,
+                "totalcost": 293590.553298113,
+                "profit": 10140.0067018868
+            }
+        },
+        {
+            "origin": {
+                "name": "General Rafael Buelna Intl",
+                "city": "Mazatlán",
+                "country": "MX",
+                "iata_code": "MZT",
+                "latitude_deg": 23.1613888888889,
+                "longitude_deg": -106.266111111111
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 1045,
+                "distance_nm": 908.07992,
+                "heading_deg": 317.9,
+                "equipment": "BOEING 737-700",
+                "capacity": 124,
+                "frequency": 2
+            },
+            "financial": {
+                "fare": 343.17,
+                "pax": 93,
+                "lf": 0.751,
+                "revenue": 63829.62,
+                "fuel": 19177.84,
+                "maint": 7309.28996226415,
+                "crew": 7671.136,
+                "otherop": 5753.352,
+                "nonop": 23013.408,
+                "totalcost": 62925.0259622641,
+                "profit": 904.594037735857
+            }
+        },
+        {
+            "origin": {
+                "name": "Playa de Oro Intl",
+                "city": "Manzanillo",
+                "country": "MX",
+                "iata_code": "ZLO",
+                "latitude_deg": 19.1447222222222,
+                "longitude_deg": -104.558611111111
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 1329,
+                "distance_nm": 1154.869104,
+                "heading_deg": 322.8,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 1
+            },
+            "financial": {
+                "fare": 460.35,
+                "pax": 129,
+                "lf": 0.7512,
+                "revenue": 59385.15,
+                "fuel": 16915.512,
+                "maint": 6447.04419622641,
+                "crew": 6766.2048,
+                "otherop": 5074.6536,
+                "nonop": 20298.6144,
+                "totalcost": 55502.0289962264,
+                "profit": 3883.12100377359
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Bob Hope Airport",
+                "city": "Burbank",
+                "country": "US",
+                "iata_code": "BUR",
+                "latitude_deg": 34.2005555555556,
+                "longitude_deg": -118.358611111111
+            },
+            "route": {
+                "distance_mi": 937,
+                "distance_nm": 814.230512,
+                "heading_deg": 165.9,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 368.28,
+                "pax": 121,
+                "lf": 0.755,
+                "revenue": 356495.04,
+                "fuel": 88752.64,
+                "maint": 33826.4778867924,
+                "crew": 35501.056,
+                "otherop": 26625.792,
+                "nonop": 106503.168,
+                "totalcost": 291209.133886792,
+                "profit": 65285.9061132076
+            }
+        },
+        {
+            "origin": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "destination": {
+                "name": "Phoenix Sky Harbor Intl",
+                "city": "Phoenix",
+                "country": "US",
+                "iata_code": "PHX",
+                "latitude_deg": 33.4341666666667,
+                "longitude_deg": -112.011666666667
+            },
+            "route": {
+                "distance_mi": 1009,
+                "distance_nm": 876.796784,
+                "heading_deg": 142.5,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 499.41,
+                "pax": 121,
+                "lf": 0.7553,
+                "revenue": 604286.1,
+                "fuel": 119465.6,
+                "maint": 45532.1720754717,
+                "crew": 47786.24,
+                "otherop": 35839.68,
+                "nonop": 143358.72,
+                "totalcost": 391982.412075472,
+                "profit": 212303.687924528
+            }
+        },
+        {
+            "origin": {
+                "name": "Phoenix Sky Harbor Intl",
+                "city": "Phoenix",
+                "country": "US",
+                "iata_code": "PHX",
+                "latitude_deg": 33.4341666666667,
+                "longitude_deg": -112.011666666667
+            },
+            "destination": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "route": {
+                "distance_mi": 1009,
+                "distance_nm": 876.796784,
+                "heading_deg": 329.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 502.2,
+                "pax": 109,
+                "lf": 0.7564,
+                "revenue": 547398,
+                "fuel": 107519.04,
+                "maint": 40978.9548679245,
+                "crew": 43007.616,
+                "otherop": 32255.712,
+                "nonop": 129022.848,
+                "totalcost": 352784.170867924,
+                "profit": 194613.829132076
+            }
+        },
+        {
+            "origin": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "destination": {
+                "name": "Licenciado Gustavo Díaz Ordaz Intl",
+                "city": "Puerto Vallarta",
+                "country": "MX",
+                "iata_code": "PVR",
+                "latitude_deg": 20.68,
+                "longitude_deg": -105.254166666667
+            },
+            "route": {
+                "distance_mi": 1109,
+                "distance_nm": 963.694384,
+                "heading_deg": 135.5,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 12
+            },
+            "financial": {
+                "fare": 351.54,
+                "pax": 132,
+                "lf": 0.7668,
+                "revenue": 556839.36,
+                "fuel": 169384.224,
+                "maint": 64557.760845283,
+                "crew": 67753.6896,
+                "otherop": 50815.2672,
+                "nonop": 203261.0688,
+                "totalcost": 555772.010445283,
+                "profit": 1067.34955471707
+            }
+        },
+        {
+            "origin": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 1542,
+                "distance_nm": 1339.960992,
+                "heading_deg": 324.1,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 730.98,
+                "pax": 132,
+                "lf": 0.7668,
+                "revenue": 578936.16,
+                "fuel": 117759.456,
+                "maint": 44881.9058716981,
+                "crew": 47103.7824,
+                "otherop": 35327.8368,
+                "nonop": 141311.3472,
+                "totalcost": 386384.328271698,
+                "profit": 192551.831728302
+            }
+        },
+        {
+            "origin": {
+                "name": "George Bush Intercontinental/Houston Airport",
+                "city": "Houston",
+                "country": "US",
+                "iata_code": "IAH",
+                "latitude_deg": 29.9844444444444,
+                "longitude_deg": -95.3413888888889
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1874,
+                "distance_nm": 1628.461024,
+                "heading_deg": 317.6,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 619.38,
+                "pax": 123,
+                "lf": 0.7674,
+                "revenue": 2361695.94,
+                "fuel": 687832.96,
+                "maint": 262155.203622641,
+                "crew": 275133.184,
+                "otherop": 206349.888,
+                "nonop": 825399.552,
+                "totalcost": 2256870.78762264,
+                "profit": 104825.152377359
+            }
+        },
+        {
+            "origin": {
+                "name": "Norman Y. Mineta San José Intl",
+                "city": "San José",
+                "country": "US",
+                "iata_code": "SJC",
+                "latitude_deg": 37.3627777777778,
+                "longitude_deg": -121.929166666667
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 697,
+                "distance_nm": 605.676272,
+                "heading_deg": 358.5,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 373.86,
+                "pax": 111,
+                "lf": 0.7687,
+                "revenue": 290489.22,
+                "fuel": 51990.624,
+                "maint": 19815.2944301887,
+                "crew": 20796.2496,
+                "otherop": 15597.1872,
+                "nonop": 62388.7488,
+                "totalcost": 170588.104030189,
+                "profit": 119901.115969811
+            }
+        },
+        {
+            "origin": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "destination": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "route": {
+                "distance_mi": 933,
+                "distance_nm": 810.754608,
+                "heading_deg": 160.1,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 9
+            },
+            "financial": {
+                "fare": 295.74,
+                "pax": 133,
+                "lf": 0.7755,
+                "revenue": 354000.78,
+                "fuel": 106877.016,
+                "maint": 40734.2589283019,
+                "crew": 42750.8064,
+                "otherop": 32063.1048,
+                "nonop": 128252.4192,
+                "totalcost": 350677.605328302,
+                "profit": 3323.17467169807
+            }
+        },
+        {
+            "origin": {
+                "name": "Licenciado Gustavo Díaz Ordaz Intl",
+                "city": "Puerto Vallarta",
+                "country": "MX",
+                "iata_code": "PVR",
+                "latitude_deg": 20.68,
+                "longitude_deg": -105.254166666667
+            },
+            "destination": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "route": {
+                "distance_mi": 1109,
+                "distance_nm": 963.694384,
+                "heading_deg": 320.9,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 12
+            },
+            "financial": {
+                "fare": 351.54,
+                "pax": 134,
+                "lf": 0.78,
+                "revenue": 565276.32,
+                "fuel": 169384.224,
+                "maint": 64557.760845283,
+                "crew": 67753.6896,
+                "otherop": 50815.2672,
+                "nonop": 203261.0688,
+                "totalcost": 555772.010445283,
+                "profit": 9504.30955471703
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "General Rafael Buelna Intl",
+                "city": "Mazatlán",
+                "country": "MX",
+                "iata_code": "MZT",
+                "latitude_deg": 23.1613888888889,
+                "longitude_deg": -106.266111111111
+            },
+            "route": {
+                "distance_mi": 1045,
+                "distance_nm": 908.07992,
+                "heading_deg": 132.1,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 2
+            },
+            "financial": {
+                "fare": 329.22,
+                "pax": 135,
+                "lf": 0.7826,
+                "revenue": 88889.4,
+                "fuel": 26601.52,
+                "maint": 10138.6925283019,
+                "crew": 10640.608,
+                "otherop": 7980.456,
+                "nonop": 31921.824,
+                "totalcost": 87283.1005283019,
+                "profit": 1606.29947169812
+            }
+        },
+        {
+            "origin": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "destination": {
+                "name": "Mc Carran Intl",
+                "city": "Las Vegas",
+                "country": "US",
+                "iata_code": "LAS",
+                "latitude_deg": 36.08,
+                "longitude_deg": -115.152222222222
+            },
+            "route": {
+                "distance_mi": 763,
+                "distance_nm": 663.028688,
+                "heading_deg": 146.8,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 287.37,
+                "pax": 135,
+                "lf": 0.7835,
+                "revenue": 232769.7,
+                "fuel": 58268.784,
+                "maint": 22208.1025811321,
+                "crew": 23307.5136,
+                "otherop": 17480.6352,
+                "nonop": 69922.5408,
+                "totalcost": 191187.576181132,
+                "profit": 41582.1238188679
+            }
+        },
+        {
+            "origin": {
+                "name": "Mc Carran Intl",
+                "city": "Las Vegas",
+                "country": "US",
+                "iata_code": "LAS",
+                "latitude_deg": 36.08,
+                "longitude_deg": -115.152222222222
+            },
+            "destination": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "route": {
+                "distance_mi": 763,
+                "distance_nm": 663.028688,
+                "heading_deg": 331.6,
+                "equipment": "BOEING 737-700",
+                "capacity": 124,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 301.32,
+                "pax": 97,
+                "lf": 0.7843,
+                "revenue": 175368.24,
+                "fuel": 42007.728,
+                "maint": 16010.4925584906,
+                "crew": 16803.0912,
+                "otherop": 12602.3184,
+                "nonop": 50409.2736,
+                "totalcost": 137832.903758491,
+                "profit": 37535.3362415094
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Fairbanks Intl",
+                "city": "Fairbanks",
+                "country": "US",
+                "iata_code": "FAI",
+                "latitude_deg": 64.815,
+                "longitude_deg": -147.856388888889
+            },
+            "route": {
+                "distance_mi": 1533,
+                "distance_nm": 1332.140208,
+                "heading_deg": 330.8,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 753.3,
+                "pax": 136,
+                "lf": 0.7892,
+                "revenue": 409795.2,
+                "fuel": 78048.096,
+                "maint": 29746.6328150943,
+                "crew": 31219.2384,
+                "otherop": 23414.4288,
+                "nonop": 93657.7152,
+                "totalcost": 256086.111215094,
+                "profit": 153709.088784906
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 911,
+                "distance_nm": 791.637136,
+                "heading_deg": 326.6,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 474.3,
+                "pax": 136,
+                "lf": 0.7896,
+                "revenue": 258019.2,
+                "fuel": 46380.832,
+                "maint": 17677.2227622642,
+                "crew": 18552.3328,
+                "otherop": 13914.2496,
+                "nonop": 55656.9984,
+                "totalcost": 152181.635562264,
+                "profit": 105837.564437736
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Playa de Oro Intl",
+                "city": "Manzanillo",
+                "country": "MX",
+                "iata_code": "ZLO",
+                "latitude_deg": 19.1447222222222,
+                "longitude_deg": -104.558611111111
+            },
+            "route": {
+                "distance_mi": 1329,
+                "distance_nm": 1154.869104,
+                "heading_deg": 136.6,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 1
+            },
+            "financial": {
+                "fare": 426.87,
+                "pax": 136,
+                "lf": 0.791,
+                "revenue": 58054.32,
+                "fuel": 16915.512,
+                "maint": 6447.04419622641,
+                "crew": 6766.2048,
+                "otherop": 5074.6536,
+                "nonop": 20298.6144,
+                "totalcost": 55502.0289962264,
+                "profit": 2552.29100377359
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Vancouver Intl",
+                "city": "Vancouver",
+                "country": "CA",
+                "iata_code": "YVR",
+                "latitude_deg": 49.1938888888889,
+                "longitude_deg": -123.184444444444
+            },
+            "route": {
+                "distance_mi": 1081,
+                "distance_nm": 939.363056,
+                "heading_deg": 348.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 485.46,
+                "pax": 114,
+                "lf": 0.7942,
+                "revenue": 276712.2,
+                "fuel": 57595.68,
+                "maint": 21951.5610566038,
+                "crew": 23038.272,
+                "otherop": 17278.704,
+                "nonop": 69114.816,
+                "totalcost": 188979.033056604,
+                "profit": 87733.1669433962
+            }
+        },
+        {
+            "origin": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "destination": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "route": {
+                "distance_mi": 802,
+                "distance_nm": 696.918752,
+                "heading_deg": 143.5,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 3
+            },
+            "financial": {
+                "fare": 253.89,
+                "pax": 115,
+                "lf": 0.796,
+                "revenue": 87592.05,
+                "fuel": 25638.336,
+                "maint": 9771.59221132075,
+                "crew": 10255.3344,
+                "otherop": 7691.5008,
+                "nonop": 30766.0032,
+                "totalcost": 84122.7666113207,
+                "profit": 3469.28338867927
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Norman Y. Mineta San José Intl",
+                "city": "San José",
+                "country": "US",
+                "iata_code": "SJC",
+                "latitude_deg": 37.3627777777778,
+                "longitude_deg": -121.929166666667
+            },
+            "route": {
+                "distance_mi": 697,
+                "distance_nm": 605.676272,
+                "heading_deg": 178.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 365.49,
+                "pax": 115,
+                "lf": 0.7963,
+                "revenue": 252188.1,
+                "fuel": 44563.3919999999,
+                "maint": 16984.5380830189,
+                "crew": 17825.3568,
+                "otherop": 13369.0176,
+                "nonop": 53476.0704,
+                "totalcost": 146218.374883019,
+                "profit": 105969.725116981
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "route": {
+                "distance_mi": 834,
+                "distance_nm": 724.725984,
+                "heading_deg": 345.8,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 371.07,
+                "pax": 115,
+                "lf": 0.7965,
+                "revenue": 170692.2,
+                "fuel": 35548.416,
+                "maint": 13548.6415698113,
+                "crew": 14219.3664,
+                "otherop": 10664.5248,
+                "nonop": 42658.0992,
+                "totalcost": 116639.047969811,
+                "profit": 54053.1520301887
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "destination": {
+                "name": "Norman Y. Mineta San José Intl",
+                "city": "San José",
+                "country": "US",
+                "iata_code": "SJC",
+                "latitude_deg": 37.3627777777778,
+                "longitude_deg": -121.929166666667
+            },
+            "route": {
+                "distance_mi": 1219,
+                "distance_nm": 1059.281744,
+                "heading_deg": 326.2,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 3
+            },
+            "financial": {
+                "fare": 329.22,
+                "pax": 115,
+                "lf": 0.7968,
+                "revenue": 113580.9,
+                "fuel": 38968.992,
+                "maint": 14852.3328,
+                "crew": 15587.5968,
+                "otherop": 11690.6976,
+                "nonop": 46762.7904,
+                "totalcost": 127862.4096,
+                "profit": -14281.5095999999
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Ontario Intl",
+                "city": "Ontario",
+                "country": "US",
+                "iata_code": "ONT",
+                "latitude_deg": 34.0561111111111,
+                "longitude_deg": -117.601111111111
+            },
+            "route": {
+                "distance_mi": 956,
+                "distance_nm": 830.741056,
+                "heading_deg": 163.4,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 379.44,
+                "pax": 138,
+                "lf": 0.801,
+                "revenue": 261813.6,
+                "fuel": 60839.84,
+                "maint": 23188.014490566,
+                "crew": 24335.936,
+                "otherop": 18251.952,
+                "nonop": 73007.808,
+                "totalcost": 199623.550490566,
+                "profit": 62190.0495094339
+            }
+        },
+        {
+            "origin": {
+                "name": "Minneapolis-St. Paul Intl/Wold-Chamberlain",
+                "city": "Minneapolis",
+                "country": "US",
+                "iata_code": "MSP",
+                "latitude_deg": 44.8819444444444,
+                "longitude_deg": -93.2216666666667
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1399,
+                "distance_nm": 1215.697424,
+                "heading_deg": 287.7,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 558,
+                "pax": 128,
+                "lf": 0.8015,
+                "revenue": 285696,
+                "fuel": 66256.64,
+                "maint": 25252.5307169811,
+                "crew": 26502.656,
+                "otherop": 19876.992,
+                "nonop": 79507.968,
+                "totalcost": 217396.786716981,
+                "profit": 68299.2132830188
+            }
+        },
+        {
+            "origin": {
+                "name": "Lambert-St. Louis Intl",
+                "city": "St. Louis",
+                "country": "US",
+                "iata_code": "STL",
+                "latitude_deg": 38.7486111111111,
+                "longitude_deg": -90.37
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1709,
+                "distance_nm": 1485.079984,
+                "heading_deg": 301,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 516.15,
+                "pax": 129,
+                "lf": 0.8032,
+                "revenue": 665833.5,
+                "fuel": 202345.6,
+                "maint": 77120.398490566,
+                "crew": 80938.24,
+                "otherop": 60703.68,
+                "nonop": 242814.72,
+                "totalcost": 663922.638490566,
+                "profit": 1910.86150943383
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Ted Stevens Anchorage Intl",
+                "city": "Anchorage",
+                "country": "US",
+                "iata_code": "ANC",
+                "latitude_deg": 61.1741666666667,
+                "longitude_deg": -149.998055555556
+            },
+            "route": {
+                "distance_mi": 1448,
+                "distance_nm": 1258.277248,
+                "heading_deg": 321.1,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 725.4,
+                "pax": 138,
+                "lf": 0.8035,
+                "revenue": 400420.8,
+                "fuel": 73720.576,
+                "maint": 28097.2761358491,
+                "crew": 29488.2304,
+                "otherop": 22116.1728,
+                "nonop": 88464.6912,
+                "totalcost": 241886.946535849,
+                "profit": 158533.853464151
+            }
+        },
+        {
+            "origin": {
+                "name": "Newark Liberty Intl",
+                "city": "Newark",
+                "country": "US",
+                "iata_code": "EWR",
+                "latitude_deg": 40.6925,
+                "longitude_deg": -74.1686111111111
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 2402,
+                "distance_nm": 2087.280352,
+                "heading_deg": 297.7,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 16
+            },
+            "financial": {
+                "fare": 719.82,
+                "pax": 139,
+                "lf": 0.8073,
+                "revenue": 1600879.68,
+                "fuel": 489162.496,
+                "maint": 186435.517343396,
+                "crew": 195664.9984,
+                "otherop": 146748.7488,
+                "nonop": 586994.9952,
+                "totalcost": 1605006.7557434,
+                "profit": -4127.07574339606
+            }
+        },
+        {
+            "origin": {
+                "name": "Palm Springs Intl",
+                "city": "Palm Springs",
+                "country": "US",
+                "iata_code": "PSP",
+                "latitude_deg": 33.8297222222222,
+                "longitude_deg": -116.506666666667
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 987,
+                "distance_nm": 857.679312,
+                "heading_deg": 343.9,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 396.18,
+                "pax": 116,
+                "lf": 0.8081,
+                "revenue": 183827.52,
+                "fuel": 42069.888,
+                "maint": 16034.1837283019,
+                "crew": 16827.9552,
+                "otherop": 12620.9664,
+                "nonop": 50483.8656,
+                "totalcost": 138036.858928302,
+                "profit": 45790.6610716981
+            }
+        },
+        {
+            "origin": {
+                "name": "Ontario Intl",
+                "city": "Ontario",
+                "country": "US",
+                "iata_code": "ONT",
+                "latitude_deg": 34.0561111111111,
+                "longitude_deg": -117.601111111111
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 956,
+                "distance_nm": 830.741056,
+                "heading_deg": 346.5,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 382.23,
+                "pax": 116,
+                "lf": 0.8088,
+                "revenue": 221693.4,
+                "fuel": 50935.68,
+                "maint": 19413.2214339623,
+                "crew": 20374.272,
+                "otherop": 15280.704,
+                "nonop": 61122.816,
+                "totalcost": 167126.693433962,
+                "profit": 54566.7065660377
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Minneapolis-St. Paul Intl/Wold-Chamberlain",
+                "city": "Minneapolis",
+                "country": "US",
+                "iata_code": "MSP",
+                "latitude_deg": 44.8819444444444,
+                "longitude_deg": -93.2216666666667
+            },
+            "route": {
+                "distance_mi": 1399,
+                "distance_nm": 1215.697424,
+                "heading_deg": 86.5,
+                "equipment": "BOEING 737-700",
+                "capacity": 124,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 552.42,
+                "pax": 100,
+                "lf": 0.8093,
+                "revenue": 220968,
+                "fuel": 51348.896,
+                "maint": 19570.7113056604,
+                "crew": 20539.5584,
+                "otherop": 15404.6688,
+                "nonop": 61618.6752,
+                "totalcost": 168482.50970566,
+                "profit": 52485.4902943396
+            }
+        },
+        {
+            "origin": {
+                "name": "Ixtapa-Zihuatanejo Intl",
+                "city": "Ixtapa/Zihuatanejo",
+                "country": "MX",
+                "iata_code": "ZIH",
+                "latitude_deg": 17.6016666666667,
+                "longitude_deg": -101.460555555556
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 1538,
+                "distance_nm": 1336.485088,
+                "heading_deg": 320.2,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 463.14,
+                "pax": 139,
+                "lf": 0.8104,
+                "revenue": 321882.3,
+                "fuel": 97878.32,
+                "maint": 37304.567245283,
+                "crew": 39151.328,
+                "otherop": 29363.496,
+                "nonop": 117453.984,
+                "totalcost": 321151.695245283,
+                "profit": 730.604754716915
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Dallas/Fort Worth Intl",
+                "city": "Dallas-Fort Worth",
+                "country": "US",
+                "iata_code": "DFW",
+                "latitude_deg": 32.8969444444444,
+                "longitude_deg": -97.0380555555556
+            },
+            "route": {
+                "distance_mi": 1660,
+                "distance_nm": 1442.50016,
+                "heading_deg": 118.1,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 597.06,
+                "pax": 140,
+                "lf": 0.8122,
+                "revenue": 417942,
+                "fuel": 105642.4,
+                "maint": 40263.7071698113,
+                "crew": 42256.96,
+                "otherop": 31692.72,
+                "nonop": 126770.88,
+                "totalcost": 346626.667169811,
+                "profit": 71315.3328301887
+            }
+        },
+        {
+            "origin": {
+                "name": "Vancouver Intl",
+                "city": "Vancouver",
+                "country": "CA",
+                "iata_code": "YVR",
+                "latitude_deg": 49.1938888888889,
+                "longitude_deg": -123.184444444444
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 1081,
+                "distance_nm": 939.363056,
+                "heading_deg": 165.1,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 471.51,
+                "pax": 117,
+                "lf": 0.8144,
+                "revenue": 275833.35,
+                "fuel": 57595.68,
+                "maint": 21951.5610566038,
+                "crew": 23038.272,
+                "otherop": 17278.704,
+                "nonop": 69114.816,
+                "totalcost": 188979.033056604,
+                "profit": 86854.3169433962
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "destination": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "route": {
+                "distance_mi": 802,
+                "distance_nm": 696.918752,
+                "heading_deg": 327,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 3
+            },
+            "financial": {
+                "fare": 287.37,
+                "pax": 140,
+                "lf": 0.8167,
+                "revenue": 120695.4,
+                "fuel": 30623.568,
+                "maint": 11671.6240301887,
+                "crew": 12249.4272,
+                "otherop": 9187.0704,
+                "nonop": 36748.2816,
+                "totalcost": 100479.971230189,
+                "profit": 20215.4287698113
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Palm Springs Intl",
+                "city": "Palm Springs",
+                "country": "US",
+                "iata_code": "PSP",
+                "latitude_deg": 33.8297222222222,
+                "longitude_deg": -116.506666666667
+            },
+            "route": {
+                "distance_mi": 987,
+                "distance_nm": 857.679312,
+                "heading_deg": 160.1,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 390.6,
+                "pax": 131,
+                "lf": 0.8197,
+                "revenue": 204674.4,
+                "fuel": 46744.32,
+                "maint": 17815.7596981132,
+                "crew": 18697.728,
+                "otherop": 14023.296,
+                "nonop": 56093.184,
+                "totalcost": 153374.287698113,
+                "profit": 51300.1123018868
+            }
+        },
+        {
+            "origin": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "destination": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "route": {
+                "distance_mi": 1248,
+                "distance_nm": 1084.482048,
+                "heading_deg": 139.4,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 16
+            },
+            "financial": {
+                "fare": 398.97,
+                "pax": 142,
+                "lf": 0.8247,
+                "revenue": 906459.84,
+                "fuel": 254152.704,
+                "maint": 96865.7475622642,
+                "crew": 101661.0816,
+                "otherop": 76245.8112,
+                "nonop": 304983.2448,
+                "totalcost": 833908.589162264,
+                "profit": 72551.2508377361
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "route": {
+                "distance_mi": 911,
+                "distance_nm": 791.637136,
+                "heading_deg": 142.4,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 357.12,
+                "pax": 142,
+                "lf": 0.8266,
+                "revenue": 202844.16,
+                "fuel": 46380.832,
+                "maint": 17677.2227622642,
+                "crew": 18552.3328,
+                "otherop": 13914.2496,
+                "nonop": 55656.9984,
+                "totalcost": 152181.635562264,
+                "profit": 50662.5244377358
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "route": {
+                "distance_mi": 1050,
+                "distance_nm": 912.4248,
+                "heading_deg": 163.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 379.44,
+                "pax": 119,
+                "lf": 0.8278,
+                "revenue": 225766.8,
+                "fuel": 55944,
+                "maint": 21322.0528301887,
+                "crew": 22377.6,
+                "otherop": 16783.2,
+                "nonop": 67132.8,
+                "totalcost": 183559.652830189,
+                "profit": 42207.1471698113
+            }
+        },
+        {
+            "origin": {
+                "name": "Tucson Intl",
+                "city": "Tucson",
+                "country": "US",
+                "iata_code": "TUS",
+                "latitude_deg": 32.1161111111111,
+                "longitude_deg": -110.941111111111
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1216,
+                "distance_nm": 1056.674816,
+                "heading_deg": 333.7,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 3
+            },
+            "financial": {
+                "fare": 429.66,
+                "pax": 142,
+                "lf": 0.8282,
+                "revenue": 183035.16,
+                "fuel": 46431.744,
+                "maint": 17696.6269584906,
+                "crew": 18572.6976,
+                "otherop": 13929.5232,
+                "nonop": 55718.0928,
+                "totalcost": 152348.684558491,
+                "profit": 30686.4754415094
+            }
+        },
+        {
+            "origin": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 834,
+                "distance_nm": 724.725984,
+                "heading_deg": 163.1,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 365.49,
+                "pax": 119,
+                "lf": 0.8284,
+                "revenue": 217466.55,
+                "fuel": 44435.52,
+                "maint": 16935.8019622642,
+                "crew": 17774.208,
+                "otherop": 13330.656,
+                "nonop": 53322.624,
+                "totalcost": 145798.809962264,
+                "profit": 71667.7400377358
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "George Bush Intercontinental/Houston Airport",
+                "city": "Houston",
+                "country": "US",
+                "iata_code": "IAH",
+                "latitude_deg": 29.9844444444444,
+                "longitude_deg": -95.3413888888889
+            },
+            "route": {
+                "distance_mi": 1874,
+                "distance_nm": 1628.461024,
+                "heading_deg": 120.3,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 647.28,
+                "pax": 133,
+                "lf": 0.8284,
+                "revenue": 2668735.44,
+                "fuel": 687832.96,
+                "maint": 262155.203622641,
+                "crew": 275133.184,
+                "otherop": 206349.888,
+                "nonop": 825399.552,
+                "totalcost": 2256870.78762264,
+                "profit": 411864.652377359
+            }
+        },
+        {
+            "origin": {
+                "name": "Norman Y. Mineta San José Intl",
+                "city": "San José",
+                "country": "US",
+                "iata_code": "SJC",
+                "latitude_deg": 37.3627777777778,
+                "longitude_deg": -121.929166666667
+            },
+            "destination": {
+                "name": "Lihue Airport",
+                "city": "Lihue",
+                "country": "US",
+                "iata_code": "LIH",
+                "latitude_deg": 21.9761111111111,
+                "longitude_deg": -159.338888888889
+            },
+            "route": {
+                "distance_mi": 2466,
+                "distance_nm": 2142.894816,
+                "heading_deg": 255.2,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 18
+            },
+            "financial": {
+                "fare": 404.55,
+                "pax": 133,
+                "lf": 0.8317,
+                "revenue": 968492.7,
+                "fuel": 525553.92,
+                "maint": 200305.456301887,
+                "crew": 210221.568,
+                "otherop": 157666.176,
+                "nonop": 630664.704,
+                "totalcost": 1724411.82430189,
+                "profit": -755919.124301887
+            }
+        },
+        {
+            "origin": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "destination": {
+                "name": "Licenciado Gustavo Díaz Ordaz Intl",
+                "city": "Puerto Vallarta",
+                "country": "MX",
+                "iata_code": "PVR",
+                "latitude_deg": 20.68,
+                "longitude_deg": -105.254166666667
+            },
+            "route": {
+                "distance_mi": 1554,
+                "distance_nm": 1350.388704,
+                "heading_deg": 133.9,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 457.56,
+                "pax": 143,
+                "lf": 0.8318,
+                "revenue": 327155.4,
+                "fuel": 98896.56,
+                "maint": 37692.6511698113,
+                "crew": 39558.624,
+                "otherop": 29668.968,
+                "nonop": 118675.872,
+                "totalcost": 324492.675169811,
+                "profit": 2662.72483018873
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "San Antonio Intl",
+                "city": "San Antonio",
+                "country": "US",
+                "iata_code": "SAT",
+                "latitude_deg": 29.5338888888889,
+                "longitude_deg": -98.4691666666667
+            },
+            "route": {
+                "distance_mi": 1774,
+                "distance_nm": 1541.563424,
+                "heading_deg": 125.6,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 465.93,
+                "pax": 144,
+                "lf": 0.8352,
+                "revenue": 670939.2,
+                "fuel": 225794.72,
+                "maint": 86057.6102641509,
+                "crew": 90317.888,
+                "otherop": 67738.416,
+                "nonop": 270953.664,
+                "totalcost": 740862.298264151,
+                "profit": -69923.0982641508
+            }
+        },
+        {
+            "origin": {
+                "name": "Kansas City Intl",
+                "city": "Kansas City",
+                "country": "US",
+                "iata_code": "MCI",
+                "latitude_deg": 39.2975,
+                "longitude_deg": -94.7138888888889
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1489,
+                "distance_nm": 1293.905264,
+                "heading_deg": 301.2,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 435.24,
+                "pax": 135,
+                "lf": 0.8411,
+                "revenue": 235029.6,
+                "fuel": 70519.04,
+                "maint": 26877.0680754717,
+                "crew": 28207.616,
+                "otherop": 21155.712,
+                "nonop": 84622.848,
+                "totalcost": 231382.284075472,
+                "profit": 3647.31592452838
+            }
+        },
+        {
+            "origin": {
+                "name": "San Diego Intl",
+                "city": "San Diego",
+                "country": "US",
+                "iata_code": "SAN",
+                "latitude_deg": 32.7336111111111,
+                "longitude_deg": -117.189722222222
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1050,
+                "distance_nm": 912.4248,
+                "heading_deg": 346.6,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 385.02,
+                "pax": 145,
+                "lf": 0.8414,
+                "revenue": 279139.5,
+                "fuel": 66822,
+                "maint": 25468.0075471698,
+                "crew": 26728.8,
+                "otherop": 20046.6,
+                "nonop": 80186.4,
+                "totalcost": 219251.80754717,
+                "profit": 59887.6924528302
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Cabos (San José del Cabo) Intl",
+                "city": "Los Cabos (San José del Cabo)",
+                "country": "MX",
+                "iata_code": "SJD",
+                "latitude_deg": 23.1519444444444,
+                "longitude_deg": -109.721111111111
+            },
+            "destination": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "route": {
+                "distance_mi": 1248,
+                "distance_nm": 1084.482048,
+                "heading_deg": 325.9,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 16
+            },
+            "financial": {
+                "fare": 440.82,
+                "pax": 145,
+                "lf": 0.8435,
+                "revenue": 1022702.4,
+                "fuel": 254152.704,
+                "maint": 96865.7475622642,
+                "crew": 101661.0816,
+                "otherop": 76245.8112,
+                "nonop": 304983.2448,
+                "totalcost": 833908.589162264,
+                "profit": 188793.810837736
+            }
+        },
+        {
+            "origin": {
+                "name": "Phoenix Sky Harbor Intl",
+                "city": "Phoenix",
+                "country": "US",
+                "iata_code": "PHX",
+                "latitude_deg": 33.4341666666667,
+                "longitude_deg": -112.011666666667
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 1107,
+                "distance_nm": 961.956432,
+                "heading_deg": 333.9,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 488.25,
+                "pax": 122,
+                "lf": 0.8443,
+                "revenue": 476532,
+                "fuel": 94369.536,
+                "maint": 35967.2571169811,
+                "crew": 37747.8144,
+                "otherop": 28310.8608,
+                "nonop": 113243.4432,
+                "totalcost": 309638.911516981,
+                "profit": 166893.088483019
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Ixtapa-Zihuatanejo Intl",
+                "city": "Ixtapa/Zihuatanejo",
+                "country": "MX",
+                "iata_code": "ZIH",
+                "latitude_deg": 17.6016666666667,
+                "longitude_deg": -101.460555555556
+            },
+            "route": {
+                "distance_mi": 1538,
+                "distance_nm": 1336.485088,
+                "heading_deg": 132.8,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 438.03,
+                "pax": 145,
+                "lf": 0.8446,
+                "revenue": 317571.75,
+                "fuel": 97878.32,
+                "maint": 37304.567245283,
+                "crew": 39151.328,
+                "otherop": 29363.496,
+                "nonop": 117453.984,
+                "totalcost": 321151.695245283,
+                "profit": -3579.94524528307
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Chicago O'Hare Intl",
+                "city": "Chicago",
+                "country": "US",
+                "iata_code": "ORD",
+                "latitude_deg": 41.9816666666667,
+                "longitude_deg": -87.9066666666667
+            },
+            "route": {
+                "distance_mi": 1721,
+                "distance_nm": 1495.507696,
+                "heading_deg": 89.9,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 566.37,
+                "pax": 145,
+                "lf": 0.8457,
+                "revenue": 410618.25,
+                "fuel": 109524.44,
+                "maint": 41743.2771320755,
+                "crew": 43809.776,
+                "otherop": 32857.332,
+                "nonop": 131429.328,
+                "totalcost": 359364.153132076,
+                "profit": 51254.0968679245
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Newark Liberty Intl",
+                "city": "Newark",
+                "country": "US",
+                "iata_code": "EWR",
+                "latitude_deg": 40.6925,
+                "longitude_deg": -74.1686111111111
+            },
+            "route": {
+                "distance_mi": 2402,
+                "distance_nm": 2087.280352,
+                "heading_deg": 83.1,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 12
+            },
+            "financial": {
+                "fare": 722.61,
+                "pax": 136,
+                "lf": 0.8471,
+                "revenue": 1179299.52,
+                "fuel": 341276.16,
+                "maint": 130071.291169811,
+                "crew": 136510.464,
+                "otherop": 102382.848,
+                "nonop": 409531.392,
+                "totalcost": 1119772.15516981,
+                "profit": 59527.3648301886
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Lambert-St. Louis Intl",
+                "city": "St. Louis",
+                "country": "US",
+                "iata_code": "STL",
+                "latitude_deg": 38.7486111111111,
+                "longitude_deg": -90.37
+            },
+            "route": {
+                "distance_mi": 1709,
+                "distance_nm": 1485.079984,
+                "heading_deg": 98.8,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 10
+            },
+            "financial": {
+                "fare": 504.99,
+                "pax": 136,
+                "lf": 0.848,
+                "revenue": 686786.4,
+                "fuel": 202345.6,
+                "maint": 77120.398490566,
+                "crew": 80938.24,
+                "otherop": 60703.68,
+                "nonop": 242814.72,
+                "totalcost": 663922.638490566,
+                "profit": 22863.761509434
+            }
+        },
+        {
+            "origin": {
+                "name": "Licenciado Gustavo Díaz Ordaz Intl",
+                "city": "Puerto Vallarta",
+                "country": "MX",
+                "iata_code": "PVR",
+                "latitude_deg": 20.68,
+                "longitude_deg": -105.254166666667
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 1218,
+                "distance_nm": 1058.412768,
+                "heading_deg": 321.3,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 424.08,
+                "pax": 122,
+                "lf": 0.8492,
+                "revenue": 1603870.56,
+                "fuel": 402349.248,
+                "maint": 153348.203954717,
+                "crew": 160939.6992,
+                "otherop": 120704.7744,
+                "nonop": 482819.0976,
+                "totalcost": 1320161.02315472,
+                "profit": 283709.536845283
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 954,
+                "distance_nm": 829.003104,
+                "heading_deg": 348.8,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 410.13,
+                "pax": 146,
+                "lf": 0.8507,
+                "revenue": 239515.92,
+                "fuel": 48570.048,
+                "maint": 18511.6032,
+                "crew": 19428.0192,
+                "otherop": 14571.0144,
+                "nonop": 58284.0576,
+                "totalcost": 159364.7424,
+                "profit": 80151.1776
+            }
+        },
+        {
+            "origin": {
+                "name": "Mc Carran Intl",
+                "city": "Las Vegas",
+                "country": "US",
+                "iata_code": "LAS",
+                "latitude_deg": 36.08,
+                "longitude_deg": -115.152222222222
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 867,
+                "distance_nm": 753.402192,
+                "heading_deg": 337.1,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 371.07,
+                "pax": 148,
+                "lf": 0.8597,
+                "revenue": 384428.52,
+                "fuel": 77246.232,
+                "maint": 29441.0167245283,
+                "crew": 30898.4928,
+                "otherop": 23173.8696,
+                "nonop": 92695.4784,
+                "totalcost": 253455.089524528,
+                "profit": 130973.430475472
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Mc Carran Intl",
+                "city": "Las Vegas",
+                "country": "US",
+                "iata_code": "LAS",
+                "latitude_deg": 36.08,
+                "longitude_deg": -115.152222222222
+            },
+            "route": {
+                "distance_mi": 867,
+                "distance_nm": 753.402192,
+                "heading_deg": 152.3,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 351.54,
+                "pax": 148,
+                "lf": 0.8621,
+                "revenue": 312167.52,
+                "fuel": 66211.056,
+                "maint": 25235.1571924528,
+                "crew": 26484.4224,
+                "otherop": 19863.3168,
+                "nonop": 79453.2672,
+                "totalcost": 217247.219592453,
+                "profit": 94920.3004075472
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Phoenix Sky Harbor Intl",
+                "city": "Phoenix",
+                "country": "US",
+                "iata_code": "PHX",
+                "latitude_deg": 33.4341666666667,
+                "longitude_deg": -112.011666666667
+            },
+            "route": {
+                "distance_mi": 1107,
+                "distance_nm": 961.956432,
+                "heading_deg": 147.2,
+                "equipment": "BOEING 737-400",
+                "capacity": 144,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 477.09,
+                "pax": 124,
+                "lf": 0.8628,
+                "revenue": 473273.28,
+                "fuel": 94369.536,
+                "maint": 35967.2571169811,
+                "crew": 37747.8144,
+                "otherop": 28310.8608,
+                "nonop": 113243.4432,
+                "totalcost": 309638.911516981,
+                "profit": 163634.368483019
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 954,
+                "distance_nm": 829.003104,
+                "heading_deg": 166.3,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 3
+            },
+            "financial": {
+                "fare": 390.6,
+                "pax": 138,
+                "lf": 0.8634,
+                "revenue": 161708.4,
+                "fuel": 33886.08,
+                "maint": 12915.072,
+                "crew": 13554.432,
+                "otherop": 10165.824,
+                "nonop": 40663.296,
+                "totalcost": 111184.704,
+                "profit": 50523.696
+            }
+        },
+        {
+            "origin": {
+                "name": "Mc Carran Intl",
+                "city": "Las Vegas",
+                "country": "US",
+                "iata_code": "LAS",
+                "latitude_deg": 36.08,
+                "longitude_deg": -115.152222222222
+            },
+            "destination": {
+                "name": "Bellingham Intl",
+                "city": "Bellingham",
+                "country": "US",
+                "iata_code": "BLI",
+                "latitude_deg": 48.7927777777778,
+                "longitude_deg": -122.5375
+            },
+            "route": {
+                "distance_mi": 954,
+                "distance_nm": 829.003104,
+                "heading_deg": 339.2,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 270.63,
+                "pax": 138,
+                "lf": 0.8638,
+                "revenue": 1157755.14,
+                "fuel": 350156.16,
+                "maint": 133455.744,
+                "crew": 140062.464,
+                "otherop": 105046.848,
+                "nonop": 420187.392,
+                "totalcost": 1148908.608,
+                "profit": 8846.53200000012
+            }
+        },
+        {
+            "origin": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "destination": {
+                "name": "Portland Intl",
+                "city": "Portland",
+                "country": "US",
+                "iata_code": "PDX",
+                "latitude_deg": 45.5886111111111,
+                "longitude_deg": -122.596944444444
+            },
+            "route": {
+                "distance_mi": 550,
+                "distance_nm": 477.9368,
+                "heading_deg": 358.9,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 304.11,
+                "pax": 149,
+                "lf": 0.8642,
+                "revenue": 317186.73,
+                "fuel": 49002.8,
+                "maint": 18676.5388679245,
+                "crew": 19601.12,
+                "otherop": 14700.84,
+                "nonop": 58803.36,
+                "totalcost": 160784.658867925,
+                "profit": 156402.071132075
+            }
+        },
+        {
+            "origin": {
+                "name": "Benito Juárez Intl",
+                "city": "México City (Ciudad de México)",
+                "country": "MX",
+                "iata_code": "MEX",
+                "latitude_deg": 19.4363888888889,
+                "longitude_deg": -99.0722222222222
+            },
+            "destination": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "route": {
+                "distance_mi": 1553,
+                "distance_nm": 1349.519728,
+                "heading_deg": 313.9,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 641.7,
+                "pax": 149,
+                "lf": 0.8643,
+                "revenue": 2964012.3,
+                "fuel": 612764.104,
+                "maint": 233544.054732075,
+                "crew": 245105.6416,
+                "otherop": 183829.2312,
+                "nonop": 735316.9248,
+                "totalcost": 2010559.95633208,
+                "profit": 953452.343667925
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Denver Intl",
+                "city": "Denver",
+                "country": "US",
+                "iata_code": "DEN",
+                "latitude_deg": 39.8616666666667,
+                "longitude_deg": -104.673055555556
+            },
+            "route": {
+                "distance_mi": 1024,
+                "distance_nm": 889.831424,
+                "heading_deg": 114.3,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 359.91,
+                "pax": 149,
+                "lf": 0.8685,
+                "revenue": 214506.36,
+                "fuel": 52133.888,
+                "maint": 19869.8969358491,
+                "crew": 20853.5552,
+                "otherop": 15640.1664,
+                "nonop": 62560.6656,
+                "totalcost": 171058.172135849,
+                "profit": 43448.187864151
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Tucson Intl",
+                "city": "Tucson",
+                "country": "US",
+                "iata_code": "TUS",
+                "latitude_deg": 32.1161111111111,
+                "longitude_deg": -110.941111111111
+            },
+            "route": {
+                "distance_mi": 1216,
+                "distance_nm": 1056.674816,
+                "heading_deg": 146.4,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 3
+            },
+            "financial": {
+                "fare": 429.66,
+                "pax": 150,
+                "lf": 0.8695,
+                "revenue": 193347,
+                "fuel": 46431.744,
+                "maint": 17696.6269584906,
+                "crew": 18572.6976,
+                "otherop": 13929.5232,
+                "nonop": 55718.0928,
+                "totalcost": 152348.684558491,
+                "profit": 40998.3154415094
+            }
+        },
+        {
+            "origin": {
+                "name": "Licenciado Gustavo Díaz Ordaz Intl",
+                "city": "Puerto Vallarta",
+                "country": "MX",
+                "iata_code": "PVR",
+                "latitude_deg": 20.68,
+                "longitude_deg": -105.254166666667
+            },
+            "destination": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "route": {
+                "distance_mi": 1554,
+                "distance_nm": 1350.388704,
+                "heading_deg": 322.3,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 493.83,
+                "pax": 151,
+                "lf": 0.8752,
+                "revenue": 447409.98,
+                "fuel": 118675.872,
+                "maint": 45231.1814037736,
+                "crew": 47470.3488,
+                "otherop": 35602.7616,
+                "nonop": 142411.0464,
+                "totalcost": 389391.210203774,
+                "profit": 58018.7697962264
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Austin-Bergstrom Intl",
+                "city": "Austin",
+                "country": "US",
+                "iata_code": "AUS",
+                "latitude_deg": 30.1944444444444,
+                "longitude_deg": -97.67
+            },
+            "route": {
+                "distance_mi": 1770,
+                "distance_nm": 1538.08752,
+                "heading_deg": 123.4,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 485.46,
+                "pax": 151,
+                "lf": 0.8783,
+                "revenue": 439826.76,
+                "fuel": 135171.36,
+                "maint": 51518.1409811321,
+                "crew": 54068.5439999999,
+                "otherop": 40551.408,
+                "nonop": 162205.632,
+                "totalcost": 443515.084981132,
+                "profit": -3688.32498113211
+            }
+        },
+        {
+            "origin": {
+                "name": "Orlando Intl",
+                "city": "Orlando",
+                "country": "US",
+                "iata_code": "MCO",
+                "latitude_deg": 28.4294444444444,
+                "longitude_deg": -81.3088888888889
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 2554,
+                "distance_nm": 2219.364704,
+                "heading_deg": 312.3,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 608.22,
+                "pax": 141,
+                "lf": 0.8787,
+                "revenue": 686072.16,
+                "fuel": 241914.88,
+                "maint": 92201.5203018868,
+                "crew": 96765.952,
+                "otherop": 72574.464,
+                "nonop": 290297.856,
+                "totalcost": 793754.672301887,
+                "profit": -107682.512301887
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Benito Juárez Intl",
+                "city": "México City (Ciudad de México)",
+                "country": "MX",
+                "iata_code": "MEX",
+                "latitude_deg": 19.4363888888889,
+                "longitude_deg": -99.0722222222222
+            },
+            "route": {
+                "distance_mi": 1553,
+                "distance_nm": 1349.519728,
+                "heading_deg": 125.1,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 571.95,
+                "pax": 152,
+                "lf": 0.884,
+                "revenue": 2695028.4,
+                "fuel": 612764.104,
+                "maint": 233544.054732075,
+                "crew": 245105.6416,
+                "otherop": 183829.2312,
+                "nonop": 735316.9248,
+                "totalcost": 2010559.95633208,
+                "profit": 684468.443667925
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Kansas City Intl",
+                "city": "Kansas City",
+                "country": "US",
+                "iata_code": "MCI",
+                "latitude_deg": 39.2975,
+                "longitude_deg": -94.7138888888889
+            },
+            "route": {
+                "distance_mi": 1489,
+                "distance_nm": 1293.905264,
+                "heading_deg": 102,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 4
+            },
+            "financial": {
+                "fare": 429.66,
+                "pax": 142,
+                "lf": 0.885,
+                "revenue": 244046.88,
+                "fuel": 70519.04,
+                "maint": 26877.0680754717,
+                "crew": 28207.616,
+                "otherop": 21155.712,
+                "nonop": 84622.848,
+                "totalcost": 231382.284075472,
+                "profit": 12664.5959245284
+            }
+        },
+        {
+            "origin": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 679,
+                "distance_nm": 590.034704,
+                "heading_deg": 0.3,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 7
+            },
+            "financial": {
+                "fare": 373.86,
+                "pax": 153,
+                "lf": 0.8895,
+                "revenue": 400404.06,
+                "fuel": 60496.184,
+                "maint": 23057.0361660377,
+                "crew": 24198.4736,
+                "otherop": 18148.8552,
+                "nonop": 72595.4208,
+                "totalcost": 198495.969766038,
+                "profit": 201908.090233962
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "San Francisco Intl",
+                "city": "San Francisco",
+                "country": "US",
+                "iata_code": "SFO",
+                "latitude_deg": 37.6191666666667,
+                "longitude_deg": -122.375277777778
+            },
+            "route": {
+                "distance_mi": 679,
+                "distance_nm": 590.034704,
+                "heading_deg": 180.3,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 5
+            },
+            "financial": {
+                "fare": 373.86,
+                "pax": 153,
+                "lf": 0.8907,
+                "revenue": 286002.9,
+                "fuel": 43211.56,
+                "maint": 16469.3115471698,
+                "crew": 17284.624,
+                "otherop": 12963.468,
+                "nonop": 51853.872,
+                "totalcost": 141782.83554717,
+                "profit": 144220.06445283
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "General Edward Lawrence Logan Intl",
+                "city": "Boston",
+                "country": "US",
+                "iata_code": "BOS",
+                "latitude_deg": 42.3630555555556,
+                "longitude_deg": -71.0063888888889
+            },
+            "route": {
+                "distance_mi": 2496,
+                "distance_nm": 2168.964096,
+                "heading_deg": 78.7,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 795.15,
+                "pax": 154,
+                "lf": 0.893,
+                "revenue": 979624.8,
+                "fuel": 254152.704,
+                "maint": 96865.7475622642,
+                "crew": 101661.0816,
+                "otherop": 76245.8112,
+                "nonop": 304983.2448,
+                "totalcost": 833908.589162264,
+                "profit": 145716.210837736
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Don Miguel Hidalgo y Costilla Intl",
+                "city": "Guadalajara",
+                "country": "MX",
+                "iata_code": "GDL",
+                "latitude_deg": 20.5216666666667,
+                "longitude_deg": -103.311111111111
+            },
+            "route": {
+                "distance_mi": 1307,
+                "distance_nm": 1135.751632,
+                "heading_deg": 131.1,
+                "equipment": "BOEING 737-900 With Winglets",
+                "capacity": 172,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 446.4,
+                "pax": 154,
+                "lf": 0.8956,
+                "revenue": 549964.8,
+                "fuel": 133083.968,
+                "maint": 50722.5689358491,
+                "crew": 53233.5872,
+                "otherop": 39925.1904,
+                "nonop": 159700.7616,
+                "totalcost": 436666.076135849,
+                "profit": 113298.723864151
+            }
+        },
+        {
+            "origin": {
+                "name": "Metropolitan Oakland Intl",
+                "city": "Oakland",
+                "country": "US",
+                "iata_code": "OAK",
+                "latitude_deg": 37.7213888888889,
+                "longitude_deg": -122.220833333333
+            },
+            "destination": {
+                "name": "Lihue Airport",
+                "city": "Lihue",
+                "country": "US",
+                "iata_code": "LIH",
+                "latitude_deg": 21.9761111111111,
+                "longitude_deg": -159.338888888889
+            },
+            "route": {
+                "distance_mi": 2457,
+                "distance_nm": 2135.074032,
+                "heading_deg": 254.5,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 13
+            },
+            "financial": {
+                "fare": 379.44,
+                "pax": 143,
+                "lf": 0.896,
+                "revenue": 705378.96,
+                "fuel": 378181.44,
+                "maint": 144137.077132075,
+                "crew": 151272.576,
+                "otherop": 113454.432,
+                "nonop": 453817.728,
+                "totalcost": 1240863.25313208,
+                "profit": -535484.293132075
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Orlando Intl",
+                "city": "Orlando",
+                "country": "US",
+                "iata_code": "MCO",
+                "latitude_deg": 28.4294444444444,
+                "longitude_deg": -81.3088888888889
+            },
+            "route": {
+                "distance_mi": 2554,
+                "distance_nm": 2219.364704,
+                "heading_deg": 106,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 8
+            },
+            "financial": {
+                "fare": 630.54,
+                "pax": 145,
+                "lf": 0.9064,
+                "revenue": 731426.4,
+                "fuel": 241914.88,
+                "maint": 92201.5203018868,
+                "crew": 96765.952,
+                "otherop": 72574.464,
+                "nonop": 290297.856,
+                "totalcost": 793754.672301887,
+                "profit": -62328.2723018868
+            }
+        },
+        {
+            "origin": {
+                "name": "Los Angeles Intl",
+                "city": "Los Angeles",
+                "country": "US",
+                "iata_code": "LAX",
+                "latitude_deg": 33.9425,
+                "longitude_deg": -118.408055555556
+            },
+            "destination": {
+                "name": "Licenciado Gustavo Díaz Ordaz Intl",
+                "city": "Puerto Vallarta",
+                "country": "MX",
+                "iata_code": "PVR",
+                "latitude_deg": 20.68,
+                "longitude_deg": -105.254166666667
+            },
+            "route": {
+                "distance_mi": 1218,
+                "distance_nm": 1058.412768,
+                "heading_deg": 135.2,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 371.07,
+                "pax": 157,
+                "lf": 0.9127,
+                "revenue": 1805997.69,
+                "fuel": 480583.824,
+                "maint": 183165.910279245,
+                "crew": 192233.5296,
+                "otherop": 144175.1472,
+                "nonop": 576700.5888,
+                "totalcost": 1576858.99987925,
+                "profit": 229138.690120755
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Lihue Airport",
+                "city": "Lihue",
+                "country": "US",
+                "iata_code": "LIH",
+                "latitude_deg": 21.9761111111111,
+                "longitude_deg": -159.338888888889
+            },
+            "route": {
+                "distance_mi": 2701,
+                "distance_nm": 2347.104176,
+                "heading_deg": 242.5,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 599.85,
+                "pax": 148,
+                "lf": 0.9261,
+                "revenue": 2752111.8,
+                "fuel": 991375.04,
+                "maint": 377844.826566038,
+                "crew": 396550.016,
+                "otherop": 297412.512,
+                "nonop": 1189650.048,
+                "totalcost": 3252832.44256604,
+                "profit": -500720.642566037
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Kona Intl at Keahole",
+                "city": "Kailua/Kona",
+                "country": "US",
+                "iata_code": "KOA",
+                "latitude_deg": 19.7388888888889,
+                "longitude_deg": -156.045555555556
+            },
+            "route": {
+                "distance_mi": 2688,
+                "distance_nm": 2335.807488,
+                "heading_deg": 236.5,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 672.39,
+                "pax": 148,
+                "lf": 0.9281,
+                "revenue": 3084925.32,
+                "fuel": 986603.52,
+                "maint": 376026.247245283,
+                "crew": 394641.408,
+                "otherop": 295981.056,
+                "nonop": 1183924.224,
+                "totalcost": 3237176.45524528,
+                "profit": -152251.135245283
+            }
+        },
+        {
+            "origin": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "destination": {
+                "name": "Hartsfield - Jackson Atlanta Intl",
+                "city": "Atlanta",
+                "country": "US",
+                "iata_code": "ATL",
+                "latitude_deg": 33.6366666666667,
+                "longitude_deg": -84.4277777777778
+            },
+            "route": {
+                "distance_mi": 2182,
+                "distance_nm": 1896.105632,
+                "heading_deg": 102,
+                "equipment": "BOEING 737-900",
+                "capacity": 172,
+                "frequency": 6
+            },
+            "financial": {
+                "fare": 783.99,
+                "pax": 161,
+                "lf": 0.9352,
+                "revenue": 757334.34,
+                "fuel": 166634.976,
+                "maint": 63509.9342490566,
+                "crew": 66653.9904,
+                "otherop": 49990.4928,
+                "nonop": 199961.9712,
+                "totalcost": 546751.364649057,
+                "profit": 210582.975350943
+            }
+        },
+        {
+            "origin": {
+                "name": "Kona Intl at Keahole",
+                "city": "Kailua/Kona",
+                "country": "US",
+                "iata_code": "KOA",
+                "latitude_deg": 19.7388888888889,
+                "longitude_deg": -156.045555555556
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 2688,
+                "distance_nm": 2335.807488,
+                "heading_deg": 36.8,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 677.97,
+                "pax": 150,
+                "lf": 0.9401,
+                "revenue": 3152560.5,
+                "fuel": 986603.52,
+                "maint": 376026.247245283,
+                "crew": 394641.408,
+                "otherop": 295981.056,
+                "nonop": 1183924.224,
+                "totalcost": 3237176.45524528,
+                "profit": -84615.955245283
+            }
+        },
+        {
+            "origin": {
+                "name": "Lihue Airport",
+                "city": "Lihue",
+                "country": "US",
+                "iata_code": "LIH",
+                "latitude_deg": 21.9761111111111,
+                "longitude_deg": -159.338888888889
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 2701,
+                "distance_nm": 2347.104176,
+                "heading_deg": 40.4,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 622.17,
+                "pax": 150,
+                "lf": 0.9406,
+                "revenue": 2893090.5,
+                "fuel": 991375.04,
+                "maint": 377844.826566038,
+                "crew": 396550.016,
+                "otherop": 297412.512,
+                "nonop": 1189650.048,
+                "totalcost": 3252832.44256604,
+                "profit": -359741.942566038
+            }
+        },
+        {
+            "origin": {
+                "name": "Honolulu Intl",
+                "city": "Honolulu",
+                "country": "US",
+                "iata_code": "HNL",
+                "latitude_deg": 21.3186111111111,
+                "longitude_deg": -157.9225
+            },
+            "destination": {
+                "name": "Seattle-Tacoma Intl",
+                "city": "Seattle",
+                "country": "US",
+                "iata_code": "SEA",
+                "latitude_deg": 47.45,
+                "longitude_deg": -122.311666666667
+            },
+            "route": {
+                "distance_mi": 2677,
+                "distance_nm": 2326.248752,
+                "heading_deg": 39.1,
+                "equipment": "BOEING 737-800 With Winglets",
+                "capacity": 160,
+                "frequency": 31
+            },
+            "financial": {
+                "fare": 652.86,
+                "pax": 153,
+                "lf": 0.9574,
+                "revenue": 3096514.98,
+                "fuel": 982566.08,
+                "maint": 374487.449358491,
+                "crew": 393026.432,
+                "otherop": 294769.824,
+                "nonop": 1179079.296,
+                "totalcost": 3223929.08135849,
+                "profit": -127414.101358491
+            }
+        }
+    ]

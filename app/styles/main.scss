@@ -389,9 +389,15 @@ body {
 
 }
 
+.route {
+  stroke: $color-blue;
+}
 
+.route:hover {
+  stroke: $color-gray;
 
-// APP section
+}
+ // APP section
 // -------------
 .app-holder {
   text-align: center;
