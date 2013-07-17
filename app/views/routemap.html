@@ -2,9 +2,139 @@
 
 <div class="page-wrapper">
 
-	<div class="app-holder">
-		<world-map height='700' width='1200'>hey</world-map>
-	</div>
+    <div class="app-holder">
+        <!-- fleet type filter at top of app -->
+        <section id="filter-bar">
+            <div id="filter-bar-menu-btn"></div>
+
+            <!-- loop through the different model types -->
+            <div ng-repeat="model in fleetModels">
+                <div class="fleet-model-btn">
+                    <span class="model-name">737-000</span>
+                    <span class="aircraft-icon"></span>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="route-map">
+            <world-map height='700' width='1200'>hey</world-map>
+        </section>
+
+        <div class="dashboard-wrapper">
+            
+            <!-- dock dashboard navigation to left side -->
+            <div class="dashboard-nav">
+                <ul class="side-nav">
+                    <li>$</li>
+                    <li>Ops</li>
+                    <li>Plane</li>
+                </ul>
+            </div>
+
+            <!-- primary dashboard area (minus navigation) -->
+            <div class="dashboard-inner">
+                
+                <section class="dash-financial" ng-controller="FinancialCtrl">
+
+                    <!-- small filter panel with year buttons -->
+                    <div class="panel-sm">
+                        <div class="filter-year">
+                            <h4>Year</h4>
+                            <ul class="year-buttons">
+                                <li>2013</li>
+                                <li>2012</li>
+                                <li>2011</li>
+                                <li>2010</li>
+                                <li>2009</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- main financial panel -->
+                    <div class="panel-main">
+                        <div class="panel-inner">
+                            <h3>Financial</h3>
+                            <div class="financial-table">
+                                <!-- check out ng-grid maybe? -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- panel for the financial chart -->
+                    <div class="panel-med">
+                        <div class="panel-inner">
+                            <div class="chart-title">Total Revenue</div>
+                            <div class="chart-value">$4.65B</div>
+                            <div class="chart-wrap">
+                                <donut-chart>Here's a donut chart!</donut-chart>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dash-operational">
+
+                    <!-- small filter panel with day buttons -->
+                    <div class="panel-sm">
+                        <div class="filter-days">
+                            <h4>Schedule</h4>
+                            <ul class="schedule-buttons">
+                                <li>MON <span class="frequency">2</span></li>
+                                <li>TUE <span class="frequency">2</span></li>
+                                <li>WED <span class="frequency">2</span></li>
+                                <li>THU <span class="frequency">2</span></li>
+                                <li>FRI <span class="frequency">2</span></li>
+                                <li>SAT <span class="frequency">2</span></li>
+                                <li>SUN <span class="frequency">2</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- main Operationsl panel -->
+                    <div class="panel-main">
+                        <div class="panel-inner">
+                            <div class="table-wrap">
+                                <h3>Route Details</h3>
+                                <div class="route-detail-table">
+                                    <!-- check out ng-grid maybe? -->
+                                </div>
+                            </div>
+    
+                            <div class="table-wrap">
+                                <h3>Route Costs</h3>
+                                <div class="route-detail-table">
+                                    <!-- check out ng-grid maybe? -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- panel for the operational chart -->
+                    <div class="panel-med">
+                        <div class="panel-inner">
+                            <div class="chart-title">Average Route Cost</div>
+                            <div class="chart-value">$15.6M</div>
+                            <div class="chart-wrap">
+                                <donut-chart>Here's a donut chart!</donut-chart>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dash-fleet">
+
+                </section>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
 
 </div>
 

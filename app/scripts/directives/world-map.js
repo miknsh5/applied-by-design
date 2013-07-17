@@ -43,8 +43,8 @@ angular.module('appliedByDesignApp')
           g.insert("path")
               .datum(topojson.feature(world, world.objects.land))
               .attr("class", "land")
-              .attr("d", path)
-              .on("click", clicked);
+              .attr("d", path);
+              // .on("click", clicked);
 
           g.insert("path")
               .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
@@ -69,30 +69,30 @@ angular.module('appliedByDesignApp')
 
           })
           
-        function clicked(d) {
-          var x, y, k;
+        // function clicked(d) {
+        //   var x, y, k;
 
-          if (d && centered !== d) {
-            var centroid = path.centroid(d);
-            x = centroid[0];
-            y = centroid[1];
-            k = 4;
-            centered = d;
-          } else {
-            x = width / 2;
-            y = height / 2;
-            k = 1;
-            centered = null;
-          }
+        //   if (d && centered !== d) {
+        //     var centroid = path.centroid(d);
+        //     x = centroid[0];
+        //     y = centroid[1];
+        //     k = 4;
+        //     centered = d;
+        //   } else {
+        //     x = width / 2;
+        //     y = height / 2;
+        //     k = 1;
+        //     centered = null;
+        //   }
 
-          g.selectAll("path")
-              .classed("route", centered && function(d) { return d === centered; });
+        //   g.selectAll("path")
+        //       .classed("route", centered && function(d) { return d === centered; });
 
-          g.transition()
-              .duration(750)
-              .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
-              .style("stroke-width", 1.5 / k + "px");
-        }
+        //   g.transition()
+        //       .duration(750)
+        //       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+        //       .style("stroke-width", 1.5 / k + "px");
+        // }
 
          
 
