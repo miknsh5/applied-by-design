@@ -1,0 +1,24 @@
+{
+  "fonts": [
+    "fontcustom_d067d1b074b110a0dc96323dc3047712.ttf",
+    "fontcustom_d067d1b074b110a0dc96323dc3047712.woff",
+    "fontcustom_d067d1b074b110a0dc96323dc3047712.eot",
+    "fontcustom_d067d1b074b110a0dc96323dc3047712.svg"
+  ],
+  "templates": [
+    "_fontcustom.scss",
+    "fontcustom-preview.html",
+    "_fontcustom-bootstrap.scss",
+    "fontcustom.css"
+  ],
+  "file_name": "fontcustom_d067d1b074b110a0dc96323dc3047712",
+  "glyphs": [
+    "airplane",
+    "computer",
+    "fuel",
+    "pilot",
+    "smartphone",
+    "tools",
+    "wrench"
+  ]
+}

@@ -7,6 +7,7 @@
 @import "compass/css3/transition";
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
+// @import "compass/css3/font-face";
 
 
 // Hotfix Glyphicons-halflings include
@@ -56,6 +57,8 @@ $divider-height: 470px;
 // @import 'lib/icon-blocks';
 @import 'lib/navigation'; 
 @import 'lib/footer'; 
+@import 'lib/app-route-dashboard'; 
+@import 'fonts/myfonts';
 
 
 // 1.0 GLOBAL STYLES
@@ -389,27 +392,3 @@ body {
 
 }
 
-.route {
-  stroke: $color-blue;
-}
-
-.route:hover {
-  stroke: $color-gray;
-
-}
- // APP section
-// -------------
-.app-holder {
-  text-align: center;
-  width: 100%;
-}
-
-.land {
-  fill: #222;
-}
-
-.boundary {
-  fill: none;
-  stroke: #fff;
-  stroke-width: .5px;
-}
