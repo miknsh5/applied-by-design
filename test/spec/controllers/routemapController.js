@@ -11,7 +11,7 @@ describe('Controller: RoutemapControllerCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    RoutemapControllerCtrl = $controller('RoutemapControllerCtrl', {
+    RoutemapControllerCtrl = $controller('RoutemapCtrl', {
       $scope: scope
     });
   }));

@@ -36,27 +36,118 @@
 
 $bg-color-lt: rgba(220,220,220,0.95);
 $bg-color-dk: rgba(51,51,51,1);
+$bg-color-dk-hover: rgba(80,80,80,1);
 $font-white: rgb(220,220,220);
+$font-whitewhite: rgb(250,250,250);
+$font-dark: rgb(20,20,20);
+$font-darkgray: rgb(80,80,80);
+
+
+$filter-bar-height: 50px;
 
 #filter-bar {
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: $filter-bar-height;
   background-color: $bg-color-lt;
   border-bottom: solid 1px #888;
+}
 
+#filter-bar-menu-btn {
+  width: $filter-bar-height;
+  height: 100%;
+  float: right;
+  background-color: $bg-color-dk;
+  color: $font-white;
+  cursor: pointer;
+  margin-right: 10px;
 
-  #filter-bar-menu-btn {
-    width: 50px;
-    height: 100%;
-    float: right;
-    background-color: $bg-color-dk;
-    color: $font-white;
-
-    i {
-      margin-left: 3px;
-      font-size: 1.3em;
-      line-height: 3.0em;
-    }
+  i {
+    margin-left: 3px;
+    font-size: 1.3em;
+    line-height: 3.0em;
   }
 }
+
+#filter-bar-menu-btn:hover {
+  background-color: $bg-color-dk-hover;
+  color: $font-whitewhite;
+
+}
+
+
+.fleet-model-btn {
+  display: inline-block;
+  margin-right: 20px;
+  height: $filter-bar-height;
+  float: right;
+  font-size: 1.3em;
+  line-height: 3em;
+  padding: 0 10px;
+  background-color: rgba(0,0,0,0.1);
+  margin-right: 5px;
+  cursor: pointer;
+  color: $font-darkgray;
+
+  .ikon {
+    font-size: 14px;
+  }
+}
+
+.fleet-model-btn:hover {
+  background-color: rgba(0,0,0,0.05);
+  color: $color-blue;
+
+}
+
+.dashboard-wrapper {
+  // width: 100%;
+  height: 400px;
+  background-color: $bg-color-dk;
+  // position: fixed;
+  // bottom: 0;
+
+  .dashboard-inner {
+    margin: 20px;
+    margin-top: -20px;
+    min-width: 800px;
+    border: 1px solid #444;
+  }
+}
+
+.dashboard-nav {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  top: -40px;
+  left: 10px;
+  // border-right: solid 2px #222;
+
+  .mini-nav-group {
+
+    .mini-nav-btn {
+      width: 50px;
+      height: 40px;
+      background-color: #222;
+      border: solid 1px #333;
+      font-size: 1.4em;
+      // color: #444;
+      color: $font-white;
+      line-height: 2.1em;
+      cursor: pointer;
+      display: block;
+      float: left;
+      position: relative;
+      margin: 0 2px;
+
+    }
+
+    .mini-nav-btn:hover {
+      background-color: $bg-color-dk-hover;
+      color: $font-whitewhite;
+
+    }
+
+  }
+}
+

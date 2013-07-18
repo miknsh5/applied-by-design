@@ -1,13 +1,24 @@
-'use strict';
+// 'use strict';
 
-describe('Directive: worldMap', function () {
-  beforeEach(module('appliedByDesignApp'));
+// describe('Directive: worldMap', function () {
+//   var elm, scope;
 
-  var element;
+//   beforeEach(module('appliedByDesignApp'));
 
-  it('should make hidden element visible', inject(function ($rootScope, $compile) {
-    element = angular.element('<world-map></world-map>');
-    element = $compile(element)($rootScope);
-    expect(element.text()).toBe('this is the worldMap directive');
-  }));
-});
+//   beforeEach(inject(function($rootScope, $compile) {
+//     elm = angular.element(
+//         '<div>' +
+//             '<world-map height="500" width="600"></world-map>' +
+//         '</div>');
+
+//     scope = $rootScope;
+//     $compile(elm)(scope);
+//     scope.$digest();
+//   }));
+
+
+//   it('should make a map svg', inject(function ($rootScope, $compile) {
+//     // var svg = elm.find('svg');
+//     expect($('svg').width()).toBe(500);
+//   }));
+// });

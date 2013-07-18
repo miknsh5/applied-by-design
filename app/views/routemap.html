@@ -4,35 +4,35 @@
 
     <div class="app-holder">
         <!-- fleet type filter at top of app -->
+
         <section id="filter-bar">
-            <div id="filter-bar-menu-btn">
-                <i class="ikon-airplane ikon"></i>
+            <div id="filter-bar-menu-btn" ng-init="showFleetFilter=true" ng-click="showFleetFilter=!showFleetFilter">
+                <i class="ikon-airplane"></i>
             </div>
 
-
             <!-- loop through the different model types -->
-            <div ng-repeat="model in fleetModels">
+            <div ng-repeat="model in fleetModels" ng-show="showFleetFilter">
                 <div class="fleet-model-btn">
-                    <span class="model-name">737-000</span>
-                    <span class="aircraft-icon"></span>
+                    <span class="model-name">{{model.name}}</span>
+                    <i class="ikon-airplane ikon"> </i>
                 </div>
             </div>
 
         </section>
 
         <section id="route-map">
-            <world-map height='700' width='1200'>hey</world-map>
+            <world-map height='mapHeight' width='mapWidth'>hey</world-map>
         </section>
 
-        <div class="dashboard-wrapper">
+        <div class="dashboard-wrapper" ng-style="width= {{mapWidth}} + 'px'">
             
             <!-- dock dashboard navigation to left side -->
             <div class="dashboard-nav">
-                <ul class="side-nav">
-                    <li>$</li>
-                    <li>Ops</li>
-                    <li>Plane</li>
-                </ul>
+                <div class="mini-nav-group">
+                    <div class="mini-nav-btn"><strong>$</strong></div>
+                    <div class="mini-nav-btn"><i class="ikon-clock"></i></div>
+                    <div class="mini-nav-btn"><i class="ikon-airplane"></i></div>
+                </div>
             </div>
 
             <!-- primary dashboard area (minus navigation) -->
