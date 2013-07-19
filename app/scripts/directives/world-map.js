@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .directive('worldMap', function () {
+  .directive('worldMap', function ($rootScope) {
     return {
-      template: '<div></div>',
       restrict: 'E',
       scope: {
-        width:"=",
-        height:"="
+        width:       "=",
+        height:      "=",
+        fleetRouteData:   "="
       },
       link: function postLink(scope, element, attrs) {
         // element.text('this is the worldMap directive');
@@ -28,7 +28,7 @@ angular.module('appliedByDesignApp')
         // var airport = d3.geo.circle(),
             // route = d3.geo.
 
-        var airportData = {'type': 'LineString', 'coordinates': [[-0.46, 51.5], [-73.8, 40.6]]}
+        // var airportData = {'type': 'LineString', 'coordinates': [[-0.46, 51.5], [-73.8, 40.6]]}
 
         // render the world map
         // element[0] references the containing directive DOM element
@@ -39,6 +39,8 @@ angular.module('appliedByDesignApp')
 
         var g = svg.append('g');
 
+
+        //load the map data
         d3.json("/images/world-50m.json", function(error, world) {
           g.insert("path")
               .datum(topojson.feature(world, world.objects.land))
@@ -51,23 +53,25 @@ angular.module('appliedByDesignApp')
               .attr("class", "boundary")
               .attr("d", path);
 
-          d3.json('/images/AS-flightLegs.json', function(error, flightLegs){
-
-            g.selectAll('route').data(flightLegs)
-                .enter()
-                    .append('path')
-                    .datum(function(d){
-                      return{'type': 'LineString', 'coordinates': [[d.origin.longitude_deg, d.origin.latitude_deg], [d.destination.longitude_deg, d.destination.latitude_deg]]};
-                    })
-                    .attr('class', 'route')
-                    .attr('fill', 'none')
-                    .attr('stroke', 'blue')
-                    .attr('stroke-width', 3)
-                    .attr('d', path);
-            });
+            console.log('building routes')
+            g.selectAll('route').data(scope.fleetRouteData)
+              .enter()
+                  .append('path')
+                  .datum(function(d){
+                    return{'type': 'LineString', 'coordinates': [[d.Olon, d.Olat], [d.Dlon, d.Dlat]]};
+                  })
+                  .attr('class', 'route')
+                  .attr('fill', 'none')
+                  .attr('stroke', 'blue')
+                  .attr('stroke-width', 3)
+                  .attr('d', path);
 
 
-          })
+
+        });
+
+
+          // })
           
         // function clicked(d) {
         //   var x, y, k;
@@ -94,8 +98,23 @@ angular.module('appliedByDesignApp')
         //       .style("stroke-width", 1.5 / k + "px");
         // }
 
-         
 
+        // scope.$watch('routeData', function(){
+        //   console.log('fired')
+        //   if (!scope.routeData) { return }
+
+        //   g.selectAll('route').data(scope.routeData)
+        //     .enter()
+        //         .append('path')
+        //         .datum(function(d){
+        //           return{'type': 'LineString', 'coordinates': [[d.Olon, d.Olat], [d.Dlon, d.Dlat]]};
+        //         })
+        //         .attr('class', 'route')
+        //         .attr('fill', 'none')
+        //         .attr('stroke', 'blue')
+        //         .attr('stroke-width', 3)
+        //         .attr('d', path);
+        // })
 
       }
 
