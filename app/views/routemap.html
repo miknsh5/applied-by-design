@@ -29,9 +29,21 @@
             <!-- dock dashboard navigation to left side -->
             <div class="dashboard-nav">
                 <div class="mini-nav-group">
-                    <div class="mini-nav-btn"><strong>$</strong></div>
-                    <div class="mini-nav-btn"><i class="ikon-clock"></i></div>
-                    <div class="mini-nav-btn"><i class="ikon-airplane"></i></div>
+                    <div class="mini-nav-btn" 
+                        ng-class="{active: isFinActive}" 
+                        ng-click="isFinActive=true; isOpsActive=false; isFltActive=false;">
+                        <strong>$</strong>
+                     </div>
+                    <div class="mini-nav-btn"
+                        ng-class="{active: isOpsActive}"
+                        ng-click="isFinActive=false; isOpsActive=true; isFltActive=false;">
+                        <i class="ikon-clock"></i>
+                    </div>
+                    <div class="mini-nav-btn" 
+                        ng-class="{active: isFltActive}" 
+                        ng-click="isFinActive=false; isOpsActive=false; isFltActive=true;">
+                        <i class="ikon-airplane"></i>
+                    </div>
                 </div>
             </div>
 
@@ -39,34 +51,40 @@
             <div class="dashboard-inner">
                 
                 <!-- <section class="dash-financial" ng-controller="FinancialCtrl"> -->
-                <section class="dash-financial">
+                <section class="dash financial" ng-show="isFinActive">
 
                     <!-- small filter panel with year buttons -->
-                    <div class="panel-sm">
+                    <div class="panel small">
                         <div class="filter-year">
-                            <h4>Year</h4>
-                            <ul class="year-buttons">
-                                <li>2013</li>
-                                <li>2012</li>
-                                <li>2011</li>
-                                <li>2010</li>
-                                <li>2009</li>
-                            </ul>
+                            <h4>Fiscal Year</h4>
+                            <div class="year-buttons">
+                                <div class="year-btn active">2013</div>
+                                <div class="year-btn">2012</div>
+                                <div class="year-btn">2011</div>
+                                <div class="year-btn">2010</div>
+                                <div class="year-btn">2009</div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- main financial panel -->
-                    <div class="panel-main">
+                    <div class="panel main">
                         <div class="panel-inner">
                             <h3>Financial</h3>
-                            <div class="financial-table">
+                            <div class="table financial">
                                 <!-- check out ng-grid maybe? -->
+                                <div ng-repeat="financial in financialSummary">
+                                    <div class="table-primary">
+                                        <h4>{{financial.name}}: {{financial.val}}</h4>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
                     <!-- panel for the financial chart -->
-                    <div class="panel-med">
+                    <div class="panel chart">
                         <div class="panel-inner">
                             <div class="chart-title">Total Revenue</div>
                             <div class="chart-value">$4.65B</div>
@@ -77,10 +95,11 @@
                     </div>
                 </section>
 
-                <section class="dash-operational">
+
+                <section class="dash operational" ng-show="isOpsActive">
 
                     <!-- small filter panel with day buttons -->
-                    <div class="panel-sm">
+                    <div class="panel small">
                         <div class="filter-days">
                             <h4>Schedule</h4>
                             <ul class="schedule-buttons">
@@ -96,7 +115,7 @@
                     </div>
 
                     <!-- main Operationsl panel -->
-                    <div class="panel-main">
+                    <div class="panel main">
                         <div class="panel-inner">
                             <div class="table-wrap">
                                 <h3>Route Details</h3>
@@ -115,7 +134,7 @@
                     </div>
 
                     <!-- panel for the operational chart -->
-                    <div class="panel-med">
+                    <div class="panel chart">
                         <div class="panel-inner">
                             <div class="chart-title">Average Route Cost</div>
                             <div class="chart-value">$15.6M</div>
@@ -126,7 +145,7 @@
                     </div>
                 </section>
 
-                <section class="dash-fleet">
+                <section class="dash fleet" ng-show="isFltActive">
 
                 </section>
 
