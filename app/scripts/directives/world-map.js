@@ -25,10 +25,6 @@ angular.module('appliedByDesignApp')
         var path = d3.geo.path()
             .projection(projection)
             .pointRadius(function(d){ return [d.radius];});
-        // var airport = d3.geo.circle(),
-            // route = d3.geo.
-
-        // var airportData = {'type': 'LineString', 'coordinates': [[-0.46, 51.5], [-73.8, 40.6]]}
 
         // render the world map
         // element[0] references the containing directive DOM element
@@ -37,84 +33,48 @@ angular.module('appliedByDesignApp')
             .attr("height", height);
 
 
-        var g = svg.append('g');
+        var map = svg.append('g');
 
 
         //load the map data
         d3.json("/images/world-50m.json", function(error, world) {
-          g.insert("path")
+          map.insert("path")
               .datum(topojson.feature(world, world.objects.land))
               .attr("class", "land")
               .attr("d", path);
               // .on("click", clicked);
 
-          g.insert("path")
+          map.insert("path")
               .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
               .attr("class", "boundary")
               .attr("d", path);
 
-            console.log('building routes')
-            g.selectAll('route').data(scope.fleetRouteData)
-              .enter()
-                  .append('path')
-                  .datum(function(d){
-                    return{'type': 'LineString', 'coordinates': [[d.Olon, d.Olat], [d.Dlon, d.Dlat]]};
-                  })
-                  .attr('class', 'route')
-                  .attr('fill', 'none')
-                  .attr('stroke', 'blue')
-                  .attr('stroke-width', 3)
-                  .attr('d', path);
+        })
 
 
+        scope.$watch('fleetRouteData', function(newData, oldData){
 
-        });
-
-
-          // })
+          console.log('updating routes')
           
-        // function clicked(d) {
-        //   var x, y, k;
+          var routes = map.selectAll('route')
+              .data(newData);
 
-        //   if (d && centered !== d) {
-        //     var centroid = path.centroid(d);
-        //     x = centroid[0];
-        //     y = centroid[1];
-        //     k = 4;
-        //     centered = d;
-        //   } else {
-        //     x = width / 2;
-        //     y = height / 2;
-        //     k = 1;
-        //     centered = null;
-        //   }
+          routes.enter()
+              .append('path')
+              .datum(function(d){
+                return{'type': 'LineString', 'coordinates': [[d.Olon, d.Olat], [d.Dlon, d.Dlat]]};
+              })
+              .attr('class', 'route')
+              .attr('fill', 'none')
+              .attr('stroke', 'blue')
+              .attr('stroke-width', 3)
+              .attr('d', path);
 
-        //   g.selectAll("path")
-        //       .classed("route", centered && function(d) { return d === centered; });
+          routes.exit().remove()
 
-        //   g.transition()
-        //       .duration(750)
-        //       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
-        //       .style("stroke-width", 1.5 / k + "px");
-        // }
+        }, true);
 
 
-        // scope.$watch('routeData', function(){
-        //   console.log('fired')
-        //   if (!scope.routeData) { return }
-
-        //   g.selectAll('route').data(scope.routeData)
-        //     .enter()
-        //         .append('path')
-        //         .datum(function(d){
-        //           return{'type': 'LineString', 'coordinates': [[d.Olon, d.Olat], [d.Dlon, d.Dlat]]};
-        //         })
-        //         .attr('class', 'route')
-        //         .attr('fill', 'none')
-        //         .attr('stroke', 'blue')
-        //         .attr('stroke-width', 3)
-        //         .attr('d', path);
-        // })
 
       }
 

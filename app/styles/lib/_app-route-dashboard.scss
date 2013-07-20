@@ -36,6 +36,7 @@
 $bg-color-lt: rgba(220,220,220,0.95);
 $bg-color-dk: rgba(51,51,51,1);
 $bg-overlay-light: rgba(255,255,255,0.1);
+$bg-overlay-blue: rgba(48,128,178,0.2);
 $bg-color-dk-hover: rgba(80,80,80,1);
 $bg-color-dk-hover: rgba(80,80,80,1);
 $font-white: rgb(220,220,220);
@@ -139,6 +140,10 @@ $filter-bar-height: 50px;
     border-bottom: solid 1px #666;
   }
 
+  h4 {
+    margin: 5px 0;
+  }
+
   .dash {
     text-align: left;
     clear: left;
@@ -181,15 +186,53 @@ $filter-bar-height: 50px;
 }
 
 
-.year-btn {
+.year-btn, .day-btn {
   margin: 4px auto;
   padding: 3px 3px;
   width: 70px;
   @include dark-button;
 
-  &.active {
+}
+
+.summary-table {
+  color: $font-lightgray;
+  
+  h4.title {
+    display: inline;
+    width: 200px;
+    float: left;
+    clear: left;
+    margin-left: 10px;
+  }
+
+  h4.number {
+    display: inline;
+    width: 200px;
+    float: left;
+    clear: right;
+  }
+
+  .row-wrap {
+    width: 100%;
+    height: 30px;
+
+    &.active {
+      background-color: $bg-overlay-blue;
+    }
+
+    &:hover {
+      background-color: $bg-overlay-light;
+    }
 
   }
+}
+
+.primary {
+  color: $color-orange-lt !important;
+}
+
+.dollar {
+  font-weight: 100;
 }
 
 .dashboard-nav {

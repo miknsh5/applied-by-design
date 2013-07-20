@@ -70,12 +70,16 @@
                     <!-- main financial panel -->
                     <div class="panel main">
                         <div class="panel-inner">
-                            <h3>Financial</h3>
-                            <div class="table financial">
+                            <div class="summary-table financial">
+                                <h3>Financial</h3>
                                 <!-- check out ng-grid maybe? -->
                                 <div ng-repeat="financial in financialSummary">
-                                    <div class="table-primary">
-                                        <h4>{{financial.name}}: {{financial.val}}</h4>
+                                    <div class="row-wrap">
+                                        <h4 class="title">{{financial.name}}:</h4>
+                                        <h4 class="number primary">
+                                            <span class="dollar" ng-show="financial.currency">$</span>
+                                            {{financial.val}}
+                                        </h4>
                                     </div>
                                 </div>
 
@@ -86,7 +90,7 @@
                     <!-- panel for the financial chart -->
                     <div class="panel chart">
                         <div class="panel-inner">
-                            <div class="chart-title">Total Revenue</div>
+                            <div class="chart-title"><h4>Total Revenue</h4></div>
                             <div class="chart-value">$4.65B</div>
                             <div class="chart-wrap">
                                 <donut-chart>Here's a donut chart!</donut-chart>
@@ -102,15 +106,15 @@
                     <div class="panel small">
                         <div class="filter-days">
                             <h4>Schedule</h4>
-                            <ul class="schedule-buttons">
-                                <li>MON <span class="frequency">2</span></li>
-                                <li>TUE <span class="frequency">2</span></li>
-                                <li>WED <span class="frequency">2</span></li>
-                                <li>THU <span class="frequency">2</span></li>
-                                <li>FRI <span class="frequency">2</span></li>
-                                <li>SAT <span class="frequency">2</span></li>
-                                <li>SUN <span class="frequency">2</span></li>
-                            </ul>
+                            <div class="day-buttons">
+                                <div class="day-btn">MON</div>
+                                <div class="day-btn">TUE</div>
+                                <div class="day-btn">WED</div>
+                                <div class="day-btn">THU</div>
+                                <div class="day-btn">FRI</div>
+                                <div class="day-btn">SAT</div>
+                                <div class="day-btn">SUN</div>
+                            </div>
                         </div>
                     </div>
 
