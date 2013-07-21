@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('RoutemapCtrl', function ($scope, fleetRouteData) {
+  .controller('RoutemapCtrl', function ($scope, fleetRouteData, byFleetTypeFilter) {
 
     // load the data with route resolve function in app.js, don't load page until data is ready
     // this fixes the issue with async directive data binding
@@ -18,7 +18,8 @@ angular.module('appliedByDesignApp')
 
     $scope.activeFinanceData = [];
 
-    $scope.fleetRouteData = fleetRouteData;
+    // $scope.fleetRouteData = fleetRouteData;
+    $scope.fleetRouteData_filtered = fleetRouteData;
 
 
     // hardcode fleet models for now.  
@@ -39,6 +40,21 @@ angular.module('appliedByDesignApp')
         {'name': 'RASM', 'val': 0.117, 'currency': false},
         {'name': 'CASM', 'val': 0.074, 'currency': false}
       ];
+
+    $scope.applyFleetFilterX = function(modelType){
+      console.log(modelType);
+      
+      // map long model type names to shortnames
+      var dict = {
+        '737-400': '734',
+        '737-700': '73Q',
+        '737-800': '738',
+        '737-900': '739'
+      };
+
+      $scope.fleetRouteData_filtered = byFleetTypeFilter(fleetRouteData, dict[modelType]);
+
+    }
 
   });
 

@@ -11,10 +11,10 @@
             </div>
 
             <!-- loop through the different model types -->
-            <div ng-repeat="model in fleetModels" ng-show="showFleetFilter">
+            <div ng-repeat="model in fleetModels | orderBy: 'name': true" ng-show="showFleetFilter">
                 <div class="fleet-model-btn" 
                     ng-init="isActive=false;"
-                    ng-click="isActive=!isActive"
+                    ng-click="isActive=!isActive; applyFleetFilterX(model.name)"
                     ng-class="{active: isActive}">
                     <span class="model-name">{{model.name}}</span>
                     <i class="ikon-airplane ikon"> </i>
@@ -24,7 +24,7 @@
         </section>
 
         <section id="route-map">
-            <world-map fleet-route-data='fleetRouteData' height='mapHeight' width='mapWidth'></world-map>
+            <world-map fleet-route-data='fleetRouteData_filtered' height='mapHeight' width='mapWidth'></world-map>
         </section>
 
         <div class="dashboard-wrapper" ng-style="width= {{mapWidth}} + 'px'">
