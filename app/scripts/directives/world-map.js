@@ -88,7 +88,11 @@ angular.module('appliedByDesignApp')
                   .attr('fill', 'none')
                   .attr('stroke', 'blue')
                   .attr('stroke-width', 3)
-                  .attr('d', path);
+                  .style('opacity', 0)
+                  .attr('d', path)
+                .transition()
+                  .duration(500)
+                  .style('opacity', 1);
 
         }, true); //setting 'true' tells angular to watch for exact data changes (i.e. nested data can trigger event)
 
