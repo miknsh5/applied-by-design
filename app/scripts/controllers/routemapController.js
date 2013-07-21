@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('RoutemapCtrl', function ($scope, fleetRouteData, byFleetTypeFilter) {
+  .controller('RoutemapCtrl', function ($scope, fleetRouteData, byFleetTypeFilter, activeFleetModelsFilter) {
 
     // load the data with route resolve function in app.js, don't load page until data is ready
     // this fixes the issue with async directive data binding
@@ -25,10 +25,10 @@ angular.module('appliedByDesignApp')
     // hardcode fleet models for now.  
     // Should update this to derive fleet from imported route schedule
     $scope.fleetModels = [
-        {'name': '737-400'},
-        {'name': '737-700'},
-        {'name': '737-800'},
-        {'name': '737-900'}
+        {'name': '737-400', 'active': true},
+        {'name': '737-700', 'active': true},
+        {'name': '737-800', 'active': true},
+        {'name': '737-900', 'active': true}
       ];
 
     $scope.financialSummary = [
@@ -41,18 +41,10 @@ angular.module('appliedByDesignApp')
         {'name': 'CASM', 'val': 0.074, 'currency': false}
       ];
 
-    $scope.applyFleetFilterX = function(modelType){
-      console.log(modelType);
+    $scope.applyFleetFilter = function(){
       
-      // map long model type names to shortnames
-      var dict = {
-        '737-400': '734',
-        '737-700': '73Q',
-        '737-800': '738',
-        '737-900': '739'
-      };
-
-      $scope.fleetRouteData_filtered = byFleetTypeFilter(fleetRouteData, dict[modelType]);
+      var filterBy = activeFleetModelsFilter($scope.fleetModels);
+      $scope.fleetRouteData_filtered = byFleetTypeFilter(fleetRouteData, filterBy);
 
     }
 

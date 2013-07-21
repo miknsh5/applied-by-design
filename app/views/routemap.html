@@ -14,8 +14,8 @@
             <div ng-repeat="model in fleetModels | orderBy: 'name': true" ng-show="showFleetFilter">
                 <div class="fleet-model-btn" 
                     ng-init="isActive=false;"
-                    ng-click="isActive=!isActive; applyFleetFilterX(model.name)"
-                    ng-class="{active: isActive}">
+                    ng-click="fleetModels[$index].active = !fleetModels[$index].active; applyFleetFilter()"
+                    ng-class="{active: fleetModels[$index].active}">
                     <span class="model-name">{{model.name}}</span>
                     <i class="ikon-airplane ikon"> </i>
                 </div>
