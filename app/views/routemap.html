@@ -12,7 +12,10 @@
 
             <!-- loop through the different model types -->
             <div ng-repeat="model in fleetModels" ng-show="showFleetFilter">
-                <div class="fleet-model-btn">
+                <div class="fleet-model-btn" 
+                    ng-init="isActive=false;"
+                    ng-click="isActive=!isActive"
+                    ng-class="{active: isActive}">
                     <span class="model-name">{{model.name}}</span>
                     <i class="ikon-airplane ikon"> </i>
                 </div>

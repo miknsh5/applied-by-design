@@ -2,7 +2,7 @@
 
 angular.module('appliedByDesignApp')
   .controller('RoutemapCtrl', function ($scope, fleetRouteData) {
-    
+
     // load the data with route resolve function in app.js, don't load page until data is ready
     // this fixes the issue with async directive data binding
 
@@ -15,7 +15,7 @@ angular.module('appliedByDesignApp')
     $scope.isFinActive = true;
     $scope.isOpsActive = false;
     $scope.isFltActive = false;
-    
+
     $scope.activeFinanceData = [];
 
     $scope.fleetRouteData = fleetRouteData;
@@ -28,7 +28,7 @@ angular.module('appliedByDesignApp')
         {'name': '737-700'},
         {'name': '737-800'},
         {'name': '737-900'}
-    ];
+      ];
 
     $scope.financialSummary = [
         {'name': 'Total Revenue', 'val': 4.65, 'currency': true},
@@ -38,7 +38,7 @@ angular.module('appliedByDesignApp')
         {'name': 'ASM', 'val': 28.19, 'currency': false},
         {'name': 'RASM', 'val': 0.117, 'currency': false},
         {'name': 'CASM', 'val': 0.074, 'currency': false}
-    ]
+      ];
 
   });
 

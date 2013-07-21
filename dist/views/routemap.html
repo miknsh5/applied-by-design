@@ -2,71 +2,87 @@
 
     <div class="app-holder">
         <!-- fleet type filter at top of app -->
+
         <section id="filter-bar">
-            <div id="filter-bar-menu-btn">
-                <i class="ikon-airplane ikon"></i>
+            <div id="filter-bar-menu-btn" ng-init="showFleetFilter=true" ng-click="showFleetFilter=!showFleetFilter">
+                <i class="ikon-airplane"></i>
             </div>
 
-
             <!-- loop through the different model types -->
-            <div ng-repeat="model in fleetModels">
-                <div class="fleet-model-btn">
-                    <span class="model-name">737-000</span>
-                    <span class="aircraft-icon"></span>
+            <div ng-repeat="model in fleetModels" ng-show="showFleetFilter">
+                <div class="fleet-model-btn" ng-init="isActive=false;" ng-click="isActive=!isActive" ng-class="{active: isActive}">
+                    <span class="model-name">{{model.name}}</span>
+                    <i class="ikon-airplane ikon"> </i>
                 </div>
             </div>
 
         </section>
 
         <section id="route-map">
-            <world-map height="700" width="1200">hey</world-map>
+            <world-map fleet-route-data="fleetRouteData" height="mapHeight" width="mapWidth"></world-map>
         </section>
 
-        <div class="dashboard-wrapper">
+        <div class="dashboard-wrapper" ng-style="width= {{mapWidth}} + 'px'">
             
             <!-- dock dashboard navigation to left side -->
             <div class="dashboard-nav">
-                <ul class="side-nav">
-                    <li>$</li>
-                    <li>Ops</li>
-                    <li>Plane</li>
-                </ul>
+                <div class="mini-nav-group">
+                    <div class="mini-nav-btn" ng-class="{active: isFinActive}" ng-click="isFinActive=true; isOpsActive=false; isFltActive=false;">
+                        <strong>$</strong>
+                     </div>
+                    <div class="mini-nav-btn" ng-class="{active: isOpsActive}" ng-click="isFinActive=false; isOpsActive=true; isFltActive=false;">
+                        <i class="ikon-clock"></i>
+                    </div>
+                    <div class="mini-nav-btn" ng-class="{active: isFltActive}" ng-click="isFinActive=false; isOpsActive=false; isFltActive=true;">
+                        <i class="ikon-airplane"></i>
+                    </div>
+                </div>
             </div>
 
             <!-- primary dashboard area (minus navigation) -->
             <div class="dashboard-inner">
                 
                 <!-- <section class="dash-financial" ng-controller="FinancialCtrl"> -->
-                <section class="dash-financial">
+                <section class="dash financial" ng-show="isFinActive">
 
                     <!-- small filter panel with year buttons -->
-                    <div class="panel-sm">
+                    <div class="panel small">
                         <div class="filter-year">
-                            <h4>Year</h4>
-                            <ul class="year-buttons">
-                                <li>2013</li>
-                                <li>2012</li>
-                                <li>2011</li>
-                                <li>2010</li>
-                                <li>2009</li>
-                            </ul>
+                            <h4>Fiscal Year</h4>
+                            <div class="year-buttons">
+                                <div class="year-btn active">2013</div>
+                                <div class="year-btn">2012</div>
+                                <div class="year-btn">2011</div>
+                                <div class="year-btn">2010</div>
+                                <div class="year-btn">2009</div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- main financial panel -->
-                    <div class="panel-main">
+                    <div class="panel main">
                         <div class="panel-inner">
-                            <h3>Financial</h3>
-                            <div class="financial-table">
+                            <div class="summary-table financial">
+                                <h3>Financial</h3>
                                 <!-- check out ng-grid maybe? -->
+                                <div ng-repeat="financial in financialSummary">
+                                    <div class="row-wrap">
+                                        <h4 class="title">{{financial.name}}:</h4>
+                                        <h4 class="number primary">
+                                            <span class="dollar" ng-show="financial.currency">$</span>
+                                            {{financial.val}}
+                                        </h4>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
                     <!-- panel for the financial chart -->
-                    <div class="panel-med">
+                    <div class="panel chart">
                         <div class="panel-inner">
-                            <div class="chart-title">Total Revenue</div>
+                            <div class="chart-title"><h4>Total Revenue</h4></div>
                             <div class="chart-value">$4.65B</div>
                             <div class="chart-wrap">
                                 <donut-chart>Here's a donut chart!</donut-chart>
@@ -75,26 +91,27 @@
                     </div>
                 </section>
 
-                <section class="dash-operational">
+
+                <section class="dash operational" ng-show="isOpsActive">
 
                     <!-- small filter panel with day buttons -->
-                    <div class="panel-sm">
+                    <div class="panel small">
                         <div class="filter-days">
                             <h4>Schedule</h4>
-                            <ul class="schedule-buttons">
-                                <li>MON <span class="frequency">2</span></li>
-                                <li>TUE <span class="frequency">2</span></li>
-                                <li>WED <span class="frequency">2</span></li>
-                                <li>THU <span class="frequency">2</span></li>
-                                <li>FRI <span class="frequency">2</span></li>
-                                <li>SAT <span class="frequency">2</span></li>
-                                <li>SUN <span class="frequency">2</span></li>
-                            </ul>
+                            <div class="day-buttons">
+                                <div class="day-btn">MON</div>
+                                <div class="day-btn">TUE</div>
+                                <div class="day-btn">WED</div>
+                                <div class="day-btn">THU</div>
+                                <div class="day-btn">FRI</div>
+                                <div class="day-btn">SAT</div>
+                                <div class="day-btn">SUN</div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- main Operationsl panel -->
-                    <div class="panel-main">
+                    <div class="panel main">
                         <div class="panel-inner">
                             <div class="table-wrap">
                                 <h3>Route Details</h3>
@@ -113,7 +130,7 @@
                     </div>
 
                     <!-- panel for the operational chart -->
-                    <div class="panel-med">
+                    <div class="panel chart">
                         <div class="panel-inner">
                             <div class="chart-title">Average Route Cost</div>
                             <div class="chart-value">$15.6M</div>
@@ -124,7 +141,7 @@
                     </div>
                 </section>
 
-                <section class="dash-fleet">
+                <section class="dash fleet" ng-show="isFltActive">
 
                 </section>
 

@@ -114,7 +114,8 @@ $filter-bar-height: 50px;
   line-height: 3em;
   padding: 0 10px;
   margin-right: 5px;
-  @include light-button;
+  // @include light-button;
+  @include dark-button;
 
   .ikon {
     font-size: 14px;

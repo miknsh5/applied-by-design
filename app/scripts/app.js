@@ -25,7 +25,7 @@ angular.module('appliedByDesignApp', [])
       .when('/routemap', {
         templateUrl: 'views/routemap.html',
         controller: 'RoutemapCtrl',
-        resolve: { 
+        resolve: {
           fleetRouteData: function($http, $q){
 
               var deferred = $q.defer();
@@ -33,15 +33,15 @@ angular.module('appliedByDesignApp', [])
               $http({method: 'GET', url: 'images/full-data-model.json'})
                   .success(function(data){
                       deferred.resolve(data);
-                  })
+                    })
                   .error(function(data){
                       deferred.reject(data);
                       console.log('Resolve Error: data not loaded!');
-                  });
+                    });
 
               return deferred.promise;
             }
-          }
+        }
       })
       .otherwise({
         redirectTo: '/'
