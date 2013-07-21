@@ -33,18 +33,18 @@
 // app specific colors
 // (light and dark theme)
 
-$bg-color-lt: rgba(220,220,220,0.95);
-$bg-color-dk: rgba(51,51,51,1);
-$bg-overlay-light: rgba(255,255,255,0.1);
-$bg-overlay-blue: rgba(48,128,178,0.2);
-$bg-color-dk-hover: rgba(80,80,80,1);
-$bg-color-dk-hover: rgba(80,80,80,1);
-$font-white: rgb(220,220,220);
-$font-whitewhite: rgb(250,250,250);
-$font-dark: rgb(20,20,20);
-$font-darkgray: rgb(80,80,80);
-$font-lightgray: rgb(212, 212, 212);
-$font-lightblue: rgb(155,202,231);
+$bg-color-lt:           rgba(220,220,220,0.95);
+$bg-color-dk:           rgba(51,51,51,1);
+$bg-overlay-light:      rgba(255,255,255,0.1);
+$bg-overlay-lightlight: rgba(255,255,255,0.05);
+$bg-overlay-blue:       rgba(48,128,178,0.2);
+$bg-color-dk-hover:     rgba(80,80,80,1);
+$font-white:            rgb(220,220,220);
+$font-whitewhite:       rgb(250,250,250);
+$font-dark:             rgb(20,20,20);
+$font-darkgray:         rgb(80,80,80);
+$font-lightgray:        rgb(212, 212, 212);
+$font-lightblue:        rgb(155,202,231);
 
 
 $filter-bar-height: 50px;
@@ -76,6 +76,13 @@ $filter-bar-height: 50px;
 }
 
 
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+
 #route-map {
   margin-top: $filter-bar-height;
 }
@@ -87,6 +94,8 @@ $filter-bar-height: 50px;
   margin-top: -$filter-bar-height;
   background-color: $bg-color-lt;
   border-bottom: solid 1px #888;
+
+
 }
 
 #filter-bar-menu-btn {
@@ -126,6 +135,7 @@ $filter-bar-height: 50px;
   height: 350px;
   width: 100%;
   background-color: $bg-color-dk;
+  border-top: solid 2px #888;
   position: fixed;
   bottom: 0;
   z-index: 1000;
@@ -155,7 +165,7 @@ $filter-bar-height: 50px;
     margin: 0 20px;
     min-width: 800px;
     height: inherit;
-    border: 1px solid #444;
+    // border: 1px solid #444;
   }
 
   .panel {
@@ -173,7 +183,7 @@ $filter-bar-height: 50px;
 
     &.main {
       min-width: 800px;
-      border: solid #666 1px;
+      // border: solid #666 1px;
     }
 
     &.chart {
@@ -218,11 +228,15 @@ $filter-bar-height: 50px;
     height: 30px;
 
     &.active {
-      background-color: $bg-overlay-blue;
+      background-color: $bg-overlay-blue !important;
+      border-left: solid 5px $color-blue !important;
+      margin-left: -5px;
     }
 
     &:hover {
-      background-color: $bg-overlay-light;
+      background-color: $bg-overlay-lightlight;
+      border-left: solid 5px;
+      margin-left: -5px;
     }
 
   }
@@ -240,15 +254,16 @@ $filter-bar-height: 50px;
   width: 200px;
   height: 40px;
   position: absolute;
-  top: -40px;
+  top: -42px;
   left: 20px;
+  z-index: 0; 
 
   .mini-nav-group {
 
     .mini-nav-btn {
       width: 60px;
       height: 40px;
-      border: solid 1px #333;
+      // border: solid 1px #333;
       font-size: 1.4em;
       line-height: 2.1em;
       display: block;

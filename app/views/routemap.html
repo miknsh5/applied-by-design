@@ -6,18 +6,19 @@
         <!-- fleet type filter at top of app -->
 
         <section id="filter-bar">
-            <div id="filter-bar-menu-btn" ng-init="showFleetFilter=true" ng-click="showFleetFilter=!showFleetFilter">
-                <i class="ikon-airplane"></i>
-            </div>
+            <div class="page-container">
+                <div id="filter-bar-menu-btn" ng-init="showFleetFilter=true" ng-click="showFleetFilter=!showFleetFilter">
+                    <i class="ikon-airplane"></i>
+                </div>
 
-            <!-- loop through the different model types -->
-            <div ng-repeat="model in fleetModels | orderBy: 'name': true" ng-show="showFleetFilter">
-                <div class="fleet-model-btn" 
-                    ng-init="isActive=false;"
-                    ng-click="fleetModels[$index].active = !fleetModels[$index].active; applyFleetFilter()"
-                    ng-class="{active: fleetModels[$index].active}">
-                    <span class="model-name">{{model.name}}</span>
-                    <i class="ikon-airplane ikon"> </i>
+                <!-- loop through the different model types -->
+                <div ng-repeat="model in fleetModels" ng-show="showFleetFilter">
+                    <div class="fleet-model-btn" 
+                        ng-click="fleetModels[$index].active = !fleetModels[$index].active; applyFleetFilter()"
+                        ng-class="{active: fleetModels[$index].active}">
+                        <span class="model-name">{{model.name}}</span>
+                        <i class="ikon-airplane ikon"> </i>
+                    </div>
                 </div>
             </div>
 
@@ -29,133 +30,146 @@
 
         <div class="dashboard-wrapper" ng-style="width= {{mapWidth}} + 'px'">
             
-            <!-- dock dashboard navigation to left side -->
-            <div class="dashboard-nav">
-                <div class="mini-nav-group">
-                    <div class="mini-nav-btn" 
-                        ng-class="{active: isFinActive}" 
-                        ng-click="isFinActive=true; isOpsActive=false; isFltActive=false;">
-                        <strong>$</strong>
-                     </div>
-                    <div class="mini-nav-btn"
-                        ng-class="{active: isOpsActive}"
-                        ng-click="isFinActive=false; isOpsActive=true; isFltActive=false;">
-                        <i class="ikon-clock"></i>
-                    </div>
-                    <div class="mini-nav-btn" 
-                        ng-class="{active: isFltActive}" 
-                        ng-click="isFinActive=false; isOpsActive=false; isFltActive=true;">
-                        <i class="ikon-airplane"></i>
-                    </div>
-                </div>
-            </div>
 
-            <!-- primary dashboard area (minus navigation) -->
-            <div class="dashboard-inner">
-                
-                <!-- <section class="dash-financial" ng-controller="FinancialCtrl"> -->
-                <section class="dash financial" ng-show="isFinActive">
+            <div class="page-container">
+                <!-- dock dashboard navigation to left side -->
 
-                    <!-- small filter panel with year buttons -->
-                    <div class="panel small">
-                        <div class="filter-year">
-                            <h4>Fiscal Year</h4>
-                            <div class="year-buttons">
-                                <div class="year-btn active">2013</div>
-                                <div class="year-btn">2012</div>
-                                <div class="year-btn">2011</div>
-                                <div class="year-btn">2010</div>
-                                <div class="year-btn">2009</div>
+
+                <!-- primary dashboard area (minus navigation) -->
+                <div class="dashboard-inner">
+                    
+                    <div class="dashboard-nav">
+                        <div class="mini-nav-group">
+                            <div class="mini-nav-btn" 
+                                ng-class="{active: isFinActive}" 
+                                ng-click="isFinActive=true; isOpsActive=false; isFltActive=false;">
+                                <strong>$</strong>
+                             </div>
+                            <div class="mini-nav-btn"
+                                ng-class="{active: isOpsActive}"
+                                ng-click="isFinActive=false; isOpsActive=true; isFltActive=false;">
+                                <i class="ikon-clock"></i>
+                            </div>
+                            <div class="mini-nav-btn" 
+                                ng-class="{active: isFltActive}" 
+                                ng-click="isFinActive=false; isOpsActive=false; isFltActive=true;">
+                                <i class="ikon-airplane"></i>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- <section class="dash-financial" ng-controller="FinancialCtrl"> -->
+                    <section class="dash financial" ng-show="isFinActive">
 
-                    <!-- main financial panel -->
-                    <div class="panel main">
-                        <div class="panel-inner">
-                            <div class="summary-table financial">
-                                <h3>Financial</h3>
-                                <!-- check out ng-grid maybe? -->
-                                <div ng-repeat="financial in financialSummary">
-                                    <div class="row-wrap">
-                                        <h4 class="title">{{financial.name}}:</h4>
-                                        <h4 class="number primary">
-                                            <span class="dollar" ng-show="financial.currency">$</span>
-                                            {{financial.val}}
-                                        </h4>
+                        <!-- small filter panel with year buttons -->
+                        <div class="panel small">
+                            <div class="filter-year">
+                                <h4>Fiscal Year</h4>
+                                <div class="year-buttons">
+                                    <div class="year-btn active">2013</div>
+                                    <div class="year-btn">2012</div>
+                                    <div class="year-btn">2011</div>
+                                    <div class="year-btn">2010</div>
+                                    <div class="year-btn">2009</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- main financial panel -->
+                        <div class="panel main">
+                            <div class="panel-inner">
+                                <div class="summary-table financial">
+                                    <h3>Financial</h3>
+                                    <!-- check out ng-grid maybe? -->
+                                    <div ng-repeat="financial in financialData.getTotals()">
+                                        <div class="row-wrap" 
+                                            ng-click="financialData.select($index)"
+                                            ng-class="{active: $index == financialData.activeId() }">
+                                                <h4 class="title">{{financial.name}}:</h4>
+                                                <h4 class="number primary">
+                                                    <span class="dollar" ng-show="financial.currency">$</span>
+                                                    {{financial.val}}
+                                                </h4>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- panel for the financial chart -->
+                        <div class="panel chart">
+                            <div class="panel-inner">
+                                <div class="chart-title">
+                                    <h4>{{financialData.getActive().name}} 
+                                        <span class="primary">
+                                            <span class="dollar" ng-show="activeChart.currency">$</span>
+                                            {{financialData.getActive().val}}
+                                        </span>
+                                    </h4>
+                                </div>
+                                <div class="chart-wrap">
+                                    <donut-chart>Here's a donut chart!</donut-chart>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="dash operational" ng-show="isOpsActive">
+
+                        <!-- small filter panel with day buttons -->
+                        <div class="panel small">
+                            <div class="filter-days">
+                                <h4>Schedule</h4>
+                                <div class="day-buttons">
+                                    <div class="day-btn">MON</div>
+                                    <div class="day-btn">TUE</div>
+                                    <div class="day-btn">WED</div>
+                                    <div class="day-btn">THU</div>
+                                    <div class="day-btn">FRI</div>
+                                    <div class="day-btn">SAT</div>
+                                    <div class="day-btn">SUN</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- main Operationsl panel -->
+                        <div class="panel main">
+                            <div class="panel-inner">
+                                <div class="table-wrap">
+                                    <h3>Route Details</h3>
+                                    <div class="route-detail-table">
+                                        <!-- check out ng-grid maybe? -->
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- panel for the financial chart -->
-                    <div class="panel chart">
-                        <div class="panel-inner">
-                            <div class="chart-title"><h4>Total Revenue</h4></div>
-                            <div class="chart-value">$4.65B</div>
-                            <div class="chart-wrap">
-                                <donut-chart>Here's a donut chart!</donut-chart>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section class="dash operational" ng-show="isOpsActive">
-
-                    <!-- small filter panel with day buttons -->
-                    <div class="panel small">
-                        <div class="filter-days">
-                            <h4>Schedule</h4>
-                            <div class="day-buttons">
-                                <div class="day-btn">MON</div>
-                                <div class="day-btn">TUE</div>
-                                <div class="day-btn">WED</div>
-                                <div class="day-btn">THU</div>
-                                <div class="day-btn">FRI</div>
-                                <div class="day-btn">SAT</div>
-                                <div class="day-btn">SUN</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- main Operationsl panel -->
-                    <div class="panel main">
-                        <div class="panel-inner">
-                            <div class="table-wrap">
-                                <h3>Route Details</h3>
-                                <div class="route-detail-table">
-                                    <!-- check out ng-grid maybe? -->
-                                </div>
-                            </div>
-    
-                            <div class="table-wrap">
-                                <h3>Route Costs</h3>
-                                <div class="route-detail-table">
-                                    <!-- check out ng-grid maybe? -->
+        
+                                <div class="table-wrap">
+                                    <h3>Route Costs</h3>
+                                    <div class="route-detail-table">
+                                        <!-- check out ng-grid maybe? -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- panel for the operational chart -->
-                    <div class="panel chart">
-                        <div class="panel-inner">
-                            <div class="chart-title">Average Route Cost</div>
-                            <div class="chart-value">$15.6M</div>
-                            <div class="chart-wrap">
-                                <donut-chart>Here's a donut chart!</donut-chart>
+                        <!-- panel for the operational chart -->
+                        <div class="panel chart">
+                            <div class="panel-inner">
+                                <div class="chart-title">Average Route Cost</div>
+                                <div class="chart-value">$15.6M</div>
+                                <div class="chart-wrap">
+                                    <donut-chart>Here's a donut chart!</donut-chart>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <section class="dash fleet" ng-show="isFltActive">
+                    <section class="dash fleet" ng-show="isFltActive">
 
-                </section>
+                    </section>
 
+                </div>
             </div>
 
         </div>

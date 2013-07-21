@@ -4,7 +4,7 @@ angular.module('appliedByDesignApp')
   .filter('activeFleetModels', function () {
     return function (input) {
       // filter should return an array of strings corresponding to 
-      // the active fleet models - e.g. ['734', '73Q']
+      // the active fleet model btns - e.g. ['734', '73Q']
       
       var output = [];
 
