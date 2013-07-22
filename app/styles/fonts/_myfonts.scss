@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-.ikon-airplane, .ikon-bars, .ikon-user, .ikon-location, .ikon-mobile, .ikon-pie, .ikon-stats, .ikon-bars-2, .ikon-linkedin, .ikon-github, .ikon-github-2, .ikon-dribbble, .ikon-facebook, .ikon-google-plus, .ikon-google-plus-2, .ikon-facebook-2, .ikon-twitter, .ikon-clock, .ikon-mobile-2, .ikon-calendar, .ikon-user-2, .ikon-user-3, .ikon-users, .ikon-cog, .ikon-cogs, .ikon-cog-2, .ikon-settings, .ikon-equalizer, .ikon-wrench, .ikon-earth, .ikon-tree, .ikon-menu, .ikon-switch, .ikon-road, .ikon-list, .ikon-list-2, .ikon-home, .ikon-home-2, .ikon-file, .ikon-connection {
+.ikon-airplane, .ikon-bars, .ikon-user, .ikon-location, .ikon-mobile, .ikon-pie, .ikon-stats, .ikon-bars-2, .ikon-linkedin, .ikon-github, .ikon-github-2, .ikon-dribbble, .ikon-facebook, .ikon-google-plus, .ikon-google-plus-2, .ikon-facebook-2, .ikon-twitter, .ikon-clock, .ikon-mobile-2, .ikon-calendar, .ikon-user-2, .ikon-user-3, .ikon-users, .ikon-cog, .ikon-cogs, .ikon-cog-2, .ikon-settings, .ikon-equalizer, .ikon-wrench, .ikon-earth, .ikon-tree, .ikon-menu, .ikon-switch, .ikon-road, .ikon-list, .ikon-list-2, .ikon-home, .ikon-home-2, .ikon-file, .ikon-connection, .ikon-coin, .ikon-html5, .ikon-chrome, .ikon-firefox, .ikon-IE, .ikon-safari, .ikon-chevron-down, .ikon-chevron-up {
   font-family: 'myfont';
   speak: none;
   font-style: normal;
@@ -17,7 +17,6 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  display: inline-block;
   -webkit-font-smoothing: antialiased;
 }
 .ikon-airplane:before {
@@ -139,4 +138,28 @@
 }
 .ikon-connection:before {
   content: "\e027";
+}
+.ikon-coin:before {
+  content: "\e028";
+}
+.ikon-html5:before {
+  content: "\e029";
+}
+.ikon-chrome:before {
+  content: "\e02a";
+}
+.ikon-firefox:before {
+  content: "\e02b";
+}
+.ikon-IE:before {
+  content: "\e02c";
+}
+.ikon-safari:before {
+  content: "\e02d";
+}
+.ikon-chevron-down:before {
+  content: "\f078";
+}
+.ikon-chevron-up:before {
+  content: "\f077";
 }

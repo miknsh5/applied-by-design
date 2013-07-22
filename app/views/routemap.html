@@ -28,7 +28,7 @@
             <world-map height='mapHeight' width='mapWidth'></world-map>
         </section>
 
-        <div class="dashboard-wrapper" ng-style="width= {{mapWidth}} + 'px'">
+        <div class="dashboard-wrapper" ng-style="panelStyle()">
             
 
             <div class="page-container">
@@ -54,6 +54,12 @@
                                 ng-class="{active: isFltActive}" 
                                 ng-click="isFinActive=false; isOpsActive=false; isFltActive=true;">
                                 <i class="ikon-airplane"></i>
+                            </div>
+                            <div class="mini-nav-btn utility" 
+                                ng-init="hidePanel=true"
+                                ng-click="hidePanel=!hidePanel;">
+                                <i ng-show="!hidePanel" class="ikon-chevron-down"></i>
+                                <i ng-show="hidePanel" class="ikon-chevron-up"></i>
                             </div>
                         </div>
                     </div>
