@@ -7,15 +7,15 @@
 
         <section id="filter-bar">
             <div class="page-container">
-                <div id="filter-bar-menu-btn" ng-init="showFleetFilter=true" ng-click="showFleetFilter=!showFleetFilter">
+                <div id="filter-bar-menu-btn" ng-init="showEquipFilter=true" ng-click="showEquipFilter=!showEquipFilter">
                     <i class="ikon-airplane"></i>
                 </div>
 
                 <!-- loop through the different model types -->
-                <div ng-repeat="model in fleetModels" ng-show="showFleetFilter">
+                <div ng-repeat="model in fleetModel.getEquipment()" ng-show="showEquipFilter">
                     <div class="fleet-model-btn" 
-                        ng-click="fleetModels[$index].active = !fleetModels[$index].active; applyFleetFilter()"
-                        ng-class="{active: fleetModels[$index].active}">
+                        ng-click="fleetModel.toggleEquipment($index)"
+                        ng-class="{active: fleetModel.isEquipActive($index)}">
                         <span class="model-name">{{model.name}}</span>
                         <i class="ikon-airplane ikon"> </i>
                     </div>
@@ -25,7 +25,7 @@
         </section>
 
         <section id="route-map">
-            <world-map fleet-route-data='fleetRouteData_filtered' height='mapHeight' width='mapWidth'></world-map>
+            <world-map height='mapHeight' width='mapWidth'></world-map>
         </section>
 
         <div class="dashboard-wrapper" ng-style="width= {{mapWidth}} + 'px'">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- <section class="dash-financial" ng-controller="FinancialCtrl"> -->
                     <section class="dash financial" ng-show="isFinActive">
 

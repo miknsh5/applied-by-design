@@ -8,7 +8,7 @@ angular.module('appliedByDesignApp')
       var output = [];
 
       angular.forEach(filters, function(filter){
-      	console.log('filter on:' + filter);
+      	// console.log('filter on:' + filter);
 
 	      angular.forEach(input, function(item, key){
 	      	if (item.flts.length > 0 && item.flts[0].Equipment.Type === filter){
@@ -19,7 +19,7 @@ angular.module('appliedByDesignApp')
 	      	}
 	      });
 
-			});
+		});
 
       return output;
 

@@ -3,13 +3,13 @@
 /*global topojson:false */
 
 angular.module('appliedByDesignApp')
-  .directive('worldMap', function () {
+  .directive('worldMap', function (fleetModel) {
     return {
       restrict: 'E',
       scope: {
         width: '=',
-        height: '=',
-        fleetRouteData: '='
+        height: '='
+        // fleetRouteData: '='
       },
       link: function postLink(scope, element) {
         // element.text('this is the worldMap directive');
@@ -63,7 +63,12 @@ angular.module('appliedByDesignApp')
         // whenever the vound data structure changes, update the route map
         // this will generally mean that the routes have been down selected with 
         // the fleet model filters.
-        scope.$watch('fleetRouteData', function(newData){
+        // scope.$watch('fleetRouteData', function(newData){
+        scope.$watch(function() { return fleetModel.getFilteredData(); }, function(newData){
+
+          if (typeof(newData) === 'undefined') {
+            return
+          }
 
           console.log('updating routes');
 

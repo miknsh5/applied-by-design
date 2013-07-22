@@ -37,7 +37,7 @@ $bg-color-lt:           rgba(220,220,220,0.95);
 $bg-color-dk:           rgba(51,51,51,1);
 $bg-overlay-light:      rgba(255,255,255,0.1);
 $bg-overlay-lightlight: rgba(255,255,255,0.05);
-$bg-overlay-blue:       rgba(48,128,178,0.2);
+$bg-overlay-blue:       rgba(48,128,178,0.1);
 $bg-color-dk-hover:     rgba(80,80,80,1);
 $font-white:            rgb(220,220,220);
 $font-whitewhite:       rgb(250,250,250);
@@ -52,7 +52,7 @@ $filter-bar-height: 50px;
 @mixin dark-button {
   background-color: $bg-color-dk;
   color: $font-white;
-  cursor: pointer;
+  cursor: default;
   &:hover{
     background-color: $bg-color-dk-hover;
     color: $font-whitewhite;
@@ -65,7 +65,7 @@ $filter-bar-height: 50px;
 }
 
 @mixin light-button {
-  cursor: pointer;
+  cursor: default;
   color: $font-darkgray;
   background-color: rgba(0,0,0,0.1);
 
@@ -132,7 +132,7 @@ $filter-bar-height: 50px;
 }
 
 .dashboard-wrapper {
-  height: 350px;
+  height: 300px;
   width: 100%;
   background-color: $bg-color-dk;
   border-top: solid 2px #888;
@@ -237,6 +237,7 @@ $filter-bar-height: 50px;
       background-color: $bg-overlay-lightlight;
       border-left: solid 5px;
       margin-left: -5px;
+      cursor: default;
     }
 
   }
