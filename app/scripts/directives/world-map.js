@@ -9,7 +9,6 @@ angular.module('appliedByDesignApp')
       scope: {
         width: '=',
         height: '='
-        // fleetRouteData: '='
       },
       link: function postLink(scope, element) {
         // element.text('this is the worldMap directive');
