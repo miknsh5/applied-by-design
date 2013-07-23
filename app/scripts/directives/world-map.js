@@ -49,8 +49,8 @@ angular.module('appliedByDesignApp')
         svg.append("rect")
             .attr("class", "background")
             .attr("width", width)
-            .attr("height", height);
-            // .on("click", clicked);
+            .attr("height", height)
+            .on("click", reset);
 
         var map = svg.append('g')
             .attr('class', 'map')
@@ -75,6 +75,11 @@ angular.module('appliedByDesignApp')
 
         });
 
+        function clicked() {
+          //when user clicks on the background, reset the route selections
+
+
+        }
         // function clicked(d) {
         //   var x = 0,
         //       y = 0;
@@ -150,6 +155,12 @@ angular.module('appliedByDesignApp')
 
         }, true); //setting 'true' tells angular to watch for exact data changes (i.e. nested data can trigger event)
 
+        function reset(){
+            network.selectAll('.route path')
+              .style('opacity', 1)
+              .attr('stroke', blue)
+              .attr('stroke-width', 2);
+        }
         function selectRoute(opacity, color) {
           return function(g, i_clicked){
 
