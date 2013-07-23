@@ -8,13 +8,13 @@
 
 // route map SVG styling
 // ---------------------
-.route {
-  stroke: $color-blue;
+// .route {
+//   stroke: $color-blue;
 
-  &:hover{
-    stroke: $color-gray;
-  }
-}
+//   &:hover{
+//     stroke: $color-gray;
+//   }
+// }
 
 .land {
   fill: #222;
@@ -162,6 +162,7 @@ $filter-bar-height: 40px;
     text-align: left;
     clear: left;
     height: 100%;
+    min-width: 1200px;
   }
 
   .dashboard-inner {
@@ -192,7 +193,7 @@ $filter-bar-height: 40px;
     }
 
     &.chart {
-
+      width: 400px;
     }
 
     .panel-inner {
@@ -206,6 +207,7 @@ $filter-bar-height: 40px;
   margin: 4px auto;
   padding: 3px 3px;
   width: 70px;
+  height: 18px;
   @include dark-button;
 
 }

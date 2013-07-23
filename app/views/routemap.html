@@ -56,7 +56,7 @@
                                 <i class="ikon-airplane"></i>
                             </div>
                             <div class="mini-nav-btn utility" 
-                                ng-init="hidePanel=true"
+                                ng-init="hidePanel=false"
                                 ng-click="hidePanel=!hidePanel;">
                                 <i ng-show="!hidePanel" class="ikon-chevron-down"></i>
                                 <i ng-show="hidePanel" class="ikon-chevron-up"></i>
@@ -115,7 +115,7 @@
                                     </h4>
                                 </div>
                                 <div class="chart-wrap">
-                                    <donut-chart>Here's a donut chart!</donut-chart>
+                                    <financial-chart width='chartWidth' height='chartHeight'></financial-chart>
                                 </div>
                             </div>
                         </div>

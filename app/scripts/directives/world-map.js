@@ -11,11 +11,12 @@ angular.module('appliedByDesignApp')
         height: '='
       },
       link: function postLink(scope, element) {
-        // element.text('this is the worldMap directive');
 
-        var width = scope.width;
-        var height = scope.height;
-        // var centered;
+        var width = scope.width,
+            height = scope.height,
+            blue = d3.rgb(48,128,178),
+            orange = d3.rgb(241,90,36),
+            activePath
 
         // adapted from http://bl.ocks.org/mbostock/3757132
         var projection = d3.geo.mercator()
@@ -90,17 +91,52 @@ angular.module('appliedByDesignApp')
                   })
                   .attr('class', 'route')
                   .attr('fill', 'none')
-                  .attr('stroke', 'blue')
-                  .attr('stroke-width', 3)
+                  .attr('stroke', blue)
+                  .attr('stroke-width', 2)
                   .style('opacity', 0)
                   .attr('d', path)
+                    .on('mouseover', highlight(blue, 'over'))
+                    .on('mouseout', highlight(blue))
+                    .on('click', selectRoute(0.2, orange))
                 .transition()
                   .duration(500)
                   .style('opacity', 1);
 
         }, true); //setting 'true' tells angular to watch for exact data changes (i.e. nested data can trigger event)
 
+        function selectRoute(opacity, color) {
+          return function(g, i_clicked){
 
+            activePath = i_clicked;
+
+            network.selectAll('.route path')
+              .filter(function(d,i) { return i_clicked != i})
+              .style('opacity', opacity)
+              .attr('stroke', blue)
+              .attr('stroke-width', 2);
+
+            d3.select(this)
+              .attr('stroke-width', 4)
+              .attr('stroke', color);
+          }
+        }
+
+        function highlight(color, type) {
+          return function(d, i){
+            
+            if (type == 'over' || i == activePath) {
+              d3.select(this)
+              .attr('stroke', orange)
+              .style('opacity', 1)
+            } else {
+              d3.select(this)
+              .attr('stroke', color)
+              .style('opacity', 0.2);
+            }
+                // return (type == 'over' || i == activePath) ? 1 : 0.2;
+              // });
+          }
+        }
 
 
       }

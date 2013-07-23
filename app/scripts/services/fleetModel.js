@@ -42,7 +42,7 @@ angular.module('appliedByDesignApp')
       toggleEquipment: function(id){
         equipment[id].active = !equipment[id].active;
       },
-      isEquipActive: function(id) {
+      isEquipActive: function(id, test) {
         return equipment[id].active;
       }
     };

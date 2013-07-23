@@ -7,6 +7,10 @@ angular.module('appliedByDesignApp')
     $scope.mapWidth = 1200;
     $scope.mapHeight = 1200;
 
+    // set the dimensions of chart SVG
+    $scope.chartWidth = 175;
+    $scope.chartHeight = 175;
+
     // initialize dashboard panel visibility
     $scope.isFinActive = true;
     $scope.isOpsActive = false;
