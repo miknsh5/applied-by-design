@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .filter('byFleetType', function () {
+  .filter('findRoute', function () {
     return function (input, filters) {
       //expect filters to be an array of strings to filter the data model by
 
@@ -12,11 +12,11 @@ angular.module('appliedByDesignApp')
 
 	      angular.forEach(input, function(item, key){
 
-	      	if (item.Equipment === filter){
+	      	if (item.OD === filter){
 	      		//should loop through each flight in each route to check aircraft assigned to 
 	      		// more than just the first flight. (currently assumes the same aircraft type is assigned
 	      		// to all flights in a route (based on the first aircraft assignment))
-	      		output.push(item);
+	      		output = item;
 	      	}
 	      });
 

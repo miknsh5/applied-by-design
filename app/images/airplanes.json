@@ -1,0 +1,52 @@
+[
+    {
+        "Equipment": "73Q",
+        "Capacity": 72,
+        "Cabins": 1,
+        "Size": "Small",
+        "Services": {
+            "FuelService": true,
+            "MaintenanceService": false
+        }
+    },
+    {
+        "Equipment": "73G",
+        "Capacity": 124,
+        "Cabins": 2,
+        "Size": "Large",
+        "Services": {
+            "FuelService": true,
+            "MaintenanceService": false
+        }
+    },
+    {
+        "Equipment": "734",
+        "Capacity": 144,
+        "Cabins": 2,
+        "Size": "Small",
+        "Services": {
+            "FuelService": true,
+            "MaintenanceService": false
+        }
+    },
+    {
+        "Equipment": "738",
+        "Capacity": 157,
+        "Cabins": 2,
+        "Size": "Large",
+        "Services": {
+            "FuelService": true,
+            "MaintenanceService": false
+        }
+    },
+    {
+        "Equipment": "739",
+        "Capacity": 172,
+        "Cabins": 2,
+        "Size": "Large",
+        "Services": {
+            "FuelService": true,
+            "MaintenanceService": false
+        }
+    }
+]
