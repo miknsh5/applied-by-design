@@ -1,0 +1,14 @@
+{
+    "growth": {
+        "fare": 0.01,
+        "demand": 0.02,
+        "fuel": 0.005,
+        "costs": 0.01
+    },
+    "rates": {
+        "fuel": 2.11
+    },
+    "forecast": {
+        "years": 5
+    }
+}

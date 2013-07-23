@@ -1,0 +1,1152 @@
+[
+    {
+        "Code": "ANI",
+        "City": "Ania",
+        "Name": "Ania",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 61.58166667,
+        "Longitude": -159.5430556,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "ASE",
+        "City": "Aspen",
+        "Name": "Aspen-Pitkin Co./Sardy Field",
+        "State": "CO",
+        "Country": "US",
+        "Latitude": 39.22194444,
+        "Longitude": -106.8683333,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "AUS",
+        "City": "Austin",
+        "Name": "Austin-Bergstrom Intl",
+        "State": "TX",
+        "Country": "US",
+        "Latitude": 30.19444444,
+        "Longitude": -97.67,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "MEX",
+        "City": "México City",
+        "Name": "Benito Juárez Intl",
+        "State": "DF",
+        "Country": "MX",
+        "Latitude": 19.43638889,
+        "Longitude": -99.07222222,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "BET",
+        "City": "Bethe",
+        "Name": "Bethe",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 60.77861111,
+        "Longitude": -161.8372222,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "BIL",
+        "City": "Billings",
+        "Name": "Billings Logan Intl",
+        "State": "MT",
+        "Country": "US",
+        "Latitude": 45.80777778,
+        "Longitude": -108.5427778,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "BUR",
+        "City": "Burbank",
+        "Name": "Bob Hope Airport",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 34.20055556,
+        "Longitude": -118.3586111,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "BOI",
+        "City": "Boise",
+        "Name": "Boise Air Terminal/Gowen Field",
+        "State": "ID",
+        "Country": "US",
+        "Latitude": 43.56444444,
+        "Longitude": -116.2227778,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "BZN",
+        "City": "Bozeman",
+        "Name": "Bozeman Yellowstone Intl",
+        "State": "MT",
+        "Country": "US",
+        "Latitude": 45.7775,
+        "Longitude": -111.1519444,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "STS",
+        "City": "Santa Rosa",
+        "Name": "Charles M. Schulz - Sonoma County Airport",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 38.50888889,
+        "Longitude": -122.8127778,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "ORD",
+        "City": "Chicago",
+        "Name": "Chicago O'Hare Intl",
+        "State": "IL",
+        "Country": "US",
+        "Latitude": 41.98166667,
+        "Longitude": -87.90666667,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "CDB",
+        "City": "Cold Ba",
+        "Name": "Cold Ba",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 55.20527778,
+        "Longitude": -162.7244444,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "DFW",
+        "City": "Dallas-Fort Worth",
+        "Name": "Dallas/Fort Worth Intl",
+        "State": "TX",
+        "Country": "US",
+        "Latitude": 32.89694444,
+        "Longitude": -97.03805556,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "SCC",
+        "City": "Deadhors",
+        "Name": "Deadhors",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 70.19555556,
+        "Longitude": -148.4658333,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "DTW",
+        "City": "Detroit",
+        "Name": "Detroit Metropolitan Wayne County Airport",
+        "State": "MI",
+        "Country": "US",
+        "Latitude": 42.2125,
+        "Longitude": -83.35333333,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "DLG",
+        "City": "Dillingha",
+        "Name": "Dillingha",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 59.04472222,
+        "Longitude": -158.5055556,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "GDL",
+        "City": "Guadalajara",
+        "Name": "Don Miguel Hidalgo y Costilla Intl",
+        "State": "JAL",
+        "Country": "MX",
+        "Latitude": 20.52166667,
+        "Longitude": -103.3111111,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "FLL",
+        "City": "Fort Lauderdale",
+        "Name": "Fort Lauderdale/Hollywood Intl",
+        "State": "FL",
+        "Country": "US",
+        "Latitude": 26.0725,
+        "Longitude": -80.15277778,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "FAT",
+        "City": "Fresno",
+        "Name": "Fresno Yosemite Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 36.77638889,
+        "Longitude": -119.7186111,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "SUN",
+        "City": "Hailey",
+        "Name": "Friedman Memorial Airport",
+        "State": "ID",
+        "Country": "US",
+        "Latitude": 43.50388889,
+        "Longitude": -114.2955556,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "BOS",
+        "City": "Boston",
+        "Name": "General Edward Lawrence Logan Intl",
+        "State": "MA",
+        "Country": "US",
+        "Latitude": 42.36305556,
+        "Longitude": -71.00638889,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "MZT",
+        "City": "Mazatlán",
+        "Name": "General Rafael Buelna Intl",
+        "State": "SIN",
+        "Country": "MX",
+        "Latitude": 23.16138889,
+        "Longitude": -106.2661111,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "IAH",
+        "City": "Houston",
+        "Name": "George Bush Intercontinental/Houston Airport",
+        "State": "TX",
+        "Country": "US",
+        "Latitude": 29.98444444,
+        "Longitude": -95.34138889,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "FCA",
+        "City": "Kalispell",
+        "Name": "Glacier Park Intl",
+        "State": "MT",
+        "Country": "US",
+        "Latitude": 48.31055556,
+        "Longitude": -114.2561111,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "GST",
+        "City": "Gustavu",
+        "Name": "Gustavu",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 58.42527778,
+        "Longitude": -135.7075,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "BHB",
+        "City": "Bar Harbor",
+        "Name": "Hancock County-Bar Harbor Airport",
+        "State": "ME",
+        "Country": "US",
+        "Latitude": 44.44972222,
+        "Longitude": -68.36166667,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "ATL",
+        "City": "Atlanta",
+        "Name": "Hartsfield - Jackson Atlanta Intl",
+        "State": "GA",
+        "Country": "US",
+        "Latitude": 33.63666667,
+        "Longitude": -84.42777778,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "HLN",
+        "City": "Helena",
+        "Name": "Helena Regional",
+        "State": "MT",
+        "Country": "US",
+        "Latitude": 46.60694444,
+        "Longitude": -111.9827778,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "HOM",
+        "City": "Home",
+        "Name": "Home",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 59.64555556,
+        "Longitude": -151.4766667,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "HNL",
+        "City": "Honolulu",
+        "Name": "Honolulu Intl",
+        "State": "HI",
+        "Country": "US",
+        "Latitude": 21.31861111,
+        "Longitude": -157.9225,
+        "TimeOffset": -10
+    },
+    {
+        "Code": "SAN",
+        "City": "San Diego",
+        "Name": "San Diego Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 32.73361111,
+        "Longitude": -117.1897222,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "BLI",
+        "City": "Bellingham",
+        "Name": "Bellingham Intl",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 48.79277778,
+        "Longitude": -122.5375,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "GTF",
+        "City": "Great Falls",
+        "Name": "Great Falls Intl",
+        "State": "MT",
+        "Country": "US",
+        "Latitude": 47.48277778,
+        "Longitude": -111.3705556,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "BNA",
+        "City": "Nashville",
+        "Name": "Nashville Intl",
+        "State": "TN",
+        "Country": "US",
+        "Latitude": 36.12444444,
+        "Longitude": -86.67805556,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "MIA",
+        "City": "Miami",
+        "Name": "Miami Intl",
+        "State": "FL",
+        "Country": "US",
+        "Latitude": 25.79527778,
+        "Longitude": -80.29,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "DEN",
+        "City": "Denver",
+        "Name": "Denver Intl",
+        "State": "CO",
+        "Country": "US",
+        "Latitude": 39.86166667,
+        "Longitude": -104.6730556,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "PDX",
+        "City": "Portland",
+        "Name": "Portland Intl",
+        "State": "OR",
+        "Country": "US",
+        "Latitude": 45.58861111,
+        "Longitude": -122.5969444,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "ELP",
+        "City": "El Paso",
+        "Name": "El Paso Intl",
+        "State": "TX",
+        "Country": "US",
+        "Latitude": 31.80722222,
+        "Longitude": -106.3763889,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "FAI",
+        "City": "Fairbanks",
+        "Name": "Fairbanks Intl",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 64.815,
+        "Longitude": -147.8563889,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "KTN",
+        "City": "Ketchikan",
+        "Name": "Ketchikan Intl",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 55.35416667,
+        "Longitude": -131.7111111,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "JNU",
+        "City": "Juneau",
+        "Name": "Juneau Intl",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 58.355,
+        "Longitude": -134.5763889,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "MCI",
+        "City": "Kansas City",
+        "Name": "Kansas City Intl",
+        "State": "MO",
+        "Country": "US",
+        "Latitude": 39.2975,
+        "Longitude": -94.71388889,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "MCO",
+        "City": "Orlando",
+        "Name": "Orlando Intl",
+        "State": "FL",
+        "Country": "US",
+        "Latitude": 28.42944444,
+        "Longitude": -81.30888889,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "ONT",
+        "City": "Ontario",
+        "Name": "Ontario Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 34.05611111,
+        "Longitude": -117.6011111,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "MSO",
+        "City": "Missoula",
+        "Name": "Missoula Intl",
+        "State": "MT",
+        "Country": "US",
+        "Latitude": 46.91638889,
+        "Longitude": -114.0905556,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "PBG",
+        "City": "Plattsburgh",
+        "Name": "Plattsburgh Intl",
+        "State": "NY",
+        "Country": "US",
+        "Latitude": 44.65083333,
+        "Longitude": -73.46805556,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "PSP",
+        "City": "Palm Springs",
+        "Name": "Palm Springs Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 33.82972222,
+        "Longitude": -116.5066667,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "GEG",
+        "City": "Spokane",
+        "Name": "Spokane Intl",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 47.61916667,
+        "Longitude": -117.5352778,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "PHL",
+        "City": "Philadelphia",
+        "Name": "Philadelphia Intl",
+        "State": "PA",
+        "Country": "US",
+        "Latitude": 39.87222222,
+        "Longitude": -75.24083333,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "SLC",
+        "City": "Salt Lake City",
+        "Name": "Salt Lake City Intl",
+        "State": "UT",
+        "Country": "US",
+        "Latitude": 40.78833333,
+        "Longitude": -111.9777778,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "SFO",
+        "City": "San Francisco",
+        "Name": "San Francisco Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 37.61916667,
+        "Longitude": -122.3752778,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "LAX",
+        "City": "Los Angeles",
+        "Name": "Los Angeles Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 33.9425,
+        "Longitude": -118.4080556,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "SJD",
+        "City": "Los Cabos",
+        "Name": "Los Cabos Intl",
+        "State": "BCS",
+        "Country": "MX",
+        "Latitude": 23.15194444,
+        "Longitude": -109.7211111,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "SMF",
+        "City": "Sacramento",
+        "Name": "Sacramento Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 38.69555556,
+        "Longitude": -121.5908333,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "YEG",
+        "City": "Edmonton",
+        "Name": "Edmonton Intl",
+        "State": "AB",
+        "Country": "CA",
+        "Latitude": 53.30972222,
+        "Longitude": -113.5797222,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "YYC",
+        "City": "Calgary",
+        "Name": "Calgary Intl",
+        "State": "AB",
+        "Country": "CA",
+        "Latitude": 51.11388889,
+        "Longitude": -114.0202778,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "YVR",
+        "City": "Vancouver",
+        "Name": "Vancouver Intl",
+        "State": "BC",
+        "Country": "CA",
+        "Latitude": 49.19388889,
+        "Longitude": -123.1844444,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "TUS",
+        "City": "Tucson",
+        "Name": "Tucson Intl",
+        "State": "AZ",
+        "Country": "US",
+        "Latitude": 32.11611111,
+        "Longitude": -110.9411111,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "SAT",
+        "City": "San Antonio",
+        "Name": "San Antonio Intl",
+        "State": "TX",
+        "Country": "US",
+        "Latitude": 29.53388889,
+        "Longitude": -98.46916667,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "ABQ",
+        "City": "Albuquerque",
+        "Name": "Albuquerque Intl Sunport",
+        "State": "NM",
+        "Country": "US",
+        "Latitude": 35.04027778,
+        "Longitude": -106.6091667,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "JFK",
+        "City": "New York",
+        "Name": "John F Kennedy Intl",
+        "State": "NY",
+        "Country": "US",
+        "Latitude": 40.63972222,
+        "Longitude": -73.77888889,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "SNA",
+        "City": "Santa Ana",
+        "Name": "John Wayne Airport-Orange County",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 33.67555556,
+        "Longitude": -117.8683333,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "OGG",
+        "City": "Kahulu",
+        "Name": "Kahulu",
+        "State": "HI",
+        "Country": "US",
+        "Latitude": 20.89861111,
+        "Longitude": -156.4305556,
+        "TimeOffset": -10
+    },
+    {
+        "Code": "YLW",
+        "City": "Kelown",
+        "Name": "Kelown",
+        "State": "BC",
+        "Country": "CA",
+        "Latitude": 49.95611111,
+        "Longitude": -119.3777778,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "AKN",
+        "City": "King Salmo",
+        "Name": "King Salmo",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 58.67638889,
+        "Longitude": -156.6486111,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "ADQ",
+        "City": "Kodia",
+        "Name": "Kodia",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 57.75,
+        "Longitude": -152.4938889,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "KOA",
+        "City": "Kailua/Kona",
+        "Name": "Kona Intl at Keahole",
+        "State": "HI",
+        "Country": "US",
+        "Latitude": 19.73888889,
+        "Longitude": -156.0455556,
+        "TimeOffset": -10
+    },
+    {
+        "Code": "STL",
+        "City": "St. Louis",
+        "Name": "Lambert-St. Louis Intl",
+        "State": "MO",
+        "Country": "US",
+        "Latitude": 38.74861111,
+        "Longitude": -90.37,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "LWS",
+        "City": "Lewiston",
+        "Name": "Lewiston-Nez Perce County Airport",
+        "State": "ID",
+        "Country": "US",
+        "Latitude": 46.37444444,
+        "Longitude": -117.0152778,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "PVR",
+        "City": "Puerto Vallarta",
+        "Name": "Licenciado Gustavo Díaz Ordaz Intl",
+        "State": "JAL",
+        "Country": "MX",
+        "Latitude": 20.68,
+        "Longitude": -105.2541667,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "LIH",
+        "City": "Lihue",
+        "Name": "Lihue Airport",
+        "State": "HI",
+        "Country": "US",
+        "Latitude": 21.97611111,
+        "Longitude": -159.3388889,
+        "TimeOffset": -10
+    },
+    {
+        "Code": "LGB",
+        "City": "Long Beach",
+        "Name": "Long Beach Airport (Daugherty Field)",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 33.81777778,
+        "Longitude": -118.1516667,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "EUG",
+        "City": "Eugene",
+        "Name": "Mahlon Sweet Field",
+        "State": "OR",
+        "Country": "US",
+        "Latitude": 44.12444444,
+        "Longitude": -123.2119444,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "MMH",
+        "City": "Mammoth Lakes",
+        "Name": "Mammoth Yosemite Airport",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 37.62416667,
+        "Longitude": -118.8386111,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "LAS",
+        "City": "Las Vegas",
+        "Name": "Mc Carran Intl",
+        "State": "NV",
+        "Country": "US",
+        "Latitude": 36.08,
+        "Longitude": -115.1522222,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "MCG",
+        "City": "McGrath",
+        "Name": "Mc Grath Airport",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 62.95277778,
+        "Longitude": -155.6069444,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "CDV",
+        "City": "Cordova",
+        "Name": "Merle K Airport (Mudhole) Smith",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 60.49166667,
+        "Longitude": -145.4775,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "OAK",
+        "City": "Oakland",
+        "Name": "Metropolitan Oakland Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 37.72138889,
+        "Longitude": -122.2208333,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "MSP",
+        "City": "Minneapolis",
+        "Name": "Minneapolis-St. Paul Intl/Wold-Chamberlain",
+        "State": "MN",
+        "Country": "US",
+        "Latitude": 44.88194444,
+        "Longitude": -93.22166667,
+        "TimeOffset": -5
+    },
+    {
+        "Code": "MRY",
+        "City": "Monterey",
+        "Name": "Monterey Peninsula Airport",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 36.58694444,
+        "Longitude": -121.8430556,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "ENA",
+        "City": "Kenai",
+        "Name": "Kenai Muni",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 60.57333333,
+        "Longitude": -151.2447222,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "SBA",
+        "City": "Santa Barbara",
+        "Name": "Santa Barbara Muni",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 34.42611111,
+        "Longitude": -119.8413889,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "SAF",
+        "City": "Santa Fé",
+        "Name": "Santa Fé Muni",
+        "State": "NM",
+        "Country": "US",
+        "Latitude": 35.61722222,
+        "Longitude": -106.0894444,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "EWR",
+        "City": "Newark",
+        "Name": "Newark Liberty Intl",
+        "State": "NJ",
+        "Country": "US",
+        "Latitude": 40.6925,
+        "Longitude": -74.16861111,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "OME",
+        "City": "Nom",
+        "Name": "Nom",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 64.51222222,
+        "Longitude": -165.4452778,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "SJC",
+        "City": "San José",
+        "Name": "Norman Y. Mineta San José Intl",
+        "State": "CA",
+        "Country": "US",
+        "Latitude": 37.36277778,
+        "Longitude": -121.9291667,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "PQI",
+        "City": "Presque Isle",
+        "Name": "Northern Maine Regional Airport at Presque Is",
+        "State": "ME",
+        "Country": "US",
+        "Latitude": 46.68888889,
+        "Longitude": -68.04472222,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "EAT",
+        "City": "Wenatchee",
+        "Name": "Pangborn Memorial Airport",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 47.39805556,
+        "Longitude": -120.2058333,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "PSG",
+        "City": "Petersburg",
+        "Name": "Petersburg James A Johnson Airport",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 56.80138889,
+        "Longitude": -132.9461111,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "PHX",
+        "City": "Phoenix",
+        "Name": "Phoenix Sky Harbor Intl",
+        "State": "AZ",
+        "Country": "US",
+        "Latitude": 33.43416667,
+        "Longitude": -112.0116667,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "CMH",
+        "City": "Columbus",
+        "Name": "Port Columbus Intl",
+        "State": "OH",
+        "Country": "US",
+        "Latitude": 39.99805556,
+        "Longitude": -82.89194444,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "PUW",
+        "City": "Pullman/Moscow ID",
+        "Name": "Pullman/Moscow Regional",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 46.74388889,
+        "Longitude": -117.1094444,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "RDU",
+        "City": "Raleigh/Durham",
+        "Name": "Raleigh-Durham Intl",
+        "State": "NC",
+        "Country": "US",
+        "Latitude": 35.87777778,
+        "Longitude": -78.7875,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "OTZ",
+        "City": "Kotzebue",
+        "Name": "Ralph Wien Memorial Airport",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 66.88472222,
+        "Longitude": -162.5986111,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "RNO",
+        "City": "Reno",
+        "Name": "Reno/Tahoe Intl",
+        "State": "NV",
+        "Country": "US",
+        "Latitude": 39.49916667,
+        "Longitude": -119.7680556,
+        "TimeOffset": -6
+    },
+    {
+        "Code": "RDM",
+        "City": "Redmond",
+        "Name": "Roberts Field",
+        "State": "OR",
+        "Country": "US",
+        "Latitude": 44.25416667,
+        "Longitude": -121.15,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "MFR",
+        "City": "Medford",
+        "Name": "Rogue Valley Intl - Medford",
+        "State": "OR",
+        "Country": "US",
+        "Latitude": 42.37416667,
+        "Longitude": -122.8736111,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "DCA",
+        "City": "Washington",
+        "Name": "Ronald Reagan Washington National Airport",
+        "State": "DC",
+        "Country": "US",
+        "Latitude": 38.85194444,
+        "Longitude": -77.03777778,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "SDP",
+        "City": "Sand Poin",
+        "Name": "Sand Poin",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 55.31361111,
+        "Longitude": -160.5213889,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "SEA",
+        "City": "Seattle",
+        "Name": "Seattle-Tacoma Intl",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 47.45,
+        "Longitude": -122.3116667,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "SIT",
+        "City": "Sitka",
+        "Name": "Sitka Rocky Gutierrez Airport",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 57.04722222,
+        "Longitude": -135.3616667,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "KSM",
+        "City": "St. Mary's",
+        "Name": "St. Mary's Airport",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 62.06083333,
+        "Longitude": -163.3019444,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "SNP",
+        "City": "St. Paul Island",
+        "Name": "St. Paul Island Airport",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 57.16638889,
+        "Longitude": -170.2225,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "ANC",
+        "City": "Anchorage",
+        "Name": "Ted Stevens Anchorage Intl",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 61.17416667,
+        "Longitude": -149.9980556,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "PSC",
+        "City": "Pasco",
+        "Name": "Tri-Cities Airport",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 46.26472222,
+        "Longitude": -119.1188889,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "UNK",
+        "City": "Unalaklee",
+        "Name": "Unalaklee",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 63.88861111,
+        "Longitude": -160.7991667,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "DUT",
+        "City": "Unalask",
+        "Name": "Unalask",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 53.89888889,
+        "Longitude": -166.545,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "VDZ",
+        "City": "Valdez",
+        "Name": "Valdez Pioneer Field",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 61.13416667,
+        "Longitude": -146.2447222,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "YYJ",
+        "City": "Victoria",
+        "Name": "Victoria Intl",
+        "State": "BC",
+        "Country": "CA",
+        "Latitude": 48.64694444,
+        "Longitude": -123.4258333,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "ALW",
+        "City": "Walla Walla",
+        "Name": "Walla Walla Regional",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 46.09472222,
+        "Longitude": -118.2888889,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "BRW",
+        "City": "Barrow",
+        "Name": "Wiley Post-Will Rogers Memorial Airport",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 71.285,
+        "Longitude": -156.7686111,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "OKC",
+        "City": "Oklahoma City",
+        "Name": "Will Rogers World Airport",
+        "State": "OK",
+        "Country": "US",
+        "Latitude": 35.39305556,
+        "Longitude": -97.60083333,
+        "TimeOffset": -4
+    },
+    {
+        "Code": "WRG",
+        "City": "Wrangel",
+        "Name": "Wrangel",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 56.48444444,
+        "Longitude": -132.3697222,
+        "TimeOffset": -8
+    },
+    {
+        "Code": "YKM",
+        "City": "Yakima",
+        "Name": "Yakima Air Terminal/McAllister Field",
+        "State": "WA",
+        "Country": "US",
+        "Latitude": 46.56805556,
+        "Longitude": -120.5441667,
+        "TimeOffset": -7
+    },
+    {
+        "Code": "YAK",
+        "City": "Yakuta",
+        "Name": "Yakuta",
+        "State": "AK",
+        "Country": "US",
+        "Latitude": 59.50333333,
+        "Longitude": -139.6602778,
+        "TimeOffset": -8
+    }
+]

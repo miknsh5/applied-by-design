@@ -1,0 +1,2351 @@
+[
+    {
+        "OD": "AKN-ANC",
+        "Origin": "AKN",
+        "LF": 0.65,
+        "Destination": "ANC",
+        "Distance": 288,
+        "Duration": 54,
+        "Fare": 6.629830039
+    },
+    {
+        "OD": "ANC-AKN",
+        "Origin": "ANC",
+        "LF": 0.78,
+        "Destination": "AKN",
+        "Distance": 288,
+        "Duration": 57,
+        "Fare": 6.629830039
+    },
+    {
+        "OD": "ANC-CDV",
+        "Origin": "ANC",
+        "LF": 0.75,
+        "Destination": "CDV",
+        "Distance": 159,
+        "Duration": 47,
+        "Fare": 3.387799486
+    },
+    {
+        "OD": "ANC-DEN",
+        "Origin": "ANC",
+        "LF": 0.7,
+        "Destination": "DEN",
+        "Distance": 2401,
+        "Duration": 312,
+        "Fare": 124.7224588
+    },
+    {
+        "OD": "ANC-DLG",
+        "Origin": "ANC",
+        "LF": 0.85,
+        "Destination": "DLG",
+        "Distance": 328,
+        "Duration": 66,
+        "Fare": 7.72784702
+    },
+    {
+        "OD": "ANC-HNL",
+        "Origin": "ANC",
+        "LF": 0.77,
+        "Destination": "HNL",
+        "Distance": 2782,
+        "Duration": 360,
+        "Fare": 159.0514069
+    },
+    {
+        "OD": "ANC-ORD",
+        "Origin": "ANC",
+        "LF": 0.67,
+        "Destination": "ORD",
+        "Distance": 2841,
+        "Duration": 374,
+        "Fare": 164.7235671
+    },
+    {
+        "OD": "ANC-PSG",
+        "Origin": "ANC",
+        "LF": 0.67,
+        "Destination": "PSG",
+        "Distance": 538,
+        "Duration": 185,
+        "Fare": 14.21265066
+    },
+    {
+        "OD": "ANC-SFO",
+        "Origin": "ANC",
+        "LF": 0.75,
+        "Destination": "SFO",
+        "Distance": 2017,
+        "Duration": 380,
+        "Fare": 94.15311283
+    },
+    {
+        "OD": "ANC-WRG",
+        "Origin": "ANC",
+        "LF": 0.82,
+        "Destination": "WRG",
+        "Distance": 706,
+        "Duration": 256,
+        "Fare": 20.27166502
+    },
+    {
+        "OD": "ANC-YAK",
+        "Origin": "ANC",
+        "LF": 0.8,
+        "Destination": "YAK",
+        "Distance": 371,
+        "Duration": 132,
+        "Fare": 8.957176142
+    },
+    {
+        "OD": "AUS-SEA",
+        "Origin": "AUS",
+        "LF": 0.69,
+        "Destination": "SEA",
+        "Distance": 1771,
+        "Duration": 246,
+        "Fare": 76.69569873
+    },
+    {
+        "OD": "BLI-HNL",
+        "Origin": "BLI",
+        "LF": 0.69,
+        "Destination": "HNL",
+        "Distance": 2718,
+        "Duration": 353,
+        "Fare": 153.0065461
+    },
+    {
+        "OD": "BLI-LAS",
+        "Origin": "BLI",
+        "LF": 0.85,
+        "Destination": "LAS",
+        "Distance": 956,
+        "Duration": 148,
+        "Fare": 30.72162522
+    },
+    {
+        "OD": "BOS-PDX",
+        "Origin": "BOS",
+        "LF": 0.77,
+        "Destination": "PDX",
+        "Distance": 2533,
+        "Duration": 375,
+        "Fare": 136.1650572
+    },
+    {
+        "OD": "BOS-SAN",
+        "Origin": "BOS",
+        "LF": 0.8,
+        "Destination": "SAN",
+        "Distance": 2585,
+        "Duration": 378,
+        "Fare": 140.8040049
+    },
+    {
+        "OD": "BRW-FAI",
+        "Origin": "BRW",
+        "LF": 0.78,
+        "Destination": "FAI",
+        "Distance": 502,
+        "Duration": 76,
+        "Fare": 13.01503816
+    },
+    {
+        "OD": "BRW-SCC",
+        "Origin": "BRW",
+        "LF": 0.72,
+        "Destination": "SCC",
+        "Distance": 203,
+        "Duration": 45,
+        "Fare": 4.442301649
+    },
+    {
+        "OD": "CDV-ANC",
+        "Origin": "CDV",
+        "LF": 0.83,
+        "Destination": "ANC",
+        "Distance": 159,
+        "Duration": 43,
+        "Fare": 3.387799486
+    },
+    {
+        "OD": "CDV-JNU",
+        "Origin": "CDV",
+        "LF": 0.72,
+        "Destination": "JNU",
+        "Distance": 410,
+        "Duration": 127,
+        "Fare": 10.11602042
+    },
+    {
+        "OD": "CDV-SEA",
+        "Origin": "CDV",
+        "LF": 0.78,
+        "Destination": "SEA",
+        "Distance": 1292,
+        "Duration": 304,
+        "Fare": 47.46746415
+    },
+    {
+        "OD": "CDV-YAK",
+        "Origin": "CDV",
+        "LF": 0.75,
+        "Destination": "YAK",
+        "Distance": 212,
+        "Duration": 44,
+        "Fare": 4.664538936
+    },
+    {
+        "OD": "DCA-LAX",
+        "Origin": "DCA",
+        "LF": 0.8,
+        "Destination": "LAX",
+        "Distance": 2308,
+        "Duration": 333,
+        "Fare": 116.9476851
+    },
+    {
+        "OD": "DCA-PDX",
+        "Origin": "DCA",
+        "LF": 0.85,
+        "Destination": "PDX",
+        "Distance": 2347,
+        "Duration": 345,
+        "Fare": 120.1791832
+    },
+    {
+        "OD": "DEN-ANC",
+        "Origin": "DEN",
+        "LF": 0.73,
+        "Destination": "ANC",
+        "Distance": 2401,
+        "Duration": 327,
+        "Fare": 124.7224588
+    },
+    {
+        "OD": "DLG-ANC",
+        "Origin": "DLG",
+        "LF": 0.81,
+        "Destination": "ANC",
+        "Distance": 328,
+        "Duration": 57,
+        "Fare": 7.72784702
+    },
+    {
+        "OD": "FAI-BRW",
+        "Origin": "FAI",
+        "LF": 0.75,
+        "Destination": "BRW",
+        "Distance": 502,
+        "Duration": 152,
+        "Fare": 13.01503816
+    },
+    {
+        "OD": "FAI-JNU",
+        "Origin": "FAI",
+        "LF": 0.72,
+        "Destination": "JNU",
+        "Distance": 623,
+        "Duration": 214,
+        "Fare": 17.18144029
+    },
+    {
+        "OD": "FAI-KTN",
+        "Origin": "FAI",
+        "LF": 0.85,
+        "Destination": "KTN",
+        "Distance": 857,
+        "Duration": 405,
+        "Fare": 26.37836505
+    },
+    {
+        "OD": "FAI-PDX",
+        "Origin": "FAI",
+        "LF": 0.78,
+        "Destination": "PDX",
+        "Distance": 1639,
+        "Duration": 225,
+        "Fare": 68.01279764
+    },
+    {
+        "OD": "FAI-SCC",
+        "Origin": "FAI",
+        "LF": 0.72,
+        "Destination": "SCC",
+        "Distance": 373,
+        "Duration": 64,
+        "Fare": 9.015588894
+    },
+    {
+        "OD": "FAI-SIT",
+        "Origin": "FAI",
+        "LF": 0.74,
+        "Destination": "SIT",
+        "Distance": 682,
+        "Duration": 312,
+        "Fare": 19.35868084
+    },
+    {
+        "OD": "FLL-SEA",
+        "Origin": "FLL",
+        "LF": 0.7,
+        "Destination": "SEA",
+        "Distance": 2717,
+        "Duration": 384,
+        "Fare": 152.9129868
+    },
+    {
+        "OD": "GDL-SJC",
+        "Origin": "GDL",
+        "LF": 0.66,
+        "Destination": "SJC",
+        "Distance": 1614,
+        "Duration": 210,
+        "Fare": 66.4221534
+    },
+    {
+        "OD": "GST-ANC",
+        "Origin": "GST",
+        "LF": 0.79,
+        "Destination": "ANC",
+        "Distance": 530,
+        "Duration": 162,
+        "Fare": 13.94344163
+    },
+    {
+        "OD": "GST-JNU",
+        "Origin": "GST",
+        "LF": 0.84,
+        "Destination": "JNU",
+        "Distance": 41,
+        "Duration": 23,
+        "Fare": 0.822056798
+    },
+    {
+        "OD": "HNL-ANC",
+        "Origin": "HNL",
+        "LF": 0.66,
+        "Destination": "ANC",
+        "Distance": 2782,
+        "Duration": 364,
+        "Fare": 159.0514069
+    },
+    {
+        "OD": "HNL-BLI",
+        "Origin": "HNL",
+        "LF": 0.69,
+        "Destination": "BLI",
+        "Distance": 2718,
+        "Duration": 350,
+        "Fare": 153.0065461
+    },
+    {
+        "OD": "HNL-OAK",
+        "Origin": "HNL",
+        "LF": 0.72,
+        "Destination": "OAK",
+        "Distance": 2409,
+        "Duration": 315,
+        "Fare": 125.402341
+    },
+    {
+        "OD": "HNL-PDX",
+        "Origin": "HNL",
+        "LF": 0.82,
+        "Destination": "PDX",
+        "Distance": 2605,
+        "Duration": 335,
+        "Fare": 142.6079699
+    },
+    {
+        "OD": "HNL-SAN",
+        "Origin": "HNL",
+        "LF": 0.8,
+        "Destination": "SAN",
+        "Distance": 2613,
+        "Duration": 335,
+        "Fare": 143.3326289
+    },
+    {
+        "OD": "HNL-SJC",
+        "Origin": "HNL",
+        "LF": 0.65,
+        "Destination": "SJC",
+        "Distance": 2417,
+        "Duration": 317,
+        "Fare": 126.0839792
+    },
+    {
+        "OD": "IAH-SEA",
+        "Origin": "IAH",
+        "LF": 0.8,
+        "Destination": "SEA",
+        "Distance": 1874,
+        "Duration": 270,
+        "Fare": 83.80304593
+    },
+    {
+        "OD": "JNU-CDV",
+        "Origin": "JNU",
+        "LF": 0.67,
+        "Destination": "CDV",
+        "Distance": 410,
+        "Duration": 139,
+        "Fare": 10.11602042
+    },
+    {
+        "OD": "JNU-GST",
+        "Origin": "JNU",
+        "LF": 0.83,
+        "Destination": "GST",
+        "Distance": 41,
+        "Duration": 27,
+        "Fare": 0.822056798
+    },
+    {
+        "OD": "JNU-PSG",
+        "Origin": "JNU",
+        "LF": 0.74,
+        "Destination": "PSG",
+        "Distance": 123,
+        "Duration": 45,
+        "Fare": 2.564533899
+    },
+    {
+        "OD": "JNU-WRG",
+        "Origin": "JNU",
+        "LF": 0.76,
+        "Destination": "WRG",
+        "Distance": 153,
+        "Duration": 116,
+        "Fare": 3.248119248
+    },
+    {
+        "OD": "JNU-YAK",
+        "Origin": "JNU",
+        "LF": 0.85,
+        "Destination": "YAK",
+        "Distance": 198,
+        "Duration": 55,
+        "Fare": 4.319796775
+    },
+    {
+        "OD": "KOA-OAK",
+        "Origin": "KOA",
+        "LF": 0.73,
+        "Destination": "OAK",
+        "Distance": 2380,
+        "Duration": 300,
+        "Fare": 122.9461226
+    },
+    {
+        "OD": "KOA-SEA",
+        "Origin": "KOA",
+        "LF": 0.72,
+        "Destination": "SEA",
+        "Distance": 2692,
+        "Duration": 350,
+        "Fare": 150.5829224
+    },
+    {
+        "OD": "KTN-PSG",
+        "Origin": "KTN",
+        "LF": 0.74,
+        "Destination": "PSG",
+        "Distance": 113,
+        "Duration": 99,
+        "Fare": 2.342159464
+    },
+    {
+        "OD": "KTN-SIT",
+        "Origin": "KTN",
+        "LF": 0.76,
+        "Destination": "SIT",
+        "Distance": 183,
+        "Duration": 46,
+        "Fare": 3.956397666
+    },
+    {
+        "OD": "KTN-WRG",
+        "Origin": "KTN",
+        "LF": 0.67,
+        "Destination": "WRG",
+        "Distance": 84,
+        "Duration": 38,
+        "Fare": 1.712789082
+    },
+    {
+        "OD": "LAS-BLI",
+        "Origin": "LAS",
+        "LF": 0.8,
+        "Destination": "BLI",
+        "Distance": 956,
+        "Duration": 150,
+        "Fare": 30.72162522
+    },
+    {
+        "OD": "LAX-DCA",
+        "Origin": "LAX",
+        "LF": 0.67,
+        "Destination": "DCA",
+        "Distance": 2308,
+        "Duration": 317,
+        "Fare": 116.9476851
+    },
+    {
+        "OD": "LAX-MZT",
+        "Origin": "LAX",
+        "LF": 0.79,
+        "Destination": "MZT",
+        "Distance": 1048,
+        "Duration": 153,
+        "Fare": 34.9988454
+    },
+    {
+        "OD": "LAX-PVR",
+        "Origin": "LAX",
+        "LF": 0.77,
+        "Destination": "PVR",
+        "Distance": 1219,
+        "Duration": 174,
+        "Fare": 43.56585227
+    },
+    {
+        "OD": "LIH-SAN",
+        "Origin": "LIH",
+        "LF": 0.78,
+        "Destination": "SAN",
+        "Distance": 2676,
+        "Duration": 320,
+        "Fare": 149.1006804
+    },
+    {
+        "OD": "LIH-SEA",
+        "Origin": "LIH",
+        "LF": 0.74,
+        "Destination": "SEA",
+        "Distance": 2703,
+        "Duration": 335,
+        "Fare": 151.6060381
+    },
+    {
+        "OD": "LIH-SJC",
+        "Origin": "LIH",
+        "LF": 0.72,
+        "Destination": "SJC",
+        "Distance": 2467,
+        "Duration": 316,
+        "Fare": 130.3840008
+    },
+    {
+        "OD": "MCI-SEA",
+        "Origin": "MCI",
+        "LF": 0.66,
+        "Destination": "SEA",
+        "Distance": 1487,
+        "Duration": 215,
+        "Fare": 58.60650013
+    },
+    {
+        "OD": "MCO-SAN",
+        "Origin": "MCO",
+        "LF": 0.67,
+        "Destination": "SAN",
+        "Distance": 2146,
+        "Duration": 319,
+        "Fare": 103.9712367
+    },
+    {
+        "OD": "MCO-SEA",
+        "Origin": "MCO",
+        "LF": 0.65,
+        "Destination": "SEA",
+        "Distance": 2552,
+        "Duration": 364,
+        "Fare": 137.8514559
+    },
+    {
+        "OD": "MZT-LAX",
+        "Origin": "MZT",
+        "LF": 0.84,
+        "Destination": "LAX",
+        "Distance": 1048,
+        "Duration": 150,
+        "Fare": 34.9988454
+    },
+    {
+        "OD": "OAK-HNL",
+        "Origin": "OAK",
+        "LF": 0.81,
+        "Destination": "HNL",
+        "Distance": 2409,
+        "Duration": 322,
+        "Fare": 125.402341
+    },
+    {
+        "OD": "OAK-KOA",
+        "Origin": "OAK",
+        "LF": 0.81,
+        "Destination": "KOA",
+        "Distance": 2380,
+        "Duration": 323,
+        "Fare": 122.9461226
+    },
+    {
+        "OD": "OAK-OGG",
+        "Origin": "OAK",
+        "LF": 0.81,
+        "Destination": "OGG",
+        "Distance": 2350,
+        "Duration": 312,
+        "Fare": 120.4294885
+    },
+    {
+        "OD": "OGG-OAK",
+        "Origin": "OGG",
+        "LF": 0.7,
+        "Destination": "OAK",
+        "Distance": 2350,
+        "Duration": 304,
+        "Fare": 120.4294885
+    },
+    {
+        "OD": "OGG-SJC",
+        "Origin": "OGG",
+        "LF": 0.77,
+        "Destination": "SJC",
+        "Distance": 2356,
+        "Duration": 296,
+        "Fare": 120.9308398
+    },
+    {
+        "OD": "OGG-SMF",
+        "Origin": "OGG",
+        "LF": 0.67,
+        "Destination": "SMF",
+        "Distance": 2405,
+        "Duration": 300,
+        "Fare": 125.0621804
+    },
+    {
+        "OD": "OME-OTZ",
+        "Origin": "OME",
+        "LF": 0.7,
+        "Destination": "OTZ",
+        "Distance": 538,
+        "Duration": 39,
+        "Fare": 14.21265066
+    },
+    {
+        "OD": "ORD-ANC",
+        "Origin": "ORD",
+        "LF": 0.79,
+        "Destination": "ANC",
+        "Distance": 2841,
+        "Duration": 398,
+        "Fare": 164.7235671
+    },
+    {
+        "OD": "ORD-PDX",
+        "Origin": "ORD",
+        "LF": 0.68,
+        "Destination": "PDX",
+        "Distance": 1736,
+        "Duration": 271,
+        "Fare": 74.34684048
+    },
+    {
+        "OD": "PDX-BOS",
+        "Origin": "PDX",
+        "LF": 0.79,
+        "Destination": "BOS",
+        "Distance": 2533,
+        "Duration": 321,
+        "Fare": 136.1650572
+    },
+    {
+        "OD": "PDX-DCA",
+        "Origin": "PDX",
+        "LF": 0.81,
+        "Destination": "DCA",
+        "Distance": 2347,
+        "Duration": 300,
+        "Fare": 120.1791832
+    },
+    {
+        "OD": "PDX-FAI",
+        "Origin": "PDX",
+        "LF": 0.78,
+        "Destination": "FAI",
+        "Distance": 1639,
+        "Duration": 234,
+        "Fare": 68.01279764
+    },
+    {
+        "OD": "PDX-HNL",
+        "Origin": "PDX",
+        "LF": 0.82,
+        "Destination": "HNL",
+        "Distance": 2605,
+        "Duration": 355,
+        "Fare": 142.6079699
+    },
+    {
+        "OD": "PDX-OGG",
+        "Origin": "PDX",
+        "LF": 0.67,
+        "Destination": "OGG",
+        "Distance": 2564,
+        "Duration": 341,
+        "Fare": 138.921653
+    },
+    {
+        "OD": "PDX-ORD",
+        "Origin": "PDX",
+        "LF": 0.81,
+        "Destination": "ORD",
+        "Distance": 1736,
+        "Duration": 240,
+        "Fare": 74.34684048
+    },
+    {
+        "OD": "PDX-PHX",
+        "Origin": "PDX",
+        "LF": 0.71,
+        "Destination": "PHX",
+        "Distance": 1011,
+        "Duration": 151,
+        "Fare": 33.25074214
+    },
+    {
+        "OD": "PDX-SJD",
+        "Origin": "PDX",
+        "LF": 0.69,
+        "Destination": "SJD",
+        "Distance": 1712,
+        "Duration": 412,
+        "Fare": 72.75562003
+    },
+    {
+        "OD": "PHL-SEA",
+        "Origin": "PHL",
+        "LF": 0.66,
+        "Destination": "SEA",
+        "Distance": 2375,
+        "Duration": 360,
+        "Fare": 122.5249688
+    },
+    {
+        "OD": "PHX-PDX",
+        "Origin": "PHX",
+        "LF": 0.76,
+        "Destination": "PDX",
+        "Distance": 1011,
+        "Duration": 153,
+        "Fare": 33.25074214
+    },
+    {
+        "OD": "PSG-ANC",
+        "Origin": "PSG",
+        "LF": 0.74,
+        "Destination": "ANC",
+        "Distance": 676,
+        "Duration": 180,
+        "Fare": 19.13290411
+    },
+    {
+        "OD": "PSG-JNU",
+        "Origin": "PSG",
+        "LF": 0.83,
+        "Destination": "JNU",
+        "Distance": 123,
+        "Duration": 35,
+        "Fare": 2.564533899
+    },
+    {
+        "OD": "PSG-KTN",
+        "Origin": "PSG",
+        "LF": 0.83,
+        "Destination": "KTN",
+        "Distance": 113,
+        "Duration": 98,
+        "Fare": 2.342159464
+    },
+    {
+        "OD": "PSG-SEA",
+        "Origin": "PSG",
+        "LF": 0.8,
+        "Destination": "SEA",
+        "Distance": 787,
+        "Duration": 244,
+        "Fare": 23.46966134
+    },
+    {
+        "OD": "PSG-WRG",
+        "Origin": "PSG",
+        "LF": 0.66,
+        "Destination": "WRG",
+        "Distance": 31,
+        "Duration": 26,
+        "Fare": 0.622180492
+    },
+    {
+        "OD": "PVR-LAX",
+        "Origin": "PVR",
+        "LF": 0.68,
+        "Destination": "LAX",
+        "Distance": 1219,
+        "Duration": 170,
+        "Fare": 43.56585227
+    },
+    {
+        "OD": "PVR-SEA",
+        "Origin": "PVR",
+        "LF": 0.82,
+        "Destination": "SEA",
+        "Distance": 2082,
+        "Duration": 419,
+        "Fare": 99.04316108
+    },
+    {
+        "OD": "PVR-SFO",
+        "Origin": "PVR",
+        "LF": 0.82,
+        "Destination": "SFO",
+        "Distance": 1556,
+        "Duration": 210,
+        "Fare": 62.79789902
+    },
+    {
+        "OD": "SAN-BOS",
+        "Origin": "SAN",
+        "LF": 0.83,
+        "Destination": "BOS",
+        "Distance": 2585,
+        "Duration": 325,
+        "Fare": 140.8040049
+    },
+    {
+        "OD": "SAN-HNL",
+        "Origin": "SAN",
+        "LF": 0.7,
+        "Destination": "HNL",
+        "Distance": 2613,
+        "Duration": 358,
+        "Fare": 143.3326289
+    },
+    {
+        "OD": "SAN-LIH",
+        "Origin": "SAN",
+        "LF": 0.67,
+        "Destination": "LIH",
+        "Distance": 2676,
+        "Duration": 370,
+        "Fare": 149.1006804
+    },
+    {
+        "OD": "SAN-MCO",
+        "Origin": "SAN",
+        "LF": 0.7,
+        "Destination": "MCO",
+        "Distance": 2146,
+        "Duration": 270,
+        "Fare": 103.9712367
+    },
+    {
+        "OD": "SAT-SEA",
+        "Origin": "SAT",
+        "LF": 0.66,
+        "Destination": "SEA",
+        "Distance": 1775,
+        "Duration": 262,
+        "Fare": 76.96627973
+    },
+    {
+        "OD": "SEA-AUS",
+        "Origin": "SEA",
+        "LF": 0.73,
+        "Destination": "AUS",
+        "Distance": 1771,
+        "Duration": 235,
+        "Fare": 76.69569873
+    },
+    {
+        "OD": "SEA-CDV",
+        "Origin": "SEA",
+        "LF": 0.72,
+        "Destination": "CDV",
+        "Distance": 1292,
+        "Duration": 334,
+        "Fare": 47.46746415
+    },
+    {
+        "OD": "SEA-FLL",
+        "Origin": "SEA",
+        "LF": 0.68,
+        "Destination": "FLL",
+        "Distance": 2717,
+        "Duration": 340,
+        "Fare": 152.9129868
+    },
+    {
+        "OD": "SEA-GDL",
+        "Origin": "SEA",
+        "LF": 0.79,
+        "Destination": "GDL",
+        "Distance": 2144,
+        "Duration": 406,
+        "Fare": 103.8155332
+    },
+    {
+        "OD": "SEA-GST",
+        "Origin": "SEA",
+        "LF": 0.79,
+        "Destination": "GST",
+        "Distance": 939,
+        "Duration": 214,
+        "Fare": 29.95668946
+    },
+    {
+        "OD": "SEA-IAH",
+        "Origin": "SEA",
+        "LF": 0.84,
+        "Destination": "IAH",
+        "Distance": 1874,
+        "Duration": 264,
+        "Fare": 83.80304593
+    },
+    {
+        "OD": "SEA-KOA",
+        "Origin": "SEA",
+        "LF": 0.85,
+        "Destination": "KOA",
+        "Distance": 2692,
+        "Duration": 365,
+        "Fare": 150.5829224
+    },
+    {
+        "OD": "SEA-LIH",
+        "Origin": "SEA",
+        "LF": 0.82,
+        "Destination": "LIH",
+        "Distance": 2703,
+        "Duration": 356,
+        "Fare": 151.6060381
+    },
+    {
+        "OD": "SEA-MCI",
+        "Origin": "SEA",
+        "LF": 0.76,
+        "Destination": "MCI",
+        "Distance": 1487,
+        "Duration": 193,
+        "Fare": 58.60650013
+    },
+    {
+        "OD": "SEA-MCO",
+        "Origin": "SEA",
+        "LF": 0.81,
+        "Destination": "MCO",
+        "Distance": 2552,
+        "Duration": 335,
+        "Fare": 137.8514559
+    },
+    {
+        "OD": "SEA-PHL",
+        "Origin": "SEA",
+        "LF": 0.85,
+        "Destination": "PHL",
+        "Distance": 2375,
+        "Duration": 305,
+        "Fare": 122.5249688
+    },
+    {
+        "OD": "SEA-PSG",
+        "Origin": "SEA",
+        "LF": 0.8,
+        "Destination": "PSG",
+        "Distance": 787,
+        "Duration": 274,
+        "Fare": 23.46966134
+    },
+    {
+        "OD": "SEA-PVR",
+        "Origin": "SEA",
+        "LF": 0.7,
+        "Destination": "PVR",
+        "Distance": 2082,
+        "Duration": 422,
+        "Fare": 99.04316108
+    },
+    {
+        "OD": "SEA-SAT",
+        "Origin": "SEA",
+        "LF": 0.72,
+        "Destination": "SAT",
+        "Distance": 1775,
+        "Duration": 228,
+        "Fare": 76.96627973
+    },
+    {
+        "OD": "SEA-STL",
+        "Origin": "SEA",
+        "LF": 0.8,
+        "Destination": "STL",
+        "Distance": 1707,
+        "Duration": 220,
+        "Fare": 72.42610494
+    },
+    {
+        "OD": "SEA-TUS",
+        "Origin": "SEA",
+        "LF": 0.78,
+        "Destination": "TUS",
+        "Distance": 1217,
+        "Duration": 173,
+        "Fare": 43.46101655
+    },
+    {
+        "OD": "SEA-WRG",
+        "Origin": "SEA",
+        "LF": 0.81,
+        "Destination": "WRG",
+        "Distance": 756,
+        "Duration": 213,
+        "Fare": 22.22447334
+    },
+    {
+        "OD": "SEA-YAK",
+        "Origin": "SEA",
+        "LF": 0.85,
+        "Destination": "YAK",
+        "Distance": 1092,
+        "Duration": 250,
+        "Fare": 37.12656318
+    },
+    {
+        "OD": "SFO-ANC",
+        "Origin": "SFO",
+        "LF": 0.75,
+        "Destination": "ANC",
+        "Distance": 2017,
+        "Duration": 387,
+        "Fare": 94.15311283
+    },
+    {
+        "OD": "SFO-PVR",
+        "Origin": "SFO",
+        "LF": 0.82,
+        "Destination": "PVR",
+        "Distance": 1556,
+        "Duration": 215,
+        "Fare": 62.79789902
+    },
+    {
+        "OD": "SFO-SJD",
+        "Origin": "SFO",
+        "LF": 0.66,
+        "Destination": "SJD",
+        "Distance": 1251,
+        "Duration": 182,
+        "Fare": 45.25814939
+    },
+    {
+        "OD": "SIT-KTN",
+        "Origin": "SIT",
+        "LF": 0.69,
+        "Destination": "KTN",
+        "Distance": 183,
+        "Duration": 50,
+        "Fare": 3.956397666
+    },
+    {
+        "OD": "SJC-GDL",
+        "Origin": "SJC",
+        "LF": 0.68,
+        "Destination": "GDL",
+        "Distance": 1614,
+        "Duration": 206,
+        "Fare": 66.4221534
+    },
+    {
+        "OD": "SJC-HNL",
+        "Origin": "SJC",
+        "LF": 0.75,
+        "Destination": "HNL",
+        "Distance": 2417,
+        "Duration": 320,
+        "Fare": 126.0839792
+    },
+    {
+        "OD": "SJC-LIH",
+        "Origin": "SJC",
+        "LF": 0.78,
+        "Destination": "LIH",
+        "Distance": 2467,
+        "Duration": 321,
+        "Fare": 130.3840008
+    },
+    {
+        "OD": "SJC-OGG",
+        "Origin": "SJC",
+        "LF": 0.67,
+        "Destination": "OGG",
+        "Distance": 2356,
+        "Duration": 325,
+        "Fare": 120.9308398
+    },
+    {
+        "OD": "SJC-SJD",
+        "Origin": "SJC",
+        "LF": 0.77,
+        "Destination": "SJD",
+        "Distance": 1221,
+        "Duration": 171,
+        "Fare": 43.67079774
+    },
+    {
+        "OD": "SJD-PDX",
+        "Origin": "SJD",
+        "LF": 0.81,
+        "Destination": "PDX",
+        "Distance": 1712,
+        "Duration": 375,
+        "Fare": 72.75562003
+    },
+    {
+        "OD": "SJD-SFO",
+        "Origin": "SJD",
+        "LF": 0.76,
+        "Destination": "SFO",
+        "Distance": 1251,
+        "Duration": 170,
+        "Fare": 45.25814939
+    },
+    {
+        "OD": "SJD-SJC",
+        "Origin": "SJD",
+        "LF": 0.79,
+        "Destination": "SJC",
+        "Distance": 1221,
+        "Duration": 165,
+        "Fare": 43.67079774
+    },
+    {
+        "OD": "SMF-OGG",
+        "Origin": "SMF",
+        "LF": 0.82,
+        "Destination": "OGG",
+        "Distance": 2405,
+        "Duration": 316,
+        "Fare": 125.0621804
+    },
+    {
+        "OD": "STL-SEA",
+        "Origin": "STL",
+        "LF": 0.68,
+        "Destination": "SEA",
+        "Distance": 1707,
+        "Duration": 254,
+        "Fare": 72.42610494
+    },
+    {
+        "OD": "TUS-SEA",
+        "Origin": "TUS",
+        "LF": 0.8,
+        "Destination": "SEA",
+        "Distance": 1217,
+        "Duration": 174,
+        "Fare": 43.46101655
+    },
+    {
+        "OD": "WRG-ANC",
+        "Origin": "WRG",
+        "LF": 0.67,
+        "Destination": "ANC",
+        "Distance": 706,
+        "Duration": 249,
+        "Fare": 20.27166502
+    },
+    {
+        "OD": "WRG-JNU",
+        "Origin": "WRG",
+        "LF": 0.71,
+        "Destination": "JNU",
+        "Distance": 153,
+        "Duration": 104,
+        "Fare": 3.248119248
+    },
+    {
+        "OD": "WRG-KTN",
+        "Origin": "WRG",
+        "LF": 0.79,
+        "Destination": "KTN",
+        "Distance": 84,
+        "Duration": 30,
+        "Fare": 1.712789082
+    },
+    {
+        "OD": "WRG-PSG",
+        "Origin": "WRG",
+        "LF": 0.78,
+        "Destination": "PSG",
+        "Distance": 31,
+        "Duration": 20,
+        "Fare": 0.622180492
+    },
+    {
+        "OD": "WRG-SEA",
+        "Origin": "WRG",
+        "LF": 0.68,
+        "Destination": "SEA",
+        "Distance": 756,
+        "Duration": 176,
+        "Fare": 22.22447334
+    },
+    {
+        "OD": "YAK-ANC",
+        "Origin": "YAK",
+        "LF": 0.85,
+        "Destination": "ANC",
+        "Distance": 371,
+        "Duration": 129,
+        "Fare": 8.957176142
+    },
+    {
+        "OD": "YAK-CDV",
+        "Origin": "YAK",
+        "LF": 0.74,
+        "Destination": "CDV",
+        "Distance": 212,
+        "Duration": 44,
+        "Fare": 4.664538936
+    },
+    {
+        "OD": "YAK-JNU",
+        "Origin": "YAK",
+        "LF": 0.75,
+        "Destination": "JNU",
+        "Distance": 198,
+        "Duration": 43,
+        "Fare": 4.319796775
+    },
+    {
+        "OD": "YAK-SEA",
+        "Origin": "YAK",
+        "LF": 0.73,
+        "Destination": "SEA",
+        "Distance": 1092,
+        "Duration": 220,
+        "Fare": 37.12656318
+    },
+    {
+        "OD": "ANC-IAH",
+        "Origin": "ANC",
+        "LF": 0.83,
+        "Destination": "IAH",
+        "Distance": 3264,
+        "Duration": 514,
+        "Fare": 208.1870557
+    },
+    {
+        "OD": "IAH-ANC",
+        "Origin": "IAH",
+        "LF": 0.73,
+        "Destination": "ANC",
+        "Distance": 3264,
+        "Duration": 529,
+        "Fare": 208.1870557
+    },
+    {
+        "OD": "ANC-BOS",
+        "Origin": "ANC",
+        "LF": 0.75,
+        "Destination": "BOS",
+        "Distance": 3377,
+        "Duration": 623,
+        "Fare": 220.6287638
+    },
+    {
+        "OD": "GDL-SEA",
+        "Origin": "GDL",
+        "LF": 0.71,
+        "Destination": "SEA",
+        "Distance": 2144,
+        "Duration": 460,
+        "Fare": 103.8155332
+    },
+    {
+        "OD": "ADQ-ANC",
+        "Origin": "ADQ",
+        "LF": 0.68,
+        "Destination": "ANC",
+        "Distance": 252,
+        "Duration": 49,
+        "Fare": 5.67914822
+    },
+    {
+        "OD": "ADQ-ANC",
+        "Origin": "ADQ",
+        "LF": 0.81,
+        "Destination": "ANC",
+        "Distance": 252,
+        "Duration": 49,
+        "Fare": 5.67914822
+    },
+    {
+        "OD": "ANC-ADQ",
+        "Origin": "ANC",
+        "LF": 0.68,
+        "Destination": "ADQ",
+        "Distance": 252,
+        "Duration": 54,
+        "Fare": 5.67914822
+    },
+    {
+        "OD": "ANC-BRW",
+        "Origin": "ANC",
+        "LF": 0.71,
+        "Destination": "BRW",
+        "Distance": 724,
+        "Duration": 187,
+        "Fare": 20.96677423
+    },
+    {
+        "OD": "ANC-KTN",
+        "Origin": "ANC",
+        "LF": 0.83,
+        "Destination": "KTN",
+        "Distance": 777,
+        "Duration": 285,
+        "Fare": 23.06510693
+    },
+    {
+        "OD": "ANC-LAX",
+        "Origin": "ANC",
+        "LF": 0.77,
+        "Destination": "LAX",
+        "Distance": 2345,
+        "Duration": 317,
+        "Fare": 120.0124502
+    },
+    {
+        "OD": "ANC-SIT",
+        "Origin": "ANC",
+        "LF": 0.67,
+        "Destination": "SIT",
+        "Distance": 595,
+        "Duration": 192,
+        "Fare": 16.18159154
+    },
+    {
+        "OD": "ATL-SEA",
+        "Origin": "ATL",
+        "LF": 0.77,
+        "Destination": "SEA",
+        "Distance": 2180,
+        "Duration": 329,
+        "Fare": 106.6349865
+    },
+    {
+        "OD": "DCA-SEA",
+        "Origin": "DCA",
+        "LF": 0.74,
+        "Destination": "SEA",
+        "Distance": 2325,
+        "Duration": 333,
+        "Fare": 118.3511561
+    },
+    {
+        "OD": "EWR-SEA",
+        "Origin": "EWR",
+        "LF": 0.82,
+        "Destination": "SEA",
+        "Distance": 2397,
+        "Duration": 362,
+        "Fare": 124.3831762
+    },
+    {
+        "OD": "GDL-LAX",
+        "Origin": "GDL",
+        "LF": 0.68,
+        "Destination": "LAX",
+        "Distance": 1310,
+        "Duration": 195,
+        "Fare": 48.45197612
+    },
+    {
+        "OD": "KTN-ANC",
+        "Origin": "KTN",
+        "LF": 0.81,
+        "Destination": "ANC",
+        "Distance": 777,
+        "Duration": 328,
+        "Fare": 23.06510693
+    },
+    {
+        "OD": "LAX-ANC",
+        "Origin": "LAX",
+        "LF": 0.74,
+        "Destination": "ANC",
+        "Distance": 2345,
+        "Duration": 327,
+        "Fare": 120.0124502
+    },
+    {
+        "OD": "LAX-GDL",
+        "Origin": "LAX",
+        "LF": 0.68,
+        "Destination": "GDL",
+        "Distance": 1310,
+        "Duration": 185,
+        "Fare": 48.45197612
+    },
+    {
+        "OD": "LAX-MEX",
+        "Origin": "LAX",
+        "LF": 0.78,
+        "Destination": "MEX",
+        "Distance": 1555,
+        "Duration": 214,
+        "Fare": 62.73622126
+    },
+    {
+        "OD": "LAX-SJD",
+        "Origin": "LAX",
+        "LF": 0.85,
+        "Destination": "SJD",
+        "Distance": 913,
+        "Duration": 135,
+        "Fare": 28.80212484
+    },
+    {
+        "OD": "MEX-LAX",
+        "Origin": "MEX",
+        "LF": 0.73,
+        "Destination": "LAX",
+        "Distance": 1555,
+        "Duration": 245,
+        "Fare": 62.73622126
+    },
+    {
+        "OD": "MSP-SEA",
+        "Origin": "MSP",
+        "LF": 0.83,
+        "Destination": "SEA",
+        "Distance": 1396,
+        "Duration": 213,
+        "Fare": 53.27845267
+    },
+    {
+        "OD": "OGG-PDX",
+        "Origin": "OGG",
+        "LF": 0.81,
+        "Destination": "PDX",
+        "Distance": 2564,
+        "Duration": 324,
+        "Fare": 138.921653
+    },
+    {
+        "OD": "OGG-SAN",
+        "Origin": "OGG",
+        "LF": 0.67,
+        "Destination": "SAN",
+        "Distance": 2540,
+        "Duration": 328,
+        "Fare": 136.7852096
+    },
+    {
+        "OD": "OGG-SEA",
+        "Origin": "OGG",
+        "LF": 0.83,
+        "Destination": "SEA",
+        "Distance": 2643,
+        "Duration": 445,
+        "Fare": 146.0657389
+    },
+    {
+        "OD": "OTZ-OME",
+        "Origin": "OTZ",
+        "LF": 0.78,
+        "Destination": "OME",
+        "Distance": 183,
+        "Duration": 41,
+        "Fare": 3.956397666
+    },
+    {
+        "OD": "PDX-SJC",
+        "Origin": "PDX",
+        "LF": 0.76,
+        "Destination": "SJC",
+        "Distance": 570,
+        "Duration": 95,
+        "Fare": 15.30704628
+    },
+    {
+        "OD": "PSP-SEA",
+        "Origin": "PSP",
+        "LF": 0.85,
+        "Destination": "SEA",
+        "Distance": 989,
+        "Duration": 255,
+        "Fare": 32.22913583
+    },
+    {
+        "OD": "PSP-SFO",
+        "Origin": "PSP",
+        "LF": 0.84,
+        "Destination": "SFO",
+        "Distance": 421,
+        "Duration": 99,
+        "Fare": 10.45041903
+    },
+    {
+        "OD": "SAN-OGG",
+        "Origin": "SAN",
+        "LF": 0.73,
+        "Destination": "OGG",
+        "Distance": 2540,
+        "Duration": 345,
+        "Fare": 136.7852096
+    },
+    {
+        "OD": "SAN-SJD",
+        "Origin": "SAN",
+        "LF": 0.77,
+        "Destination": "SJD",
+        "Distance": 804,
+        "Duration": 121,
+        "Fare": 24.16370056
+    },
+    {
+        "OD": "SCC-ANC",
+        "Origin": "SCC",
+        "LF": 0.72,
+        "Destination": "ANC",
+        "Distance": 626,
+        "Duration": 193,
+        "Fare": 17.28984275
+    },
+    {
+        "OD": "SCC-BRW",
+        "Origin": "SCC",
+        "LF": 0.71,
+        "Destination": "BRW",
+        "Distance": 203,
+        "Duration": 45,
+        "Fare": 4.442301649
+    },
+    {
+        "OD": "SEA-ATL",
+        "Origin": "SEA",
+        "LF": 0.76,
+        "Destination": "ATL",
+        "Distance": 2180,
+        "Duration": 294,
+        "Fare": 106.6349865
+    },
+    {
+        "OD": "SEA-DCA",
+        "Origin": "SEA",
+        "LF": 0.72,
+        "Destination": "DCA",
+        "Distance": 2325,
+        "Duration": 301,
+        "Fare": 118.3511561
+    },
+    {
+        "OD": "SEA-EWR",
+        "Origin": "SEA",
+        "LF": 0.85,
+        "Destination": "EWR",
+        "Distance": 2397,
+        "Duration": 305,
+        "Fare": 124.3831762
+    },
+    {
+        "OD": "SEA-MSP",
+        "Origin": "SEA",
+        "LF": 0.78,
+        "Destination": "MSP",
+        "Distance": 1396,
+        "Duration": 185,
+        "Fare": 53.27845267
+    },
+    {
+        "OD": "SEA-PSP",
+        "Origin": "SEA",
+        "LF": 0.68,
+        "Destination": "PSP",
+        "Distance": 989,
+        "Duration": 254,
+        "Fare": 32.22913583
+    },
+    {
+        "OD": "SEA-SLC",
+        "Origin": "SEA",
+        "LF": 0.73,
+        "Destination": "SLC",
+        "Distance": 689,
+        "Duration": 119,
+        "Fare": 19.62333541
+    },
+    {
+        "OD": "SFO-PSP",
+        "Origin": "SFO",
+        "LF": 0.84,
+        "Destination": "PSP",
+        "Distance": 421,
+        "Duration": 79,
+        "Fare": 10.45041903
+    },
+    {
+        "OD": "SIT-ANC",
+        "Origin": "SIT",
+        "LF": 0.75,
+        "Destination": "ANC",
+        "Distance": 595,
+        "Duration": 171,
+        "Fare": 16.18159154
+    },
+    {
+        "OD": "SIT-JNU",
+        "Origin": "SIT",
+        "LF": 0.85,
+        "Destination": "JNU",
+        "Distance": 94,
+        "Duration": 34,
+        "Fare": 1.927206861
+    },
+    {
+        "OD": "SJC-PDX",
+        "Origin": "SJC",
+        "LF": 0.85,
+        "Destination": "PDX",
+        "Distance": 570,
+        "Duration": 90,
+        "Fare": 15.30704628
+    },
+    {
+        "OD": "SJD-LAX",
+        "Origin": "SJD",
+        "LF": 0.68,
+        "Destination": "LAX",
+        "Distance": 913,
+        "Duration": 144,
+        "Fare": 28.80212484
+    },
+    {
+        "OD": "SJD-SAN",
+        "Origin": "SJD",
+        "LF": 0.67,
+        "Destination": "SAN",
+        "Distance": 804,
+        "Duration": 115,
+        "Fare": 24.16370056
+    },
+    {
+        "OD": "SLC-SEA",
+        "Origin": "SLC",
+        "LF": 0.65,
+        "Destination": "SEA",
+        "Distance": 689,
+        "Duration": 125,
+        "Fare": 19.62333541
+    },
+    {
+        "OD": "ANC-BET",
+        "Origin": "ANC",
+        "LF": 0.76,
+        "Destination": "BET",
+        "Distance": 398,
+        "Duration": 69,
+        "Fare": 9.755008195
+    },
+    {
+        "OD": "ANC-OME",
+        "Origin": "ANC",
+        "LF": 0.67,
+        "Destination": "OME",
+        "Distance": 538,
+        "Duration": 175,
+        "Fare": 14.21265066
+    },
+    {
+        "OD": "ANC-OTZ",
+        "Origin": "ANC",
+        "LF": 0.65,
+        "Destination": "OTZ",
+        "Distance": 548,
+        "Duration": 87,
+        "Fare": 14.55163125
+    },
+    {
+        "OD": "ANC-PDX",
+        "Origin": "ANC",
+        "LF": 0.78,
+        "Destination": "PDX",
+        "Distance": 1540,
+        "Duration": 210,
+        "Fare": 61.81434726
+    },
+    {
+        "OD": "ANC-SCC",
+        "Origin": "ANC",
+        "LF": 0.67,
+        "Destination": "SCC",
+        "Distance": 626,
+        "Duration": 97,
+        "Fare": 17.28984275
+    },
+    {
+        "OD": "BET-ANC",
+        "Origin": "BET",
+        "LF": 0.67,
+        "Destination": "ANC",
+        "Distance": 398,
+        "Duration": 66,
+        "Fare": 9.755008195
+    },
+    {
+        "OD": "BOS-SEA",
+        "Origin": "BOS",
+        "LF": 0.77,
+        "Destination": "SEA",
+        "Distance": 2491,
+        "Duration": 380,
+        "Fare": 132.472375
+    },
+    {
+        "OD": "BRW-ANC",
+        "Origin": "BRW",
+        "LF": 0.81,
+        "Destination": "ANC",
+        "Distance": 724,
+        "Duration": 103,
+        "Fare": 20.96677423
+    },
+    {
+        "OD": "BUR-SEA",
+        "Origin": "BUR",
+        "LF": 0.75,
+        "Destination": "SEA",
+        "Distance": 939,
+        "Duration": 144,
+        "Fare": 29.95668946
+    },
+    {
+        "OD": "DFW-SEA",
+        "Origin": "DFW",
+        "LF": 0.72,
+        "Destination": "SEA",
+        "Distance": 1660,
+        "Duration": 244,
+        "Fare": 69.36219074
+    },
+    {
+        "OD": "FAI-SEA",
+        "Origin": "FAI",
+        "LF": 0.83,
+        "Destination": "SEA",
+        "Distance": 1532,
+        "Duration": 229,
+        "Fare": 61.3252053
+    },
+    {
+        "OD": "GEG-SEA",
+        "Origin": "GEG",
+        "LF": 0.74,
+        "Destination": "SEA",
+        "Distance": 223,
+        "Duration": 55,
+        "Fare": 4.939180329
+    },
+    {
+        "OD": "HNL-SEA",
+        "Origin": "HNL",
+        "LF": 0.74,
+        "Destination": "SEA",
+        "Distance": 2679,
+        "Duration": 354,
+        "Fare": 149.3780658
+    },
+    {
+        "OD": "JNU-KTN",
+        "Origin": "JNU",
+        "LF": 0.71,
+        "Destination": "KTN",
+        "Distance": 237,
+        "Duration": 64,
+        "Fare": 5.293525349
+    },
+    {
+        "OD": "JNU-SIT",
+        "Origin": "JNU",
+        "LF": 0.8,
+        "Destination": "SIT",
+        "Distance": 94,
+        "Duration": 43,
+        "Fare": 1.927206861
+    },
+    {
+        "OD": "KTN-JNU",
+        "Origin": "KTN",
+        "LF": 0.8,
+        "Destination": "JNU",
+        "Distance": 237,
+        "Duration": 183,
+        "Fare": 5.293525349
+    },
+    {
+        "OD": "OME-ANC",
+        "Origin": "OME",
+        "LF": 0.71,
+        "Destination": "ANC",
+        "Distance": 538,
+        "Duration": 83,
+        "Fare": 14.21265066
+    },
+    {
+        "OD": "ONT-SEA",
+        "Origin": "ONT",
+        "LF": 0.75,
+        "Destination": "SEA",
+        "Distance": 958,
+        "Duration": 145,
+        "Fare": 30.81213896
+    },
+    {
+        "OD": "ORD-SEA",
+        "Origin": "ORD",
+        "LF": 0.83,
+        "Destination": "SEA",
+        "Distance": 1718,
+        "Duration": 280,
+        "Fare": 73.15194356
+    },
+    {
+        "OD": "OTZ-ANC",
+        "Origin": "OTZ",
+        "LF": 0.77,
+        "Destination": "ANC",
+        "Distance": 548,
+        "Duration": 169,
+        "Fare": 14.55163125
+    },
+    {
+        "OD": "PDX-ANC",
+        "Origin": "PDX",
+        "LF": 0.77,
+        "Destination": "ANC",
+        "Distance": 1540,
+        "Duration": 212,
+        "Fare": 61.81434726
+    },
+    {
+        "OD": "PDX-SFO",
+        "Origin": "PDX",
+        "LF": 0.73,
+        "Destination": "SFO",
+        "Distance": 551,
+        "Duration": 112,
+        "Fare": 14.65386044
+    },
+    {
+        "OD": "PDX-SNA",
+        "Origin": "PDX",
+        "LF": 0.67,
+        "Destination": "SNA",
+        "Distance": 861,
+        "Duration": 139,
+        "Fare": 26.54863732
+    },
+    {
+        "OD": "SEA-BOS",
+        "Origin": "SEA",
+        "LF": 0.76,
+        "Destination": "BOS",
+        "Distance": 2491,
+        "Duration": 329,
+        "Fare": 132.472375
+    },
+    {
+        "OD": "SEA-BUR",
+        "Origin": "SEA",
+        "LF": 0.7,
+        "Destination": "BUR",
+        "Distance": 939,
+        "Duration": 135,
+        "Fare": 29.95668946
+    },
+    {
+        "OD": "SEA-DFW",
+        "Origin": "SEA",
+        "LF": 0.76,
+        "Destination": "DFW",
+        "Distance": 1660,
+        "Duration": 222,
+        "Fare": 69.36219074
+    },
+    {
+        "OD": "SEA-FAI",
+        "Origin": "SEA",
+        "LF": 0.67,
+        "Destination": "FAI",
+        "Distance": 1532,
+        "Duration": 227,
+        "Fare": 61.3252053
+    },
+    {
+        "OD": "SEA-GEG",
+        "Origin": "SEA",
+        "LF": 0.65,
+        "Destination": "GEG",
+        "Distance": 223,
+        "Duration": 52,
+        "Fare": 4.939180329
+    },
+    {
+        "OD": "SEA-HNL",
+        "Origin": "SEA",
+        "LF": 0.83,
+        "Destination": "HNL",
+        "Distance": 2679,
+        "Duration": 353,
+        "Fare": 149.3780658
+    },
+    {
+        "OD": "SEA-OGG",
+        "Origin": "SEA",
+        "LF": 0.85,
+        "Destination": "OGG",
+        "Distance": 2643,
+        "Duration": 501,
+        "Fare": 146.0657389
+    },
+    {
+        "OD": "SEA-ONT",
+        "Origin": "SEA",
+        "LF": 0.78,
+        "Destination": "ONT",
+        "Distance": 958,
+        "Duration": 148,
+        "Fare": 30.81213896
+    },
+    {
+        "OD": "SEA-ORD",
+        "Origin": "SEA",
+        "LF": 0.76,
+        "Destination": "ORD",
+        "Distance": 1718,
+        "Duration": 225,
+        "Fare": 73.15194356
+    },
+    {
+        "OD": "SEA-SIT",
+        "Origin": "SEA",
+        "LF": 0.76,
+        "Destination": "SIT",
+        "Distance": 858,
+        "Duration": 135,
+        "Fare": 26.42089196
+    },
+    {
+        "OD": "SEA-SJD",
+        "Origin": "SEA",
+        "LF": 0.8,
+        "Destination": "SJD",
+        "Distance": 1818,
+        "Duration": 343,
+        "Fare": 79.90275041
+    },
+    {
+        "OD": "SFO-PDX",
+        "Origin": "SFO",
+        "LF": 0.8,
+        "Destination": "PDX",
+        "Distance": 551,
+        "Duration": 90,
+        "Fare": 14.65386044
+    },
+    {
+        "OD": "SIT-SEA",
+        "Origin": "SIT",
+        "LF": 0.84,
+        "Destination": "SEA",
+        "Distance": 858,
+        "Duration": 125,
+        "Fare": 26.42089196
+    },
+    {
+        "OD": "SJD-SEA",
+        "Origin": "SJD",
+        "LF": 0.77,
+        "Destination": "SEA",
+        "Distance": 1818,
+        "Duration": 365,
+        "Fare": 79.90275041
+    },
+    {
+        "OD": "SNA-PDX",
+        "Origin": "SNA",
+        "LF": 0.75,
+        "Destination": "PDX",
+        "Distance": 861,
+        "Duration": 132,
+        "Fare": 26.54863732
+    },
+    {
+        "OD": "LAS-PDX",
+        "Origin": "LAS",
+        "LF": 0.85,
+        "Destination": "PDX",
+        "Distance": 764,
+        "Duration": 120,
+        "Fare": 22.543288
+    },
+    {
+        "OD": "LAX-YVR",
+        "Origin": "LAX",
+        "LF": 0.7,
+        "Destination": "YVR",
+        "Distance": 1082,
+        "Duration": 173,
+        "Fare": 36.63832671
+    },
+    {
+        "OD": "OAK-PDX",
+        "Origin": "OAK",
+        "LF": 0.84,
+        "Destination": "PDX",
+        "Distance": 544,
+        "Duration": 125,
+        "Fare": 14.41570977
+    },
+    {
+        "OD": "OAK-SEA",
+        "Origin": "OAK",
+        "LF": 0.75,
+        "Destination": "SEA",
+        "Distance": 673,
+        "Duration": 115,
+        "Fare": 19.02038614
+    },
+    {
+        "OD": "PDX-LAS",
+        "Origin": "PDX",
+        "LF": 0.75,
+        "Destination": "LAS",
+        "Distance": 764,
+        "Duration": 122,
+        "Fare": 22.543288
+    },
+    {
+        "OD": "PDX-SAN",
+        "Origin": "PDX",
+        "LF": 0.67,
+        "Destination": "SAN",
+        "Distance": 935,
+        "Duration": 140,
+        "Fare": 29.77785691
+    },
+    {
+        "OD": "SAN-PDX",
+        "Origin": "SAN",
+        "LF": 0.71,
+        "Destination": "PDX",
+        "Distance": 935,
+        "Duration": 148,
+        "Fare": 29.77785691
+    },
+    {
+        "OD": "SEA-OAK",
+        "Origin": "SEA",
+        "LF": 0.8,
+        "Destination": "OAK",
+        "Distance": 673,
+        "Duration": 124,
+        "Fare": 19.02038614
+    },
+    {
+        "OD": "YVR-LAX",
+        "Origin": "YVR",
+        "LF": 0.68,
+        "Destination": "LAX",
+        "Distance": 1082,
+        "Duration": 169,
+        "Fare": 36.63832671
+    },
+    {
+        "OD": "ANC-JNU",
+        "Origin": "ANC",
+        "LF": 0.74,
+        "Destination": "JNU",
+        "Distance": 569,
+        "Duration": 94,
+        "Fare": 15.27242115
+    },
+    {
+        "OD": "DEN-SEA",
+        "Origin": "DEN",
+        "LF": 0.65,
+        "Destination": "SEA",
+        "Distance": 1021,
+        "Duration": 160,
+        "Fare": 33.71949852
+    },
+    {
+        "OD": "JNU-ANC",
+        "Origin": "JNU",
+        "LF": 0.76,
+        "Destination": "ANC",
+        "Distance": 569,
+        "Duration": 224,
+        "Fare": 15.27242115
+    },
+    {
+        "OD": "KTN-SEA",
+        "Origin": "KTN",
+        "LF": 0.71,
+        "Destination": "SEA",
+        "Distance": 676,
+        "Duration": 105,
+        "Fare": 19.13290411
+    },
+    {
+        "OD": "PHX-SEA",
+        "Origin": "PHX",
+        "LF": 0.75,
+        "Destination": "SEA",
+        "Distance": 1108,
+        "Duration": 165,
+        "Fare": 37.91344837
+    },
+    {
+        "OD": "SEA-DEN",
+        "Origin": "SEA",
+        "LF": 0.69,
+        "Destination": "DEN",
+        "Distance": 1021,
+        "Duration": 170,
+        "Fare": 33.71949852
+    },
+    {
+        "OD": "SEA-KTN",
+        "Origin": "SEA",
+        "LF": 0.65,
+        "Destination": "KTN",
+        "Distance": 676,
+        "Duration": 118,
+        "Fare": 19.13290411
+    },
+    {
+        "OD": "SEA-PHX",
+        "Origin": "SEA",
+        "LF": 0.75,
+        "Destination": "PHX",
+        "Distance": 1108,
+        "Duration": 164,
+        "Fare": 37.91344837
+    },
+    {
+        "OD": "SEA-SMF",
+        "Origin": "SEA",
+        "LF": 0.68,
+        "Destination": "SMF",
+        "Distance": 606,
+        "Duration": 97,
+        "Fare": 16.57182393
+    },
+    {
+        "OD": "SMF-SEA",
+        "Origin": "SMF",
+        "LF": 0.68,
+        "Destination": "SEA",
+        "Distance": 606,
+        "Duration": 100,
+        "Fare": 16.57182393
+    },
+    {
+        "OD": "LAX-PDX",
+        "Origin": "LAX",
+        "LF": 0.7,
+        "Destination": "PDX",
+        "Distance": 835,
+        "Duration": 133,
+        "Fare": 25.44971442
+    },
+    {
+        "OD": "PDX-LAX",
+        "Origin": "PDX",
+        "LF": 0.72,
+        "Destination": "LAX",
+        "Distance": 835,
+        "Duration": 144,
+        "Fare": 25.44971442
+    },
+    {
+        "OD": "ANC-FAI",
+        "Origin": "ANC",
+        "LF": 0.76,
+        "Destination": "FAI",
+        "Distance": 261,
+        "Duration": 52,
+        "Fare": 5.913485111
+    },
+    {
+        "OD": "FAI-ANC",
+        "Origin": "FAI",
+        "LF": 0.73,
+        "Destination": "ANC",
+        "Distance": 261,
+        "Duration": 56,
+        "Fare": 5.913485111
+    },
+    {
+        "OD": "SEA-SJC",
+        "Origin": "SEA",
+        "LF": 0.67,
+        "Destination": "SJC",
+        "Distance": 698,
+        "Duration": 117,
+        "Fare": 19.96558101
+    },
+    {
+        "OD": "SEA-SNA",
+        "Origin": "SEA",
+        "LF": 0.77,
+        "Destination": "SNA",
+        "Distance": 980,
+        "Duration": 158,
+        "Fare": 31.81503341
+    },
+    {
+        "OD": "SJC-SEA",
+        "Origin": "SJC",
+        "LF": 0.8,
+        "Destination": "SEA",
+        "Distance": 698,
+        "Duration": 110,
+        "Fare": 19.96558101
+    },
+    {
+        "OD": "SNA-SEA",
+        "Origin": "SNA",
+        "LF": 0.79,
+        "Destination": "SEA",
+        "Distance": 980,
+        "Duration": 155,
+        "Fare": 31.81503341
+    },
+    {
+        "OD": "SEA-SFO",
+        "Origin": "SEA",
+        "LF": 0.71,
+        "Destination": "SFO",
+        "Distance": 680,
+        "Duration": 134,
+        "Fare": 19.28331219
+    },
+    {
+        "OD": "SFO-SEA",
+        "Origin": "SFO",
+        "LF": 0.84,
+        "Destination": "SEA",
+        "Distance": 680,
+        "Duration": 120,
+        "Fare": 19.28331219
+    },
+    {
+        "OD": "JNU-SEA",
+        "Origin": "JNU",
+        "LF": 0.82,
+        "Destination": "SEA",
+        "Distance": 909,
+        "Duration": 130,
+        "Fare": 28.62614572
+    },
+    {
+        "OD": "LAS-SEA",
+        "Origin": "LAS",
+        "LF": 0.82,
+        "Destination": "SEA",
+        "Distance": 868,
+        "Duration": 135,
+        "Fare": 26.84767013
+    },
+    {
+        "OD": "SAN-SEA",
+        "Origin": "SAN",
+        "LF": 0.68,
+        "Destination": "SEA",
+        "Distance": 1053,
+        "Duration": 151,
+        "Fare": 35.23795643
+    },
+    {
+        "OD": "SEA-JNU",
+        "Origin": "SEA",
+        "LF": 0.76,
+        "Destination": "JNU",
+        "Distance": 909,
+        "Duration": 146,
+        "Fare": 28.62614572
+    },
+    {
+        "OD": "SEA-LAS",
+        "Origin": "SEA",
+        "LF": 0.75,
+        "Destination": "LAS",
+        "Distance": 868,
+        "Duration": 140,
+        "Fare": 26.84767013
+    },
+    {
+        "OD": "SEA-SAN",
+        "Origin": "SEA",
+        "LF": 0.71,
+        "Destination": "SAN",
+        "Distance": 1053,
+        "Duration": 159,
+        "Fare": 35.23795643
+    },
+    {
+        "OD": "LAX-SEA",
+        "Origin": "LAX",
+        "LF": 0.68,
+        "Destination": "SEA",
+        "Distance": 956,
+        "Duration": 155,
+        "Fare": 30.72162522
+    },
+    {
+        "OD": "SEA-LAX",
+        "Origin": "SEA",
+        "LF": 0.72,
+        "Destination": "LAX",
+        "Distance": 956,
+        "Duration": 155,
+        "Fare": 30.72162522
+    },
+    {
+        "OD": "ANC-SEA",
+        "Origin": "ANC",
+        "LF": 0.83,
+        "Destination": "SEA",
+        "Distance": 1446,
+        "Duration": 200,
+        "Fare": 56.17782861
+    },
+    {
+        "OD": "SEA-ANC",
+        "Origin": "SEA",
+        "LF": 0.7,
+        "Destination": "ANC",
+        "Distance": 1446,
+        "Duration": 217,
+        "Fare": 56.17782861
+    }
+]
