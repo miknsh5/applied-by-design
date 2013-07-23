@@ -41,18 +41,18 @@
                     <div class="dashboard-nav">
                         <div class="mini-nav-group">
                             <div class="mini-nav-btn" 
-                                ng-class="{active: isFinActive}" 
-                                ng-click="isFinActive=true; isOpsActive=false; isFltActive=false;">
+                                ng-click="navService.selectTab(0)"
+                                ng-class="{active: navService.tabState(0)}">
                                 <strong>$</strong>
                              </div>
                             <div class="mini-nav-btn"
-                                ng-class="{active: isOpsActive}"
-                                ng-click="isFinActive=false; isOpsActive=true; isFltActive=false;">
+                                ng-click="navService.selectTab(1)"
+                                ng-class="{active: navService.tabState(1)}">
                                 <i class="ikon-clock"></i>
                             </div>
                             <div class="mini-nav-btn" 
-                                ng-class="{active: isFltActive}" 
-                                ng-click="isFinActive=false; isOpsActive=false; isFltActive=true;">
+                                ng-click="navService.selectTab(2)" 
+                                ng-class="{active: navService.tabState(2)}"> 
                                 <i class="ikon-airplane"></i>
                             </div>
                             <div class="mini-nav-btn utility" 
@@ -65,7 +65,7 @@
                     </div>
 
                     <!-- <section class="dash-financial" ng-controller="FinancialCtrl"> -->
-                    <section class="dash financial" ng-show="isFinActive">
+                    <section class="dash financial" ng-show="navService.tabState(0)">
 
                         <!-- small filter panel with year buttons -->
                         <div class="panel small">
@@ -122,20 +122,20 @@
                     </section>
 
 
-                    <section class="dash operational" ng-show="isOpsActive">
+                    <section class="dash operational" ng-show="navService.tabState(1)">
 
                         <!-- small filter panel with day buttons -->
                         <div class="panel small">
                             <div class="filter-days">
                                 <h4>Schedule</h4>
                                 <div class="day-buttons">
-                                    <div class="day-btn">MON</div>
-                                    <div class="day-btn">TUE</div>
-                                    <div class="day-btn">WED</div>
-                                    <div class="day-btn">THU</div>
-                                    <div class="day-btn">FRI</div>
-                                    <div class="day-btn">SAT</div>
-                                    <div class="day-btn">SUN</div>
+                                    <div ng-repeat="day in frequencyService.getDaily()">
+                                        <div class="day-btn" 
+                                            ng-click="frequencyService.toggleDaily($index)"
+                                            ng-class="{active: frequencyService.isDayActive($index)}">
+                                            {{day.name}}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
                         </div>
                     </section>
 
-                    <section class="dash fleet" ng-show="isFltActive">
+                    <section class="dash fleet" ng-show="navService.tabState(2)">
 
                     </section>
 

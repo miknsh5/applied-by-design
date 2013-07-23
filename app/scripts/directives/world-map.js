@@ -3,7 +3,7 @@
 /*global topojson:false */
 
 angular.module('appliedByDesignApp')
-  .directive('worldMap', function (fleetModel) {
+  .directive('worldMap', function (fleetModel, navService) {
     return {
       restrict: 'E',
       scope: {
@@ -11,6 +11,7 @@ angular.module('appliedByDesignApp')
         height: '='
       },
       link: function postLink(scope, element) {
+
 
         var width = scope.width,
             height = scope.height,
@@ -65,8 +66,8 @@ angular.module('appliedByDesignApp')
           map.append('path')
               .datum(topojson.feature(world, world.objects.land))
               .attr('class', 'land')
-              .attr('d', path)
-              .on('click', clicked);
+              .attr('d', path);
+              // .on('click', clicked);
 
           map.append('path')
               .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
@@ -75,32 +76,6 @@ angular.module('appliedByDesignApp')
 
         });
 
-        function clicked() {
-          //when user clicks on the background, reset the route selections
-
-
-        }
-        // function clicked(d) {
-        //   var x = 0,
-        //       y = 0;
-
-        //   // If the click was on the centered state or the background, re-center.
-        //   // Otherwise, center the clicked-on state.
-        //   if (!d || centered === d) {
-        //     centered = null;
-        //   } else {
-        //     var centroid = path.centroid(d);
-        //     x = width / 2 - centroid[0];
-        //     y = height / 2 - centroid[1];
-        //     centered = d;
-        //     console.log('move to:' + x +',' + y + '--' + d);
-        //   }
-
-        //   // Transition to the new transform.
-        //   svg.transition()
-        //       .duration(750)
-        //       .attr("transform", "translate(" + x + "," + y + ")");
-        // }
 
         function zoomed() {
           projection
@@ -148,7 +123,7 @@ angular.module('appliedByDesignApp')
                   .attr('d', path)
                     .on('mouseover', highlight(blue, 'over'))
                     .on('mouseout', highlight(blue))
-                    .on('click', selectRoute(0.2, orange))
+                    .on('click', scope.selectRoute(0.2, orange))
                 .transition()
                   .duration(500)
                   .style('opacity', 1);
@@ -161,10 +136,13 @@ angular.module('appliedByDesignApp')
               .attr('stroke', blue)
               .attr('stroke-width', 2);
         }
-        function selectRoute(opacity, color) {
+        scope.selectRoute = function(opacity, color) {
+
+
           return function(g, i_clicked){
 
             activePath = i_clicked;
+            
 
             network.selectAll('.route path')
               .filter(function(d,i) { return i_clicked != i})
@@ -176,6 +154,7 @@ angular.module('appliedByDesignApp')
               .attr('stroke-width', 4)
               .attr('stroke', color);
           }
+
         }
 
         function highlight(color, type) {
@@ -190,8 +169,7 @@ angular.module('appliedByDesignApp')
               .attr('stroke', color)
               .style('opacity', 0.2);
             }
-                // return (type == 'over' || i == activePath) ? 1 : 0.2;
-              // });
+            
           }
         }
 

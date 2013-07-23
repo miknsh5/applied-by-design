@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('RoutemapCtrl', function ($scope, financialData, fleetModel) {
+  .controller('RoutemapCtrl', function ($scope, financialData, fleetModel, navService, frequencyService) {
 
     // set the dimensions of main SVG canvas
     $scope.mapWidth = 1200;
@@ -11,18 +11,19 @@ angular.module('appliedByDesignApp')
     $scope.chartWidth = 175;
     $scope.chartHeight = 175;
 
-    // initialize dashboard panel visibility
-    $scope.isFinActive = true;
-    $scope.isOpsActive = false;
-    $scope.isFltActive = false;
-
-
     $scope.activeFinanceData = [];
 
     // instantiate service object in local controller scope (makes service accessible directly from view)
     $scope.fleetModel = fleetModel;
+    $scope.frequencyService = frequencyService;
     $scope.financialData = financialData;
+    $scope.navService = navService;
 
+
+    // dashboard panel visibility
+    // $scope.isFinActive = navService.tabState('0');
+    // $scope.isOpsActive = navService.tabState('1');
+    // $scope.isFltActive = navService.tabState('2');
 
 
     // recalculate the dashboard panel position based on hide/show state
