@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .factory('fleetModel', function ($http, findSizeFilter, findRouteFilter, byRouteFilter, findFleetTypeFilter, byFleetTypeFilter, activeEquipmentFilter) {
+  .factory('fleetModel', function ($http, byKeyFilter, findByKeyFilter, findAirportFilter, findSizeFilter, findRouteFilter, byRouteFilter, findFleetTypeFilter, byFleetTypeFilter, activeEquipmentFilter) {
     // Service logic
 
    var fleetModel;
-    var airplanes, citypairs, flights, costcurves, market, services;
+    var airplanes, citypairs, flights, costcurves, market, services, airports;
 
     // should be derived from fleetModel (eventually)
     var equipment = [
@@ -75,11 +75,19 @@ angular.module('appliedByDesignApp')
             .error(function(data){
                 console.log('Resolve Error: services data not loaded!');
               });
+          $http({method: 'GET', url: 'images/airports.json'})
+            .success(function(data){
+                airports = data;
+                console.log('services data model loaded')
+              })
+            .error(function(data){
+                console.log('Resolve Error: airports data not loaded!');
+              });
       }(),
       getFilteredData: function() {
         // returns filtered set of routes as subset of fleetModel
         var filterBy = activeEquipmentFilter(equipment);
-        return byFleetTypeFilter(fleetModel, filterBy);
+        return byKeyFilter(fleetModel, filterBy,"Equipment");
 
       },
       // Get Financial Report for some subset of the total fleet/routes
@@ -97,7 +105,7 @@ angular.module('appliedByDesignApp')
 
         // returns filtered set of routes as subset of fleetModel
         var filterBy     = activeEquipmentFilter(equipment);
-        var revFlights   = byFleetTypeFilter(flightsRoutes, filterBy);
+        var revFlights   = byKeyFilter(flightsRoutes, filterBy,"Equipment");
 
         // Instantiate report variables
         var weeks = 52;
@@ -121,18 +129,20 @@ angular.module('appliedByDesignApp')
           outputCost = {};
           outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
 
+          //Get Routes List
+          var activeRoutes = defineRoutes();
+
           //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-          // for(var i = 0;i<revFlights.length;i++)
-          // {
-            var i = 0;
+          for(var i = 0;i<revFlights.length;i++)
+          {
             //Calculate Financial and Performance Perameters
             freq           = revFlights[i].Frequency;
-            cap            = findFleetTypeFilter(airplanes, [revFlights[i].Equipment]).Capacity;
-            lf             = findRouteFilter(citypairs, [revFlights[i].OD]).LF*Math.pow(1+market.growth.demand,y);
+            cap            = findByKeyFilter(airplanes, [revFlights[i].Equipment],"Equipment").Capacity;
+            lf             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").LF*Math.pow(1+market.growth.demand,y);
             pax            = lf*cap;
-            fare           = findRouteFilter(citypairs, [revFlights[i].OD]).Fare*Math.pow(1+market.growth.fare,y);
-            bt             = findRouteFilter(citypairs, [revFlights[i].OD]).Duration;
-            stagelen       = findRouteFilter(citypairs, [revFlights[i].OD]).Distance;
+            fare           = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Fare*Math.pow(1+market.growth.fare,y);
+            bt             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Duration;
+            stagelen       = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Distance;
             coeffs         = jQuery.extend(true, {}, findSizeFilter(costcurves, [findFleetTypeFilter(airplanes, [revFlights[i].Equipment]).Size]).Coefficients);
 
             rpm            = pax*stagelen;
@@ -178,7 +188,7 @@ angular.module('appliedByDesignApp')
 
               outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
             }
-          // }
+          }
 
         outputReport[y] = {"Revenue":outputRev,"Costs":outputCost,"Ops":outputOps};
         }
@@ -189,37 +199,9 @@ angular.module('appliedByDesignApp')
       getEquipment: function() {
         return airplanes;
       },
-      ODs: function() 
+      getRoutes: function() 
       {
-        function uniqueSet(fullSet)
-        {
-          var uniqueSet = [fullSet[0]];
-          var isPresent;
-
-          for (var i = 1; i < fullSet.length; i++)
-          {
-
-            if(!isUnique(uniqueSet,fullSet[i]))
-            {
-              uniqueSet.push(fullSet[i]);
-            }
-          }
-          return uniqueSet;
-        }
-
-        function isUnique(a,val)
-        {
-          
-          for (var u = 0; u < a.length; u++) 
-          {
-            if (a[u] === val) 
-            {
-              return true;
-            }
-          }
-          return false;
-        }
-
+        return defineRoutes()
       },
       toggleEquipment: function(id){
         equipment[id].active = !equipment[id].active;
@@ -228,4 +210,59 @@ angular.module('appliedByDesignApp')
         return equipment[id].active;
       }
     };
+
+    function uniqueSet(fullSet)
+    {
+      var uniqueSet = [fullSet[0]];
+      var isPresent;
+
+      for (var i = 1; i < fullSet.length; i++)
+      {
+
+        if(!isUnique(uniqueSet,fullSet[i]))
+        {
+          uniqueSet.push(fullSet[i]);
+        }
+      }
+      return uniqueSet;
+    }
+
+    function isUnique(a,val)
+    {
+      
+      for (var u = 0; u < a.length; u++) 
+      {
+        if (a[u] === val) 
+        {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function defineRoutes()
+    {
+      var allRoutes = [];
+      for(var i = 0;i<flights.length;i++)
+      {
+        allRoutes.push(flights[i].NonDirectional);
+      }
+
+      var uniqueRoutes = uniqueSet(allRoutes);
+      var routeReport = [];
+      
+      for(var k=0;k<uniqueRoutes.length;k++)
+      {
+        routeReport[k] = {"NonDirectional": uniqueRoutes[k],
+                          "Fare": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Fare,
+                          "Olat": findByKeyFilter(airports, [uniqueRoutes[0].slice(0,3)],"Code").Latitude,
+                          "Olon": findByKeyFilter(airports, [uniqueRoutes[0].slice(0,3)],"Code").Longitude,
+                          "Dlat": findByKeyFilter(airports, [uniqueRoutes[0].slice(3,6)],"Code").Latitude,
+                          "Dlon": findByKeyFilter(airports, [uniqueRoutes[0].slice(3,6)],"Code").Longitude,
+                          "Distance": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Distance,
+                          "Duration": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Duration,
+                          "LF": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").LF};
+      }
+      return routeReport;
+    }
   });

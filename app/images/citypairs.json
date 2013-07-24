@@ -1,6 +1,7 @@
 [
     {
         "OD": "AKN-ANC",
+        "NonDirectional": "AKNANC",
         "Origin": "AKN",
         "LF": 0.65,
         "Destination": "ANC",
@@ -10,6 +11,7 @@
     },
     {
         "OD": "ANC-AKN",
+        "NonDirectional": "AKNANC",
         "Origin": "ANC",
         "LF": 0.78,
         "Destination": "AKN",
@@ -19,6 +21,7 @@
     },
     {
         "OD": "ANC-CDV",
+        "NonDirectional": "ANCCDV",
         "Origin": "ANC",
         "LF": 0.75,
         "Destination": "CDV",
@@ -28,6 +31,7 @@
     },
     {
         "OD": "ANC-DEN",
+        "NonDirectional": "ANCDEN",
         "Origin": "ANC",
         "LF": 0.7,
         "Destination": "DEN",
@@ -37,6 +41,7 @@
     },
     {
         "OD": "ANC-DLG",
+        "NonDirectional": "ANCDLG",
         "Origin": "ANC",
         "LF": 0.85,
         "Destination": "DLG",
@@ -46,6 +51,7 @@
     },
     {
         "OD": "ANC-HNL",
+        "NonDirectional": "ANCHNL",
         "Origin": "ANC",
         "LF": 0.77,
         "Destination": "HNL",
@@ -55,6 +61,7 @@
     },
     {
         "OD": "ANC-ORD",
+        "NonDirectional": "ANCORD",
         "Origin": "ANC",
         "LF": 0.67,
         "Destination": "ORD",
@@ -64,6 +71,7 @@
     },
     {
         "OD": "ANC-PSG",
+        "NonDirectional": "ANCPSG",
         "Origin": "ANC",
         "LF": 0.67,
         "Destination": "PSG",
@@ -73,6 +81,7 @@
     },
     {
         "OD": "ANC-SFO",
+        "NonDirectional": "ANCSFO",
         "Origin": "ANC",
         "LF": 0.75,
         "Destination": "SFO",
@@ -82,6 +91,7 @@
     },
     {
         "OD": "ANC-WRG",
+        "NonDirectional": "ANCWRG",
         "Origin": "ANC",
         "LF": 0.82,
         "Destination": "WRG",
@@ -91,6 +101,7 @@
     },
     {
         "OD": "ANC-YAK",
+        "NonDirectional": "ANCYAK",
         "Origin": "ANC",
         "LF": 0.8,
         "Destination": "YAK",
@@ -100,6 +111,7 @@
     },
     {
         "OD": "AUS-SEA",
+        "NonDirectional": "AUSSEA",
         "Origin": "AUS",
         "LF": 0.69,
         "Destination": "SEA",
@@ -109,6 +121,7 @@
     },
     {
         "OD": "BLI-HNL",
+        "NonDirectional": "BLIHNL",
         "Origin": "BLI",
         "LF": 0.69,
         "Destination": "HNL",
@@ -118,6 +131,7 @@
     },
     {
         "OD": "BLI-LAS",
+        "NonDirectional": "BLILAS",
         "Origin": "BLI",
         "LF": 0.85,
         "Destination": "LAS",
@@ -127,6 +141,7 @@
     },
     {
         "OD": "BOS-PDX",
+        "NonDirectional": "BOSPDX",
         "Origin": "BOS",
         "LF": 0.77,
         "Destination": "PDX",
@@ -136,6 +151,7 @@
     },
     {
         "OD": "BOS-SAN",
+        "NonDirectional": "BOSSAN",
         "Origin": "BOS",
         "LF": 0.8,
         "Destination": "SAN",
@@ -145,6 +161,7 @@
     },
     {
         "OD": "BRW-FAI",
+        "NonDirectional": "BRWFAI",
         "Origin": "BRW",
         "LF": 0.78,
         "Destination": "FAI",
@@ -154,6 +171,7 @@
     },
     {
         "OD": "BRW-SCC",
+        "NonDirectional": "BRWSCC",
         "Origin": "BRW",
         "LF": 0.72,
         "Destination": "SCC",
@@ -163,6 +181,7 @@
     },
     {
         "OD": "CDV-ANC",
+        "NonDirectional": "ANCCDV",
         "Origin": "CDV",
         "LF": 0.83,
         "Destination": "ANC",
@@ -172,6 +191,7 @@
     },
     {
         "OD": "CDV-JNU",
+        "NonDirectional": "CDVJNU",
         "Origin": "CDV",
         "LF": 0.72,
         "Destination": "JNU",
@@ -181,6 +201,7 @@
     },
     {
         "OD": "CDV-SEA",
+        "NonDirectional": "CDVSEA",
         "Origin": "CDV",
         "LF": 0.78,
         "Destination": "SEA",
@@ -190,6 +211,7 @@
     },
     {
         "OD": "CDV-YAK",
+        "NonDirectional": "CDVYAK",
         "Origin": "CDV",
         "LF": 0.75,
         "Destination": "YAK",
@@ -199,6 +221,7 @@
     },
     {
         "OD": "DCA-LAX",
+        "NonDirectional": "DCALAX",
         "Origin": "DCA",
         "LF": 0.8,
         "Destination": "LAX",
@@ -208,6 +231,7 @@
     },
     {
         "OD": "DCA-PDX",
+        "NonDirectional": "DCAPDX",
         "Origin": "DCA",
         "LF": 0.85,
         "Destination": "PDX",
@@ -217,6 +241,7 @@
     },
     {
         "OD": "DEN-ANC",
+        "NonDirectional": "ANCDEN",
         "Origin": "DEN",
         "LF": 0.73,
         "Destination": "ANC",
@@ -226,6 +251,7 @@
     },
     {
         "OD": "DLG-ANC",
+        "NonDirectional": "ANCDLG",
         "Origin": "DLG",
         "LF": 0.81,
         "Destination": "ANC",
@@ -235,6 +261,7 @@
     },
     {
         "OD": "FAI-BRW",
+        "NonDirectional": "BRWFAI",
         "Origin": "FAI",
         "LF": 0.75,
         "Destination": "BRW",
@@ -244,6 +271,7 @@
     },
     {
         "OD": "FAI-JNU",
+        "NonDirectional": "FAIJNU",
         "Origin": "FAI",
         "LF": 0.72,
         "Destination": "JNU",
@@ -253,6 +281,7 @@
     },
     {
         "OD": "FAI-KTN",
+        "NonDirectional": "FAIKTN",
         "Origin": "FAI",
         "LF": 0.85,
         "Destination": "KTN",
@@ -262,6 +291,7 @@
     },
     {
         "OD": "FAI-PDX",
+        "NonDirectional": "FAIPDX",
         "Origin": "FAI",
         "LF": 0.78,
         "Destination": "PDX",
@@ -271,6 +301,7 @@
     },
     {
         "OD": "FAI-SCC",
+        "NonDirectional": "FAISCC",
         "Origin": "FAI",
         "LF": 0.72,
         "Destination": "SCC",
@@ -280,6 +311,7 @@
     },
     {
         "OD": "FAI-SIT",
+        "NonDirectional": "FAISIT",
         "Origin": "FAI",
         "LF": 0.74,
         "Destination": "SIT",
@@ -289,6 +321,7 @@
     },
     {
         "OD": "FLL-SEA",
+        "NonDirectional": "FLLSEA",
         "Origin": "FLL",
         "LF": 0.7,
         "Destination": "SEA",
@@ -298,6 +331,7 @@
     },
     {
         "OD": "GDL-SJC",
+        "NonDirectional": "GDLSJC",
         "Origin": "GDL",
         "LF": 0.66,
         "Destination": "SJC",
@@ -307,6 +341,7 @@
     },
     {
         "OD": "GST-ANC",
+        "NonDirectional": "ANCGST",
         "Origin": "GST",
         "LF": 0.79,
         "Destination": "ANC",
@@ -316,6 +351,7 @@
     },
     {
         "OD": "GST-JNU",
+        "NonDirectional": "GSTJNU",
         "Origin": "GST",
         "LF": 0.84,
         "Destination": "JNU",
@@ -325,6 +361,7 @@
     },
     {
         "OD": "HNL-ANC",
+        "NonDirectional": "ANCHNL",
         "Origin": "HNL",
         "LF": 0.66,
         "Destination": "ANC",
@@ -334,6 +371,7 @@
     },
     {
         "OD": "HNL-BLI",
+        "NonDirectional": "BLIHNL",
         "Origin": "HNL",
         "LF": 0.69,
         "Destination": "BLI",
@@ -343,6 +381,7 @@
     },
     {
         "OD": "HNL-OAK",
+        "NonDirectional": "HNLOAK",
         "Origin": "HNL",
         "LF": 0.72,
         "Destination": "OAK",
@@ -352,6 +391,7 @@
     },
     {
         "OD": "HNL-PDX",
+        "NonDirectional": "HNLPDX",
         "Origin": "HNL",
         "LF": 0.82,
         "Destination": "PDX",
@@ -361,6 +401,7 @@
     },
     {
         "OD": "HNL-SAN",
+        "NonDirectional": "HNLSAN",
         "Origin": "HNL",
         "LF": 0.8,
         "Destination": "SAN",
@@ -370,6 +411,7 @@
     },
     {
         "OD": "HNL-SJC",
+        "NonDirectional": "HNLSJC",
         "Origin": "HNL",
         "LF": 0.65,
         "Destination": "SJC",
@@ -379,6 +421,7 @@
     },
     {
         "OD": "IAH-SEA",
+        "NonDirectional": "IAHSEA",
         "Origin": "IAH",
         "LF": 0.8,
         "Destination": "SEA",
@@ -388,6 +431,7 @@
     },
     {
         "OD": "JNU-CDV",
+        "NonDirectional": "CDVJNU",
         "Origin": "JNU",
         "LF": 0.67,
         "Destination": "CDV",
@@ -397,6 +441,7 @@
     },
     {
         "OD": "JNU-GST",
+        "NonDirectional": "GSTJNU",
         "Origin": "JNU",
         "LF": 0.83,
         "Destination": "GST",
@@ -406,6 +451,7 @@
     },
     {
         "OD": "JNU-PSG",
+        "NonDirectional": "JNUPSG",
         "Origin": "JNU",
         "LF": 0.74,
         "Destination": "PSG",
@@ -415,6 +461,7 @@
     },
     {
         "OD": "JNU-WRG",
+        "NonDirectional": "JNUWRG",
         "Origin": "JNU",
         "LF": 0.76,
         "Destination": "WRG",
@@ -424,6 +471,7 @@
     },
     {
         "OD": "JNU-YAK",
+        "NonDirectional": "JNUYAK",
         "Origin": "JNU",
         "LF": 0.85,
         "Destination": "YAK",
@@ -433,6 +481,7 @@
     },
     {
         "OD": "KOA-OAK",
+        "NonDirectional": "KOAOAK",
         "Origin": "KOA",
         "LF": 0.73,
         "Destination": "OAK",
@@ -442,6 +491,7 @@
     },
     {
         "OD": "KOA-SEA",
+        "NonDirectional": "KOASEA",
         "Origin": "KOA",
         "LF": 0.72,
         "Destination": "SEA",
@@ -451,6 +501,7 @@
     },
     {
         "OD": "KTN-PSG",
+        "NonDirectional": "KTNPSG",
         "Origin": "KTN",
         "LF": 0.74,
         "Destination": "PSG",
@@ -460,6 +511,7 @@
     },
     {
         "OD": "KTN-SIT",
+        "NonDirectional": "KTNSIT",
         "Origin": "KTN",
         "LF": 0.76,
         "Destination": "SIT",
@@ -469,6 +521,7 @@
     },
     {
         "OD": "KTN-WRG",
+        "NonDirectional": "KTNWRG",
         "Origin": "KTN",
         "LF": 0.67,
         "Destination": "WRG",
@@ -478,6 +531,7 @@
     },
     {
         "OD": "LAS-BLI",
+        "NonDirectional": "BLILAS",
         "Origin": "LAS",
         "LF": 0.8,
         "Destination": "BLI",
@@ -487,6 +541,7 @@
     },
     {
         "OD": "LAX-DCA",
+        "NonDirectional": "DCALAX",
         "Origin": "LAX",
         "LF": 0.67,
         "Destination": "DCA",
@@ -496,6 +551,7 @@
     },
     {
         "OD": "LAX-MZT",
+        "NonDirectional": "LAXMZT",
         "Origin": "LAX",
         "LF": 0.79,
         "Destination": "MZT",
@@ -505,6 +561,7 @@
     },
     {
         "OD": "LAX-PVR",
+        "NonDirectional": "LAXPVR",
         "Origin": "LAX",
         "LF": 0.77,
         "Destination": "PVR",
@@ -514,6 +571,7 @@
     },
     {
         "OD": "LIH-SAN",
+        "NonDirectional": "LIHSAN",
         "Origin": "LIH",
         "LF": 0.78,
         "Destination": "SAN",
@@ -523,6 +581,7 @@
     },
     {
         "OD": "LIH-SEA",
+        "NonDirectional": "LIHSEA",
         "Origin": "LIH",
         "LF": 0.74,
         "Destination": "SEA",
@@ -532,6 +591,7 @@
     },
     {
         "OD": "LIH-SJC",
+        "NonDirectional": "LIHSJC",
         "Origin": "LIH",
         "LF": 0.72,
         "Destination": "SJC",
@@ -541,6 +601,7 @@
     },
     {
         "OD": "MCI-SEA",
+        "NonDirectional": "MCISEA",
         "Origin": "MCI",
         "LF": 0.66,
         "Destination": "SEA",
@@ -550,6 +611,7 @@
     },
     {
         "OD": "MCO-SAN",
+        "NonDirectional": "MCOSAN",
         "Origin": "MCO",
         "LF": 0.67,
         "Destination": "SAN",
@@ -559,6 +621,7 @@
     },
     {
         "OD": "MCO-SEA",
+        "NonDirectional": "MCOSEA",
         "Origin": "MCO",
         "LF": 0.65,
         "Destination": "SEA",
@@ -568,6 +631,7 @@
     },
     {
         "OD": "MZT-LAX",
+        "NonDirectional": "LAXMZT",
         "Origin": "MZT",
         "LF": 0.84,
         "Destination": "LAX",
@@ -577,6 +641,7 @@
     },
     {
         "OD": "OAK-HNL",
+        "NonDirectional": "HNLOAK",
         "Origin": "OAK",
         "LF": 0.81,
         "Destination": "HNL",
@@ -586,6 +651,7 @@
     },
     {
         "OD": "OAK-KOA",
+        "NonDirectional": "KOAOAK",
         "Origin": "OAK",
         "LF": 0.81,
         "Destination": "KOA",
@@ -595,6 +661,7 @@
     },
     {
         "OD": "OAK-OGG",
+        "NonDirectional": "OAKOGG",
         "Origin": "OAK",
         "LF": 0.81,
         "Destination": "OGG",
@@ -604,6 +671,7 @@
     },
     {
         "OD": "OGG-OAK",
+        "NonDirectional": "OAKOGG",
         "Origin": "OGG",
         "LF": 0.7,
         "Destination": "OAK",
@@ -613,6 +681,7 @@
     },
     {
         "OD": "OGG-SJC",
+        "NonDirectional": "OGGSJC",
         "Origin": "OGG",
         "LF": 0.77,
         "Destination": "SJC",
@@ -622,6 +691,7 @@
     },
     {
         "OD": "OGG-SMF",
+        "NonDirectional": "OGGSMF",
         "Origin": "OGG",
         "LF": 0.67,
         "Destination": "SMF",
@@ -631,6 +701,7 @@
     },
     {
         "OD": "OME-OTZ",
+        "NonDirectional": "OMEOTZ",
         "Origin": "OME",
         "LF": 0.7,
         "Destination": "OTZ",
@@ -640,6 +711,7 @@
     },
     {
         "OD": "ORD-ANC",
+        "NonDirectional": "ANCORD",
         "Origin": "ORD",
         "LF": 0.79,
         "Destination": "ANC",
@@ -649,6 +721,7 @@
     },
     {
         "OD": "ORD-PDX",
+        "NonDirectional": "ORDPDX",
         "Origin": "ORD",
         "LF": 0.68,
         "Destination": "PDX",
@@ -658,6 +731,7 @@
     },
     {
         "OD": "PDX-BOS",
+        "NonDirectional": "BOSPDX",
         "Origin": "PDX",
         "LF": 0.79,
         "Destination": "BOS",
@@ -667,6 +741,7 @@
     },
     {
         "OD": "PDX-DCA",
+        "NonDirectional": "DCAPDX",
         "Origin": "PDX",
         "LF": 0.81,
         "Destination": "DCA",
@@ -676,6 +751,7 @@
     },
     {
         "OD": "PDX-FAI",
+        "NonDirectional": "FAIPDX",
         "Origin": "PDX",
         "LF": 0.78,
         "Destination": "FAI",
@@ -685,6 +761,7 @@
     },
     {
         "OD": "PDX-HNL",
+        "NonDirectional": "HNLPDX",
         "Origin": "PDX",
         "LF": 0.82,
         "Destination": "HNL",
@@ -694,6 +771,7 @@
     },
     {
         "OD": "PDX-OGG",
+        "NonDirectional": "OGGPDX",
         "Origin": "PDX",
         "LF": 0.67,
         "Destination": "OGG",
@@ -703,6 +781,7 @@
     },
     {
         "OD": "PDX-ORD",
+        "NonDirectional": "ORDPDX",
         "Origin": "PDX",
         "LF": 0.81,
         "Destination": "ORD",
@@ -712,6 +791,7 @@
     },
     {
         "OD": "PDX-PHX",
+        "NonDirectional": "PDXPHX",
         "Origin": "PDX",
         "LF": 0.71,
         "Destination": "PHX",
@@ -721,6 +801,7 @@
     },
     {
         "OD": "PDX-SJD",
+        "NonDirectional": "PDXSJD",
         "Origin": "PDX",
         "LF": 0.69,
         "Destination": "SJD",
@@ -730,6 +811,7 @@
     },
     {
         "OD": "PHL-SEA",
+        "NonDirectional": "PHLSEA",
         "Origin": "PHL",
         "LF": 0.66,
         "Destination": "SEA",
@@ -739,6 +821,7 @@
     },
     {
         "OD": "PHX-PDX",
+        "NonDirectional": "PDXPHX",
         "Origin": "PHX",
         "LF": 0.76,
         "Destination": "PDX",
@@ -748,6 +831,7 @@
     },
     {
         "OD": "PSG-ANC",
+        "NonDirectional": "ANCPSG",
         "Origin": "PSG",
         "LF": 0.74,
         "Destination": "ANC",
@@ -757,6 +841,7 @@
     },
     {
         "OD": "PSG-JNU",
+        "NonDirectional": "JNUPSG",
         "Origin": "PSG",
         "LF": 0.83,
         "Destination": "JNU",
@@ -766,6 +851,7 @@
     },
     {
         "OD": "PSG-KTN",
+        "NonDirectional": "KTNPSG",
         "Origin": "PSG",
         "LF": 0.83,
         "Destination": "KTN",
@@ -775,6 +861,7 @@
     },
     {
         "OD": "PSG-SEA",
+        "NonDirectional": "PSGSEA",
         "Origin": "PSG",
         "LF": 0.8,
         "Destination": "SEA",
@@ -784,6 +871,7 @@
     },
     {
         "OD": "PSG-WRG",
+        "NonDirectional": "PSGWRG",
         "Origin": "PSG",
         "LF": 0.66,
         "Destination": "WRG",
@@ -793,6 +881,7 @@
     },
     {
         "OD": "PVR-LAX",
+        "NonDirectional": "LAXPVR",
         "Origin": "PVR",
         "LF": 0.68,
         "Destination": "LAX",
@@ -802,6 +891,7 @@
     },
     {
         "OD": "PVR-SEA",
+        "NonDirectional": "PVRSEA",
         "Origin": "PVR",
         "LF": 0.82,
         "Destination": "SEA",
@@ -811,6 +901,7 @@
     },
     {
         "OD": "PVR-SFO",
+        "NonDirectional": "PVRSFO",
         "Origin": "PVR",
         "LF": 0.82,
         "Destination": "SFO",
@@ -820,6 +911,7 @@
     },
     {
         "OD": "SAN-BOS",
+        "NonDirectional": "BOSSAN",
         "Origin": "SAN",
         "LF": 0.83,
         "Destination": "BOS",
@@ -829,6 +921,7 @@
     },
     {
         "OD": "SAN-HNL",
+        "NonDirectional": "HNLSAN",
         "Origin": "SAN",
         "LF": 0.7,
         "Destination": "HNL",
@@ -838,6 +931,7 @@
     },
     {
         "OD": "SAN-LIH",
+        "NonDirectional": "LIHSAN",
         "Origin": "SAN",
         "LF": 0.67,
         "Destination": "LIH",
@@ -847,6 +941,7 @@
     },
     {
         "OD": "SAN-MCO",
+        "NonDirectional": "MCOSAN",
         "Origin": "SAN",
         "LF": 0.7,
         "Destination": "MCO",
@@ -856,6 +951,7 @@
     },
     {
         "OD": "SAT-SEA",
+        "NonDirectional": "SATSEA",
         "Origin": "SAT",
         "LF": 0.66,
         "Destination": "SEA",
@@ -865,6 +961,7 @@
     },
     {
         "OD": "SEA-AUS",
+        "NonDirectional": "AUSSEA",
         "Origin": "SEA",
         "LF": 0.73,
         "Destination": "AUS",
@@ -874,6 +971,7 @@
     },
     {
         "OD": "SEA-CDV",
+        "NonDirectional": "CDVSEA",
         "Origin": "SEA",
         "LF": 0.72,
         "Destination": "CDV",
@@ -883,6 +981,7 @@
     },
     {
         "OD": "SEA-FLL",
+        "NonDirectional": "FLLSEA",
         "Origin": "SEA",
         "LF": 0.68,
         "Destination": "FLL",
@@ -892,6 +991,7 @@
     },
     {
         "OD": "SEA-GDL",
+        "NonDirectional": "GDLSEA",
         "Origin": "SEA",
         "LF": 0.79,
         "Destination": "GDL",
@@ -901,6 +1001,7 @@
     },
     {
         "OD": "SEA-GST",
+        "NonDirectional": "GSTSEA",
         "Origin": "SEA",
         "LF": 0.79,
         "Destination": "GST",
@@ -910,6 +1011,7 @@
     },
     {
         "OD": "SEA-IAH",
+        "NonDirectional": "IAHSEA",
         "Origin": "SEA",
         "LF": 0.84,
         "Destination": "IAH",
@@ -919,6 +1021,7 @@
     },
     {
         "OD": "SEA-KOA",
+        "NonDirectional": "KOASEA",
         "Origin": "SEA",
         "LF": 0.85,
         "Destination": "KOA",
@@ -928,6 +1031,7 @@
     },
     {
         "OD": "SEA-LIH",
+        "NonDirectional": "LIHSEA",
         "Origin": "SEA",
         "LF": 0.82,
         "Destination": "LIH",
@@ -937,6 +1041,7 @@
     },
     {
         "OD": "SEA-MCI",
+        "NonDirectional": "MCISEA",
         "Origin": "SEA",
         "LF": 0.76,
         "Destination": "MCI",
@@ -946,6 +1051,7 @@
     },
     {
         "OD": "SEA-MCO",
+        "NonDirectional": "MCOSEA",
         "Origin": "SEA",
         "LF": 0.81,
         "Destination": "MCO",
@@ -955,6 +1061,7 @@
     },
     {
         "OD": "SEA-PHL",
+        "NonDirectional": "PHLSEA",
         "Origin": "SEA",
         "LF": 0.85,
         "Destination": "PHL",
@@ -964,6 +1071,7 @@
     },
     {
         "OD": "SEA-PSG",
+        "NonDirectional": "PSGSEA",
         "Origin": "SEA",
         "LF": 0.8,
         "Destination": "PSG",
@@ -973,6 +1081,7 @@
     },
     {
         "OD": "SEA-PVR",
+        "NonDirectional": "PVRSEA",
         "Origin": "SEA",
         "LF": 0.7,
         "Destination": "PVR",
@@ -982,6 +1091,7 @@
     },
     {
         "OD": "SEA-SAT",
+        "NonDirectional": "SATSEA",
         "Origin": "SEA",
         "LF": 0.72,
         "Destination": "SAT",
@@ -991,6 +1101,7 @@
     },
     {
         "OD": "SEA-STL",
+        "NonDirectional": "SEASTL",
         "Origin": "SEA",
         "LF": 0.8,
         "Destination": "STL",
@@ -1000,6 +1111,7 @@
     },
     {
         "OD": "SEA-TUS",
+        "NonDirectional": "SEATUS",
         "Origin": "SEA",
         "LF": 0.78,
         "Destination": "TUS",
@@ -1009,6 +1121,7 @@
     },
     {
         "OD": "SEA-WRG",
+        "NonDirectional": "SEAWRG",
         "Origin": "SEA",
         "LF": 0.81,
         "Destination": "WRG",
@@ -1018,6 +1131,7 @@
     },
     {
         "OD": "SEA-YAK",
+        "NonDirectional": "SEAYAK",
         "Origin": "SEA",
         "LF": 0.85,
         "Destination": "YAK",
@@ -1027,6 +1141,7 @@
     },
     {
         "OD": "SFO-ANC",
+        "NonDirectional": "ANCSFO",
         "Origin": "SFO",
         "LF": 0.75,
         "Destination": "ANC",
@@ -1036,6 +1151,7 @@
     },
     {
         "OD": "SFO-PVR",
+        "NonDirectional": "PVRSFO",
         "Origin": "SFO",
         "LF": 0.82,
         "Destination": "PVR",
@@ -1045,6 +1161,7 @@
     },
     {
         "OD": "SFO-SJD",
+        "NonDirectional": "SFOSJD",
         "Origin": "SFO",
         "LF": 0.66,
         "Destination": "SJD",
@@ -1054,6 +1171,7 @@
     },
     {
         "OD": "SIT-KTN",
+        "NonDirectional": "KTNSIT",
         "Origin": "SIT",
         "LF": 0.69,
         "Destination": "KTN",
@@ -1063,6 +1181,7 @@
     },
     {
         "OD": "SJC-GDL",
+        "NonDirectional": "GDLSJC",
         "Origin": "SJC",
         "LF": 0.68,
         "Destination": "GDL",
@@ -1072,6 +1191,7 @@
     },
     {
         "OD": "SJC-HNL",
+        "NonDirectional": "HNLSJC",
         "Origin": "SJC",
         "LF": 0.75,
         "Destination": "HNL",
@@ -1081,6 +1201,7 @@
     },
     {
         "OD": "SJC-LIH",
+        "NonDirectional": "LIHSJC",
         "Origin": "SJC",
         "LF": 0.78,
         "Destination": "LIH",
@@ -1090,6 +1211,7 @@
     },
     {
         "OD": "SJC-OGG",
+        "NonDirectional": "OGGSJC",
         "Origin": "SJC",
         "LF": 0.67,
         "Destination": "OGG",
@@ -1099,6 +1221,7 @@
     },
     {
         "OD": "SJC-SJD",
+        "NonDirectional": "SJCSJD",
         "Origin": "SJC",
         "LF": 0.77,
         "Destination": "SJD",
@@ -1108,6 +1231,7 @@
     },
     {
         "OD": "SJD-PDX",
+        "NonDirectional": "PDXSJD",
         "Origin": "SJD",
         "LF": 0.81,
         "Destination": "PDX",
@@ -1117,6 +1241,7 @@
     },
     {
         "OD": "SJD-SFO",
+        "NonDirectional": "SFOSJD",
         "Origin": "SJD",
         "LF": 0.76,
         "Destination": "SFO",
@@ -1126,6 +1251,7 @@
     },
     {
         "OD": "SJD-SJC",
+        "NonDirectional": "SJCSJD",
         "Origin": "SJD",
         "LF": 0.79,
         "Destination": "SJC",
@@ -1135,6 +1261,7 @@
     },
     {
         "OD": "SMF-OGG",
+        "NonDirectional": "OGGSMF",
         "Origin": "SMF",
         "LF": 0.82,
         "Destination": "OGG",
@@ -1144,6 +1271,7 @@
     },
     {
         "OD": "STL-SEA",
+        "NonDirectional": "SEASTL",
         "Origin": "STL",
         "LF": 0.68,
         "Destination": "SEA",
@@ -1153,6 +1281,7 @@
     },
     {
         "OD": "TUS-SEA",
+        "NonDirectional": "SEATUS",
         "Origin": "TUS",
         "LF": 0.8,
         "Destination": "SEA",
@@ -1162,6 +1291,7 @@
     },
     {
         "OD": "WRG-ANC",
+        "NonDirectional": "ANCWRG",
         "Origin": "WRG",
         "LF": 0.67,
         "Destination": "ANC",
@@ -1171,6 +1301,7 @@
     },
     {
         "OD": "WRG-JNU",
+        "NonDirectional": "JNUWRG",
         "Origin": "WRG",
         "LF": 0.71,
         "Destination": "JNU",
@@ -1180,6 +1311,7 @@
     },
     {
         "OD": "WRG-KTN",
+        "NonDirectional": "KTNWRG",
         "Origin": "WRG",
         "LF": 0.79,
         "Destination": "KTN",
@@ -1189,6 +1321,7 @@
     },
     {
         "OD": "WRG-PSG",
+        "NonDirectional": "PSGWRG",
         "Origin": "WRG",
         "LF": 0.78,
         "Destination": "PSG",
@@ -1198,6 +1331,7 @@
     },
     {
         "OD": "WRG-SEA",
+        "NonDirectional": "SEAWRG",
         "Origin": "WRG",
         "LF": 0.68,
         "Destination": "SEA",
@@ -1207,6 +1341,7 @@
     },
     {
         "OD": "YAK-ANC",
+        "NonDirectional": "ANCYAK",
         "Origin": "YAK",
         "LF": 0.85,
         "Destination": "ANC",
@@ -1216,6 +1351,7 @@
     },
     {
         "OD": "YAK-CDV",
+        "NonDirectional": "CDVYAK",
         "Origin": "YAK",
         "LF": 0.74,
         "Destination": "CDV",
@@ -1225,6 +1361,7 @@
     },
     {
         "OD": "YAK-JNU",
+        "NonDirectional": "JNUYAK",
         "Origin": "YAK",
         "LF": 0.75,
         "Destination": "JNU",
@@ -1234,6 +1371,7 @@
     },
     {
         "OD": "YAK-SEA",
+        "NonDirectional": "SEAYAK",
         "Origin": "YAK",
         "LF": 0.73,
         "Destination": "SEA",
@@ -1243,6 +1381,7 @@
     },
     {
         "OD": "ANC-IAH",
+        "NonDirectional": "ANCIAH",
         "Origin": "ANC",
         "LF": 0.83,
         "Destination": "IAH",
@@ -1252,6 +1391,7 @@
     },
     {
         "OD": "IAH-ANC",
+        "NonDirectional": "ANCIAH",
         "Origin": "IAH",
         "LF": 0.73,
         "Destination": "ANC",
@@ -1261,6 +1401,7 @@
     },
     {
         "OD": "ANC-BOS",
+        "NonDirectional": "ANCBOS",
         "Origin": "ANC",
         "LF": 0.75,
         "Destination": "BOS",
@@ -1270,6 +1411,7 @@
     },
     {
         "OD": "GDL-SEA",
+        "NonDirectional": "GDLSEA",
         "Origin": "GDL",
         "LF": 0.71,
         "Destination": "SEA",
@@ -1279,6 +1421,7 @@
     },
     {
         "OD": "ADQ-ANC",
+        "NonDirectional": "ADQANC",
         "Origin": "ADQ",
         "LF": 0.68,
         "Destination": "ANC",
@@ -1288,6 +1431,7 @@
     },
     {
         "OD": "ADQ-ANC",
+        "NonDirectional": "ADQANC",
         "Origin": "ADQ",
         "LF": 0.81,
         "Destination": "ANC",
@@ -1297,6 +1441,7 @@
     },
     {
         "OD": "ANC-ADQ",
+        "NonDirectional": "ADQANC",
         "Origin": "ANC",
         "LF": 0.68,
         "Destination": "ADQ",
@@ -1306,6 +1451,7 @@
     },
     {
         "OD": "ANC-BRW",
+        "NonDirectional": "ANCBRW",
         "Origin": "ANC",
         "LF": 0.71,
         "Destination": "BRW",
@@ -1315,6 +1461,7 @@
     },
     {
         "OD": "ANC-KTN",
+        "NonDirectional": "ANCKTN",
         "Origin": "ANC",
         "LF": 0.83,
         "Destination": "KTN",
@@ -1324,6 +1471,7 @@
     },
     {
         "OD": "ANC-LAX",
+        "NonDirectional": "ANCLAX",
         "Origin": "ANC",
         "LF": 0.77,
         "Destination": "LAX",
@@ -1333,6 +1481,7 @@
     },
     {
         "OD": "ANC-SIT",
+        "NonDirectional": "ANCSIT",
         "Origin": "ANC",
         "LF": 0.67,
         "Destination": "SIT",
@@ -1342,6 +1491,7 @@
     },
     {
         "OD": "ATL-SEA",
+        "NonDirectional": "ATLSEA",
         "Origin": "ATL",
         "LF": 0.77,
         "Destination": "SEA",
@@ -1351,6 +1501,7 @@
     },
     {
         "OD": "DCA-SEA",
+        "NonDirectional": "DCASEA",
         "Origin": "DCA",
         "LF": 0.74,
         "Destination": "SEA",
@@ -1360,6 +1511,7 @@
     },
     {
         "OD": "EWR-SEA",
+        "NonDirectional": "EWRSEA",
         "Origin": "EWR",
         "LF": 0.82,
         "Destination": "SEA",
@@ -1369,6 +1521,7 @@
     },
     {
         "OD": "GDL-LAX",
+        "NonDirectional": "GDLLAX",
         "Origin": "GDL",
         "LF": 0.68,
         "Destination": "LAX",
@@ -1378,6 +1531,7 @@
     },
     {
         "OD": "KTN-ANC",
+        "NonDirectional": "ANCKTN",
         "Origin": "KTN",
         "LF": 0.81,
         "Destination": "ANC",
@@ -1387,6 +1541,7 @@
     },
     {
         "OD": "LAX-ANC",
+        "NonDirectional": "ANCLAX",
         "Origin": "LAX",
         "LF": 0.74,
         "Destination": "ANC",
@@ -1396,6 +1551,7 @@
     },
     {
         "OD": "LAX-GDL",
+        "NonDirectional": "GDLLAX",
         "Origin": "LAX",
         "LF": 0.68,
         "Destination": "GDL",
@@ -1405,6 +1561,7 @@
     },
     {
         "OD": "LAX-MEX",
+        "NonDirectional": "LAXMEX",
         "Origin": "LAX",
         "LF": 0.78,
         "Destination": "MEX",
@@ -1414,6 +1571,7 @@
     },
     {
         "OD": "LAX-SJD",
+        "NonDirectional": "LAXSJD",
         "Origin": "LAX",
         "LF": 0.85,
         "Destination": "SJD",
@@ -1423,6 +1581,7 @@
     },
     {
         "OD": "MEX-LAX",
+        "NonDirectional": "LAXMEX",
         "Origin": "MEX",
         "LF": 0.73,
         "Destination": "LAX",
@@ -1432,6 +1591,7 @@
     },
     {
         "OD": "MSP-SEA",
+        "NonDirectional": "MSPSEA",
         "Origin": "MSP",
         "LF": 0.83,
         "Destination": "SEA",
@@ -1441,6 +1601,7 @@
     },
     {
         "OD": "OGG-PDX",
+        "NonDirectional": "OGGPDX",
         "Origin": "OGG",
         "LF": 0.81,
         "Destination": "PDX",
@@ -1450,6 +1611,7 @@
     },
     {
         "OD": "OGG-SAN",
+        "NonDirectional": "OGGSAN",
         "Origin": "OGG",
         "LF": 0.67,
         "Destination": "SAN",
@@ -1459,6 +1621,7 @@
     },
     {
         "OD": "OGG-SEA",
+        "NonDirectional": "OGGSEA",
         "Origin": "OGG",
         "LF": 0.83,
         "Destination": "SEA",
@@ -1468,6 +1631,7 @@
     },
     {
         "OD": "OTZ-OME",
+        "NonDirectional": "OMEOTZ",
         "Origin": "OTZ",
         "LF": 0.78,
         "Destination": "OME",
@@ -1477,6 +1641,7 @@
     },
     {
         "OD": "PDX-SJC",
+        "NonDirectional": "PDXSJC",
         "Origin": "PDX",
         "LF": 0.76,
         "Destination": "SJC",
@@ -1486,6 +1651,7 @@
     },
     {
         "OD": "PSP-SEA",
+        "NonDirectional": "PSPSEA",
         "Origin": "PSP",
         "LF": 0.85,
         "Destination": "SEA",
@@ -1495,6 +1661,7 @@
     },
     {
         "OD": "PSP-SFO",
+        "NonDirectional": "PSPSFO",
         "Origin": "PSP",
         "LF": 0.84,
         "Destination": "SFO",
@@ -1504,6 +1671,7 @@
     },
     {
         "OD": "SAN-OGG",
+        "NonDirectional": "OGGSAN",
         "Origin": "SAN",
         "LF": 0.73,
         "Destination": "OGG",
@@ -1513,6 +1681,7 @@
     },
     {
         "OD": "SAN-SJD",
+        "NonDirectional": "SANSJD",
         "Origin": "SAN",
         "LF": 0.77,
         "Destination": "SJD",
@@ -1522,6 +1691,7 @@
     },
     {
         "OD": "SCC-ANC",
+        "NonDirectional": "ANCSCC",
         "Origin": "SCC",
         "LF": 0.72,
         "Destination": "ANC",
@@ -1531,6 +1701,7 @@
     },
     {
         "OD": "SCC-BRW",
+        "NonDirectional": "BRWSCC",
         "Origin": "SCC",
         "LF": 0.71,
         "Destination": "BRW",
@@ -1540,6 +1711,7 @@
     },
     {
         "OD": "SEA-ATL",
+        "NonDirectional": "ATLSEA",
         "Origin": "SEA",
         "LF": 0.76,
         "Destination": "ATL",
@@ -1549,6 +1721,7 @@
     },
     {
         "OD": "SEA-DCA",
+        "NonDirectional": "DCASEA",
         "Origin": "SEA",
         "LF": 0.72,
         "Destination": "DCA",
@@ -1558,6 +1731,7 @@
     },
     {
         "OD": "SEA-EWR",
+        "NonDirectional": "EWRSEA",
         "Origin": "SEA",
         "LF": 0.85,
         "Destination": "EWR",
@@ -1567,6 +1741,7 @@
     },
     {
         "OD": "SEA-MSP",
+        "NonDirectional": "MSPSEA",
         "Origin": "SEA",
         "LF": 0.78,
         "Destination": "MSP",
@@ -1576,6 +1751,7 @@
     },
     {
         "OD": "SEA-PSP",
+        "NonDirectional": "PSPSEA",
         "Origin": "SEA",
         "LF": 0.68,
         "Destination": "PSP",
@@ -1585,6 +1761,7 @@
     },
     {
         "OD": "SEA-SLC",
+        "NonDirectional": "SEASLC",
         "Origin": "SEA",
         "LF": 0.73,
         "Destination": "SLC",
@@ -1594,6 +1771,7 @@
     },
     {
         "OD": "SFO-PSP",
+        "NonDirectional": "PSPSFO",
         "Origin": "SFO",
         "LF": 0.84,
         "Destination": "PSP",
@@ -1603,6 +1781,7 @@
     },
     {
         "OD": "SIT-ANC",
+        "NonDirectional": "ANCSIT",
         "Origin": "SIT",
         "LF": 0.75,
         "Destination": "ANC",
@@ -1612,6 +1791,7 @@
     },
     {
         "OD": "SIT-JNU",
+        "NonDirectional": "JNUSIT",
         "Origin": "SIT",
         "LF": 0.85,
         "Destination": "JNU",
@@ -1621,6 +1801,7 @@
     },
     {
         "OD": "SJC-PDX",
+        "NonDirectional": "PDXSJC",
         "Origin": "SJC",
         "LF": 0.85,
         "Destination": "PDX",
@@ -1630,6 +1811,7 @@
     },
     {
         "OD": "SJD-LAX",
+        "NonDirectional": "LAXSJD",
         "Origin": "SJD",
         "LF": 0.68,
         "Destination": "LAX",
@@ -1639,6 +1821,7 @@
     },
     {
         "OD": "SJD-SAN",
+        "NonDirectional": "SANSJD",
         "Origin": "SJD",
         "LF": 0.67,
         "Destination": "SAN",
@@ -1648,6 +1831,7 @@
     },
     {
         "OD": "SLC-SEA",
+        "NonDirectional": "SEASLC",
         "Origin": "SLC",
         "LF": 0.65,
         "Destination": "SEA",
@@ -1657,6 +1841,7 @@
     },
     {
         "OD": "ANC-BET",
+        "NonDirectional": "ANCBET",
         "Origin": "ANC",
         "LF": 0.76,
         "Destination": "BET",
@@ -1666,6 +1851,7 @@
     },
     {
         "OD": "ANC-OME",
+        "NonDirectional": "ANCOME",
         "Origin": "ANC",
         "LF": 0.67,
         "Destination": "OME",
@@ -1675,6 +1861,7 @@
     },
     {
         "OD": "ANC-OTZ",
+        "NonDirectional": "ANCOTZ",
         "Origin": "ANC",
         "LF": 0.65,
         "Destination": "OTZ",
@@ -1684,6 +1871,7 @@
     },
     {
         "OD": "ANC-PDX",
+        "NonDirectional": "ANCPDX",
         "Origin": "ANC",
         "LF": 0.78,
         "Destination": "PDX",
@@ -1693,6 +1881,7 @@
     },
     {
         "OD": "ANC-SCC",
+        "NonDirectional": "ANCSCC",
         "Origin": "ANC",
         "LF": 0.67,
         "Destination": "SCC",
@@ -1702,6 +1891,7 @@
     },
     {
         "OD": "BET-ANC",
+        "NonDirectional": "ANCBET",
         "Origin": "BET",
         "LF": 0.67,
         "Destination": "ANC",
@@ -1711,6 +1901,7 @@
     },
     {
         "OD": "BOS-SEA",
+        "NonDirectional": "BOSSEA",
         "Origin": "BOS",
         "LF": 0.77,
         "Destination": "SEA",
@@ -1720,6 +1911,7 @@
     },
     {
         "OD": "BRW-ANC",
+        "NonDirectional": "ANCBRW",
         "Origin": "BRW",
         "LF": 0.81,
         "Destination": "ANC",
@@ -1729,6 +1921,7 @@
     },
     {
         "OD": "BUR-SEA",
+        "NonDirectional": "BURSEA",
         "Origin": "BUR",
         "LF": 0.75,
         "Destination": "SEA",
@@ -1738,6 +1931,7 @@
     },
     {
         "OD": "DFW-SEA",
+        "NonDirectional": "DFWSEA",
         "Origin": "DFW",
         "LF": 0.72,
         "Destination": "SEA",
@@ -1747,6 +1941,7 @@
     },
     {
         "OD": "FAI-SEA",
+        "NonDirectional": "FAISEA",
         "Origin": "FAI",
         "LF": 0.83,
         "Destination": "SEA",
@@ -1756,6 +1951,7 @@
     },
     {
         "OD": "GEG-SEA",
+        "NonDirectional": "GEGSEA",
         "Origin": "GEG",
         "LF": 0.74,
         "Destination": "SEA",
@@ -1765,6 +1961,7 @@
     },
     {
         "OD": "HNL-SEA",
+        "NonDirectional": "HNLSEA",
         "Origin": "HNL",
         "LF": 0.74,
         "Destination": "SEA",
@@ -1774,6 +1971,7 @@
     },
     {
         "OD": "JNU-KTN",
+        "NonDirectional": "JNUKTN",
         "Origin": "JNU",
         "LF": 0.71,
         "Destination": "KTN",
@@ -1783,6 +1981,7 @@
     },
     {
         "OD": "JNU-SIT",
+        "NonDirectional": "JNUSIT",
         "Origin": "JNU",
         "LF": 0.8,
         "Destination": "SIT",
@@ -1792,6 +1991,7 @@
     },
     {
         "OD": "KTN-JNU",
+        "NonDirectional": "JNUKTN",
         "Origin": "KTN",
         "LF": 0.8,
         "Destination": "JNU",
@@ -1801,6 +2001,7 @@
     },
     {
         "OD": "OME-ANC",
+        "NonDirectional": "ANCOME",
         "Origin": "OME",
         "LF": 0.71,
         "Destination": "ANC",
@@ -1810,6 +2011,7 @@
     },
     {
         "OD": "ONT-SEA",
+        "NonDirectional": "ONTSEA",
         "Origin": "ONT",
         "LF": 0.75,
         "Destination": "SEA",
@@ -1819,6 +2021,7 @@
     },
     {
         "OD": "ORD-SEA",
+        "NonDirectional": "ORDSEA",
         "Origin": "ORD",
         "LF": 0.83,
         "Destination": "SEA",
@@ -1828,6 +2031,7 @@
     },
     {
         "OD": "OTZ-ANC",
+        "NonDirectional": "ANCOTZ",
         "Origin": "OTZ",
         "LF": 0.77,
         "Destination": "ANC",
@@ -1837,6 +2041,7 @@
     },
     {
         "OD": "PDX-ANC",
+        "NonDirectional": "ANCPDX",
         "Origin": "PDX",
         "LF": 0.77,
         "Destination": "ANC",
@@ -1846,6 +2051,7 @@
     },
     {
         "OD": "PDX-SFO",
+        "NonDirectional": "PDXSFO",
         "Origin": "PDX",
         "LF": 0.73,
         "Destination": "SFO",
@@ -1855,6 +2061,7 @@
     },
     {
         "OD": "PDX-SNA",
+        "NonDirectional": "PDXSNA",
         "Origin": "PDX",
         "LF": 0.67,
         "Destination": "SNA",
@@ -1864,6 +2071,7 @@
     },
     {
         "OD": "SEA-BOS",
+        "NonDirectional": "BOSSEA",
         "Origin": "SEA",
         "LF": 0.76,
         "Destination": "BOS",
@@ -1873,6 +2081,7 @@
     },
     {
         "OD": "SEA-BUR",
+        "NonDirectional": "BURSEA",
         "Origin": "SEA",
         "LF": 0.7,
         "Destination": "BUR",
@@ -1882,6 +2091,7 @@
     },
     {
         "OD": "SEA-DFW",
+        "NonDirectional": "DFWSEA",
         "Origin": "SEA",
         "LF": 0.76,
         "Destination": "DFW",
@@ -1891,6 +2101,7 @@
     },
     {
         "OD": "SEA-FAI",
+        "NonDirectional": "FAISEA",
         "Origin": "SEA",
         "LF": 0.67,
         "Destination": "FAI",
@@ -1900,6 +2111,7 @@
     },
     {
         "OD": "SEA-GEG",
+        "NonDirectional": "GEGSEA",
         "Origin": "SEA",
         "LF": 0.65,
         "Destination": "GEG",
@@ -1909,6 +2121,7 @@
     },
     {
         "OD": "SEA-HNL",
+        "NonDirectional": "HNLSEA",
         "Origin": "SEA",
         "LF": 0.83,
         "Destination": "HNL",
@@ -1918,6 +2131,7 @@
     },
     {
         "OD": "SEA-OGG",
+        "NonDirectional": "OGGSEA",
         "Origin": "SEA",
         "LF": 0.85,
         "Destination": "OGG",
@@ -1927,6 +2141,7 @@
     },
     {
         "OD": "SEA-ONT",
+        "NonDirectional": "ONTSEA",
         "Origin": "SEA",
         "LF": 0.78,
         "Destination": "ONT",
@@ -1936,6 +2151,7 @@
     },
     {
         "OD": "SEA-ORD",
+        "NonDirectional": "ORDSEA",
         "Origin": "SEA",
         "LF": 0.76,
         "Destination": "ORD",
@@ -1945,6 +2161,7 @@
     },
     {
         "OD": "SEA-SIT",
+        "NonDirectional": "SEASIT",
         "Origin": "SEA",
         "LF": 0.76,
         "Destination": "SIT",
@@ -1954,6 +2171,7 @@
     },
     {
         "OD": "SEA-SJD",
+        "NonDirectional": "SEASJD",
         "Origin": "SEA",
         "LF": 0.8,
         "Destination": "SJD",
@@ -1963,6 +2181,7 @@
     },
     {
         "OD": "SFO-PDX",
+        "NonDirectional": "PDXSFO",
         "Origin": "SFO",
         "LF": 0.8,
         "Destination": "PDX",
@@ -1972,6 +2191,7 @@
     },
     {
         "OD": "SIT-SEA",
+        "NonDirectional": "SEASIT",
         "Origin": "SIT",
         "LF": 0.84,
         "Destination": "SEA",
@@ -1981,6 +2201,7 @@
     },
     {
         "OD": "SJD-SEA",
+        "NonDirectional": "SEASJD",
         "Origin": "SJD",
         "LF": 0.77,
         "Destination": "SEA",
@@ -1990,6 +2211,7 @@
     },
     {
         "OD": "SNA-PDX",
+        "NonDirectional": "PDXSNA",
         "Origin": "SNA",
         "LF": 0.75,
         "Destination": "PDX",
@@ -1999,6 +2221,7 @@
     },
     {
         "OD": "LAS-PDX",
+        "NonDirectional": "LASPDX",
         "Origin": "LAS",
         "LF": 0.85,
         "Destination": "PDX",
@@ -2008,6 +2231,7 @@
     },
     {
         "OD": "LAX-YVR",
+        "NonDirectional": "LAXYVR",
         "Origin": "LAX",
         "LF": 0.7,
         "Destination": "YVR",
@@ -2017,6 +2241,7 @@
     },
     {
         "OD": "OAK-PDX",
+        "NonDirectional": "OAKPDX",
         "Origin": "OAK",
         "LF": 0.84,
         "Destination": "PDX",
@@ -2026,6 +2251,7 @@
     },
     {
         "OD": "OAK-SEA",
+        "NonDirectional": "OAKSEA",
         "Origin": "OAK",
         "LF": 0.75,
         "Destination": "SEA",
@@ -2035,6 +2261,7 @@
     },
     {
         "OD": "PDX-LAS",
+        "NonDirectional": "LASPDX",
         "Origin": "PDX",
         "LF": 0.75,
         "Destination": "LAS",
@@ -2044,6 +2271,7 @@
     },
     {
         "OD": "PDX-SAN",
+        "NonDirectional": "PDXSAN",
         "Origin": "PDX",
         "LF": 0.67,
         "Destination": "SAN",
@@ -2053,6 +2281,7 @@
     },
     {
         "OD": "SAN-PDX",
+        "NonDirectional": "PDXSAN",
         "Origin": "SAN",
         "LF": 0.71,
         "Destination": "PDX",
@@ -2062,6 +2291,7 @@
     },
     {
         "OD": "SEA-OAK",
+        "NonDirectional": "OAKSEA",
         "Origin": "SEA",
         "LF": 0.8,
         "Destination": "OAK",
@@ -2071,6 +2301,7 @@
     },
     {
         "OD": "YVR-LAX",
+        "NonDirectional": "LAXYVR",
         "Origin": "YVR",
         "LF": 0.68,
         "Destination": "LAX",
@@ -2080,6 +2311,7 @@
     },
     {
         "OD": "ANC-JNU",
+        "NonDirectional": "ANCJNU",
         "Origin": "ANC",
         "LF": 0.74,
         "Destination": "JNU",
@@ -2089,6 +2321,7 @@
     },
     {
         "OD": "DEN-SEA",
+        "NonDirectional": "DENSEA",
         "Origin": "DEN",
         "LF": 0.65,
         "Destination": "SEA",
@@ -2098,6 +2331,7 @@
     },
     {
         "OD": "JNU-ANC",
+        "NonDirectional": "ANCJNU",
         "Origin": "JNU",
         "LF": 0.76,
         "Destination": "ANC",
@@ -2107,6 +2341,7 @@
     },
     {
         "OD": "KTN-SEA",
+        "NonDirectional": "KTNSEA",
         "Origin": "KTN",
         "LF": 0.71,
         "Destination": "SEA",
@@ -2116,6 +2351,7 @@
     },
     {
         "OD": "PHX-SEA",
+        "NonDirectional": "PHXSEA",
         "Origin": "PHX",
         "LF": 0.75,
         "Destination": "SEA",
@@ -2125,6 +2361,7 @@
     },
     {
         "OD": "SEA-DEN",
+        "NonDirectional": "DENSEA",
         "Origin": "SEA",
         "LF": 0.69,
         "Destination": "DEN",
@@ -2134,6 +2371,7 @@
     },
     {
         "OD": "SEA-KTN",
+        "NonDirectional": "KTNSEA",
         "Origin": "SEA",
         "LF": 0.65,
         "Destination": "KTN",
@@ -2143,6 +2381,7 @@
     },
     {
         "OD": "SEA-PHX",
+        "NonDirectional": "PHXSEA",
         "Origin": "SEA",
         "LF": 0.75,
         "Destination": "PHX",
@@ -2152,6 +2391,7 @@
     },
     {
         "OD": "SEA-SMF",
+        "NonDirectional": "SEASMF",
         "Origin": "SEA",
         "LF": 0.68,
         "Destination": "SMF",
@@ -2161,6 +2401,7 @@
     },
     {
         "OD": "SMF-SEA",
+        "NonDirectional": "SEASMF",
         "Origin": "SMF",
         "LF": 0.68,
         "Destination": "SEA",
@@ -2170,6 +2411,7 @@
     },
     {
         "OD": "LAX-PDX",
+        "NonDirectional": "LAXPDX",
         "Origin": "LAX",
         "LF": 0.7,
         "Destination": "PDX",
@@ -2179,6 +2421,7 @@
     },
     {
         "OD": "PDX-LAX",
+        "NonDirectional": "LAXPDX",
         "Origin": "PDX",
         "LF": 0.72,
         "Destination": "LAX",
@@ -2188,6 +2431,7 @@
     },
     {
         "OD": "ANC-FAI",
+        "NonDirectional": "ANCFAI",
         "Origin": "ANC",
         "LF": 0.76,
         "Destination": "FAI",
@@ -2197,6 +2441,7 @@
     },
     {
         "OD": "FAI-ANC",
+        "NonDirectional": "ANCFAI",
         "Origin": "FAI",
         "LF": 0.73,
         "Destination": "ANC",
@@ -2206,6 +2451,7 @@
     },
     {
         "OD": "SEA-SJC",
+        "NonDirectional": "SEASJC",
         "Origin": "SEA",
         "LF": 0.67,
         "Destination": "SJC",
@@ -2215,6 +2461,7 @@
     },
     {
         "OD": "SEA-SNA",
+        "NonDirectional": "SEASNA",
         "Origin": "SEA",
         "LF": 0.77,
         "Destination": "SNA",
@@ -2224,6 +2471,7 @@
     },
     {
         "OD": "SJC-SEA",
+        "NonDirectional": "SEASJC",
         "Origin": "SJC",
         "LF": 0.8,
         "Destination": "SEA",
@@ -2233,6 +2481,7 @@
     },
     {
         "OD": "SNA-SEA",
+        "NonDirectional": "SEASNA",
         "Origin": "SNA",
         "LF": 0.79,
         "Destination": "SEA",
@@ -2242,6 +2491,7 @@
     },
     {
         "OD": "SEA-SFO",
+        "NonDirectional": "SEASFO",
         "Origin": "SEA",
         "LF": 0.71,
         "Destination": "SFO",
@@ -2251,6 +2501,7 @@
     },
     {
         "OD": "SFO-SEA",
+        "NonDirectional": "SEASFO",
         "Origin": "SFO",
         "LF": 0.84,
         "Destination": "SEA",
@@ -2260,6 +2511,7 @@
     },
     {
         "OD": "JNU-SEA",
+        "NonDirectional": "JNUSEA",
         "Origin": "JNU",
         "LF": 0.82,
         "Destination": "SEA",
@@ -2269,6 +2521,7 @@
     },
     {
         "OD": "LAS-SEA",
+        "NonDirectional": "LASSEA",
         "Origin": "LAS",
         "LF": 0.82,
         "Destination": "SEA",
@@ -2278,6 +2531,7 @@
     },
     {
         "OD": "SAN-SEA",
+        "NonDirectional": "SANSEA",
         "Origin": "SAN",
         "LF": 0.68,
         "Destination": "SEA",
@@ -2287,6 +2541,7 @@
     },
     {
         "OD": "SEA-JNU",
+        "NonDirectional": "JNUSEA",
         "Origin": "SEA",
         "LF": 0.76,
         "Destination": "JNU",
@@ -2296,6 +2551,7 @@
     },
     {
         "OD": "SEA-LAS",
+        "NonDirectional": "LASSEA",
         "Origin": "SEA",
         "LF": 0.75,
         "Destination": "LAS",
@@ -2305,6 +2561,7 @@
     },
     {
         "OD": "SEA-SAN",
+        "NonDirectional": "SANSEA",
         "Origin": "SEA",
         "LF": 0.71,
         "Destination": "SAN",
@@ -2314,6 +2571,7 @@
     },
     {
         "OD": "LAX-SEA",
+        "NonDirectional": "LAXSEA",
         "Origin": "LAX",
         "LF": 0.68,
         "Destination": "SEA",
@@ -2323,6 +2581,7 @@
     },
     {
         "OD": "SEA-LAX",
+        "NonDirectional": "LAXSEA",
         "Origin": "SEA",
         "LF": 0.72,
         "Destination": "LAX",
@@ -2332,6 +2591,7 @@
     },
     {
         "OD": "ANC-SEA",
+        "NonDirectional": "ANCSEA",
         "Origin": "ANC",
         "LF": 0.83,
         "Destination": "SEA",
@@ -2341,6 +2601,7 @@
     },
     {
         "OD": "SEA-ANC",
+        "NonDirectional": "ANCSEA",
         "Origin": "SEA",
         "LF": 0.7,
         "Destination": "ANC",
