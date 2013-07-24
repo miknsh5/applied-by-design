@@ -26,8 +26,6 @@ angular.module('appliedByDesignApp')
             .translate([width / 2, height / 2])
             .precision(0.1);
 
-        console.log( (width + 1) /2/Math.PI);
-
         var path = d3.geo.path()
             .projection(projection)
             .pointRadius(function(d){ return [d.radius];});
@@ -90,11 +88,15 @@ angular.module('appliedByDesignApp')
         // this will generally mean that the routes have been down selected with 
         // the fleet model filters.
         // scope.$watch('fleetRouteData', function(newData){
-        scope.$watch(function() { return fleetModel.getFilteredData(); }, function(newData){
+        
+        // scope.$watch(function() { return 1 }, function(newData){
+        scope.$watch(function() { 
+            // watch for any changes to the routeReports object
+            return fleetModel.getRouteReport()
+          }, function(newData){
 
-          if (typeof(newData) === 'undefined') {
-            return
-          }
+          // if (typeof(newData[0]) == 'undefined') { console.log('no cityPair data!'); return}
+          // if (typeof(newData[1]) == 'undefined') { console.log('no airport data!'); return}
 
           console.log('updating routes');
 

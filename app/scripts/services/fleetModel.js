@@ -4,10 +4,15 @@ angular.module('appliedByDesignApp')
   .factory('fleetModel', function ($http, byKeyFilter, findByKeyFilter, findAirportFilter, findSizeFilter, findRouteFilter, byRouteFilter, findFleetTypeFilter, byFleetTypeFilter, activeEquipmentFilter) {
     // Service logic
 
-   var fleetModel;
-    var airplanes, citypairs, flights, costcurves, market, services, airports;
+    var airplanes,
+        cityPairs,
+        flights,
+        costcurves,
+        market,
+        services,
+        airports;
 
-    // should be derived from fleetModel (eventually)
+    // should be derived from flights (eventually)
     var equipment = [
         {'name': '737-900',       'active': true},
         {'name': '737-800',       'active': true},
@@ -16,13 +21,15 @@ angular.module('appliedByDesignApp')
         {'name': '737-700',       'active': true}
       ];
 
+    // write routeReport object to local variable for $watch 
+    var routeReport
+
     // Public API here
     return {
-      getData: function() {
-        // load external data source into service layer.  This should be instantiated on creation
-        // of the service, and only need to be run once.  Should only need to call this if we decide
-        // to load new data sources down the road (e.g. switch airlines, load multiple annual data sets, etc)
-        //
+      // load external data source into service layer.  This should be instantiated on creation
+      // of the service, and only need to be run once.  Should only need to call this if we decide
+      // to load new data sources down the road (e.g. switch airlines, load multiple annual data sets, etc)
+      getAirplanes: function() {
         $http({method: 'GET', url: 'images/airplanes.json'})
           .success(function(data){
               airplanes = data;
@@ -31,75 +38,85 @@ angular.module('appliedByDesignApp')
           .error(function(data){
               console.log('Resolve Error: airplanes data not loaded!');
             });
-
-          $http({method: 'GET', url: 'images/citypairs.json'})
-            .success(function(data){
-                citypairs = data;
-                console.log('city pairs data model loaded')
-              })
-            .error(function(data){
-                console.log('Resolve Error: city pairs data not loaded!');
-              });
-
-          $http({method: 'GET', url: 'images/flights.json'})
-            .success(function(data){
-                flights = data;
-                console.log('flights data model loaded')
-              })
-            .error(function(data){
-                console.log('Resolve Error: flights data not loaded!');
-              });
-
-          $http({method: 'GET', url: 'images/costcurves.json'})
-            .success(function(data){
-                costcurves = data;
-                console.log('cost curves data model loaded')
-              })
-            .error(function(data){
-                console.log('Resolve Error: cost curves data not loaded!');
-              });
-
-          $http({method: 'GET', url: 'images/market.json'})
-            .success(function(data){
-                market = data;
-                console.log('market data model loaded')
-              })
-            .error(function(data){
-                console.log('Resolve Error: market data not loaded!');
-              });
-          $http({method: 'GET', url: 'images/services.json'})
-            .success(function(data){
-                services = data;
-                console.log('services data model loaded')
-              })
-            .error(function(data){
-                console.log('Resolve Error: services data not loaded!');
-              });
-          $http({method: 'GET', url: 'images/airports.json'})
-            .success(function(data){
-                airports = data;
-                console.log('services data model loaded')
-              })
-            .error(function(data){
-                console.log('Resolve Error: airports data not loaded!');
-              });
       }(),
-      getFilteredData: function() {
-        // returns filtered set of routes as subset of fleetModel
-        var filterBy = activeEquipmentFilter(equipment);
-        return byKeyFilter(fleetModel, filterBy,"Equipment");
+      getCityPairs: function() {
+        $http({method: 'GET', url: 'images/cityPairs.json'})
+          .success(function(data){
+              cityPairs = data;
+              // routeData.cityPairs = cityPairs
+              console.log('city pairs data model loaded')
+            })
+          .error(function(data){
+              console.log('Resolve Error: city pairs data not loaded!');
+            });
 
-      },
+      }(),
+      getFlights: function() {
+        $http({method: 'GET', url: 'images/flights.json'})
+          .success(function(data){
+              flights = data;
+              console.log('flights data model loaded')
+            })
+          .error(function(data){
+              console.log('Resolve Error: flights data not loaded!');
+            });
+      }(),
+      getCostCurves: function() {
+        $http({method: 'GET', url: 'images/costcurves.json'})
+          .success(function(data){
+              costcurves = data;
+              console.log('cost curves data model loaded')
+            })
+          .error(function(data){
+              console.log('Resolve Error: cost curves data not loaded!');
+            });
+      }(),
+      getMarket: function() {
+        $http({method: 'GET', url: 'images/market.json'})
+          .success(function(data){
+              market = data;
+              console.log('market data model loaded')
+            })
+          .error(function(data){
+              console.log('Resolve Error: market data not loaded!');
+            });
+      }(),
+      getServices: function() {
+        $http({method: 'GET', url: 'images/services.json'})
+          .success(function(data){
+              services = data;
+              console.log('services data model loaded')
+            })
+          .error(function(data){
+              console.log('Resolve Error: services data not loaded!');
+            });
+      }(),
+      getAirports: function() {
+        $http({method: 'GET', url: 'images/airports.json'})
+          .success(function(data){
+              airports = data;
+              // routeData.airports = airports;
+              console.log('airports data model loaded')
+            })
+          .error(function(data){
+              console.log('Resolve Error: airports data not loaded!');
+            });
+
+      }(),
+      // getFilteredData: function() {
+      //   // returns filtered set of routes as subset of fleetModel
+      //   var filterBy = activeEquipmentFilter(equipment);
+      //   return byKeyFilter(fleetModel, filterBy,"Equipment");
+
+      // },
       // Get Financial Report for some subset of the total fleet/routes
       getReport: function(forecast, selRoutes) {
         
         // Filter flights by ODs if a filter is provided
-        if (typeof(selRoutes) != 'undefined') 
-        {
+        if (typeof(selRoutes) != 'undefined') {
            var flightsRoutes = byRouteFilter(flights, selRoutes);
-        }
-        else
-        {
+        } 
+        else {
           var flightsRoutes = flights;
         }
 
@@ -114,17 +131,14 @@ angular.module('appliedByDesignApp')
         var outputReport = [];
         var years;
 
-        if(forecast)
-        {
+        if(forecast) {
           years = market.forecast.years;
         }
-        else
-        {
+        else {
           years = 1;
         }
 
-        for(var y = 0; y<years; y++)
-        {
+        for(var y = 0; y<years; y++) {
           outputRev = 0;
           outputCost = {};
           outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
@@ -133,8 +147,7 @@ angular.module('appliedByDesignApp')
           var activeRoutes = defineRoutes();
 
           //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-          for(var i = 0;i<revFlights.length;i++)
-          {
+          for(var i = 0;i<revFlights.length;i++) {
             //Calculate Financial and Performance Perameters
             freq           = revFlights[i].Frequency;
             cap            = findByKeyFilter(airplanes, [revFlights[i].Equipment],"Equipment").Capacity;
@@ -150,18 +163,14 @@ angular.module('appliedByDesignApp')
             fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
 
             //Apply Services
-            for(var k1 in servicesInUse)
-            {
-              if(servicesInUse[k1])
-              {
-             for(var k2 in services[k1])
-                 {
-                  for(var c1 in services[k1][k2])
-                  {
-                coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
+            for(var k1 in servicesInUse) {
+              if(servicesInUse[k1]) {
+                for(var k2 in services[k1]) {
+                  for(var c1 in services[k1][k2]) {
+                    coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
                   }
-                 }
-               }
+                }
+              }
             }
 
             //Total Annual Flight Revenue
@@ -175,14 +184,11 @@ angular.module('appliedByDesignApp')
             outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
 
             //Total Annual Flight Costs
-            for(var k in coeffs)
-            {
-              if(outputCost[k]===undefined)
-              {
+            for(var k in coeffs) {
+              if(outputCost[k]===undefined) {
                 outputCost[k] = 0;
               }
-              if(k=="Fuel")
-              {
+              if(k=="Fuel") {
                 outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
               }
 
@@ -197,11 +203,16 @@ angular.module('appliedByDesignApp')
 
       },
       getEquipment: function() {
-        return airplanes;
+        return equipment;
       },
-      getRoutes: function() 
-      {
-        return defineRoutes()
+      generateRoutes: function(){
+        defineRoutes();
+      },
+      clearReport: function(){
+        routeReport = [];
+      },
+      getRouteReport: function() {
+        return routeReport;
       },
       toggleEquipment: function(id){
         equipment[id].active = !equipment[id].active;
@@ -209,16 +220,16 @@ angular.module('appliedByDesignApp')
       isEquipActive: function(id, test) {
         return equipment[id].active;
       }
+      // routeData: function(){
+      //   return routeData;
+      // }
     };
 
-    function uniqueSet(fullSet)
-    {
+    function uniqueSet(fullSet){
       var uniqueSet = [fullSet[0]];
       var isPresent;
 
-      for (var i = 1; i < fullSet.length; i++)
-      {
-
+      for (var i = 1; i < fullSet.length; i++){
         if(!isUnique(uniqueSet,fullSet[i]))
         {
           uniqueSet.push(fullSet[i]);
@@ -227,42 +238,41 @@ angular.module('appliedByDesignApp')
       return uniqueSet;
     }
 
-    function isUnique(a,val)
-    {
-      
-      for (var u = 0; u < a.length; u++) 
-      {
-        if (a[u] === val) 
-        {
+    function isUnique(a,val){      
+      for (var u = 0; u < a.length; u++) {
+        if (a[u] === val) {
           return true;
         }
       }
       return false;
     }
 
-    function defineRoutes()
-    {
+    function defineRoutes(){
       var allRoutes = [];
-      for(var i = 0;i<flights.length;i++)
-      {
+
+      // check to make sure all required data is available
+      if (typeof(cityPairs) == 'undefined') { console.log('cityPairs not defined'); return};
+      if (typeof(airports) == 'undefined') { console.log('Airports not defined'); return};
+
+      for(var i = 0;i<flights.length;i++) {
         allRoutes.push(flights[i].NonDirectional);
       }
 
       var uniqueRoutes = uniqueSet(allRoutes);
-      var routeReport = [];
+      var report = [];
       
-      for(var k=0;k<uniqueRoutes.length;k++)
-      {
-        routeReport[k] = {"NonDirectional": uniqueRoutes[k],
-                          "Fare": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Fare,
-                          "Olat": findByKeyFilter(airports, [uniqueRoutes[0].slice(0,3)],"Code").Latitude,
-                          "Olon": findByKeyFilter(airports, [uniqueRoutes[0].slice(0,3)],"Code").Longitude,
-                          "Dlat": findByKeyFilter(airports, [uniqueRoutes[0].slice(3,6)],"Code").Latitude,
-                          "Dlon": findByKeyFilter(airports, [uniqueRoutes[0].slice(3,6)],"Code").Longitude,
-                          "Distance": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Distance,
-                          "Duration": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Duration,
-                          "LF": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").LF};
+      for(var k=0;k<uniqueRoutes.length;k++) {
+        report[k] = {"NonDirectional": uniqueRoutes[k],
+                          "Fare": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Fare,
+                          "Olat": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Latitude,
+                          "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
+                          "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
+                          "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
+                          "Distance": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Distance,
+                          "Duration": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Duration,
+                          "LF": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").LF};
       }
-      return routeReport;
+      
+      routeReport = report;
     }
   });

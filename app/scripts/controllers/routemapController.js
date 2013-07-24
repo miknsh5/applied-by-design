@@ -20,11 +20,7 @@ angular.module('appliedByDesignApp')
     $scope.navService = navService;
 
 
-    // dashboard panel visibility
-    // $scope.isFinActive = navService.tabState('0');
-    // $scope.isOpsActive = navService.tabState('1');
-    // $scope.isFltActive = navService.tabState('2');
-
+    $scope.fleetModel.generateRoutes();
 
     // recalculate the dashboard panel position based on hide/show state
     $scope.panelStyle = function(){
@@ -32,7 +28,6 @@ angular.module('appliedByDesignApp')
         var b = ($scope.hidePanel) ? offset : 0;
 
         return {
-            // width: $scope.mapWidth + 'px',
             bottom: b + 'px'
         }
     }

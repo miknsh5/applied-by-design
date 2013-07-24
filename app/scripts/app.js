@@ -24,9 +24,45 @@ angular.module('appliedByDesignApp', [])
       })
       .when('/routemap', {
         templateUrl: 'views/routemap.html',
-        controller: 'RoutemapCtrl'
+        controller: 'RoutemapCtrl',
+        resolve: {
+          loadedState: function(fleetModel, $q, $timeout){
+            console.log('were waiting..............')
+            var deferred = $q.defer();
+
+            // this should start loading the resources
+            // var fleetModelService = fleetModel;
+            var waitForThese = [
+              'airplanes',
+              'cityPairs',
+              'flights',
+              'costcurves',
+              'market',
+              'services',
+              'airports'
+              ];
+
+            $timeout(function(){
+              //check to see if all of the data is loaded yet
+              var status = 0;
+              for (var i = 0; i<waitForThese.length; i++) {
+                if (typeof(waitForThese[i]) == 'undefined') {status= status + 1;}
+                console.log(status)
+              }
+              if (status != 0) {
+                console.log('wiating for: ' + status + ' files...');
+                deferred.resolve([]);
+              } else {
+                deferred.resolve(status);
+                console.log('resolved')
+              }
+            }, 500);
+
+            return deferred.promise;
+          }
+        }
         // resolve: {
-        //   fleetRouteData: function($http, $q){
+        //   flights: function(fleetModel, $q){
 
         //       var deferred = $q.defer();
 
