@@ -192,6 +192,7 @@ angular.module('appliedByDesignApp')
                 outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
               }
 
+              //Generic equation strucutre for all other costs
               outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
             }
           }
@@ -213,6 +214,14 @@ angular.module('appliedByDesignApp')
       },
       getRouteReport: function() {
         return routeReport;
+      },
+      getAirports: function() 
+      {
+        return defineAirports()
+      },
+      getODs: function() 
+      {
+        return defineODs()
       },
       toggleEquipment: function(id){
         equipment[id].active = !equipment[id].active;
@@ -274,5 +283,36 @@ angular.module('appliedByDesignApp')
       }
       
       routeReport = report;
+    }
+    function defineAirports()
+    {
+
+      //Define Unique Routes
+      var allRoutes = [];
+      for(var i = 0;i<flights.length;i++)
+      {
+        allRoutes.push(flights[i].NonDirectional);
+      }
+      var uniqueRoutes = uniqueSet(allRoutes);
+
+      //Define Unique Airports
+      var allAirports = [];
+      for(var i = 0;i<uniqueRoutes.length;i++)
+      {
+        allAirports.push(uniqueRoutes[i].slice(0,3));
+        allAirports.push(uniqueRoutes[i].slice(3,6));
+      }
+
+      var uniqueAirports = uniqueSet(allAirports);
+
+      //Gather Information for Each Unique Airport
+      var airportReport = [];      
+      for(var k=0;k<uniqueAirports.length;k++)
+      {
+        airportReport[k] = {"Code": uniqueAirports[k],
+                            "Latitide": findByKeyFilter(airports, [uniqueAirports[k]],"Code").Latitude,
+                            "Longitude": findByKeyFilter(airports, [uniqueAirports[k]],"Code").Longitude}
+      }
+      return airportReport;
     }
   });
