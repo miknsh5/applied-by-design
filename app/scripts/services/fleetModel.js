@@ -211,6 +211,10 @@ angular.module('appliedByDesignApp')
       {
         return defineAirports()
       },
+      getODs: function() 
+      {
+        return defineODs()
+      },
       toggleEquipment: function(id){
         equipment[id].active = !equipment[id].active;
       },
@@ -263,10 +267,10 @@ angular.module('appliedByDesignApp')
       {
         routeReport[k] = {"NonDirectional": uniqueRoutes[k],
                           "Fare": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Fare,
-                          "Olat": findByKeyFilter(airports, [uniqueRoutes[0].slice(0,3)],"Code").Latitude,
-                          "Olon": findByKeyFilter(airports, [uniqueRoutes[0].slice(0,3)],"Code").Longitude,
-                          "Dlat": findByKeyFilter(airports, [uniqueRoutes[0].slice(3,6)],"Code").Latitude,
-                          "Dlon": findByKeyFilter(airports, [uniqueRoutes[0].slice(3,6)],"Code").Longitude,
+                          "Olat": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Latitude,
+                          "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
+                          "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
+                          "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
                           "Distance": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Distance,
                           "Duration": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").Duration,
                           "LF": findByKeyFilter(citypairs, [uniqueRoutes[k]],"NonDirectional").LF};
@@ -303,5 +307,88 @@ angular.module('appliedByDesignApp')
                             "Longitude": findByKeyFilter(airports, [uniqueAirports[k]],"Code").Longitude}
       }
       return airportReport;
+    }
+    function defineODs()
+    {
+      var maxIntinLen = 4;
+
+      //Define Unique Routes
+      var allRoutes = [];
+      for(var i = 0;i<flights.length;i++)
+      {
+        allRoutes.push(flights[i].NonDirectional);
+      }
+      var uniqueRoutes = uniqueSet(allRoutes);
+
+      //Define Unique Legs
+      var allLegs = [];
+      for(var i = 0;i<flights.length;i++)
+      {
+        allLegs.push(flights[i].OD);
+      }
+      var uniqueLegNames = uniqueSet(allLegs);
+
+      var uniqueLegs = [];
+      for(var i = 0;i<uniqueLegNames.length;i++)
+      {
+        uniqueLegs[i] = { "Origin":uniqueLegNames[i].slice(0,3),
+                          "Destination":uniqueLegNames[i].slice(4,7)}
+      }
+
+      //Define Unique Airports
+      var allAirports = [];
+      for(var i = 0;i<uniqueRoutes.length;i++)
+      {
+        allAirports.push(uniqueRoutes[i].slice(0,3));
+        allAirports.push(uniqueRoutes[i].slice(3,6));
+      }
+
+      var uniqueAirports = uniqueSet(allAirports);
+
+      //Define Unique ODs
+      var uniqueODs = [];
+      for(var i=0;i<uniqueAirports.length;i++)
+      {
+        for(var j=0;j<uniqueAirports.length;j++)
+        {
+          if(i!=j)
+          {
+            uniqueODs.push(uniqueAirports[i]+uniqueAirports[j]);
+          }
+        }
+      }
+
+      
+      var Itins = []
+      var allODs = [];
+
+      var i = 10;
+      allODs[i] = { "OD":
+                      {
+                      "Origin":uniqueODs[i].slice(0,3),
+                      "Destination":uniqueODs[i].slice(3,6)
+                      },
+                    "Leg1":[]
+                  }
+
+      Itins = byKeyFilter(uniqueLegs, [uniqueODs[i].slice(0,3)],"Origin");
+      for(var k=0;k<Itins.length;k++)
+      {
+        allODs[i].Leg1[k] = {  "Origin": Itins[k].Origin,
+                                    "Destination": Itins[k].Destination};
+      }
+      for(var l = 0;l<allODs[i].Leg1.length;l++)
+      {
+        var LegTwos = byKeyFilter(uniqueLegs, [allODs[i].Leg1[l].Destination],"Origin");
+        for(var m = 0;m<LegTwos.length;m++){
+          if(LegTwos[m].Destionation == [uniqueODs[i].slice(3,6)])
+          {
+            allODs[i].Leg1[l].Leg2.push(LegTwos[m]);
+          }
+        }
+        
+      }
+      
+      return uniqueODs;
     }
   });
