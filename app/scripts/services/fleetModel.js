@@ -12,6 +12,9 @@ angular.module('appliedByDesignApp')
         services,
         airports;
 
+    // write routeReport object to local variable for $watch 
+    var routeReport
+
     // should be derived from flights (eventually)
     var equipment = [
         {'name': '737-900',       'active': true},
@@ -20,9 +23,6 @@ angular.module('appliedByDesignApp')
         {'name': '737-400 Combi', 'active': true},
         {'name': '737-700',       'active': true}
       ];
-
-    // write routeReport object to local variable for $watch 
-    var routeReport
 
     // Public API here
     return {
@@ -43,7 +43,6 @@ angular.module('appliedByDesignApp')
         $http({method: 'GET', url: 'images/cityPairs.json'})
           .success(function(data){
               cityPairs = data;
-              // routeData.cityPairs = cityPairs
               console.log('city pairs data model loaded')
             })
           .error(function(data){
@@ -103,12 +102,7 @@ angular.module('appliedByDesignApp')
             });
 
       }(),
-      // getFilteredData: function() {
-      //   // returns filtered set of routes as subset of fleetModel
-      //   var filterBy = activeEquipmentFilter(equipment);
-      //   return byKeyFilter(fleetModel, filterBy,"Equipment");
 
-      // },
       // Get Financial Report for some subset of the total fleet/routes
       getReport: function(forecast, selRoutes) {
         
@@ -144,7 +138,7 @@ angular.module('appliedByDesignApp')
           outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
 
           //Get Routes List
-          var activeRoutes = defineRoutes();
+          var activeRoutes = buildRoutes();
 
           //Calculate frequency, capacity, load factor, fare and total revenue for each flight
           for(var i = 0;i<revFlights.length;i++) {
@@ -207,7 +201,7 @@ angular.module('appliedByDesignApp')
         return equipment;
       },
       generateRoutes: function(){
-        defineRoutes();
+        buildRoutes();
       },
       clearReport: function(){
         routeReport = [];
@@ -215,10 +209,16 @@ angular.module('appliedByDesignApp')
       getRouteReport: function() {
         return routeReport;
       },
-      getAirports: function() 
-      {
-        return defineAirports()
+      getData: function(name) {
+        // if the variable exists, return the object
+        // this is crazy dangerous.  Probably shouldn't do this...
+        return eval(name);
+
       },
+      // getAirports: function() 
+      // {
+      //   return defineAirports()
+      // },
       getODs: function() 
       {
         return defineODs()
@@ -256,7 +256,7 @@ angular.module('appliedByDesignApp')
       return false;
     }
 
-    function defineRoutes(){
+    function buildRoutes(){
       var allRoutes = [];
 
       // check to make sure all required data is available
@@ -284,8 +284,9 @@ angular.module('appliedByDesignApp')
       
       routeReport = report;
     }
-    function defineAirports()
-    {
+
+
+    function getUniqueAirports(){
 
       //Define Unique Routes
       var allRoutes = [];

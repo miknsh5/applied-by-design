@@ -46,8 +46,7 @@ angular.module('appliedByDesignApp', [])
               //check to see if all of the data is loaded yet
               var status = 0;
               for (var i = 0; i<waitForThese.length; i++) {
-                if (typeof(waitForThese[i]) == 'undefined') {status= status + 1;}
-                console.log(status)
+                if (typeof waitForThese[i] == 'undefined') {status= status + 1;}
               }
               if (status != 0) {
                 console.log('wiating for: ' + status + ' files...');
