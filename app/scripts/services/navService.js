@@ -10,6 +10,8 @@ angular.module('appliedByDesignApp')
       {'name': 'flt', 'active': false}
     ];
 
+    var equipment = [];
+
     // Public API here
     return {
       selectTab: function(id){
@@ -23,6 +25,21 @@ angular.module('appliedByDesignApp')
       },
       tabState: function(id){
         return dashboardTabs[id].active;
+      },
+      initializeEquipment: function(equip){
+        equipment = equip;
+      },
+      toggleEquipment: function(id) {
+        equipment[id].active = !equipment[id].active;
+
+        // update the routeReport with new airplane filters
+        // this.generateRoutes();
+      },
+      isEquipActive: function(id, test) {
+        return equipment[id].active;
+      },
+      getEquipment: function(){
+        return equipment;
       }
     };
   });

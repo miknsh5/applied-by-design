@@ -3,7 +3,7 @@
 /*global topojson:false */
 
 angular.module('appliedByDesignApp')
-  .directive('worldMap', function (fleetModel, navService) {
+  .directive('worldMap', function (reportBuilder, navService) {
     return {
       restrict: 'E',
       scope: {
@@ -92,7 +92,7 @@ angular.module('appliedByDesignApp')
         // scope.$watch(function() { return 1 }, function(newData){
         scope.$watch(function() { 
             // watch for any changes to the routeReports object
-            return fleetModel.getRouteReport()
+            return reportBuilder.getRouteReport()
           }, function(newData){
 
           // if (typeof(newData[0]) == 'undefined') { console.log('no cityPair data!'); return}

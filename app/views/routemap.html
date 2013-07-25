@@ -12,10 +12,10 @@
                 </div>
 
                 <!-- loop through the different model types -->
-                <div ng-repeat="model in fleetModel.getEquipment()" ng-show="showEquipFilter">
+                <div ng-repeat="model in navService.getEquipment()" ng-show="showEquipFilter">
                     <div class="fleet-model-btn toggle" 
-                        ng-click="fleetModel.toggleEquipment($index)"
-                        ng-class="{active: fleetModel.isEquipActive($index)}">
+                        ng-click="navService.toggleEquipment($index)"
+                        ng-class="{active: navService.isEquipActive($index)}">
                         <span class="model-name">{{model.name}}</span>
                         <i class="ikon-airplane ikon"> </i>
                     </div>
@@ -183,10 +183,10 @@
                                 <h4>Fleet Models</h4>
                                 <div class="plane-buttons">
                                     <!-- loop through the different model types -->
-                                    <div ng-repeat="model in fleetModel.getEquipment()">
+                                    <div ng-repeat="model in navService.getEquipment()">
                                         <div class="fleet-model-btn select" 
-                                            ng-click="fleetModel.selectEquipment($index)"
-                                            ng-class="{active: fleetModel.isEquipActive($index)}">
+                                            ng-click="navService.selectEquipment($index)"
+                                            ng-class="{active: navService.isEquipActive($index)}">
                                             <span class="model-name">{{model.name}}</span>
                                             <i class="ikon-airplane ikon"> </i>
                                             <i class="ikon-chevron-right"> </i>

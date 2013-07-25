@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('RoutemapCtrl', function ($scope, financialData, fleetModel, navService, frequencyService) {
+  .controller('RoutemapCtrl', function ($scope, reportBuilder, financialData, fleetModel, navService, frequencyService) {
 
     // set the dimensions of main SVG canvas
     $scope.mapWidth = 1200;
@@ -14,10 +14,11 @@ angular.module('appliedByDesignApp')
 
     // instantiate service object in local controller scope (makes service accessible directly from view)
     $scope.fleetModel = fleetModel;
+    $scope.reportBuilder = reportBuilder;
     $scope.navService = navService;
 
-    $scope.fleetModel.generateEquipment();
-    $scope.fleetModel.generateRoutes();
+    $scope.reportBuilder.generateEquipment();
+    $scope.reportBuilder.generateRoutes();
 
     // recalculate the dashboard panel position based on hide/show state
     $scope.panelStyle = function(){
@@ -28,6 +29,13 @@ angular.module('appliedByDesignApp')
             bottom: b + 'px'
         }
     }
+
+    // watch for any changes to the aircraft toggle buttons and update
+    // routes whenever there's a change.
+    $scope.$watch(function(){return navService.getEquipment()}, function(){
+        reportBuilder.generateRoutes();
+    }, true);
+
   });
 
 
