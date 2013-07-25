@@ -18,7 +18,7 @@ angular.module('appliedByDesignApp')
     $scope.navService = navService;
 
     $scope.reportBuilder.generateEquipment();
-    $scope.reportBuilder.generateRoutes();
+    $scope.reportBuilder.buildRoutes();
 
     // recalculate the dashboard panel position based on hide/show state
     $scope.panelStyle = function(){
@@ -33,7 +33,7 @@ angular.module('appliedByDesignApp')
     // watch for any changes to the aircraft toggle buttons and update
     // routes whenever there's a change.
     $scope.$watch(function(){return navService.getEquipment()}, function(){
-        reportBuilder.generateRoutes();
+        reportBuilder.buildRoutes();
     }, true);
 
   });

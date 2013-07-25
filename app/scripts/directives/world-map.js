@@ -92,7 +92,7 @@ angular.module('appliedByDesignApp')
         // scope.$watch(function() { return 1 }, function(newData){
         scope.$watch(function() { 
             // watch for any changes to the routeReports object
-            return reportBuilder.getRouteReport()
+            return reportBuilder.getReport('routeReport')
           }, function(newData){
 
           // if (typeof(newData[0]) == 'undefined') { console.log('no cityPair data!'); return}

@@ -88,7 +88,7 @@
                                 <div class="summary-table financial">
                                     <h3>Financial</h3>
                                     <!-- check out ng-grid maybe? -->
-                                    <div ng-repeat="financial in financialData.getTotals()">
+                                    <div ng-repeat="financial in totalFinancials">
                                         <div class="row-wrap" 
                                             ng-click="financialData.select($index)"
                                             ng-class="{active: $index == financialData.activeId() }">

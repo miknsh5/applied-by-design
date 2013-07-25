@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .factory('reportBuilder', function (fleetModel, navService, activeEquipmentFilter, byKeyFilter, findByKeyFilter) {
+  .factory('reportBuilder', function (fleetModel, navService, activeEquipmentFilter, byKeyFilter, findByKeyFilter, findFleetTypeFilter, findSizeFilter) {
     // Service logic
 
     // calculated data (watch these with return functions)
@@ -11,20 +11,20 @@ angular.module('appliedByDesignApp')
 
     // Public API here
     return {
-      getRouteReport: function(){
-        return routeReport;
+      getReport: function(name){
+        return eval(name);
       },
       // Get Financial Report for some subset of the total fleet/routes
       buildFinancialReport: function(forecast, selRoutes) {
         
         // retrieve data dependencies
-        var flights   = fleetModel.getData('flights');
-        var airplanes = fleetModel.getData('airplanes');
-        var market    = fleetModel.getData('market');
-        var services  = fleetModel.getData('services');
-        var equipment  = navService.getEquipment();
+        var flights      = fleetModel.getData('flights');
+        var airplanes    = fleetModel.getData('airplanes');
+        var market       = fleetModel.getData('market');
+        var services     = fleetModel.getData('services');
+        var costCurves   = fleetModel.getData('costCurves');
+        var equipment    = navService.getEquipment();
 
-                
         // Filter flights by ODs if a filter is provided
         if (typeof(selRoutes) != 'undefined') {
           var flightsRoutes = byRouteFilter(flights, selRoutes);
@@ -58,7 +58,7 @@ angular.module('appliedByDesignApp')
           outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
 
           //Get Routes List
-          var activeRoutes = buildRoutes();
+          var activeRoutes = this.buildRoutes();
 
           //Calculate frequency, capacity, load factor, fare and total revenue for each flight
           for(var i = 0;i<revFlights.length;i++) {
@@ -70,7 +70,7 @@ angular.module('appliedByDesignApp')
             fare           = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Fare*Math.pow(1+market.growth.fare,y);
             bt             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Duration;
             stagelen       = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Distance;
-            coeffs         = jQuery.extend(true, {}, findSizeFilter(costcurves, [findFleetTypeFilter(airplanes, [revFlights[i].Equipment]).Size]).Coefficients);
+            coeffs         = jQuery.extend(true, {}, findSizeFilter(costCurves, [findFleetTypeFilter(airplanes, [revFlights[i].Equipment]).Size]).Coefficients);
 
             rpm            = pax*stagelen;
             servicesInUse  = findFleetTypeFilter(airplanes, [revFlights[i].Equipment]).Services;
@@ -131,11 +131,9 @@ angular.module('appliedByDesignApp')
            };
         }
 
+        //set initial equipment object in navService
         navService.initializeEquipment(equipment);
 
-      },
-      generateRoutes: function(){
-        buildRoutes();
       },
       clearReport: function(){
         routeReport = [];
@@ -143,58 +141,59 @@ angular.module('appliedByDesignApp')
       greatCircle: function(origindestination) {
         return gcDistance(origindestination);
       },
+      buildRoutes: function(){
+        // retrieve data dependencies
+        var cityPairs  = fleetModel.getData('cityPairs');
+        var airports   = fleetModel.getData('airports');
+        var flights    = fleetModel.getData('flights');
+        var equipment  = navService.getEquipment();
 
+        var allRoutes = [];
+        var report    = [];
+
+        // check to make sure all required data is available
+        if (typeof(cityPairs) == 'undefined') { console.log('cityPairs not defined'); return};
+        if (typeof(airports) == 'undefined') { console.log('Airports not defined'); return};
+
+        
+
+        // return filtered set of routes as subset of fleetModel
+        var filterBy = activeEquipmentFilter(equipment);
+      
+        // only generate route report if an aircraft type is selected
+        if (filterBy.length) { 
+          var revFlights   = byKeyFilter(flights, filterBy,"Equipment");
+
+          for(var i = 0;i<revFlights.length;i++) {
+            allRoutes.push(revFlights[i].NonDirectional);
+          }
+
+          var uniqueRoutes = uniqueSet(allRoutes);
+          
+          for(var k=0;k<uniqueRoutes.length;k++) {
+
+            report[k] = {
+              "NonDirectional": uniqueRoutes[k],
+              "Fare": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Fare,
+              "Olat": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Latitude,
+              "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
+              "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
+              "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
+              "Distance":gcDistance(uniqueRoutes[k]),
+              "Duration": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Duration,
+              "LF": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").LF};
+          }
+        }
+        
+        routeReport = report;
+        return report;
+      }
 
     };
 
-    function buildRoutes(){
-      
-      // retrieve data dependencies
-      var cityPairs  = fleetModel.getData('cityPairs');
-      var airports   = fleetModel.getData('airports');
-      var flights    = fleetModel.getData('flights');
-      var equipment  = navService.getEquipment();
 
-      var allRoutes = [];
-      var report    = [];
 
-      // check to make sure all required data is available
-      if (typeof(cityPairs) == 'undefined') { console.log('cityPairs not defined'); return};
-      if (typeof(airports) == 'undefined') { console.log('Airports not defined'); return};
 
-      
-
-      // return filtered set of routes as subset of fleetModel
-      var filterBy = activeEquipmentFilter(equipment);
-  
-      // only generate route report if an aircraft type is selected
-      if (filterBy.length) { 
-        var revFlights   = byKeyFilter(flights, filterBy,"Equipment");
-
-        for(var i = 0;i<revFlights.length;i++) {
-          allRoutes.push(revFlights[i].NonDirectional);
-        }
-
-        var uniqueRoutes = uniqueSet(allRoutes);
-        
-        for(var k=0;k<uniqueRoutes.length;k++) {
-
-          report[k] = {
-            "NonDirectional": uniqueRoutes[k],
-            "Fare": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Fare,
-            "Olat": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Latitude,
-            "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
-            "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
-            "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
-            "Distance":gcDistance(uniqueRoutes[k]),
-            "Duration": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Duration,
-            "LF": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").LF};
-        }
-      }
-      
-      routeReport = report;
-      return report;
-    }
 
     function uniqueSet(fullSet){
       var uniqueSet = [fullSet[0]];
