@@ -7,4 +7,8 @@ angular.module('appliedByDesignApp')
     $scope.fleetModel = fleetModel;
     $scope.financialData = financialData;
 
+
+    fleetModel.getReport();
+    $scope.financialData = fleetModel.getData('financialReport');
+
   });

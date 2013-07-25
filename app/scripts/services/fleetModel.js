@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .factory('fleetModel', function ($http, byKeyFilter, findByKeyFilter, findAirportFilter, findSizeFilter, findRouteFilter, byRouteFilter, findFleetTypeFilter, byFleetTypeFilter, activeEquipmentFilter) {
+  .factory('fleetModel', function ($http, reportBuilder, byKeyFilter, findByKeyFilter, findAirportFilter, findSizeFilter, findRouteFilter, byRouteFilter, findFleetTypeFilter, byFleetTypeFilter, activeEquipmentFilter) {
     // Service logic
 
+    // external data being loaded in from JSON files
     var airplanes,
         cityPairs,
         flights,
@@ -12,11 +13,11 @@ angular.module('appliedByDesignApp')
         services,
         airports;
 
-    // write routeReport object to local variable for $watch 
-    var routeReport
-
-    // should be derived from flights (eventually)
-    var equipment = [];
+    // calculated data (watch these with return functions)
+    var routeReport,
+        financialReport = [],
+        operationsReport,
+        equipment = [];
 
     // Public API here
     return {
@@ -96,10 +97,14 @@ angular.module('appliedByDesignApp')
             });
 
       }(),
+
       getEquipment: function(){
         return equipment;
       },
 
+      getFinancialReport: function() {
+        financialReport = reportBuilder.buildFinancials()
+      },
       // Get Financial Report for some subset of the total fleet/routes
       getReport: function(forecast, selRoutes) {
         
@@ -193,6 +198,9 @@ angular.module('appliedByDesignApp')
         outputReport[y] = {"Financial":outputCost,"Operational":outputOps};
         }
         
+        financialReport = outputCost;
+        operationsReport = outputOps;
+
         return outputReport;
 
       },
@@ -378,13 +386,6 @@ angular.module('appliedByDesignApp')
         // this is crazy dangerous.  Probably shouldn't do this...
         return eval(name);
 
-      },
-      // getAirports: function() 
-      // {
-      //   return defineAirports()
-      // },
-      getODs: function() {
-        return defineODs()
       },
       toggleEquipment: function(id) {
         equipment[id].active = !equipment[id].active;
