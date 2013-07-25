@@ -93,70 +93,7 @@ angular.module('appliedByDesignApp')
       getData: function(name) {
         return eval(name);
       }
-      // getOps: function(forecast, selRoutes) {
-        
-      //   // Filter flights by ODs if a filter is provided
-      //   if (typeof(selRoutes) != 'undefined') {
-      //      var flightsRoutes = byRouteFilter(flights, selRoutes);
-      //   } 
-      //   else {
-      //     var flightsRoutes = flights;
-      //   }
-
-      //   // returns filtered set of routes as subset of fleetModel
-      //   var filterBy     = activeEquipmentFilter(equipment);
-      //   var revFlights   = byKeyFilter(flightsRoutes, filterBy,"Equipment");
-
-
-      //   // Instantiate report variables
-      //   var weeks = 52;
-      //   var outputRev, outputCost, outputOps;
-      //   var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
-      //   var outputReport = [];
-      //   var years;
-
-      //   if(forecast) {
-      //     years = market.forecast.years;
-      //   }
-      //   else {
-      //     years = 1;
-      //   }
-
-      //   for(var y = 0; y<years; y++) {
-      //     outputRev = 0;
-      //     outputCost = {};
-      //     outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
-
-      //     //Get Routes List
-      //     var activeRoutes = buildRoutes();
-
-      //     //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-      //     for(var i = 0;i<revFlights.length;i++) {
-      //       //Calculate Financial and Performance Perameters
-      //       freq           = revFlights[i].Frequency;
-      //       cap            = findByKeyFilter(airplanes, [revFlights[i].Equipment],"Equipment").Capacity;
-      //       lf             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").LF*Math.pow(1+market.growth.demand,y);
-      //       pax            = lf*cap;
-      //       stagelen       = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Distance;
-      //       rpm            = pax*stagelen;
-
-      //       //Total Weekly Flight Operational Stats
-      //       outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
-      //       outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
-      //       outputOps["PAX"] = outputOps["PAX"]+pax*freq;
-      //       outputOps["Seats"] = outputOps["Seats"]+cap*freq;
-      //       outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
-
-      //     }
-
-      //   outputCost.Revenue = outputRev;
-      //   outputReport[y] = outputOps;
-      //   }
-        
-      //   return outputReport;
-
-      // },
-
+      
 
 
 
