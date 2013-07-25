@@ -88,7 +88,7 @@
                                 <div class="summary-table financial">
                                     <h3>Financial</h3>
                                     <!-- check out ng-grid maybe? -->
-                                    <div ng-repeat="financial in totalFinancials">
+                                    <div ng-repeat="financial in financialData">
                                         <div class="row-wrap" 
                                             ng-click="financialData.select($index)"
                                             ng-class="{active: $index == financialData.activeId() }">
@@ -96,6 +96,18 @@
                                                 <h4 class="number primary">
                                                     <span class="dollar" ng-show="financial.currency">$</span>
                                                     {{financial.val}}
+                                                </h4>
+                                        </div>
+                                    </div>
+                                    <h3>Performance</h3>
+                                    <div ng-repeat="metric in operationsData">
+                                        <div class="row-wrap" 
+                                            ng-click="financialData.select($index)"
+                                            ng-class="{active: $index == financialData.activeId() }">
+                                                <h4 class="title">{{metric.name}}:</h4>
+                                                <h4 class="number primary">
+                                                    <span class="dollar" ng-show="metric.currency">$</span>
+                                                    {{metric.val}}
                                                 </h4>
                                         </div>
                                     </div>

@@ -6,8 +6,9 @@ angular.module('appliedByDesignApp')
 
     // calculated data (watch these with return functions)
     var routeReport,
-        financialReport  = [],
-        operationsReport = [];
+        financialReport    = [],
+        performanceReport  = [],
+        operationsReport   = [];
 
     // Public API here
     return {
@@ -40,7 +41,7 @@ angular.module('appliedByDesignApp')
 
         // Instantiate report variables
         var weeks = 52;
-        var outputRev, outputCost, outputOps;
+        var totalRev, outputCost, outputOps;
         var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
         var outputReport = [];
         var years;
@@ -53,7 +54,7 @@ angular.module('appliedByDesignApp')
         }
 
         for(var y = 0; y<years; y++) {
-          outputRev = 0;
+          totalRev = 0;
           outputCost = {};
           outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
 
@@ -88,9 +89,11 @@ angular.module('appliedByDesignApp')
             }
 
             //Total Annual Flight Revenue
-            outputRev = outputRev + weeks*freq*pax*fare;
+            totalRev = totalRev + weeks*freq*pax*fare;
 
             //Total Annual Flight Costs
+            var totalCost = 0;
+
             for(var k in coeffs) {
               if(outputCost[k]===undefined) {
                 outputCost[k] = 0;
@@ -98,20 +101,106 @@ angular.module('appliedByDesignApp')
               if(k=="Fuel") {
                 outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
               }
+              else {
+                //BEN - CHECK THIS
+                //Generic equation strucutre for all other costs
+                outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
+              }
+              totalCost = totalCost + outputCost[k];
 
-              //Generic equation strucutre for all other costs
-              outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
             }
           }
 
-        outputCost.Revenue = outputRev;
+        outputCost.Revenue  = totalRev;
+        outputCost.Costs    = totalCost;
+        outputCost.Profit   = totalRev - totalCost;
+
         outputReport[y] = outputCost;
         }
         
         financialReport = outputReport;
-        return coeffs;
+
+        return outputReport;
 
       },
+
+      buildOperationsReport: function(forecast, selRoutes) {
+        
+        // retrieve data dependencies
+        var flights      = fleetModel.getData('flights');
+        var airplanes    = fleetModel.getData('airplanes');
+        var market       = fleetModel.getData('market');
+        var services     = fleetModel.getData('services');
+        var costCurves   = fleetModel.getData('costCurves');
+        var equipment    = navService.getEquipment();
+        
+        // Filter flights by ODs if a filter is provided
+        if (typeof(selRoutes) != 'undefined') {
+           var flightsRoutes = byRouteFilter(flights, selRoutes);
+        } 
+        else {
+          var flightsRoutes = flights;
+        }
+
+        var outputReport = [];
+        
+        // return filtered set of routes as subset of fleetModel
+        var filterBy = activeEquipmentFilter(equipment);
+        
+        // only generate route report if an aircraft type is selected
+        if (filterBy.length) { 
+          var revFlights   = byKeyFilter(flightsRoutes, filterBy,"Equipment");
+
+
+          // Instantiate report variables
+          var weeks = 52;
+          var outputRev, outputCost, outputOps;
+          var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
+          var years;
+
+          if(forecast) {
+            years = market.forecast.years;
+          }
+          else {
+            years = 1;
+          }
+
+          for(var y = 0; y<years; y++) {
+            outputRev = 0;
+            outputCost = {};
+            outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
+
+            //Get Routes List
+            var activeRoutes = this.buildRoutes();
+
+            //Calculate frequency, capacity, load factor, fare and total revenue for each flight
+            for(var i = 0;i<revFlights.length;i++) {
+              //Calculate Financial and Performance Perameters
+              freq           = revFlights[i].Frequency;
+              cap            = findByKeyFilter(airplanes, [revFlights[i].Equipment],"Equipment").Capacity;
+              lf             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").LF*Math.pow(1+market.growth.demand,y);
+              pax            = lf*cap;
+              stagelen       = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Distance;
+              rpm            = pax*stagelen;
+
+              //Total Weekly Flight Operational Stats
+              outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
+              outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
+              outputOps["PAX"] = outputOps["PAX"]+pax*freq;
+              outputOps["Seats"] = outputOps["Seats"]+cap*freq;
+              outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
+
+            }
+
+          outputReport[y] = outputOps;
+          }
+        }
+
+        operationsReport = outputReport;
+        return outputReport;
+
+      },
+
       generateEquipment: function() {
 
         // retrieve data dependencies
