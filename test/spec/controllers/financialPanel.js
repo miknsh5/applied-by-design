@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: InitializeDataCtrl', function () {
+describe('Controller: FinancialPanelCtrl', function () {
 
   // load the controller's module
   beforeEach(module('appliedByDesignApp'));
 
-  var InitializeDataCtrl,
+  var FinancialPanelCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    InitializeDataCtrl = $controller('InitializeDataCtrl', {
+    FinancialPanelCtrl = $controller('FinancialPanelCtrl', {
       $scope: scope
     });
   }));

@@ -1,0 +1,7 @@
+{
+  "name": "applied-by-design",
+  "version": "0.0.0",
+  "dependencies": {
+    "underscore": "~1.5.1"
+  }
+}
