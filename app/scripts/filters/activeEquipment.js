@@ -10,10 +10,11 @@ angular.module('appliedByDesignApp')
 
       // map long model type names to shortnames
       var dict = {
-        '737-400': '734',
-        '737-700': '73Q',
-        '737-800': '738',
-        '737-900': '739'
+        '737-400':       '734',
+        '737-400 Combi': '73Q',
+        '737-800':       '738',
+        '737-700':       '73G',
+        '737-900':       '739'
       };
 
       angular.forEach(input, function(item, key){

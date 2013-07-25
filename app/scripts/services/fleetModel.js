@@ -54,19 +54,6 @@ angular.module('appliedByDesignApp')
               console.log('Resolve Error: flights data not loaded!');
             });
       }(),
-      generateEquipment: function() {
-
-        //Get all of the unique equipment codes from flights
-        var equipCodes = _.uniq(_.pluck(flights,'Equipment'));
-        
-        //Assign equipment names to 'equipment'
-        for(var i = 0;i<equipCodes.length;i++)
-        {
-          equipment[i] ={'name': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Name,
-                         'active': true};
-        }
-
-      },
       getCostCurves: function() {
         $http({method: 'GET', url: 'images/costcurves.json'})
           .success(function(data){
@@ -109,6 +96,9 @@ angular.module('appliedByDesignApp')
             });
 
       }(),
+      getEquipment: function(){
+        return equipment;
+      },
 
       // Get Financial Report for some subset of the total fleet/routes
       getReport: function(forecast, selRoutes) {
@@ -205,11 +195,22 @@ angular.module('appliedByDesignApp')
         return outputReport;
 
       },
+
+      generateEquipment: function() {
+
+        //Get all of the unique equipment codes from flights
+        var equipCodes = _.uniq(_.pluck(flights,'Equipment'));
+        
+        //Assign equipment names to 'equipment'
+        for(var i = 0;i<equipCodes.length;i++)
+        {
+          equipment[i] ={'name': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Name,
+                         'active': true};
+        }
+
+      },
       generateRoutes: function(){
         buildRoutes();
-      },
-      getEquipment: function(){
-        return equipment;
       },
       clearReport: function(){
         routeReport = [];
@@ -227,19 +228,19 @@ angular.module('appliedByDesignApp')
       // {
       //   return defineAirports()
       // },
-      getODs: function() 
-      {
+      getODs: function() {
         return defineODs()
       },
-      toggleEquipment: function(id){
+      toggleEquipment: function(id) {
         equipment[id].active = !equipment[id].active;
+
+        // update the routeReport with new airplane filters
+        this.generateRoutes();
       },
       isEquipActive: function(id, test) {
         return equipment[id].active;
       }
-      // routeData: function(){
-      //   return routeData;
-      // }
+
     };
 
     function uniqueSet(fullSet){

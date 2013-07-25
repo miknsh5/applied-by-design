@@ -11,7 +11,6 @@ angular.module('appliedByDesignApp')
     $scope.chartWidth = 175;
     $scope.chartHeight = 175;
 
-    $scope.activeFinanceData = [];
 
     // instantiate service object in local controller scope (makes service accessible directly from view)
     $scope.fleetModel = fleetModel;
