@@ -19,7 +19,7 @@ angular.module('appliedByDesignApp')
     $scope.financialData = financialData;
     $scope.navService = navService;
 
-
+    $scope.fleetModel.generateEquipment();
     $scope.fleetModel.generateRoutes();
 
     // recalculate the dashboard panel position based on hide/show state

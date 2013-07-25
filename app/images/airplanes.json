@@ -1,6 +1,7 @@
 [
     {
         "Equipment": "73Q",
+        "Name":"737-400 Combi",
         "Capacity": 72,
         "Cabins": 1,
         "Size": "Small",
@@ -11,6 +12,7 @@
     },
     {
         "Equipment": "73G",
+        "Name":"737-700",
         "Capacity": 124,
         "Cabins": 2,
         "Size": "Large",
@@ -21,6 +23,7 @@
     },
     {
         "Equipment": "734",
+        "Name":"737-400",
         "Capacity": 144,
         "Cabins": 2,
         "Size": "Small",
@@ -31,6 +34,7 @@
     },
     {
         "Equipment": "738",
+        "Name":"737-800",
         "Capacity": 157,
         "Cabins": 2,
         "Size": "Large",
@@ -41,6 +45,7 @@
     },
     {
         "Equipment": "739",
+        "Name":"737-900",
         "Capacity": 172,
         "Cabins": 2,
         "Size": "Large",

@@ -16,13 +16,7 @@ angular.module('appliedByDesignApp')
     var routeReport
 
     // should be derived from flights (eventually)
-    var equipment = [
-        {'name': '737-900',       'active': true},
-        {'name': '737-800',       'active': true},
-        {'name': '737-400',       'active': true},
-        {'name': '737-400 Combi', 'active': true},
-        {'name': '737-700',       'active': true}
-      ];
+    var equipment = [];
 
     // Public API here
     return {
@@ -60,6 +54,19 @@ angular.module('appliedByDesignApp')
               console.log('Resolve Error: flights data not loaded!');
             });
       }(),
+      generateEquipment: function() {
+
+        //Get all of the unique equipment codes from flights
+        var equipCodes = _.uniq(_.pluck(flights,'Equipment'));
+        
+        //Assign equipment names to 'equipment'
+        for(var i = 0;i<equipCodes.length;i++)
+        {
+          equipment[i] ={'name': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Name,
+                         'active': true};
+        }
+
+      },
       getCostCurves: function() {
         $http({method: 'GET', url: 'images/costcurves.json'})
           .success(function(data){
@@ -191,17 +198,18 @@ angular.module('appliedByDesignApp')
             }
           }
 
-        outputReport[y] = {"Revenue":outputRev,"Costs":outputCost,"Ops":outputOps};
+        outputCost.Revenue = outputRev;
+        outputReport[y] = {"Financial":outputCost,"Operational":outputOps};
         }
         
         return outputReport;
 
       },
-      getEquipment: function() {
-        return equipment;
-      },
       generateRoutes: function(){
         buildRoutes();
+      },
+      getEquipment: function(){
+        return equipment;
       },
       clearReport: function(){
         routeReport = [];
@@ -263,8 +271,12 @@ angular.module('appliedByDesignApp')
       if (typeof(cityPairs) == 'undefined') { console.log('cityPairs not defined'); return};
       if (typeof(airports) == 'undefined') { console.log('Airports not defined'); return};
 
-      for(var i = 0;i<flights.length;i++) {
-        allRoutes.push(flights[i].NonDirectional);
+      // returns filtered set of routes as subset of fleetModel
+      var filterBy     = activeEquipmentFilter(equipment);
+      var revFlights   = byKeyFilter(flights, filterBy,"Equipment");
+
+      for(var i = 0;i<revFlights.length;i++) {
+        allRoutes.push(revFlights[i].NonDirectional);
       }
 
       var uniqueRoutes = uniqueSet(allRoutes);
@@ -283,6 +295,8 @@ angular.module('appliedByDesignApp')
       }
       
       routeReport = report;
+      console.log(report.length);
+      return report;
     }
 
 
