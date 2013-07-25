@@ -64,16 +64,16 @@ angular.module('appliedByDesignApp')
           for(var i = 0;i<revFlights.length;i++) {
             //Calculate Financial and Performance Perameters
             freq           = revFlights[i].Frequency;
-            cap            = findByKeyFilter(airplanes, [revFlights[i].Equipment],"Equipment").Capacity;
-            lf             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").LF*Math.pow(1+market.growth.demand,y);
+            cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
+            lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
             pax            = lf*cap;
-            fare           = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Fare*Math.pow(1+market.growth.fare,y);
-            bt             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Duration;
-            stagelen       = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Distance;
-            coeffs         = jQuery.extend(true, {}, findSizeFilter(costCurves, [findFleetTypeFilter(airplanes, [revFlights[i].Equipment]).Size]).Coefficients);
+            fare           = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Fare*Math.pow(1+market.growth.fare,y);
+            bt             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
+            stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
+            coeffs         = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
 
             rpm            = pax*stagelen;
-            servicesInUse  = findFleetTypeFilter(airplanes, [revFlights[i].Equipment]).Services;
+            servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
             fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
 
             //Apply Services
@@ -109,7 +109,7 @@ angular.module('appliedByDesignApp')
         }
         
         financialReport = outputReport;
-        // return outputReport;
+        return coeffs;
 
       },
       generateEquipment: function() {
@@ -141,6 +141,9 @@ angular.module('appliedByDesignApp')
       greatCircle: function(origindestination) {
         return gcDistance(origindestination);
       },
+      generateAirports: function() {
+        return getUniqueAirports();
+      },
       buildRoutes: function(){
         // retrieve data dependencies
         var cityPairs  = fleetModel.getData('cityPairs');
@@ -168,7 +171,7 @@ angular.module('appliedByDesignApp')
             allRoutes.push(revFlights[i].NonDirectional);
           }
 
-          var uniqueRoutes = uniqueSet(allRoutes);
+          var uniqueRoutes = _.uniq(allRoutes);
           
           for(var k=0;k<uniqueRoutes.length;k++) {
 
@@ -191,33 +194,11 @@ angular.module('appliedByDesignApp')
 
     };
 
-
-
-
-
-    function uniqueSet(fullSet){
-      var uniqueSet = [fullSet[0]];
-      var isPresent;
-
-      for (var i = 1; i < fullSet.length; i++){
-        if(!isUnique(uniqueSet,fullSet[i]))
-        {
-          uniqueSet.push(fullSet[i]);
-        }
-      }
-      return uniqueSet;
-    }
-
-    function isUnique(a,val){      
-      for (var u = 0; u < a.length; u++) {
-        if (a[u] === val) {
-          return true;
-        }
-      }
-      return false;
-    }
-
+    //CURRENTLY NOT IN USE
     function getUniqueAirports(){
+
+      var flights = fleetModel.getData('flights');
+      var airports = fleetModel.getData('airports');
 
       //Define Unique Routes
       var allRoutes = [];
@@ -225,7 +206,8 @@ angular.module('appliedByDesignApp')
       {
         allRoutes.push(flights[i].NonDirectional);
       }
-      var uniqueRoutes = uniqueSet(allRoutes);
+
+      var uniqueRoutes = _.uniq(allRoutes);
 
       //Define Unique Airports
       var allAirports = [];
@@ -235,7 +217,7 @@ angular.module('appliedByDesignApp')
         allAirports.push(uniqueRoutes[i].slice(3,6));
       }
 
-      var uniqueAirports = uniqueSet(allAirports);
+      var uniqueAirports = _.uniq(allAirports);
 
       //Gather Information for Each Unique Airport
       var airportReport = [];      
