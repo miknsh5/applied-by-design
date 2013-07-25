@@ -217,6 +217,9 @@ angular.module('appliedByDesignApp')
       getRouteReport: function() {
         return routeReport;
       },
+      greatCircle: function(origindestination) {
+        return gcDistance(origindestination);
+      },
       getData: function(name) {
         // if the variable exists, return the object
         // this is crazy dangerous.  Probably shouldn't do this...
@@ -289,13 +292,13 @@ angular.module('appliedByDesignApp')
                           "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
                           "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
                           "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
-                          "Distance": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Distance,
+                          // "Distance": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Distance,
+                          "Distance":gcDistance(uniqueRoutes[k]),
                           "Duration": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Duration,
                           "LF": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").LF};
       }
       
       routeReport = report;
-      console.log(report.length);
       return report;
     }
 
@@ -329,5 +332,29 @@ angular.module('appliedByDesignApp')
                             "Longitude": findByKeyFilter(airports, [uniqueAirports[k]],"Code").Longitude}
       }
       return airportReport;
+    }
+    function gcDistance(origindestination){
+      var origin = origindestination.slice(0,3);
+      var destin = origindestination.slice(3,6);
+
+      var oLat = _.findWhere(airports,{Code:origin}).Latitude;
+      var oLon = _.findWhere(airports,{Code:origin}).Longitude;
+      var dLat = _.findWhere(airports,{Code:destin}).Latitude;
+      var dLon = _.findWhere(airports,{Code:destin}).Longitude;
+
+      var R = 3963.1676; // miles
+      var lat1 = oLat* Math.PI / 180;
+      var lon1 = oLon* Math.PI / 180;
+      var lat2 = dLat* Math.PI / 180;
+      var lon2 = dLon* Math.PI / 180;
+
+      var theta = lon2 - lon1;
+      var dist = Math.acos(Math.sin(lat1)*Math.sin(lat2) + Math.cos(lat1)*Math.cos(lat2)*Math.cos(theta));
+      if (dist < 0)
+        {
+          dist = dist + Math.PI;
+        }
+      dist = dist*R;
+      return dist;
     }
   });
