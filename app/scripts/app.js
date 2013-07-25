@@ -39,8 +39,7 @@ angular.module('appliedByDesignApp', [])
               'costcurves',
               'market',
               'services',
-              'airports',
-              'equipment'
+              'airports'
               ];
 
             $timeout(function(){
