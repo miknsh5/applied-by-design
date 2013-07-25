@@ -283,15 +283,17 @@ angular.module('appliedByDesignApp')
       var report = [];
       
       for(var k=0;k<uniqueRoutes.length;k++) {
-        report[k] = {"NonDirectional": uniqueRoutes[k],
-                          "Fare": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Fare,
-                          "Olat": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Latitude,
-                          "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
-                          "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
-                          "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
-                          "Distance": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Distance,
-                          "Duration": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Duration,
-                          "LF": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").LF};
+        report[k] = {
+          "NonDirectional": uniqueRoutes[k],
+          "Fare": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Fare,
+          "Olat": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Latitude,
+          "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
+          "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
+          "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
+          "Distance": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Distance,
+          "Duration": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Duration,
+          "LF": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").LF
+        };
       }
       
       routeReport = report;

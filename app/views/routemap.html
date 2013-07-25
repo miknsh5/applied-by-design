@@ -13,7 +13,7 @@
 
                 <!-- loop through the different model types -->
                 <div ng-repeat="model in fleetModel.getEquipment()" ng-show="showEquipFilter">
-                    <div class="fleet-model-btn" 
+                    <div class="fleet-model-btn toggle" 
                         ng-click="fleetModel.toggleEquipment($index)"
                         ng-class="{active: fleetModel.isEquipActive($index)}">
                         <span class="model-name">{{model.name}}</span>
@@ -64,8 +64,9 @@
                         </div>
                     </div>
 
-                    <!-- <section class="dash-financial" ng-controller="FinancialCtrl"> -->
-                    <section class="dash financial" ng-show="navService.tabState(0)">
+                    <section class="dash financial" 
+                        ng-controller="FinancialPanelCtrl"
+                        ng-show="navService.tabState(0)">
 
                         <!-- small filter panel with year buttons -->
                         <div class="panel small">
@@ -121,8 +122,9 @@
                         </div>
                     </section>
 
-
-                    <section class="dash operational" ng-show="navService.tabState(1)">
+                    <section class="dash operational"
+                        ng-controller="OperationsPanelCtrl"
+                        ng-show="navService.tabState(1)">
 
                         <!-- small filter panel with day buttons -->
                         <div class="panel small">
@@ -171,8 +173,28 @@
                         </div>
                     </section>
 
-                    <section class="dash fleet" ng-show="navService.tabState(2)">
-
+                    <section class="dash fleet" 
+                        ng-controller="FleetPanelCtrl"
+                        ng-show="navService.tabState(2)">
+                        
+                        <!-- small filter panel with aircraft buttons -->
+                        <div class="panel small">
+                            <div class="filter-plane">
+                                <h4>Fleet Models</h4>
+                                <div class="plane-buttons">
+                                    <!-- loop through the different model types -->
+                                    <div ng-repeat="model in fleetModel.getEquipment()">
+                                        <div class="fleet-model-btn select" 
+                                            ng-click="fleetModel.selectEquipment($index)"
+                                            ng-class="{active: fleetModel.isEquipActive($index)}">
+                                            <span class="model-name">{{model.name}}</span>
+                                            <i class="ikon-airplane ikon"> </i>
+                                            <i class="ikon-chevron-right"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
 
                 </div>

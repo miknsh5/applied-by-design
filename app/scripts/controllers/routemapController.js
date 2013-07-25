@@ -15,8 +15,6 @@ angular.module('appliedByDesignApp')
 
     // instantiate service object in local controller scope (makes service accessible directly from view)
     $scope.fleetModel = fleetModel;
-    $scope.frequencyService = frequencyService;
-    $scope.financialData = financialData;
     $scope.navService = navService;
 
     $scope.fleetModel.generateEquipment();
