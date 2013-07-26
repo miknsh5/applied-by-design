@@ -3,7 +3,7 @@
 /*global topojson:false */
 
 angular.module('appliedByDesignApp')
-  .directive('worldMap', function (reportBuilder, navService) {
+  .directive('worldMap', function (reportBuilder) {
     return {
       restrict: 'E',
       scope: {

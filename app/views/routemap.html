@@ -86,43 +86,30 @@
                         <div class="panel main">
                             <div class="panel-inner">
                                 <div class="summary-table financial">
-                                    <h3>Operations</h3>
+                                    <h3 class="heading">Operations</h3>
+                                    <h3 class="heading small">Total</h3>
+                                    <h3 class="heading small last">Selected &nbsp
+                                        <i class="ikon-airplane ikon"> </i>
+                                    </h3>
                                     <!-- check out ng-grid maybe? -->
                                     <div ng-repeat="financial in financialData">
                                         <div class="row-wrap" 
-                                            ng-click="financialData.select($index)"
-                                            ng-class="{active: $index == financialData.activeId() }">
+                                            ng-click="selectReport($index)"
+                                            ng-class="{active: $index == activeFinancialReport}">
 
                                             <h4 class="title">{{financial.name}}:</h4>
                                             <h4 class="number primary">
                                                 <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financialData_total[$index].val | number:0 }}
+                                                {{financialData_total[$index].val | number:financial.decimals }}
                                             </h4>
                                             <h4 class="number selected">
                                                 <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financial.val | number:0 }}
+                                                {{financial.val | number:financial.decimals }}
                                             </h4>
 
                                         </div>
                                     </div>
-                                    <!-- <h3>Performance</h3> -->
-                                    <div ng-repeat="metric in operationsData">
-                                        <div class="row-wrap" 
-                                            ng-click="financialData.select($index)"
-                                            ng-class="{active: $index == financialData.activeId() }">
 
-                                            <h4 class="title">{{metric.name}}:</h4>
-                                            <h4 class="number primary">
-                                                <span class="dollar" ng-show="metric.currency">$</span>
-                                                {{operationsData_total[$index].val | number:metric.decimals }}
-                                            </h4>
-                                            <h4 class="number selected">
-                                                <span class="dollar" ng-show="metric.currency">$</span>
-                                                {{metric.val | number:metric.decimals }}
-                                            </h4>
-
-                                        </div>
-                                    </div>
 
                                 </div>
                             </div>
@@ -132,10 +119,10 @@
                         <div class="panel chart">
                             <div class="panel-inner">
                                 <div class="chart-title">
-                                    <h4>{{financialData.getActive().name}} 
+                                    <h4>{{selectedReport.name}}: 
                                         <span class="primary">
-                                            <span class="dollar" ng-show="activeChart.currency">$</span>
-                                            {{financialData.getActive().val}}
+                                            <span class="dollar" ng-show="selectedReport.currency">$</span>
+                                            {{selectedReport.val | number:0}}
                                         </span>
                                     </h4>
                                 </div>
