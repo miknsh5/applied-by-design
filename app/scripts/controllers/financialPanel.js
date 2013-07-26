@@ -18,8 +18,18 @@ angular.module('appliedByDesignApp')
 
 
     $scope.$watch(function(){ return reportBuilder.getReport('financialReport')}, function(newData){
+        
+        // when no aircraft selected and newData is empty, set all values = 0
+        if (newData.length == 0) {
+            newData.push({
+                'Revenue':  0,
+                'Costs':    0,
+                'Profit':   0
+                });
+        }
+
         $scope.financialData = [
-            {'name': 'Revenue', 'val': newData[0].Revenue, 'currency': true},
+            {'name': 'Revenue',           'val': newData[0].Revenue, 'currency': true},
             {'name': 'Operating Costs',   'val': newData[0].Costs,   'currency': true},
             {'name': 'Operating Profit',  'val': newData[0].Profit,  'currency': true}
         ];
@@ -27,6 +37,18 @@ angular.module('appliedByDesignApp')
     }, true);
 
     $scope.$watch(function(){ return reportBuilder.getReport('operationsReport')}, function(newData){
+        
+        // when no aircraft selected and newData is empty, set all values = 0
+        if (newData.length == 0) {
+            newData.push({
+                'RPM':    0,
+                'ASK':    0,
+                'PAX':    0,
+                'Seats':  0
+                });
+        }
+        
+        
         $scope.operationsData = [
             {'name': 'RPM',   'val': newData[0].RPM,   'currency': false, 'decimals':0},
             {'name': 'ASK',   'val': newData[0].ASK,   'currency': false, 'decimals':0},
