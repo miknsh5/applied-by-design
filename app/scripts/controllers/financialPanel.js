@@ -3,8 +3,8 @@
 angular.module('appliedByDesignApp')
   .controller('FinancialPanelCtrl', function ($scope, reportBuilder, navService) {
     
-    reportBuilder.buildFinancialReport();
-    reportBuilder.buildOperationsReport();
+    reportBuilder.buildFinancialReport(true, false);
+    reportBuilder.buildOperationsReport(true, false);
 
     // store reports for total of all operations for comparison (orange column on financial tab)
     // instantiate once at initial page load
