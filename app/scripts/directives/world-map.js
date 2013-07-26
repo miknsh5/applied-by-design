@@ -131,6 +131,7 @@ angular.module('appliedByDesignApp')
         }, true); //setting 'true' tells angular to watch for exact data changes (i.e. nested data can trigger event)
 
         function reset(){
+            activePath = null;
             network.selectAll('.route path')
               .style('opacity', 1)
               .attr('stroke', blue)
@@ -163,7 +164,13 @@ angular.module('appliedByDesignApp')
             if (type == 'over' || i == activePath) {
               d3.select(this)
               .attr('stroke', orange)
-              .style('opacity', 1)
+              .style('opacity', 1.0)
+            } else if (activePath == null) {
+              //no path selected, don't fade on mouseout
+              d3.select(this)
+              .attr('stroke', color)
+              .style('opacity', 1.0);
+
             } else {
               d3.select(this)
               .attr('stroke', color)
