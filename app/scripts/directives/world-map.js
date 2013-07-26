@@ -87,9 +87,7 @@ angular.module('appliedByDesignApp')
         // whenever the vound data structure changes, update the route map
         // this will generally mean that the routes have been down selected with 
         // the fleet model filters.
-        // scope.$watch('fleetRouteData', function(newData){
-        
-        // scope.$watch(function() { return 1 }, function(newData){
+                
         scope.$watch(function() { 
             // watch for any changes to the routeReports object
             return reportBuilder.getReport('routeReport')

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('FinancialPanelCtrl', function ($scope, reportBuilder, navService, fleetModel) {
+  .controller('FinancialPanelCtrl', function ($scope, reportBuilder, navService) {
     
     reportBuilder.buildFinancialReport();
     reportBuilder.buildOperationsReport();
@@ -9,23 +9,31 @@ angular.module('appliedByDesignApp')
     $scope.financialData  = [];
     $scope.operationsData = [];
 
+
+    // watch for any changes to the routeReports object
+    $scope.$watch(function() { return reportBuilder.getReport('routeReport')}, function(newData){
+        reportBuilder.buildFinancialReport();
+        reportBuilder.buildOperationsReport();
+    }, true);
+
+
     $scope.$watch(function(){ return reportBuilder.getReport('financialReport')}, function(newData){
         $scope.financialData = [
             {'name': 'Revenue', 'val': newData[0].Revenue, 'currency': true},
-            {'name': 'Costs',   'val': newData[0].Costs,   'currency': true},
-            {'name': 'Profit',  'val': newData[0].Profit,  'currency': true}
+            {'name': 'Operating Costs',   'val': newData[0].Costs,   'currency': true},
+            {'name': 'Operating Profit',  'val': newData[0].Profit,  'currency': true}
         ];
 
-    }, true)
+    }, true);
 
     $scope.$watch(function(){ return reportBuilder.getReport('operationsReport')}, function(newData){
         $scope.operationsData = [
-            {'name': 'RPM',   'val': newData[0].RPM,   'currency': false},
-            {'name': 'ASK',   'val': newData[0].ASK,   'currency': false},
-            {'name': 'PAX',   'val': newData[0].PAX,   'currency': false},
-            {'name': 'Seats', 'val': newData[0].Seats, 'currency': false}
+            {'name': 'RPM',   'val': newData[0].RPM,   'currency': false, 'decimals':0},
+            {'name': 'ASK',   'val': newData[0].ASK,   'currency': false, 'decimals':0},
+            {'name': 'PAX',   'val': newData[0].PAX,   'currency': false, 'decimals':0},
+            {'name': 'Seats', 'val': newData[0].Seats, 'currency': false, 'decimals':0}
         ];
 
-    }, true)
+    }, true);
 
   });

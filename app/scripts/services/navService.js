@@ -10,8 +10,11 @@ angular.module('appliedByDesignApp')
       {'name': 'flt', 'active': false}
     ];
 
+    // initialized from reportBuilder service on intial data load
+    // button status managed here
     var equipment = [];
 
+    
     // Public API here
     return {
       selectTab: function(id){
@@ -31,9 +34,6 @@ angular.module('appliedByDesignApp')
       },
       toggleEquipment: function(id) {
         equipment[id].active = !equipment[id].active;
-
-        // update the routeReport with new airplane filters
-        // this.generateRoutes();
       },
       isEquipActive: function(id, test) {
         return equipment[id].active;

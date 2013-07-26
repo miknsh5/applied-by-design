@@ -4,7 +4,7 @@ angular.module('appliedByDesignApp')
   .controller('RoutemapCtrl', function ($scope, reportBuilder, financialData, fleetModel, navService, frequencyService) {
 
     // set the dimensions of main SVG canvas
-    $scope.mapWidth = 1200;
+    $scope.mapWidth = 1800;
     $scope.mapHeight = 1200;
 
     // set the dimensions of chart SVG

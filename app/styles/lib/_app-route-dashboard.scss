@@ -234,7 +234,7 @@ $filter-bar-height: 40px;
   
   h4.title {
     display: inline;
-    width: 200px;
+    width: 150px;
     float: left;
     clear: left;
     margin-left: 10px;
@@ -242,9 +242,10 @@ $filter-bar-height: 40px;
 
   h4.number {
     display: inline;
-    width: 200px;
+    width: 150px;
     float: left;
     clear: right;
+    text-align: right;
   }
 
   .row-wrap {

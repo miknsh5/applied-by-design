@@ -86,7 +86,7 @@
                         <div class="panel main">
                             <div class="panel-inner">
                                 <div class="summary-table financial">
-                                    <h3>Financial</h3>
+                                    <h3>Financial & Operational</h3>
                                     <!-- check out ng-grid maybe? -->
                                     <div ng-repeat="financial in financialData">
                                         <div class="row-wrap" 
@@ -95,11 +95,11 @@
                                                 <h4 class="title">{{financial.name}}:</h4>
                                                 <h4 class="number primary">
                                                     <span class="dollar" ng-show="financial.currency">$</span>
-                                                    {{financial.val}}
+                                                    {{financial.val | number:0 }}
                                                 </h4>
                                         </div>
                                     </div>
-                                    <h3>Performance</h3>
+                                    <!-- <h3>Performance</h3> -->
                                     <div ng-repeat="metric in operationsData">
                                         <div class="row-wrap" 
                                             ng-click="financialData.select($index)"
@@ -107,7 +107,7 @@
                                                 <h4 class="title">{{metric.name}}:</h4>
                                                 <h4 class="number primary">
                                                     <span class="dollar" ng-show="metric.currency">$</span>
-                                                    {{metric.val}}
+                                                    {{metric.val | number:metric.decimals }}
                                                 </h4>
                                         </div>
                                     </div>
