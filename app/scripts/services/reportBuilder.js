@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .factory('reportBuilder', function (fleetModel, navService, activeEquipmentFilter, byKeyFilter, findByKeyFilter, findFleetTypeFilter, findSizeFilter) {
+  .factory('reportBuilder', function (fleetModel, navService) {
     // Service logic
 
     // calculated data (watch these with return functions)
@@ -28,15 +28,16 @@ angular.module('appliedByDesignApp')
 
         // Filter flights by ODs if a filter is provided
         if (typeof(selRoutes) != 'undefined') {
-          var flightsRoutes = byRouteFilter(flights, selRoutes);
+          var flightsRoutes = this.findArray(flights, selRoutes,"OD");
+
         } 
         else {
           var flightsRoutes = flights;
         }
 
         // returns filtered set of routes as subset of fleetModel
-        var filterBy     = activeEquipmentFilter(equipment);
-        var revFlights   = byKeyFilter(flightsRoutes, filterBy,"Equipment");
+        var filterBy     = _.pluck(_.where(equipment,{active:true}),'code');
+        var revFlights   = this.findArray(flightsRoutes, filterBy,"Equipment");
 
 
         // Instantiate report variables
@@ -102,7 +103,6 @@ angular.module('appliedByDesignApp')
                 outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
               }
               else {
-                //BEN - CHECK THIS
                 //Generic equation strucutre for all other costs
                 outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
               }
@@ -136,7 +136,7 @@ angular.module('appliedByDesignApp')
         
         // Filter flights by ODs if a filter is provided
         if (typeof(selRoutes) != 'undefined') {
-           var flightsRoutes = byRouteFilter(flights, selRoutes);
+           var flightsRoutes = this.findArray(flights, selRoutes,"OD");
         } 
         else {
           var flightsRoutes = flights;
@@ -145,11 +145,11 @@ angular.module('appliedByDesignApp')
         var outputReport = [];
         
         // return filtered set of routes as subset of fleetModel
-        var filterBy = activeEquipmentFilter(equipment);
+        var filterBy = _.pluck(_.where(equipment,{active:true}),'code');
         
         // only generate route report if an aircraft type is selected
         if (filterBy.length) { 
-          var revFlights   = byKeyFilter(flightsRoutes, filterBy,"Equipment");
+          var revFlights   = this.findArray(flightsRoutes, filterBy,"Equipment");
 
 
           // Instantiate report variables
@@ -177,10 +177,10 @@ angular.module('appliedByDesignApp')
             for(var i = 0;i<revFlights.length;i++) {
               //Calculate Financial and Performance Perameters
               freq           = revFlights[i].Frequency;
-              cap            = findByKeyFilter(airplanes, [revFlights[i].Equipment],"Equipment").Capacity;
-              lf             = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").LF*Math.pow(1+market.growth.demand,y);
+              cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
+              lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
               pax            = lf*cap;
-              stagelen       = findByKeyFilter(activeRoutes, [revFlights[i].NonDirectional],"NonDirectional").Distance;
+              stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
               rpm            = pax*stagelen;
 
               //Total Weekly Flight Operational Stats
@@ -216,6 +216,7 @@ angular.module('appliedByDesignApp')
         {
           equipment[i] = {
             'name': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Name,
+            'code':equipCodes[i],
             'active': true
            };
         }
@@ -223,6 +224,27 @@ angular.module('appliedByDesignApp')
         //set initial equipment object in navService
         navService.initializeEquipment(equipment);
 
+      },
+      findArray: function(inputArray,searchCrit,key){
+
+        var critReturn = [];
+        for(var crit in searchCrit)
+        {
+          critReturn = eval('_.where(inputArray,{'+key+':"'+searchCrit[crit]+'"})');
+
+          if(crit==0)
+          {
+            var outputArray = critReturn;
+          }
+          else
+          {
+            for(var j in critReturn)
+            {
+              outputArray.push(critReturn[j]);
+            }
+          }
+        }
+        return outputArray;
       },
       clearReport: function(){
         routeReport = [];
@@ -250,11 +272,11 @@ angular.module('appliedByDesignApp')
         
 
         // return filtered set of routes as subset of fleetModel
-        var filterBy = activeEquipmentFilter(equipment);
+        var filterBy = _.pluck(_.where(equipment,{active:true}),'code');
       
         // only generate route report if an aircraft type is selected
         if (filterBy.length) { 
-          var revFlights   = byKeyFilter(flights, filterBy,"Equipment");
+          var revFlights   = this.findArray(flights, filterBy,"Equipment");
 
           for(var i = 0;i<revFlights.length;i++) {
             allRoutes.push(revFlights[i].NonDirectional);
@@ -266,14 +288,14 @@ angular.module('appliedByDesignApp')
 
             report[k] = {
               "NonDirectional": uniqueRoutes[k],
-              "Fare": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Fare,
-              "Olat": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Latitude,
-              "Olon": findByKeyFilter(airports, [uniqueRoutes[k].slice(0,3)],"Code").Longitude,
-              "Dlat": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Latitude,
-              "Dlon": findByKeyFilter(airports, [uniqueRoutes[k].slice(3,6)],"Code").Longitude,
+              "Fare": _.findWhere(cityPairs,{NonDirectional:uniqueRoutes[k]}).Fare,
+              "Olat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Latitude,
+              "Olon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Longitude,
+              "Dlat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Latitude,
+              "Dlon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Longitude,
               "Distance":gcDistance(uniqueRoutes[k]),
-              "Duration": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").Duration,
-              "LF": findByKeyFilter(cityPairs, [uniqueRoutes[k]],"NonDirectional").LF};
+              "Duration": _.findWhere(cityPairs, {NonDirectional:uniqueRoutes[k]}).Duration,
+              "LF": _.findWhere(cityPairs, {NonDirectional: uniqueRoutes[k]}).LF};
           }
         }
         
@@ -313,8 +335,8 @@ angular.module('appliedByDesignApp')
       for(var k=0;k<uniqueAirports.length;k++)
       {
         airportReport[k] = {"Code": uniqueAirports[k],
-                            "Latitide": findByKeyFilter(airports, [uniqueAirports[k]],"Code").Latitude,
-                            "Longitude": findByKeyFilter(airports, [uniqueAirports[k]],"Code").Longitude}
+                            "Latitide":  _.findWhere(airports, {Code: uniqueAirports[k]}).Latitude,
+                            "Longitude": _.findWhere(airports, {Code: uniqueAirports[k]}).Longitude}
       }
       return airportReport;
     }
