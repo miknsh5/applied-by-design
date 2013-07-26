@@ -92,11 +92,17 @@
                                         <div class="row-wrap" 
                                             ng-click="financialData.select($index)"
                                             ng-class="{active: $index == financialData.activeId() }">
-                                                <h4 class="title">{{financial.name}}:</h4>
-                                                <h4 class="number primary">
-                                                    <span class="dollar" ng-show="financial.currency">$</span>
-                                                    {{financial.val | number:0 }}
-                                                </h4>
+
+                                            <h4 class="title">{{financial.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="financial.currency">$</span>
+                                                {{financialData_total[$index].val | number:0 }}
+                                            </h4>
+                                            <h4 class="number selected">
+                                                <span class="dollar" ng-show="financial.currency">$</span>
+                                                {{financial.val | number:0 }}
+                                            </h4>
+
                                         </div>
                                     </div>
                                     <!-- <h3>Performance</h3> -->
@@ -104,11 +110,17 @@
                                         <div class="row-wrap" 
                                             ng-click="financialData.select($index)"
                                             ng-class="{active: $index == financialData.activeId() }">
-                                                <h4 class="title">{{metric.name}}:</h4>
-                                                <h4 class="number primary">
-                                                    <span class="dollar" ng-show="metric.currency">$</span>
-                                                    {{metric.val | number:metric.decimals }}
-                                                </h4>
+
+                                            <h4 class="title">{{metric.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="metric.currency">$</span>
+                                                {{operationsData_total[$index].val | number:metric.decimals }}
+                                            </h4>
+                                            <h4 class="number selected">
+                                                <span class="dollar" ng-show="metric.currency">$</span>
+                                                {{metric.val | number:metric.decimals }}
+                                            </h4>
+
                                         </div>
                                     </div>
 

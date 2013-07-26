@@ -9,6 +9,11 @@ angular.module('appliedByDesignApp')
     $scope.financialData  = [];
     $scope.operationsData = [];
 
+    // store reports for total of all operations for comparison (orange column on financial tab)
+    // instantiate once at initial page load
+    $scope.financialData_total  = formatFinancialData(reportBuilder.getReport('financialReport'));
+    $scope.operationsData_total = formatOperationsData(reportBuilder.getReport('operationsReport'));
+
 
     // watch for any changes to the routeReports object
     $scope.$watch(function() { return reportBuilder.getReport('routeReport')}, function(newData){
@@ -18,26 +23,18 @@ angular.module('appliedByDesignApp')
 
 
     $scope.$watch(function(){ return reportBuilder.getReport('financialReport')}, function(newData){
-        
-        // when no aircraft selected and newData is empty, set all values = 0
-        if (newData.length == 0) {
-            newData.push({
-                'Revenue':  0,
-                'Costs':    0,
-                'Profit':   0
-                });
-        }
-
-        $scope.financialData = [
-            {'name': 'Revenue',           'val': newData[0].Revenue, 'currency': true},
-            {'name': 'Operating Costs',   'val': newData[0].Costs,   'currency': true},
-            {'name': 'Operating Profit',  'val': newData[0].Profit,  'currency': true}
-        ];
-
+        $scope.financialData = formatFinancialData(newData)
     }, true);
 
     $scope.$watch(function(){ return reportBuilder.getReport('operationsReport')}, function(newData){
-        
+        $scope.operationsData = formatOperationsData(newData)
+    }, true);
+
+
+
+
+    function formatOperationsData(newData) {
+
         // when no aircraft selected and newData is empty, set all values = 0
         if (newData.length == 0) {
             newData.push({
@@ -47,15 +44,34 @@ angular.module('appliedByDesignApp')
                 'Seats':  0
                 });
         }
-        
-        
-        $scope.operationsData = [
+
+        var formattedData = [
             {'name': 'RPM',   'val': newData[0].RPM,   'currency': false, 'decimals':0},
             {'name': 'ASK',   'val': newData[0].ASK,   'currency': false, 'decimals':0},
             {'name': 'PAX',   'val': newData[0].PAX,   'currency': false, 'decimals':0},
             {'name': 'Seats', 'val': newData[0].Seats, 'currency': false, 'decimals':0}
         ];
 
-    }, true);
+        return formattedData;
+    }
 
+    function formatFinancialData(newData) {
+
+        // when no aircraft selected and newData is empty, set all values = 0
+        if (newData.length == 0) {
+            newData.push({
+                'Revenue':  0,
+                'Costs':    0,
+                'Profit':   0
+                });
+        }
+
+        var formattedData = [
+            {'name': 'Revenue',           'val': newData[0].Revenue, 'currency': true},
+            {'name': 'Operating Costs',   'val': newData[0].Costs,   'currency': true},
+            {'name': 'Operating Profit',  'val': newData[0].Profit,  'currency': true}
+        ];
+        
+        return formattedData;
+    }
   });
