@@ -10,7 +10,7 @@ angular.module('appliedByDesignApp')
         performanceReport  = [],
         operationsReport   = [];
 
-    var fleetReport
+    
 
     // Public API here
     return {
@@ -125,7 +125,7 @@ angular.module('appliedByDesignApp')
           }
         }
         
-        financialReport = outputReport;
+        financialReport = formatFinancialData(outputReport);
         return outputReport;
 
       },
@@ -202,7 +202,7 @@ angular.module('appliedByDesignApp')
           }
         }
 
-        operationsReport = outputReport;
+        operationsReport = formatOperationsData(outputReport);
         return outputReport;
 
       },
@@ -371,7 +371,47 @@ angular.module('appliedByDesignApp')
       return dist;
     }
 
+    function formatOperationsData(newData) {
 
+        // when no aircraft selected and newData is empty, set all values = 0
+        if (newData.length == 0) {
+            newData.push({
+                'RPM':    0,
+                'ASK':    0,
+                'PAX':    0,
+                'Seats':  0
+                });
+        }
+
+        var formattedData = [
+            {'name': 'RPM',   'val': newData[0].RPM,   'currency': false, 'decimals':0},
+            {'name': 'ASK',   'val': newData[0].ASK,   'currency': false, 'decimals':0},
+            {'name': 'PAX',   'val': newData[0].PAX,   'currency': false, 'decimals':0},
+            {'name': 'Seats', 'val': newData[0].Seats, 'currency': false, 'decimals':0}
+        ];
+
+        return formattedData;
+    }
+
+    function formatFinancialData(newData) {
+
+        // when no aircraft selected and newData is empty, set all values = 0
+        if (newData.length == 0) {
+            newData.push({
+                'Revenue':  0,
+                'Costs':    0,
+                'Profit':   0
+                });
+        }
+
+        var formattedData = [
+            {'name': 'Revenue',           'val': newData[0].Revenue, 'currency': true},
+            {'name': 'Operating Costs',   'val': newData[0].Costs,   'currency': true},
+            {'name': 'Operating Profit',  'val': newData[0].Profit,  'currency': true}
+        ];
+        
+        return formattedData;
+    }
 
 
 
