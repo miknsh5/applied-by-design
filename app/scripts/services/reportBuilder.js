@@ -47,6 +47,22 @@ angular.module('appliedByDesignApp')
         var outputReport = [];
         var airplaneReport = [];
         var years, APCount;
+        var TestObjMat = [];
+        var TestObj = {};
+        var TestMatrix = {"Flight":[],
+                          "BT":[],
+                          "freq":[],
+                          "Duration":[],
+                          "Fare":[],
+                          "PAX":[],
+                          "LF":[],
+                          "Equipment":[],
+                          "Revenue":[],
+                          "Maintenance":[],
+                          "Crew":[],
+                          "Fuel":[],
+                          "Ownership":[],
+                          "Other":[]};
 
         //If User wants forecasted years...
         if(forecast) {
@@ -104,6 +120,25 @@ angular.module('appliedByDesignApp')
               servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
               fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
 
+              ///TEST
+              TestMatrix.Flight.push(revFlights[i].FltNumber);
+              TestMatrix.BT.push(bt);
+              TestMatrix.freq.push(freq);
+              TestMatrix.Duration.push(stagelen);
+              TestMatrix.Fare.push(fare);
+              TestMatrix.PAX.push(pax);
+              TestMatrix.LF.push(lf);
+              TestMatrix.Equipment.push(revFlights[i].Equipment);
+
+              TestObj = { "Flight":revFlights[i].FltNumber,
+                          "BT":bt,
+                          "freq":freq,
+                          "Duration":stagelen,
+                          "Fare":fare,
+                          "PAX":pax,
+                          "LF":lf,
+                          "Equipment":revFlights[i].Equipment};
+
               //Apply Services
               for(var k1 in servicesInUse) {
                 if(servicesInUse[k1]) {
@@ -118,6 +153,9 @@ angular.module('appliedByDesignApp')
               //Total Annual Flight Revenue
               totalRev = totalRev + weeks*freq*pax*fare;
 
+              //TEST
+              TestMatrix.Revenue.push(weeks*freq*pax*fare);
+
               //Total Annual Flight Costs
               var totalCost = 0;
 
@@ -127,12 +165,22 @@ angular.module('appliedByDesignApp')
                 }
                 if(k=="Fuel") {
                   outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
+                  
+                  //TEST
+                  TestMatrix[k].push(weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice);
+                  TestObj[k] = weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
                 }
                 else {
                   //Generic equation strucutre for all other costs
                   outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
+
+                  //TEST
+                  TestMatrix[k].push((weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y));
+                  TestObj[k] = (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
                 }
                 totalCost = totalCost + outputCost[k];
+
+                TestObjMat[i] = TestObj;
 
               }
             }
@@ -153,16 +201,17 @@ angular.module('appliedByDesignApp')
             
             // Aggregate Airplane Reports
             airplaneReport[aps] = jQuery.extend(true, {}, outputCost);
+            outputCost = {};
 
           }
 
           //Aggregate Years
-          outputReport[y] = {'airplaneReport':airplaneReport};
+          outputReport[y] = {'airplaneReport':jQuery.extend(true, {}, airplaneReport)};
         }
         
-        financialReport = outputReport;
+        financialReport = jQuery.extend(true, {}, outputReport);
 
-        return outputReport;
+        return financialReport;
 
       },
 
