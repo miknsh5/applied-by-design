@@ -180,14 +180,26 @@ angular.module('appliedByDesignApp')
                 }
                 totalCost = totalCost + outputCost[k];
 
-                TestObjMat[i] = TestObj;
-
               }
+
+              //Operational Metrics
+              outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
+              outputOps["Seats"] = outputOps["Seats"]+cap*freq;
+              outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
+              outputOps["PAX"] = outputOps["PAX"]+pax*freq;
+              outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
+
+              TestObjMat[i] = TestObj;
             }
 
             outputCost.Revenue  = totalRev;
             outputCost.Costs    = totalCost;
             outputCost.Profit   = totalRev - totalCost;
+            outputCost.RPM      = outputOps.RPM;
+            outputCost.Seats    = outputOps.Seats;
+            outputCost.ASK      = outputOps.ASK;
+            outputCost.PAX      = outputOps.PAX;
+            outputCost.Freq     = outputOps["Weeky Freq."];
 
             // If Reporting by Airplane
             if(byAirplane)
@@ -202,6 +214,7 @@ angular.module('appliedByDesignApp')
             // Aggregate Airplane Reports
             airplaneReport[aps] = jQuery.extend(true, {}, outputCost);
             outputCost = {};
+            outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
 
           }
 
@@ -317,13 +330,14 @@ angular.module('appliedByDesignApp')
               
               // Aggregate Airplane Reports
               airplaneReport[aps] = jQuery.extend(true, {}, outputOps);
+              outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
               
             }
-          outputReport[y] = {'airplaneReport':airplaneReport};
+          outputReport[y] = {'airplaneReport':jQuery.extend(true, {}, airplaneReport)};
           }
         }
 
-        operationsReport = outputReport;
+        operationsReport = jQuery.extend(true, {}, outputReport);
         return outputReport;
 
       },
