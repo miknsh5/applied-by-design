@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('RoutemapCtrl', function ($scope, reportBuilder, financialData, fleetModel, navService, frequencyService) {
+  .controller('RoutemapCtrl', function ($scope, reportBuilder, financialData, navService, frequencyService) {
 
     // set the dimensions of main SVG canvas
     $scope.mapWidth = 1800;
@@ -11,11 +11,12 @@ angular.module('appliedByDesignApp')
     $scope.chartWidth = 175;
     $scope.chartHeight = 175;
 
+    $scope.activeTab = navService.getActiveTab();
 
     // instantiate service object in local controller scope (makes service accessible directly from view)
-    $scope.fleetModel = fleetModel;
+    // $scope.fleetModel = fleetModel;
     $scope.reportBuilder = reportBuilder;
-    $scope.navService = navService;
+    $scope.navService    = navService;
 
     $scope.reportBuilder.generateEquipment();
     $scope.reportBuilder.buildRoutes();
@@ -35,6 +36,15 @@ angular.module('appliedByDesignApp')
     $scope.$watch(function(){return navService.getEquipment()}, function(){
         reportBuilder.buildRoutes();
     }, true);
+
+
+    $scope.$watch(function(){return navService.getActiveTab()}, function(newData){
+        $scope.activeTab = newData;
+    })
+
+    $scope.setActiveTab = function(id){
+        navService.setActiveTab(id);
+    }
 
   });
 

@@ -29,11 +29,8 @@
         </section>
 
         <div class="dashboard-wrapper" ng-style="panelStyle()">
-            
 
             <div class="page-container">
-                <!-- dock dashboard navigation to left side -->
-
 
                 <!-- primary dashboard area (minus navigation) -->
                 <div class="dashboard-inner">
@@ -41,18 +38,18 @@
                     <div class="dashboard-nav">
                         <div class="mini-nav-group">
                             <div class="mini-nav-btn" 
-                                ng-click="navService.selectTab(0)"
-                                ng-class="{active: navService.tabState(0)}">
+                                ng-click="setActiveTab(0)"
+                                ng-class="{active: activeTab == 0}">
                                 <strong>$</strong>
                              </div>
                             <div class="mini-nav-btn"
-                                ng-click="navService.selectTab(1)"
-                                ng-class="{active: navService.tabState(1)}">
+                                ng-click="setActiveTab(1)"
+                                ng-class="{active: activeTab == 1}">
                                 <i class="ikon-clock"></i>
                             </div>
                             <div class="mini-nav-btn" 
-                                ng-click="navService.selectTab(2)" 
-                                ng-class="{active: navService.tabState(2)}"> 
+                                ng-click="setActiveTab(2)" 
+                                ng-class="{active: activeTab == 2}"> 
                                 <i class="ikon-airplane"></i>
                             </div>
                             <div class="mini-nav-btn utility" 
@@ -66,7 +63,7 @@
 
                     <section class="dash financial" 
                         ng-controller="FinancialPanelCtrl"
-                        ng-show="navService.tabState(0)">
+                        ng-show="activeTab == 0">
 
                         <!-- small filter panel with year buttons -->
                         <div class="panel small">
@@ -135,7 +132,7 @@
 
                     <section class="dash operational"
                         ng-controller="OperationsPanelCtrl"
-                        ng-show="navService.tabState(1)">
+                        ng-show="activeTab == 1">
 
                         <!-- small filter panel with day buttons -->
                         <div class="panel small">
@@ -186,7 +183,7 @@
 
                     <section class="dash fleet" 
                         ng-controller="FleetPanelCtrl"
-                        ng-show="navService.tabState(2)">
+                        ng-show="activeTab == 2">
                         
                         <!-- small filter panel with aircraft buttons -->
                         <div class="panel small">

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('FinancialPanelCtrl', function ($scope, reportBuilder, financialReports, navService) {
+  .controller('FinancialPanelCtrl', function ($scope, reportBuilder, financialReports) {
     
     reportBuilder.buildFinancialReport(true, false);
 

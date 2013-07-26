@@ -3,7 +3,7 @@
 /*global topojson:false */
 
 angular.module('appliedByDesignApp')
-  .directive('worldMap', function (reportBuilder) {
+  .directive('worldMap', function (reportBuilder, navService) {
     return {
       restrict: 'E',
       scope: {
@@ -123,7 +123,7 @@ angular.module('appliedByDesignApp')
                   .attr('d', path)
                     .on('mouseover', highlight(blue, 'over'))
                     .on('mouseout', highlight(blue))
-                    .on('click', scope.selectRoute(0.2, orange))
+                    .on('click', selectRoute(0.2, orange))
                 .transition()
                   .duration(500)
                   .style('opacity', 1);
@@ -137,13 +137,12 @@ angular.module('appliedByDesignApp')
               .attr('stroke', blue)
               .attr('stroke-width', 2);
         }
-        scope.selectRoute = function(opacity, color) {
 
+        function selectRoute(opacity, color) {
 
           return function(g, i_clicked){
 
             activePath = i_clicked;
-            
 
             network.selectAll('.route path')
               .filter(function(d,i) { return i_clicked != i})
