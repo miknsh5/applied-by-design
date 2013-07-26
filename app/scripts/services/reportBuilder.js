@@ -16,7 +16,7 @@ angular.module('appliedByDesignApp')
         return eval(name);
       },
       // Get Financial Report for some subset of the total fleet/routes
-      buildFinancialReport: function(forecast, selRoutes) {
+      buildFinancialReport: function(forecast, byAirplane, selRoutes) {
         
         // retrieve data dependencies
         var flights      = fleetModel.getData('flights');
@@ -37,7 +37,7 @@ angular.module('appliedByDesignApp')
 
         // returns filtered set of routes as subset of fleetModel
         var filterBy     = _.pluck(_.where(equipment,{active:true}),'code');
-        var revFlights   = this.findArray(flightsRoutes, filterBy,"Equipment");
+        var revFlights;
 
 
         // Instantiate report variables
@@ -45,8 +45,10 @@ angular.module('appliedByDesignApp')
         var totalRev, outputCost, outputOps;
         var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
         var outputReport = [];
-        var years;
+        var airplaneReport = [];
+        var years, APCount;
 
+        //If User wants forecasted years...
         if(forecast) {
           years = market.forecast.years;
         }
@@ -54,68 +56,108 @@ angular.module('appliedByDesignApp')
           years = 1;
         }
 
+        //For Each Year...
         for(var y = 0; y<years; y++) {
           totalRev = 0;
           outputCost = {};
           outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
 
-          //Get Routes List
-          var activeRoutes = this.buildRoutes();
+          //If reporting by Airplane...
+          if(byAirplane)
+          {
+            APCount = filterBy.length;
+          }
+          else
+          {
+            APCount = 1;
+          }
 
-          //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-          for(var i = 0;i<revFlights.length;i++) {
-            //Calculate Financial and Performance Perameters
-            freq           = revFlights[i].Frequency;
-            cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
-            lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
-            pax            = lf*cap;
-            fare           = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Fare*Math.pow(1+market.growth.fare,y);
-            bt             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
-            stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
-            coeffs         = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
+          //For Each Airplane...
+          for(var aps=0;aps<APCount;aps++)
+          {
 
-            rpm            = pax*stagelen;
-            servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
-            fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
+            //If Reporting by Airplane
+            if(byAirplane){
+              revFlights = this.findArray(flightsRoutes, [filterBy[aps]],"Equipment");
+            }
+            else
+            {
+              revFlights = this.findArray(flightsRoutes, filterBy,"Equipment");
+            }
+            
+            //Get Routes List
+            var activeRoutes = this.buildRoutes();
 
-            //Apply Services
-            for(var k1 in servicesInUse) {
-              if(servicesInUse[k1]) {
-                for(var k2 in services[k1]) {
-                  for(var c1 in services[k1][k2]) {
-                    coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
+            //Calculate frequency, capacity, load factor, fare and total revenue for each flight
+            for(var i = 0;i<revFlights.length;i++) {
+              //Calculate Financial and Performance Perameters
+              freq           = revFlights[i].Frequency;
+              cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
+              lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
+              pax            = lf*cap;
+              fare           = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Fare*Math.pow(1+market.growth.fare,y);
+              bt             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
+              stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
+              coeffs         = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
+
+              rpm            = pax*stagelen;
+              servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
+              fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
+
+              //Apply Services
+              for(var k1 in servicesInUse) {
+                if(servicesInUse[k1]) {
+                  for(var k2 in services[k1]) {
+                    for(var c1 in services[k1][k2]) {
+                      coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
+                    }
                   }
                 }
               }
+
+              //Total Annual Flight Revenue
+              totalRev = totalRev + weeks*freq*pax*fare;
+
+              //Total Annual Flight Costs
+              var totalCost = 0;
+
+              for(var k in coeffs) {
+                if(outputCost[k]===undefined) {
+                  outputCost[k] = 0;
+                }
+                if(k=="Fuel") {
+                  outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
+                }
+                else {
+                  //Generic equation strucutre for all other costs
+                  outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
+                }
+                totalCost = totalCost + outputCost[k];
+
+              }
             }
 
-            //Total Annual Flight Revenue
-            totalRev = totalRev + weeks*freq*pax*fare;
+            outputCost.Revenue  = totalRev;
+            outputCost.Costs    = totalCost;
+            outputCost.Profit   = totalRev - totalCost;
 
-            //Total Annual Flight Costs
-            var totalCost = 0;
-
-            for(var k in coeffs) {
-              if(outputCost[k]===undefined) {
-                outputCost[k] = 0;
-              }
-              if(k=="Fuel") {
-                outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
-              }
-              else {
-                //Generic equation strucutre for all other costs
-                outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
-              }
-              totalCost = totalCost + outputCost[k];
-
+            // If Reporting by Airplane
+            if(byAirplane)
+            {
+              outputCost.Equipment = filterBy[aps];
             }
+            else
+            {
+              outputCost.Equipment = 'Total';
+            }
+            
+            // Aggregate Airplane Reports
+            airplaneReport[aps] = jQuery.extend(true, {}, outputCost);
+
           }
 
-        outputCost.Revenue  = totalRev;
-        outputCost.Costs    = totalCost;
-        outputCost.Profit   = totalRev - totalCost;
-
-        outputReport[y] = outputCost;
+          //Aggregate Years
+          outputReport[y] = {'airplaneReport':airplaneReport};
         }
         
         financialReport = outputReport;
@@ -124,7 +166,7 @@ angular.module('appliedByDesignApp')
 
       },
 
-      buildOperationsReport: function(forecast, selRoutes) {
+      buildOperationsReport: function(forecast, byAirplane, selRoutes) {
         
         // retrieve data dependencies
         var flights      = fleetModel.getData('flights');
@@ -146,17 +188,17 @@ angular.module('appliedByDesignApp')
         
         // return filtered set of routes as subset of fleetModel
         var filterBy = _.pluck(_.where(equipment,{active:true}),'code');
+        var revFlights;
         
         // only generate route report if an aircraft type is selected
         if (filterBy.length) { 
-          var revFlights   = this.findArray(flightsRoutes, filterBy,"Equipment");
-
 
           // Instantiate report variables
           var weeks = 52;
           var outputRev, outputCost, outputOps;
           var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
-          var years;
+          var airplaneReport = [];
+          var years, APCount;
 
           if(forecast) {
             years = market.forecast.years;
@@ -170,29 +212,65 @@ angular.module('appliedByDesignApp')
             outputCost = {};
             outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
 
-            //Get Routes List
-            var activeRoutes = this.buildRoutes();
-
-            //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-            for(var i = 0;i<revFlights.length;i++) {
-              //Calculate Financial and Performance Perameters
-              freq           = revFlights[i].Frequency;
-              cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
-              lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
-              pax            = lf*cap;
-              stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
-              rpm            = pax*stagelen;
-
-              //Total Weekly Flight Operational Stats
-              outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
-              outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
-              outputOps["PAX"] = outputOps["PAX"]+pax*freq;
-              outputOps["Seats"] = outputOps["Seats"]+cap*freq;
-              outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
-
+            //If reporting by Airplane...
+            if(byAirplane)
+            {
+              APCount = filterBy.length;
+            }
+            else
+            {
+              APCount = 1;
             }
 
-          outputReport[y] = outputOps;
+            //For Each Airplane...
+            for(var aps=0;aps<APCount;aps++)
+            {
+
+              //If Reporting by Airplane
+              if(byAirplane){
+                revFlights = this.findArray(flightsRoutes, [filterBy[aps]],"Equipment");
+              }
+              else
+              {
+                revFlights = this.findArray(flightsRoutes, filterBy,"Equipment");
+              }
+
+              //Get Routes List
+              var activeRoutes = this.buildRoutes();
+
+              //Calculate frequency, capacity, load factor, fare and total revenue for each flight
+              for(var i = 0;i<revFlights.length;i++) {
+                //Calculate Financial and Performance Perameters
+                freq           = revFlights[i].Frequency;
+                cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
+                lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
+                pax            = lf*cap;
+                stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
+                rpm            = pax*stagelen;
+
+                //Total Weekly Flight Operational Stats
+                outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
+                outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
+                outputOps["PAX"] = outputOps["PAX"]+pax*freq;
+                outputOps["Seats"] = outputOps["Seats"]+cap*freq;
+                outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
+
+              }
+              // If Reporting by Airplane
+              if(byAirplane)
+              {
+                outputOps.Equipment = filterBy[aps];
+              }
+              else
+              {
+                outputOps.Equipment = 'Total';
+              }
+              
+              // Aggregate Airplane Reports
+              airplaneReport[aps] = jQuery.extend(true, {}, outputOps);
+              
+            }
+          outputReport[y] = {'airplaneReport':airplaneReport};
           }
         }
 
