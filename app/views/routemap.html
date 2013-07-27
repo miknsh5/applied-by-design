@@ -29,11 +29,8 @@
         </section>
 
         <div class="dashboard-wrapper" ng-style="panelStyle()">
-            
 
             <div class="page-container">
-                <!-- dock dashboard navigation to left side -->
-
 
                 <!-- primary dashboard area (minus navigation) -->
                 <div class="dashboard-inner">
@@ -41,18 +38,18 @@
                     <div class="dashboard-nav">
                         <div class="mini-nav-group">
                             <div class="mini-nav-btn" 
-                                ng-click="navService.selectTab(0)"
-                                ng-class="{active: navService.tabState(0)}">
+                                ng-click="setActiveTab(0)"
+                                ng-class="{active: activeTab == 0}">
                                 <strong>$</strong>
                              </div>
                             <div class="mini-nav-btn"
-                                ng-click="navService.selectTab(1)"
-                                ng-class="{active: navService.tabState(1)}">
+                                ng-click="setActiveTab(1)"
+                                ng-class="{active: activeTab == 1}">
                                 <i class="ikon-clock"></i>
                             </div>
                             <div class="mini-nav-btn" 
-                                ng-click="navService.selectTab(2)" 
-                                ng-class="{active: navService.tabState(2)}"> 
+                                ng-click="setActiveTab(2)" 
+                                ng-class="{active: activeTab == 2}"> 
                                 <i class="ikon-airplane"></i>
                             </div>
                             <div class="mini-nav-btn utility" 
@@ -66,7 +63,7 @@
 
                     <section class="dash financial" 
                         ng-controller="FinancialPanelCtrl"
-                        ng-show="navService.tabState(0)">
+                        ng-show="activeTab == 0">
 
                         <!-- small filter panel with year buttons -->
                         <div class="panel small">
@@ -86,43 +83,30 @@
                         <div class="panel main">
                             <div class="panel-inner">
                                 <div class="summary-table financial">
-                                    <h3>Operations</h3>
+                                    <h3 class="heading">Operations</h3>
+                                    <h3 class="heading small">Total</h3>
+                                    <h3 class="heading small last">Selected &nbsp
+                                        <i class="ikon-airplane ikon"> </i>
+                                    </h3>
                                     <!-- check out ng-grid maybe? -->
                                     <div ng-repeat="financial in financialData">
                                         <div class="row-wrap" 
-                                            ng-click="financialData.select($index)"
-                                            ng-class="{active: $index == financialData.activeId() }">
+                                            ng-click="selectReport($index)"
+                                            ng-class="{active: $index == activeFinancialReport}">
 
                                             <h4 class="title">{{financial.name}}:</h4>
                                             <h4 class="number primary">
                                                 <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financialData_total[$index].val | number:0 }}
+                                                {{financialData_total[$index].val | number:financial.decimals }}
                                             </h4>
                                             <h4 class="number selected">
                                                 <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financial.val | number:0 }}
+                                                {{financial.val | number:financial.decimals }}
                                             </h4>
 
                                         </div>
                                     </div>
-                                    <!-- <h3>Performance</h3> -->
-                                    <div ng-repeat="metric in operationsData">
-                                        <div class="row-wrap" 
-                                            ng-click="financialData.select($index)"
-                                            ng-class="{active: $index == financialData.activeId() }">
 
-                                            <h4 class="title">{{metric.name}}:</h4>
-                                            <h4 class="number primary">
-                                                <span class="dollar" ng-show="metric.currency">$</span>
-                                                {{operationsData_total[$index].val | number:metric.decimals }}
-                                            </h4>
-                                            <h4 class="number selected">
-                                                <span class="dollar" ng-show="metric.currency">$</span>
-                                                {{metric.val | number:metric.decimals }}
-                                            </h4>
-
-                                        </div>
-                                    </div>
 
                                 </div>
                             </div>
@@ -132,10 +116,10 @@
                         <div class="panel chart">
                             <div class="panel-inner">
                                 <div class="chart-title">
-                                    <h4>{{financialData.getActive().name}} 
+                                    <h4>{{selectedReport.name}}: 
                                         <span class="primary">
-                                            <span class="dollar" ng-show="activeChart.currency">$</span>
-                                            {{financialData.getActive().val}}
+                                            <span class="dollar" ng-show="selectedReport.currency">$</span>
+                                            {{selectedReport.val | number:0}}
                                         </span>
                                     </h4>
                                 </div>
@@ -148,7 +132,7 @@
 
                     <section class="dash operational"
                         ng-controller="OperationsPanelCtrl"
-                        ng-show="navService.tabState(1)">
+                        ng-show="activeTab == 1">
 
                         <!-- small filter panel with day buttons -->
                         <div class="panel small">
@@ -199,7 +183,7 @@
 
                     <section class="dash fleet" 
                         ng-controller="FleetPanelCtrl"
-                        ng-show="navService.tabState(2)">
+                        ng-show="activeTab == 2">
                         
                         <!-- small filter panel with aircraft buttons -->
                         <div class="panel small">
@@ -223,15 +207,8 @@
 
                 </div>
             </div>
-
         </div>
-
-
-
     </div>
-
-
-
 </div>
 
 

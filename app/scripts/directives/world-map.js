@@ -123,7 +123,7 @@ angular.module('appliedByDesignApp')
                   .attr('d', path)
                     .on('mouseover', highlight(blue, 'over'))
                     .on('mouseout', highlight(blue))
-                    .on('click', scope.selectRoute(0.2, orange))
+                    .on('click', selectRoute(0.2, orange))
                 .transition()
                   .duration(500)
                   .style('opacity', 1);
@@ -131,18 +131,18 @@ angular.module('appliedByDesignApp')
         }, true); //setting 'true' tells angular to watch for exact data changes (i.e. nested data can trigger event)
 
         function reset(){
+            activePath = null;
             network.selectAll('.route path')
               .style('opacity', 1)
               .attr('stroke', blue)
               .attr('stroke-width', 2);
         }
-        scope.selectRoute = function(opacity, color) {
 
+        function selectRoute(opacity, color) {
 
           return function(g, i_clicked){
 
             activePath = i_clicked;
-            
 
             network.selectAll('.route path')
               .filter(function(d,i) { return i_clicked != i})
@@ -163,7 +163,13 @@ angular.module('appliedByDesignApp')
             if (type == 'over' || i == activePath) {
               d3.select(this)
               .attr('stroke', orange)
-              .style('opacity', 1)
+              .style('opacity', 1.0)
+            } else if (activePath == null) {
+              //no path selected, don't fade on mouseout
+              d3.select(this)
+              .attr('stroke', color)
+              .style('opacity', 1.0);
+
             } else {
               d3.select(this)
               .attr('stroke', color)

@@ -2,28 +2,27 @@
 /*global d3:false */
 
 angular.module('appliedByDesignApp')
-  .directive('financialChart', function (financialData) {
+  .directive('financialChart', function (financialReports) {
     return {
       restrict: 'E',
       scope: {
-      	width: '=',
-      	height: '='
+        width: '=',
+        height: '='
       },
       link: function postLink(scope, element, attrs) {
 
         var width = scope.width,
-        	height = scope.height,
-        	radius = Math.min(width, height) / 2;
-
+            height = scope.height,
+            radius = Math.min(width, height) / 2;
 
         var color = d3.scale.category20();
 
         var pie = d3.layout.pie()
-        	.sort(null);
+                   .sort(null);
 
-    	var arc = d3.svg.arc()
-    		.innerRadius(radius - 50)
-    		.outerRadius(radius - 10);
+        var arc = d3.svg.arc()
+          .innerRadius(radius - 50)
+          .outerRadius(radius - 10);
 
         var svg = d3.select(element[0]).append('svg')
             .attr('width', width)
@@ -31,12 +30,18 @@ angular.module('appliedByDesignApp')
             .append('g')
             .attr('transform', 'translate(' + width/2 + ',' + height/2 + ')');
 
-     	var path = svg.selectAll('path')
- 			.data(pie([4,3,9,5,7]))
-     		.enter().append('path')
-     			.attr('fill', function(d,i){ return color(i); })
-     			.attr('d', arc);
+        scope.$watch(function() {
+          return financialReports.getActiveReport()}, 
+          function(newData){
 
+            var path = svg.selectAll('path')
+            .data(pie(newData))
+              .enter().append('path')
+                .attr('fill', function(d,i){ return color(i); })
+                .attr('d', arc);
+        
+          }
+        )
 
 
 
