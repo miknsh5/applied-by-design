@@ -407,6 +407,48 @@ angular.module('appliedByDesignApp')
       clearReport: function(){
         routeReport = [];
       },
+      addFlight: function(fltnum, origin, destination, equipment, DOW){
+
+        var freq = 0;
+        for(var i = 0;i<DOW.length;i++)
+        {
+          if(DOW[i])
+          {
+            freq++;
+          }
+        }
+
+        var nonDirec;
+        if(origin<destination)
+        {
+          nonDirec = origin+destination;
+        }
+        else
+        {
+          nonDirec = destination+origin;
+        }
+
+        var newFlight = { "FltNumber": fltnum,
+                          "OD": origin+'-'+destination,
+                          "NonDirectional": nonDirec,
+                          "Depart": "00:00:00 AM",
+                          "Arrive": "00:00:00 AM",
+                          "Equipment": equipment,
+                          "Stops": 0,
+                          "Overnight": false,
+                          "Partner": false,
+                          "Monday": DOW[0],
+                          "Tuesday": DOW[1],
+                          "Wednesday": DOW[2],
+                          "Thursday": DOW[3],
+                          "Friday": DOW[4],
+                          "Saturday": DOW[5],
+                          "Sunday": DOW[6],
+                          "Frequency": freq};
+
+          return newFlight;
+        
+      },
       greatCircle: function(origindestination) {
         return gcDistance(origindestination);
       },
