@@ -449,6 +449,21 @@ angular.module('appliedByDesignApp')
           return newFlight;
         
       },
+      greatAirportRoutes: function(airport) {
+
+        var airportRoutes = [];
+
+        var activeRoutes = this.buildRoutes();
+
+        for(var i=0;i<activeRoutes.length;i++)
+        {
+          if(activeRoutes[i].NonDirectional.slice(0,3)==airport || activeRoutes[i].NonDirectional.slice(3,6)==airport)
+          {
+            airportRoutes.push(activeRoutes[i])
+          }
+        }
+        return airportRoutes;
+      },
       greatCircle: function(origindestination) {
         return gcDistance(origindestination);
       },
