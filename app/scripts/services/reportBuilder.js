@@ -17,30 +17,21 @@ angular.module('appliedByDesignApp')
         return eval(name);
       },
       // Get Financial Report for some subset of the total fleet/routes
-      buildFinancialReport: function(forecast, byAirplane, selRoutes) {
+      buildFinancialReport: function(forecast) {
         
         // retrieve data dependencies
-        var flights      = fleetModel.getData('flights');
+        var revFlights   = fleetModel.getData('flights');
         var airplanes    = fleetModel.getData('airplanes');
         var market       = fleetModel.getData('market');
         var services     = fleetModel.getData('services');
         var costCurves   = fleetModel.getData('costCurves');
-        var equipment    = navService.getEquipment();
 
-        // Filter flights by ODs if a filter is provided
-        if (typeof(selRoutes) != 'undefined') {
-          var flightsRoutes = this.findArray(flights, selRoutes,"OD");
-
-        } 
-        else {
-          var flightsRoutes = flights;
-        }
-
+        var startyear    = 2013;
         var outputReport = [];
 
         // returns filtered set of routes as subset of fleetModel
-        var filterBy     = _.pluck(_.where(equipment,{active:true}),'code');
-        var revFlights;
+        // var filterBy     = _.pluck(_.where(equipment,{active:true}),'code');
+        // var revFlights = this.findArray(flightsRoutes, filterBy,"Equipment");
 
         // Instantiate report variables
         var weeks = 52;
@@ -49,6 +40,7 @@ angular.module('appliedByDesignApp')
         var outputReport = [];
         var airplaneReport = [];
         var years, APCount;
+        var studyyear;
         var TestObjMat = [];
         var TestObj = {};
         var TestMatrix = {"Flight":[],
@@ -66,16 +58,6 @@ angular.module('appliedByDesignApp')
                           "Ownership":[],
                           "Other":[]};
 
-        //If User wants forecasted years...
-        if(forecast) {
-          years = market.forecast.years;
-        }
-        else {
-          years = 1;
-        }
-
-        if (filterBy.length) { 
-
           // Instantiate report variables
           var weeks = 52;
           var totalRev, outputCost, outputOps;
@@ -91,159 +73,152 @@ angular.module('appliedByDesignApp')
             years = 1;
           }
 
+          //Get Routes List
+          var activeRoutes = this.allRoutes();
+
           //For Each Year...
           for(var y = 0; y<years; y++) {
             totalRev = 0;
             outputCost = {};
             outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
+            studyyear = startyear + y;
 
-            //If reporting by Airplane...
-            if(byAirplane){
-              APCount = filterBy.length;
-            }
-            else {
-              APCount = 1;
-            }
+            //Calculate frequency, capacity, load factor, fare and total revenue for each flight
+            for(var i = 0;i<revFlights.length;i++) {
+              //Calculate Financial and Performance Perameters
+              freq           = revFlights[i].Frequency;
+              cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
+              // lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
+              lf             = .8;
+              pax            = lf*cap;
+              fare           = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Fare*Math.pow(1+market.growth.fare,y);
+              bt             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
+              stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
+              coeffs         = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
 
-            //For Each Airplane...
-            for(var aps=0;aps<APCount;aps++) {
+              rpm            = pax*stagelen;
+              servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
+              fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
 
-              //If Reporting by Airplane
-              if(byAirplane){
-                revFlights = this.findArray(flightsRoutes, [filterBy[aps]],"Equipment");
-              }
-              else
-              {
-                revFlights = this.findArray(flightsRoutes, filterBy,"Equipment");
-              }
-            
-              //Get Routes List
-              var activeRoutes = this.buildRoutes();
+              TestObj.Flight = revFlights[i].FltNumber;
+              TestObj.BT=bt;
+              TestObj.freq=freq;
+              TestObj.Duration=stagelen;
+              TestObj.Fare=fare;
+              TestObj.PAX=pax;
+              TestObj.LF=lf;
+              TestObj.Equipment=revFlights[i].Equipment;
+              TestObj.Route = revFlights[i].NonDirectional;
 
-              //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-              for(var i = 0;i<revFlights.length;i++) {
-                //Calculate Financial and Performance Perameters
-                freq           = revFlights[i].Frequency;
-                cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
-                lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
-                pax            = lf*cap;
-                fare           = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Fare*Math.pow(1+market.growth.fare,y);
-                bt             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
-                stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
-                coeffs         = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
 
-                rpm            = pax*stagelen;
-                servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
-                fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
-
-                ///TEST
-                TestMatrix.Flight.push(revFlights[i].FltNumber);
-                TestMatrix.BT.push(bt);
-                TestMatrix.freq.push(freq);
-                TestMatrix.Duration.push(stagelen);
-                TestMatrix.Fare.push(fare);
-                TestMatrix.PAX.push(pax);
-                TestMatrix.LF.push(lf);
-                TestMatrix.Equipment.push(revFlights[i].Equipment);
-
-                TestObj = { "Flight":revFlights[i].FltNumber,
-                            "BT":bt,
-                            "freq":freq,
-                            "Duration":stagelen,
-                            "Fare":fare,
-                            "PAX":pax,
-                            "LF":lf,
-                            "Equipment":revFlights[i].Equipment};
-
-                //Apply Services
-                for(var k1 in servicesInUse) {
-                  if(servicesInUse[k1]) {
-                    for(var k2 in services[k1]) {
-                      for(var c1 in services[k1][k2]) {
-                        coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
-                      }
+              //Apply Services
+              for(var k1 in servicesInUse) {
+                if(servicesInUse[k1]) {
+                  for(var k2 in services[k1]) {
+                    for(var c1 in services[k1][k2]) {
+                      coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
                     }
                   }
                 }
+              }
 
-                //Total Annual Flight Revenue
-                totalRev = totalRev + weeks*freq*pax*fare;
+              //Total Annual Flight Revenue
+              totalRev = totalRev + weeks*freq*pax*fare;
 
-                //TEST
-                TestMatrix.Revenue.push(weeks*freq*pax*fare);
+              //Total Annual Flight Costs
+              var totalCost = 0;
 
-                //Total Annual Flight Costs
-                var totalCost = 0;
-
-                for(var k in coeffs) {
-                  if(outputCost[k]===undefined) {
-                    outputCost[k] = 0;
-                  }
-                  if(k=="Fuel") {
-                    outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
-                    
-                    //TEST
-                    TestMatrix[k].push(weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice);
-                    TestObj[k] = weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
-                  }
-                  else {
-                    //Generic equation strucutre for all other costs
-                    outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
-
-                    //TEST
-                    TestMatrix[k].push((weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y));
-                    TestObj[k] = (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
-                  }
-                  totalCost = totalCost + outputCost[k];
+              for(var k in coeffs) {
+                if(outputCost[k]===undefined) {
+                  outputCost[k] = 0;
                 }
+                if(k=="Fuel") {
+                  outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
+                  
+                  //TEST
+                  TestObj[k] = weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
+                }
+                else {
+                  //Generic equation strucutre for all other costs
+                  outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
 
-                //Operational Metrics
-                outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
-                outputOps["Seats"] = outputOps["Seats"]+cap*freq;
-                outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
-                outputOps["PAX"] = outputOps["PAX"]+pax*freq;
-                outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
-
-                TestObjMat[i] = TestObj;
+                  //TEST
+                  TestObj[k] = (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
+                }
+                totalCost = totalCost + outputCost[k];
               }
 
-              outputCost.Revenue  = totalRev;
-              outputCost.Costs    = totalCost;
-              outputCost.Profit   = totalRev - totalCost;
-              outputCost.RPM      = outputOps.RPM;
-              outputCost.Seats    = outputOps.Seats;
-              outputCost.ASK      = outputOps.ASK;
-              outputCost.PAX      = outputOps.PAX;
-              outputCost.Freq     = outputOps["Weeky Freq."];
+              //Operational Metrics
+              outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
+              outputOps["Seats"] = outputOps["Seats"]+cap*freq;
+              outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
+              outputOps["PAX"] = outputOps["PAX"]+pax*freq;
+              outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
 
-              // If Reporting by Airplane
-              if(byAirplane) {
-                outputCost.Equipment = filterBy[aps];
-              }
-              else {
-                outputCost.Equipment = 'Total';
-              }
-                
-              // Aggregate Airplane Reports
-              fleetReport[aps] = jQuery.extend(true, {}, outputCost);
-              outputCost = {};
-              outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
+              TestObj.RPM = rpm*freq;
+              TestObj.Seats = cap*freq;
+              TestObj.ASK = cap*freq*stagelen;
+              TestObj.PAX = pax*freq;
+              TestObj.Freq = freq;
+              TestObj.Equipment = revFlights[i].Equipment;
+              TestObj.Year = studyyear;
+
+              TestObjMat[i] = TestObj;
+              TestObj = {};
             }
-
             //Aggregate Years
-            outputReport[y] = {'fleetReport':jQuery.extend(true, {}, fleetReport)};
+            outputReport[y] = {'fleetReport':jQuery.extend(true, {}, TestObjMat)};
+            TestObjMat = [];
           }
-        }
-        
 
-        financialReport = jQuery.extend(true, {}, outputReport);
+        financialReport = jQuery.extend(true, {}, [outputReport]);
 
         financialReports.setReport(outputReport);
 
-        return financialReport;
+        return outputReport;
 
       },
+      filterFinancialReport: function(finReport){
 
+        var outputReports = [];
+        var filteredReport;
+        var yearReport = {};
+        var airplanes;
+        var reportMetrics = ['ASK','Crew','Freq','Fuel','Maintenance',
+                              'Other','Ownership','PAX','RPM','Revenue','Seats'];
+
+        var equipment    = navService.getEquipment();
+        var filterByAP = _.pluck(_.where(equipment,{active:true}),'code');
+
+        for(var y=0;y<finReport.length;y++)
+        {
+          filteredReport  = this.findArray(finReport[y].fleetReport,filterByAP,"Equipment");
+          airplanes       = _.uniq(_.pluck(filteredReport,'Equipment'));
+          yearReport.year = filteredReport[0].Year;
+
+          yearReport.data = [];
+
+          for(var m=0;m<reportMetrics.length;m++)
+          {
+
+            yearReport.data[m] = {'Name': reportMetrics[m],
+                                  'val' : _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0)};
+
+            yearReport[reportMetrics[m]] = {};
+            yearReport[reportMetrics[m]].data = [];
+            for(var a=0;a<airplanes.length;a++)
+            {
+              yearReport[reportMetrics[m]].data[a] = {'equipment': airplanes[a],
+                                                      'val': _.reduceRight(_.pluck(_.where(filteredReport,{Equipment: airplanes[a]}),reportMetrics[m]),function(a,b){return a+b;},0)};
+            }
+          }
+
+          outputReports.push(yearReport);
+          yearReport = {};
+        }
+
+        return outputReports;
+      },
       buildOperationsReport: function(forecast, byAirplane, selRoutes) {
         
         // retrieve data dependencies
@@ -387,7 +362,7 @@ angular.module('appliedByDesignApp')
       findArray: function(inputArray,searchCrit,key){
 
         var critReturn = [];
-        for(var crit in searchCrit)
+        for(var crit=0;crit<searchCrit.length;crit++)
         {
           critReturn = eval('_.where(inputArray,{'+key+':"'+searchCrit[crit]+'"})');
 
@@ -470,6 +445,42 @@ angular.module('appliedByDesignApp')
       },
       generateAirports: function() {
         return getUniqueAirports();
+      },
+      allRoutes: function(){
+        // retrieve data dependencies
+        var cityPairs  = fleetModel.getData('cityPairs');
+        var airports   = fleetModel.getData('airports');
+        var revFlights = fleetModel.getData('flights');
+        var equipment  = navService.getEquipment();
+
+        var allRoutes = [];
+        var report    = [];
+
+        // check to make sure all required data is available
+        if (typeof(cityPairs) == 'undefined') { console.log('cityPairs not defined'); return};
+        if (typeof(airports) == 'undefined') { console.log('Airports not defined'); return};
+
+        for(var i = 0;i<revFlights.length;i++) {
+          allRoutes.push(revFlights[i].NonDirectional);
+        }
+
+        var uniqueRoutes = _.uniq(allRoutes);
+        
+        for(var k=0;k<uniqueRoutes.length;k++) {
+
+          report[k] = {
+            "NonDirectional": uniqueRoutes[k],
+            "Fare": _.findWhere(cityPairs,{NonDirectional:uniqueRoutes[k]}).Fare,
+            "Olat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Latitude,
+            "Olon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Longitude,
+            "Dlat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Latitude,
+            "Dlon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Longitude,
+            "Distance":gcDistance(uniqueRoutes[k]),
+            "Duration": _.findWhere(cityPairs, {NonDirectional:uniqueRoutes[k]}).Duration,
+            "LF": _.findWhere(cityPairs, {NonDirectional: uniqueRoutes[k]}).LF};
+        }
+        
+        return report;
       },
       buildRoutes: function(){
         // retrieve data dependencies
