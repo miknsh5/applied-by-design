@@ -186,6 +186,8 @@ angular.module('appliedByDesignApp')
         var airplanes;
         var reportMetrics = ['ASK','Crew','Freq','Fuel','Maintenance',
                               'Other','Ownership','PAX','RPM','Revenue','Seats'];
+        var currency      = [false, true, false, true, true, true, true, false, false, true, false];
+        var decimals      = [0,0,0,0,0,0,0,0,0,0,0];
 
         var equipment    = navService.getEquipment();
         var filterByAP = _.pluck(_.where(equipment,{active:true}),'code');
@@ -202,7 +204,10 @@ angular.module('appliedByDesignApp')
           {
 
             yearReport.data[m] = {'Name': reportMetrics[m],
-                                  'val' : _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0)};
+                                  'val' : _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0),
+                                  'currency': currency[m],
+                                  'decimals': decimals[m]
+                                };
 
             yearReport[reportMetrics[m]] = {};
             yearReport[reportMetrics[m]].data = [];
