@@ -7,9 +7,7 @@ angular.module('appliedByDesignApp')
     $scope.mapWidth = 1800;
     $scope.mapHeight = 1200;
 
-    // set the dimensions of chart SVG
-    $scope.chartWidth = 175;
-    $scope.chartHeight = 175;
+
 
     $scope.activeTab = navService.getActiveTab();
 

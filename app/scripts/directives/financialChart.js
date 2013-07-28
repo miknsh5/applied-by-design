@@ -30,17 +30,15 @@ angular.module('appliedByDesignApp')
             .append('g')
             .attr('transform', 'translate(' + width/2 + ',' + height/2 + ')');
 
-        scope.$watch(function() {
-          return financialReports.getActiveReport()}, 
-          function(newData){
+
 
             var path = svg.selectAll('path')
-            .data(pie(newData))
+            // .data(pie(newData[0].ASK.data))
+            .data(pie([5,3,4,10,3])
               .enter().append('path')
                 .attr('fill', function(d,i){ return color(i); })
                 .attr('d', arc);
         
-          }
         )
 
 

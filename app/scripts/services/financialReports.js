@@ -1,48 +1,111 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .factory('financialReports', function () {
+  .factory('financialReports', function (navService) {
     // Service logic
 
     var financialReport = [];
-    var activeReportId  = 0;
-    var activeYearId    = 0;
+    var activeReport  = 0; //id
+    var activeYear    = 0; //id
 
     // Public API here
     return {
+      // getters
       getFullReport: function(){
-        return financialReport;
+        return filterFinancialReport();
       },
       getActiveReport: function(){
         return financialReport[activeReportId];
       },
-      getActiveId: function() {
-        return activeReportId;
+      getActiveId: function(name) {
+        return eval(name);
       },
-      getFleetBreakdown: function(){
-
-        // var breakdown = [];
-        
-        // // loop through each aircraft report for current year
-        // angular.forEach(financialReport[activeYearId].fleetReport, function(aircraft, key){
-        //   breakdown[key] = {'name': aircraft.Equipment}
-        // })
-        // // retrieve the data record corresponding to the current active Id
-
-        // // build and return object with per airplane financials
-        // return breakdown
+      getYears: function(){
+        return _.pluck(filterFinancialReport(), 'year');
       },
 
+      // setters
       setReport: function(report){
         financialReport = report;
       },
-      selectReport: function(id) {
-        activeReportId = id;
+      setActiveReport: function(id) {
+        activeReport = id;
+      },
+      setActiveYear: function(id) {
+        activeYear = id;
       }
-
-
+      
     };
 
+    function filterFinancialReport(){
+
+      var finReport = financialReport;
+      var outputReports = [];
+      var filteredReport;
+      var yearReport = {};
+      var airplanes;
+      var reportMetrics = ['ASK','Crew','Freq','Fuel','Maintenance',
+                            'Other','Ownership','PAX','RPM','Revenue','Seats'];
+      var currency      = [false, true, false, true, true, true, true, false, false, true, false];
+      var decimals      = [0,0,0,0,0,0,0,0,0,0,0];
+
+      var equipment    = navService.getEquipment();
+      var filterByAP = _.pluck(_.where(equipment,{active:true}),'code');
+
+      for(var y=0;y<finReport.length;y++)
+      {
+        filteredReport  = findArray(finReport[y].fleetReport,filterByAP,"Equipment");
+        airplanes       = _.uniq(_.pluck(filteredReport,'Equipment'));
+        yearReport.year = filteredReport[0].Year;
+
+        yearReport.data = [];
+
+        for(var m=0;m<reportMetrics.length;m++)
+        {
+
+          yearReport.data[m] = {'name': reportMetrics[m],
+                                'val' : _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0),
+                                'currency': currency[m],
+                                'decimals': decimals[m]
+                              };
+
+          yearReport[reportMetrics[m]] = {};
+          yearReport[reportMetrics[m]].data = [];
+          for(var a=0;a<airplanes.length;a++)
+          {
+            yearReport[reportMetrics[m]].data[a] = {'equipment': airplanes[a],
+                                                    'val': _.reduceRight(_.pluck(_.where(filteredReport,{Equipment: airplanes[a]}),reportMetrics[m]),function(a,b){return a+b;},0)};
+          }
+        }
+
+        outputReports.push(yearReport);
+        yearReport = {};
+      }
+
+      return outputReports;
+    }
+
+    function findArray(inputArray,searchCrit,key){
+
+      var critReturn = [];
+      for(var crit=0;crit<searchCrit.length;crit++)
+      {
+        critReturn = eval('_.where(inputArray,{'+key+':"'+searchCrit[crit]+'"})');
+
+        if(crit==0)
+        {
+          var outputArray = critReturn;
+        }
+        else
+        {
+          for(var j in critReturn)
+          {
+            outputArray.push(critReturn[j]);
+          }
+        }
+      }
+      return outputArray;
+    }
 
     function formatFinancialReport(newData) {
 

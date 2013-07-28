@@ -5,9 +5,9 @@ angular.module('appliedByDesignApp')
     // Service logic
 
     // calculated data (watch these with return functions)
-    var routeReport,
-        financialReport    = [],
-        operationsReport   = [];
+    var routeReport;
+        // financialReport    = [],
+        // operationsReport   = [];
 
     
 
@@ -171,60 +171,12 @@ angular.module('appliedByDesignApp')
             TestObjMat = [];
           }
 
-        financialReport = jQuery.extend(true, {}, [outputReport]);
+        // financialReport = jQuery.extend(true, {}, [outputReport]);
 
         financialReports.setReport(outputReport);
 
         return outputReport;
 
-      },
-      filterFinancialReport: function(){
-
-        var finReport = financialReports.getFullReport();
-        
-        var outputReports = [];
-        var filteredReport;
-        var yearReport = {};
-        var airplanes;
-        var reportMetrics = ['ASK','Crew','Freq','Fuel','Maintenance',
-                              'Other','Ownership','PAX','RPM','Revenue','Seats'];
-        var currency      = [false, true, false, true, true, true, true, false, false, true, false];
-        var decimals      = [0,0,0,0,0,0,0,0,0,0,0];
-
-        var equipment    = navService.getEquipment();
-        var filterByAP = _.pluck(_.where(equipment,{active:true}),'code');
-
-        for(var y=0;y<finReport.length;y++)
-        {
-          filteredReport  = this.findArray(finReport[y].fleetReport,filterByAP,"Equipment");
-          airplanes       = _.uniq(_.pluck(filteredReport,'Equipment'));
-          yearReport.year = filteredReport[0].Year;
-
-          yearReport.data = [];
-
-          for(var m=0;m<reportMetrics.length;m++)
-          {
-
-            yearReport.data[m] = {'Name': reportMetrics[m],
-                                  'val' : _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0),
-                                  'currency': currency[m],
-                                  'decimals': decimals[m]
-                                };
-
-            yearReport[reportMetrics[m]] = {};
-            yearReport[reportMetrics[m]].data = [];
-            for(var a=0;a<airplanes.length;a++)
-            {
-              yearReport[reportMetrics[m]].data[a] = {'equipment': airplanes[a],
-                                                      'val': _.reduceRight(_.pluck(_.where(filteredReport,{Equipment: airplanes[a]}),reportMetrics[m]),function(a,b){return a+b;},0)};
-            }
-          }
-
-          outputReports.push(yearReport);
-          yearReport = {};
-        }
-
-        return outputReports;
       },
       buildOperationsReport: function(forecast, byAirplane, selRoutes) {
         

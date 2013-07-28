@@ -70,11 +70,11 @@
                             <div class="filter-year">
                                 <h4>Fiscal Year</h4>
                                 <div class="year-buttons">
-                                    <div class="year-btn active">2013</div>
-                                    <div class="year-btn">2014</div>
-                                    <div class="year-btn">2015</div>
-                                    <div class="year-btn">2016</div>
-                                    <div class="year-btn">2017</div>
+                                    <div ng-repeat="year in fiscalYears">
+                                    <div class="year-btn"
+                                        ng-click="selectYear($index)"
+                                        ng-class="{active: $index == activeYearId} ">{{year}}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -89,19 +89,19 @@
                                         <i class="ikon-airplane ikon"> </i>
                                     </h3>
                                     <!-- check out ng-grid maybe? -->
-                                    <div ng-repeat="financial in financialData">
+                                    <div ng-repeat="financial in financialData_total[activeYearId].data">
                                         <div class="row-wrap" 
                                             ng-click="selectReport($index)"
-                                            ng-class="{active: $index == activeFinancialReport}">
+                                            ng-class="{active: $index == activeReportId }">
 
                                             <h4 class="title">{{financial.name}}:</h4>
                                             <h4 class="number primary">
                                                 <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financialData_total[$index].val | number:financial.decimals }}
+                                                {{financial.val | number:financial.decimals }}
                                             </h4>
                                             <h4 class="number selected">
                                                 <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financial.val | number:financial.decimals }}
+                                                {{financialData_active[activeYearId].data[$index].val | number:financial.decimals }}
                                             </h4>
 
                                         </div>
