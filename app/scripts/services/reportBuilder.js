@@ -178,8 +178,10 @@ angular.module('appliedByDesignApp')
         return outputReport;
 
       },
-      filterFinancialReport: function(finReport){
+      filterFinancialReport: function(){
 
+        var finReport = financialReports.getFullReport();
+        
         var outputReports = [];
         var filteredReport;
         var yearReport = {};

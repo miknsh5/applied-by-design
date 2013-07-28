@@ -34,7 +34,7 @@ angular.module('appliedByDesignApp')
       },
 
       setReport: function(report){
-        financialReport = formatFinancialReport(report);
+        financialReport = report;
       },
       selectReport: function(id) {
         activeReportId = id;
