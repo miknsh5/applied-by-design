@@ -201,6 +201,7 @@ angular.module('appliedByDesignApp')
         //Get all of the unique equipment codes from flights
         var equipCodes = _.uniq(_.pluck(flights,'Equipment'));
         var equipment = [];
+        var APservices;
 
         //Assign equipment names to 'equipment'
         for(var i = 0;i<equipCodes.length;i++)
@@ -210,6 +211,23 @@ angular.module('appliedByDesignApp')
             'code':equipCodes[i],
             'active': true
            };
+
+           equipment[i].services = [];
+           equipment[i].details = {};
+
+          equipment[i].details = [ {  'name':'Aircraft Name','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Name},
+                                   {  'name':'OAG Code','value': equipCodes[i]},
+                                   {  'name':'Count','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Count},
+                                   {  'name':'Capacity','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Capacity},
+                                   {  'name':'Cabins','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Cabins}];
+
+          APservices = _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Services;
+
+          for(var k in APservices)
+          {
+            equipment[i].services.push({'name':k,'val':APservices[k]});
+          }
+
         }
 
         //set initial equipment object in navService

@@ -1,6 +1,7 @@
 [
     {
         "Equipment": "73Q",
+        "Count": 100,
         "Name":"737-400 Combi",
         "Capacity": 72,
         "Cabins": 1,
@@ -12,6 +13,7 @@
     },
     {
         "Equipment": "73G",
+        "Count": 100,
         "Name":"737-700",
         "Capacity": 124,
         "Cabins": 2,
@@ -23,6 +25,7 @@
     },
     {
         "Equipment": "734",
+        "Count": 100,
         "Name":"737-400",
         "Capacity": 144,
         "Cabins": 2,
@@ -34,17 +37,19 @@
     },
     {
         "Equipment": "738",
+        "Count": 100,
         "Name":"737-800",
         "Capacity": 157,
         "Cabins": 2,
         "Size": "Large",
         "Services": {
-            "FuelService": false,
+            "FuelService": true,
             "MaintenanceService": false
         }
     },
     {
         "Equipment": "739",
+        "Count": 100,
         "Name":"737-900",
         "Capacity": 172,
         "Cabins": 2,
