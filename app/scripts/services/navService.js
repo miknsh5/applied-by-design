@@ -4,7 +4,7 @@ angular.module('appliedByDesignApp')
   .factory('navService', function () {
     // Service logic
 
-    var activeTabId = 0;
+    var activeTabId = 1;
 
     // initialized from reportBuilder service on intial data load
     // button status managed here

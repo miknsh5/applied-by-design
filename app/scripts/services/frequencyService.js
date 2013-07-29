@@ -16,14 +16,12 @@ angular.module('appliedByDesignApp')
 
     // Public API here
     return {
-      getDaily: function() {
+      getDays: function() {
         return frequencies;
       },
       toggleDaily: function(id){
         frequencies[id].active = !frequencies[id].active;
       },
-      isDayActive: function(id) {
-        return frequencies[id].active;
-      }
+
     };
   });

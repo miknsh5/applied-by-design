@@ -151,12 +151,13 @@
                             <div class="filter-days">
                                 <h4>Schedule</h4>
                                 <div class="day-buttons">
-                                    <div ng-repeat="day in frequencyService.getDaily()">
+                                    <div ng-repeat="day in dotw">
                                         <div class="day-btn" 
-                                            ng-click="frequencyService.toggleDaily($index)"
-                                            ng-class="{active: frequencyService.isDayActive($index)}">
+                                            ng-click="selectDay($index)"
+                                            ng-class="{active: day.active}">
                                             {{day.name}}
                                         </div>
+                                        <daily-flights num-flights=day.numFlights></daily-flights>
                                     </div>
                                 </div>
                             </div>

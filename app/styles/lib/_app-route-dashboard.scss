@@ -251,8 +251,27 @@ $filter-bar-height: 40px;
   padding: 3px 3px;
   width: 70px;
   height: 18px;
+  // clear:left;
+
   @include dark-button;
 
+}
+
+.day-btn {
+  float: left;
+  clear: both;
+  margin: 2px;
+  margin-left: 20px;
+}
+
+.frequency-bar {
+  width: 2px;
+  height: 20px;
+  border-right:2px solid #eee;
+  float: left;
+  position: relative;
+  top: 4px;
+  cursor: default;
 }
 
 .summary-table {
