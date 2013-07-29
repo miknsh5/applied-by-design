@@ -5,14 +5,17 @@ angular.module('appliedByDesignApp')
     // Service logic
 
     var financialReport = [];
-    var activeReport  = 0; //id
-    var activeYear    = 0; //id
+    var activeReport  = 'Crew'; //name
+    var activeYear    = 0;      //id
 
     // Public API here
     return {
       // getters
       getFullReport: function(){
         return filterFinancialReport();
+      },
+      getRouteReport: function(routename){
+        return filterFinancialReport(routeName);
       },
       getActiveReport: function(){
         return financialReport[activeReportId];
@@ -23,13 +26,18 @@ angular.module('appliedByDesignApp')
       getYears: function(){
         return _.pluck(filterFinancialReport(), 'year');
       },
+      // getChartData: function(){
+        // return this.getFullReport()[activeYear][activeReport];
+        // return this.getFullReport()[activeYear][activeReport];
+
+      // },
 
       // setters
       setReport: function(report){
         financialReport = report;
       },
-      setActiveReport: function(id) {
-        activeReport = id;
+      setActiveReport: function(name) {
+        activeReport = name;
       },
       setActiveYear: function(id) {
         activeYear = id;
@@ -65,7 +73,9 @@ angular.module('appliedByDesignApp')
 
           yearReport.data[m] = {'name': reportMetrics[m],
                                 'val' : _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0),
+                                // 'currency': 'true',
                                 'currency': currency[m],
+                                // 'currency': currency[m] == false ? false : true,
                                 'decimals': decimals[m]
                               };
 
@@ -107,35 +117,35 @@ angular.module('appliedByDesignApp')
       return outputArray;
     }
 
-    function formatFinancialReport(newData) {
+    // function formatFinancialReport(newData) {
 
 
-        // when no aircraft selected and newData is empty, set all values = 0
-        if (newData.length == 0) {
-            newData.push({
-                'Revenue':  0,
-                'Costs':    0,
-                'Profit':   0,
-                'RPM':      0,
-                'ASK':      0,
-                'PAX':      0,
-                'Seats':    0
-                });
-        } else {
-          newData = newData[activeYearId].fleetReport;
-        }
+    //     // when no aircraft selected and newData is empty, set all values = 0
+    //     if (newData.length == 0) {
+    //         newData.push({
+    //             'Revenue':  0,
+    //             'Costs':    0,
+    //             'Profit':   0,
+    //             'RPM':      0,
+    //             'ASK':      0,
+    //             'PAX':      0,
+    //             'Seats':    0
+    //             });
+    //     } else {
+    //       newData = newData[activeYearId].fleetReport;
+    //     }
 
-        var formattedData = [
-            {'name': 'Revenue',           'val': newData[0].Revenue, 'currency': true,  'decimals':0},
-            {'name': 'Operating Costs',   'val': newData[0].Costs,   'currency': true,  'decimals':0},
-            {'name': 'Operating Profit',  'val': newData[0].Profit,  'currency': true,  'decimals':0},
-            {'name': 'RPM',               'val': newData[0].RPM,     'currency': false, 'decimals':0},
-            {'name': 'ASK',               'val': newData[0].ASK,     'currency': false, 'decimals':0},
-            {'name': 'PAX',               'val': newData[0].PAX,     'currency': false, 'decimals':0},
-            {'name': 'Seats',             'val': newData[0].Seats,   'currency': false, 'decimals':0}
-        ];
+    //     var formattedData = [
+    //         {'name': 'Revenue',           'val': newData[0].Revenue, 'currency': true,  'decimals':0},
+    //         {'name': 'Operating Costs',   'val': newData[0].Costs,   'currency': true,  'decimals':0},
+    //         {'name': 'Operating Profit',  'val': newData[0].Profit,  'currency': true,  'decimals':0},
+    //         {'name': 'RPM',               'val': newData[0].RPM,     'currency': false, 'decimals':0},
+    //         {'name': 'ASK',               'val': newData[0].ASK,     'currency': false, 'decimals':0},
+    //         {'name': 'PAX',               'val': newData[0].PAX,     'currency': false, 'decimals':0},
+    //         {'name': 'Seats',             'val': newData[0].Seats,   'currency': false, 'decimals':0}
+    //     ];
         
-        return formattedData;
-    }
+    //     return formattedData;
+    // }
 
   });

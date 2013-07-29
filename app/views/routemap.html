@@ -81,18 +81,29 @@
 
                         <!-- main financial panel -->
                         <div class="panel main">
-                            <div class="panel-inner">
+                            <div class="panel-inner" ng-init="isFinancialTable=true;">
+                                <!-- financial & operational table filter buttons -->
+                                <div class="report-toggle"
+                                    ng-click="isFinancialTable=!isFinancialTable"
+                                    ng-class="{active: isFinancialTable}">Financial
+                                </div>
+                                <div class="report-toggle"
+                                    ng-click="isFinancialTable=!isFinancialTable"
+                                    ng-class="{active: !isFinancialTable}">Operational
+                                </div>
                                 <div class="summary-table financial">
-                                    <h3 class="heading">Operations</h3>
+                                    <h3 class="heading" ng-show="isFinancialTable">Financial Report</h3>
+                                    <h3 class="heading" ng-show="!isFinancialTable">Operational Report</h3>
                                     <h3 class="heading small">Total</h3>
                                     <h3 class="heading small last">Selected &nbsp
                                         <i class="ikon-airplane ikon"> </i>
                                     </h3>
-                                    <!-- check out ng-grid maybe? -->
-                                    <div ng-repeat="financial in financialData_total[activeYearId].data">
+
+                                    <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
+                                      <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{currency:isFinancialTable}">
                                         <div class="row-wrap" 
-                                            ng-click="selectReport($index)"
-                                            ng-class="{active: $index == activeReportId }">
+                                            ng-click="selectReport(financial.name)"
+                                            ng-class="{active: financial.name == activeReportName }">
 
                                             <h4 class="title">{{financial.name}}:</h4>
                                             <h4 class="number primary">
@@ -101,7 +112,8 @@
                                             </h4>
                                             <h4 class="number selected">
                                                 <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financialData_active[activeYearId].data[$index].val | number:financial.decimals }}
+                                                {{getActiveRecord(financial.name).val | number:financial.decimals }} 
+                                                <!-- financialData_active[activeYearId].data[$index].val | number:financial.decimals }} -->
                                             </h4>
 
                                         </div>
@@ -116,15 +128,15 @@
                         <div class="panel chart">
                             <div class="panel-inner">
                                 <div class="chart-title">
-                                    <h4>{{selectedReport.name}}: 
+                                    <h4>{{activeReportName}}: 
                                         <span class="primary">
-                                            <span class="dollar" ng-show="selectedReport.currency">$</span>
-                                            {{selectedReport.val | number:0}}
+                                            <span class="dollar" ng-show="activeChartData.total.currency">$</span>
+                                            {{activeChartData.total.val | number:0}}
                                         </span>
                                     </h4>
                                 </div>
                                 <div class="chart-wrap">
-                                    <financial-chart width='chartWidth' height='chartHeight'></financial-chart>
+                                    <financial-chart data='activeChartData' width='chartWidth' height='chartHeight'></financial-chart>
                                 </div>
                             </div>
                         </div>

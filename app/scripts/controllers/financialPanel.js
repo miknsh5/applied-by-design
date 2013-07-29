@@ -12,22 +12,23 @@ angular.module('appliedByDesignApp')
     $scope.financialData_total  = financialReports.getFullReport();
     $scope.financialData_active = financialReports.getFullReport();
     $scope.fiscalYears = financialReports.getYears();
-
-    $scope.activeReportId = 0;
+    $scope.activeReportName = 'Crew';
     $scope.activeYearId   = 0;
-    $scope.selectedReport = $scope.financialData_active[$scope.activeYearId].data[$scope.activeReportId];
+    // $scope.selectedReport = _.findWhere($scope.financialData_active[$scope.activeYearId].data, {name: $scope.activeReportName});
+    $scope.activeChartData = $scope.financialData_active[$scope.activeYearId][$scope.activeReportName].data;
+    $scope.activeChartData.total = assignChartTotal('Crew');
 
     // set the dimensions of chart SVG
     $scope.chartWidth = 175;
     $scope.chartHeight = 175;
-    
+
     $scope.$watch(function(){ return financialReports.getFullReport()}, function(newData){
         $scope.financialData_active = newData;
     }, true);
 
 
     $scope.$watch(function(){ return financialReports.getActiveId('activeReport')}, function(newData){
-       $scope.activeReportId = newData;
+       $scope.activeReportName = newData;
     }, false);
 
     $scope.$watch(function(){ return financialReports.getActiveId('activeYear')}, function(newData){
@@ -35,14 +36,26 @@ angular.module('appliedByDesignApp')
     }, false);
 
 
-    $scope.selectReport = function(id){
+    $scope.selectReport = function(name){
         // when a user selects a new report in the table
-        financialReports.setActiveReport(id);
-        $scope.selectedReport = $scope.financialData_active[$scope.activeYearId].data[id];
+        financialReports.setActiveReport(name);
+        $scope.activeChartData = $scope.financialData_active[$scope.activeYearId][name].data;
+        $scope.activeChartData.total = assignChartTotal(name);
+
     }
     $scope.selectYear = function(id){
         //when a user selects a new financial year
         financialReports.setActiveYear(id);
+    }
+
+    $scope.getActiveRecord = function(recordName){
+        // {{getActiveRecord(financial.name) | number:financial.decimals }} 
+        return _.findWhere($scope.financialData_active[$scope.activeYearId].data, {name: recordName})
+    }
+
+
+    function assignChartTotal(name){
+        return $scope.activeChartData.total = _.findWhere($scope.financialData_total[$scope.activeYearId].data, {name: name});
     }
 
   });

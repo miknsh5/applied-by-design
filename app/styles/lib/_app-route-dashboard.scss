@@ -147,6 +147,15 @@ $filter-bar-height: 40px;
   }
 }
 
+.report-toggle {
+  width: 80px;
+  height: 100%;
+  margin-right: 10px;
+  float: left;
+  text-align: center;
+  @include dark-button;
+}
+
 .dashboard-wrapper {
   @include transition(bottom 0.4s);
   height: 250px;
@@ -168,7 +177,7 @@ $filter-bar-height: 40px;
     font-size: 1.5em;
 
     &.heading {
-      width: 150px;
+      width: 170px;
       float: left;
       border-bottom: solid 1px #666;
     }
@@ -248,10 +257,11 @@ $filter-bar-height: 40px;
 
 .summary-table {
   color: $font-lightgray;
+  clear: both;
   
   h4.title {
     display: inline;
-    width: 150px;
+    width: 170px;
     float: left;
     clear: left;
     margin-left: 10px;
@@ -259,7 +269,7 @@ $filter-bar-height: 40px;
 
   h4.number {
     display: inline;
-    width: 150px;
+    width: 170px;
     float: left;
     clear: right;
     text-align: right;
