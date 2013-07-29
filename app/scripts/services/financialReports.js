@@ -14,7 +14,7 @@ angular.module('appliedByDesignApp')
       getFullReport: function(){
         return filterFinancialReport();
       },
-      getRouteReport: function(routename){
+      getRouteReport: function(routeName){
         return filterFinancialReport(routeName);
       },
       getActiveReport: function(){
@@ -45,7 +45,7 @@ angular.module('appliedByDesignApp')
       
     };
 
-    function filterFinancialReport(){
+    function filterFinancialReport(routeName){
 
       var finReport = financialReport;
       var outputReports = [];
@@ -59,10 +59,20 @@ angular.module('appliedByDesignApp')
 
       var equipment    = navService.getEquipment();
       var filterByAP = _.pluck(_.where(equipment,{active:true}),'code');
+      var equipReport;
 
       for(var y=0;y<finReport.length;y++)
       {
-        filteredReport  = findArray(finReport[y].fleetReport,filterByAP,"Equipment");
+        equipReport  = findArray(finReport[y].fleetReport,filterByAP,"Equipment");
+        if (typeof routeName != 'undefined')
+        {
+          filteredReport = _.where(equipReport,{NonDirectional: routeName});
+        }
+        else
+        {
+          filteredReport = equipReport;
+        }
+
         airplanes       = _.uniq(_.pluck(filteredReport,'Equipment'));
 
         // yearReport.year = filteredReport[0].Year;

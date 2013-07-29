@@ -108,7 +108,7 @@ angular.module('appliedByDesignApp')
               TestObj.PAX=pax;
               TestObj.LF=lf;
               TestObj.Equipment=revFlights[i].Equipment;
-              TestObj.Route = revFlights[i].NonDirectional;
+              TestObj.NonDirectional = revFlights[i].NonDirectional;
 
 
               //Apply Services
@@ -178,122 +178,6 @@ angular.module('appliedByDesignApp')
         return outputReport;
 
       },
-      buildOperationsReport: function(forecast, byAirplane, selRoutes) {
-        
-        // retrieve data dependencies
-        var flights      = fleetModel.getData('flights');
-        var airplanes    = fleetModel.getData('airplanes');
-        var market       = fleetModel.getData('market');
-        var services     = fleetModel.getData('services');
-        var costCurves   = fleetModel.getData('costCurves');
-        var equipment    = navService.getEquipment();
-        
-        // Filter flights by ODs if a filter is provided
-        if (typeof(selRoutes) != 'undefined') {
-           var flightsRoutes = this.findArray(flights, selRoutes,"OD");
-        } 
-        else {
-          var flightsRoutes = flights;
-        }
-
-        var outputReport = [];
-        
-        // return filtered set of routes as subset of fleetModel
-        var filterBy = _.pluck(_.where(equipment,{active:true}),'code');
-        var revFlights;
-        
-        // only generate route report if an aircraft type is selected
-        if (filterBy.length) { 
-
-          // Instantiate report variables
-          var weeks = 52;
-          var outputRev, outputCost, outputOps;
-          var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
-          var fleetReport = [];
-          var years, APCount;
-
-          if(forecast) {
-            years = market.forecast.years;
-          }
-          else {
-            years = 1;
-          }
-
-          for(var y = 0; y<years; y++) {
-            outputRev = 0;
-            outputCost = {};
-            outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
-
-            //If reporting by Airplane...
-            if(byAirplane)
-            {
-              APCount = filterBy.length;
-            }
-            else
-            {
-              APCount = 1;
-            }
-
-            //For Each Airplane...
-            for(var aps=0;aps<APCount;aps++)
-            {
-
-              //If Reporting by Airplane
-              if(byAirplane){
-                revFlights = this.findArray(flightsRoutes, [filterBy[aps]],"Equipment");
-              }
-              else
-              {
-                revFlights = this.findArray(flightsRoutes, filterBy,"Equipment");
-              }
-
-              //Get Routes List
-              var activeRoutes = this.buildRoutes();
-
-              //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-              for(var i = 0;i<revFlights.length;i++) {
-                //Calculate Financial and Performance Perameters
-                freq           = revFlights[i].Frequency;
-                cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
-                lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
-                pax            = lf*cap;
-                stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
-                rpm            = pax*stagelen;
-
-                //Total Weekly Flight Operational Stats
-                outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
-                outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
-                outputOps["PAX"] = outputOps["PAX"]+pax*freq;
-                outputOps["Seats"] = outputOps["Seats"]+cap*freq;
-                outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
-
-              }
-              // If Reporting by Airplane
-              if(byAirplane)
-              {
-                outputOps.Equipment = filterBy[aps];
-              }
-              else
-              {
-                outputOps.Equipment = 'Total';
-              }
-              
-              // Aggregate Airplane Reports
-
-              fleetReport[aps] = jQuery.extend(true, {}, outputOps);
-              outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
-              
-            }
-          outputReport[y] = {'fleetReport':jQuery.extend(true, {}, fleetReport)};
-          }
-        }
-
-        operationsReport = jQuery.extend(true, {}, formatOperationsData(outputReport));
-
-        return outputReport;
-
-      },
-
       generateEquipment: function() {
 
         // retrieve data dependencies
