@@ -64,16 +64,23 @@ angular.module('appliedByDesignApp')
       {
         filteredReport  = findArray(finReport[y].fleetReport,filterByAP,"Equipment");
         airplanes       = _.uniq(_.pluck(filteredReport,'Equipment'));
-        yearReport.year = filteredReport[0].Year;
+
+        // yearReport.year = filteredReport[0].Year;
+        yearReport.year = _.uniq(_.pluck(finReport[y].fleetReport,'Year'))[0];
 
         yearReport.data = [];
+        var totalval = 0;
+        var apval = 0;
 
         for(var m=0;m<reportMetrics.length;m++)
         {
+          if(filteredReport != [])
+          {
+            totalval = _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0);
+          }
 
           yearReport.data[m] = {'name': reportMetrics[m],
-                                'val' : _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0),
-                                // 'currency': 'true',
+                                'val' : totalval,
                                 'currency': currency[m],
                                 // 'currency': currency[m] == false ? false : true,
                                 'decimals': decimals[m]
@@ -83,9 +90,16 @@ angular.module('appliedByDesignApp')
           yearReport[reportMetrics[m]].data = [];
           for(var a=0;a<airplanes.length;a++)
           {
+            if(filteredReport != [])
+            {
+              apval = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment: airplanes[a]}),reportMetrics[m]),function(a,b){return a+b;},0);
+            }
             yearReport[reportMetrics[m]].data[a] = {'equipment': airplanes[a],
-                                                    'val': _.reduceRight(_.pluck(_.where(filteredReport,{Equipment: airplanes[a]}),reportMetrics[m]),function(a,b){return a+b;},0)};
+                                                    'val': apval};
+
+            apval = 0;
           }
+          totalval = 0;
         }
 
         outputReports.push(yearReport);
