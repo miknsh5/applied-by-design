@@ -4,6 +4,8 @@ angular.module('appliedByDesignApp')
   .controller('OperationsPanelCtrl', function ($scope, navService, routeService, financialReports) {
     
 
+  	$scope.routeReport = routeService.setRouteReport('DENSEA');
+
     $scope.selectDay = function(id) {
     	$scope.dotw = routeService.setActiveDay(id);
     }

@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .factory('routeService', function () {
+  .factory('routeService', function (financialReports) {
     // Service logic
 
+    var routeReport = [];
     var frequencies = [
         {'name': 'MON', 'active': true, 'numFlights': 4},
         {'name': 'TUE', 'active': true, 'numFlights': 2},
@@ -20,13 +21,20 @@ angular.module('appliedByDesignApp')
       getDays: function(){
         return frequencies;
       },
+      getRouteReport: function(routeName){
+        return routeReport;
+      },
+
+
+      setRouteReport: function(routeName){
+        routeReport = financialReports.getRouteReport(routeName);
+        return routeReport;
+      },
       setActiveDay: function(id){
         angular.forEach(frequencies, function(day, key){
           day.active = (key == id) ? true : false;
         });
-
         return frequencies;
-      
       },
       isDayActive: function(id) {
         return frequencies[id].active;

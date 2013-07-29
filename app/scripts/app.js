@@ -27,7 +27,7 @@ angular.module('appliedByDesignApp', [])
         controller: 'RoutemapCtrl',
         resolve: {
           loadedState: function(fleetModel, $q, $timeout){
-            console.log('were waiting..............')
+            // console.log('were waiting..............')
             var deferred = $q.defer();
 
             // this should start loading the resources
@@ -49,11 +49,11 @@ angular.module('appliedByDesignApp', [])
                 if (typeof waitForThese[i] == 'undefined') {status= status + 1;}
               }
               if (status != 0) {
-                console.log('wiating for: ' + status + ' files...');
+                // console.log('wiating for: ' + status + ' files...');
                 deferred.resolve([]);
               } else {
                 deferred.resolve(status);
-                console.log('resolved')
+                console.log('** All Data Loaded')
               }
             }, 500);
 

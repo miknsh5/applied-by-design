@@ -26,11 +26,6 @@ angular.module('appliedByDesignApp')
       getYears: function(){
         return _.pluck(filterFinancialReport(), 'year');
       },
-      // getChartData: function(){
-        // return this.getFullReport()[activeYear][activeReport];
-        // return this.getFullReport()[activeYear][activeReport];
-
-      // },
 
       // setters
       setReport: function(report){
