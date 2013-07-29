@@ -83,13 +83,15 @@
                         <div class="panel main">
                             <div class="panel-inner" ng-init="isFinancialTable=true;">
                                 <!-- financial & operational table filter buttons -->
-                                <div class="report-toggle"
-                                    ng-click="isFinancialTable=!isFinancialTable"
-                                    ng-class="{active: isFinancialTable}">Financial
-                                </div>
-                                <div class="report-toggle"
-                                    ng-click="isFinancialTable=!isFinancialTable"
-                                    ng-class="{active: !isFinancialTable}">Operational
+                                <div class="inner-tab-row">
+                                    <div class="report-toggle"
+                                        ng-click="isFinancialTable=!isFinancialTable"
+                                        ng-class="{active: isFinancialTable}">Financial
+                                    </div>
+                                    <div class="report-toggle"
+                                        ng-click="isFinancialTable=!isFinancialTable"
+                                        ng-class="{active: !isFinancialTable}">Operational
+                                    </div>
                                 </div>
                                 <div class="summary-table financial">
                                     <h3 class="heading" ng-show="isFinancialTable">Financial Report</h3>
@@ -148,8 +150,14 @@
 
                         <!-- small filter panel with day buttons -->
                         <div class="panel small">
+                            <h4 class="left">Route</h4>
+                            <div class="route-pair">
+                                <div class="city-pair"><div class="city left">SEA</div></div>
+                                <div class="city-pair"><div class="city right">DEN</div></div>
+                                <!-- <div class="connector"></div> -->
+                            </div>
                             <div class="filter-days">
-                                <h4>Schedule</h4>
+                                <h4 class="left">Schedule</h4>
                                 <div class="day-buttons">
                                     <div ng-repeat="day in dotw">
                                         <div class="day-btn" 
@@ -164,20 +172,70 @@
                         </div>
 
                         <!-- main Operationsl panel -->
-                        <div class="panel main">
-                            <div class="panel-inner">
-                                <div class="table-wrap">
-                                    <h3>Route Details</h3>
-                                    <div class="route-detail-table">
-                                        <!-- check out ng-grid maybe? -->
+                        <div class="panel medium">
+                            <div class="panel-inner" ng-init="isFinancialTable=true;">
+                                <div class="inner-tab-row">
+                                    <div class="report-toggle"
+                                        ng-click="isFinancialTable=!isFinancialTable"
+                                        ng-class="{active: isFinancialTable}">Financial
+                                    </div>
+                                    <div class="report-toggle"
+                                        ng-click="isFinancialTable=!isFinancialTable"
+                                        ng-class="{active: !isFinancialTable}">Operational
                                     </div>
                                 </div>
-        
-                                <div class="table-wrap">
-                                    <h3>Route Costs</h3>
-                                    <div class="route-detail-table">
-                                        <!-- check out ng-grid maybe? -->
+                                <!-- financial & operational table filter buttons -->
+                                <div class="summary-table financial">
+                                    <h3 class="heading" ng-show="isFinancialTable">Financial Report</h3>
+                                    <h3 class="heading" ng-show="!isFinancialTable">Operational Report</h3>
+                                    <h3 class="heading small">Route Total</h3>
+
+                                    <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
+                                      <div ng-repeat="metric in routeReport[0].data | filter:{currency:isFinancialTable}">
+                                        <div class="row-wrap" 
+                                            ng-click="selectReport(metric.name)"
+                                            ng-class="{active: metric.name == activeReportName }">
+
+                                            <h4 class="title">{{metric.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="metric.currency">$</span>
+                                                {{metric.val | number:metric.decimals }}
+                                            </h4>
+
+                                        </div>
                                     </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                               <div class="summary-table financial">
+                                    <h3 class="heading">Route Details</h3>
+
+                                    <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
+                                      <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{currency:isFinancialTable}">
+                                        <div class="row-wrap" 
+                                            ng-click="selectReport(financial.name)"
+                                            ng-class="{active: financial.name == activeReportName }">
+
+                                            <h4 class="title">{{financial.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="financial.currency">$</span>
+                                                {{financial.val | number:financial.decimals }}
+                                            </h4>
+                                            <h4 class="number selected">
+                                                <span class="dollar" ng-show="financial.currency">$</span>
+                                                {{getActiveRecord(financial.name).val | number:financial.decimals }} 
+                                            </h4>
+
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
                         </div>

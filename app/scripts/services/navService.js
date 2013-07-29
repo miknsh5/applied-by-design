@@ -15,21 +15,11 @@ angular.module('appliedByDesignApp')
     return {
       setActiveTab: function(id){
         activeTabId = id;
-        // console.log('selected!')
-        // angular.forEach(dashboardTabs, function(tab, i){
-          // loop through each of the tabs, set to true
-          // set the selected tab active state to 'true'
-          // set the other tab active states to 'false'
-          // dashboardTabs[i].active = (i == id) ? true : false;
-        // });
       },
       getActiveTab: function(){
         return activeTabId;
       },
 
-      // getTabState: function(id){
-        // return dashboardTabs[id].active;
-      // },
       initializeEquipment: function(equip){
         equipment = equip;
       },

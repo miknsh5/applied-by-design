@@ -235,6 +235,10 @@ $filter-bar-height: 40px;
       // border: solid #666 1px;
     }
 
+    &.medium {
+      width: 440px;
+    }
+
     &.chart {
       width: 400px;
     }
@@ -245,6 +249,9 @@ $filter-bar-height: 40px;
   }
 }
 
+.inner-tab-row {
+  margin-top: 5px;
+}
 
 .year-btn, .day-btn {
   margin: 4px auto;
@@ -256,22 +263,77 @@ $filter-bar-height: 40px;
   @include dark-button;
 
 }
+.filter-days {
+  clear: left;
+}
 
 .day-btn {
+  height: 10px;
+  width: 50px;
   float: left;
   clear: both;
   margin: 2px;
   margin-left: 20px;
+  font-size: 0.7em;
+  line-height: 1.2em;
+}
+
+.route-pair {
+  margin: 0 auto;
+  width: 90%;
+  height: 30px;
+  position: relative;
+
+  .connector {
+    position: absolute;
+    background-color: $color-orange-lt;
+    width: 50%;
+    height: 5px;
+    top: 10px;
+    left: 25%;
+    z-index: 1;
+  }
+
+  .city-pair {
+    width: 50%;
+    float: left;
+    color: $font-whitewhite;
+    position: relative;
+    z-index: 10;
+
+
+    .city {
+      width: 35px;
+      background-color: $color-gray;
+      margin: auto;
+      padding: 2px 10px;
+
+      &.right {
+        border-left: solid 2px $color-orange-lt;
+        float: left;
+      }
+      &.left {
+        border-right: solid 2px $color-orange-lt;
+        float: right;
+      }
+    }
+  }
 }
 
 .frequency-bar {
   width: 2px;
-  height: 20px;
+  height: 10px;
   border-right:2px solid #eee;
   float: left;
   position: relative;
-  top: 4px;
+  top: 5px;
   cursor: default;
+}
+
+h4.left {
+  text-align: left;
+  margin-left: 20px;
+  color: #888;
 }
 
 .summary-table {
@@ -285,6 +347,8 @@ $filter-bar-height: 40px;
     clear: left;
     margin-left: 10px;
   }
+
+
 
   h4.number {
     display: inline;

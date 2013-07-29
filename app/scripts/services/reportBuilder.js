@@ -6,10 +6,6 @@ angular.module('appliedByDesignApp')
 
     // calculated data (watch these with return functions)
     var routeReport;
-        // financialReport    = [],
-        // operationsReport   = [];
-
-    
 
     // Public API here
     return {
