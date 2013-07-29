@@ -62,10 +62,40 @@ angular.module('appliedByDesignApp')
         if (typeof routeName != 'undefined')
         {
           filteredReport = _.where(equipReport,{NonDirectional: routeName});
+
+          //Route Details
+          yearReport.detail = {};
+          yearReport.detail.origin = {  'City':    filteredReport[0].oCity,
+                                        'Country': filteredReport[0].oCity,
+                                        'State':   filteredReport[0].oState,
+                                        'Name':    filteredReport[0].oName};
+
+          yearReport.detail.destination = {   'City':    filteredReport[0].dCity,
+                                              'Country': filteredReport[0].dCity,
+                                              'State':   filteredReport[0].dState,
+                                              'Name':    filteredReport[0].dName};
+
+          var moFreq = _.reduceRight(_.pluck(filteredReport,'monday'),function(a,b){return a+b},0);
+          var tuFreq = _.reduceRight(_.pluck(filteredReport,'tuesday'),function(a,b){return a+b},0);
+          var weFreq = _.reduceRight(_.pluck(filteredReport,'wednesday'),function(a,b){return a+b},0);
+          var thFreq = _.reduceRight(_.pluck(filteredReport,'thursday'),function(a,b){return a+b},0);
+          var frFreq = _.reduceRight(_.pluck(filteredReport,'friday'),function(a,b){return a+b},0);
+          var saFreq = _.reduceRight(_.pluck(filteredReport,'saturday'),function(a,b){return a+b},0);
+          var suFreq = _.reduceRight(_.pluck(filteredReport,'sunday'),function(a,b){return a+b},0);
+
+          yearReport.detail.route = {};
+          yearReport.detail.route.freq = {};
+
+          yearReport.detail.route.freq.total = moFreq+tuFreq+weFreq+thFreq+frFreq+saFreq+suFreq;
+          yearReport.detail.route.freq.days = [moFreq,tuFreq,weFreq,thFreq,frFreq,saFreq,suFreq];
+
+          yearReport.detail.route.distance = filteredReport[0].Distance;
+
         }
         else
         {
           filteredReport = equipReport;
+          yearReport.detail = {};
         }
 
         airplanes       = _.uniq(_.pluck(filteredReport,'Equipment'));

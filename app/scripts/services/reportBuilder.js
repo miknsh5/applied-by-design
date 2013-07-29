@@ -110,6 +110,24 @@ angular.module('appliedByDesignApp')
               TestObj.Equipment=revFlights[i].Equipment;
               TestObj.NonDirectional = revFlights[i].NonDirectional;
 
+              TestObj.oCity = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ocity;
+              TestObj.oState = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ostate;
+              TestObj.oCountry = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ocountry;
+              TestObj.oName = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Oname;
+              TestObj.dCity = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcity;
+              TestObj.dState = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dstate;
+              TestObj.dCountry = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcountry;
+              TestObj.dName = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dname;
+
+              TestObj.Distance = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
+
+              TestObj.monday    = +revFlights[i].Monday;
+              TestObj.tuesday   = +revFlights[i].Tuesday;
+              TestObj.wednesday = +revFlights[i].Wednesday;
+              TestObj.thursday  = +revFlights[i].Thursday;
+              TestObj.friday    = +revFlights[i].Friday;
+              TestObj.saturday  = +revFlights[i].Saturday;
+              TestObj.sunday    = +revFlights[i].Sunday;
 
               //Apply Services
               for(var k1 in servicesInUse) {
