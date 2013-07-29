@@ -7,6 +7,8 @@ angular.module('appliedByDesignApp')
     // changes are made to add new flights or reconfigure services.
     reportBuilder.buildFinancialReport(true);
 
+    $scope.financialReports = financialReports;
+
     // store reports for total of all operations for comparison (orange column on financial tab)
     // instantiate once at initial page load
     $scope.financialData_total  = financialReports.getFullReport();
