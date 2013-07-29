@@ -177,12 +177,16 @@ $filter-bar-height: 40px;
     font-size: 1.5em;
 
     &.heading {
-      width: 170px;
+      width: 150px;
       float: left;
       border-bottom: solid 1px #666;
     }
+    &.wide {
+      width: 170px;
+    }
 
     &.small {
+      width: 130px;
       text-align: right;
       font-size: 0.8em;
       line-height: 2.1em;
@@ -231,16 +235,25 @@ $filter-bar-height: 40px;
     }
 
     &.main {
-      min-width: 600px;
+      min-width: 530px;
       // border: solid #666 1px;
     }
 
+    &.large {
+      width: 400px;
+    }
+
     &.medium {
-      width: 440px;
+      width: 300px;
     }
 
     &.chart {
       width: 400px;
+
+      .chart-wrap {
+        text-align: center;
+        margin-top: 20px;
+      }
     }
 
     .panel-inner {
@@ -352,7 +365,7 @@ h4.left {
 
   h4.number {
     display: inline;
-    width: 170px;
+    width: 130px;
     float: left;
     clear: right;
     text-align: right;
