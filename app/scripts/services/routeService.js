@@ -6,13 +6,13 @@ angular.module('appliedByDesignApp')
 
     var routeReport = [];
     var frequencies = [
-        {'name': 'MON', 'active': true, 'numFlights': 4},
-        {'name': 'TUE', 'active': true, 'numFlights': 2},
-        {'name': 'WED', 'active': true, 'numFlights': 8},
-        {'name': 'THU', 'active': true, 'numFlights': 0},
-        {'name': 'FRI', 'active': true, 'numFlights': 3},
-        {'name': 'SAT', 'active': true, 'numFlights': 0},
-        {'name': 'SUN', 'active': true, 'numFlights': 10}
+        {'name': 'MON', 'active': false, 'numFlights': 4},
+        {'name': 'TUE', 'active': false, 'numFlights': 2},
+        {'name': 'WED', 'active': false, 'numFlights': 8},
+        {'name': 'THU', 'active': false, 'numFlights': 0},
+        {'name': 'FRI', 'active': false, 'numFlights': 3},
+        {'name': 'SAT', 'active': false, 'numFlights': 0},
+        {'name': 'SUN', 'active': false, 'numFlights': 10}
       ];
 
 
@@ -28,6 +28,11 @@ angular.module('appliedByDesignApp')
 
       setRouteReport: function(routeName){
         routeReport = financialReports.getRouteReport(routeName);
+        // update the flight frequency object
+        angular.forEach(routeReport[0].detail.route.freq.days, function(nFlts, key){
+          frequencies[key].numFlights = nFlts;
+        });
+        
         return routeReport;
       },
       setActiveDay: function(id){

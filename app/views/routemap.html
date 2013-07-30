@@ -216,24 +216,22 @@
                                <div class="summary-table financial">
                                     <h3 class="heading">Route Details</h3>
 
-                                    <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
-                                      <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{currency:isFinancialTable}">
-                                        <div class="row-wrap" 
-                                            ng-click="selectReport(financial.name)"
-                                            ng-class="{active: financial.name == activeReportName }">
-
-                                            <h4 class="title">{{financial.name}}:</h4>
-                                            <h4 class="number primary">
-                                                <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{financial.val | number:financial.decimals }}
-                                            </h4>
-                                            <h4 class="number selected">
-                                                <span class="dollar" ng-show="financial.currency">$</span>
-                                                {{getActiveRecord(financial.name).val | number:financial.decimals }} 
-                                            </h4>
-
+                                        <div class="row-wrap city-pair first">
+                                            <h4 class="title mini">Airport:</h4>
+                                            <h4 class="number mini primary">{{details.origin.Name }}</h4>
+                                            <h4 class="title mini">City, St:</h4>
+                                            <h4 class="number mini primary">{{details.origin.City}}, {{details.origin.State}}</h4>
                                         </div>
-                                    </div>
+                                        <div class="row-wrap distance">
+                                            <h4 class="title mini">Distance (mi):</h4>
+                                            <h4 class="number mini primary">{{details.route.distance | number:0}}</h4>
+                                        </div>
+                                        <div class="row-wrap city-pair">
+                                            <h4 class="title mini">Airport:</h4>
+                                            <h4 class="number mini primary">{{details.destination.Name }}</h4>
+                                            <h4 class="title mini">City, St:</h4>
+                                            <h4 class="number mini primary">{{details.destination.City}}, {{details.destination.State}}</h4>
+                                        </div>
 
 
                                 </div>

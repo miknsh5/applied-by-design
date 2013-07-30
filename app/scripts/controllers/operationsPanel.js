@@ -15,7 +15,9 @@ angular.module('appliedByDesignApp')
         ]
 
 
+
     $scope.routeReport = routeService.setRouteReport('DENSEA');
+    $scope.details = $scope.routeReport[0].detail;
 
     $scope.selectDay = function(id) {
         $scope.dotw = routeService.setActiveDay(id);
