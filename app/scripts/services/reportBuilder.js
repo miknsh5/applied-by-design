@@ -84,10 +84,8 @@ angular.module('appliedByDesignApp')
               //Calculate Financial and Performance Perameters
               freq           = revFlights[i].Frequency;
               cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
-              // lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
-              lf             = .8;
+              lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
               pax            = lf*cap;
-              fare           = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Fare*Math.pow(1+market.growth.fare,y);
               bt             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
               stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
               coeffs         = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
@@ -95,6 +93,8 @@ angular.module('appliedByDesignApp')
               rpm            = pax*stagelen;
               servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
               fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
+
+              fare           = (market.rates.Coefficients.Revenue.A*Math.pow(stagelen,2)+market.rates.Coefficients.Revenue.B*stagelen+market.rates.Coefficients.Revenue.C)*Math.pow(1+market.growth.fare,y);
 
               TestObj.Flight = revFlights[i].FltNumber;
               TestObj.BT=bt;
@@ -137,7 +137,7 @@ angular.module('appliedByDesignApp')
               }
 
               //Total Annual Flight Revenue
-              totalRev = totalRev + weeks*freq*pax*fare;
+              TestObj.Revenue = weeks*freq*pax*fare;
 
               //Total Annual Flight Costs
               var totalCost = 0;
@@ -169,11 +169,11 @@ angular.module('appliedByDesignApp')
               outputOps["PAX"] = outputOps["PAX"]+pax*freq;
               outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
 
-              TestObj.RPM = rpm*freq;
-              TestObj.Seats = cap*freq;
-              TestObj.ASK = cap*freq*stagelen;
-              TestObj.PAX = pax*freq;
-              TestObj.Freq = freq;
+              TestObj.RPM = rpm*freq*weeks;
+              TestObj.Seats = cap*freq*weeks;
+              TestObj.ASK = cap*freq*stagelen*weeks;
+              TestObj.PAX = pax*freq*weeks;
+              TestObj.Freq = freq*weeks;
               TestObj.Equipment = revFlights[i].Equipment;
               TestObj.Year = studyyear;
 

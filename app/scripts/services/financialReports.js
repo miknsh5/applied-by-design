@@ -66,12 +66,12 @@ angular.module('appliedByDesignApp')
           //Route Details
           yearReport.detail = {};
           yearReport.detail.origin = {  'City':    filteredReport[0].oCity,
-                                        'Country': filteredReport[0].oCity,
+                                        'Country': filteredReport[0].oCountry,
                                         'State':   filteredReport[0].oState,
                                         'Name':    filteredReport[0].oName};
 
           yearReport.detail.destination = {   'City':    filteredReport[0].dCity,
-                                              'Country': filteredReport[0].dCity,
+                                              'Country': filteredReport[0].dCountry,
                                               'State':   filteredReport[0].dState,
                                               'Name':    filteredReport[0].dName};
 
