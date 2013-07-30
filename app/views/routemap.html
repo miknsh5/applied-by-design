@@ -214,7 +214,7 @@
                             <div class="panel-inner">
                                 <div class="inner-tab-row">&nbsp</div>
                                <div class="summary-table financial">
-                                    <h3 class="heading">Route Details</h3>
+                                    <h3 class="heading full">Route Details</h3>
 
                                         <div class="row-wrap city-pair first">
                                             <h4 class="title mini">Airport:</h4>
@@ -266,13 +266,43 @@
                                 <h4>Fleet Models</h4>
                                 <div class="plane-buttons">
                                     <!-- loop through the different model types -->
-                                    <div ng-repeat="model in fleetModels">
+                                    <div ng-repeat="model in fleet">
                                         <div class="fleet-model-btn select" 
                                             ng-click="selectModel($index)"
                                             ng-class="{active: activeFleetModel == $index}">
                                             <span class="model-name">{{model.name}}</span>
                                             <i class="ikon-airplane ikon"> </i>
                                             <i class="ikon-chevron-right"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Model</h3>
+                                    <div ng-repeat="item in fleetDetails">
+                                        <div class="row-wrap">
+                                            <h4 class="title mini">{{ item.name }}</h4>
+                                            <h4 class="number primary">{{ item.value }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Services</h3>
+                                    <div ng-repeat="item in fleetDetails">
+                                        <div class="row-wrap">
+                                            <h4 class="title mini">{{ item.name }}</h4>
+                                            <h4 class="number primary">{{ item.value }}</h4>
                                         </div>
                                     </div>
                                 </div>
