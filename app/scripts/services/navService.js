@@ -4,12 +4,12 @@ angular.module('appliedByDesignApp')
   .factory('navService', function () {
     // Service logic
 
-    var activeTabId = 1;
+    var activeTabId = 2;
 
     // initialized from reportBuilder service on intial data load
     // button status managed here
     var equipment = [];
-
+    var activeFleetModel = 0; //fleet model selected in the fleet panel
     
     // Public API here
     return {
@@ -31,6 +31,10 @@ angular.module('appliedByDesignApp')
       },
       getEquipment: function(){
         return equipment;
+      },
+      selectFleetModel: function(id){
+        activeFleetModel = id;
+        return activeFleetModel;
       }
     };
   });

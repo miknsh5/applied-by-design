@@ -266,10 +266,10 @@
                                 <h4>Fleet Models</h4>
                                 <div class="plane-buttons">
                                     <!-- loop through the different model types -->
-                                    <div ng-repeat="model in navService.getEquipment()">
+                                    <div ng-repeat="model in fleetModels">
                                         <div class="fleet-model-btn select" 
-                                            ng-click="navService.selectEquipment($index)"
-                                            ng-class="{active: navService.isEquipActive($index)}">
+                                            ng-click="selectModel($index)"
+                                            ng-class="{active: activeFleetModel == $index}">
                                             <span class="model-name">{{model.name}}</span>
                                             <i class="ikon-airplane ikon"> </i>
                                             <i class="ikon-chevron-right"> </i>

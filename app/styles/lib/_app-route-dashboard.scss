@@ -128,7 +128,7 @@ $filter-bar-height: 40px;
   @include dark-button;
 
   &.select {
-    font-size: 1.1em;
+    font-size: 0.9em;
     margin: 0;
     margin-top: 2px;
     padding: 0;
@@ -443,7 +443,7 @@ h4.left {
       height: 40px;
       // border: solid 1px #333;
       font-size: 1.4em;
-      line-height: 2.1em;
+      line-height: 2.3em;
       display: block;
       float: left;
       position: relative;
