@@ -174,8 +174,12 @@
                         <div class="panel small">
                             <h4 class="left">Route</h4>
                             <div class="route-pair">
-                                <div class="city-pair"><div class="city left">ORD</div></div>
-                                <div class="city-pair"><div class="city right">SEA</div></div>
+                                <div class="city-pair">
+                                    <div class="city left">{{routeReport[0].detail.origin.IATA}}</div>
+                                </div>
+                                <div class="city-pair">
+                                    <div class="city right">{{routeReport[0].detail.destination.IATA}}</div>
+                                </div>
                                 <!-- <div class="connector"></div> -->
                             </div>
                             <div class="filter-days">
