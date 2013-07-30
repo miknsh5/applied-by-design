@@ -137,11 +137,33 @@
                                         </span>
                                     </h4>
                                 </div>
+        <!--                         <div class="form">
+                                    <br /><button ng-click="update()">Update Data</button>
+                                    <br />Hovered bar data: {{barValue}}
+                                </div> -->
+                                
+                                <div class="panel large">
+                                    <chart-example data="data" height="options.height" hovered="hovered(args)"></chart-example>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 
+                        <div class="panel chart">
+                            <div class="panel-inner">
+                                <div class="chart-title">
+                                    <h4>{{activeReportName}}: 
+                                        <span class="primary">
+                                            <span class="dollar" ng-show="activeChartData.total.currency">$</span>
+                                            {{activeChartData.total.val | number:0}}
+                                        </span>
+                                    </h4>
+                                </div>
                                 <div class="chart-wrap">
                                     <financial-chart data='activeChartData' width='chartWidth' height='chartHeight'></financial-chart>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </section>
 
                     <section class="dash operational"
@@ -152,8 +174,8 @@
                         <div class="panel small">
                             <h4 class="left">Route</h4>
                             <div class="route-pair">
-                                <div class="city-pair"><div class="city left">SEA</div></div>
-                                <div class="city-pair"><div class="city right">DEN</div></div>
+                                <div class="city-pair"><div class="city left">ORD</div></div>
+                                <div class="city-pair"><div class="city right">SEA</div></div>
                                 <!-- <div class="connector"></div> -->
                             </div>
                             <div class="filter-days">
@@ -299,15 +321,20 @@
                                 <div class="inner-tab-row">&nbsp</div>
                                 <div class="summary-table">
                                     <h3 class="heading full">Aircraft Services</h3>
-                                    <div ng-repeat="item in fleetDetails">
-                                        <div class="row-wrap">
-                                            <h4 class="title mini">{{ item.name }}</h4>
-                                            <h4 class="number primary">{{ item.value }}</h4>
+                                    <div ng-repeat="service in fleet[activeFleetModel].services">
+                                        <div class="row-wrap"
+                                            ng-click="toggleService($index)">
+                                            <h4 class="title mini service">
+                                                <i class="ikon-wrench"> </i>{{ service.name }}</h4>
+                                            <h4 class="number narrow primary">{{ service.val }}</h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                     </section>
 
                 </div>

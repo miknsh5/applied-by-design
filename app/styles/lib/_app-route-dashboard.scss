@@ -182,7 +182,7 @@ $filter-bar-height: 40px;
       border-bottom: solid 1px #666;
     }
     &.wide {
-      width: 170px;
+      width: 180px;
     }
     &.full {
       width: 100%;
@@ -368,6 +368,10 @@ h4.left {
 
   h4.mini {
     width: 100px;
+
+    &.service {
+      width: 140px;
+    }
   }
 
 
@@ -378,6 +382,9 @@ h4.left {
     float: left;
     clear: right;
     text-align: right;
+    &.narrow {
+      width: 80px;
+    }
   }
 
   .row-wrap {

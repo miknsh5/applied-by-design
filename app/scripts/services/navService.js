@@ -32,6 +32,11 @@ angular.module('appliedByDesignApp')
       getEquipment: function(){
         return equipment;
       },
+      setServiceState: function(id){
+        var state = equipment[activeFleetModel].services[id].val
+        equipment[activeFleetModel].services[id].val = !state;
+        return !state;
+      },
       selectFleetModel: function(id){
         activeFleetModel = id;
         return activeFleetModel;

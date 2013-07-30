@@ -16,7 +16,7 @@ angular.module('appliedByDesignApp')
 
 
 
-    $scope.routeReport = routeService.setRouteReport('DENSEA');
+    $scope.routeReport = routeService.setRouteReport('ORDSEA');
     $scope.details = $scope.routeReport[0].detail;
 
     $scope.selectDay = function(id) {
