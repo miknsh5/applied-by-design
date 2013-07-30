@@ -68,12 +68,14 @@ angular.module('appliedByDesignApp')
           yearReport.detail.origin = {  'City':    filteredReport[0].oCity,
                                         'Country': filteredReport[0].oCountry,
                                         'State':   filteredReport[0].oState,
-                                        'Name':    filteredReport[0].oName};
+                                        'Name':    filteredReport[0].oName,
+                                        'IATA':    filteredReport[0].oIata};
 
           yearReport.detail.destination = {   'City':    filteredReport[0].dCity,
                                               'Country': filteredReport[0].dCountry,
                                               'State':   filteredReport[0].dState,
-                                              'Name':    filteredReport[0].dName};
+                                              'Name':    filteredReport[0].dName,
+                                              'IATA':    filteredReport[0].dIata};
 
           var moFreq = _.reduceRight(_.pluck(filteredReport,'monday'),function(a,b){return a+b},0);
           var tuFreq = _.reduceRight(_.pluck(filteredReport,'tuesday'),function(a,b){return a+b},0);

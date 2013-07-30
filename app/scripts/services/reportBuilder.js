@@ -113,6 +113,8 @@ angular.module('appliedByDesignApp')
               TestObj.dCity = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcity;
               TestObj.dState = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dstate;
               TestObj.dCountry = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcountry;
+              TestObj.oIata = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Oiata;
+              TestObj.dIata = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Diata;
               TestObj.dName = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dname;
 
               TestObj.Distance = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
@@ -347,6 +349,8 @@ angular.module('appliedByDesignApp')
             "NonDirectional": uniqueRoutes[k],
             "Fare": _.findWhere(cityPairs,{NonDirectional:uniqueRoutes[k]}).Fare,
             "Olat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Latitude,
+            "Oiata": uniqueRoutes[k].slice(0,3),
+            "Diata": uniqueRoutes[k].slice(3,6),
             "Olon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Longitude,
             "Ocity": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).City,
             "Oname": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Name,
