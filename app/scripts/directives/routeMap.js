@@ -3,7 +3,7 @@
 /*global topojson:false */
 
 angular.module('appliedByDesignApp')
-  .directive('worldMap', function (reportBuilder, navService) {
+  .directive('routeMap', function (reportBuilder, navService) {
 
     var routeMap = d3.custom.routeMap();
 
@@ -17,13 +17,21 @@ angular.module('appliedByDesignApp')
       },
       link: function postLink(scope, element, attrs) {
         var chartEl = d3.select(element[0]);
+
         routeMap.on('routeHover', function(d, i){
-            scope.hovered({args:d});
-            console.log(d)
+            scope.hovered({args:i});
+        });
+        
+        routeMap.on('routeSelect', function(d, i){
+            // scope.hovered({args:d});
+            navService.setActiveTab(1);
+            scope.$apply();
+            console.log("selected a route");
         });
 
         scope.$watch(
           function() { return reportBuilder.getReport('routeReport') }, function(newVal, oldVal){
+            routeMap.removeRoutes();
             chartEl.datum(newVal).call(routeMap);
             console.log('***** BUILD ROUTE MAP *****')
           });

@@ -6,16 +6,18 @@
         <!-- fleet type filter at top of app -->
 
         <section id="filter-bar">
+            <!-- <h4>Route: {{hoveredRoute.NonDirectional}}</h4> -->
+
             <div class="page-container">
                 <div id="filter-bar-menu-btn" ng-init="showEquipFilter=true" ng-click="showEquipFilter=!showEquipFilter">
                     <i class="ikon-airplane"></i>
                 </div>
 
                 <!-- loop through the different model types -->
-                <div ng-repeat="model in navService.getEquipment()" ng-show="showEquipFilter">
+                <div ng-repeat="model in equipment" ng-show="showEquipFilter">
                     <div class="fleet-model-btn toggle" 
-                        ng-click="navService.toggleEquipment($index)"
-                        ng-class="{active: navService.isEquipActive($index)}">
+                        ng-click="toggleModel($index)"
+                        ng-class="{active: equipment[$index].active}">
                         <span class="model-name">{{model.name}}</span>
                         <i class="ikon-airplane ikon"> </i>
                     </div>
@@ -25,7 +27,7 @@
         </section>
 
         <section id="route-map">
-            <world-map height='mapHeight' width='mapWidth'></world-map>
+            <route-map height='mapHeight' width='mapWidth' hovered="hovered(args)"></route-map>
         </section>
 
         <div class="dashboard-wrapper" ng-style="panelStyle()">
@@ -264,21 +266,21 @@
                             </div>
                         </div>
 
-                        <div class="panel chart">
+ <!--                        <div class="panel chart">
                             <div class="panel-inner">
                                 <div class="chart-title">
-<!--                                     <h4>{{activeReportName}}: 
+                                    <h4>{{activeReportName}}: 
                                         <span class="primary">
                                             <span class="dollar" ng-show="activeChartData.total.currency">$</span>
                                             {{activeChartData.total.val | number:0}}
                                         </span>
-                                    </h4> -->
+                                    </h4>
                                 </div>
                                 <div class="chart-wrap">
                                     <financial-chart data='routeChartData' width='chartWidth' height='chartHeight'></financial-chart>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </section>
 

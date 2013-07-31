@@ -7,14 +7,6 @@ angular.module('appliedByDesignApp')
     $scope.chartWidth = 175;
     $scope.chartHeight = 175;
 
-    $scope.routeChartData = [
-            {'name': 'A', 'val': 10},
-            {'name': 'B', 'val': 15},
-            {'name': 'C', 'val': 8},
-            {'name': 'D', 'val': 22}
-        ]
-
-
 
     $scope.routeReport = routeService.setRouteReport('ORDSEA');
     $scope.details = $scope.routeReport[0].detail;

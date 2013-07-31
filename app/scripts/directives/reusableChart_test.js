@@ -1,4 +1,4 @@
-d3.custom = {};
+if (!d3.custom) { d3.custom = {};}
 
 d3.custom.barChart = function module() {
     var margin = {top: 20, right: 20, bottom: 40, left: 40},
@@ -76,11 +76,6 @@ d3.custom.barChart = function module() {
         duration = 0;
         return this;
     };
-    // exports.gap = function(_x) {
-    //     if (!arguments.length) return gap;
-    //     gap = _x;
-    //     return this;
-    // };
     exports.ease = function(_x) {
         if (!arguments.length) return ease;
         ease = _x;

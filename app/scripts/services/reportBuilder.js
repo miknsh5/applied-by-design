@@ -234,7 +234,7 @@ angular.module('appliedByDesignApp')
 
         //set initial equipment object in navService
         navService.initializeEquipment(equipment);
-
+        return equipment;
       },
       findArray: function(inputArray,searchCrit,key){
 
