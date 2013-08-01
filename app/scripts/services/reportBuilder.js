@@ -12,6 +12,9 @@ angular.module('appliedByDesignApp')
       getReport: function(name){
         return eval(name);
       },
+      getRouteNameFromId: function(id){
+        return routeReport[id].NonDirectional;
+      },
       // Get Financial Report for some subset of the total fleet/routes
       buildFinancialReport: function(forecast) {
         

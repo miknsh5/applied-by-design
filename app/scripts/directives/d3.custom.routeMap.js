@@ -136,7 +136,8 @@ d3.custom.routeMap = function module() {
 
         return function(g, i_clicked){
           
-          dispatch.routeSelect(g)
+          dispatch.routeSelect(i_clicked)
+          console.log('iclicked: ' + i_clicked)
 
           activePath = i_clicked;
 

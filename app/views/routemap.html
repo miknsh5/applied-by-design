@@ -177,10 +177,10 @@
                             <h4 class="left">Route</h4>
                             <div class="route-pair">
                                 <div class="city-pair">
-                                    <div class="city left">{{routeReport[0].detail.origin.IATA}}</div>
+                                    <div class="city left">{{activeRouteReport[0].detail.origin.IATA}}</div>
                                 </div>
                                 <div class="city-pair">
-                                    <div class="city right">{{routeReport[0].detail.destination.IATA}}</div>
+                                    <div class="city right">{{activeRouteReport[0].detail.destination.IATA}}</div>
                                 </div>
                                 <!-- <div class="connector"></div> -->
                             </div>
@@ -219,7 +219,7 @@
                                     <h3 class="heading small">Route Total</h3>
 
                                     <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
-                                      <div ng-repeat="metric in routeReport[0].data | filter:{currency:isFinancialTable}">
+                                      <div ng-repeat="metric in activeRouteReport[0].data | filter:{currency:isFinancialTable}">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(metric.name)"
                                             ng-class="{active: metric.name == activeReportName }">
@@ -246,19 +246,19 @@
 
                                         <div class="row-wrap city-pair first">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number mini primary">{{details.origin.Name }}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.origin.Name }}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number mini primary">{{details.origin.City}}, {{details.origin.State}}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.origin.City}}, {{activeRouteReport[0].detail.origin.State}}</h4>
                                         </div>
                                         <div class="row-wrap distance">
                                             <h4 class="title mini">Distance (mi):</h4>
-                                            <h4 class="number mini primary">{{details.route.distance | number:0}}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.route.distance | number:0}}</h4>
                                         </div>
                                         <div class="row-wrap city-pair">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number mini primary">{{details.destination.Name }}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.destination.Name }}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number mini primary">{{details.destination.City}}, {{details.destination.State}}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.destination.City}}, {{activeRouteReport[0].detail.destination.State}}</h4>
                                         </div>
 
 

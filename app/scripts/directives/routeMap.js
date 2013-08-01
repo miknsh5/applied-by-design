@@ -3,7 +3,7 @@
 /*global topojson:false */
 
 angular.module('appliedByDesignApp')
-  .directive('routeMap', function (reportBuilder, navService) {
+  .directive('routeMap', function (reportBuilder, navService, routeService) {
 
     var routeMap = d3.custom.routeMap();
 
@@ -19,13 +19,18 @@ angular.module('appliedByDesignApp')
         var chartEl = d3.select(element[0]);
 
         routeMap.on('routeHover', function(d, i){
-            scope.hovered({args:i});
+            // scope.hovered({args:i});
         });
         
-        routeMap.on('routeSelect', function(d, i){
+        routeMap.on('routeSelect', function(i){
             // scope.hovered({args:d});
             navService.setActiveTab(1);
             scope.$apply();
+
+            var routeName = reportBuilder.getRouteNameFromId(i);
+            console.log('!!! Routename: ' + routeName);
+            routeService.setActiveRouteName(routeName);
+
             console.log("selected a route");
         });
 
