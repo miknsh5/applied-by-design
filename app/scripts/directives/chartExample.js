@@ -21,6 +21,7 @@ angular.module('appliedByDesignApp')
 
         scope.$watch('data', function(newVal, oldVal){
             console.log('---new data for chart---')
+            chart.clearPie();
             chartEl.datum(newVal).call(chart);
         });
 
