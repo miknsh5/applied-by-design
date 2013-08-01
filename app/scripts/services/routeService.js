@@ -4,7 +4,9 @@ angular.module('appliedByDesignApp')
   .factory('routeService', function (financialReports) {
     // Service logic
 
-    var routeReport = [];
+    var activeRouteReport = [];
+    var activeRouteName = 'ORDSEA';
+
     var frequencies = [
         {'name': 'MON', 'active': false, 'numFlights': 4},
         {'name': 'TUE', 'active': false, 'numFlights': 2},
@@ -21,25 +23,37 @@ angular.module('appliedByDesignApp')
       getDays: function(){
         return frequencies;
       },
-      getRouteReport: function(routeName){
-        return routeReport;
+      getActiveRouteReport: function(){
+        return activeRouteReport;
+      },
+      getActiveRouteName: function(){
+        return activeRouteName;
       },
 
 
       setRouteReport: function(routeName){
-        routeReport = financialReports.getRouteReport(routeName);
+
+        //update local routeName variable on service object
+        activeRouteName = routeName 
+        
+        //filter routeReport to just the selected route object
+        activeRouteReport = financialReports.getRouteReport(routeName);
+        
         // update the flight frequency object
-        angular.forEach(routeReport[0].detail.route.freq.days, function(nFlts, key){
+        angular.forEach(activeRouteReport[0].detail.route.freq.days, function(nFlts, key){
           frequencies[key].numFlights = nFlts;
         });
         
-        return routeReport;
+        return activeRouteReport;
       },
       setActiveDay: function(id){
         angular.forEach(frequencies, function(day, key){
           day.active = (key == id) ? true : false;
         });
         return frequencies;
+      },
+      setActiveRouteName: function(name){
+        activeRouteName = name;
       },
       isDayActive: function(id) {
         return frequencies[id].active;

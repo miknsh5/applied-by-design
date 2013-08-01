@@ -6,16 +6,18 @@
         <!-- fleet type filter at top of app -->
 
         <section id="filter-bar">
+            <!-- <h4>Route: {{hoveredRoute.NonDirectional}}</h4> -->
+
             <div class="page-container">
                 <div id="filter-bar-menu-btn" ng-init="showEquipFilter=true" ng-click="showEquipFilter=!showEquipFilter">
                     <i class="ikon-airplane"></i>
                 </div>
 
                 <!-- loop through the different model types -->
-                <div ng-repeat="model in navService.getEquipment()" ng-show="showEquipFilter">
+                <div ng-repeat="model in equipment" ng-show="showEquipFilter">
                     <div class="fleet-model-btn toggle" 
-                        ng-click="navService.toggleEquipment($index)"
-                        ng-class="{active: navService.isEquipActive($index)}">
+                        ng-click="toggleModel($index)"
+                        ng-class="{active: equipment[$index].active}">
                         <span class="model-name">{{model.name}}</span>
                         <i class="ikon-airplane ikon"> </i>
                     </div>
@@ -25,7 +27,7 @@
         </section>
 
         <section id="route-map">
-            <world-map height='mapHeight' width='mapWidth'></world-map>
+            <route-map height='mapHeight' width='mapWidth' hovered="hovered(args)"></route-map>
         </section>
 
         <div class="dashboard-wrapper" ng-style="panelStyle()">
@@ -175,10 +177,10 @@
                             <h4 class="left">Route</h4>
                             <div class="route-pair">
                                 <div class="city-pair">
-                                    <div class="city left">{{routeReport[0].detail.origin.IATA}}</div>
+                                    <div class="city left">{{activeRouteReport[0].detail.origin.IATA}}</div>
                                 </div>
                                 <div class="city-pair">
-                                    <div class="city right">{{routeReport[0].detail.destination.IATA}}</div>
+                                    <div class="city right">{{activeRouteReport[0].detail.destination.IATA}}</div>
                                 </div>
                                 <!-- <div class="connector"></div> -->
                             </div>
@@ -217,7 +219,7 @@
                                     <h3 class="heading small">Route Total</h3>
 
                                     <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
-                                      <div ng-repeat="metric in routeReport[0].data | filter:{currency:isFinancialTable}">
+                                      <div ng-repeat="metric in activeRouteReport[0].data | filter:{currency:isFinancialTable}">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(metric.name)"
                                             ng-class="{active: metric.name == activeReportName }">
@@ -244,19 +246,19 @@
 
                                         <div class="row-wrap city-pair first">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number mini primary">{{details.origin.Name }}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.origin.Name }}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number mini primary">{{details.origin.City}}, {{details.origin.State}}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.origin.City}}, {{activeRouteReport[0].detail.origin.State}}</h4>
                                         </div>
                                         <div class="row-wrap distance">
                                             <h4 class="title mini">Distance (mi):</h4>
-                                            <h4 class="number mini primary">{{details.route.distance | number:0}}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.route.distance | number:0}}</h4>
                                         </div>
                                         <div class="row-wrap city-pair">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number mini primary">{{details.destination.Name }}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.destination.Name }}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number mini primary">{{details.destination.City}}, {{details.destination.State}}</h4>
+                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.destination.City}}, {{activeRouteReport[0].detail.destination.State}}</h4>
                                         </div>
 
 
@@ -264,21 +266,21 @@
                             </div>
                         </div>
 
-                        <div class="panel chart">
+ <!--                        <div class="panel chart">
                             <div class="panel-inner">
                                 <div class="chart-title">
-<!--                                     <h4>{{activeReportName}}: 
+                                    <h4>{{activeReportName}}: 
                                         <span class="primary">
                                             <span class="dollar" ng-show="activeChartData.total.currency">$</span>
                                             {{activeChartData.total.val | number:0}}
                                         </span>
-                                    </h4> -->
+                                    </h4>
                                 </div>
                                 <div class="chart-wrap">
                                     <financial-chart data='routeChartData' width='chartWidth' height='chartHeight'></financial-chart>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </section>
 

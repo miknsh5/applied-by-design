@@ -12,6 +12,9 @@ angular.module('appliedByDesignApp')
       getReport: function(name){
         return eval(name);
       },
+      getRouteNameFromId: function(id){
+        return routeReport[id].NonDirectional;
+      },
       // Get Financial Report for some subset of the total fleet/routes
       buildFinancialReport: function(forecast) {
         
@@ -234,7 +237,7 @@ angular.module('appliedByDesignApp')
 
         //set initial equipment object in navService
         navService.initializeEquipment(equipment);
-
+        return equipment;
       },
       findArray: function(inputArray,searchCrit,key){
 
