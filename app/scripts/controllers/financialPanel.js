@@ -16,13 +16,13 @@ angular.module('appliedByDesignApp')
     $scope.fiscalYears = financialReports.getYears();
     $scope.activeReportName = 'Crew';
     $scope.activeYearId   = 0;
-    // $scope.selectedReport = _.findWhere($scope.financialData_active[$scope.activeYearId].data, {name: $scope.activeReportName});
+
     $scope.activeChartData = $scope.financialData_active[$scope.activeYearId][$scope.activeReportName].data;
     $scope.activeChartData.total = assignChartTotal('Crew');
 
     // set the dimensions of chart SVG
-    $scope.chartWidth = 175;
-    $scope.chartHeight = 175;
+    // $scope.chartWidth = 175;
+    // $scope.chartHeight = 175;
 
     $scope.$watch(function(){ return financialReports.getFullReport()}, function(newData){
         $scope.financialData_active = newData;
@@ -39,14 +39,14 @@ angular.module('appliedByDesignApp')
 
 
     $scope.selectReport = function(name){
-        // when a user selects a new report in the table
+        // when a user selects a new report in the summary table
         financialReports.setActiveReport(name);
         $scope.activeChartData = $scope.financialData_active[$scope.activeYearId][name].data;
         $scope.activeChartData.total = assignChartTotal(name);
 
     }
     $scope.selectYear = function(id){
-        //when a user selects a new financial year
+        //when a user selects a new financial year in the left side panel
         financialReports.setActiveYear(id);
     }
 
@@ -61,23 +61,23 @@ angular.module('appliedByDesignApp')
 
 
     // chart example
-    $scope.options = {width: 150, height: 150, 'bar':'aaa'};
-    $scope.data = [1,2,3,4];
-    $scope.hovered = function(d){
-        $scope.barValue = d.value;
-        $scope.$apply();
-    }
-    $scope.barValue = 'None';
+    // $scope.options = {width: 150, height: 150, 'bar':'aaa'};
+    // $scope.data = [1,2,3,4];
+    // $scope.hovered = function(d){
+    //     $scope.barValue = d.value;
+    //     $scope.$apply();
+    // }
+    // $scope.barValue = 'None';
 
-    $scope.update = function(d, i){ 
-        $scope.data = randomData(); 
-    }
+    // $scope.update = function(d, i){ 
+    //     $scope.data = randomData(); 
+    // }
 
-    function randomData(){
-        // return d3.range(~~(Math.random()*50)+1).map(function(d, i){return ~~(Math.random()*1000);});
-        var data = $scope.data;
-        data[0] = data[0] * 1.8;
-        return data;
-    }
+    // function randomData(){
+    //     // return d3.range(~~(Math.random()*50)+1).map(function(d, i){return ~~(Math.random()*1000);});
+    //     var data = $scope.data;
+    //     data[0] = data[0] * 1.8;
+    //     return data;
+    // }
 
   });
