@@ -241,24 +241,24 @@
                         <div class="panel medium">
                             <div class="panel-inner">
                                 <div class="inner-tab-row">&nbsp</div>
-                               <div class="summary-table financial">
+                               <div class="summary-table financial" ng-init="maxChars=23;">
                                     <h3 class="heading full">Route Details</h3>
 
                                         <div class="row-wrap city-pair first">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.origin.Name }}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.origin.Name | limitTo:maxChars}}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.origin.City}}, {{activeRouteReport[0].detail.origin.State}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.origin.City}}, {{activeRouteReport[0].detail.origin.State}}</h4>
                                         </div>
                                         <div class="row-wrap distance">
                                             <h4 class="title mini">Distance (mi):</h4>
-                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.route.distance | number:0}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.route.distance | number:0}}</h4>
                                         </div>
                                         <div class="row-wrap city-pair">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.destination.Name }}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.destination.Name | limitTo:maxChars}}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number mini primary">{{activeRouteReport[0].detail.destination.City}}, {{activeRouteReport[0].detail.destination.State}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.destination.City}}, {{activeRouteReport[0].detail.destination.State}}</h4>
                                         </div>
 
 

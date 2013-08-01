@@ -9,10 +9,17 @@ angular.module('appliedByDesignApp')
       	numFlights: '='
       },
       link: function postLink(scope, element, attrs) {
-        // element.text('this is the dailyFlights directive');
-        for (var i = 0; i < scope.numFlights; i++){
-        	element.append('<div class="frequency-bar">&nbsp</div>')
-        }
+
+        scope.$watch('numFlights', function(newData){
+          // clear the existing flight bars
+          element.children().remove();
+
+          // element.text('this is the dailyFlights directive');
+          for (var i = 0; i < newData; i++){
+          	element.append('<div class="frequency-bar">&nbsp</div>')
+          }
+
+        })
       }
     };
   });

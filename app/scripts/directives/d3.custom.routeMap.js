@@ -5,8 +5,8 @@ d3.custom.routeMap = function module() {
 //  var chart = d3.custom.routemap
 
   var margin = {top: 20, right: 20, bottom: 20, left: 20},
-      width = 1000,
-      height = 800,
+      width = 1400,
+      height = 1000,
       blue = d3.rgb(48,128,178),
       orange = d3.rgb(241,90,36),
       activePath,
@@ -137,7 +137,7 @@ d3.custom.routeMap = function module() {
         return function(g, i_clicked){
           
           dispatch.routeSelect(i_clicked)
-          console.log('iclicked: ' + i_clicked)
+          // console.log('iclicked: ' + i_clicked)
 
           activePath = i_clicked;
 

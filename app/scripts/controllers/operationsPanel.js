@@ -14,10 +14,14 @@ angular.module('appliedByDesignApp')
 
     // watch for changes to the activeRouteName set on routeService, get new activeRouteReport.
     $scope.$watch(function(){ return routeService.getActiveRouteName() }, function(newData){
-        $scope.activeRouteReport = routeService.setRouteReport(newData);
         $scope.dotw = routeService.getDays();
-        console.log()
+        $scope.activeRouteReport = routeService.setRouteReport(newData);
+        // console.log($scope.dotw);
     })
+
+    // $scope.$watch(function(){ return routeService.getDays() }, function(newData){
+    //     $scope.dotw = newData;
+    // })
 
     // change the day of the week selection in the left side panel
     $scope.selectDay = function(id) {

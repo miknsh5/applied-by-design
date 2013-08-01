@@ -23,22 +23,18 @@ angular.module('appliedByDesignApp')
         });
         
         routeMap.on('routeSelect', function(i){
-            // scope.hovered({args:d});
             navService.setActiveTab(1);
-            scope.$apply();
 
             var routeName = reportBuilder.getRouteNameFromId(i);
-            console.log('!!! Routename: ' + routeName);
             routeService.setActiveRouteName(routeName);
 
-            console.log("selected a route");
+            scope.$apply();
         });
 
         scope.$watch(
           function() { return reportBuilder.getReport('routeReport') }, function(newVal, oldVal){
             routeMap.removeRoutes();
             chartEl.datum(newVal).call(routeMap);
-            console.log('***** BUILD ROUTE MAP *****')
           });
 
       }
