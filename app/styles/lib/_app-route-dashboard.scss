@@ -92,6 +92,17 @@ $filter-bar-height: 40px;
   margin-top: $filter-bar-height;
 }
 
+#report-btn {
+  width: $filter-bar-height;
+  height: 100%;
+  float: left;
+  line-height: 2.6em;
+  font-size: 1.3em;
+  // margin-right: 10px;
+  @include dark-button;
+
+}
+
 #filter-bar {
   position: fixed;
   width: 100%;
@@ -444,7 +455,7 @@ h4.left {
 }
 
 .dashboard-nav {
-  width: 280px;
+  width: 300px;
   height: 40px;
   position: absolute;
   top: -41px;

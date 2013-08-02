@@ -9,6 +9,13 @@
             <!-- <h4>Route: {{hoveredRoute.NonDirectional}}</h4> -->
 
             <div class="page-container">
+                <div id="report-btn" 
+                    ng-init="showReports=false" 
+                    ng-click="showReports=!showReports;"
+                    ng-class="{active:showReports}">
+                    <i class="ikon-file ikon"> </i>
+                </div>
+
                 <div id="filter-bar-menu-btn" ng-init="showEquipFilter=true" ng-click="showEquipFilter=!showEquipFilter">
                     <i class="ikon-airplane"></i>
                 </div>
@@ -31,12 +38,11 @@
         </section>
 
         <div class="dashboard-wrapper" ng-style="panelStyle()">
-
             <div class="page-container">
-
                 <!-- primary dashboard area (minus navigation) -->
                 <div class="dashboard-inner">
                     
+
                     <div class="dashboard-nav">
                         <div class="mini-nav-group">
                             <div class="mini-nav-btn" 
@@ -54,6 +60,12 @@
                                 ng-class="{active: activeTab == 2}"> 
                                 <i class="ikon-airplane"></i>
                             </div>
+                            <!-- <div class="mini-nav-btn" 
+                                ng-click="setActiveTab(3)" 
+                                ng-class="{active: activeTab == 3}"> 
+                                <i class="ikon-airplane"></i>
+                                <strong>?</strong>
+                            </div> -->
                             <div class="mini-nav-btn utility" 
                                 ng-init="hidePanel=false"
                                 ng-click="hidePanel=!hidePanel;">
@@ -161,7 +173,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </section>
 
                     <section class="dash operational"
@@ -269,23 +280,6 @@
                                 </div>
                             </div>
                         </div>
-
- <!--                        <div class="panel chart">
-                            <div class="panel-inner">
-                                <div class="chart-title">
-                                    <h4>{{activeReportName}}: 
-                                        <span class="primary">
-                                            <span class="dollar" ng-show="activeChartData.total.isCurrency">$</span>
-                                            {{activeChartData.total.val | number:0}}
-                                        </span>
-                                    </h4>
-                                </div>
-                                <div class="chart-wrap">
-                                    <financial-chart data='routeChartData' width='chartWidth' height='chartHeight'></financial-chart>
-                                </div>
-                            </div>
-                        </div> -->
-
                     </section>
 
                     <section class="dash fleet" 
@@ -342,10 +336,65 @@
                                 </div>
                             </div>
                         </div>
-
-
-
                     </section>
+
+                    <section class="dash reports" 
+                        ng-controller="ReportsPanelCtrl"
+                        ng-show="activeTab == 3">
+                        
+                        <!-- small filter panel with aircraft buttons -->
+                        <div class="panel small">
+                            <div class="filter-plane">
+                                <h4>Reports</h4>
+                                <div class="plane-buttons">
+                                    <!-- loop through the different model types -->
+                                    <div ng-repeat="model in fleet">
+                                        <div class="fleet-model-btn select" 
+                                            ng-click="selectModel($index)"
+                                            ng-class="{active: activeFleetModel == $index}">
+                                            <span class="model-name">{{model.name}}</span>
+                                            <i class="ikon-airplane ikon"> </i>
+                                            <i class="ikon-chevron-right"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Model</h3>
+                                    <div ng-repeat="item in fleetDetails">
+                                        <div class="row-wrap">
+                                            <h4 class="title mini">{{ item.name }}</h4>
+                                            <h4 class="number primary">{{ item.value }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Services</h3>
+                                    <div ng-repeat="service in fleet[activeFleetModel].services">
+                                        <div class="row-wrap"
+                                            ng-click="toggleService($index)">
+                                            <h4 class="title mini service">
+                                                <i class="ikon-wrench"> </i>{{ service.name }}</h4>
+                                            <h4 class="number narrow primary">{{ service.val }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
 
                 </div>
             </div>
