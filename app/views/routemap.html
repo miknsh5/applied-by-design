@@ -103,26 +103,42 @@
                                         <i class="ikon-airplane ikon"> </i>
                                     </h3>
 
-                                    <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
-                                      <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{currency:isFinancialTable}">
+                                    <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{isCurrency:isFinancialTable}"  ng-show="isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(financial.name)"
                                             ng-class="{active: financial.name == activeReportName }">
 
                                             <h4 class="title wide">{{financial.name}}:</h4>
                                             <h4 class="number primary">
-                                                <span class="dollar" ng-show="financial.currency">$</span>
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
                                                 {{financial.val | number:financial.decimals }}
                                             </h4>
                                             <h4 class="number selected">
-                                                <span class="dollar" ng-show="financial.currency">$</span>
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
                                                 {{getActiveRecord(financial.name).val | number:financial.decimals }} 
-                                                <!-- financialData_active[activeYearId].data[$index].val | number:financial.decimals }} -->
                                             </h4>
 
                                         </div>
                                     </div>
 
+                                    <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
+                                    <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
+                                        <div class="row-wrap" 
+                                            ng-click="selectReport(financial.name)"
+                                            ng-class="{active: financial.name == activeReportName }">
+
+                                            <h4 class="title wide">{{financial.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
+                                                {{financial.val | number:financial.decimals }}
+                                            </h4>
+                                            <h4 class="number selected">
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
+                                                {{getActiveRecord(financial.name).val | number:financial.decimals }} 
+                                            </h4>
+
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -134,38 +150,18 @@
                                 <div class="chart-title">
                                     <h4>{{activeReportName}}: 
                                         <span class="primary">
-                                            <span class="dollar" ng-show="activeChartData.total.currency">$</span>
+                                            <span class="dollar" ng-show="activeChartData.total.isCurrency">$</span>
                                             {{activeChartData.total.val | number:0}}
                                         </span>
                                     </h4>
                                 </div>
-        <!--                         <div class="form">
-                                    <br /><button ng-click="update()">Update Data</button>
-                                    <br />Hovered bar data: {{barValue}}
-                                </div> -->
-                                
+
                                 <div class="panel large">
                                     <chart-example data="activeChartData" hovered="hovered(args)"></chart-example>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 
-                        <div class="panel chart">
-                            <div class="panel-inner">
-                                <div class="chart-title">
-                                    <h4>{{activeReportName}}: 
-                                        <span class="primary">
-                                            <span class="dollar" ng-show="activeChartData.total.currency">$</span>
-                                            {{activeChartData.total.val | number:0}}
-                                        </span>
-                                    </h4>
-                                </div>
-                                <div class="chart-wrap">
-                                    <financial-chart data='activeChartData' width='chartWidth' height='chartHeight'></financial-chart>
-                                </div>
-                            </div>
-                        </div> -->
                     </section>
 
                     <section class="dash operational"
@@ -218,22 +214,30 @@
                                     <h3 class="heading wide" ng-show="!isFinancialTable">Operational Report</h3>
                                     <h3 class="heading small">Route Total</h3>
 
-                                    <!-- <div ng-repeat="financial in financialData_total[activeYearId].data | isFinancialMetric:isFinancialTable"> -->
-                                      <div ng-repeat="metric in activeRouteReport[0].data | filter:{currency:isFinancialTable}">
+                                    <div ng-repeat="metric in activeRouteReport[0].data | filter:{isCurrency:isFinancialTable}" ng-show="isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(metric.name)"
                                             ng-class="{active: metric.name == activeReportName }">
-
                                             <h4 class="title wide">{{metric.name}}:</h4>
                                             <h4 class="number primary">
-                                                <span class="dollar" ng-show="metric.currency">$</span>
+                                                <span class="dollar" ng-show="metric.isCurrency">$</span>
                                                 {{metric.val | number:metric.decimals }}
                                             </h4>
-
                                         </div>
                                     </div>
 
-
+                                    <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
+                                    <div ng-repeat="metric in activeRouteReport[0].data | filter:{isCurrency:'false'}"  ng-show="!isFinancialTable">
+                                        <div class="row-wrap" 
+                                            ng-click="selectReport(metric.name)"
+                                            ng-class="{active: metric.name == activeReportName }">
+                                            <h4 class="title wide">{{metric.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                                {{metric.val | number:metric.decimals }}
+                                            </h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -271,7 +275,7 @@
                                 <div class="chart-title">
                                     <h4>{{activeReportName}}: 
                                         <span class="primary">
-                                            <span class="dollar" ng-show="activeChartData.total.currency">$</span>
+                                            <span class="dollar" ng-show="activeChartData.total.isCurrency">$</span>
                                             {{activeChartData.total.val | number:0}}
                                         </span>
                                     </h4>
