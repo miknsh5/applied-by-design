@@ -63,7 +63,7 @@ angular.module('appliedByDesignApp')
         {
           filteredReport = _.where(equipReport,{NonDirectional: routeName});
 
-          //Route Details
+          //Route Details Report
           yearReport.detail = {};
           yearReport.detail.origin = {  'City':    filteredReport[0].oCity,
                                         'Country': filteredReport[0].oCountry,
@@ -109,6 +109,7 @@ angular.module('appliedByDesignApp')
         var totalval = 0;
         var apval = 0;
 
+        //Report for Each Metric
         for(var m=0;m<reportMetrics.length;m++)
         {
           if(filteredReport != [])
@@ -137,6 +138,25 @@ angular.module('appliedByDesignApp')
             apval = 0;
           }
           totalval = 0;
+        }
+
+        //Per Flight Per Equipment Report
+        yearReport.perFlight = [];
+        for(var a=0;a<airplanes.length;a++)
+        {
+          yearReport.perFlight[a] = {};
+          yearReport.perFlight[a].equipment = airplanes[a];
+          yearReport.perFlight[a].metrics = [];
+
+          for(var m=0;m<reportMetrics.length;m++)
+          {
+            var calcValue = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment:airplanes[a]}),reportMetrics[m]),function(a,b){return a+b},0);
+            var calFreq   = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment:airplanes[a]}),'Freq'),function(a,b){return a+b},0);
+            yearReport.perFlight[a].metrics[m] = {'name': reportMetrics[m],
+                                                  'val' : calcValue/calFreq,
+                                                  'isCurrency': currency[m],
+                                                  'decimals': decimals[m]};
+          }
         }
 
         outputReports.push(yearReport);
