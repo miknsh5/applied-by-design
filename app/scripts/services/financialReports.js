@@ -36,6 +36,9 @@ angular.module('appliedByDesignApp')
       },
       setActiveYear: function(id) {
         activeYear = id;
+      },
+      getNPVReport: function(discount,years) {
+        return npvReport(discount, years, filterFinancialReport());
       }
       
     };
@@ -165,6 +168,30 @@ angular.module('appliedByDesignApp')
 
       return outputReports;
     }
+
+    function npvReport(discount, years, fullReport){
+
+      var yearCount      = fullReport.length;
+      
+      var reportMetrics  = _.pluck(_.where(fullReport[0].data,{isCurrency:true}),'name');
+      var npvReport = [];
+
+      for(var m=0;m<reportMetrics.length;m++)
+      {
+        npvReport[m] = {};
+        npvReport[m] = {'name': reportMetrics[m],
+                        'val': 0,
+                        'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals};
+
+        for(var y=0;y<years;y++)
+        {
+          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y);
+        }
+      }
+
+      return npvReport;
+    }
+
 
     function findArray(inputArray,searchCrit,key){
 
