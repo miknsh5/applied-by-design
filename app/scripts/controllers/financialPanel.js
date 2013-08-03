@@ -20,10 +20,6 @@ angular.module('appliedByDesignApp')
     $scope.activeChartData = $scope.financialData_active[$scope.activeYearId][$scope.activeReportName].data;
     $scope.activeChartData.total = assignChartTotal('Crew');
 
-    // set the dimensions of chart SVG
-    // $scope.chartWidth = 175;
-    // $scope.chartHeight = 175;
-
     $scope.$watch(function(){ return financialReports.getFullReport()}, function(newData){
         $scope.financialData_active = newData;
     }, true);

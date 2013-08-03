@@ -8,11 +8,24 @@ angular.module('appliedByDesignApp')
 
     // initialized from reportBuilder service on intial data load
     // button status managed here
-    var equipment = [];
-    var activeFleetModel = 0; //fleet model selected in the fleet panel
-    
+    var equipment = [],
+        activeFleetModel = 0, //fleet model selected in the fleet panel
+        showPanel = true,
+        showEquipPanel = false,
+        showReport = true;
+
     // Public API here
     return {
+
+      // dashbaord panel navigation controls
+      // -----------------------------------
+      getPanelState: function(){
+        return showPanel;
+      },
+      togglePanelState: function(){
+        showPanel = !showPanel;
+        return showPanel;
+      },
       setActiveTab: function(id){
         activeTabId = id;
       },
@@ -20,6 +33,23 @@ angular.module('appliedByDesignApp')
         return activeTabId;
       },
 
+      // report navigation controls
+      // -----------------------------------
+      toggleReport: function(){
+        showReport = !showReport;
+        return showReport;
+      },
+      getReportState: function(){
+        return showReport;
+      },
+
+
+      // equipment filter controls
+      // -----------------------------------
+      toggleEquipPanel: function(){
+        showEquipPanel = !showEquipPanel;
+        return showEquipPanel;
+      },
       initializeEquipment: function(equip){
         equipment = equip;
       },
@@ -38,5 +68,6 @@ angular.module('appliedByDesignApp')
         activeFleetModel = id;
         return activeFleetModel;
       }
+
     };
   });

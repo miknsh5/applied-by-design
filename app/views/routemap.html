@@ -11,17 +11,17 @@
             <div class="page-container">
                 <div id="report-btn" 
                     ng-init="showReports=false" 
-                    ng-click="showReports=!showReports;"
-                    ng-class="{active:showReports}">
+                    ng-click="togglePanelState(); toggleEquipPanel(); toggleReport();"
+                    ng-class="{active:!showPanel}">
                     <i class="ikon-file ikon"> </i>
                 </div>
 
-                <div id="filter-bar-menu-btn" ng-init="showEquipFilter=true" ng-click="showEquipFilter=!showEquipFilter">
+                <div id="filter-bar-menu-btn" ng-click="toggleEquipPanel()">
                     <i class="ikon-airplane"></i>
                 </div>
 
                 <!-- loop through the different model types -->
-                <div ng-repeat="model in equipment" ng-show="showEquipFilter">
+                <div ng-repeat="model in equipment" ng-show="showEquipPanel">
                     <div class="fleet-model-btn toggle" 
                         ng-click="toggleModel($index)"
                         ng-class="{active: equipment[$index].active}">
@@ -60,17 +60,10 @@
                                 ng-class="{active: activeTab == 2}"> 
                                 <i class="ikon-airplane"></i>
                             </div>
-                            <!-- <div class="mini-nav-btn" 
-                                ng-click="setActiveTab(3)" 
-                                ng-class="{active: activeTab == 3}"> 
-                                <i class="ikon-airplane"></i>
-                                <strong>?</strong>
-                            </div> -->
                             <div class="mini-nav-btn utility" 
-                                ng-init="hidePanel=false"
-                                ng-click="hidePanel=!hidePanel;">
-                                <i ng-show="!hidePanel" class="ikon-chevron-down"></i>
-                                <i ng-show="hidePanel" class="ikon-chevron-up"></i>
+                                ng-click="togglePanelState()">
+                                <i ng-show="showPanel" class="ikon-chevron-down"></i>
+                                <i ng-show="!showPanel" class="ikon-chevron-up"></i>
                             </div>
                         </div>
                     </div>
@@ -395,6 +388,23 @@
                     </section>
 
 
+
+                </div>
+            </div>
+        </div>
+
+        <div class="report-container" ng-controller="ReportsPanelCtrl" ng-style="reportStyle()">
+            <div class="report-wrapper" >
+                <div class="report-inner">
+                    <div id="report-toolbar">
+                        <i class="ikon-print"></i>
+                        <i class="ikon-download-alt"></i>
+                    </div>
+                    <h1 class="report-title">Financial Report</h1>
+                    <h2 class="report-title">Services</h2>
+                    <h2 class="report-title">Financials</h2>
+                    <h2 class="report-title">Forecast</h2>
+                    <h2 class="report-title">NPV Analysis</h2>
 
                 </div>
             </div>
