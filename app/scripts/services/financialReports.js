@@ -4,9 +4,10 @@ angular.module('appliedByDesignApp')
   .factory('financialReports', function (navService) {
     // Service logic
 
-    var financialReport = [];
-    var activeReport  = 'Crew'; //name
-    var activeYear    = 0;      //id
+    var financialReport_base = [],
+        financialReport = [],
+        activeReport  = 'Crew', //name
+        activeYear    = 0;      //id
 
     // Public API here
     return {

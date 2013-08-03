@@ -101,6 +101,7 @@ $filter-bar-height: 40px;
     font-size: 3rem;
     border-bottom: solid 1px #aaa;
     text-align: left;
+    margin-top: 40px;
   }
 
   h3 {
@@ -526,6 +527,30 @@ h4.left {
     .report-inner {
       width: 100%;
 
+      .services {
+        font-size: 2em;
+        text-align: left;
+        margin: 20px 0;
+
+        .active {
+          color: $color-blue;
+        }
+
+        i {
+          color: $color-gray;
+          margin-right: 10px;
+
+          &:hover{
+            color: $color-blue;
+
+          }
+        }
+      }
+
+      .npv {
+        font-size: 3em;
+        color: $color-blue;
+      }
     }
 
     #report-toolbar {
