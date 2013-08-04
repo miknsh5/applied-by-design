@@ -176,17 +176,22 @@ angular.module('appliedByDesignApp')
       
       var reportMetrics  = _.pluck(_.where(fullReport[0].data,{isCurrency:true}),'name');
       var npvReport = [];
+      var posOrNeg; // use to switch the value from positive to negative in assignment
 
-      for(var m=0;m<reportMetrics.length;m++)
-      {
+      for(var m=0;m<reportMetrics.length;m++) {
+
         npvReport[m] = {};
-        npvReport[m] = {'name': reportMetrics[m],
-                        'val': 0,
-                        'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals};
+        npvReport[m] = {
+          'name': reportMetrics[m],
+          'val': 0,
+          'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals};
 
-        for(var y=0;y<years;y++)
-        {
-          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y);
+        // switch the sign on the values to negative for costs, positive for revenue
+        // right now, Revenue is the only positive metric.
+        posOrNeg = reportMetrics[m] == 'Revenue' ? 1 : -1;
+
+        for(var y=0;y<years;y++) {
+          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y) * posOrNeg;
         }
       }
 
