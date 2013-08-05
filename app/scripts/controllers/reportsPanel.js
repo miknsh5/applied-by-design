@@ -6,19 +6,14 @@ angular.module('appliedByDesignApp')
     $scope.financialData_total  = financialReports.getFullReport();
     $scope.financialData_active = financialReports.getFullReport();
 
-    // $scope.forecastData = financialData_active[2].data[9]
-
     //NPV Calculation
     $scope.years = 5;
     $scope.rate = 0.08;
     $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years);
-    $scope.npv = _.reduce($scope.npvReport, function(a,b){
-      var sign = b.isExpense ? -1 : 1;
-      return a + b.val * sign;
-    }, 0);
+    $scope.npv = _.reduce($scope.npvReport, function(a,b){return a + b.val}, 0);
     
     // return array of values for each fleet models' avg per flight revenue
-    $scope.perFltRev = financialReports.getPerFltRevenue($scope.npvReport);
+    // $scope.perFltRev = financialReports.getPerFltRevenue($scope.npvReport);
 
     $scope.metrics_new = $scope.financialData_active[0].perFlight[0].metrics;
     $scope.metrics_base = $scope.financialData_total[0].perFlight[0].metrics;
