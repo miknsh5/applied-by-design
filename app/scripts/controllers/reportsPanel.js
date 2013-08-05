@@ -12,31 +12,35 @@ angular.module('appliedByDesignApp')
     $scope.years = 5;
     $scope.rate = 0.08;
     $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years);
-    $scope.npv = _.reduce($scope.npvReport, function(a,b){
-      var sign = b.isExpense ? -1 : 1;
-      return a + b.val * sign;
-    }, 0);
+    $scope.npv = _.reduce($scope.npvReport, function(a,b){return a + b.val}, 0);
     
-    // return array of values for each fleet models' avg per flight revenue
-    $scope.perFltRev = financialReports.getPerFltRevenue($scope.npvReport);
-
     $scope.metrics = $scope.financialData_active[0].perFlight[0].metrics;
 
     $scope.revenueForecast = financialReports.getRevenueForecast($scope.financialData_total);
 
 
-    // calculate per flight operating profit average from financial Report
-    $scope.operatingProfit = function(){
-      return _.reduce($scope.metrics, function(a, b){
-        var sign = b.isExpense ? -1 : 1;
-        // only add to the operating profit if the metric is a currency value (i.e. not a KPI metric)
-        if (b.isCurrency) {
-          return a + b.val*sign;
-        } else {
-          return a;
-        }
-      }, 0);
-    }
+
+    $scope.forecastData = [
+      {
+        'year': 2013,
+        'values': [
+          {'x': 0, 'y': 100},
+          {'x': 1, 'y': 120}
+        ]
+      },      {
+        'year': 2014,
+        'values': [
+          {'x': 0, 'y': 130},
+          {'x': 1, 'y': 150}
+        ]
+      },      {
+        'year': 2013,
+        'values': [
+          {'x': 0, 'y': 120},
+          {'x': 1, 'y': 140}
+        ]
+      }
+    ];
 
 
   });

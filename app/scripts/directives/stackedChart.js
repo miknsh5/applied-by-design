@@ -21,12 +21,12 @@ angular.module('appliedByDesignApp')
         ];
 
 
-        var w = 300,
-            h = 200,
+        var w = 350,
+            h = 300,
             p = [20, 50, 30, 20],
-            x = d3.scale.ordinal().rangeRoundBands([0, w - p[1] - p[3]], .20),
+            x = d3.scale.ordinal().rangeRoundBands([0, w - p[1] - p[3]], .08),
             y = d3.scale.linear().range([0, h - p[0] - p[2]]),
-            z = d3.scale.ordinal().range([d3.rgb(200,200,200), d3.rgb(48,128,178)]);
+            z = d3.scale.ordinal().range([d3.rgb(153,153,153), d3.rgb(48,128,178)]);
 
         var svg = d3.select(element[0]).append("svg:svg")
             .attr("width", w)

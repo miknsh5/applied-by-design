@@ -101,7 +101,7 @@ $filter-bar-height: 40px;
     font-size: 3rem;
     border-bottom: solid 1px #aaa;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
   h3 {
@@ -408,13 +408,13 @@ h4.left {
       color: $font-darkgray;
       text-align: left;
       &.left {
-        width: 50%;
+        width: 47%;
         margin-left: 3%;
         float: left;
       }
 
       &.right {
-        width: 47%;
+        width: 50%;
         text-align: right;
       }
 
@@ -556,8 +556,6 @@ h4.left {
 
 .report-container {
   width: 60%;
-  min-width: 760px;
-  max-width: 900px;
   height: 100%;
   position: absolute;
   background-color: $font-whitewhite;
@@ -613,7 +611,7 @@ h4.left {
       .services {
         font-size: 2em;
         text-align: left;
-        margin-top: 20px;
+        margin: 20px 0;
 
         .active {
           color: $color-blue;
