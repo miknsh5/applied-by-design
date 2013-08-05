@@ -39,8 +39,8 @@ angular.module('appliedByDesignApp')
         financialReports.setActiveReport(name);
         $scope.activeChartData = $scope.financialData_active[$scope.activeYearId][name].data;
         $scope.activeChartData.total = assignChartTotal(name);
-
     }
+
     $scope.selectYear = function(id){
         //when a user selects a new financial year in the left side panel
         financialReports.setActiveYear(id);

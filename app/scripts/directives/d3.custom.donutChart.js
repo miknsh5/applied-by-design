@@ -49,15 +49,17 @@ d3.custom.donutChart = function module() {
                   .attr('d', arc)
                   .each(function(d){ this._current = d })
 
-            function change() {
-                pie.value(function(d){return d.val; });
-                path = path.data(pie); //compute new angles
-                path.transition().duration(1000).attrTween('d', arcTween); //redraw arcs
-            }
+
 
             duration = 500;
 
         });
+    }
+
+    exports.change = function() {
+        pie.value(function(d){return d.val; });
+        path = path.data(pie); //compute new angles
+        path.transition().duration(1000).attrTween('d', arcTween); //redraw arcs
     }
 
     function arcTween(a) {
