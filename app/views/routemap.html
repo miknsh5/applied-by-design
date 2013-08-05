@@ -416,13 +416,13 @@
                             <div class="summary-table report">
                                 <!-- <h3 class="heading small">Route Total</h3> -->
                                 <div ng-repeat="metric in metrics | filter:{isCurrency:'true'}">
-                                    <div class="row-wrap" 
-                                        ng-click="selectReport(metric.name)"
-                                        ng-class="{active: metric.name == activeReportName }">
+                                    <div class="row-wrap">
                                         <h4 class="left">{{metric.name}}:</h4>
                                         <h4 class="number per-flight right">
                                             <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                            <span ng-show="metric.isExpense">(</span>
                                             {{metric.val | number:metric.decimals }}
+                                            <span ng-show="metric.isExpense">)</span>
                                         </h4>
                                     </div>
                                 </div>
@@ -430,7 +430,7 @@
                                     <h4 class="left"><strong>Operating Profit:</strong></h4>
                                     <h4 class="number total right">
                                         <span class="dollar">$</span>
-                                        <strong>{{12345 | number:0}}</strong>
+                                        <strong>{{operatingProfit() | number:0}}</strong>
                                     </h4>
                                 </div>
                             </div>

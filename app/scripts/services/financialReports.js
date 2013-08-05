@@ -7,7 +7,8 @@ angular.module('appliedByDesignApp')
     var financialReport_base = [],
         financialReport = [],
         activeReport  = 'Crew', //name
-        activeYear    = 0;      //id
+        activeYear    = 0,      //id
+        perFltRev = [];
 
     // Public API here
     return {
@@ -40,6 +41,9 @@ angular.module('appliedByDesignApp')
       },
       getNPVReport: function(discount,years) {
         return npvReport(discount, years, filterFinancialReport());
+      },
+      getPerFltRevenue: function(report){
+        return perFltRev
       },
       getRevenueForecast: function(report){
         var revenue = [];
@@ -147,6 +151,7 @@ angular.module('appliedByDesignApp')
           yearReport.data[m] = {'name': reportMetrics[m],
                                 'val' : totalval,
                                 'isCurrency': currency[m],
+                                'isExpense': reportMetrics[m] == 'Revenue' ? false : true,
                                 // 'currency': currency[m] == false ? false : true,
                                 'decimals': decimals[m]
                               };
@@ -182,6 +187,7 @@ angular.module('appliedByDesignApp')
             yearReport.perFlight[a].metrics[m] = {'name': reportMetrics[m],
                                                   'val' : calcValue/calFreq,
                                                   'isCurrency': currency[m],
+                                                  'isExpense': reportMetrics[m] == 'Revenue' ? false : true,
                                                   'decimals': decimals[m]};
           }
         }
@@ -207,14 +213,15 @@ angular.module('appliedByDesignApp')
         npvReport[m] = {
           'name': reportMetrics[m],
           'val': 0,
+          'isExpense': reportMetrics[m] == 'Revenue' ? false : true,
           'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals};
 
         // switch the sign on the values to negative for costs, positive for revenue
         // right now, Revenue is the only positive metric.
-        posOrNeg = reportMetrics[m] == 'Revenue' ? 1 : -1;
+        // posOrNeg = reportMetrics[m] == 'Revenue' ? 1 : -1;
 
         for(var y=0;y<years;y++) {
-          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y) * posOrNeg;
+          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y);
         }
       }
 
