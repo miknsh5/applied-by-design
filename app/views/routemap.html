@@ -152,15 +152,14 @@
                         <!-- panel for the financial chart -->
                         <div class="panel chart">
                             <div class="panel-inner">
-                         
-                         <!--        <div class="chart-title">
+                                <div class="chart-title">
                                     <h4>{{activeReportName}}: 
                                         <span class="primary">
                                             <span class="dollar" ng-show="activeChartData.total.isCurrency">$</span>
                                             {{activeChartData.total.val | number:0}}
                                         </span>
                                     </h4>
-                                </div> -->
+                                </div>
 
                                 <div class="panel large">
                                     <donut-chart data="activeChartData" hovered="hovered(args)"></donut-chart>
@@ -401,7 +400,7 @@
                         <i class="ikon-print"></i>
                         <i class="ikon-download-alt"></i>
                     </div>
-                    <h1 class="report-title">Financial Report</h1>
+                    <h1 class="report-title">Fleet Report</h1>
                     <h2 class="report-title">Services</h2>
                     <div class="services">
                         <i class="ikon-cog-2 active"> </i>
@@ -409,46 +408,24 @@
                         <i class="ikon-wrench"></i>
                         <i class="ikon-stats"></i>
                     </div>
-                    <div class="report-row">
-                        <div class="module split">
-                            <h2 class="report-title leftcol">Financials</h2>
-                            <h2 class="report-title sub-heading"><span>per/Flight</span></h2>
-                            <div class="summary-table report">
-                                <!-- <h3 class="heading small">Route Total</h3> -->
-                                <div ng-repeat="metric in metrics | filter:{isCurrency:'true'}">
-                                    <div class="row-wrap" 
-                                        ng-click="selectReport(metric.name)"
-                                        ng-class="{active: metric.name == activeReportName }">
-                                        <h4 class="left">{{metric.name}}:</h4>
-                                        <h4 class="number per-flight right">
-                                            <span class="dollar" ng-show="metric.isCurrency">$</span>
-                                            {{metric.val | number:metric.decimals }}
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="row-wrap total">
-                                    <h4 class="left"><strong>Operating Profit:</strong></h4>
-                                    <h4 class="number total right">
-                                        <span class="dollar">$</span>
-                                        <strong>{{12345 | number:0}}</strong>
+                    <h2 class="report-title">Financials</h2>
+                        <div class="summary-table financial">
+                            <!-- <h3 class="heading small">Route Total</h3> -->
+                            <div ng-repeat="metric in metrics | filter:{isCurrency:'true'}">
+                                <div class="row-wrap" 
+                                    ng-click="selectReport(metric.name)"
+                                    ng-class="{active: metric.name == activeReportName }">
+                                    <h4 class="title wide">{{metric.name}}:</h4>
+                                    <h4 class="number primary">
+                                        <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                        {{metric.val | number:metric.decimals }}
                                     </h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="module split">
-                            <donut-chart data="activeChartData"></donut-chart>
-                        </div>
-                    </div>
-                    <div class="report-row">
-                        <div class="module split">
-                            <h2 class="report-title">Forecast</h2>
-                            <stacked-chart data="forecastData"></stacked-chart>
-                        </div>
-                        <div class="module split">
-                            <h2 class="report-title">NPV Analysis</h2>
-                            <div class="npv">${{npv | number:0}}</div>
-                        </div>
-                    </div>
+                    <h2 class="report-title">Forecast</h2>
+                    <h2 class="report-title">NPV Analysis</h2>
+                    <div class="npv">${{npv | number:0}}</div>
 
                 </div>
             </div>

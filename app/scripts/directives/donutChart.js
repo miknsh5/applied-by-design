@@ -3,6 +3,8 @@
 angular.module('appliedByDesignApp')
   .directive('donutChart', function () {
 
+    // var chart = d3.custom.donutChart();
+
     return {
       template: '<div class="chart"></div>',
       replace: true,
@@ -38,7 +40,7 @@ angular.module('appliedByDesignApp')
 
         // group for the pie slices (arcs)
         arcs = svg.append('g')
-            .attr({transform: 'translate(' + chartW/2 + ',' + 125 + ')'});
+            .attr({transform: 'translate(' + chartW/2 + ',' + 100 + ')'});
 
         // arc generator
         arc = d3.svg.arc()
@@ -55,7 +57,7 @@ angular.module('appliedByDesignApp')
 
         labels = svg.append('g')
           .classed('labels', true)
-            .attr({transform: 'translate(' + (width-100) + ',' + 60 + ')'});
+            .attr({transform: 'translate(' + (width-100) + ',' + 40 + ')'});
 
         // watch for udpates to the data
         scope.$watch('data', function(data){

@@ -56,4 +56,24 @@ angular.module('appliedByDesignApp')
     }
 
 
+    // chart example
+    // $scope.options = {width: 150, height: 150, 'bar':'aaa'};
+    // $scope.data = [1,2,3,4];
+    // $scope.hovered = function(d){
+    //     $scope.barValue = d.value;
+    //     $scope.$apply();
+    // }
+    // $scope.barValue = 'None';
+
+    // $scope.update = function(d, i){ 
+    //     $scope.data = randomData(); 
+    // }
+
+    // function randomData(){
+    //     // return d3.range(~~(Math.random()*50)+1).map(function(d, i){return ~~(Math.random()*1000);});
+    //     var data = $scope.data;
+    //     data[0] = data[0] * 1.8;
+    //     return data;
+    // }
+
   });
