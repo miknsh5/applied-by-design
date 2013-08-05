@@ -410,32 +410,42 @@
                         <i class="ikon-stats"></i>
                     </div>
                     <div class="report-row">
-                        <div class="module split">
+                        <div class="module split-3-2">
                             <h2 class="report-title leftcol">Financials</h2>
                             <h2 class="report-title sub-heading"><span>per/Flight</span></h2>
                             <div class="summary-table report">
                                 <!-- <h3 class="heading small">Route Total</h3> -->
-                                <div ng-repeat="metric in metrics | filter:{isCurrency:'true'}">
+                                <div ng-repeat="metric in metrics_base | filter:{isCurrency:'true'}">
                                     <div class="row-wrap">
                                         <h4 class="left">{{metric.name}}:</h4>
-                                        <h4 class="number per-flight right">
+                                        <h4 class="number per-flight delta">
                                             <span class="dollar" ng-show="metric.isCurrency">$</span>
                                             <span ng-show="metric.isExpense">(</span>
                                             {{metric.val | number:metric.decimals }}
+                                            <span ng-show="metric.isExpense">)</span>
+                                        </h4>
+                                        <h4 class="number per-flight delta highlight">
+                                            <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                            <span ng-show="metric.isExpense">(</span>
+                                            {{ metrics_delta[$index].val }}
                                             <span ng-show="metric.isExpense">)</span>
                                         </h4>
                                     </div>
                                 </div>
                                 <div class="row-wrap total">
                                     <h4 class="left"><strong>Operating Profit:</strong></h4>
-                                    <h4 class="number total right">
+                                    <h4 class="number total delta">
                                         <span class="dollar">$</span>
-                                        <strong>{{operatingProfit() | number:0}}</strong>
+                                        <strong>{{operatingProfit('base') | number:0}}</strong>
+                                    </h4>
+                                    <h4 class="number total delta highlight">
+                                        <span class="dollar">$</span>
+                                        <strong>{{operatingProfit('delta') | number:0}}</strong>
                                     </h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="module split">
+                        <div class="module split-3-1">
                             <donut-chart data="activeChartData"></donut-chart>
                         </div>
                     </div>

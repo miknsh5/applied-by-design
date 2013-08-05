@@ -390,6 +390,16 @@ h4.left {
   margin-right: 5%;
   float: left;
 }
+.split-3-2 {
+  width: 60%;
+  margin-right: 5%;
+  float: left;
+}
+.split-3-1 {
+  width: 30%;
+  margin-right: 5%;
+  float: left;
+}
 
 .report-row {
   clear: both;
@@ -401,8 +411,9 @@ h4.left {
   clear: both;
 
   &.report {
-    float: none;
+    float: left;
     font-size: 1.2em;
+    width: 100%;
 
     h4 {
       color: $font-darkgray;
@@ -414,16 +425,14 @@ h4.left {
       }
 
       &.right {
-        width: 47%;
+        width: 30%;
         text-align: right;
       }
 
     }
-
-
-
-
   }
+
+
   
   h4.title {
     display: inline;
@@ -456,6 +465,15 @@ h4.left {
 
     &.shortname {
       width: 160px;
+    }
+
+    &.delta {
+      // font-size: 1.2em;
+      width: 22%;
+    }
+
+    &.highlight {
+      color: $color-blue !important;
     }
   }
 
