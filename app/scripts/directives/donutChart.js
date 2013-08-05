@@ -15,9 +15,9 @@ angular.module('appliedByDesignApp')
       },
       link: function postLink(scope, element, attrs) {
         
-        var margin = {top: 20, right: 20, bottom: 40, left: 40},
-            width = 240,
-            height = 240,
+        var margin = {top: 20, right: 50, bottom: 20, left: 40},
+            width = 250,
+            height = 220,
             ease = 'cubic-in-out';
         
         var svg, 
@@ -25,6 +25,8 @@ angular.module('appliedByDesignApp')
             arcs,
             pie,
             color,
+            labels,
+            legend,
             duration = 500;
         
         var chartW = width - margin.left - margin.right,
@@ -33,12 +35,12 @@ angular.module('appliedByDesignApp')
 
         svg = d3.select(element[0])
             .append('svg')
-              .attr('width', chartW)
-              .attr('height', chartH)
+              .attr('width', width)
+              .attr('height', height)
 
         // group for the pie slices (arcs)
         arcs = svg.append('g')
-            .attr({transform: 'translate(' + chartW/2 + ',' + chartH/2 + ')'});
+            .attr({transform: 'translate(' + chartW/2 + ',' + 100 + ')'});
 
         // arc generator
         arc = d3.svg.arc()
@@ -52,6 +54,10 @@ angular.module('appliedByDesignApp')
 
         // set colormap
         color = d3.scale.category20();
+
+        labels = svg.append('g')
+          .classed('labels', true)
+            .attr({transform: 'translate(' + (width-100) + ',' + 40 + ')'});
 
         // watch for udpates to the data
         scope.$watch('data', function(data){
@@ -68,7 +74,6 @@ angular.module('appliedByDesignApp')
 
           // data updated, make sure it's not empty
           if (data) {
-            console.log('new data!')
 
             // calculate new pie slices
             var pieData = pie(data);
@@ -82,14 +87,55 @@ angular.module('appliedByDesignApp')
                     .attr('fill', function(d, i) { return color(i); })
                     .each(function(d) { this._current = d; });
 
+
             path.transition()
                 .duration(duration)
                 .attrTween('d', arcTween)
                 .style('fill', function(d, i) { return color(i); });
 
+            // remove arcs not in the dataset
+            path.exit().remove();
+            labels.selectAll('g').remove();
+
+
+            labels.selectAll('g')
+              .data(pieData)
+                .enter()
+                .append('g')
+                .each(function(d, i) {
+                  var g = d3.select(this);
+                  g.append("rect")
+                    .attr("x", 50)
+                    .attr("y", i*25)
+                    .attr("width", 10)
+                    .attr("height", 12)
+                    .style("fill", function() { return color(i); });
+                  
+                  g.append("text")
+                    .attr("x", 65)
+                    .attr("y", i * 25 + 12)
+                    .attr("height",30)
+                    .attr("width",100)
+                    .style("fill", function() { return color(i); })
+                    .text(function(d){
+                      return d.data.equipment;
+                    });
+                })
+
+            
+
+            // legend = labels.selectAll('key')
+            //   .data(data)
+            //   .enter()
+            //     .append('text')
+            //     .text(function(d){
+            //       return d.equipment;
+            //     });
+
           } else {
             // remove chart if data is empty
             console.log('no data!')
+
             svg.selectAll('path').remove();
             labels.selectAll('line').remove();
             labels.selectAll("text.value").remove();
