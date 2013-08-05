@@ -40,6 +40,29 @@ angular.module('appliedByDesignApp')
       },
       getNPVReport: function(discount,years) {
         return npvReport(discount, years, filterFinancialReport());
+      },
+      getRevenueForecast: function(report){
+        var revenue = [];
+        var revenueForecast = [];
+
+        // loop through each annual forecast and retrieve the revenue object
+        angular.forEach(report, function(annualReport, id) {
+           var revenue = _.where(annualReport.data, {'name': 'Revenue'});
+           
+           // make sure only 1 revenue object is being returned
+           if (revenue.length != 1) {
+            console.log('Woah! - somethings goofed with the revenue forecasts!');
+            return
+           }
+
+           // append the current forecast year to the object being built for d3
+           revenue[0].year = annualReport.year;
+
+           //push revenue object to revenueForecast array formatted for d3
+           revenueForecast.push(revenue[0]);
+        })
+
+        return revenueForecast;
       }
       
     };
