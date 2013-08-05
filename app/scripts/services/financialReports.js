@@ -39,8 +39,24 @@ angular.module('appliedByDesignApp')
       setActiveYear: function(id) {
         activeYear = id;
       },
-      getNPVReport: function(discount,years) {
-        return npvReport(discount, years, filterFinancialReport());
+      getNPVReport: function(discount,years,currentReport,baselineReport) {
+        var currentNPV  = npvReport(discount, years, currentReport);
+        var baselineNPV = npvReport(discount, years, baselineReport);
+        // var currentNPV  = npvReport(discount, years, filterFinancialReport());
+        // var baselineNPV = npvReport(discount, years, filterFinancialReport());
+        
+        var deltaNPV = [];
+        for(var n=0;n<currentNPV.length;n++)
+        {
+          deltaNPV[n] = {};
+
+          deltaNPV[n] = { 'name': currentNPV[n].name,
+                          'val':  currentNPV[n].val-baselineNPV[n].val,
+                          'decimals': currentNPV[n].decimals};
+        }
+
+        return deltaNPV;
+
       },
       getPerFltRevenue: function(report){
         return perFltRev
