@@ -201,8 +201,7 @@ angular.module('appliedByDesignApp')
 
     function npvReport(discount, years, fullReport){
 
-      var yearCount      = fullReport.length;
-      
+
       var reportMetrics  = _.pluck(_.where(fullReport[0].data,{isCurrency:true}),'name');
       var npvReport = [];
       var posOrNeg; // use to switch the value from positive to negative in assignment

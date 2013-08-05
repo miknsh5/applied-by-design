@@ -7,8 +7,10 @@
         "Cabins": 1,
         "Size": "Small",
         "Services": {
-            "FuelService": false,
-            "MaintenanceService": false
+            "FuelService": true,
+            "MaintenanceService": false,
+            "CrewService": false,
+            "FuelMaintService": false
         }
     },
     {
@@ -20,7 +22,9 @@
         "Size": "Large",
         "Services": {
             "FuelService": false,
-            "MaintenanceService": false
+            "MaintenanceService": false,
+            "CrewService": false,
+            "FuelMaintService": false
         }
     },
     {
@@ -32,7 +36,9 @@
         "Size": "Small",
         "Services": {
             "FuelService": false,
-            "MaintenanceService": false
+            "MaintenanceService": false,
+            "CrewService": false,
+            "FuelMaintService": false
         }
     },
     {
@@ -43,8 +49,10 @@
         "Cabins": 2,
         "Size": "Large",
         "Services": {
-            "FuelService": true,
-            "MaintenanceService": false
+            "FuelService": false,
+            "MaintenanceService": false,
+            "CrewService": false,
+            "FuelMaintService": false
         }
     },
     {
@@ -56,7 +64,9 @@
         "Size": "Large",
         "Services": {
             "FuelService": false,
-            "MaintenanceService": false
+            "MaintenanceService": false,
+            "CrewService": false,
+            "FuelMaintService": false
         }
     }
 ]
