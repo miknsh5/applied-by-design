@@ -1,4 +1,6 @@
 'use strict';
+/*global _:false */
+/*global jQuery:false */
 
 angular.module('appliedByDesignApp')
   .factory('reportBuilder', function (fleetModel, navService, financialReports) {
@@ -7,9 +9,11 @@ angular.module('appliedByDesignApp')
     // calculated data (watch these with return functions)
     var routeReport;
 
+
     // Public API here
     return {
       getReport: function(name){
+        // this is bad!
         return eval(name);
       },
       getRouteNameFromId: function(id){
@@ -17,7 +21,6 @@ angular.module('appliedByDesignApp')
       },
       // Get Financial Report for some subset of the total fleet/routes
       buildFinancialReport: function(forecast) {
-        
         // Retrieve data dependencies
         var revFlights   = fleetModel.getData('flights');
         var airplanes    = fleetModel.getData('airplanes');
@@ -32,12 +35,10 @@ angular.module('appliedByDesignApp')
         // Instantiate report variables
         var startYear    = 2013;
         var weeks = 52;
-        var totalRev, outputCost, outputOps, years, APCount, studyyear;
+        var totalRev, outputCost, outputOps, years, studyyear;
         var cap, coeffs, rpm, fuelprice, servicesInUse;
         var outputReport = [];
-        var airplaneReport = [];
         var reportArray = [];
-        var outputReport = [];
         var flightReport = {};
 
         // If user wants forecasted years...
@@ -105,7 +106,7 @@ angular.module('appliedByDesignApp')
               if(servicesInUse[n].val) {
                 for(var k2 in services[k1]) {
                   for(var c1 in services[k1][k2]) {
-                    coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
+                    coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];
                   }
                 }
               }
@@ -118,7 +119,7 @@ angular.module('appliedByDesignApp')
               if(outputCost[k]===undefined) {
                 outputCost[k] = 0;
               }
-              if(k=='Fuel') {
+              if(k==='Fuel') {
                 flightReport[k] = weeks*flightReport.freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
               }
               else {
@@ -158,31 +159,35 @@ angular.module('appliedByDesignApp')
 
         //Get all of the unique equipment codes from flights
         var equipCodes = _.uniq(_.pluck(flights,'Equipment'));
-        var equipment = [];
+        var equipment = []; //new equipment array to build
         var APservices;
+        var thisEquipCode;
+        var thisEquip;
 
         //Assign equipment names to 'equipment'
-        for(var i = 0;i<equipCodes.length;i++)
-        {
+        for(var i = 0;i<equipCodes.length;i++) {
+          thisEquipCode = equipCodes[i];
+          thisEquip = _.find(airplanes, function(num){ return num.Equipment === thisEquipCode;});
+
           equipment[i] = {
-            'name': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Name,
-            'code':equipCodes[i],
+            'name': thisEquip.Name,
+            'code': thisEquipCode,
             'active': true
-           };
+          };
 
-           equipment[i].services = [];
-           equipment[i].details = {};
 
-          equipment[i].details = [ {  'name':'Aircraft Name','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Name},
-                                   {  'name':'OAG Code','value': equipCodes[i]},
-                                   {  'name':'Count','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Count},
-                                   {  'name':'Capacity','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Capacity},
-                                   {  'name':'Cabins','value': _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Cabins}];
+          equipment[i].details = [
+            {  'name':'Aircraft Name',  'value': thisEquip.Name },
+            {  'name':'OAG Code',       'value': thisEquipCode },
+            {  'name':'Count',          'value': thisEquip.Count },
+            {  'name':'Capacity',       'value': thisEquip.Capacity },
+            {  'name':'Cabins',         'value': thisEquip.Cabins }
+          ];
 
-          APservices = _.find(airplanes, function(num){ return num.Equipment == equipCodes[i];}).Services;
+          APservices = thisEquip.Services;
 
-          for(var k in APservices)
-          {
+          equipment[i].services = [];
+          for(var k in APservices) {
             equipment[i].services.push({'name':k,'val':APservices[k]});
           }
 
@@ -193,20 +198,17 @@ angular.module('appliedByDesignApp')
         return equipment;
       },
       findArray: function(inputArray,searchCrit,key){
-
         var critReturn = [];
-        for(var crit=0;crit<searchCrit.length;crit++)
-        {
+        var outputArray = [];
+
+        for(var crit=0;crit<searchCrit.length;crit++) {
           critReturn = eval('_.where(inputArray,{'+key+':"'+searchCrit[crit]+'"})');
 
-          if(crit==0)
-          {
-            var outputArray = critReturn;
+          if(crit===0) {
+            outputArray = critReturn;
           }
-          else
-          {
-            for(var j in critReturn)
-            {
+          else {
+            for(var j in critReturn) {
               outputArray.push(critReturn[j]);
             }
           }
@@ -228,35 +230,32 @@ angular.module('appliedByDesignApp')
         }
 
         var nonDirec;
-        if(origin<destination)
-        {
+        if(origin<destination) {
           nonDirec = origin+destination;
         }
-        else
-        {
+        else {
           nonDirec = destination+origin;
         }
 
-        var newFlight = { "FltNumber": fltnum,
-                          "OD": origin+'-'+destination,
-                          "NonDirectional": nonDirec,
-                          "Depart": "00:00:00 AM",
-                          "Arrive": "00:00:00 AM",
-                          "Equipment": equipment,
-                          "Stops": 0,
-                          "Overnight": false,
-                          "Partner": false,
-                          "Monday": DOW[0],
-                          "Tuesday": DOW[1],
-                          "Wednesday": DOW[2],
-                          "Thursday": DOW[3],
-                          "Friday": DOW[4],
-                          "Saturday": DOW[5],
-                          "Sunday": DOW[6],
-                          "Frequency": freq};
+        var newFlight = { 'FltNumber': fltnum,
+                          'OD': origin+'-'+destination,
+                          'NonDirectional': nonDirec,
+                          'Depart': '00:00:00 AM',
+                          'Arrive': '00:00:00 AM',
+                          'Equipment': equipment,
+                          'Stops': 0,
+                          'Overnight': false,
+                          'Partner': false,
+                          'Monday': DOW[0],
+                          'Tuesday': DOW[1],
+                          'Wednesday': DOW[2],
+                          'Thursday': DOW[3],
+                          'Friday': DOW[4],
+                          'Saturday': DOW[5],
+                          'Sunday': DOW[6],
+                          'Frequency': freq};
 
-          return newFlight;
-        
+        return newFlight;
       },
       greatAirportRoutes: function(airport) {
 
@@ -264,11 +263,9 @@ angular.module('appliedByDesignApp')
 
         var activeRoutes = this.buildRoutes();
 
-        for(var i=0;i<activeRoutes.length;i++)
-        {
-          if(activeRoutes[i].NonDirectional.slice(0,3)==airport || activeRoutes[i].NonDirectional.slice(3,6)==airport)
-          {
-            airportRoutes.push(activeRoutes[i])
+        for(var i=0;i<activeRoutes.length;i++) {
+          if(activeRoutes[i].NonDirectional.slice(0,3)===airport || activeRoutes[i].NonDirectional.slice(3,6)===airport) {
+            airportRoutes.push(activeRoutes[i]);
           }
         }
         return airportRoutes;
@@ -284,45 +281,45 @@ angular.module('appliedByDesignApp')
         var cityPairs  = fleetModel.getData('cityPairs');
         var airports   = fleetModel.getData('airports');
         var revFlights = fleetModel.getData('flights');
-        var equipment  = navService.getEquipment();
+        // var equipment  = navService.getEquipment();
 
         var allRoutes = [];
         var report    = [];
 
         // check to make sure all required data is available
-        if (typeof(cityPairs) == 'undefined') { console.log('cityPairs not defined'); return};
-        if (typeof(airports) == 'undefined') { console.log('Airports not defined'); return};
+        if (typeof(cityPairs) === 'undefined') { console.log('cityPairs not defined'); return;}
+        if (typeof(airports) === 'undefined') { console.log('Airports not defined'); return;}
 
         for(var i = 0;i<revFlights.length;i++) {
           allRoutes.push(revFlights[i].NonDirectional);
         }
 
         var uniqueRoutes = _.uniq(allRoutes);
-        
+
         for(var k=0;k<uniqueRoutes.length;k++) {
 
           report[k] = {
-            "NonDirectional": uniqueRoutes[k],
-            "Fare": _.findWhere(cityPairs,{NonDirectional:uniqueRoutes[k]}).Fare,
-            "Olat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Latitude,
-            "Oiata": uniqueRoutes[k].slice(0,3),
-            "Diata": uniqueRoutes[k].slice(3,6),
-            "Olon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Longitude,
-            "Ocity": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).City,
-            "Oname": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Name,
-            "Ostate": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).State,
-            "Ocountry": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Country,
-            "Dlat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Latitude,
-            "Dlon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Longitude,
-            "Dcity": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).City,
-            "Dname": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Name,
-            "Dstate": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).State,
-            "Dcountry": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Country,
-            "Distance":gcDistance(uniqueRoutes[k]),
-            "Duration": _.findWhere(cityPairs, {NonDirectional:uniqueRoutes[k]}).Duration,
-            "LF": _.findWhere(cityPairs, {NonDirectional: uniqueRoutes[k]}).LF};
+            'NonDirectional': uniqueRoutes[k],
+            'Fare': _.findWhere(cityPairs,{NonDirectional:uniqueRoutes[k]}).Fare,
+            'Olat': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Latitude,
+            'Oiata': uniqueRoutes[k].slice(0,3),
+            'Diata': uniqueRoutes[k].slice(3,6),
+            'Olon': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Longitude,
+            'Ocity': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).City,
+            'Oname': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Name,
+            'Ostate': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).State,
+            'Ocountry': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Country,
+            'Dlat': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Latitude,
+            'Dlon': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Longitude,
+            'Dcity': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).City,
+            'Dname': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Name,
+            'Dstate': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).State,
+            'Dcountry': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Country,
+            'Distance':gcDistance(uniqueRoutes[k]),
+            'Duration': _.findWhere(cityPairs, {NonDirectional:uniqueRoutes[k]}).Duration,
+            'LF': _.findWhere(cityPairs, {NonDirectional: uniqueRoutes[k]}).LF
+          };
         }
-        
         return report;
       },
       buildRoutes: function(){
@@ -336,47 +333,46 @@ angular.module('appliedByDesignApp')
         var report    = [];
 
         // check to make sure all required data is available
-        if (typeof(cityPairs) == 'undefined') { console.log('cityPairs not defined'); return};
-        if (typeof(airports) == 'undefined') { console.log('Airports not defined'); return};
+        if (typeof(cityPairs) === 'undefined') { console.log('cityPairs not defined'); return;}
+        if (typeof(airports) === 'undefined') { console.log('Airports not defined'); return;}
 
-        
 
         // return filtered set of routes as subset of fleetModel
         var filterBy = _.pluck(_.where(equipment,{active:true}),'code');
-      
+
         // only generate route report if an aircraft type is selected
-        if (filterBy.length) { 
-          var revFlights   = this.findArray(flights, filterBy,"Equipment");
+        if (filterBy.length) {
+          var revFlights = this.findArray(flights, filterBy,'Equipment');
 
           for(var i = 0;i<revFlights.length;i++) {
             allRoutes.push(revFlights[i].NonDirectional);
           }
 
           var uniqueRoutes = _.uniq(allRoutes);
-          
+
           for(var k=0;k<uniqueRoutes.length;k++) {
 
             report[k] = {
-              "NonDirectional": uniqueRoutes[k],
-              "Fare": _.findWhere(cityPairs,{NonDirectional:uniqueRoutes[k]}).Fare,
-              "Olat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Latitude,
-              "Olon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Longitude,
-              "Ocity": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).City,
-              "Oname": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Name,
-              "Ostate": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).State,
-              "Ocountry": _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Country,
-              "Dlat": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Latitude,
-              "Dlon": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Longitude,
-              "Dcity": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).City,
-              "Dname": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Name,
-              "Dstate": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).State,
-              "Dcountry": _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Country,
-              "Distance":gcDistance(uniqueRoutes[k]),
-              "Duration": _.findWhere(cityPairs, {NonDirectional:uniqueRoutes[k]}).Duration,
-              "LF": _.findWhere(cityPairs, {NonDirectional: uniqueRoutes[k]}).LF};
+              'NonDirectional': uniqueRoutes[k],
+              'Fare': _.findWhere(cityPairs,{NonDirectional:uniqueRoutes[k]}).Fare,
+              'Olat': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Latitude,
+              'Olon': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Longitude,
+              'Ocity': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).City,
+              'Oname': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Name,
+              'Ostate': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).State,
+              'Ocountry': _.findWhere(airports, {Code:uniqueRoutes[k].slice(0,3)}).Country,
+              'Dlat': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Latitude,
+              'Dlon': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Longitude,
+              'Dcity': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).City,
+              'Dname': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Name,
+              'Dstate': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).State,
+              'Dcountry': _.findWhere(airports, {Code:uniqueRoutes[k].slice(3,6)}).Country,
+              'Distance':gcDistance(uniqueRoutes[k]),
+              'Duration': _.findWhere(cityPairs, {NonDirectional:uniqueRoutes[k]}).Duration,
+              'LF': _.findWhere(cityPairs, {NonDirectional: uniqueRoutes[k]}).LF
+            };
           }
         }
-        
         routeReport = report;
         return report;
       }
@@ -391,8 +387,7 @@ angular.module('appliedByDesignApp')
 
       //Define Unique Routes
       var allRoutes = [];
-      for(var i = 0;i<flights.length;i++)
-      {
+      for(var i = 0;i<flights.length;i++) {
         allRoutes.push(flights[i].NonDirectional);
       }
 
@@ -400,21 +395,20 @@ angular.module('appliedByDesignApp')
 
       //Define Unique Airports
       var allAirports = [];
-      for(var i = 0;i<uniqueRoutes.length;i++)
-      {
-        allAirports.push(uniqueRoutes[i].slice(0,3));
-        allAirports.push(uniqueRoutes[i].slice(3,6));
+      for(var j = 0;j<uniqueRoutes.length;j++) {
+        allAirports.push(uniqueRoutes[j].slice(0,3));
+        allAirports.push(uniqueRoutes[j].slice(3,6));
       }
 
       var uniqueAirports = _.uniq(allAirports);
 
       //Gather Information for Each Unique Airport
-      var airportReport = [];      
-      for(var k=0;k<uniqueAirports.length;k++)
-      {
-        airportReport[k] = {"Code": uniqueAirports[k],
-                            "Latitide":  _.findWhere(airports, {Code: uniqueAirports[k]}).Latitude,
-                            "Longitude": _.findWhere(airports, {Code: uniqueAirports[k]}).Longitude}
+      var airportReport = [];
+      for(var k=0;k<uniqueAirports.length;k++) {
+        airportReport[k] = {'Code': uniqueAirports[k],
+                            'Latitide':  _.findWhere(airports, {Code: uniqueAirports[k]}).Latitude,
+                            'Longitude': _.findWhere(airports, {Code: uniqueAirports[k]}).Longitude
+                          };
       }
       return airportReport;
     }
@@ -439,18 +433,11 @@ angular.module('appliedByDesignApp')
 
       var theta = lon2 - lon1;
       var dist = Math.acos(Math.sin(lat1)*Math.sin(lat2) + Math.cos(lat1)*Math.cos(lat2)*Math.cos(theta));
-      if (dist < 0)
-        {
-          dist = dist + Math.PI;
-        }
+      if (dist < 0) {
+        dist = dist + Math.PI;
+      }
       dist = dist*R;
       return dist;
     }
-
-
-
-
-
-
 
   });

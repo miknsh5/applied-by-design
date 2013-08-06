@@ -60,7 +60,7 @@ angular.module('appliedByDesignApp')
         return equipment;
       },
       setServiceState: function(id){
-        var state = equipment[activeFleetModel].services[id].val
+        var state = equipment[activeFleetModel].services[id].val;
         equipment[activeFleetModel].services[id].val = !state;
         return !state;
       },

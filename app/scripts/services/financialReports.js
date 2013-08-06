@@ -1,91 +1,20 @@
 'use strict';
+/*global _:false */
 
 angular.module('appliedByDesignApp')
   .factory('financialReports', function (navService) {
     // Service logic
 
-    var financialReport_base = [],
-        financialReport = [],
+    var financialReport = [],
+        // financialReportBase = [],
         activeReport  = 'Crew', //name
         activeYear    = 0,      //id
         perFltRev = [];
 
-    // Public API here
-    return {
-      // getters
-      getFullReport: function(){
-        return filterFinancialReport();
-      },
-      getRouteReport: function(routeName){
-        return filterFinancialReport(routeName);
-      },
-      getActiveReport: function(){
-        return financialReport[activeReportId];
-      },
-      getActiveId: function(name) {
-        return eval(name);
-      },
-      getYears: function(){
-        return _.pluck(filterFinancialReport(), 'year');
-      },
 
-      // setters
-      setReport: function(report){
-        financialReport = report;
-      },
-      setActiveReport: function(name) {
-        activeReport = name;
-      },
-      setActiveYear: function(id) {
-        activeYear = id;
-      },
-      getNPVReport: function(discount,years,currentReport,baselineReport) {
-        var currentNPV  = npvReport(discount, years, currentReport);
-        var baselineNPV = npvReport(discount, years, baselineReport);
-        // var currentNPV  = npvReport(discount, years, filterFinancialReport());
-        // var baselineNPV = npvReport(discount, years, filterFinancialReport());
-        
-        var deltaNPV = [];
-        for(var n=0;n<currentNPV.length;n++)
-        {
-          deltaNPV[n] = {};
-
-          deltaNPV[n] = { 'name': currentNPV[n].name,
-                          'val':  currentNPV[n].val-baselineNPV[n].val,
-                          'decimals': currentNPV[n].decimals};
-        }
-
-        return deltaNPV;
-
-      },
-      getPerFltRevenue: function(report){
-        return perFltRev
-      },
-      getRevenueForecast: function(report){
-        var revenue = [];
-        var revenueForecast = [];
-
-        // loop through each annual forecast and retrieve the revenue object
-        angular.forEach(report, function(annualReport, id) {
-           var revenue = _.where(annualReport.data, {'name': 'Revenue'});
-           
-           // make sure only 1 revenue object is being returned
-           if (revenue.length != 1) {
-            console.log('Woah! - somethings goofed with the revenue forecasts!');
-            return
-           }
-
-           // append the current forecast year to the object being built for d3
-           revenue[0].year = annualReport.year;
-
-           //push revenue object to revenueForecast array formatted for d3
-           revenueForecast.push(revenue[0]);
-        })
-
-        return revenueForecast;
-      }
-      
-    };
+    function mapSum(a,b){
+      return a+b;
+    }
 
     function filterFinancialReport(routeName){
 
@@ -105,8 +34,8 @@ angular.module('appliedByDesignApp')
 
       for(var y=0;y<finReport.length;y++)
       {
-        equipReport  = findArray(finReport[y].fleetReport,filterByAP,"Equipment");
-        if (typeof routeName != 'undefined')
+        equipReport  = findArray(finReport[y].fleetReport,filterByAP,'Equipment');
+        if (typeof routeName !== 'undefined')
         {
           filteredReport = _.where(equipReport,{NonDirectional: routeName});
 
@@ -124,13 +53,13 @@ angular.module('appliedByDesignApp')
                                               'Name':    filteredReport[0].dName,
                                               'IATA':    filteredReport[0].dIata};
 
-          var moFreq = _.reduceRight(_.pluck(filteredReport,'monday'),function(a,b){return a+b},0);
-          var tuFreq = _.reduceRight(_.pluck(filteredReport,'tuesday'),function(a,b){return a+b},0);
-          var weFreq = _.reduceRight(_.pluck(filteredReport,'wednesday'),function(a,b){return a+b},0);
-          var thFreq = _.reduceRight(_.pluck(filteredReport,'thursday'),function(a,b){return a+b},0);
-          var frFreq = _.reduceRight(_.pluck(filteredReport,'friday'),function(a,b){return a+b},0);
-          var saFreq = _.reduceRight(_.pluck(filteredReport,'saturday'),function(a,b){return a+b},0);
-          var suFreq = _.reduceRight(_.pluck(filteredReport,'sunday'),function(a,b){return a+b},0);
+          var moFreq = _.reduceRight(_.pluck(filteredReport,'monday'),mapSum,0);
+          var tuFreq = _.reduceRight(_.pluck(filteredReport,'tuesday'),mapSum,0);
+          var weFreq = _.reduceRight(_.pluck(filteredReport,'wednesday'),mapSum,0);
+          var thFreq = _.reduceRight(_.pluck(filteredReport,'thursday'),mapSum,0);
+          var frFreq = _.reduceRight(_.pluck(filteredReport,'friday'),mapSum,0);
+          var saFreq = _.reduceRight(_.pluck(filteredReport,'saturday'),mapSum,0);
+          var suFreq = _.reduceRight(_.pluck(filteredReport,'sunday'),mapSum,0);
 
           yearReport.detail.route = {};
           yearReport.detail.route.freq = {};
@@ -157,28 +86,24 @@ angular.module('appliedByDesignApp')
         var apval = 0;
 
         //Report for Each Metric
-        for(var m=0;m<reportMetrics.length;m++)
-        {
-          if(filteredReport != [])
-          {
-            totalval = _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),function(a,b){return a+b;},0);
+        for(var m=0;m<reportMetrics.length;m++) {
+          if(filteredReport !== []) {
+            totalval = _.reduceRight(_.pluck(filteredReport,reportMetrics[m]),mapSum,0);
           }
 
           yearReport.data[m] = {'name': reportMetrics[m],
                                 'val' : totalval,
                                 'isCurrency': currency[m],
-                                'isExpense': reportMetrics[m] == 'Revenue' ? false : true,
+                                'isExpense': reportMetrics[m] === 'Revenue' ? false : true,
                                 // 'currency': currency[m] == false ? false : true,
                                 'decimals': decimals[m]
                               };
 
           yearReport[reportMetrics[m]] = {};
           yearReport[reportMetrics[m]].data = [];
-          for(var a=0;a<airplanes.length;a++)
-          {
-            if(filteredReport != [])
-            {
-              apval = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment: airplanes[a]}),reportMetrics[m]),function(a,b){return a+b;},0);
+          for(var a=0;a<airplanes.length;a++) {
+            if(filteredReport !== []) {
+              apval = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment: airplanes[a]}),reportMetrics[m]),mapSum,0);
             }
             yearReport[reportMetrics[m]].data[a] = {'equipment': airplanes[a],
                                                     'val': apval};
@@ -190,21 +115,21 @@ angular.module('appliedByDesignApp')
 
         //Per Flight Per Equipment Report
         yearReport.perFlight = [];
-        for(var a=0;a<airplanes.length;a++)
+        for(var x=0;x<airplanes.length;x++)
         {
-          yearReport.perFlight[a] = {};
-          yearReport.perFlight[a].equipment = airplanes[a];
-          yearReport.perFlight[a].metrics = [];
+          yearReport.perFlight[x] = {};
+          yearReport.perFlight[x].equipment = airplanes[x];
+          yearReport.perFlight[x].metrics = [];
 
-          for(var m=0;m<reportMetrics.length;m++)
+          for(var n=0;n<reportMetrics.length;n++)
           {
-            var calcValue = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment:airplanes[a]}),reportMetrics[m]),function(a,b){return a+b},0);
-            var calFreq   = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment:airplanes[a]}),'Freq'),function(a,b){return a+b},0);
-            yearReport.perFlight[a].metrics[m] = {'name': reportMetrics[m],
+            var calcValue = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment:airplanes[x]}),reportMetrics[n]),mapSum,0);
+            var calFreq   = _.reduceRight(_.pluck(_.where(filteredReport,{Equipment:airplanes[x]}),'Freq'),mapSum,0);
+            yearReport.perFlight[x].metrics[n] = {'name': reportMetrics[n],
                                                   'val' : calcValue/calFreq,
-                                                  'isCurrency': currency[m],
-                                                  'isExpense': reportMetrics[m] == 'Revenue' ? false : true,
-                                                  'decimals': decimals[m]};
+                                                  'isCurrency': currency[n],
+                                                  'isExpense': reportMetrics[n] === 'Revenue' ? false : true,
+                                                  'decimals': decimals[n]};
           }
         }
 
@@ -215,13 +140,10 @@ angular.module('appliedByDesignApp')
       return outputReports;
     }
 
-    function npvReport(discount, years, fullReport){
+    function runNpvReport(discount, years, fullReport){
 
-      var yearCount      = fullReport.length;
-      
       var reportMetrics  = _.pluck(_.where(fullReport[0].data,{isCurrency:true}),'name');
       var npvReport = [];
-      var posOrNeg; // use to switch the value from positive to negative in assignment
 
       for(var m=0;m<reportMetrics.length;m++) {
 
@@ -229,8 +151,9 @@ angular.module('appliedByDesignApp')
         npvReport[m] = {
           'name': reportMetrics[m],
           'val': 0,
-          'isExpense': reportMetrics[m] == 'Revenue' ? false : true,
-          'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals};
+          'isExpense': reportMetrics[m] === 'Revenue' ? false : true,
+          'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals
+        };
 
         // switch the sign on the values to negative for costs, positive for revenue
         // right now, Revenue is the only positive metric.
@@ -248,18 +171,16 @@ angular.module('appliedByDesignApp')
     function findArray(inputArray,searchCrit,key){
 
       var critReturn = [];
-      for(var crit=0;crit<searchCrit.length;crit++)
-      {
+      var outputArray = [];
+
+      for(var crit=0;crit<searchCrit.length;crit++) {
         critReturn = eval('_.where(inputArray,{'+key+':"'+searchCrit[crit]+'"})');
 
-        if(crit==0)
-        {
-          var outputArray = critReturn;
+        if(crit===0) {
+          outputArray = critReturn;
         }
-        else
-        {
-          for(var j in critReturn)
-          {
+        else {
+          for(var j in critReturn) {
             outputArray.push(critReturn[j]);
           }
         }
@@ -267,5 +188,81 @@ angular.module('appliedByDesignApp')
       return outputArray;
     }
 
-    
+    // Public API here
+    return {
+      // getters
+      getFullReport: function(){
+        return filterFinancialReport();
+      },
+      getRouteReport: function(routeName){
+        return filterFinancialReport(routeName);
+      },
+      // getActiveReport: function(){
+      //   return financialReport[activeReportId];
+      // },
+      getActiveId: function(name) {
+        // this is bad!
+        return eval(name);
+      },
+      getYears: function(){
+        return _.pluck(filterFinancialReport(), 'year');
+      },
+
+      // setters
+      setReport: function(report){
+        financialReport = report;
+      },
+      setActiveReport: function(name) {
+        activeReport = name;
+      },
+      setActiveYear: function(id) {
+        activeYear = id;
+      },
+      getNPVReport: function(discount,years,currentReport,baselineReport) {
+        var currentNPV  = runNpvReport(discount, years, currentReport);
+        var baselineNPV = runNpvReport(discount, years, baselineReport);
+        // var currentNPV  = npvReport(discount, years, filterFinancialReport());
+        // var baselineNPV = npvReport(discount, years, filterFinancialReport());
+
+        var deltaNPV = [];
+        for(var n=0;n<currentNPV.length;n++)
+        {
+          deltaNPV[n] = {};
+
+          deltaNPV[n] = { 'name': currentNPV[n].name,
+                          'val':  currentNPV[n].val-baselineNPV[n].val,
+                          'decimals': currentNPV[n].decimals};
+        }
+
+        return deltaNPV;
+
+      },
+      getPerFltRevenue: function(){
+        return perFltRev;
+      },
+      getRevenueForecast: function(report){
+        // var revenue = [];
+        var revenueForecast = [];
+
+        // loop through each annual forecast and retrieve the revenue object
+        angular.forEach(report, function(annualReport) {
+          var revenue = _.where(annualReport.data, {'name': 'Revenue'});
+
+          // make sure only 1 revenue object is being returned
+          if (revenue.length !== 1) {
+            console.log('Woah! - somethings goofed with the revenue forecasts!');
+            return;
+          }
+
+          // append the current forecast year to the object being built for d3
+          revenue[0].year = annualReport.year;
+
+          //push revenue object to revenueForecast array formatted for d3
+          revenueForecast.push(revenue[0]);
+        });
+
+        return revenueForecast;
+      }
+    };
+
   });
