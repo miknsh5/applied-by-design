@@ -152,14 +152,14 @@
                         <!-- panel for the financial chart -->
                         <div class="panel chart">
                             <div class="panel-inner">
-                                <div class="chart-title">
+            <!--                     <div class="chart-title">
                                     <h4>{{activeReportName}}: 
                                         <span class="primary">
                                             <span class="dollar" ng-show="activeChartData.total.isCurrency">$</span>
                                             {{activeChartData.total.val | number:0}}
                                         </span>
                                     </h4>
-                                </div>
+                                </div> -->
 
                                 <div class="panel large">
                                     <donut-chart data="activeChartData" hovered="hovered(args)"></donut-chart>

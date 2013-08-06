@@ -3,24 +3,28 @@
 angular.module('appliedByDesignApp')
   .controller('ReportsPanelCtrl', function ($scope, navService, financialReports) {
 
-    $scope.financialData_total  = financialReports.getFullReport();
+    $scope.financialData_base  = financialReports.getFullReport();
     $scope.financialData_active = financialReports.getFullReport();
 
     //NPV Calculation
     $scope.years = 5;
     $scope.rate = 0.08;
-    $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years);
+    $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years, $scope.financialData_base, $scope.financialData_active);
     $scope.npv = _.reduce($scope.npvReport, function(a,b){return a + b.val}, 0);
     
     // return array of values for each fleet models' avg per flight revenue
-    // $scope.perFltRev = financialReports.getPerFltRevenue($scope.npvReport);
+    $scope.perFltRev = financialReports.getPerFltRevenue($scope.npvReport);
 
     $scope.metrics_new = $scope.financialData_active[0].perFlight[0].metrics;
-    $scope.metrics_base = $scope.financialData_total[0].perFlight[0].metrics;
+    $scope.metrics_base = $scope.financialData_base[0].perFlight[0].metrics;
 
-    $scope.revenueForecast = financialReports.getRevenueForecast($scope.financialData_total);
+    $scope.revenueForecast = financialReports.getRevenueForecast($scope.financialData_base);
 
 
+    // $scope.$watch(function(){ return financialReports.getFullReport()}, function(newData){
+    //     $scope.financialData_active = newData;
+    // }, true);
+    
     // calculate per flight operating profit average from financial Report
     $scope.operatingProfit = function(type){
       var data = (type=='delta') ? $scope.metrics_delta : $scope.metrics_base;
