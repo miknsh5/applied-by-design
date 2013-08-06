@@ -1,24 +1,25 @@
+'use strict';
+/*global d3:false */
+/*global topojson:false */
+
 if (!d3.custom) { d3.custom = {};}
 
 d3.custom.routeMap = function module() {
 // custom d3 chart to be instantiated within an Angular directive
 //  var chart = d3.custom.routemap
 
-  var margin = {top: 20, right: 20, bottom: 20, left: 20},
-      width = 1400,
+  var width = 1400,
       height = 1000,
       blue = d3.rgb(48,128,178),
       orange = d3.rgb(241,90,36),
-      activePath,
-      centered;
+      activePath;
 
-  var svg, 
+  var svg,
       map,
-      network,
-      duration = 500;
+      network;
 
-  var chartW = width - margin.left - margin.right,
-      chartH = height - margin.top - margin.bottom
+  // var chartW = width - margin.left - margin.right,
+      // chartH = height - margin.top - margin.bottom;
 
 
   // adapted from http://bl.ocks.org/mbostock/3757132
@@ -33,6 +34,68 @@ d3.custom.routeMap = function module() {
 
   var dispatch = d3.dispatch('routeHover', 'routeSelect');
 
+  function zoomed() {
+    projection
+      .translate(d3.event.translate)
+      .scale(d3.event.scale);
+
+    svg.selectAll('path').attr('d', path);
+  }
+
+  function reset(){
+    activePath = null;
+    network.selectAll('.route path')
+      .style('opacity', 1)
+      .attr('stroke', blue)
+      .attr('stroke-width', 2);
+  }
+
+  function selectRoute(opacity, color) {
+
+    return function(g, iClick){
+
+      dispatch.routeSelect(iClick);
+      // console.log('iclicked: ' + iClick)
+
+      activePath = iClick;
+
+      network.selectAll('.route path')
+        .filter(function(d,i) { return iClick !== i;})
+        .style('opacity', opacity)
+        .attr('stroke', blue)
+        .attr('stroke-width', 2);
+
+      d3.select(this)
+        .attr('stroke-width', 4)
+        .attr('stroke', color);
+    };
+
+  }
+
+  function highlight(color, type) {
+    return function(d, i){
+
+      dispatch.routeHover(d, i);
+
+      if (type === 'over' || i === activePath) {
+        d3.select(this)
+        .attr('stroke', orange)
+        .style('opacity', 1.0);
+      } else if (activePath === null) {
+        //no path selected, don't fade on mouseout
+        d3.select(this)
+        .attr('stroke', color)
+        .style('opacity', 1.0);
+
+      } else {
+        d3.select(this)
+        .attr('stroke', color)
+        .style('opacity', 0.2);
+      }
+    };
+  }
+
+
   function exports(_selection){
     _selection.each(function(_data){
 
@@ -42,7 +105,7 @@ d3.custom.routeMap = function module() {
           .translate(projection.translate())
           .scale(projection.scale())
           .scaleExtent([(width + 1) / 2 / Math.PI, height * 10]) // ~ 190 to 1000
-          .on("zoom", zoomed);
+          .on('zoom', zoomed);
 
       // render the world map
       // element[0] references the containing directive DOM element
@@ -53,15 +116,15 @@ d3.custom.routeMap = function module() {
             .attr('width', width)
             .attr('height', height)
             .call(zoom);
-     
-        svg.append("rect")
-            .attr("class", "background")
-            .attr("width", width)
-            .attr("height", height)
-            .on("click", reset); // background click clears the route selections
+
+        svg.append('rect')
+            .attr('class', 'background')
+            .attr('width', width)
+            .attr('height', height)
+            .on('click', reset); // background click clears the route selections
 
         map = svg.append('g')
-            .attr('class', 'map')
+            .attr('class', 'map');
 
 
         network = svg.append('g')
@@ -112,84 +175,16 @@ d3.custom.routeMap = function module() {
               .duration(500)
               .style('opacity', 1);
 
-
-      function zoomed() {
-        projection
-          .translate(d3.event.translate)
-          .scale(d3.event.scale);
-
-        svg.selectAll("path").attr("d", path);
-      }
-
-
-
-
-      function reset(){
-          activePath = null;
-          network.selectAll('.route path')
-            .style('opacity', 1)
-            .attr('stroke', blue)
-            .attr('stroke-width', 2);
-      }
-
-      function selectRoute(opacity, color) {
-
-        return function(g, i_clicked){
-          
-          dispatch.routeSelect(i_clicked)
-          // console.log('iclicked: ' + i_clicked)
-
-          activePath = i_clicked;
-
-          network.selectAll('.route path')
-            .filter(function(d,i) { return i_clicked != i})
-            .style('opacity', opacity)
-            .attr('stroke', blue)
-            .attr('stroke-width', 2);
-
-          d3.select(this)
-            .attr('stroke-width', 4)
-            .attr('stroke', color);
-        }
-
-
-      }
-
-      function highlight(color, type) {
-        return function(d, i){
-          
-          dispatch.routeHover(d, i);
-
-          if (type == 'over' || i == activePath) {
-            d3.select(this)
-            .attr('stroke', orange)
-            .style('opacity', 1.0)
-          } else if (activePath == null) {
-            //no path selected, don't fade on mouseout
-            d3.select(this)
-            .attr('stroke', color)
-            .style('opacity', 1.0);
-
-          } else {
-            d3.select(this)
-            .attr('stroke', color)
-            .style('opacity', 0.2);
-          }
-          
-        }
-      }
-
-
     });
-  } 
-
-  exports.removeRoutes = function(){
-    if (!network){ return }
-    network.selectAll('*').remove();
   }
 
+  exports.removeRoutes = function(){
+    if (!network){ return; }
+    network.selectAll('*').remove();
+  };
+
   // make the event listeners accessible from the parent directive scope
-  d3.rebind(exports, dispatch, 'on'); 
+  d3.rebind(exports, dispatch, 'on');
 
   // instantiating d3.custom.routeMap returns the routemap object
   return exports;

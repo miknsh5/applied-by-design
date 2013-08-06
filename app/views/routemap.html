@@ -108,7 +108,7 @@
                                         <i class="ikon-airplane ikon"> </i>
                                     </h3>
 
-                                    <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{isCurrency:isFinancialTable}"  ng-show="isFinancialTable">
+                                    <div ng-repeat="financial in financialDataBase[activeYearId].data | filter:{isCurrency:isFinancialTable}"  ng-show="isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(financial.name)"
                                             ng-class="{active: financial.name == activeReportName }">
@@ -127,7 +127,7 @@
                                     </div>
 
                                     <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
-                                    <div ng-repeat="financial in financialData_total[activeYearId].data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
+                                    <div ng-repeat="financial in financialDataBase[activeYearId].data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(financial.name)"
                                             ng-class="{active: financial.name == activeReportName }">
@@ -414,7 +414,7 @@
                             <h2 class="report-title sub-heading"><span>per/Flight</span></h2>
                             <div class="summary-table report">
                                 <!-- <h3 class="heading small">Route Total</h3> -->
-                                <div ng-repeat="metric in metrics_base | filter:{isCurrency:'true'}">
+                                <div ng-repeat="metric in metricsBase | filter:{isCurrency:'true'}">
                                     <div class="row-wrap">
                                         <h4 class="left">{{metric.name}}:</h4>
                                         <h4 class="number per-flight delta">
@@ -426,7 +426,7 @@
                                         <h4 class="number per-flight delta highlight">
                                             <span class="dollar" ng-show="metric.isCurrency">$</span>
                                             <span ng-show="metric.isExpense">(</span>
-                                            {{ metrics_delta[$index].val }}
+                                            {{ metricsDelta[$index].val }}
                                             <span ng-show="metric.isExpense">)</span>
                                         </h4>
                                     </div>

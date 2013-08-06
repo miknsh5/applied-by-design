@@ -1,33 +1,29 @@
 'use strict';
+/*global _:false */
 
 angular.module('appliedByDesignApp')
   .controller('ReportsPanelCtrl', function ($scope, navService, financialReports) {
 
-    $scope.financialData_base  = financialReports.getFullReport();
-    $scope.financialData_active = financialReports.getFullReport();
+    $scope.financialDataBase  = financialReports.getFullReport();
+    $scope.financialDataActive = financialReports.getFullReport();
 
     //NPV Calculation
     $scope.years = 5;
     $scope.rate = 0.08;
-    $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years, $scope.financialData_base, $scope.financialData_active);
-    $scope.npv = _.reduce($scope.npvReport, function(a,b){return a + b.val}, 0);
-    
+    $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years, $scope.financialDataBase, $scope.financialDataActive);
+    $scope.npv = _.reduce($scope.npvReport, function(a,b){return a + b.val;}, 0);
+
     // return array of values for each fleet models' avg per flight revenue
     $scope.perFltRev = financialReports.getPerFltRevenue($scope.npvReport);
 
-    $scope.metrics_new = $scope.financialData_active[0].perFlight[0].metrics;
-    $scope.metrics_base = $scope.financialData_base[0].perFlight[0].metrics;
+    $scope.metricsNew = $scope.financialDataActive[0].perFlight[0].metrics;
+    $scope.metricsBase = $scope.financialDataBase[0].perFlight[0].metrics;
 
-    $scope.revenueForecast = financialReports.getRevenueForecast($scope.financialData_base);
+    $scope.revenueForecast = financialReports.getRevenueForecast($scope.financialDataBase);
 
-
-    // $scope.$watch(function(){ return financialReports.getFullReport()}, function(newData){
-    //     $scope.financialData_active = newData;
-    // }, true);
-    
     // calculate per flight operating profit average from financial Report
     $scope.operatingProfit = function(type){
-      var data = (type=='delta') ? $scope.metrics_delta : $scope.metrics_base;
+      var data = (type==='delta') ? $scope.metricsDelta : $scope.metricsBase;
 
       return _.reduce(data, function(a, b){
         var sign = b.isExpense ? -1 : 1;
@@ -38,26 +34,26 @@ angular.module('appliedByDesignApp')
           return a;
         }
       }, 0);
-    }
+    };
 
     $scope.perFlightDeltas = function(){
-      var metricsA = $scope.metrics_new;
-      var metrics0 = $scope.metrics_base;
+      var metricsA = $scope.metricsNew;
+      var metrics0 = $scope.metricsBase;
       var deltaMetrics = [];
       for (var i=0; i<metricsA.length; i++) {
         var delta = metricsA[i].val - metrics0[i].val;
         deltaMetrics.push({
             'name': metricsA[i].name,
-            'val': delta, 
+            'val': delta,
             'isCurrency': metricsA[i].isCurrency,
             'isExpense': metricsA[i].isExpense,
-            'decimals': metricsA[i].decimals 
-          })
+            'decimals': metricsA[i].decimals
+          });
       }
       return deltaMetrics;
     };
 
     // Initialize delta comparison report
-    $scope.metrics_delta = $scope.perFlightDeltas();
+    $scope.metricsDelta = $scope.perFlightDeltas();
 
   });

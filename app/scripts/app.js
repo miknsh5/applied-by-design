@@ -40,20 +40,20 @@ angular.module('appliedByDesignApp', [])
               'market',
               'services',
               'airports'
-              ];
+            ];
 
             $timeout(function(){
               //check to see if all of the data is loaded yet
               var status = 0;
               for (var i = 0; i<waitForThese.length; i++) {
-                if (typeof waitForThese[i] == 'undefined') {status= status + 1;}
+                if (typeof waitForThese[i] === 'undefined') {status= status + 1;}
               }
-              if (status != 0) {
+              if (status !== 0) {
                 // console.log('wiating for: ' + status + ' files...');
                 deferred.resolve([]);
               } else {
                 deferred.resolve(status);
-                console.log('** All Data Loaded')
+                console.log('** All Data Loaded');
               }
             }, 500);
 

@@ -1,6 +1,5 @@
 'use strict';
 /*global d3:false */
-/*global topojson:false */
 
 angular.module('appliedByDesignApp')
   .directive('routeMap', function (reportBuilder, navService, routeService) {
@@ -15,24 +14,20 @@ angular.module('appliedByDesignApp')
       scope:{
         hovered: '&hovered'
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
         var chartEl = d3.select(element[0]);
 
-        routeMap.on('routeHover', function(d, i){
-            // scope.hovered({args:i});
-        });
-        
         routeMap.on('routeSelect', function(i){
-            navService.setActiveTab(1);
+          navService.setActiveTab(1);
 
-            var routeName = reportBuilder.getRouteNameFromId(i);
-            routeService.setActiveRouteName(routeName);
+          var routeName = reportBuilder.getRouteNameFromId(i);
+          routeService.setActiveRouteName(routeName);
 
-            scope.$apply();
+          scope.$apply();
         });
 
         scope.$watch(
-          function() { return reportBuilder.getReport('routeReport') }, function(newVal, oldVal){
+          function() { return reportBuilder.getReport('routeReport'); }, function(newVal){
             routeMap.removeRoutes();
             chartEl.datum(newVal).call(routeMap);
           });

@@ -6,9 +6,9 @@ angular.module('appliedByDesignApp')
       // template: '<div class="frequency-bar"></div>',
       restrict: 'E',
       scope:{
-      	numFlights: '='
+        numFlights: '='
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
 
         scope.$watch('numFlights', function(newData){
           // clear the existing flight bars
@@ -16,10 +16,10 @@ angular.module('appliedByDesignApp')
 
           // element.text('this is the dailyFlights directive');
           for (var i = 0; i < newData; i++){
-          	element.append('<div class="frequency-bar">&nbsp</div>')
+            element.append('<div class="frequency-bar">&nbsp</div>');
           }
 
-        })
+        });
       }
     };
   });
