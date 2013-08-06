@@ -18,182 +18,135 @@ angular.module('appliedByDesignApp')
       // Get Financial Report for some subset of the total fleet/routes
       buildFinancialReport: function(forecast) {
         
-        // retrieve data dependencies
+        // Retrieve data dependencies
         var revFlights   = fleetModel.getData('flights');
         var airplanes    = fleetModel.getData('airplanes');
         var market       = fleetModel.getData('market');
         var services     = fleetModel.getData('services');
         var costCurves   = fleetModel.getData('costCurves');
+        var equipment    = navService.getEquipment();
 
-        var startyear    = 2013;
-        var outputReport = [];
-
-        // returns filtered set of routes as subset of fleetModel
-        // var filterBy     = _.pluck(_.where(equipment,{active:true}),'code');
-        // var revFlights = this.findArray(flightsRoutes, filterBy,"Equipment");
+        // Get routes list
+        var activeRoutes = this.allRoutes();
 
         // Instantiate report variables
+        var startYear    = 2013;
         var weeks = 52;
-        var totalRev, outputCost, outputOps;
-        var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
+        var totalRev, outputCost, outputOps, years, APCount, studyyear;
+        var cap, coeffs, rpm, fuelprice, servicesInUse;
         var outputReport = [];
         var airplaneReport = [];
-        var years, APCount;
-        var studyyear;
-        var TestObjMat = [];
-        var TestObj = {};
-        var TestMatrix = {"Flight":[],
-                          "BT":[],
-                          "freq":[],
-                          "Duration":[],
-                          "Fare":[],
-                          "PAX":[],
-                          "LF":[],
-                          "Equipment":[],
-                          "Revenue":[],
-                          "Maintenance":[],
-                          "Crew":[],
-                          "Fuel":[],
-                          "Ownership":[],
-                          "Other":[]};
+        var reportArray = [];
+        var outputReport = [];
+        var flightReport = {};
 
-          // Instantiate report variables
-          var weeks = 52;
-          var totalRev, outputCost, outputOps;
-          var freq, cap, lf, pax, fare, stagelen, bt, coeffs, rpm, fuelprice, servicesInUse = [];
-          var fleetReport = [];
-          var years, APCount;
+        // If user wants forecasted years...
+        if(forecast) {
+          years = market.forecast.years;
+        }
+        else {
+          years = 1;
+        }
 
-          //If User wants forecasted years...
-          if(forecast) {
-            years = market.forecast.years;
-          }
-          else {
-            years = 1;
-          }
+        // For each year...
+        for(var y = 0; y<years; y++) {
+          totalRev = 0;
+          outputCost = {};
+          outputOps = {'RPM':0,'ASK':0,'PAX':0,'Seats':0,'Weeky Freq.':0};
+          studyyear = startYear + y;
 
-          //Get Routes List
-          var activeRoutes = this.allRoutes();
+          // Calculate frequency, capacity, load factor, fare and total revenue for each flight
+          for(var i = 0;i<revFlights.length;i++) {
 
-          //For Each Year...
-          for(var y = 0; y<years; y++) {
-            totalRev = 0;
-            outputCost = {};
-            outputOps = {"RPM":0,"ASK":0,"PAX":0,"Seats":0,"Weeky Freq.":0};
-            studyyear = startyear + y;
+            // Calculate financial and performance perameters
+            flightReport.freq     = revFlights[i].Frequency;
+            cap                   = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
+            flightReport.lf       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
+            flightReport.pax      = flightReport.lf*cap;
+            flightReport.bt       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
+            flightReport.stagelen = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
+            coeffs                = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
+            rpm                   = flightReport.pax*flightReport.stagelen;
+            servicesInUse         = _.findWhere(equipment,{code:revFlights[i].Equipment}).services;
+            fuelprice             = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
+            flightReport.fare     = (market.rates.Coefficients.Revenue.A*Math.pow(flightReport.stagelen,2)+market.rates.Coefficients.Revenue.B*flightReport.stagelen+market.rates.Coefficients.Revenue.C)*Math.pow(1+market.growth.fare,y);
+            flightReport.Revenue  = weeks*flightReport.freq*flightReport.pax*flightReport.fare;
 
-            //Calculate frequency, capacity, load factor, fare and total revenue for each flight
-            for(var i = 0;i<revFlights.length;i++) {
-              //Calculate Financial and Performance Perameters
-              freq           = revFlights[i].Frequency;
-              cap            = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Capacity;
-              lf             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).LF*Math.pow(1+market.growth.demand,y);
-              pax            = lf*cap;
-              bt             = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Duration;
-              stagelen       = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
-              coeffs         = jQuery.extend(true, {}, _.findWhere(costCurves, {Size:_.findWhere(airplanes,{Equipment: revFlights[i].Equipment}).Size}).Coefficients);
+            // Store flight, route and equipment information
+            flightReport.Flight = revFlights[i].FltNumber;
+            flightReport.Equipment=revFlights[i].Equipment;
+            flightReport.NonDirectional = revFlights[i].NonDirectional;
 
-              rpm            = pax*stagelen;
-              servicesInUse  = _.findWhere(airplanes,{Equipment:revFlights[i].Equipment}).Services;
-              fuelprice      = market.rates.fuel*Math.pow(1+market.growth.fuel,y);
+            // Store origin and destination information
+            flightReport.oCity = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ocity;
+            flightReport.oState = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ostate;
+            flightReport.oCountry = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ocountry;
+            flightReport.oName = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Oname;
+            flightReport.dCity = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcity;
+            flightReport.dState = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dstate;
+            flightReport.dCountry = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcountry;
+            flightReport.oIata = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Oiata;
+            flightReport.dIata = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Diata;
+            flightReport.dName = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dname;
+            flightReport.Distance = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
 
-              fare           = (market.rates.Coefficients.Revenue.A*Math.pow(stagelen,2)+market.rates.Coefficients.Revenue.B*stagelen+market.rates.Coefficients.Revenue.C)*Math.pow(1+market.growth.fare,y);
+            // Store schedule information
+            flightReport.monday    = +revFlights[i].Monday;
+            flightReport.tuesday   = +revFlights[i].Tuesday;
+            flightReport.wednesday = +revFlights[i].Wednesday;
+            flightReport.thursday  = +revFlights[i].Thursday;
+            flightReport.friday    = +revFlights[i].Friday;
+            flightReport.saturday  = +revFlights[i].Saturday;
+            flightReport.sunday    = +revFlights[i].Sunday;
 
-              TestObj.Flight = revFlights[i].FltNumber;
-              TestObj.BT=bt;
-              TestObj.freq=freq;
-              TestObj.Duration=stagelen;
-              TestObj.Fare=fare;
-              TestObj.PAX=pax;
-              TestObj.LF=lf;
-              TestObj.Equipment=revFlights[i].Equipment;
-              TestObj.NonDirectional = revFlights[i].NonDirectional;
-
-              TestObj.oCity = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ocity;
-              TestObj.oState = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ostate;
-              TestObj.oCountry = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Ocountry;
-              TestObj.oName = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Oname;
-              TestObj.dCity = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcity;
-              TestObj.dState = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dstate;
-              TestObj.dCountry = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dcountry;
-              TestObj.oIata = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Oiata;
-              TestObj.dIata = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Diata;
-              TestObj.dName = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Dname;
-
-              TestObj.Distance = _.findWhere(activeRoutes,{NonDirectional:revFlights[i].NonDirectional}).Distance;
-
-              TestObj.monday    = +revFlights[i].Monday;
-              TestObj.tuesday   = +revFlights[i].Tuesday;
-              TestObj.wednesday = +revFlights[i].Wednesday;
-              TestObj.thursday  = +revFlights[i].Thursday;
-              TestObj.friday    = +revFlights[i].Friday;
-              TestObj.saturday  = +revFlights[i].Saturday;
-              TestObj.sunday    = +revFlights[i].Sunday;
-
-              //Apply Services
-              for(var k1 in servicesInUse) {
-                if(servicesInUse[k1]) {
-                  for(var k2 in services[k1]) {
-                    for(var c1 in services[k1][k2]) {
-                      coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
-                    }
+            // Apply services
+            for(var n=0;n<servicesInUse.length;n++) {
+              var k1 = servicesInUse[n].name;
+              if(servicesInUse[n].val) {
+                for(var k2 in services[k1]) {
+                  for(var c1 in services[k1][k2]) {
+                    coeffs[k2][c1] = coeffs[k2][c1]*services[k1][k2][c1];  
                   }
                 }
               }
-
-              //Total Annual Flight Revenue
-              TestObj.Revenue = weeks*freq*pax*fare;
-
-              //Total Annual Flight Costs
-              var totalCost = 0;
-
-              for(var k in coeffs) {
-                if(outputCost[k]===undefined) {
-                  outputCost[k] = 0;
-                }
-                if(k=="Fuel") {
-                  outputCost[k] = outputCost[k] + weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
-                  
-                  //TEST
-                  TestObj[k] = weeks*freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
-                }
-                else {
-                  //Generic equation strucutre for all other costs
-                  outputCost[k]   = outputCost[k] + (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
-
-                  //TEST
-                  TestObj[k] = (weeks*freq*(coeffs[k].A*Math.pow(bt,2)  + coeffs[k].B*bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
-                }
-                totalCost = totalCost + outputCost[k];
-              }
-
-              //Operational Metrics
-              outputOps["RPM"] = outputOps["RPM"]+rpm*freq;
-              outputOps["Seats"] = outputOps["Seats"]+cap*freq;
-              outputOps["ASK"] = outputOps["ASK"]+cap*freq*stagelen;
-              outputOps["PAX"] = outputOps["PAX"]+pax*freq;
-              outputOps["Weeky Freq."] = outputOps["Weeky Freq."]+freq;
-
-              TestObj.RPM = rpm*freq*weeks;
-              TestObj.Seats = cap*freq*weeks;
-              TestObj.ASK = cap*freq*stagelen*weeks;
-              TestObj.PAX = pax*freq*weeks;
-              TestObj.Freq = freq*weeks;
-              TestObj.Equipment = revFlights[i].Equipment;
-              TestObj.Year = studyyear;
-
-              TestObjMat[i] = TestObj;
-              TestObj = {};
             }
-            //Aggregate Years
-            outputReport[y] = {'fleetReport':jQuery.extend(true, {}, TestObjMat)};
-            TestObjMat = [];
+
+            // Calculate total annual flight costs
+            var totalCost = 0;
+
+            for(var k in coeffs) {
+              if(outputCost[k]===undefined) {
+                outputCost[k] = 0;
+              }
+              if(k=='Fuel') {
+                flightReport[k] = weeks*flightReport.freq*(coeffs[k].A*Math.pow(rpm,2) + coeffs[k].B*rpm + coeffs[k].C)*fuelprice;
+              }
+              else {
+                flightReport[k] = (weeks*flightReport.freq*(coeffs[k].A*Math.pow(flightReport.bt,2)  + coeffs[k].B*flightReport.bt  + coeffs[k].C))*Math.pow(1+market.growth.costs,y);
+              }
+              totalCost = totalCost + flightReport[k];
+            }
+
+            // Save operational metrics
+            flightReport.RPM = rpm*flightReport.freq*weeks;
+            flightReport.Seats = cap*flightReport.freq*weeks;
+            flightReport.ASK = cap*flightReport.freq*flightReport.stagelen*weeks;
+            flightReport.PAX = flightReport.pax*flightReport.freq*weeks;
+            flightReport.Freq = flightReport.freq*weeks;
+            flightReport.Year = studyyear;
+
+            // Save flight report and clear report variable
+            reportArray[i] = flightReport;
+            flightReport = {};
           }
 
-        // financialReport = jQuery.extend(true, {}, [outputReport]);
+          // Save year report and clear report variable
+          outputReport[y] = {'fleetReport':jQuery.extend(true, {}, reportArray)};
+          reportArray = [];
+        }
 
+        // Store and return financial report
         financialReports.setReport(outputReport);
-
         return outputReport;
 
       },
