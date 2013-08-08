@@ -2,6 +2,15 @@
   "name": "applied-by-design",
   "version": "0.0.0",
   "dependencies": {
-    "underscore": "~1.5.1"
+    "underscore": "~1.5.1",
+    "modernizr": "~2.6.2",
+    "jquery": "~2.0.3",
+    "jquery.scrollTo": "~1.4.6",
+    "angular": "~1.0.7",
+    "angular-sanitize": "~1.0.7",
+    "topojson": "~1.2.3",
+    "d3": "~3.2.8",
+    "sass-bootstrap": "~2.3.2",
+    "skrollr": "~0.6.10"
   }
 }
