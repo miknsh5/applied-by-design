@@ -21,12 +21,14 @@
                 </div>
 
                 <!-- loop through the different model types -->
-                <div ng-repeat="model in equipment" ng-show="showEquipPanel">
-                    <div class="fleet-model-btn toggle" 
-                        ng-click="toggleModel($index)"
-                        ng-class="{active: equipment[$index].active}">
-                        <span class="model-name">{{model.name}}</span>
-                        <i class="ikon-airplane ikon"> </i>
+                <div id="fleet-btn-wrapper" ng-style="equipPanelStyle()">
+                    <div ng-repeat="model in equipment" >
+                        <div class="fleet-model-btn toggle" 
+                            ng-click="toggleModel($index)"
+                            ng-class="{active: equipment[$index].active}">
+                            <span class="model-name">{{model.name}}</span>
+                            <i class="ikon-airplane ikon"> </i>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,11 +2,9 @@
 /*global _:false */
 
 angular.module('appliedByDesignApp')
-  .controller('FinancialPanelCtrl', function ($scope, reportBuilder, financialReports) {
+  .controller('FinancialPanelCtrl', function ($scope, financialReports) {
 
-    // build initial set of financial reports. This should only need to be done once unless 
-    // changes are made to add new flights or reconfigure services.
-    reportBuilder.buildFinancialReport(true);
+
 
     $scope.financialReports = financialReports;
 

@@ -28,7 +28,7 @@ angular.module('appliedByDesignApp')
       var currency      = [false, true, false, true, true, true, true, false, false, true, false];
       var decimals      = [0,0,0,0,0,0,0,0,0,0,0];
 
-      var equipment    = navService.getEquipment();
+      var equipment    = navService.equipment;
       var filterByAP = _.pluck(_.where(equipment,{active:true}),'code');
       var equipReport;
 
@@ -95,7 +95,6 @@ angular.module('appliedByDesignApp')
                                 'val' : totalval,
                                 'isCurrency': currency[m],
                                 'isExpense': reportMetrics[m] === 'Revenue' ? false : true,
-                                // 'currency': currency[m] == false ? false : true,
                                 'decimals': decimals[m]
                               };
 
@@ -155,10 +154,6 @@ angular.module('appliedByDesignApp')
           'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals
         };
 
-        // switch the sign on the values to negative for costs, positive for revenue
-        // right now, Revenue is the only positive metric.
-        // posOrNeg = reportMetrics[m] == 'Revenue' ? 1 : -1;
-
         for(var y=0;y<years;y++) {
           npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y);
         }
@@ -197,9 +192,6 @@ angular.module('appliedByDesignApp')
       getRouteReport: function(routeName){
         return filterFinancialReport(routeName);
       },
-      // getActiveReport: function(){
-      //   return financialReport[activeReportId];
-      // },
       getActiveId: function(name) {
         // this is bad!
         return eval(name);

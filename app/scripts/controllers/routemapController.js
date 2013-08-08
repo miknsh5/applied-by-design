@@ -7,47 +7,57 @@ angular.module('appliedByDesignApp')
     $scope.mapWidth = 1800;
     $scope.mapHeight = 1200;
 
-    $scope.activeTab = navService.getActiveTab();
-    $scope.showPanel = navService.getPanelState();
-    $scope.showEquipPanel = navService.toggleEquipPanel();
-    $scope.showReport = navService.toggleReport();
+    // $scope.activeTab = navService.getActiveTab();
+    $scope.activeTab = navService.activeTab;
+    $scope.showReport = navService.showReport;
 
     $scope.equipment = reportBuilder.generateEquipment();
     $scope.routeReport = reportBuilder.buildRoutes();
     $scope.hoveredRoute = [];
-
+    
+    // build initial set of financial reports. This should only need to be done once unless 
+    // changes are made to add new flights or reconfigure services.
+    reportBuilder.buildFinancialReport(true);
+    
     // recalculate the dashboard panel position based on hide/show state
     $scope.panelStyle = function(){
       var offset = -250;
-      // var b = ($scope.showPanel) ? 0 : offset;
-      var b = (navService.getPanelState()) ? 0 : offset;
+      var b = (navService.showPanel) ? 0 : offset;
 
-      // console.log('move to:' + b)
       return {
         bottom: b + 'px'
+      };
+    };
+
+    // recalculate the dashboard panel position based on hide/show state
+    $scope.equipPanelStyle = function(){
+      var offset = -640;
+      var r = (navService.showEquipPanel) ? 0 : offset;
+
+      return {
+        right: r + 'px'
       };
     };
 
     // recalculate the report position based on hide/show state
     $scope.reportStyle = function(){
       var offset = -1200;
-      // var b = ($scope.showPanel) ? 0 : offset;
-      var t = (navService.getReportState()) ? 65 : offset;
+      var t = (navService.showReport) ? 65 : offset;
 
-      // console.log('move to:' + b)
       return { top: t + 'px' };
     };
 
     // watch for any changes to the aircraft toggle buttons and update
     // routes whenever there's a change.
-    $scope.$watch(function(){return navService.getEquipment();}, function(newVal){
+    $scope.$watch(function(){return navService.equipment;}, function(newVal){
       $scope.equipment = newVal;
       $scope.routeReport = reportBuilder.buildRoutes();
     }, true);
 
-    $scope.$watch(function(){return navService.getActiveTab();}, function(newData){
-      $scope.activeTab = newData;
-    });
+    // $scope.$watch(function(){return navService.getActiveTab();}, function(newData){
+    //   $scope.activeTab = newData;
+    // });
+    $scope.activeTab = navService.activeTab;
 
     $scope.setActiveTab = function(id){
       navService.setActiveTab(id);
@@ -57,13 +67,10 @@ angular.module('appliedByDesignApp')
       navService.toggleEquipment(id);
     };
 
-    $scope.togglePanelState = function(){
-      $scope.showPanel = navService.togglePanelState();
-    };
+    // bind panel toggle button from view to service
+    $scope.togglePanelState = navService.togglePanel;
+    $scope.toggleEquipPanel = navService.toggleEquipPanel;
 
-    $scope.toggleEquipPanel = function(){
-      $scope.showEquipPanel = navService.toggleEquipPanel();
-    };
 
     $scope.toggleReport = function(){
       $scope.showReport = navService.toggleReport();

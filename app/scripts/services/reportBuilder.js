@@ -27,7 +27,7 @@ angular.module('appliedByDesignApp')
         var market       = fleetModel.getData('market');
         var services     = fleetModel.getData('services');
         var costCurves   = fleetModel.getData('costCurves');
-        var equipment    = navService.getEquipment();
+        var equipment    = navService.equipment;
 
         // Get routes list
         var activeRoutes = this.allRoutes();
@@ -194,7 +194,8 @@ angular.module('appliedByDesignApp')
         }
 
         //set initial equipment object in navService
-        navService.initializeEquipment(equipment);
+        // navService.initializeEquipment(equipment);
+        navService.equipment = equipment;
         return equipment;
       },
       findArray: function(inputArray,searchCrit,key){
@@ -327,7 +328,7 @@ angular.module('appliedByDesignApp')
         var cityPairs  = fleetModel.getData('cityPairs');
         var airports   = fleetModel.getData('airports');
         var flights    = fleetModel.getData('flights');
-        var equipment  = navService.getEquipment();
+        var equipment  = navService.equipment;
 
         var allRoutes = [];
         var report    = [];

@@ -11,6 +11,7 @@ angular.module('appliedByDesignApp')
     $scope.years = 5;
     $scope.rate = 0.08;
     $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years, $scope.financialDataBase, $scope.financialDataActive);
+    // $scope.npvReport = financialReports.getNPVReport($scope.rate, $scope.years);
     $scope.npv = _.reduce($scope.npvReport, function(a,b){return a + b.val;}, 0);
 
     // return array of values for each fleet models' avg per flight revenue
