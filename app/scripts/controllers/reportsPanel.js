@@ -7,6 +7,18 @@ angular.module('appliedByDesignApp')
     $scope.financialDataBase  = financialReports.getFullReport();
     $scope.financialDataActive = financialReports.getFullReport();
 
+    // $scope.fleet            = navService.equipment;
+    // $scope.fleetServices    = $scope.fleet[navService.activeFleetModel].details;
+    $scope.ikons = ['mobile', 'wrench', 'cog-2', 'stats'];
+
+    $scope.fleetModel = navService.equipment[0];
+
+    $scope.toggleService = function(id){
+      $scope.fleetModel = navService.toggleFleetService(id)[0];
+    };
+
+
+
     //NPV Calculation
     $scope.years = 5;
     $scope.rate = 0.08;

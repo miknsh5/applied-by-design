@@ -449,7 +449,11 @@ h4.left {
     width: 100px;
 
     &.service {
-      width: 140px;
+      width: 160px;
+    }
+
+    &.active {
+      color: $font-lightblue;
     }
 
 
@@ -626,19 +630,21 @@ h4.left {
         font-size: 2em;
         text-align: left;
         margin: 20px 0;
-
+        color: $color-gray;
+             
         .active {
           color: $color-blue;
         }
 
+        
         i {
-          color: $color-gray;
-          margin-right: 10px;
-
+          margin-right: 20px;
+          float: left;
+          
           &:hover{
             color: $color-blue;
-
           }
+
         }
       }
 

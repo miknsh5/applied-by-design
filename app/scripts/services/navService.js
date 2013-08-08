@@ -4,7 +4,7 @@ angular.module('appliedByDesignApp')
   .factory('navService', function () {
     // Service logic
 
-    var activeTabId = 0;
+    // var activeTabId = 0;
 
     var navStatus = {};
     navStatus.showPanel       = true;

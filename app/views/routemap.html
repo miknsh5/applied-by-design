@@ -304,7 +304,7 @@
                                 <div class="inner-tab-row">&nbsp</div>
                                 <div class="summary-table">
                                     <h3 class="heading full">Aircraft Model</h3>
-                                    <div ng-repeat="item in fleetDetails">
+                                    <div ng-repeat="item in fleetServices">
                                         <div class="row-wrap">
                                             <h4 class="title mini">{{ item.name }}</h4>
                                             <h4 class="number primary">{{ item.value }}</h4>
@@ -322,9 +322,10 @@
                                     <div ng-repeat="service in fleet[activeFleetModel].services">
                                         <div class="row-wrap"
                                             ng-click="toggleService($index)">
-                                            <h4 class="title mini service">
-                                                <i class="ikon-wrench"> </i>{{ service.name }}</h4>
-                                            <h4 class="number narrow primary">{{ service.val }}</h4>
+                                            <h4 class="title mini service" ng-class="{active: service.val}">
+                                                <i class="ikon-wrench"> </i>
+                                                &nbsp{{ service.name }}</h4>
+                                            <h4 class="number narrow">{{ service.val }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -401,13 +402,17 @@
                         <i class="ikon-print"></i>
                         <i class="ikon-download-alt"></i>
                     </div>
-                    <h1 class="report-title">Fleet Report</h1>
+                    <h1 class="report-title">Financial Report</h1>
                     <h2 class="report-title">Services</h2>
                     <div class="services">
-                        <i class="ikon-cog-2 active"> </i>
-                        <i class="ikon-mobile active"></i>
+                        <div ng-repeat="service in fleetModel.services">
+                            <span ng-class="{active: service.val}" ng-click="toggleService($index)">
+                                <i class="ikon-{{ikons[$index]}}"> </i>
+                            </span>
+                        </div>
+                        <!-- <i class="ikon-mobile active"></i>
                         <i class="ikon-wrench"></i>
-                        <i class="ikon-stats"></i>
+                        <i class="ikon-stats"></i> -->
                     </div>
                     <div class="report-row">
                         <div class="module split-3-2">
