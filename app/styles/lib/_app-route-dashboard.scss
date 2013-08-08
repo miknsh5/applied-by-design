@@ -188,9 +188,9 @@ $filter-bar-height: 40px;
 }
 
 #fleet-btn-wrapper {
-  right: 0px;
+  top: 0px;
   position: relative;
-  @include transition(right 0.2s);
+  @include transition(top 0.2s);
 
 }
 

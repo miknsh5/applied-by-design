@@ -18,7 +18,7 @@ angular.module('appliedByDesignApp')
         var chartEl = d3.select(element[0]);
 
         routeMap.on('routeSelect', function(i){
-          navService.setActiveTab(1);
+          navService.selectPanelTab(1);
 
           var routeName = reportBuilder.getRouteNameFromId(i);
           routeService.setActiveRouteName(routeName);

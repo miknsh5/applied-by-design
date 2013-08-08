@@ -9,7 +9,7 @@ angular.module('appliedByDesignApp')
     var navStatus = {};
     navStatus.showPanel       = true;
     navStatus.showEquipPanel  = true;
-    navStatus.showReport      = true;
+    navStatus.showReport      = false;
     navStatus.activeTab       = 0;
     navStatus.equipment       = [];
     
@@ -21,6 +21,26 @@ angular.module('appliedByDesignApp')
     navStatus.toggleEquipPanel = function(){
       navStatus.showEquipPanel = !navStatus.showEquipPanel;
       return navStatus.showEquipPanel;
+    }   
+     
+    navStatus.toggleReportPanel = function(){
+      navStatus.showReport = !navStatus.showReport;
+      return navStatus.showReport;
+    }
+
+    navStatus.selectPanelTab = function(id){
+      navStatus.activeTab = id;
+      return navStatus.activeTab;
+    }
+
+    navStatus.getActiveTab = function(){
+      // return active tab id for listener class from adjacent scopes & directives
+      return navStatus.activeTab;
+    }
+
+    navStatus.toggleEquipment = function(id) {
+      navStatus.equipment[id].active = !navStatus.equipment[id].active;
+      return navStatus.equipment;
     }
     // var navStatus = {
     //   'showPanel': true,

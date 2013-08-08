@@ -10,9 +10,8 @@
 
             <div class="page-container">
                 <div id="report-btn" 
-                    ng-init="showReports=false" 
                     ng-click="togglePanelState(); toggleEquipPanel(); toggleReport();"
-                    ng-class="{active:!showPanel}">
+                    ng-class="{active:showReport}">
                     <i class="ikon-file ikon"> </i>
                 </div>
 
@@ -48,17 +47,17 @@
                     <div class="dashboard-nav">
                         <div class="mini-nav-group">
                             <div class="mini-nav-btn" 
-                                ng-click="setActiveTab(0)"
+                                ng-click="selectTab(0)"
                                 ng-class="{active: activeTab == 0}">
                                 <strong>$</strong>
                              </div>
                             <div class="mini-nav-btn"
-                                ng-click="setActiveTab(1)"
+                                ng-click="selectTab(1)"
                                 ng-class="{active: activeTab == 1}">
                                 <i class="ikon-clock"></i>
                             </div>
                             <div class="mini-nav-btn" 
-                                ng-click="setActiveTab(2)" 
+                                ng-click="selectTab(2)" 
                                 ng-class="{active: activeTab == 2}"> 
                                 <i class="ikon-airplane"></i>
                             </div>
