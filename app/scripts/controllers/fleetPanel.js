@@ -3,7 +3,8 @@
 angular.module('appliedByDesignApp')
   .controller('FleetPanelCtrl', function ($scope, navService) {
 
-  $scope.activeFleetModel = 0;
+  // $scope.activeFleetModel = 0;
+  $scope.activeFleetModel = navService.activeFleetModel;
   $scope.fleet = navService.equipment;
   $scope.fleetDetails = $scope.fleet[$scope.activeFleetModel].details;
 
@@ -13,8 +14,7 @@ angular.module('appliedByDesignApp')
   };
 
   $scope.toggleService = function(id){
-    navService.setServiceState(id);
-    $scope.fleet = navService.equipment;
+    $scope.fleet = navService.toggleFleetService(id);
   };
 
 

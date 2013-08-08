@@ -12,6 +12,7 @@ angular.module('appliedByDesignApp')
     navStatus.showReport      = false;
     navStatus.activeTab       = 0;
     navStatus.equipment       = [];
+    navStatus.activeFleetModel = 0;
     
     navStatus.togglePanel = function(){
       navStatus.showPanel = !navStatus.showPanel;
@@ -42,76 +43,18 @@ angular.module('appliedByDesignApp')
       navStatus.equipment[id].active = !navStatus.equipment[id].active;
       return navStatus.equipment;
     }
-    // var navStatus = {
-    //   'showPanel': true,
-    //   'showEquipPanel': false,
-    //   'showReport': true
-    // }
+
+    navStatus.selectFleetModel = function(id) {
+      navStatus.activeFleetModel = id;
+      return navStatus.activeFleetModel;
+    }
+
+    navStatus.toggleFleetService = function(id) {
+      var state = navStatus.equipment[navStatus.activeFleetModel].services[id].val;
+      navStatus.equipment[navStatus.activeFleetModel].services[id].val = !state;
+      return navStatus.equipment;
+    }
 
     return navStatus;
 
-    // // initialized from reportBuilder service on intial data load
-    // // button status managed here
-    // var equipment = [],
-    //     activeFleetModel = 0, //fleet model selected in the fleet panel
-    //     showPanel = true,
-    //     showEquipPanel = false,
-    //     showReport = true;
-
-    // // Public API here
-    // return {
-
-    //   // dashbaord panel navigation controls
-    //   // -----------------------------------
-    //   getPanelState: function(){
-    //     return showPanel;
-    //   },
-    //   togglePanelState: function(){
-    //     showPanel = !showPanel;
-    //     return showPanel;
-    //   },
-    //   setActiveTab: function(id){
-    //     activeTabId = id;
-    //   },
-    //   getActiveTab: function(){
-    //     return activeTabId;
-    //   },
-
-    //   // report navigation controls
-    //   // -----------------------------------
-    //   toggleReport: function(){
-    //     showReport = !showReport;
-    //     return showReport;
-    //   },
-    //   getReportState: function(){
-    //     return showReport;
-    //   },
-
-
-    //   // equipment filter controls
-    //   // -----------------------------------
-    //   toggleEquipPanel: function(){
-    //     showEquipPanel = !showEquipPanel;
-    //     return showEquipPanel;
-    //   },
-    //   initializeEquipment: function(equip){
-    //     equipment = equip;
-    //   },
-    //   toggleEquipment: function(id) {
-    //     equipment[id].active = !equipment[id].active;
-    //   },
-    //   getEquipment: function(){
-    //     return equipment;
-    //   },
-    //   setServiceState: function(id){
-    //     var state = equipment[activeFleetModel].services[id].val;
-    //     equipment[activeFleetModel].services[id].val = !state;
-    //     return !state;
-    //   },
-    //   selectFleetModel: function(id){
-    //     activeFleetModel = id;
-    //     return activeFleetModel;
-    //   }
-
-    // };
   });

@@ -4,10 +4,10 @@ angular.module('appliedByDesignApp')
   .controller('RoutemapCtrl', function ($scope, reportBuilder, navService) {
 
     // set the dimensions of main SVG canvas
-    $scope.mapWidth = 1800;
+    $scope.mapWidth  = 1800;
     $scope.mapHeight = 1200;
 
-    $scope.equipment = reportBuilder.generateEquipment();
+    $scope.equipment   = reportBuilder.generateEquipment();
     $scope.routeReport = reportBuilder.buildRoutes();
     
     // build initial set of financial reports. This should only need to be done once unless 
@@ -16,10 +16,14 @@ angular.module('appliedByDesignApp')
     
 
     $scope.toggleModel = function(id){
-      $scope.equipment  = navService.toggleEquipment(id);
+      $scope.equipment   = navService.toggleEquipment(id);
       $scope.routeReport = reportBuilder.buildRoutes();
     };
 
+    $scope.showPanel = function(){
+      return navService.showPanel; 
+    }
+    
     // bind panel toggle button from view to service
     $scope.togglePanelState = navService.togglePanel; //returns new state
     $scope.toggleEquipPanel = navService.toggleEquipPanel;  //returns new state
