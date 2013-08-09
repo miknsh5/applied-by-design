@@ -93,7 +93,24 @@ $filter-bar-height: 40px;
     font-size: 3rem;
     background-color: $font-darkgray;
     margin-top: 50px;
-    padding: 5px;
+    // padding: 5px;
+
+    &.report {
+      padding: 10px 0;
+      // margin: 0 20px;
+      width: 110%;
+      position: relative;
+      left: -5%;
+    }
+
+    span {
+      font-size: 0.8em;
+      margin-left: 20px;
+
+      i {
+        font-size: 0.8em;
+      }
+    }
   }
 
   h2 {

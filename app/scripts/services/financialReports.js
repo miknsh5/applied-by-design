@@ -6,10 +6,56 @@ angular.module('appliedByDesignApp')
     // Service logic
 
     var financialReport = [],
-        // financialReportBase = [],
-        activeReport  = 'Crew', //name
-        activeYear    = 0,      //id
+        // financialReportBase = {},
+        // financialReportActive = {},
+        // activeReport  = 'Crew', //name
+        // activeYear    = 0,      //id
         perFltRev = [];
+
+    var reports = {};
+    reports.base   = [];
+    reports.active = [];
+    reports.fleet  = [];
+
+
+    reports.getReport = function(type){
+      
+      // make sure a report type was passed in
+      if (!type) {
+        console.log('!!! - no report type entered - specify "base" or "current"');
+        return
+      }
+
+      // var t = (type === 'base') ? 'reportBase' : 'reportActive';
+
+      return reports[t];
+    };
+
+    reports.getYears = function() {
+      // return _.pluck(filterFinancialReport(), 'year');
+      console.log('*() - Need to Hook up getYears()')
+      return ['2001', '2002', '2003', '2004', '2005'];
+    };
+
+    reports.getActiveChartData = function() {
+      
+      var year = navService.activeYear;
+      var metricName = navService.activeMetricName;
+
+      return reports.active[year][metricName].data;
+    }
+
+
+    reports.setReport = function(type, report){
+      // make sure a report type was passed in
+      if (!type || !report) {
+        console.log('!!! - need to enter a report type and report object');
+        return
+      }
+      
+      reports[type] = report;
+    }
+
 
 
     function mapSum(a,b){
@@ -183,78 +229,80 @@ angular.module('appliedByDesignApp')
       return outputArray;
     }
 
-    // Public API here
-    return {
-      // getters
-      getFullReport: function(){
-        return filterFinancialReport();
-      },
-      getRouteReport: function(routeName){
-        return filterFinancialReport(routeName);
-      },
-      getActiveId: function(name) {
-        // this is bad!
-        return eval(name);
-      },
-      getYears: function(){
-        return _.pluck(filterFinancialReport(), 'year');
-      },
+    return reports;
 
-      // setters
-      setReport: function(report){
-        financialReport = report;
-      },
-      setActiveReport: function(name) {
-        activeReport = name;
-      },
-      setActiveYear: function(id) {
-        activeYear = id;
-      },
-      getNPVReport: function(discount,years,currentReport,baselineReport) {
-        var currentNPV  = runNpvReport(discount, years, currentReport);
-        var baselineNPV = runNpvReport(discount, years, baselineReport);
-        // var currentNPV  = npvReport(discount, years, filterFinancialReport());
-        // var baselineNPV = npvReport(discount, years, filterFinancialReport());
+    // // Public API here
+    // return {
+    //   // getters
+    //   getFullReport: function(){
+    //     return filterFinancialReport();
+    //   },
+    //   getRouteReport: function(routeName){
+    //     return filterFinancialReport(routeName);
+    //   },
+    //   getActiveId: function(name) {
+    //     // this is bad!
+    //     return eval(name);
+    //   },
+    //   getYears: function(){
+    //     return _.pluck(filterFinancialReport(), 'year');
+    //   },
 
-        var deltaNPV = [];
-        for(var n=0;n<currentNPV.length;n++)
-        {
-          deltaNPV[n] = {};
+    //   // setters
+    //   setReport: function(report){
+    //     financialReport = report;
+    //   },
+    //   setActiveReport: function(name) {
+    //     activeReport = name;
+    //   },
+    //   setActiveYear: function(id) {
+    //     activeYear = id;
+    //   },
+    //   getNPVReport: function(discount,years,currentReport,baselineReport) {
+    //     var currentNPV  = runNpvReport(discount, years, currentReport);
+    //     var baselineNPV = runNpvReport(discount, years, baselineReport);
+    //     // var currentNPV  = npvReport(discount, years, filterFinancialReport());
+    //     // var baselineNPV = npvReport(discount, years, filterFinancialReport());
 
-          deltaNPV[n] = { 'name': currentNPV[n].name,
-                          'val':  currentNPV[n].val-baselineNPV[n].val,
-                          'decimals': currentNPV[n].decimals};
-        }
+    //     var deltaNPV = [];
+    //     for(var n=0;n<currentNPV.length;n++)
+    //     {
+    //       deltaNPV[n] = {};
 
-        return deltaNPV;
+    //       deltaNPV[n] = { 'name': currentNPV[n].name,
+    //                       'val':  currentNPV[n].val-baselineNPV[n].val,
+    //                       'decimals': currentNPV[n].decimals};
+    //     }
 
-      },
-      getPerFltRevenue: function(){
-        return perFltRev;
-      },
-      getRevenueForecast: function(report){
-        // var revenue = [];
-        var revenueForecast = [];
+    //     return deltaNPV;
 
-        // loop through each annual forecast and retrieve the revenue object
-        angular.forEach(report, function(annualReport) {
-          var revenue = _.where(annualReport.data, {'name': 'Revenue'});
+    //   },
+    //   getPerFltRevenue: function(){
+    //     return perFltRev;
+    //   },
+    //   getRevenueForecast: function(report){
+    //     // var revenue = [];
+    //     var revenueForecast = [];
 
-          // make sure only 1 revenue object is being returned
-          if (revenue.length !== 1) {
-            console.log('Woah! - somethings goofed with the revenue forecasts!');
-            return;
-          }
+    //     // loop through each annual forecast and retrieve the revenue object
+    //     angular.forEach(report, function(annualReport) {
+    //       var revenue = _.where(annualReport.data, {'name': 'Revenue'});
 
-          // append the current forecast year to the object being built for d3
-          revenue[0].year = annualReport.year;
+    //       // make sure only 1 revenue object is being returned
+    //       if (revenue.length !== 1) {
+    //         console.log('Woah! - somethings goofed with the revenue forecasts!');
+    //         return;
+    //       }
 
-          //push revenue object to revenueForecast array formatted for d3
-          revenueForecast.push(revenue[0]);
-        });
+    //       // append the current forecast year to the object being built for d3
+    //       revenue[0].year = annualReport.year;
 
-        return revenueForecast;
-      }
-    };
+    //       //push revenue object to revenueForecast array formatted for d3
+    //       revenueForecast.push(revenue[0]);
+    //     });
+
+    //     return revenueForecast;
+    //   }
+    // };
 
   });

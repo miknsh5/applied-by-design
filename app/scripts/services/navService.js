@@ -6,55 +6,58 @@ angular.module('appliedByDesignApp')
 
     // var activeTabId = 0;
 
-    var navStatus = {};
-    navStatus.showPanel       = true;
-    navStatus.showEquipPanel  = true;
-    navStatus.showReport      = false;
-    navStatus.activeTab       = 0;
-    navStatus.equipment       = [];
-    navStatus.activeFleetModel = 0;
-    
-    navStatus.togglePanel = function(){
-      navStatus.showPanel = !navStatus.showPanel;
-      return navStatus.showPanel;
+    var obj = {};
+    obj.showPanel        = true;
+    obj.showEquipPanel   = true;
+    obj.showReport       = false;
+    obj.activeTab        = 0;
+    obj.equipment        = [];
+    obj.activeFleetModel = 0;
+    obj.activeYear       = 0;
+    obj.activeMetricName = 'Crew';
+
+
+    obj.togglePanel = function(){
+      obj.showPanel = !obj.showPanel;
+      return obj.showPanel;
     }
     
-    navStatus.toggleEquipPanel = function(){
-      navStatus.showEquipPanel = !navStatus.showEquipPanel;
-      return navStatus.showEquipPanel;
+    obj.toggleEquipPanel = function(){
+      obj.showEquipPanel = !obj.showEquipPanel;
+      return obj.showEquipPanel;
     }   
      
-    navStatus.toggleReportPanel = function(){
-      navStatus.showReport = !navStatus.showReport;
-      return navStatus.showReport;
+    obj.toggleReportPanel = function(){
+      obj.showReport = !obj.showReport;
+      return obj.showReport;
     }
 
-    navStatus.selectPanelTab = function(id){
-      navStatus.activeTab = id;
-      return navStatus.activeTab;
+    obj.selectPanelTab = function(id){
+      obj.activeTab = id;
+      return obj.activeTab;
     }
 
-    navStatus.getActiveTab = function(){
+    obj.getActiveTab = function(){
       // return active tab id for listener class from adjacent scopes & directives
-      return navStatus.activeTab;
+      return obj.activeTab;
     }
 
-    navStatus.toggleEquipment = function(id) {
-      navStatus.equipment[id].active = !navStatus.equipment[id].active;
-      return navStatus.equipment;
+    obj.toggleEquipment = function(id) {
+      obj.equipment[id].active = !obj.equipment[id].active;
+      return obj.equipment;
     }
 
-    navStatus.selectFleetModel = function(id) {
-      navStatus.activeFleetModel = id;
-      return navStatus.activeFleetModel;
+    obj.selectFleetModel = function(id) {
+      obj.activeFleetModel = id;
+      return obj.activeFleetModel;
     }
 
-    navStatus.toggleFleetService = function(id) {
-      var state = navStatus.equipment[navStatus.activeFleetModel].services[id].val;
-      navStatus.equipment[navStatus.activeFleetModel].services[id].val = !state;
-      return navStatus.equipment;
+    obj.toggleFleetService = function(id) {
+      var state = obj.equipment[obj.activeFleetModel].services[id].val;
+      obj.equipment[obj.activeFleetModel].services[id].val = !state;
+      return obj.equipment;
     }
 
-    return navStatus;
+    return obj;
 
   });

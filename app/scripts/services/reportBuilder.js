@@ -147,7 +147,7 @@ angular.module('appliedByDesignApp')
         }
 
         // Store and return financial report
-        financialReports.setReport(outputReport);
+        financialReports.setReport('active', outputReport);
         return outputReport;
 
       },

@@ -2,21 +2,26 @@
 /*global _:false */
 
 angular.module('appliedByDesignApp')
-  .controller('FinancialPanelCtrl', function ($scope, financialReports) {
+  .controller('FinancialPanelCtrl', function ($scope, financialReports, navService) {
 
 
 
-    $scope.financialReports = financialReports;
+    // $scope.financialReports = financialReports;
 
     // store reports for total of all operations for comparison (orange column on financial tab)
     // instantiate once at initial page load
-    $scope.financialDataBase  = financialReports.getFullReport();
-    $scope.financialDataActive = financialReports.getFullReport();
-    $scope.fiscalYears = financialReports.getYears();
-    $scope.activeReportName = 'Crew';
-    $scope.activeYearId   = 0;
+    // $scope.financialDataBase  = financialReports.getFullReport();
+    // $scope.financialDataActive = financialReports.getFullReport();
 
-    $scope.activeChartData = $scope.financialDataActive[$scope.activeYearId][$scope.activeReportName].data;
+    $scope.fiscalYears = financialReports.getYears();
+
+    // $scope.activeReportName = 'Crew';
+    // $scope.activeYearId   = 0;
+
+    // navService.activeYear
+
+    // $scope.activeChartData = $scope.financialDataActive[navService.activeYear][navService.activeMetricName].data;
+    $scope.activeChartData = financialReports.getActiveChartData();
 
     $scope.$watch(function(){ return financialReports.getFullReport();}, function(newData){
         $scope.financialDataActive = newData;
