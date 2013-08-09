@@ -147,8 +147,11 @@ angular.module('appliedByDesignApp')
         }
 
         // Store and return financial report
-        financialReports.setReport('active', outputReport);
-        return outputReport;
+        console.log('*** GO Build Routes');
+        financialReports.setReport('flight', outputReport);
+        console.log('*** GO Run Base Report');
+        financialReports.runReport('base');
+        // return outputReport;
 
       },
       generateEquipment: function() {

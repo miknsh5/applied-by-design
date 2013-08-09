@@ -5,30 +5,65 @@ angular.module('appliedByDesignApp')
   .factory('financialReports', function (navService) {
     // Service logic
 
-    var financialReport = [],
+    // var flightFinancials = [],
         // financialReportBase = {},
         // financialReportActive = {},
         // activeReport  = 'Crew', //name
         // activeYear    = 0,      //id
-        perFltRev = [];
+    // var perFltRev = [];
 
     var reports = {};
-    reports.base   = [];
-    reports.active = [];
-    reports.fleet  = [];
+    reports.flight  = [];
+    reports.base    = [];
+    reports.active  = [];
+    reports.fleet   = [];
 
 
     reports.getReport = function(type){
       
       // make sure a report type was passed in
       if (!type) {
-        console.log('!!! - no report type entered - specify "base" or "current"');
+        console.log('!!! - no report type entered - specify "base" or "active"');
         return
       }
 
-      // var t = (type === 'base') ? 'reportBase' : 'reportActive';
-
       return reports[t];
+    };
+
+    reports.getFlightMetrics = function(type) {
+
+      if (!type) {
+        console.log('!!! - no report type entered - specify "base" or "active"');
+        return
+      }
+
+      if (!reports[type]) {
+        console.log('Not a valid report type!!!')
+        return
+      }
+      
+      if (reports[type].length === 0 ) {
+        console.log('---reports not created yet - please try again later---')
+        return
+      }
+
+      var year = navService.activeYear;
+      var metricName = navService.activeMetricName;
+      var fleetId = 0;
+      console.log('defaulting to [0] index fleet Id')
+
+
+      return reports[type][year].perFlight[fleetId].metrics;
+    }
+
+    reports.getRouteReport = function(routename){
+      
+      if (!routename) {
+        console.log('!!! - need to enter a routename');
+        return
+      }
+
+      return this.filterFinancialReport(routename);
     };
 
     reports.getYears = function() {
@@ -38,13 +73,54 @@ angular.module('appliedByDesignApp')
     };
 
     reports.getActiveChartData = function() {
-      
+
       var year = navService.activeYear;
       var metricName = navService.activeMetricName;
+      // return this.filterFinancialReport()[year][metricName].data
 
-      return reports.active[year][metricName].data;
+      // return reports.active[year][metricName].data;
     }
 
+    reports.getNPVReport = function(discount,years) {
+      var currentNPV  = runNpvReport(discount, years, reports.active);
+      var baselineNPV = runNpvReport(discount, years, reports.base);
+      // var currentNPV  = npvReport(discount, years, filterFinancialReport());
+      // var baselineNPV = npvReport(discount, years, filterFinancialReport());
+
+      var deltaNPV = [];
+      for(var n=0;n<currentNPV.length;n++)
+      {
+        deltaNPV[n] = {};
+
+        deltaNPV[n] = { 'name': currentNPV[n].name,
+                        'val':  currentNPV[n].val-baselineNPV[n].val,
+                        'decimals': currentNPV[n].decimals};
+      }
+
+      return deltaNPV;
+
+    }
+
+
+    reports.runReport = function(type){
+      if (!type) {console.log('!!! - need to enter a report type');}
+
+
+      reports[type] = this.filterFinancialReport();
+
+      // if active not set yet, instantiate as base report
+      if (reports.active.length === 0) {
+        angular.copy(reports.base, reports.active);
+        console.log('copied base to active');
+      }
+      
+    }
+
+    reports.getMetricTotal = function(name){
+
+      console.log('*() - Need to Hook up getMetricTotal()')
+      return 11111111;
+    }
 
     reports.setReport = function(type, report){
       // make sure a report type was passed in
@@ -52,19 +128,45 @@ angular.module('appliedByDesignApp')
         console.log('!!! - need to enter a report type and report object');
         return
       }
-      
+
       reports[type] = report;
+      console.log('*** Just Set Report');
+      // return;
     }
 
+    reports.getRevenueForecast = function(type){
+      var revenueForecast = [];
 
+      if (!reports[type]) { console.log('invalid report type'); return [];}
+      if (reports[type].length === 0) { console.log('reports not ready yet'); return [];}
+
+      // loop through each annual forecast and retrieve the revenue object
+      angular.forEach(reports[type], function(annualReport) {
+        var revenue = _.where(annualReport.data, {'name': 'Revenue'});
+
+        // make sure only 1 revenue object is being returned
+        if (revenue.length !== 1) {
+          console.log('Woah! - somethings goofed with the revenue forecasts!');
+          return;
+        }
+
+        // append the current forecast year to the object being built for d3
+        revenue[0].year = annualReport.year;
+
+        //push revenue object to revenueForecast array formatted for d3
+        revenueForecast.push(revenue[0]);
+      });
+
+      return revenueForecast;
+    }
 
     function mapSum(a,b){
       return a+b;
     }
 
-    function filterFinancialReport(routeName){
-
-      var finReport = financialReport;
+    reports.filterFinancialReport = function(routeName){
+      // flightFinancials
+      var finReport = reports.flight;
       var outputReports = [];
       var filteredReport;
       var yearReport = {};

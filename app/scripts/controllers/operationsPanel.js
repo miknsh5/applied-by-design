@@ -8,15 +8,13 @@ angular.module('appliedByDesignApp')
     $scope.chartHeight = 175;
 
     // initialize activeRouteReport and details object
-    $scope.activeRouteReport = routeService.setRouteReport('ORDSEA');
-    // $scope.details = $scope.activeRouteReport[0].detail;
+    // $scope.activeRouteReport = routeService.setRouteReport('ORDSEA');
 
     // watch for changes to the activeRouteName set on routeService, get new activeRouteReport.
-    $scope.$watch(function(){ return routeService.getActiveRouteName(); }, function(newData){
-        $scope.dotw = routeService.getDays();
-        $scope.activeRouteReport = routeService.setRouteReport(newData);
-        // console.log($scope.dotw);
-      });
+    // $scope.$watch(function(){ return routeService.getActiveRouteName(); }, function(newData){
+    //     $scope.dotw = routeService.getDays();
+    //     $scope.activeRouteReport = routeService.setRouteReport(newData);
+    // });
 
     // change the day of the week selection in the left side panel
     $scope.selectDay = function(id) {

@@ -8,11 +8,14 @@ angular.module('appliedByDesignApp')
     $scope.mapHeight = 1200;
 
     $scope.equipment   = reportBuilder.generateEquipment();
-    $scope.routeReport = reportBuilder.buildRoutes();
-    
+    reportBuilder.buildRoutes();
+    reportBuilder.buildFinancialReport(true);
+    // $scope.routeReport = reportBuilder.buildRoutes();
+    // financialReports.runReport('base')
+    // financialReports.runReport('active')
     // build initial set of financial reports. This should only need to be done once unless 
     // changes are made to add new flights or reconfigure services.
-    reportBuilder.buildFinancialReport(true);
+    // reportBuilder.buildFinancialReport(true);
     
 
     $scope.toggleModel = function(id){
@@ -23,7 +26,7 @@ angular.module('appliedByDesignApp')
     $scope.showPanel = function(){
       return navService.showPanel; 
     }
-    
+
     // bind panel toggle button from view to service
     $scope.togglePanelState = navService.togglePanel; //returns new state
     $scope.toggleEquipPanel = navService.toggleEquipPanel;  //returns new state
