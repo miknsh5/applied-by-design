@@ -4,23 +4,13 @@
 angular.module('appliedByDesignApp')
   .controller('FinancialPanelCtrl', function ($scope, financialReports, navService) {
 
-
-
-    // $scope.financialReports = financialReports;
-
-    // store reports for total of all operations for comparison (orange column on financial tab)
     // instantiate once at initial page load
-    // $scope.financialDataBase  = financialReports.getFullReport();
-    // $scope.financialDataActive = financialReports.getFullReport();
 
-    $scope.fiscalYears = financialReports.getYears();
+    $scope.fiscalYears         = financialReports.getYears();
+    $scope.baseFinancialData   = financialReports.getReport('base');
+    $scope.activeFinancialData = financialReports.getReport('active');
+    $scope.activeYearId        = navService.activeYear;
 
-    // $scope.activeReportName = 'Crew';
-    // $scope.activeYearId   = 0;
-
-    // navService.activeYear
-
-    // $scope.activeChartData = $scope.financialDataActive[navService.activeYear][navService.activeMetricName].data;
     $scope.activeChartData = financialReports.getActiveChartData();
 
     // $scope.$watch(function(){ return financialReports.getFullReport();}, function(newData){
@@ -40,9 +30,9 @@ angular.module('appliedByDesignApp')
 
     $scope.selectReport = function(name){
       // when a user selects a new report in the summary table
-      financialReports.setActiveReport(name);
-      $scope.activeChartData = $scope.financialDataActive[$scope.activeYearId][name].data;
-      $scope.activeChartData.total = assignChartTotal(name);
+      navService.activeMetricName = name;
+      $scope.activeChartData = $scope.activeFinancialData[$scope.activeYearId][name].data;
+      // $scope.activeChartData.total = assignChartTotal(name);
     };
 
     $scope.selectYear = function(id){
@@ -54,7 +44,7 @@ angular.module('appliedByDesignApp')
 
 
     $scope.getActiveRecord = function(recordName){
-      return _.findWhere($scope.financialDataActive[$scope.activeYearId].data, {name: recordName});
+      return _.findWhere($scope.activeFinancialData[$scope.activeYearId].data, {name: recordName});
     };
 
 

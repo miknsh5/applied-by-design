@@ -109,7 +109,7 @@
                                         <i class="ikon-airplane ikon"> </i>
                                     </h3>
 
-                                    <div ng-repeat="financial in financialDataBase[activeYearId].data | filter:{isCurrency:isFinancialTable}"  ng-show="isFinancialTable">
+                                    <div ng-repeat="financial in baseFinancialData[activeYearId].data | filter:{isCurrency:isFinancialTable}"  ng-show="isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(financial.name)"
                                             ng-class="{active: financial.name == activeReportName }">
@@ -128,7 +128,7 @@
                                     </div>
 
                                     <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
-                                    <div ng-repeat="financial in financialDataBase[activeYearId].data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
+                                    <div ng-repeat="financial in baseFinancialData[activeYearId].data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(financial.name)"
                                             ng-class="{active: financial.name == activeReportName }">

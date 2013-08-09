@@ -27,7 +27,7 @@ angular.module('appliedByDesignApp')
         return
       }
 
-      return reports[t];
+      return reports[type];
     };
 
     reports.getFlightMetrics = function(type) {
@@ -76,9 +76,8 @@ angular.module('appliedByDesignApp')
 
       var year = navService.activeYear;
       var metricName = navService.activeMetricName;
-      // return this.filterFinancialReport()[year][metricName].data
 
-      // return reports.active[year][metricName].data;
+      return reports.active[year][metricName].data;
     }
 
     reports.getNPVReport = function(discount,years) {
