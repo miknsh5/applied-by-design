@@ -10,12 +10,6 @@ angular.module('appliedByDesignApp')
     $scope.equipment   = reportBuilder.generateEquipment();
     reportBuilder.buildRoutes();
     reportBuilder.buildFinancialReport(true);
-    // $scope.routeReport = reportBuilder.buildRoutes();
-    // financialReports.runReport('base')
-    // financialReports.runReport('active')
-    // build initial set of financial reports. This should only need to be done once unless 
-    // changes are made to add new flights or reconfigure services.
-    // reportBuilder.buildFinancialReport(true);
     
 
     $scope.toggleModel = function(id){

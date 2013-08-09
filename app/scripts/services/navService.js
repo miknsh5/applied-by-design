@@ -11,7 +11,7 @@ angular.module('appliedByDesignApp')
     obj.showEquipPanel   = true;
     obj.showReport       = false;
     obj.activeTab        = 1;
-    obj.equipment        = [];
+    obj.equipment        = []; //this should probably be its own service
     obj.activeFleetModel = 0;
     obj.activeYear       = 0;
     obj.activeMetricName = 'Crew';

@@ -81,7 +81,7 @@ d3.custom.routeMap = function module() {
         d3.select(this)
         .attr('stroke', orange)
         .style('opacity', 1.0);
-      } else if (activePath === null) {
+      } else if (activePath === undefined || activePath === null) {
         //no path selected, don't fade on mouseout
         d3.select(this)
         .attr('stroke', color)
