@@ -489,6 +489,8 @@ h4.left {
 
     &.shortname {
       width: 160px;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     &.delta {

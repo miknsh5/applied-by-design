@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appliedByDesignApp')
-  .controller('RoutemapCtrl', function ($scope, reportBuilder, navService) {
+  .controller('RoutemapCtrl', function ($scope, reportBuilder, navService, financialReports) {
 
     // set the dimensions of main SVG canvas
     $scope.mapWidth  = 1800;
@@ -15,6 +15,7 @@ angular.module('appliedByDesignApp')
     $scope.toggleModel = function(id){
       $scope.equipment   = navService.toggleEquipment(id);
       $scope.routeReport = reportBuilder.buildRoutes();
+      financialReports.runReport('active');
     };
 
     $scope.showPanel = function(){
