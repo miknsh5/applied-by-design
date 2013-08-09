@@ -5,13 +5,6 @@ angular.module('appliedByDesignApp')
   .factory('financialReports', function (navService) {
     // Service logic
 
-    // var flightFinancials = [],
-        // financialReportBase = {},
-        // financialReportActive = {},
-        // activeReport  = 'Crew', //name
-        // activeYear    = 0,      //id
-    // var perFltRev = [];
-
     var reports = {};
     reports.flight  = [];
     reports.base    = [];
@@ -32,13 +25,8 @@ angular.module('appliedByDesignApp')
 
     reports.getFlightMetrics = function(type) {
 
-      if (!type) {
-        console.log('!!! - no report type entered - specify "base" or "active"');
-        return
-      }
-
-      if (!reports[type]) {
-        console.log('Not a valid report type!!!')
+      if (!type || !reports[type]) {
+        console.log('!!! - whoops - invalid report type entered as argument');
         return
       }
       
@@ -49,9 +37,7 @@ angular.module('appliedByDesignApp')
 
       var year = navService.activeYear;
       var metricName = navService.activeMetricName;
-      var fleetId = 0;
-      console.log('defaulting to [0] index fleet Id')
-
+      var fleetId = navService.activeFleetModel;
 
       return reports[type][year].perFlight[fleetId].metrics;
     }
@@ -67,24 +53,13 @@ angular.module('appliedByDesignApp')
     };
 
     reports.getYears = function() {
-      // return _.pluck(filterFinancialReport(), 'year');
-      console.log('*() - Need to Hook up getYears()')
-      return ['2001', '2002', '2003', '2004', '2005'];
+      return _.pluck(reports.base, 'year');
     };
 
-    reports.getActiveChartData = function() {
-
-      var year = navService.activeYear;
-      var metricName = navService.activeMetricName;
-
-      return reports.active[year][metricName].data;
-    }
 
     reports.getNPVReport = function(discount,years) {
       var currentNPV  = runNpvReport(discount, years, reports.active);
       var baselineNPV = runNpvReport(discount, years, reports.base);
-      // var currentNPV  = npvReport(discount, years, filterFinancialReport());
-      // var baselineNPV = npvReport(discount, years, filterFinancialReport());
 
       var deltaNPV = [];
       for(var n=0;n<currentNPV.length;n++)
@@ -129,8 +104,6 @@ angular.module('appliedByDesignApp')
       }
 
       reports[type] = report;
-      console.log('*** Just Set Report');
-      // return;
     }
 
     reports.getRevenueForecast = function(type){

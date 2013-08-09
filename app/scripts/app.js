@@ -53,7 +53,7 @@ angular.module('appliedByDesignApp', [])
                 deferred.resolve([]);
               } else {
                 deferred.resolve(status);
-                console.log('** All Data Loaded');
+                // console.log('** All Data Loaded');
               }
             }, 500);
 

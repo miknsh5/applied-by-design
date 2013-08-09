@@ -109,10 +109,10 @@
                                         <i class="ikon-airplane ikon"> </i>
                                     </h3>
 
-                                    <div ng-repeat="financial in baseFinancialData[activeYearId].data | filter:{isCurrency:isFinancialTable}"  ng-show="isFinancialTable">
+                                    <div ng-repeat="financial in baseFinancialData().data | filter:{isCurrency:isFinancialTable}"  ng-show="isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(financial.name)"
-                                            ng-class="{active: financial.name == activeReportName }">
+                                            ng-class="{active: financial.name == activeReportName() }">
 
                                             <h4 class="title wide">{{financial.name}}:</h4>
                                             <h4 class="number primary">
@@ -128,7 +128,7 @@
                                     </div>
 
                                     <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
-                                    <div ng-repeat="financial in baseFinancialData[activeYearId].data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
+                                    <div ng-repeat="financial in baseFinancialData().data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(financial.name)"
                                             ng-class="{active: financial.name == activeReportName }">
@@ -163,7 +163,7 @@
                                 </div> -->
 
                                 <div class="panel large">
-                                    <donut-chart data="activeChartData" hovered="hovered(args)"></donut-chart>
+                                    <donut-chart data="chartData()" hovered="hovered(args)"></donut-chart>
                                 </div>
                             </div>
                         </div>
