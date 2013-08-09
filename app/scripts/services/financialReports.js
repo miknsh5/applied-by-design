@@ -65,14 +65,12 @@ angular.module('appliedByDesignApp')
       for(var n=0;n<currentNPV.length;n++)
       {
         deltaNPV[n] = {};
-
         deltaNPV[n] = { 'name': currentNPV[n].name,
                         'val':  currentNPV[n].val-baselineNPV[n].val,
                         'decimals': currentNPV[n].decimals};
       }
 
       return deltaNPV;
-
     }
 
 

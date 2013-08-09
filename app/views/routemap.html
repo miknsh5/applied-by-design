@@ -178,17 +178,17 @@
                             <h4 class="left">Route</h4>
                             <div class="route-pair">
                                 <div class="city-pair">
-                                    <div class="city left">{{activeRouteReport[0].detail.origin.IATA}}</div>
+                                    <div class="city left">{{activeRouteReport().detail.origin.IATA}}</div>
                                 </div>
                                 <div class="city-pair">
-                                    <div class="city right">{{activeRouteReport[0].detail.destination.IATA}}</div>
+                                    <div class="city right">{{activeRouteReport().detail.destination.IATA}}</div>
                                 </div>
                                 <!-- <div class="connector"></div> -->
                             </div>
                             <div class="filter-days">
                                 <h4 class="left">Schedule</h4>
                                 <div class="day-buttons">
-                                    <div ng-repeat="day in dotw">
+                                    <div ng-repeat="day in dotw()">
                                         <div class="day-btn" 
                                             ng-click="selectDay($index)"
                                             ng-class="{active: day.active}">
@@ -219,7 +219,7 @@
                                     <h3 class="heading wide" ng-show="!isFinancialTable">Operational Report</h3>
                                     <h3 class="heading small">Route Total</h3>
 
-                                    <div ng-repeat="metric in activeRouteReport[0].data | filter:{isCurrency:isFinancialTable}" ng-show="isFinancialTable">
+                                    <div ng-repeat="metric in activeRouteReport().data | filter:{isCurrency:isFinancialTable}" ng-show="isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(metric.name)"
                                             ng-class="{active: metric.name == activeReportName }">
@@ -232,7 +232,7 @@
                                     </div>
 
                                     <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
-                                    <div ng-repeat="metric in activeRouteReport[0].data | filter:{isCurrency:'false'}"  ng-show="!isFinancialTable">
+                                    <div ng-repeat="metric in activeRouteReport().data | filter:{isCurrency:'false'}"  ng-show="!isFinancialTable">
                                         <div class="row-wrap" 
                                             ng-click="selectReport(metric.name)"
                                             ng-class="{active: metric.name == activeReportName }">
@@ -255,19 +255,19 @@
 
                                         <div class="row-wrap city-pair first">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.origin.Name | limitTo:maxChars}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.origin.Name | limitTo:maxChars}}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.origin.City}}, {{activeRouteReport[0].detail.origin.State}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.origin.City}}, {{activeRouteReport().detail.origin.State}}</h4>
                                         </div>
                                         <div class="row-wrap distance">
                                             <h4 class="title mini">Distance (mi):</h4>
-                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.route.distance | number:0}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.route.distance | number:0}}</h4>
                                         </div>
                                         <div class="row-wrap city-pair">
                                             <h4 class="title mini">Airport:</h4>
-                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.destination.Name | limitTo:maxChars}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.destination.Name | limitTo:maxChars}}</h4>
                                             <h4 class="title mini">City, St:</h4>
-                                            <h4 class="number shortname primary">{{activeRouteReport[0].detail.destination.City}}, {{activeRouteReport[0].detail.destination.State}}</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.destination.City}}, {{activeRouteReport().detail.destination.State}}</h4>
                                         </div>
 
 

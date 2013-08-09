@@ -10,7 +10,7 @@ angular.module('appliedByDesignApp')
     obj.showPanel        = true;
     obj.showEquipPanel   = true;
     obj.showReport       = false;
-    obj.activeTab        = 0;
+    obj.activeTab        = 1;
     obj.equipment        = [];
     obj.activeFleetModel = 0;
     obj.activeYear       = 0;

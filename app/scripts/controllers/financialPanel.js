@@ -35,7 +35,6 @@ angular.module('appliedByDesignApp')
     };
 
     $scope.getActiveRecord = function(recordName){
-      
       return _.findWhere($scope.activeFinancialData().data, {name: recordName});
     };
 

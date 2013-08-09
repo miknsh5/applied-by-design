@@ -21,7 +21,8 @@ angular.module('appliedByDesignApp')
           navService.selectPanelTab(1);
 
           var routeName = reportBuilder.getRouteNameFromId(i);
-          routeService.setActiveRouteName(routeName);
+          routeService.activeRouteName = routeName;
+          routeService.runRouteReport();
 
           scope.$apply();
         });
