@@ -9,7 +9,7 @@ angular.module('appliedByDesignApp')
 
     $scope.equipment   = reportBuilder.generateEquipment();
     reportBuilder.buildRoutes();
-    reportBuilder.buildFinancialReport(true);
+    reportBuilder.buildFinancialReport(true, false);
     
 
     $scope.toggleModel = function(id){
@@ -41,7 +41,6 @@ angular.module('appliedByDesignApp')
     $scope.$watch(function(){ return navService.getActiveTab();}, function(newTabId){
       $scope.activeTab = newTabId;
     });
-
 
     // recalculate the dashboard panel position based on hide/show state
     $scope.panelStyle = function(){

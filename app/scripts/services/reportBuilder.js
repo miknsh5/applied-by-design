@@ -20,7 +20,9 @@ angular.module('appliedByDesignApp')
         return routeReport[id].NonDirectional;
       },
       // Get Financial Report for some subset of the total fleet/routes
-      buildFinancialReport: function(forecast) {
+      buildFinancialReport: function(forecast, isUpdate) {
+        // if (isUpdate) == true, then don't reload services or equipment.
+
         // Retrieve data dependencies
         var revFlights   = fleetModel.getData('flights');
         var airplanes    = fleetModel.getData('airplanes');
@@ -148,8 +150,10 @@ angular.module('appliedByDesignApp')
 
         // Store and return financial report
         financialReports.setReport('flight', outputReport);
-        financialReports.runReport('base');
-        // return outputReport;
+
+        // only set the base financials on the first instantiation. Updates should only 
+        // generate new active reports.
+        (isUpdate) ? financialReports.runReport('active') : financialReports.runReport('base');
 
       },
       generateEquipment: function() {

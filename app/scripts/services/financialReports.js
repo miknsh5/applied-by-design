@@ -10,6 +10,7 @@ angular.module('appliedByDesignApp')
     reports.base    = [];
     reports.active  = [];
     reports.fleet   = [];
+    reports.npv     = [];
 
 
     reports.getReport = function(type){
@@ -21,6 +22,24 @@ angular.module('appliedByDesignApp')
       }
 
       return reports[type];
+    };
+
+    reports.getDeltaMetrics = function(){
+
+      var metricsA = this.getFlightMetrics('active');
+      var metrics0 = this.getFlightMetrics('base');
+      var deltaMetrics = [];
+      for (var i=0; i<metricsA.length; i++) {
+        var delta = metricsA[i].val - metrics0[i].val;
+        deltaMetrics.push({
+            'name': metricsA[i].name,
+            'val': delta,
+            'isCurrency': metricsA[i].isCurrency,
+            'isExpense': metricsA[i].isExpense,
+            'decimals': metricsA[i].decimals
+          });
+      }
+      return deltaMetrics;
     };
 
     reports.getFlightMetrics = function(type) {
@@ -35,9 +54,9 @@ angular.module('appliedByDesignApp')
         return
       }
 
-      var year = navService.activeYear;
-      var metricName = navService.activeMetricName;
-      var fleetId = navService.activeFleetModel;
+      var year        = navService.activeYear;
+      var metricName  = navService.activeMetricName;
+      var fleetId     = navService.activeFleetModel;
 
       return reports[type][year].perFlight[fleetId].metrics;
     }
@@ -57,35 +76,63 @@ angular.module('appliedByDesignApp')
     };
 
 
-    reports.getNPVReport = function(discount,years) {
+    reports.getNpv = function(discount,years) {
       var currentNPV  = runNpvReport(discount, years, reports.active);
       var baselineNPV = runNpvReport(discount, years, reports.base);
 
-      var deltaNPV = [];
-      for(var n=0;n<currentNPV.length;n++)
-      {
-        deltaNPV[n] = {};
-        deltaNPV[n] = { 'name': currentNPV[n].name,
+      // build npv report
+      var deltaNpv = [];
+      for(var n=0;n<currentNPV.length;n++) {
+        deltaNpv[n] = {};
+        deltaNpv[n] = { 'name': currentNPV[n].name,
                         'val':  currentNPV[n].val-baselineNPV[n].val,
                         'decimals': currentNPV[n].decimals};
       }
+      reports.npv = deltaNpv;
 
-      return deltaNPV;
+      // calculate total NPV
+      return _.reduce(deltaNpv, function(a,b){return a + b.val;}, 0);
+
     }
 
+    function runNpvReport(discount, years, fullReport){
+
+      var reportMetrics  = _.pluck(_.where(fullReport[0].data,{isCurrency:true}),'name');
+      var npvReport = [];
+
+      for(var m=0;m<reportMetrics.length;m++) {
+
+        npvReport[m] = {};
+        npvReport[m] = {
+          'name': reportMetrics[m],
+          'val': 0,
+          'isExpense': reportMetrics[m] === 'Revenue' ? false : true,
+          'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals
+        };
+
+        for(var y=0;y<years;y++) {
+          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y);
+        }
+      }
+
+      return npvReport;
+    }
 
     reports.runReport = function(type){
       if (!type) {console.log('!!! - need to enter a report type');}
 
 
       reports[type] = this.filterFinancialReport();
+      console.log('2. Saved a new report')
 
       // if active not set yet, instantiate as base report
       if (reports.active.length === 0) {
         angular.copy(reports.base, reports.active);
+        // reports.active = reports.base;
         console.log('copied base to active');
       }
       
+      // if (type === 'active') { console.log('changed to false'); navService.servicesInQueue = false;}
     }
 
     reports.getMetricTotal = function(name){
@@ -105,7 +152,7 @@ angular.module('appliedByDesignApp')
     }
 
     reports.getRevenueForecast = function(type){
-
+      console.log('3. get new revenues')
       if (!type || !reports[type]) {console.log('invalid report type entered as argument'); return;}
 
       var revenueForecast = [];
@@ -129,7 +176,19 @@ angular.module('appliedByDesignApp')
 
       return revenueForecast;
     }
+    reports.getRevenueForecastData = function(){
+      var b =  reports.getRevenueForecast('base');
+      var a =  reports.getRevenueForecast('active');
+      var forecast = [];
 
+      a.forEach(function(data, i){
+        forecast.push({'year': data.year, 'base': b[i].val, 'active': data.val - b[i].val});
+      })
+
+      // revenue forcast data for D3;
+      console.log('new forecast data - stacked chart should update!')
+      return forecast;
+    }
 
     function mapSum(a,b){
       return a+b;
@@ -258,28 +317,7 @@ angular.module('appliedByDesignApp')
       return outputReports;
     }
 
-    function runNpvReport(discount, years, fullReport){
 
-      var reportMetrics  = _.pluck(_.where(fullReport[0].data,{isCurrency:true}),'name');
-      var npvReport = [];
-
-      for(var m=0;m<reportMetrics.length;m++) {
-
-        npvReport[m] = {};
-        npvReport[m] = {
-          'name': reportMetrics[m],
-          'val': 0,
-          'isExpense': reportMetrics[m] === 'Revenue' ? false : true,
-          'decimals': _.findWhere(fullReport[0].data,{name:reportMetrics[m]}).decimals
-        };
-
-        for(var y=0;y<years;y++) {
-          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y);
-        }
-      }
-
-      return npvReport;
-    }
 
 
     function findArray(inputArray,searchCrit,key){
@@ -337,17 +375,17 @@ angular.module('appliedByDesignApp')
     //     // var currentNPV  = npvReport(discount, years, filterFinancialReport());
     //     // var baselineNPV = npvReport(discount, years, filterFinancialReport());
 
-    //     var deltaNPV = [];
+    //     var deltaNpv = [];
     //     for(var n=0;n<currentNPV.length;n++)
     //     {
-    //       deltaNPV[n] = {};
+    //       deltaNpv[n] = {};
 
-    //       deltaNPV[n] = { 'name': currentNPV[n].name,
+    //       deltaNpv[n] = { 'name': currentNPV[n].name,
     //                       'val':  currentNPV[n].val-baselineNPV[n].val,
     //                       'decimals': currentNPV[n].decimals};
     //     }
 
-    //     return deltaNPV;
+    //     return deltaNpv;
 
     //   },
     //   getPerFltRevenue: function(){

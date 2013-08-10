@@ -422,7 +422,7 @@
                             <h2 class="report-title sub-heading"><span>per/Flight</span></h2>
                             <div class="summary-table report">
                                 <!-- <h3 class="heading small">Route Total</h3> -->
-                                <div ng-repeat="metric in metricsBase | filter:{isCurrency:'true'}">
+                                <div ng-repeat="metric in metricsBase() | filter:{isCurrency:'true'}">
                                     <div class="row-wrap">
                                         <h4 class="left">{{metric.name}}:</h4>
                                         <h4 class="number per-flight delta">
@@ -434,7 +434,7 @@
                                         <h4 class="number per-flight delta highlight">
                                             <span class="dollar" ng-show="metric.isCurrency">$</span>
                                             <span ng-show="metric.isExpense">(</span>
-                                            {{ perFlightDeltas()[$index].val }}
+                                            {{ deltaMetrics()[$index].val | number:0 }}
                                             <span ng-show="metric.isExpense">)</span>
                                         </h4>
                                     </div>

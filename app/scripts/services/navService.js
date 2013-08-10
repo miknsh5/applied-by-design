@@ -15,6 +15,7 @@ angular.module('appliedByDesignApp')
     obj.activeFleetModel = 0;
     obj.activeYear       = 0;
     obj.activeMetricName = 'Crew';
+    obj.servicesInQueue  = false;
 
 
     obj.togglePanel = function(){
@@ -55,6 +56,7 @@ angular.module('appliedByDesignApp')
     obj.toggleFleetService = function(id) {
       var state = obj.equipment[obj.activeFleetModel].services[id].val;
       obj.equipment[obj.activeFleetModel].services[id].val = !state;
+      obj.servicesInQueue = true;
       return obj.equipment;
     }
 
