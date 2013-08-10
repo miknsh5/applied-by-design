@@ -13,14 +13,15 @@ angular.module('appliedByDesignApp')
       },
       link: function postLink(scope, element) {
 
-        var forecastData = [
-          {'year': 2013, 'revA': 100, 'revB': 20},
-          {'year': 2014, 'revA': 130, 'revB': 15},
-          {'year': 2015, 'revA': 125, 'revB': 30},
-          {'year': 2016, 'revA': 125, 'revB': 30},
-          {'year': 2017, 'revA': 125, 'revB': 30}
-        ];
+        // var forecastData = [
+        //   {'year': 2013, 'revA': 100, 'revB': 20},
+        //   {'year': 2014, 'revA': 130, 'revB': 15},
+        //   {'year': 2015, 'revA': 125, 'revB': 30},
+        //   {'year': 2016, 'revA': 125, 'revB': 30},
+        //   {'year': 2017, 'revA': 125, 'revB': 30}
+        // ];
 
+        var forecastData = scope.data;
 
         var w = 300,
             h = 200,
@@ -36,7 +37,7 @@ angular.module('appliedByDesignApp')
             .attr('transform', 'translate(' + p[3] + ',' + (h - p[2]) + ')');
 
         // Transpose the data into layers by cause.
-        var revenues = d3.layout.stack()(['revA', 'revB'].map(function(type) {
+        var revenues = d3.layout.stack()(['base', 'active'].map(function(type) {
           return forecastData.map(function(d) {
             return {x: d.year, y: d[type]};
           });

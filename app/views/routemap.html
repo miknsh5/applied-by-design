@@ -434,7 +434,7 @@
                                         <h4 class="number per-flight delta highlight">
                                             <span class="dollar" ng-show="metric.isCurrency">$</span>
                                             <span ng-show="metric.isExpense">(</span>
-                                            {{ metricsDelta[$index].val }}
+                                            {{ perFlightDeltas()[$index].val }}
                                             <span ng-show="metric.isExpense">)</span>
                                         </h4>
                                     </div>
@@ -459,11 +459,11 @@
                     <div class="report-row">
                         <div class="module split">
                             <h2 class="report-title">Forecast</h2>
-                            <stacked-chart data="forecastData"></stacked-chart>
+                            <stacked-chart data="revenueForecast"></stacked-chart>
                         </div>
                         <div class="module split">
                             <h2 class="report-title">NPV Analysis</h2>
-                            <div class="npv">${{npv | number:0}}</div>
+                            <div class="npv">${{npvTotal() | number:0}}</div>
                         </div>
                     </div>
 

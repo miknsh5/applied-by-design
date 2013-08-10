@@ -105,13 +105,13 @@ angular.module('appliedByDesignApp')
     }
 
     reports.getRevenueForecast = function(type){
+
+      if (!type || !reports[type]) {console.log('invalid report type entered as argument'); return;}
+
       var revenueForecast = [];
 
-      if (!reports[type]) { console.log('invalid report type'); return [];}
-      if (reports[type].length === 0) { console.log('reports not ready yet'); return [];}
-
       // loop through each annual forecast and retrieve the revenue object
-      angular.forEach(reports[type], function(annualReport) {
+      reports[type].forEach(function(annualReport) {
         var revenue = _.where(annualReport.data, {'name': 'Revenue'});
 
         // make sure only 1 revenue object is being returned
@@ -129,6 +129,7 @@ angular.module('appliedByDesignApp')
 
       return revenueForecast;
     }
+
 
     function mapSum(a,b){
       return a+b;
