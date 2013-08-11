@@ -20,8 +20,7 @@ angular.module('appliedByDesignApp')
         return routeReport[id].NonDirectional;
       },
       // Get Financial Report for some subset of the total fleet/routes
-      buildFinancialReport: function(forecast, isUpdate) {
-        // if (isUpdate) == true, then don't reload services or equipment.
+      buildFinancialReport: function(forecast) {
 
         // Retrieve data dependencies
         var revFlights   = fleetModel.getData('flights');
@@ -57,6 +56,7 @@ angular.module('appliedByDesignApp')
           outputCost = {};
           outputOps = {'RPM':0,'ASK':0,'PAX':0,'Seats':0,'Weeky Freq.':0};
           studyyear = startYear + y;
+          reportArray = [];
 
           // Calculate frequency, capacity, load factor, fare and total revenue for each flight
           for(var i = 0;i<revFlights.length;i++) {
@@ -145,15 +145,19 @@ angular.module('appliedByDesignApp')
 
           // Save year report and clear report variable
           outputReport[y] = {'fleetReport':jQuery.extend(true, {}, reportArray)};
-          reportArray = [];
         }
 
         // Store and return financial report
-        financialReports.setReport('flight', outputReport);
+        if (financialReports.base.length === 0) {
+          // no reports set yet, initialize base and active reports now
+          financialReports.setFlightFinancials('base', outputReport);
+          financialReports.runReport('base');
+        }
 
-        // only set the base financials on the first instantiation. Updates should only 
-        // generate new active reports.
-        (isUpdate) ? financialReports.runReport('active') : financialReports.runReport('base');
+        // always update the active report
+        financialReports.setFlightFinancials('active', outputReport);
+        financialReports.runReport('active');
+
 
       },
       generateEquipment: function() {

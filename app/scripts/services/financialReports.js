@@ -6,12 +6,16 @@ angular.module('appliedByDesignApp')
     // Service logic
 
     var reports = {};
-    reports.flight  = [];
     reports.base    = [];
     reports.active  = [];
-    reports.fleet   = [];
+    // reports.fleet   = [];
     reports.npv     = [];
 
+    var flightFinancials = {};
+    flightFinancials.base   = [];
+    flightFinancials.active = [];
+
+    // var rebase = false; //set this flag to true when new base set of reports are needed
 
     reports.getReport = function(type){
       
@@ -61,14 +65,14 @@ angular.module('appliedByDesignApp')
       return reports[type][year].perFlight[fleetId].metrics;
     }
 
-    reports.getRouteReport = function(routename){
+    reports.getRouteReport = function(routeName){
       
-      if (!routename) {
-        console.log('!!! - need to enter a routename');
+      if (!routeName) {
+        console.log('!!! - need to enter a routeName');
         return
       }
 
-      return this.filterFinancialReport(routename);
+      return this.filterFinancialReport('active', routeName);
     };
 
     reports.getYears = function() {
@@ -121,18 +125,18 @@ angular.module('appliedByDesignApp')
     reports.runReport = function(type){
       if (!type) {console.log('!!! - need to enter a report type');}
 
-
-      reports[type] = this.filterFinancialReport();
-      console.log('2. Saved a new report')
-
-      // if active not set yet, instantiate as base report
-      if (reports.active.length === 0) {
-        angular.copy(reports.base, reports.active);
-        // reports.active = reports.base;
-        console.log('copied base to active');
-      }
       
-      // if (type === 'active') { console.log('changed to false'); navService.servicesInQueue = false;}
+      console.log('2.1 go filterFinancialReport [' + type + ']');
+      reports[type] = this.filterFinancialReport(type);
+      console.log('2.2 Saved a new report [' + type + ']');
+
+      // // if active not set yet, instantiate as base report
+      // if (reports.active.length === 0) {
+      //   angular.copy(reports.base, reports.active);
+      //   // reports.active = reports.base;
+      //   console.log('copied base to active');
+      // }
+      
     }
 
     reports.getMetricTotal = function(name){
@@ -149,6 +153,13 @@ angular.module('appliedByDesignApp')
       }
 
       reports[type] = report;
+    }
+
+    reports.setFlightFinancials = function(type, report){
+      if (!type || !report) { console.log('*** Need to enter more arguments!'); return;}
+
+      flightFinancials[type] = report;
+      console.log('1. Set Flight Financials[' + type + ']');
     }
 
     reports.getRevenueForecast = function(type){
@@ -194,9 +205,16 @@ angular.module('appliedByDesignApp')
       return a+b;
     }
 
-    reports.filterFinancialReport = function(routeName){
-      // flightFinancials
-      var finReport = reports.flight;
+    reports.filterFinancialReport = function(type, routeName){
+      
+      // make sure the right inputs are supplied
+      if (type!=='base' && type !=='active'){
+        console.log('!WHoops! - need to pass in ACTIVE or BASE flag');
+        return;
+      }
+
+      // if (isUpdate) then user active financials, otherwise use base
+      var finReport = flightFinancials[type];
       var outputReports = [];
       var filteredReport;
       var yearReport = {};
@@ -210,11 +228,9 @@ angular.module('appliedByDesignApp')
       var filterByAP = _.pluck(_.where(equipment,{active:true}),'code');
       var equipReport;
 
-      for(var y=0;y<finReport.length;y++)
-      {
+      for(var y=0;y<finReport.length;y++) {
         equipReport  = findArray(finReport[y].fleetReport,filterByAP,'Equipment');
-        if (typeof routeName !== 'undefined')
-        {
+        if (routeName) {
           filteredReport = _.where(equipReport,{NonDirectional: routeName});
 
           //Route Details Report

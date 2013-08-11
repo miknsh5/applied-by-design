@@ -28,6 +28,7 @@ angular.module('appliedByDesignApp')
     }
 
 
+
     //NPV Calculation
     $scope.years = 5;
     $scope.rate = 0.08;
@@ -38,13 +39,14 @@ angular.module('appliedByDesignApp')
     $scope.$watch(function(){return financialReports.getReport('active');}, function(){
     //   console.log('yep - new active Report!');
       console.log('New Revenues!');
-      $scope.revenueForecast = financialReports.getRevenueForecastData();
-      console.log($scope.revenueForecast);
+      // $scope.revenueForecast = financialReports.getRevenueForecastData();
+      // console.log($scope.revenueForecast);
     }, true);
 
     
 
     $scope.revenueForecast = financialReports.getRevenueForecastData();
+    
 
     // binding return function directly to the directive data attribute makes angular explode
     // $scope.revenueForecast = $scope.getRevenues();
