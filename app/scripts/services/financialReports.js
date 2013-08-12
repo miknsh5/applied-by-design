@@ -16,6 +16,10 @@ angular.module('appliedByDesignApp')
     flightFinancials.base   = [];
     flightFinancials.active = [];
 
+    var metrics = {};
+    metrics.base = [];
+    metrics.active = [];
+
     // var rebase = false; //set this flag to true when new base set of reports are needed
 
     reports.getReport = function(type){
@@ -28,6 +32,36 @@ angular.module('appliedByDesignApp')
 
       return reports[type];
     };
+
+    reports.getMetricData = function(){
+
+      var year        = navService.activeYear;
+      var metricName  = navService.activeMetricName;
+      var fleetId     = navService.activeFleetModel;
+
+      // collect raw metric data
+      var base = reports.base[year].perFlight[fleetId].metrics;
+      var active = reports.active[year].perFlight[fleetId].metrics;
+
+      var metricReport = [];
+      base.forEach(function(metric, key) {
+        
+        var baseVal = metric.val;
+        var activeVal = active[key].val;
+
+        metricReport.push({
+          'title': metric.name,
+          'subtitle': metric.name,
+          'ranges': [baseVal, activeVal],
+          'measures': [150, 175],
+          'markers': [110]
+        });
+
+      });
+
+      return metricReport;
+    }
+
 
     reports.getDeltaMetrics = function(){
 
@@ -162,6 +196,7 @@ angular.module('appliedByDesignApp')
       flightFinancials[type] = report;
       console.log('1. Set Flight Financials[' + type + ']');
     }
+
 
     reports.getRevenueForecast = function(type){
       console.log('3. get new revenues')

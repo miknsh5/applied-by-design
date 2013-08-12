@@ -19,7 +19,8 @@ angular.module('appliedByDesignApp')
     $scope.toggleService = function(id){
       navService.toggleFleetService(id)[0];
       reportBuilder.buildFinancialReport(true, true);
-      
+      $scope.metricData = financialReports.getMetricData();
+      console.log($scope.metricData)
     };
 
 
@@ -31,6 +32,11 @@ angular.module('appliedByDesignApp')
       return financialReports.getFlightMetrics('active');
     };
 
+    $scope.metricData = financialReports.getMetricData();
+    
+    // $scope.metricData = function(){
+    //   return financialReports.getMetricData();
+    // };
 
 
     $scope.incrementRate = function(incr) {
