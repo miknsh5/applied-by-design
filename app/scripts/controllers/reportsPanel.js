@@ -27,7 +27,12 @@ angular.module('appliedByDesignApp')
       return financialReports.getDeltaMetrics();
     }
 
-
+    $scope.incrementRate = function(incr) {
+      $scope.rate += incr; 
+    }
+    $scope.changeDuration = function(yr) {
+      $scope.years = yr; 
+    }
 
     //NPV Calculation
     $scope.years = 5;
@@ -37,15 +42,14 @@ angular.module('appliedByDesignApp')
     }
 
     $scope.$watch(function(){return financialReports.getReport('active');}, function(){
-    //   console.log('yep - new active Report!');
-      console.log('New Revenues!');
-      // $scope.revenueForecast = financialReports.getRevenueForecastData();
+      console.log('4.0 New Revenues!');
+      $scope.revenueForecast = financialReports.getRevenueForecastData();
       // console.log($scope.revenueForecast);
     }, true);
 
     
 
-    $scope.revenueForecast = financialReports.getRevenueForecastData();
+    // $scope.revenueForecast = financialReports.getRevenueForecastData();
     
 
     // binding return function directly to the directive data attribute makes angular explode

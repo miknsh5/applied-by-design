@@ -464,6 +464,28 @@
                         <div class="module split">
                             <h2 class="report-title">NPV Analysis</h2>
                             <div class="npv">${{npvTotal() | number:0}}</div>
+                            <div class="rate-wrapper">
+                                <div class="rate-btns">
+                                    <div class="increment-btn" ng-click="incrementRate(.01)"><i class="ikon-chevron-up"></i></div>
+                                    <div class="increment-btn" ng-click="incrementRate(-.01)"><i class="ikon-chevron-down"></i></div>
+                                </div>
+                                <div class="settings">
+                                    <div class="title">Discount Rate: </div>
+                                    <div class="value">{{ rate * 100 | number:1}} %</div>
+                                </div>
+                            </div>
+                            <div class="duration-wrapper">
+                                <div class="settings wider">
+                                    <div class="title">Duration: <span class="value">{{years}} years</span></div>
+                                    <div class="year-btns">
+                                        <div class="year" ng-class="{active: years==1}" ng-click="changeDuration(1)">1</div>
+                                        <div class="year" ng-class="{active: years==2}" ng-click="changeDuration(2)">2</div>
+                                        <div class="year" ng-class="{active: years==3}" ng-click="changeDuration(3)">3</div>
+                                        <div class="year" ng-class="{active: years==4}" ng-click="changeDuration(4)">4</div>
+                                        <div class="year" ng-class="{active: years==5}" ng-click="changeDuration(5)">5</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

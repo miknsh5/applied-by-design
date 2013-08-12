@@ -10,6 +10,7 @@ angular.module('appliedByDesignApp')
     reports.active  = [];
     // reports.fleet   = [];
     reports.npv     = [];
+    // reports.revenue = {};
 
     var flightFinancials = {};
     flightFinancials.base   = [];
@@ -169,7 +170,7 @@ angular.module('appliedByDesignApp')
       var revenueForecast = [];
 
       // loop through each annual forecast and retrieve the revenue object
-      reports[type].forEach(function(annualReport) {
+      angular.forEach(reports[type], function(annualReport) {
         var revenue = _.where(annualReport.data, {'name': 'Revenue'});
 
         // make sure only 1 revenue object is being returned

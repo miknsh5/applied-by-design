@@ -78,6 +78,10 @@ $filter-bar-height: 40px;
     background-color: rgba(0,0,0,0.05);
     color: $color-blue;
   }
+  &.active {
+    background-color: $color-blue;
+    color: $font-white;
+  }
 }
 
 @mixin headingStyles1 {
@@ -598,6 +602,21 @@ h4.left {
   }
 }
 
+
+.increment-btn {
+  width: 40px;
+  height: 25px;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0 2px;
+  margin-top: 5px;
+
+  @include light-button;
+}
+
 .report-container {
   width: 60%;
   min-width: 760px;
@@ -639,6 +658,8 @@ h4.left {
     display: inline-block;
   }
  
+
+
   .report-wrapper {
     margin: 40px;
 
@@ -671,6 +692,63 @@ h4.left {
         font-size: 3em;
         color: $color-blue;
         margin: 40px 0;
+      }
+
+
+      .settings {
+        font-size: 2em;
+        margin: 10px 0;
+        width: 140px;
+        float: left;
+        text-align: left;
+
+        &.wider {
+          width: 170px;
+        }
+
+        .title {
+          color: $color-gray;
+          font-size: 0.6em;
+        }
+
+        .value {
+          line-height: 1.2em;
+          font-size: 1.2em;
+          color: $color-blue;
+          vertical-align: top;
+        }
+      }
+
+      .rate-wrapper {
+        // clear: both;
+
+        .rate-btns {
+          width: 55px;
+          display: inline-block;
+          float: left;
+          padding-top: 5px;
+        }
+
+      }
+      .duration-wrapper {
+        // clear: both;
+        // margin-left: 70px;
+
+        .year-btns{
+          margin: 10px 0;
+        }
+        .year {
+          width: 25px;
+          height: 30px;
+          font-size: 0.5em;
+          font-weight: 800;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+
+          @include border-radius(30px);
+          @include light-button;
+        }
       }
     }
 
