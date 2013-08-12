@@ -167,24 +167,39 @@ angular.module('appliedByDesignApp')
       console.log('3. get new revenues')
       if (!type || !reports[type]) {console.log('invalid report type entered as argument'); return;}
 
+      var getFleetTotals = true; // debugging pusposes until we figure out which one we want.
+
       var revenueForecast = [];
+      
+      // revenue by total fleet
+      if (getFleetTotals) {
+        reports[type].forEach(function(annualReport){
+          console.log('defaulting revenues to ID=0 equipment')
+          var data = annualReport.Revenue.data[0];
+          data.year = annualReport.year
+          revenueForecast.push(data);
+        });
+      }
 
+      // revenue by individual fleet model types
       // loop through each annual forecast and retrieve the revenue object
-      angular.forEach(reports[type], function(annualReport) {
-        var revenue = _.where(annualReport.data, {'name': 'Revenue'});
+      // if (!getFleetTotals){
+      //   angular.forEach(reports[type], function(annualReport) {
+      //     var revenue = _.where(annualReport.data, {'name': 'Revenue'});
 
-        // make sure only 1 revenue object is being returned
-        if (revenue.length !== 1) {
-          console.log('Woah! - somethings goofed with the revenue forecasts!');
-          return;
-        }
+      //     // make sure only 1 revenue object is being returned
+      //     if (revenue.length !== 1) {
+      //       console.log('Woah! - somethings goofed with the revenue forecasts!');
+      //       return;
+      //     }
 
-        // append the current forecast year to the object being built for d3
-        revenue[0].year = annualReport.year;
+      //     // append the current forecast year to the object being built for d3
+      //     revenue[0].year = annualReport.year;
 
-        //push revenue object to revenueForecast array formatted for d3
-        revenueForecast.push(revenue[0]);
-      });
+      //     //push revenue object to revenueForecast array formatted for d3
+      //     revenueForecast.push(revenue[0]);
+      //   });
+      // }
 
       return revenueForecast;
     }
@@ -195,6 +210,8 @@ angular.module('appliedByDesignApp')
 
       a.forEach(function(data, i){
         forecast.push({'year': data.year, 'base': b[i].val, 'active': data.val - b[i].val});
+        // forecast.push({'base': b[i].val, 'active': data.val - b[i].val});
+        console.log('ACTIVE: ' + data.val + '|' + a[i].val + ' :BASE:' + b[i].val);
       })
 
       // revenue forcast data for D3;

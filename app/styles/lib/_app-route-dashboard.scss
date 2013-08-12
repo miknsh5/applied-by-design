@@ -617,10 +617,41 @@ h4.left {
   @include light-button;
 }
 
+.arrow-btns {
+  position: relative;
+  top: -65px;
+}
+.next-btn {
+  width: 25px;
+  height: 45px;
+  font-size: 1.2em;
+  line-height: 2.8em;
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0 2px;
+  margin-top: 5px;
+
+  @include dark-button;
+
+  &.next {
+    float: right;
+  }
+  &.prev {
+    float: left;
+  }
+
+  &:hover {
+    color: #444 !important;
+    background-color: #888 !important;
+  };
+}
+
 .report-container {
-  width: 60%;
-  min-width: 760px;
-  max-width: 900px;
+  // width: 60%;
+  // min-width: 880px;
+  // max-width: 900px;
+  width: 900px;
   height: 100%;
   position: absolute;
   background-color: $font-whitewhite;
@@ -720,7 +751,6 @@ h4.left {
       }
 
       .rate-wrapper {
-        // clear: both;
 
         .rate-btns {
           width: 55px;

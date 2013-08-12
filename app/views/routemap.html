@@ -403,11 +403,15 @@
                         <i class="ikon-download-alt"></i>
                     </div>
                     <h1 class="report">Financial Report: 
-                        <span class="primary"><i class="ikon-airplane"> </i> {{fleetModel.name}}</span>
+                        <span class="primary"><i class="ikon-airplane"> </i> {{fleetModel().name}}</span>
                     </h1>
+                    <div class="arrow-btns">
+                        <div class="next-btn prev" ng-click="prevModel()"><i class="ikon-chevron-left"></i></div>
+                        <div class="next-btn next" ng-click="nextModel()"><i class="ikon-chevron-right"></i></div>
+                    </div>
                     <h2 class="report-title">Services</h2>
                     <div class="services">
-                        <div ng-repeat="service in fleetModel.services">
+                        <div ng-repeat="service in fleetModel().services">
                             <span ng-class="{active: service.val}" ng-click="toggleService($index)">
                                 <i class="ikon-{{ikons[$index]}}"> </i>
                             </span>
@@ -456,6 +460,9 @@
                             <donut-chart data="activeChartData"></donut-chart>
                         </div>
                     </div>
+
+
+
                     <div class="report-row">
                         <div class="module split">
                             <h2 class="report-title">Forecast</h2>

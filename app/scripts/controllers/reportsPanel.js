@@ -6,12 +6,20 @@ angular.module('appliedByDesignApp')
 
     $scope.ikons = ['mobile', 'wrench', 'cog-2', 'stats'];
 
-    $scope.fleetModel = navService.equipment[0];
+    $scope.fleetModel = function (){
+      return navService.equipment[navService.activeFleetModel];
+    }
 
+    $scope.deltaMetrics = function(){
+      return financialReports.getDeltaMetrics();
+    }
+
+    // $scope.deltaMetrics = financialReports.getDeltaMetrics();
+    
     $scope.toggleService = function(id){
-      $scope.fleetModel = navService.toggleFleetService(id)[0];
-      // $scope.$emit('serviceUpdate', id);
+      navService.toggleFleetService(id)[0];
       reportBuilder.buildFinancialReport(true, true);
+      
     };
 
 
@@ -23,15 +31,28 @@ angular.module('appliedByDesignApp')
       return financialReports.getFlightMetrics('active');
     };
 
-    $scope.deltaMetrics = function(){
-      return financialReports.getDeltaMetrics();
-    }
+
 
     $scope.incrementRate = function(incr) {
       $scope.rate += incr; 
     }
     $scope.changeDuration = function(yr) {
       $scope.years = yr; 
+    }
+    $scope.prevModel = function(){
+      var id = navService.activeFleetModel -= 1;
+
+      // loop around to other end of equipment if id < 0
+      if (id < 0) { id = navService.equipment.length - 1;}
+      navService.activeFleetModel = id;
+    }
+
+    $scope.nextModel = function(){
+      var id = navService.activeFleetModel += 1;
+
+      // loop around to other end of equipment if id > equip length
+      if (id > navService.equipment.length-1) { id = 0;}
+      navService.activeFleetModel = id;
     }
 
     //NPV Calculation
