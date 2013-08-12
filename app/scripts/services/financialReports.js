@@ -116,7 +116,7 @@ angular.module('appliedByDesignApp')
         };
 
         for(var y=0;y<years;y++) {
-          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y);
+          npvReport[m].val = npvReport[m].val + (_.findWhere(fullReport[y].data,{name:reportMetrics[m]}).val)/Math.pow(1+discount,y+1);
         }
       }
 
