@@ -7,21 +7,21 @@
         }
     },
     "MaintenanceService": {
-        "Maintenace": {
+        "Maintenance": {
             "A": 1,
             "B": 0.9,
             "C": 1
         }
     },
     "CrewService": {
-        "Fuel": {
+        "Crew": {
             "A": 1,
             "B": 0.92,
             "C": 1
         }
     },
     "FuelMaintService": {
-        "Maintenace": {
+        "Maintenance": {
             "A": 1,
             "B": 0.95,
             "C": 1
