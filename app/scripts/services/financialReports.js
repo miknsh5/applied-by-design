@@ -211,7 +211,7 @@ angular.module('appliedByDesignApp')
       a.forEach(function(data, i){
         forecast.push({'year': data.year, 'base': b[i].val, 'active': data.val - b[i].val});
         // forecast.push({'base': b[i].val, 'active': data.val - b[i].val});
-        console.log('ACTIVE: ' + data.val + '|' + a[i].val + ' :BASE:' + b[i].val);
+        // console.log('ACTIVE: ' + data.val + '|' + a[i].val + ' :BASE:' + b[i].val);
       })
 
       // revenue forcast data for D3;
