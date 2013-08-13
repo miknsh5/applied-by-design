@@ -35,7 +35,7 @@ angular.module('appliedByDesignApp')
             .attr('transform', 'translate(' + p[3] + ',' + (h - p[2]) + ')');
 
         scope.$watch('data', function(data){
-          console.log('---new data for stacked chart---');
+          // console.log('---new data for stacked chart---');
 
           // Transpose the data into layers by cause.
           var revenues = d3.layout.stack()(['base', 'active'].map(function(type) {

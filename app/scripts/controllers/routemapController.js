@@ -3,6 +3,10 @@
 angular.module('appliedByDesignApp')
   .controller('RoutemapCtrl', function ($scope, reportBuilder, navService, financialReports) {
 
+    //DEBUGGING
+    $scope.showReport = true
+    // ------------------------
+
     // set the dimensions of main SVG canvas
     $scope.mapWidth  = 1800;
     $scope.mapHeight = 1200;
@@ -29,7 +33,7 @@ angular.module('appliedByDesignApp')
     $scope.toggleReport = function(){
       $scope.showReport = navService.toggleReportPanel();
     };
-
+    
 
     // Dashboard Panel Tab Navigation
     $scope.activeTab = navService.activeTab;

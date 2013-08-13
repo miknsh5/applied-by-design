@@ -425,13 +425,18 @@ h4.left {
   margin-right: 5%;
   float: left;
 }
-.split-3-2 {
-  width: 60%;
-  margin-right: 5%;
+.split-1-3 {
+  width: 40%;
+  margin-right: 0%;
   float: left;
 }
-.split-3-1 {
-  width: 30%;
+
+.bullet-chart {
+  margin-top: 65px;
+}
+
+.split-2-3 {
+  width: 50%;
   margin-right: 5%;
   float: left;
 }
@@ -454,7 +459,7 @@ h4.left {
       color: $font-darkgray;
       text-align: left;
       &.left {
-        width: 50%;
+        width: 47%;
         margin-left: 3%;
         float: left;
       }
@@ -510,7 +515,7 @@ h4.left {
 
     &.delta {
       // font-size: 1.2em;
-      width: 22%;
+      width: 25%;
     }
 
     &.highlight {
@@ -522,6 +527,10 @@ h4.left {
     width: 100%;
     height: 25px;
     clear: both;
+
+    &.bullet-row {
+      height: 45px;
+    }
 
     &.total {
       border-top: dotted 2px;

@@ -31,7 +31,7 @@ angular.module('appliedByDesignApp')
 
         // watch for udpates to the data
         scope.$watch('data', function(data){
-          console.log('---new data for chart---');
+          console.log('---new data for chart--- why is this running?');
 
           // data updated, make sure it's not empty
           if (data) {
@@ -39,7 +39,7 @@ angular.module('appliedByDesignApp')
 
           } else {
             // remove chart if data is empty
-            console.log('no data!');
+            console.log('no data! - why is this running?');
 
             // svg.selectAll('path').remove();
             // labels.selectAll('line').remove();

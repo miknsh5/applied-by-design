@@ -10,19 +10,22 @@ angular.module('appliedByDesignApp')
       return navService.equipment[navService.activeFleetModel];
     }
 
-    $scope.deltaMetrics = function(){
-      return financialReports.getDeltaMetrics();
-    }
+    $scope.$watch(function(){return navService.equipment;}, function(){
+      $scope.deltaMetrics = financialReports.getDeltaMetrics();      
+    }, true);
 
-    // $scope.deltaMetrics = financialReports.getDeltaMetrics();
-    
+    $scope.$watch(function(){return navService.activeFleetModel;}, function(){
+      $scope.deltaMetrics = financialReports.getDeltaMetrics();      
+    }, true);
+
     $scope.toggleService = function(id){
       navService.toggleFleetService(id)[0];
       reportBuilder.buildFinancialReport(true, true);
-      $scope.metricData = financialReports.getMetricData();
-      console.log($scope.metricData)
     };
 
+    $scope.deltaMetric = function(name){
+      return _.findWhere($scope.deltaMetrics, {'name':name}).val;
+    }
 
     $scope.metricsBase = function(){
       return financialReports.getFlightMetrics('base');
@@ -32,12 +35,8 @@ angular.module('appliedByDesignApp')
       return financialReports.getFlightMetrics('active');
     };
 
-    $scope.metricData = financialReports.getMetricData();
+    $scope.metricChartData = financialReports.getMetricData().finance;
     
-    // $scope.metricData = function(){
-    //   return financialReports.getMetricData();
-    // };
-
 
     $scope.incrementRate = function(incr) {
       $scope.rate += incr; 
@@ -69,7 +68,7 @@ angular.module('appliedByDesignApp')
     }
 
     $scope.$watch(function(){return financialReports.getReport('active');}, function(){
-      console.log('4.0 New Revenues!');
+      // console.log('4.0 New Revenues!');
       $scope.revenueForecast = financialReports.getRevenueForecastData();
       // console.log($scope.revenueForecast);
     }, true);

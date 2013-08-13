@@ -28,5 +28,22 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "description": "demo",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miknsh5/applied-by-design.git"
+  },
+  "author": "Nash",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/miknsh5/applied-by-design/issues"
   }
 }

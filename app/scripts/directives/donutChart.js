@@ -58,8 +58,6 @@ angular.module('appliedByDesignApp')
 
         // watch for udpates to the data
         scope.$watch('data', function(data){
-          console.log('---new data for chart---');
-
 
           function arcTween(a) {
             var i = d3.interpolate(this._current, a);
@@ -121,7 +119,7 @@ angular.module('appliedByDesignApp')
 
           } else {
             // remove chart if data is empty
-            console.log('no data!');
+            // console.log('no data!');
 
             svg.selectAll('path').remove();
             labels.selectAll('line').remove();

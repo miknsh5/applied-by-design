@@ -43,19 +43,39 @@ angular.module('appliedByDesignApp')
       var base = reports.base[year].perFlight[fleetId].metrics;
       var active = reports.active[year].perFlight[fleetId].metrics;
 
-      var metricReport = [];
+      var metricReport = {};
+      metricReport.finance = [];
+      metricReport.ops = [];
+
+      // only grab financial metrics right now
+      // base = _.where(base, {'isCurrency': true});
+      // base = _.where(base, {'isCurrency': true});
+
       base.forEach(function(metric, key) {
         
+        // default forecast year=0
+        // get min and max for each metric across entire fleet
+        var maxVal = _.max(reports.base[0].perFlight, function(equip){return equip.metrics[key].val});
+        var minVal = _.min(reports.base[0].perFlight, function(equip){return equip.metrics[key].val});
+        var sum = _.reduce(reports.base[0].perFlight, function(memo, equip){return equip.metrics[key].val + memo;}, 0);
+        var avg = sum / reports.base[0].perFlight.length;
+
         var baseVal = metric.val;
         var activeVal = active[key].val;
 
-        metricReport.push({
-          'title': metric.name,
-          'subtitle': metric.name,
-          'ranges': [baseVal, activeVal],
-          'measures': [150, 175],
-          'markers': [110]
-        });
+        var data = {
+          // 'title': metric.name,
+          // 'subtitle': metric.name,
+          'ranges': [minVal.metrics[key].val, maxVal.metrics[key].val],
+          'measures': [baseVal, activeVal],
+          'markers': [avg]
+        }
+        // split up the metric reports by type (isCurrency)
+        if (metric.isCurrency) {
+          metricReport.finance.push(data);
+        } else {
+          metricReport.ops.push(data);
+        }
 
       });
 
@@ -70,14 +90,17 @@ angular.module('appliedByDesignApp')
       var deltaMetrics = [];
       for (var i=0; i<metricsA.length; i++) {
         var delta = metricsA[i].val - metrics0[i].val;
-        deltaMetrics.push({
+        var data = {
             'name': metricsA[i].name,
             'val': delta,
             'isCurrency': metricsA[i].isCurrency,
             'isExpense': metricsA[i].isExpense,
             'decimals': metricsA[i].decimals
-          });
+          }
+        deltaMetrics.push(data);
+        // console.log(data);
       }
+      console.log('calculated new metrics')
       return deltaMetrics;
     };
 
@@ -199,7 +222,7 @@ angular.module('appliedByDesignApp')
 
 
     reports.getRevenueForecast = function(type){
-      console.log('3. get new revenues')
+      // console.log('3. get new revenues')
       if (!type || !reports[type]) {console.log('invalid report type entered as argument'); return;}
 
       var getFleetTotals = true; // debugging pusposes until we figure out which one we want.
@@ -209,8 +232,8 @@ angular.module('appliedByDesignApp')
       // revenue by total fleet
       if (getFleetTotals) {
         reports[type].forEach(function(annualReport){
-          console.log('defaulting revenues to ID=0 equipment')
-          var data = annualReport.Revenue.data[0];
+          // console.log('defaulting revenues to ID=0 equipment')
+          var data = annualReport.Revenue.data[navService.activeFleetModel];
           data.year = annualReport.year
           revenueForecast.push(data);
         });
@@ -250,7 +273,7 @@ angular.module('appliedByDesignApp')
       })
 
       // revenue forcast data for D3;
-      console.log('new forecast data - stacked chart should update!')
+      // console.log('new forecast data - stacked chart should update!')
       return forecast;
     }
 
