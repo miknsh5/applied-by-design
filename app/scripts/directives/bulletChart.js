@@ -2,6 +2,15 @@
 
 angular.module('appliedByDesignApp')
   .directive('bulletChart', function () {
+
+    var margin = {top: 0, right: 40, bottom: 20, left: 20},
+        width = 530 - margin.left - margin.right,
+        height = 40 - margin.top - margin.bottom;
+
+    var chart = d3.bullet()
+        .width(width)
+        .height(height);
+
     return {
       restrict: 'E',
       scope:{
@@ -24,22 +33,17 @@ angular.module('appliedByDesignApp')
         //   {"title":"Satisfaction","subtitle":"out of 5","ranges":[3.5,4.25,5],"measures":[3.2,4.7],"markers":[4.4]}
         // ];
 
-        var margin = {top: 0, right: 40, bottom: 20, left: 20},
-            width = 530 - margin.left - margin.right,
-            height = 40 - margin.top - margin.bottom;
 
-        var chart = d3.bullet()
-            .width(width)
-            .height(height);
-
+        var svg;
 
         scope.$watch('data', function(data){
-
-          if(!data){ console.log('!!! NO DATA !!!'); return; }
-
           console.log('OK - new data in bullet refresh')
-          var svg = d3.select(element[0]).selectAll("svg")
-              .data(data)
+          clearCharts();
+            
+            svg = d3.select(element[0]).selectAll("svg");
+
+
+              svg.data(data)
             .enter().append("svg")
               .attr("class", "bullet")
               .attr("width", width + margin.left + margin.right)
@@ -47,6 +51,7 @@ angular.module('appliedByDesignApp')
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
               .call(chart);
+
 
           var title = svg.append("g")
               .style("text-anchor", "end")
@@ -61,34 +66,17 @@ angular.module('appliedByDesignApp')
               .attr("dy", "1em")
               .text(function(d) { return d.subtitle; });
 
-          })
+        });
 
-            // d3.selectAll("button").on("click", function() {
-            //   svg.datum(randomize).call(chart.duration(1000)); // TODO automatic transition
-            // });
-          
-        // })
-        // function randomize(d) {
-        //   console.log('random')
-        //   if (!d.randomizer) d.randomizer = randomizer(d);
-        //   d.ranges = d.ranges.map(d.randomizer);
-        //   d.markers = d.markers.map(d.randomizer);
-        //   d.measures = d.measures.map(d.randomizer);
-        //   return d;
-        // }
-
-        // function randomizer(d) {
-        //   var k = d3.max(d.ranges) * .2;
-        //   return function(d) {
-        //     return Math.max(0, d + k * (Math.random() - .5));
-        //   };
-        // }
-
-
+        
 
       }
 
+
     };
+        function clearCharts() {
+          d3.select('bullet-chart').selectAll('svg').remove();
+        }
 
 
 

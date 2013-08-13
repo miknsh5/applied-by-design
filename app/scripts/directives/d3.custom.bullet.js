@@ -153,6 +153,7 @@ d3.bullet = function() {
           .attr("transform", bulletTranslate(x1))
           .style("opacity", 1e-6)
           .remove();
+
     });
     d3.timer.flush();
   }

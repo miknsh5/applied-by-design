@@ -11,11 +11,13 @@ angular.module('appliedByDesignApp')
     }
 
     $scope.$watch(function(){return navService.equipment;}, function(){
-      $scope.deltaMetrics = financialReports.getDeltaMetrics();      
+      $scope.deltaMetrics = financialReports.getDeltaMetrics(); 
+      $scope.metricChartData = financialReports.getMetricData().finance;     
     }, true);
 
     $scope.$watch(function(){return navService.activeFleetModel;}, function(){
-      $scope.deltaMetrics = financialReports.getDeltaMetrics();      
+      $scope.deltaMetrics = financialReports.getDeltaMetrics();
+      $scope.metricChartData = financialReports.getMetricData().finance;      
     }, true);
 
     $scope.toggleService = function(id){
@@ -35,7 +37,7 @@ angular.module('appliedByDesignApp')
       return financialReports.getFlightMetrics('active');
     };
 
-    $scope.metricChartData = financialReports.getMetricData().finance;
+    
     
 
     $scope.incrementRate = function(incr) {
