@@ -4,7 +4,7 @@ angular.module('appliedByDesignApp')
   .controller('RoutemapCtrl', function ($scope, reportBuilder, navService, financialReports) {
 
     //DEBUGGING
-    $scope.showReport = true
+    // $scope.showReport = true
     // ------------------------
 
     // set the dimensions of main SVG canvas
