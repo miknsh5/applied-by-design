@@ -350,6 +350,8 @@ body {
   text-align: center;
 }
 
+
+
 .diamond {
   @include transform(rotate(45deg));
   width: 130px;
@@ -360,21 +362,56 @@ body {
   margin: 0 25px;
   top: -65px;
   position: relative;
+  overflow: hidden;
 
-  &.active {
+  .overlay {
+    position: absolute;
+    width:100%;
+    height:100%;
+    // @include transform(rotate(45deg));
+    background-color: rgba(30,30,30,0.70);
 
+    &:hover{
+      background-color: rgba(30,30,30,0.50);
+    }
+
+    &.active {
+      background-color: rgba(30,30,30,0);
+    }
+    
+  }
+  &.signage:before{
+    content:url(../images/diamonds_03.jpg);
+    position: absolute;
+    width: 450%;
+    height: 450%;
+    top: -65%;
+    left: -65%;
+    z-index: -1;
+    @include transform(rotate(-45deg));
+  }
+  &.plane:before{
+    content:url(../images/diamonds_05.jpg);
+    position: absolute;
+    width: 450%;
+    height: 450%;
+    top: -65%;
+    left: -65%;
+    z-index: -1;
+    @include transform(rotate(-45deg));
   }
 
-  &:hover {
-    background-color: #666;
-  }
+
+
+
 
   p {
     color: $color-text-white;
     @include transform(rotate(-45deg));
-    @include font-size(1.6);
+    @include font-size(1.5);
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: 3px;
     position: relative;
     left: -2px;
     top: 18px;
