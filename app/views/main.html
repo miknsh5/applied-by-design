@@ -1,86 +1,149 @@
 
 
-  <div class="landing home"></div>
-  <div class="skrollr-holder plane" data-start="margin-top:100px;" data-end="margin-top:-250px;"></div>
 
 
-  <div class="greeting">  
-    <div class="container">
-      <div class="inner">
-        <h1>Digital Strategy, Design, Development</h1>
+
+<!-- Seats background image, fixed, scroll over -->
+<div class="landing home">
+  <div class="container">
+    <div class="greeting">
+      <h2 class="underline">Applied by Design</h2>
+      <!-- <div class="divider"></div> -->
+      <h3>Modern application solutions for the Aviation World</h3>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="" -->
+
+<!-- <div class="container">
+
+</div> -->
+<!-- service sections -->
+<div class="service-bg">
+  <div class="container">
+    <div class="service-btn-wrap">
+      <div class="diamond" ng-click="showPanel(0)">
+        <p>Business Solutions</p>
+      </div>
+      <div class="diamond" ng-click="showPanel(1)">
+        <p>Project Consulting</p>
+      </div>
+      <div class="diamond" ng-click="showPanel(2)">
+        <p>Domain Expertise</p>
       </div>
     </div>
-  </div>
-  
-  <div id="nav-arrow-1" class="nav-scroll-down">
-    <div class="nav-arrow nav-arrow-light"></div>
-  </div>
-  
-  <div class="img-spacer"></div>
 
-  <div id="strategy-anchor" class="anchor-strip"></div>
+    <!-- Business -->
+    <div class="service-wrapper" ng-show="activePanel==0">
+      <h2>Extending Capabilities for your Business</h2>
+      <p class="lead-copy">We'll work with you to understand every aspect of your aviation needs, create an appropriate web-application strategy, and provide all the leg work to turn your vision into a fully functioning reality.</p>
+      <button type="button" class="btn btn-primary">Learn More</button>   
+      <h3>Example application solutions</h3>
 
-  <div class="feature section-summary">
-    <div class="container">
-      <div class="inner has-nav">
-        <h1>Strategy</h1>
-        <h3>The most important part of your project happens before it begins</h3>
-        <p class="">Your project becomes greater than the sum of its parts when you take a systematic, disciplined approach to understanding your customers, users and collaborators across your industry.</p>
-        <a href="#/services/">
-          <div class="btn btn-info">Read More</div>
-        </a>
+      <div class="service-items">
+        <div class="service-item">
+          <div class="ikon-home-2 ikon"></div>
+          <p>Modernizing home-grown legacy tools</p>
+        </div>
+        <div class="service-item">
+          <div class="ikon-tree ikon"></div>
+          <p>Developing integrated application suites</p>
+        </div>
+        <div class="service-item">
+          <div class="ikon-user-2 ikon"></div>
+          <p>Improving current operational processes</p>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div id="nav-arrow-2" class="nav-scroll-down">
-    <div class="nav-arrow nav-arrow-light"></div>
-  </div>
-  
-  <div class="img-spacer"></div>
 
-  <div id="design-anchor" class="anchor-strip"></div>
+    <!-- Projects -->
+    <div class="service-wrapper" ng-show="activePanel==1">
+      <h2>Risk Reduction for your Project</h2>
+      <p class="lead-copy"> We help new and existing application projects better translate business needs into technical requirements by providing the tools needed to bridge communication gaps between stakeholders. By enabling more effective communication projects can better align with their strategic objectives, reducing the risk of misguided development efforts.</p>
+      <button type="button" class="btn btn-primary">Learn More</button>   
+      <h3>Our communication tools</h3>
 
-  <section class="feature section-summary">
-    <div class="container">
-      <div class="inner has-nav">
-        <h1>Design</h1>
-        <h3>User experience is more important than you think</h3>
-        <p class="">If you’re developing digital solutions and not incorporating design and user experience continuously, from the start of your development cycle, you’re developing at a disadvantage to the competition.</p>
-        <a href="#/services/">
-          <div class="btn btn-info">Read More</div>
-        </a>
+      <div class="service-items">
+        <div class="service-item">
+          <div class="ikon-earth ikon"></div>
+          <p>Capability Strategy Map</p>
+        </div>
+        <div class="service-item">
+          <div class="ikon-file ikon"></div>
+          <p>UI/UX Wireframes, Mockups, and Comps</p>
+        </div>
+        <div class="service-item">
+          <div class="ikon-equalizer ikon"></div>
+          <p>Application Proof of Concept / Prototype</p>
+        </div>
       </div>
     </div>
-  </section>
-  
-  <div id="nav-arrow-3" class="nav-scroll-down">
-    <div class="nav-arrow nav-arrow-light"></div>
-  </div>
 
-  <div class="img-spacer"></div>
+    <!-- Teams -->
+    <div class="service-wrapper" ng-show="activePanel==2">
+      <h2>Domain Expertise for your Team</h2>
+      <p class="lead-copy">We love challenges, and we excel at building complex analytical models and functional prototypes with a systematic mindset.  If you're looking for these specific skills and an aviation background, contact us to discuss opportunities for embedding us in your existing team to help resolve technical hurdles or provide on-site problem solving.</p>
+      <button type="button" class="btn btn-primary">Learn More</button>   
+      <h3>What we're good at</h3>
 
-  <div id="development-anchor" class="anchor-strip"></div>
-
-  <section class="feature section-summary">
-    <div class="container">
-      <div class="inner has-nav">
-        <h1>Development</h1>
-        <h3>Analytical design demands a holistic understanding of the system</h3>
-        <p class="">Web development, systems engineering and model design are skills that increasingly cannot exist apart. Today, your designers need to be able to not only write the code, but understand, integrate and expand on complex systems.</p>
-        <a href="#/services/">
-          <div class="btn btn-info">Read More</div>
-        </a>
+      <div class="service-items">
+        <div class="service-item">
+          <div class="ikon-plane ikon"></div>
+          <p>Aerospace Engineering</p>
+        </div>
+        <div class="service-item">
+          <div class="ikon-earth ikon"></div>
+          <p>Airline Economics</p>
+        </div>
+        <div class="service-item">
+          <div class="ikon-stats ikon"></div>
+          <p>Data Visualization</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <div id="nav-arrow-4" class="nav-scroll-down">
-    <div class="nav-arrow nav-arrow-light"></div>
   </div>
+</div>
 
-  <div class="img-spacer"></div>
-  
+
+<div class="about-us">
+  <div class="container">
+    <div class="row">
+      <h2>Our Team</h2>
+      <div class="bio col-md-6">
+        <div class="headshot">
+          <img src="images/headshot-ben.png">
+          <h4>Ben Parkison</h4>
+          <p>Ben has worked in the aviation industry for ten years, and since then has been involved in a number of engineering and marketing tool development projects. Ben has been responsible for designing solutions to meet airplane structural certification, new analytical tools to forecast airplane maintenance and engineering workload requirements, and advanced market modeling and simulation tools in support of customer facing airplane marketing engagements.</p>
+        </div>
+      </div>
+
+      <div class="bio col-md-6">
+        <div class="headshot">
+          <img src="images/headshot-ben.png">
+          <h4>Mike Nash</h4>
+          <p>For eight years Mike has worked in the aviation industry developing new tools and methods for mission critical engineering analysis and customer facing marketing applications. In addition, Mike has worked in freelance graphic and web design developing modern solutions for ecommerce firms. Most recently, Mike has been developing web-based applications to facilitate the understanding of complex datasets and integrated product value to airline executives.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
