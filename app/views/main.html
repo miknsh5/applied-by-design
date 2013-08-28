@@ -6,7 +6,10 @@
 <!-- Seats background image, fixed, scroll over -->
 <div class="landing home">
   <div class="container">
-    <div class="greeting">
+    <!-- <div class="greeting" ng-style="fadeTitle"> -->
+
+    <div scroll-position="scroll">{{scroll}}</div>
+    <div class="greeting" ng-style="fadeTitle()">
       <h2 class="underline">Applied by Design</h2>
       <!-- <div class="divider"></div> -->
       <h3>Modern application solutions for the Aviation World</h3>
@@ -36,7 +39,7 @@
     </div>
 
     <!-- Business -->
-    <div class="service-wrapper" ng-show="activePanel==0">
+    <div class="service-wrapper animate-show" ng-show="activePanel==0" >
       <h2><span class="subtle">Extending Capabilities</span> for your <strong>Business</strong></h2>
       <p class="lead-copy">We'll work with you to understand every aspect of your aviation needs, create an appropriate web-application strategy, and provide all the leg work to turn your vision into a fully functioning reality.</p>
       <button type="button" class="btn btn-primary">Learn More</button>   
@@ -59,7 +62,7 @@
     </div>
 
     <!-- Projects -->
-    <div class="service-wrapper" ng-show="activePanel==1">
+    <div class="service-wrapper animate-show" ng-show="activePanel==1">
       <h2><span class="subtle">Risk Reduction</span> for your <strong>Project</strong></h2>
       <p class="lead-copy"> We help new and existing application projects better translate business needs into technical requirements by providing the tools needed to bridge communication gaps between stakeholders. By enabling more effective communication projects can better align with their strategic objectives, reducing the risk of misguided development efforts.</p>
       <button type="button" class="btn btn-primary">Learn More</button>   
@@ -82,7 +85,7 @@
     </div>
 
     <!-- Teams -->
-    <div class="service-wrapper" ng-show="activePanel==2">
+    <div class="service-wrapper animate-show" ng-show="activePanel==2">
       <h2><span class="subtle">Domain Expertise</span> for your <strong>Team</strong></h2>
       <p class="lead-copy">We love challenges, and we excel at building complex analytical models and functional prototypes with a systematic mindset.  If you're looking for these specific skills and an aviation background, contact us to discuss opportunities for embedding us in your existing team to help resolve technical hurdles or provide on-site problem solving.</p>
       <button type="button" class="btn btn-primary">Learn More</button>   

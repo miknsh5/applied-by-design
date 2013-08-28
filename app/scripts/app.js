@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('appliedByDesignApp', ['ngRoute'])
+angular.module('appliedByDesignApp', ['ngRoute', 'ngAnimate'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

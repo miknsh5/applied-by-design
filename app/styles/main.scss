@@ -264,6 +264,48 @@ body {
 
 }
 
+
+.service-wrapper {
+  margin-left: 0;
+  opacity: 1;
+}
+
+// // service content animation controls
+// .animate-show {
+//   &.ng-hide-add {
+//     @include transition-property(all);
+//     @include transition-duration(0.3s);
+//     // display:block!important;
+//     opacity:1;
+//     margin-left:0px;
+
+//     &.ng-hide-add-active{
+//       opacity:0;
+//       margin-left:-200px;
+//     }
+//     // @include transition-delay(0.3s);
+//   }
+
+//   &.ng-hide-remove{
+//     @include transition-property(all);
+//     @include transition-duration(0.3s);
+
+//     opacity:0;
+//     margin-left:-200px;
+
+//     &.ng-hide-remove-active{
+//       opacity:1;
+//       margin-left:0px;
+//     }
+//   }
+
+// }
+ 
+
+ 
+//
+
+
 .subtle {
   color: #777;
 }
