@@ -54,7 +54,7 @@ angular.module('appliedByDesignApp')
             .enter().append('svg:g')
               .attr('class', 'year')
               .style('fill', function(d, i) { return z(i); });
-              // .style('stroke', function(d, i) { return d3.rgb(z(i)).darker(); });
+
 
           // Add a rect for each date.
           year.selectAll('rect')
@@ -63,7 +63,12 @@ angular.module('appliedByDesignApp')
               .attr('x', function(d) { return x(d.x); })
               .attr('y', function(d) { return -y(d.y0) - y(d.y); })
               .attr('height', function(d) { return y(d.y); })
-              .attr('width', x.rangeBand());
+              .attr('width', x.rangeBand())
+              
+          year.selectAll('text.label')
+              .data(Object)
+            enter().append('text')
+              .text('hello')
 
         });
 

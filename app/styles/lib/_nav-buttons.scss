@@ -1,73 +1,126 @@
 
 // Navigation Arrows
 
-.nav-arrow-dark {
-}
-.nav-arrow-light {
-  background-image: url('../images/more-arrow-lt.png') ;
-}
-
+//navigation arrows - go to next section
 .nav-scroll-down {
-  background-image: url('../images/more-arrow-dk.png') ;
-  @include transition(top .1s);
-  background-repeat: no-repeat;
-  width: 110px;
-  height: 110px;
-  top: 20px;
+  width: 80px;
+  height: 40px;
+  top: -40px;
   position: relative;
   margin: 0 auto;
-
+  z-index: 100;
+  overflow: hidden;
 }
 
-#nav-scroll-down:hover {
-  top: 25px;
+// .nav-scroll-down:hover {
+//   top: -35px;
+//   cursor: pointer;
+// }
+
+
+.nav-arrow {
+  background-repeat: no-repeat;
+  @include transition(margin-top .1s);
+  @include background-size(80px);
+  width: 100%;
+  height: 100%;
+
+  &.nav-arrow-dark {
+    background-image: url('../images/nav-wedge-dk.png') ;
+  }
+  &.nav-arrow-light {
+    background-image: url('../images/nav-wedge-lt.png') ;
+  }
+}
+
+.nav-arrow:hover {
+  margin-top: 5px;
   cursor: pointer;
 }
 
-.nav-arrow {
-  background-image: url('../images/more-arrow.png');
-  background-size: 60px 60px;
-  // background-color: rgba(61,70,80, 0.5);
-  // width: 64px;
-  // height: 64px;
-  // display: inline-block;
-  // position: relative;
-  // border: solid 4px #CCC;
-  // font-size: 2.0em;
-  // line-height: 2.3em;
-  // color: #CCC;
-  // text-align: center;
-  // @include border-radius(35px);
-  // @include background-image(linear-gradient(left top, rgba(250,250,250,0.2), rgba(100,100,100,0.2))); 
-
-  &.nav-next-section {
-    top: -38px;
-    @include transition(top .1s);
+.anchor-strip {
+  height: 65px;
+  position: absolute;
+  width: 100%;
+  margin-top: -65px;
+  z-index: -1;
+  
+  @media (max-width: 480px) {
+    height: 100px;
+    margin-top: -100px;
   }
-
-  &.nav-next-section:hover {
-    top: -33px;
-    background-color: rgba(61,70,80, 0.7);
-    @include transition(top .1s);
-    // @include transition(background-color .1s);
-  }
-
-  &.nav-more {
-    right: 60px;  
-    margin-top: 70px;
-    @include transition(right .2s);
-    // @include transform(rotate(270deg));  
-  }
-
-  &.nav-more:hover {
-    right: 55px;
-    background-color: rgba(61,70,80, 0.7);
-    @include transition(right .1s);
-    // @include transition(background-color .1s);
-  }
-
-  // i {
-  //   line-height: 2.0em;
-  // }
-
 }
+
+
+// .nav-arrow-dark {
+// }
+// .nav-arrow-light {
+//   background-image: url('../images/more-arrow-lt.png') ;
+// }
+
+// .nav-scroll-down {
+//   background-image: url('../images/more-arrow-dk.png') ;
+//   @include transition(top .1s);
+//   background-repeat: no-repeat;
+//   width: 110px;
+//   height: 110px;
+//   top: 20px;
+//   position: relative;
+//   margin: 0 auto;
+
+// }
+
+// #nav-scroll-down:hover {
+//   top: 25px;
+//   cursor: pointer;
+// }
+
+// .nav-arrow {
+//   background-image: url('../images/more-arrow.png');
+//   background-size: 60px 60px;
+//   // background-color: rgba(61,70,80, 0.5);
+//   // width: 64px;
+//   // height: 64px;
+//   // display: inline-block;
+//   // position: relative;
+//   // border: solid 4px #CCC;
+//   // font-size: 2.0em;
+//   // line-height: 2.3em;
+//   // color: #CCC;
+//   // text-align: center;
+//   // @include border-radius(35px);
+//   // @include background-image(linear-gradient(left top, rgba(250,250,250,0.2), rgba(100,100,100,0.2))); 
+
+//   &.nav-next-section {
+//     top: -38px;
+//     @include transition(top .1s);
+//   }
+
+//   &.nav-next-section:hover {
+//     top: -33px;
+//     background-color: rgba(61,70,80, 0.7);
+//     @include transition(top .1s);
+//     // @include transition(background-color .1s);
+//   }
+
+//   &.nav-more {
+//     right: 60px;  
+//     margin-top: 70px;
+//     @include transition(right .2s);
+//     // @include transform(rotate(270deg));  
+//   }
+
+//   &.nav-more:hover {
+//     right: 55px;
+//     background-color: rgba(61,70,80, 0.7);
+//     @include transition(right .1s);
+//     // @include transition(background-color .1s);
+//   }
+
+//   // i {
+//   //   line-height: 2.0em;
+//   // }
+
+// }
+
+
