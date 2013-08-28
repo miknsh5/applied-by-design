@@ -1,0 +1,19 @@
+bower check-new     Checking for new versions of the project dependencies..
+appliedByDesign#0.0.0 /Users/Nash/Sites/projects/applied-by-design
+├── angular#1.0.7 incompatible with ~1.1.5 (latest is 1.2.0-rc.1)
+├── angular-mocks missing
+├─┬ angular-sanitize#1.0.7 incompatible with ~1.1.5 (latest is 1.2.0-rc.1)
+│ └── angular#1.0.7 (latest is 1.2.0-rc.1)
+├── angular-scenario missing
+├── d3#3.2.8 extraneous (latest is 3.3.2)
+├── es5-shim missing
+├── jquery#2.0.3 extraneous
+├─┬ jquery.scrollTo#1.4.6 extraneous
+│ └── jquery#2.0.3
+├── json3 missing
+├── modernizr#2.6.2 extraneous
+├─┬ sass-bootstrap#2.3.2 (latest is 3.0.0)
+│ └── jquery#2.0.3
+├── skrollr#0.6.10 extraneous (0.6.11 available)
+├── topojson#1.2.3 extraneous (latest is 1.3.0)
+└── underscore#1.5.1 extraneous
