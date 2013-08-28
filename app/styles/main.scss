@@ -264,6 +264,10 @@ body {
 
 }
 
+.subtle {
+  color: #777;
+}
+
 .about-us {
   margin: 40px 0;
   text-align: center;
@@ -290,7 +294,7 @@ body {
   .headshot {
     width: 100%;
     margin: 10px 0;
-    
+
     img {
       @include border-radius(100px);
       margin-top: 2px;
