@@ -1,11 +1,14 @@
 // footer styles
 
 footer {
-  background-color: $color-black;
-  min-height: 80px;
+  // background-color: $color-black;
+  background-color: $color-text-white;
+  // min-height: 80px;
   color: $color-text-gray;
   font-weight: 200;
-  border-top: solid 5px $color-orange;
+  // border-top: solid 5px $color-orange;
+  position: relative;
+  z-index: 11;
   // border-top: solid 5px $color-blue;
 
 

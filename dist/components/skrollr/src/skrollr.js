@@ -19,7 +19,7 @@
 		init: function(options) {
 			return _instance || new Skrollr(options);
 		},
-		VERSION: '0.6.8'
+		VERSION: '0.6.11'
 	};
 
 	//Minify optimization.
@@ -48,7 +48,7 @@
 
 	var DEFAULT_EASING = 'linear';
 	var DEFAULT_DURATION = 1000;//ms
-	var MOBILE_DECELERATION = 0.0006;//pixel/ms²
+	var DEFAULT_MOBILE_DECELERATION = 0.004;//pixel/ms²
 
 	var DEFAULT_SMOOTH_SCROLLING_DURATION = 200;//ms
 
@@ -147,7 +147,7 @@
 			requestAnimFrame = function(callback) {
 				//How long did it take to render?
 				var deltaTime = _now() - lastTime;
-				var delay = Math.max(0, 33 - deltaTime);
+				var delay = Math.max(0, 1000 / 60 - deltaTime);
 
 				window.setTimeout(function() {
 					lastTime = _now();
@@ -244,6 +244,8 @@
 			_scale = options.scale || 1;
 		}
 
+		_mobileDeceleration = options.mobileDeceleration || DEFAULT_MOBILE_DECELERATION;
+
 		_smoothScrollingEnabled = options.smoothScrolling !== false;
 		_smoothScrollingDuration = options.smoothScrollingDuration || DEFAULT_SMOOTH_SCROLLING_DURATION;
 
@@ -274,7 +276,18 @@
 		//Triggers parsing of elements and a first reflow.
 		_instance.refresh();
 
-		_addEvent(window, 'resize orientationchange', _reflow);
+		_addEvent(window, 'resize orientationchange', function() {
+			var width = documentElement.clientWidth;
+			var height = documentElement.clientHeight;
+
+			//Only reflow if the size actually changed (#271).
+			if(height !== _lastViewportHeight || width !== _lastViewportWidth) {
+				_lastViewportHeight = height;
+				_lastViewportWidth = width;
+
+				_requestReflow = true;
+			}
+		});
 
 		var requestAnimFrame = polyfillRAF();
 
@@ -555,12 +568,6 @@
 
 		if(_isMobile) {
 			_mobileOffset = Math.min(Math.max(top, 0), _maxKeyFrame);
-
-			//That's were we actually "scroll" on mobile.
-			if(_skrollrBody) {
-				//Set the transform ("scroll it").
-				skrollr.setStyle(_skrollrBody, 'transform', 'translate(0, ' + -(_mobileOffset) + 'px) ' + _translateZ);
-			}
 		} else {
 			window.scrollTo(0, top);
 		}
@@ -622,6 +629,8 @@
 						initialElement.blur();
 					}
 
+					_instance.stopAnimateTo();
+
 					initialElement = e.target;
 					initialTouchY = lastTouchY = currentTouchY;
 					initialTouchX = currentTouchX;
@@ -632,7 +641,7 @@
 					deltaY = currentTouchY - lastTouchY;
 					deltaTime = currentTouchTime - lastTouchTime;
 
-					_instance.setScrollTop(_mobileOffset - deltaY);
+					_instance.setScrollTop(_mobileOffset - deltaY, true);
 
 					lastTouchY = currentTouchY;
 					lastTouchTime = currentTouchTime;
@@ -660,8 +669,8 @@
 					//Cap speed at 3 pixel/ms.
 					speed = Math.max(Math.min(speed, 3), -3);
 
-					var duration = Math.abs(speed / MOBILE_DECELERATION);
-					var targetOffset = speed * duration + 0.5 * MOBILE_DECELERATION * duration * duration;
+					var duration = Math.abs(speed / _mobileDeceleration);
+					var targetOffset = speed * duration + 0.5 * _mobileDeceleration * duration * duration;
 					var targetTop = _instance.getScrollTop() - targetOffset;
 
 					//Relative duration change for when scrolling above bounds.
@@ -867,6 +876,11 @@
 	 * Renders all elements.
 	 */
 	var _render = function() {
+		if(_requestReflow) {
+			_requestReflow = false;
+			_reflow();
+		}
+
 		//We may render something else than the actual scrollbar position.
 		var renderTop = _instance.getScrollTop();
 
@@ -889,7 +903,7 @@
 				renderTop = (_scrollAnimation.startTop + progress * _scrollAnimation.topDiff) | 0;
 			}
 
-			_instance.setScrollTop(renderTop);
+			_instance.setScrollTop(renderTop, true);
 		}
 		//Smooth scrolling only if there's no animation running and if we're not on mobile.
 		else if(!_isMobile) {
@@ -913,6 +927,12 @@
 
 				renderTop = (_smoothScrolling.startTop + progress * _smoothScrolling.topDiff) | 0;
 			}
+		}
+
+		//That's were we actually "scroll" on mobile.
+		if(_isMobile && _skrollrBody) {
+			//Set the transform ("scroll it").
+			skrollr.setStyle(_skrollrBody, 'transform', 'translate(0, ' + -(_mobileOffset) + 'px) ' + _translateZ);
 		}
 
 		//Did the scroll position even change?
@@ -1425,6 +1445,8 @@
 	var _scale = 1;
 	var _constants;
 
+	var _mobileDeceleration;
+
 	//Current direction (up/down).
 	var _direction = 'down';
 
@@ -1433,6 +1455,12 @@
 
 	//The last time we called the render method (doesn't mean we rendered!).
 	var _lastRenderCall = _now();
+
+	//For detecting if it actually resized (#271).
+	var _lastViewportWidth = 0;
+	var _lastViewportHeight = 0;
+
+	var _requestReflow = false;
 
 	//Will contain data about a running scrollbar animation, if any.
 	var _scrollAnimation;
