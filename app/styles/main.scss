@@ -90,11 +90,11 @@ h2 {
   @include font-size(5);
   font-weight: 500;
 
-  &.underline {
-    border-bottom: 1px solid #AAA;
-    display: inline;
-    padding: 0 10px 5px 10px;
-  }
+  // &.underline {
+  //   border-bottom: 1px solid #AAA;
+  //   display: inline;
+  //   padding: 0 10px 5px 10px;
+  // }
 }
 
 
@@ -117,6 +117,7 @@ h3 {
     @include font-size(1.8);
   }
 }
+
 
 
 p {
@@ -155,9 +156,9 @@ body {
   max-width: 100%;
   top: 0;
 
-  @media (max-width: 480px) {
-    height: 400px;
-  }
+  // @media (max-width: 480px) {
+  //   height: 400px;
+  // }
 
   &.home {
     // background-image: url('../images/runway-02.jpg');
@@ -239,6 +240,11 @@ body {
 
   }
 
+  .divider {
+    border-bottom: 1px solid #AAA;
+    width: 70%;
+    margin: auto;
+  }
 
   &.blog {
     margin-top: 80px;
@@ -254,6 +260,19 @@ body {
 
   }
 }
+
+.logo {
+  img {
+    width: 100px;
+    margin: 0;
+  }
+}
+
+.navbar-brand {
+  padding: 10px 10px;
+  margin-top: 3px;
+}
+
 
 .service-bg {
   @include background-size(cover);
@@ -326,6 +345,8 @@ body {
   }
 
   .bio {
+    margin: 40px 0;
+
     p {
       color: $color-text-white;
       font-size: 1.5rem;
@@ -376,12 +397,28 @@ body {
     }
 
     &.active {
-      background-color: rgba(30,30,30,0);
+      background-color: rgba(30,30,30,0) !important;
+      // p {
+        // color: $color-text-black !important;
+      // }
+      // border-bottom: solid 5px #ccc;
+      // border-right: solid 5px #ccc
     }
     
+    p {
+      @include transform(rotate(-45deg));
+      @include font-size(1.5);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 3px;
+      position: relative;
+      left: -2px;
+      top: 18px;
+      color: $color-text-white;
+    }
   }
   &.signage:before{
-    content:url(../images/diamonds_03.jpg);
+    content:url(../images/diamonds_08.jpg);
     position: absolute;
     width: 450%;
     height: 450%;
@@ -400,23 +437,18 @@ body {
     z-index: -1;
     @include transform(rotate(-45deg));
   }
-
-
-
-
-
-  p {
-    color: $color-text-white;
+  &.engine:before{
+    content:url(../images/diamonds_06.jpg);
+    position: absolute;
+    width: 450%;
+    height: 450%;
+    top: -65%;
+    left: -65%;
+    z-index: -1;
     @include transform(rotate(-45deg));
-    @include font-size(1.5);
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 3px;
-    position: relative;
-    left: -2px;
-    top: 18px;
-
   }
+
+
 }
 
 .service-wrapper {
@@ -455,6 +487,10 @@ body {
       }
     }
   }
+}
+
+.contact-us {
+
 }
 
 .feature {
