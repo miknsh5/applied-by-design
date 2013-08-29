@@ -1,6 +1,5 @@
 'use strict';
 /*global $:false */
-/*global skrollr:false */
 
 angular.module('appliedByDesignApp')
   .controller('MainCtrl', function ($scope) {
@@ -9,7 +8,7 @@ angular.module('appliedByDesignApp')
 
     $scope.showPanel = function(id){
       $scope.activePanel = id;
-    }
+    };
 
     $scope.scroll = 0;
 
@@ -18,7 +17,7 @@ angular.module('appliedByDesignApp')
         'margin-top': 200-($scope.scroll/3) + 'px',
         'opacity': 1-($scope.scroll/500)
       };
-    }
+    };
 
 
     $('#about-btn').click(function (){
@@ -29,8 +28,7 @@ angular.module('appliedByDesignApp')
       $.scrollTo('#contact-anchor',{duration: 'medium'});
     });
 
-
-});
+  });
 
 
 
