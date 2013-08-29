@@ -280,6 +280,13 @@ body {
   margin-top: $landing-height;
   // background-color: white;
   background-image: url('../images/plane-light-bg.jpg');
+  height: 580px;
+
+  @media (max-width: $screen-sm) {
+    height: 300px;
+    padding-top: 20px;
+  }
+
 
 }
 
@@ -289,36 +296,37 @@ body {
   opacity: 1;
 }
 
-// // service content animation controls
-// .animate-show {
-//   &.ng-hide-add {
-//     @include transition-property(all);
-//     @include transition-duration(0.3s);
-//     // display:block!important;
-//     opacity:1;
-//     margin-left:0px;
+// service content animation controls
+.animate-show {
+  @include transition-property(all);
+  @include transition-duration(0.5s);
+  
+  &.ng-hide-add {
+    // display:block!important;
+    opacity:1;
+    margin-left:0px;
 
-//     &.ng-hide-add-active{
-//       opacity:0;
-//       margin-left:-200px;
-//     }
-//     // @include transition-delay(0.3s);
-//   }
+    &.ng-hide-add-active{
+      opacity:0;
+      margin-left:-1200px;
+    }
+  }
 
-//   &.ng-hide-remove{
-//     @include transition-property(all);
-//     @include transition-duration(0.3s);
+  &.ng-hide-remove{
+    // @include transition-delay(0.2s);
+    // @include transition-property(opacity);
+    // @include transition-duration(0.5s);
 
-//     opacity:0;
-//     margin-left:-200px;
+    // opacity:0;
+    // margin-right:-200px;
 
-//     &.ng-hide-remove-active{
-//       opacity:1;
-//       margin-left:0px;
-//     }
-//   }
+    &.ng-hide-remove-active{
+      // opacity:1;
+      // margin-right:0px;
+    }
+  }
 
-// }
+}
  
 
  

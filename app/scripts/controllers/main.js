@@ -8,6 +8,7 @@ angular.module('appliedByDesignApp')
 
     $scope.showPanel = function(id){
       $scope.activePanel = id;
+      clearInterval(timer);
     };
 
     $scope.scroll = 0;
@@ -19,6 +20,19 @@ angular.module('appliedByDesignApp')
       };
     };
 
+    var timer;
+
+    function playCarousel(){
+      timer = setInterval(function(){
+        var next = $scope.activePanel + 1;
+
+        $scope.activePanel = next===3 ? 0 : next;
+        $scope.$apply();
+        console.log($scope.activePanel);
+      }, 5000)
+    }
+
+    playCarousel();
 
     $('#about-btn').click(function (){
       $.scrollTo('#about-anchor',{duration: 'medium'});
