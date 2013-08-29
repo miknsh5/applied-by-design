@@ -280,10 +280,11 @@ body {
   margin-top: $landing-height;
   // background-color: white;
   background-image: url('../images/plane-light-bg.jpg');
-  height: 580px;
+  min-height: 580px;
 
   @media (max-width: $screen-sm) {
-    height: 300px;
+    min-height: 300px;
+    // height: 300px;
     padding-top: 20px;
   }
 
@@ -436,8 +437,8 @@ body {
         // background-color: rgba(0, 0, 0, 0.7);
         // padding: 5px 20px;
       }
-      // border-bottom: solid 5px #ccc;
-      // border-right: solid 5px #ccc
+      border-bottom: solid 5px #888;
+      border-right: solid 5px #888;
     }
   }
   &.signage:before{
