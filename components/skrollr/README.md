@@ -1,6 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/Prinzhorn/skrollr.png)](http://travis-ci.org/Prinzhorn/skrollr)
 
-skrollr 0.6.8
+skrollr 0.6.11
 =====
 
 Stand-alone **parallax scrolling** JavaScript library for **mobile (Android, iOS, etc.) and desktop** in just over **9.6k** (minified) or **4.5k** (minified + gzipped).
@@ -22,6 +22,8 @@ Official plugins
 In the wild
 -----
 
+* http://www.cabletv.com/the-walking-dead
+* http://hypervenom.nike.com/
 * http://www.photo-mark.com/funhouse/chess/
 * http://www.entropy-thegame.com/
 * http://nclud.com/welcome/
@@ -324,6 +326,12 @@ function() {
 }
 ```
 
+### mobileDeceleration=0.004
+
+The amount of deceleration for momentum scrolling on mobile devices. This options tells skrollr how fast or slow you want the scrolling to stop after the user lifted his finger.
+
+Set it to `1` to disable momentum scrolling.
+
 ### edgeStrategy='set'
 
 This option specifies how to handle animations when the scroll position is outside the range on the keyframes (i.e. before the first or after the last keyframe).
@@ -493,6 +501,21 @@ Removes the listener for the given event.
 
 Changelog
 =====
+
+0.6.11 (2013-08-13)
+-----
+
+* Made the mobile deceleration configurable and lowered the default (#222, #229).
+
+0.6.10 (2013-07-30)
+-----
+
+* Fixed bug which caused IE to perform an endless loop (#271).
+
+0.6.9 (2013-07-01)
+-----
+
+* Improved overall performance for mobile (#249).
 
 0.6.8 (2013-06-17)
 -----
