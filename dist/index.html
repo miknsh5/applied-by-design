@@ -17,7 +17,7 @@
 
 
 
-    <link rel="stylesheet" href="styles/30a18ee6.main.css">
+    <link rel="stylesheet" href="styles/126f7547.main.css">
     <!--[if lt IE 9]>
       <script>
       document.createElement('header');
@@ -31,32 +31,6 @@
   <body ng-app="appliedByDesignApp">
 
 
-    <!-- PRIMARY NAVIGATION -->
-
-    <header>
-      <div class="container">
-        <nav>
-          <a class="logo" href="/#/">
-            <img src="../images/e29b90da.logo-blue-lt.png" alt="Applied by Design">
-            <!-- <img src="../images/20af8386.logo-04-lt.png" alt="Applied by Design"> -->
-          </a>
-            
-          <ul class="nav-list pull-right">
-            <!-- <li class="active"><a href="#">Thoughts</a></li> -->
-            <li class="nav-btn"><a href="#/services/">Services</a></li>
-            <li class="nav-btn"><a href="#/about/">About</a></li>
-            <!-- <li class="nav-btn"><a href="#/blog/">Thoughts</a></li> -->
-            <li id="contact-info" class="nav-btn"><a>Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-
-    </header> 
-
-    <!-- END PRIMARY NAVIGATION -->
-
-
-
     <!-- Add your site or application content here -->
 
     <!--[if lt IE 9]>
@@ -65,72 +39,64 @@
       </p>
     <![endif]-->
 
+     <div class="navbar navbar-inverse navbar-fixed-top">
+       <div class="container">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand logo" href="#">
+            <img src="../images/20af8386.logo-04-lt.png" alt="Applied by Design">
+            <!-- <div class="logo"></div> -->
+           </a>
+         </div>
+         <div class="navbar-collapse collapse">
+           <ul class="nav navbar-nav pull-right">
+
+            <!-- <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Our Work <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Method</a></li>
+              </ul>
+            </li> -->
+            <li class="dropdown">
+               <a class="dropdown-toggle pointer" data-toggle="dropdown">Our Company <b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                 <li id="about-btn"><a href="#">About</a></li>
+                 <li id="contact-btn"><a href="#">Contact</a></li>
+                 <!-- <li><a href="http://blog.appliedbydesign.com">Blog</a></li> -->
+               </ul>
+             </li>
+           </ul>
+
+         </div><!--/.navbar-collapse -->
+       </div>
+     </div>
 
     <div ng-view=""></div>
 
-
-    <!-- BEGIN FOOTER -->
-    
-
-    <div id="contact-anchor" class="anchor-strip"></div>
-
-    <div class="contact-us">
-      <section class="section-summary">
-        <div class="container">
-
-          <div class="inner footer">
-            <div class="summary-logo">
-              <img src="../images/20af8386.logo-04-lt.png">
-            </div>
-              <p>A continuous and concurrent focus on project strategy, experience design and engineering development throughout the life of your project.</p>
-
-              <a href="mailto:info@appliedbydesign.com">
-                <div class="btn btn-info btn-large btn-contact">
-                  <i class="icon-envelope icon-white"> </i> info@appliedbydesign.com
-                </div>
-              </a>
-
-              <div class="btn btn-info btn-large btn-contact">
-                <i class="icon-signal icon-white"> </i> 206-331-4529
-              </div>
-
-          </div>
-        </div>
-      </section>
-    </div>
-
     <footer>
       <div class="container">
-        <div class="row foot">
-          <div class="span4 city">
-            <p><i class="icon-map-marker"> </i> Seattle, WA</p>
-          </div>
-          <div class="span4 email">
-            <a href="mailto:info@appliedbydesign.com">
-              <p><i class="icon-envelope"> </i> info@appliedbydesign.com</p>
-            </a>
-          </div>
-
-          <div class="span4 phone">
-            <a href="tel:+12063314529"><p> <i class="icon-signal"> </i> 206-331-4529</p></a>
-          </div>
-        </div>
         <div class="row">
-          <div class="span12 copyright"><p>© Applied by Design 2013</p></div>
+          <div class="copyright"><p>© Applied by Design 2013</p></div>
         </div>
       </div>
     </footer>
-    <!-- END FOOTER -->
 
     <script src="components/angular/angular.js"></script> 
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="components/angular-route/angular-route.js"></script>
+    <script src="components/angular-animate/angular-animate.js"></script>
     <script src="components/jquery/jquery.min.js"></script>
     <script src="components/modernizr/modernizr.js"></script>
     <script src="components/skrollr/dist/skrollr.min.js"></script>
+    <script src="components/sass-bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 
-
-    <script src="scripts/ad54a84e.scripts.js"></script>
+    <script src="scripts/0c542cd0.scripts.js"></script>
 
     <script>
     $('#contact-info').click(function (){

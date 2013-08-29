@@ -21,6 +21,14 @@ angular.module('appliedByDesignApp')
     }
 
 
+    $('#about-btn').click(function (){
+      $.scrollTo('#about-anchor',{duration: 'medium'});
+    });
+
+    $('#contact-btn').click(function (){
+      $.scrollTo('#contact-anchor',{duration: 'medium'});
+    });
+
 
 });
 
