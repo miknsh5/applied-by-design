@@ -6,42 +6,16 @@
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
 
-@import "sass-bootstrap/lib/bootstrap";
-
-// Colors
-//primary color pallete
-$color-slateblue: rgb(61,70,80);
-$color-brightwhite: rgb(242,242,242);
-$color-lightgray: rgb(153,153,153);
-$color-darkgray: rgb(80,80,80);
-$color-gray: #888888;
-$color-footer: rgb(46, 53, 61);
-$color-black: #222222;
-$color-text-black: $color-black;
-$color-text-white: #EEEEEE;
-$color-text-whitewhite: #FFFFFF;
-$color-text-gray: #555555;
-
-
-$color-blue: rgb(48,128,178);
-$color-orange: rgb(241,90,36);
-
-// 0.0 Global Variables
-$landing-height: 600px;
-$section-height: 270px;
-$divider-height: 470px;
-
-// My Mixins
-//------------------
-// support for REM font sizing including IE8 fallback pixels
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
 
 // My Styles
 //-------------------
+@import "sass-bootstrap/lib/bootstrap";
 @import 'fonts/myfonts'; 
+@import 'lib/axd-mixins'; 
+@import 'lib/axd-variables'; 
+@import 'lib/axd-colors'; 
+@import 'lib/logo'; 
+@import 'lib/landing'; 
 @import 'lib/navigation'; 
 @import 'lib/footer'; 
 
@@ -89,12 +63,6 @@ h2 {
   // section titles, blog post titles, service section titles
   @include font-size(5);
   font-weight: 500;
-
-  // &.underline {
-  //   border-bottom: 1px solid #AAA;
-  //   display: inline;
-  //   padding: 0 10px 5px 10px;
-  // }
 }
 
 
@@ -149,142 +117,6 @@ body {
   margin-top: -145px;
 }
 
-// 4.0 Homepage Formatting
-// __________________________________
-
-.landing {
-  @include background-size(cover);
-  // height: $landing-height;
-  height: 100%;
-  max-width: 100%;
-  top: 0;
-
-  // @media (max-width: 480px) {
-  //   height: 400px;
-  // }
-
-  &.home {
-    // background-image: url('../images/runway-02.jpg');
-    // background-image: url('../images/seats-02.jpg');
-    background-image: url('../images/seats-dark-bg.jpg');
-    position: fixed;
-    width: 100%;
-  }
-
-  img {
-    @include transition(margin-top, 0.2s);
-    margin-top: 0px;
-    width: 50px;
-
-    &:hover {
-      margin-top: 5px;
-    }
-  }
-  // &.blog {
-  //   background-image: url('../images/seats-02.jpg');
-  //   height: 300px;
-  // }
-
-}
-
-// .img-spacer {
-//   position: relative;
-//   height: 400px;
-//   z-index: -1;
-
-//   @media (max-width: 480px) {
-//     height: 200px;
-//   }
-
-// }
-
-// .skrollr-holder {
-//   // visibility: hidden;
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   height: 1180px;
-//   width: 100%;
-//   background-position: center top;
-//   background-repeat: no-repeat;
-//   @include background-size(cover);
-
-//   &.runway {
-//     background-image: url('../images/runway-02.jpg');
-//     // z-index: 4;
-//   }
-//   &.signage {
-//     background-image: url('../images/signage-02.jpg');
-//     z-index: -1;
-//   }
-//   &.plane {
-//     background-image: url('../images/plane-02.jpg');
-//     z-index: -1;
-//   }
-//   &.seats {
-//     background-image: url('../images/seats-02.jpg');
-//     z-index: -1;
-//   }
-//   &.engine {
-//     z-index: 4;
-//     background-image: url('../images/engine-01.jpg');
-//   }
-// }
-
-.greeting {
-  position: relative;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  margin-top: 230px;
-  z-index: 10;
-
-  h2 {
-    @include font-size(5);
-    font-weight: 600;
-    color: $color-text-white;
-  }
-
-  h3 {
-    @include font-size(3);
-    font-weight: 100;
-    color: $color-text-white;
-
-  }
-
-  .divider {
-    border-bottom: 1px solid #AAA;
-    width: 70%;
-    margin: auto;
-  }
-
-  &.blog {
-    margin-top: 80px;
-  }
-
-  @media (max-width: 480px) {
-    margin-top: 150px;
-  }
-
-  .inner {
-    max-width: 600px;
-    margin: 0 auto;
-
-  }
-}
-
-.logo {
-  img {
-    width: 100px;
-    margin: 0;
-  }
-}
-
-.navbar-brand {
-  padding: 10px 10px;
-  margin-top: 3px;
-}
-
 
 .service-bg {
   @include background-size(cover);
@@ -298,8 +130,6 @@ body {
     // height: 300px;
     padding-top: 20px;
   }
-
-
 }
 
 
@@ -340,10 +170,6 @@ body {
 
 }
  
-
- 
-//
-
 
 .subtle {
   color: #777;
@@ -559,88 +385,18 @@ body {
 
 }
 
-.feature {
-  @include box-shadow(black 0px 0px 5px); 
-  background-color: $color-text-whitewhite;
-  min-height: 310px;
-  z-index: 10;
-  position: relative;
-  padding-bottom: 20px;
 
-  .section-line {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin: 40px 0;
-    height: 20px;
-  }
-}
+// .office {
+//   @include background-size(cover);
+//   background-image: url('../images/office-01.jpg') ;
+//   background-position: center top;
+//   background-repeat: no-repeat;
+//   background-color: rgb(153,153,153);
+//   height: 450px;
+//   margin-bottom: -20px;  
+//   border-top: solid 5px #ccc;
 
-.linkedin img {
-  vertical-align: bottom;
-}
-
-.section-summary {
-  background-color: rgba(0,0,0,0.8);
-  height: 100%;
-  // width: 100%;
-
-  .summary-logo {
-    margin: 0 auto;
-    max-width: 200px;
-  }
-
-  .inner.footer {
-    margin: 0 auto;
-    margin-top: 130px;
-    @media (max-width: 480px) {
-      margin-top: 0;
-    }
-    // text-align: center;
-  }
-
-  .inner.header {
-    margin: 0 auto;
-    // margin-top: 10px;
-    // text-align: center;
-  }
-
-  .inner.has-nav {
-    margin-bottom: 40px;
-  }
-
-  p {
-    color: $color-text-white;
-    margin: 30px 0;
-  }
-
-}
-
-.section-first {
-  margin-top: 200px;
-}
-
-.inner {
-  padding: 50px;
-  max-width: 680px;
-  text-align: center;
-  margin: auto;
-  margin-bottom: 10px;
-}
-
-
-
-
-.office {
-  @include background-size(cover);
-  background-image: url('../images/office-01.jpg') ;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-color: rgb(153,153,153);
-  height: 450px;
-  margin-bottom: -20px;  
-  border-top: solid 5px #ccc;
-
-}
+// }
 .profile-wedge {
   width: 0px;
   height: 0px;
@@ -657,43 +413,9 @@ body {
   }
 }
 
-// .contact-us {
-//   background-image: url('../images/seats-02.jpg') ;
-//   background-repeat: no-repeat;
-//   @include background-size(cover);
-//   height: 580px;
-//   text-align: center;
-//   border-top: solid 1px #aaa;
-
-
-//   .btn-contact {
-//     width: 240px;
-//     height: 35px;
-//     font-size: 1.3em;
-//     line-height: 35px;
-//     top: 120px;
-//     margin-bottom: 10px;
-//     // position: relative;
-    
-//     @media (max-width: 480px) {
-//       width: 180px;  
-//       font-size: 0.8em;
-//       i {
-//         margin-top: 0px !important;
-//       }
-//     }
-//   }
-// }
 
 .btn-bio {
   margin-top: 10px;
-}
-
-// BLOG
-//---------------
-
-.post-date {
-
 }
 
 
