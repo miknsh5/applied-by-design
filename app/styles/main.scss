@@ -145,6 +145,9 @@ body {
   } 
 } 
 
+.shim-anchor {
+  margin-top: -145px;
+}
 
 // 4.0 Homepage Formatting
 // __________________________________
@@ -168,6 +171,15 @@ body {
     width: 100%;
   }
 
+  img {
+    @include transition(margin-top, 0.2s);
+    margin-top: 0px;
+    width: 50px;
+
+    &:hover {
+      margin-top: 5px;
+    }
+  }
   // &.blog {
   //   background-image: url('../images/seats-02.jpg');
   //   height: 300px;

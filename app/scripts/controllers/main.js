@@ -42,6 +42,10 @@ angular.module('appliedByDesignApp')
       $.scrollTo('#contact-anchor',{duration: 'medium'});
     });
 
+    $('#services-btn').click(function (){
+      $.scrollTo('#services-anchor',{duration: 'medium'});
+    });
+
   });
 
 
