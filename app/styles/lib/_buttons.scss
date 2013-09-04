@@ -1,0 +1,8 @@
+.twitter-btn {
+	font-size: 3rem;
+	color: $color-blue !important;
+
+	&:hover {
+		color: $color-blue + rgb(20,20,20) !important;
+	}
+}

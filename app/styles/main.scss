@@ -12,106 +12,17 @@
 @import "sass-bootstrap/lib/bootstrap";
 @import 'fonts/myfonts'; 
 @import 'lib/axd-mixins'; 
-@import 'lib/axd-variables'; 
 @import 'lib/axd-colors'; 
+@import 'lib/global-overrides'; 
+@import 'lib/axd-variables'; 
+@import 'lib/utilities'; 
 @import 'lib/logo'; 
 @import 'lib/landing'; 
 @import 'lib/navigation'; 
 @import 'lib/footer'; 
 
 
-// 1.0 GLOBAL STYLES
-// ----------------------------------
 
-html {
-  // controls REM sizing on all header styles
-  font-size: 62.5%;
-
-  @media (max-width: 480px) {
-    font-size: 40%;
-    h1 {
-      @include font-size(5);
-    }
-  }
-}
-
-body {
-  // min-width: 1024px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica Neue;
-  color: $color-text-black;
-  line-height: 1.1em;
-}
-h1 {
-  // page title, white font on dark background
-  color: $color-text-white;
-  font-weight: 100;
-  @include font-size(7);
-
-  &.services {
-    color: $color-blue;
-  }
-
-  &.name {
-    margin-left: -40px;
-  }
-}
-
-h2 {
-  // section titles, blog post titles, service section titles
-  @include font-size(5);
-  font-weight: 500;
-}
-
-
-h3 {
-  // section bylines
-  @include font-size(3);
-  // font-style: italic;
-  color: $color-blue;
-  font-weight: 200;
-
-  &.about {
-    font-style: normal;
-    @include font-size(2.5);
-    // color: $color-text-gray;
-  }
-
-  &.title {
-    color: $color-black;
-    font-weight: 500;
-    @include font-size(1.8);
-  }
-}
-
-
-
-p {
-  @include font-size(2);
-  color: $color-text-black;
-  font-weight: 200;
-  line-height: 1.5em;
-  margin: 20px 0;
-}
-
-// 1.1 GLOBAL LAYOUTS
-// ----------------------------------
-.page-wrapper {
-  padding-top: 40px;
-  height: auto;
-  min-height: 100%;
-}
-body {
-  width: 100%;
-}
-@media (max-width: 979px) { 
-  body { 
-    padding-left: 0; 
-    padding-right: 0; 
-  } 
-} 
 
 .shim-anchor {
   margin-top: -145px;
@@ -350,14 +261,13 @@ body {
     }
   }
 }
-.pointer {
-  cursor: pointer;
-}
+
 
 .contact {
   color: $color-text-white;
   width: 100%;
   // height: 400px;
+  margin-bottom: 120px;
   background-color: rgba(10,10,10,0.50);
   position: relative;
 
@@ -397,21 +307,21 @@ body {
 //   border-top: solid 5px #ccc;
 
 // }
-.profile-wedge {
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 0 0 30px 30px;
-  display: inline-block;
-  margin-right: 10px;
+// .profile-wedge {
+//   width: 0px;
+//   height: 0px;
+//   border-style: solid;
+//   border-width: 0 0 30px 30px;
+//   display: inline-block;
+//   margin-right: 10px;
 
-  &.ben {
-    border-color: transparent transparent $color-blue transparent;
-  }
-  &.nash {
-    border-color: transparent transparent $color-orange transparent;
-  }
-}
+//   &.ben {
+//     border-color: transparent transparent $color-blue transparent;
+//   }
+//   &.nash {
+//     border-color: transparent transparent $color-orange transparent;
+//   }
+// }
 
 
 .btn-bio {
