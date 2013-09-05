@@ -26,7 +26,8 @@ h1 {
   // page title, white font on dark background
   color: $color-text-white;
   font-weight: 100;
-  @include font-size(7);
+  @include font-size(3);
+  margin: 10px 0 20px 0;
 
   &.services {
     color: $color-blue;
