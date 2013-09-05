@@ -9,5 +9,6 @@
     "commit": "d3f9d32fb6a4ca4533f0c58aaaee51f8de0bd9ee"
   },
   "_source": "git://github.com/Prinzhorn/skrollr.git",
-  "_target": "~0.6.11"
+  "_target": "~0.6.11",
+  "_originalSource": "skrollr"
 }

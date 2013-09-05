@@ -30,5 +30,5 @@
   },
   "_source": "git://github.com/flesler/jquery.scrollTo.git",
   "_target": "~1.4.6",
-  "_direct": true
+  "_originalSource": "jquery.scrollTo"
 }
