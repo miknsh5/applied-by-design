@@ -29,7 +29,7 @@ angular.module('appliedByDesignApp')
         $scope.activePanel = next===3 ? 0 : next;
         $scope.$apply();
         console.log($scope.activePanel);
-      }, 5000);
+      }, 7000);
     }
 
     playCarousel();
