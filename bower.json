@@ -6,11 +6,15 @@
     "modernizr": "~2.6.2",
     "jquery": "~2.0.3",
     "jquery.scrollTo": "~1.4.6",
-    "angular": "~1.0.7",
+    "angular": "~1.2.0",
     "angular-sanitize": "~1.0.7",
     "topojson": "~1.2.3",
     "d3": "~3.2.8",
     "sass-bootstrap": "~2.3.2",
-    "skrollr": "~0.6.10"
+    "skrollr": "~0.6.10",
+    "angular-route": "~1.2.0-rc.1"
+  },
+  "resolutions": {
+    "angular": "1.2.0-rc.1"
   }
 }

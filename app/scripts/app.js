@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('appliedByDesignApp', [])
+angular.module('appliedByDesignApp', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
