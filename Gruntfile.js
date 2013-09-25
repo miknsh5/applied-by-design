@@ -86,7 +86,8 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/*',
             '!<%= yeoman.dist %>/.git*',
             '!<%= yeoman.dist %>/sitemap.xml',
-            '!<%= yeoman.dist %>/CNAME'
+            '!<%= yeoman.dist %>/CNAME',
+            '!<%= yeoman.dist %>/*.pdf'
           ]
         }]
       },
