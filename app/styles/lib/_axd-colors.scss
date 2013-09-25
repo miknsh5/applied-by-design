@@ -15,3 +15,10 @@ $color-text-gray: #555555;
 
 $color-blue: rgb(48,128,178);
 $color-orange: rgb(241,90,36);
+
+.blue-text {
+    color: $color-blue !important;
+}
+.orange-text {
+    color: $color-orange !important;
+}

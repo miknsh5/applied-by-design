@@ -28,7 +28,7 @@ angular.module('appliedByDesignApp')
 
         $scope.activePanel = next===3 ? 0 : next;
         $scope.$apply();
-        console.log($scope.activePanel);
+        // console.log($scope.activePanel);
       }, 7000);
     }
 
