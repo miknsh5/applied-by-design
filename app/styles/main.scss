@@ -123,9 +123,10 @@
     margin: 10px 0;
 
     img {
-      @include border-radius(100px);
+      @include border-radius(120px);
       margin-top: 2px;
       background-color: white;
+      border: solid #666 5px;
     }
   }
 }
