@@ -27,14 +27,14 @@
 
       ga('create', 'UA-41740032-1', 'www.appliedbydesign.com');
       ga('send', 'pageview');
-
-
     </script>
 
     <!-- <script src="//platform.linkedin.com/in.js" type="text/javascript">
      lang: en_US
     </script> -->
-    
+
+
+
   </head>
   <body ng-app="appliedByDesignApp" ng-controller="MainCtrl">
 
@@ -106,92 +106,19 @@
      <div id="services-anchor" class="anchor-strip shim-anchor"></div>
      <div class="service-bg">
        <div class="container">
-         <div class="service-btn-wrap hidden-xs">
-           <div class="diamond signage" ng-click="showPanel(0)">
-             <div class="overlay" ng-class="{active:activePanel==0}">
-               <p>Business Solutions</p>
-             </div>
-           </div>
-           <div class="diamond plane" ng-click="showPanel(1)">
-             <div class="overlay" ng-class="{active:activePanel==1}">
-               <p>Project Consulting</p>
-             </div>
-           </div>
-           <div class="diamond engine" ng-click="showPanel(2)">
-             <div class="overlay" ng-class="{active:activePanel==2}">
-               <p>Domain Expertise</p>
-             </div>
-           </div>
-         </div>
+         
+        <div class="hybrid-diagram">
+          <div class="mgmt box dg1 pos-initial"><p>Managment Consulting</p></div>
+          <div class="app box dg1 pos-initial"><p>Application Development</p></div>
+          <div class="axd-logo dg1">
+            <img src="../images/logo-dk.png" alt="Applied by Design">
+            <div id="axd-line">
+          </div>
+            
+          </div>
+        </div>
 
-         <!-- Business -->
-         <div class="service-wrapper animate-show" ng-show="activePanel==0" >
-           <h2><span class="subtle">Extending Capabilities</span> for your <strong>Business</strong></h2>
-           <p class="lead-copy">We'll work with you to understand every aspect of your aviation needs, create an appropriate web-application strategy, and provide all the leg work to turn your vision into a fully functioning reality.</p>
-           <!-- <a href="/#/services"><button type="button" class="btn btn-primary">Learn More</button></a>  -->
-           <h3 class="hidden-xs">Example Solutions</h3>
 
-           <div class="service-items hidden-xs">
-             <div class="service-item">
-               <div class="ikon-home-2 ikon"></div>
-               <p>Modernizing home-grown legacy tools</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-tree ikon"></div>
-               <p>Developing integrated application suites</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-user-2 ikon"></div>
-               <p>Improving current operational processes</p>
-             </div>
-           </div>
-         </div>
-
-         <!-- Projects -->
-         <div class="service-wrapper animate-show" ng-show="activePanel==1">
-           <h2><span class="subtle">Risk Reduction</span> for your <strong>Project</strong></h2>
-           <p class="lead-copy">We help new and existing application projects better translate business needs into technical requirements by providing the tools needed to bridge communication gaps between all project roles. By enabling more effective communication, projects can better align with their strategic objectives, reducing schedule and budget risk over the life of the project.</p>
-           <!-- <button type="button" class="btn btn-primary">Learn More</button>    -->
-           <h3 class="hidden-xs">Example Solutions</h3>
-
-           <div class="service-items hidden-xs">
-             <div class="service-item">
-               <div class="ikon-earth ikon"></div>
-               <p>Strategic Alignment</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-file ikon"></div>
-               <p>UI/UX Wireframes, Mockups, and Comps</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-equalizer ikon"></div>
-               <p>Application Proof of Concept / Prototype</p>
-             </div>
-           </div>
-         </div>
-
-         <!-- Teams -->
-         <div class="service-wrapper animate-show" ng-show="activePanel==2">
-           <h2><span class="subtle">Domain Expertise</span> for your <strong>Team</strong></h2>
-           <p class="lead-copy">We love challenges, and we excel at building complex analytical models and functional prototypes with a systematic mindset.  If you're looking for these specific skills and an aviation background, contact us to discuss opportunities for embedding us in your existing team to help resolve technical hurdles or provide on-site problem solving.</p>
-           <!-- <button type="button" class="btn btn-primary">Learn More</button>    -->
-           <h3 class="hidden-xs">Example Solutions</h3>
-
-           <div class="service-items hidden-xs">
-             <div class="service-item">
-               <div class="ikon-plane ikon"></div>
-               <p>Real-time Analytics</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-earth ikon"></div>
-               <p>Airline Economics</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-stats ikon"></div>
-               <p>Data Visualization</p>
-             </div>
-           </div>
-         </div>
 
        </div>
      </div>

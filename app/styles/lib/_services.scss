@@ -18,5 +18,95 @@
 
 
 
+$diagram-h: 300px;
+$diagram-w: 600px;
+$box-h: 150px;
+$box-w: $box-h;
+
+// Hybrid Consulting Diagram
+.hybrid-diagram {
+  position: relative;
+  width: $diagram-w;
+  height: $diagram-h;
+  margin: 0 auto;
+  margin-top: 300px;
+}
+
+.mgmt {
+  background-color: $color-orange;
+  &.pos-initial {
+    left: 0;
+    top: $diagram-h/2 - $box-h/2;
+  }
+  &.pos-active {
+    left: $diagram-w/2 - $box-w*3/4;
+    top: $diagram-h/2 - $box-h/2 - $box-h/4;
+  }
+
+  p {
+    text-align: right;
+    margin-left: -180px;
+    margin-top: 35px;
+    width: 150px;
+    color: $color-orange;
+  }
+}
+
+.app {
+  background-color: $color-blue;
+  &.pos-initial {
+    right: 0;
+    top: $diagram-h/2 - $box-h/2;
+  }
+  &.pos-active {
+    right: $diagram-w/2 - $box-w*3/4;
+    top: $diagram-h/2 - $box-h/2 + $box-h/4;
+  }
+  p {
+    text-align: left;
+    margin-left: 180px;
+    margin-top: 35px;
+    width: 150px;
+    color: $color-blue;
+  }
+}
+
+.axd-logo {
+  @include transition-property(opacity);
+  @include transition-duration(1s);
+  @include transition-delay(1.5s);
+  opacity: 0;
+  width: 180px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  img {
+    width: 100%;
+  }
+
+  &.pos-active {
+    opacity: 1;
+  }
+}
+
+#axd-line {
+  @include rotate(-45deg);
+  width: 150px;
+  position: absolute;
+  right: 150px;
+  top: 95px;
+  border-bottom: dotted #999 4px;
+}
+
+.box {
+  @include transition-property(left, top, right);
+  @include transition-duration(1.5s);
+  // @include transition-timing-function(ease-in);
+  width: $box-w;
+  height: $box-h;
+  position: absolute;
+  opacity: 0.75;
+}
+
 
 
