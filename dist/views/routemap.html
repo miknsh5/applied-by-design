@@ -1,0 +1,455 @@
+<div class="page-wrapper">
+
+    <div class="app-holder">
+        <!-- fleet type filter at top of app -->
+
+        <section id="filter-bar">
+            <!-- <h4>Route: {{hoveredRoute.NonDirectional}}</h4> -->
+
+            <div class="page-container">
+                <div id="report-btn" ng-click="togglePanelState(); toggleEquipPanel(); toggleReport();" ng-class="{active:showReport}">
+                    <i class="ikon-file ikon"> </i>
+                </div>
+
+                <div id="filter-bar-menu-btn" ng-click="toggleEquipPanel()">
+                    <i class="ikon-airplane"></i>
+                </div>
+
+                <!-- loop through the different model types -->
+                <div id="fleet-btn-wrapper" ng-style="equipPanelStyle()">
+                    <div ng-repeat="model in equipment">
+                        <div class="fleet-model-btn toggle" ng-click="toggleModel($index)" ng-class="{active: equipment[$index].active}">
+                            <span class="model-name">{{model.name}}</span>
+                            <i class="ikon-airplane ikon"> </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="route-map">
+            <route-map height="mapHeight" width="mapWidth" hovered="hovered(args)"></route-map>
+        </section>
+
+        <div class="dashboard-wrapper" ng-style="panelStyle()">
+            <div class="page-container">
+                <!-- primary dashboard area (minus navigation) -->
+                <div class="dashboard-inner">
+                    
+
+                    <div class="dashboard-nav">
+                        <div class="mini-nav-group">
+                            <div class="mini-nav-btn" ng-click="selectTab(0)" ng-class="{active: activeTab == 0}">
+                                <strong>$</strong>
+                             </div>
+                            <div class="mini-nav-btn" ng-click="selectTab(1)" ng-class="{active: activeTab == 1}">
+                                <i class="ikon-clock"></i>
+                            </div>
+                            <div class="mini-nav-btn" ng-click="selectTab(2)" ng-class="{active: activeTab == 2}"> 
+                                <i class="ikon-airplane"></i>
+                            </div>
+                            <div class="mini-nav-btn utility" ng-click="togglePanelState()">
+                                <i ng-show="showPanel()" class="ikon-chevron-down"></i>
+                                <i ng-show="!showPanel()" class="ikon-chevron-up"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="dash financial" ng-controller="FinancialPanelCtrl" ng-show="activeTab == 0">
+
+                        <!-- small filter panel with year buttons -->
+                        <div class="panel small">
+                            <div class="filter-year">
+                                <h4>Fiscal Year</h4>
+                                <div class="year-buttons">
+                                    <div ng-repeat="year in fiscalYears">
+                                    <div class="year-btn" ng-click="selectYear($index)" ng-class="{active: $index == activeYearId} ">{{year}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- main financial panel -->
+                        <div class="panel main">
+                            <div class="panel-inner" ng-init="isFinancialTable=true;">
+                                <!-- financial & operational table filter buttons -->
+                                <div class="inner-tab-row">
+                                    <div class="report-toggle" ng-click="isFinancialTable=!isFinancialTable" ng-class="{active: isFinancialTable}">Financial
+                                    </div>
+                                    <div class="report-toggle" ng-click="isFinancialTable=!isFinancialTable" ng-class="{active: !isFinancialTable}">Operational
+                                    </div>
+                                </div>
+                                <div class="summary-table financial">
+                                    <h3 class="heading wide" ng-show="isFinancialTable">Financial Report</h3>
+                                    <h3 class="heading wide" ng-show="!isFinancialTable">Operational Report</h3>
+                                    <h3 class="heading small">Total</h3>
+                                    <h3 class="heading small last">Selected &nbsp
+                                        <i class="ikon-airplane ikon"> </i>
+                                    </h3>
+
+                                    <div ng-repeat="financial in baseFinancialData().data | filter:{isCurrency:isFinancialTable}" ng-show="isFinancialTable">
+                                        <div class="row-wrap" ng-click="selectReport(financial.name)" ng-class="{active: financial.name == activeReportName() }">
+
+                                            <h4 class="title wide">{{financial.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
+                                                {{financial.val | number:financial.decimals }}
+                                            </h4>
+                                            <h4 class="number selected">
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
+                                                {{getActiveRecord(financial.name).val | number:financial.decimals }} 
+                                            </h4>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
+                                    <div ng-repeat="financial in baseFinancialData().data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
+                                        <div class="row-wrap" ng-click="selectReport(financial.name)" ng-class="{active: financial.name == activeReportName }">
+
+                                            <h4 class="title wide">{{financial.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
+                                                {{financial.val | number:financial.decimals }}
+                                            </h4>
+                                            <h4 class="number selected">
+                                                <span class="dollar" ng-show="financial.isCurrency">$</span>
+                                                {{getActiveRecord(financial.name).val | number:financial.decimals }} 
+                                            </h4>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- panel for the financial chart -->
+                        <div class="panel chart">
+                            <div class="panel-inner">
+            <!--                     <div class="chart-title">
+                                    <h4>{{activeReportName}}: 
+                                        <span class="primary">
+                                            <span class="dollar" ng-show="activeChartData.total.isCurrency">$</span>
+                                            {{activeChartData.total.val | number:0}}
+                                        </span>
+                                    </h4>
+                                </div> -->
+
+                                <div class="panel large">
+                                    <donut-chart data="chartData()" hovered="hovered(args)"></donut-chart>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dash operational" ng-controller="OperationsPanelCtrl" ng-show="activeTab == 1">
+
+                        <!-- small filter panel with day buttons -->
+                        <div class="panel small">
+                            <h4 class="left">Route</h4>
+                            <div class="route-pair">
+                                <div class="city-pair">
+                                    <div class="city left">{{activeRouteReport().detail.origin.IATA}}</div>
+                                </div>
+                                <div class="city-pair">
+                                    <div class="city right">{{activeRouteReport().detail.destination.IATA}}</div>
+                                </div>
+                                <!-- <div class="connector"></div> -->
+                            </div>
+                            <div class="filter-days">
+                                <h4 class="left">Schedule</h4>
+                                <div class="day-buttons">
+                                    <div ng-repeat="day in dotw()">
+                                        <div class="day-btn" ng-click="selectDay($index)" ng-class="{active: day.active}">
+                                            {{day.name}}
+                                        </div>
+                                        <daily-flights num-flights="day.numFlights"></daily-flights>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- main Operationsl panel -->
+                        <div class="panel large">
+                            <div class="panel-inner" ng-init="isFinancialTable=true;">
+                                <div class="inner-tab-row">
+                                    <div class="report-toggle" ng-click="isFinancialTable=!isFinancialTable" ng-class="{active: isFinancialTable}">Financial
+                                    </div>
+                                    <div class="report-toggle" ng-click="isFinancialTable=!isFinancialTable" ng-class="{active: !isFinancialTable}">Operational
+                                    </div>
+                                </div>
+                                <!-- financial & operational table filter buttons -->
+                                <div class="summary-table financial">
+                                    <h3 class="heading wide" ng-show="isFinancialTable">Financial Report</h3>
+                                    <h3 class="heading wide" ng-show="!isFinancialTable">Operational Report</h3>
+                                    <h3 class="heading small">Route Total</h3>
+
+                                    <div ng-repeat="metric in activeRouteReport().data | filter:{isCurrency:isFinancialTable}" ng-show="isFinancialTable">
+                                        <div class="row-wrap" ng-click="selectReport(metric.name)" ng-class="{active: metric.name == activeReportName }">
+                                            <h4 class="title wide">{{metric.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                                {{metric.val | number:metric.decimals }}
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <!-- THIS IS A HACK - can't get the isCurrency filter to work for the false condition -->
+                                    <div ng-repeat="metric in activeRouteReport().data | filter:{isCurrency:'false'}" ng-show="!isFinancialTable">
+                                        <div class="row-wrap" ng-click="selectReport(metric.name)" ng-class="{active: metric.name == activeReportName }">
+                                            <h4 class="title wide">{{metric.name}}:</h4>
+                                            <h4 class="number primary">
+                                                <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                                {{metric.val | number:metric.decimals }}
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                               <div class="summary-table financial" ng-init="maxChars=22;">
+                                    <h3 class="heading full">Route Details</h3>
+
+                                        <div class="row-wrap city-pair first">
+                                            <h4 class="title mini">Airport:</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.origin.Name | limitTo:maxChars}}</h4>
+                                            <h4 class="title mini">City, St:</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.origin.City}}, {{activeRouteReport().detail.origin.State}}</h4>
+                                        </div>
+                                        <div class="row-wrap distance">
+                                            <h4 class="title mini">Distance (mi):</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.route.distance | number:0}}</h4>
+                                        </div>
+                                        <div class="row-wrap city-pair">
+                                            <h4 class="title mini">Airport:</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.destination.Name | limitTo:maxChars}}</h4>
+                                            <h4 class="title mini">City, St:</h4>
+                                            <h4 class="number shortname primary">{{activeRouteReport().detail.destination.City}}, {{activeRouteReport().detail.destination.State}}</h4>
+                                        </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dash fleet" ng-controller="FleetPanelCtrl" ng-show="activeTab == 2">
+                        
+                        <!-- small filter panel with aircraft buttons -->
+                        <div class="panel small">
+                            <div class="filter-plane">
+                                <h4>Fleet Models</h4>
+                                <div class="plane-buttons">
+                                    <!-- loop through the different model types -->
+                                    <div ng-repeat="model in fleet">
+                                        <div class="fleet-model-btn select" ng-click="selectModel($index)" ng-class="{active: activeFleetModel == $index}">
+                                            <span class="model-name">{{model.name}}</span>
+                                            <i class="ikon-airplane ikon"> </i>
+                                            <i class="ikon-chevron-right"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Model</h3>
+                                    <div ng-repeat="item in fleetServices">
+                                        <div class="row-wrap">
+                                            <h4 class="title mini">{{ item.name }}</h4>
+                                            <h4 class="number primary">{{ item.value }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Services</h3>
+                                    <div ng-repeat="service in fleet[activeFleetModel].services">
+                                        <div class="row-wrap" ng-click="toggleService($index)">
+                                            <h4 class="title mini service" ng-class="{active: service.val}">
+                                                <i class="ikon-wrench"> </i>
+                                                &nbsp{{ service.name }}</h4>
+                                            <h4 class="number narrow">{{ service.val }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dash reports" ng-controller="ReportsPanelCtrl" ng-show="activeTab == 3">
+                        
+                        <!-- small filter panel with aircraft buttons -->
+                        <div class="panel small">
+                            <div class="filter-plane">
+                                <h4>Reports</h4>
+                                <div class="plane-buttons">
+                                    <!-- loop through the different model types -->
+                                    <div ng-repeat="model in fleet">
+                                        <div class="fleet-model-btn select" ng-click="selectModel($index)" ng-class="{active: activeFleetModel == $index}">
+                                            <span class="model-name">{{model.name}}</span>
+                                            <i class="ikon-airplane ikon"> </i>
+                                            <i class="ikon-chevron-right"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Model</h3>
+                                    <div ng-repeat="item in fleetDetails">
+                                        <div class="row-wrap">
+                                            <h4 class="title mini">{{ item.name }}</h4>
+                                            <h4 class="number primary">{{ item.value }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel medium">
+                            <div class="panel-inner">
+                                <div class="inner-tab-row">&nbsp</div>
+                                <div class="summary-table">
+                                    <h3 class="heading full">Aircraft Services</h3>
+                                    <div ng-repeat="service in fleet[activeFleetModel].services">
+                                        <div class="row-wrap" ng-click="toggleService($index)">
+                                            <h4 class="title mini service">
+                                                <i class="ikon-wrench"> </i>{{ service.name }}</h4>
+                                            <h4 class="number narrow primary">{{ service.val }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="report-container" ng-controller="ReportsPanelCtrl" ng-style="reportStyle()">
+            <div class="report-wrapper">
+                <div class="report-inner">
+                    <div id="report-toolbar">
+                        <i class="ikon-print"></i>
+                        <i class="ikon-download-alt"></i>
+                    </div>
+                    <h1 class="report">Financial Report: 
+                        <span class="primary"><i class="ikon-airplane"> </i> {{fleetModel().name}}</span>
+                    </h1>
+                    <div class="arrow-btns">
+                        <div class="next-btn prev" ng-click="prevModel()"><i class="ikon-chevron-left"></i></div>
+                        <div class="next-btn next" ng-click="nextModel()"><i class="ikon-chevron-right"></i></div>
+                    </div>
+                    <h2 class="report-title">Services</h2>
+                    <div class="services">
+                        <div ng-repeat="service in fleetModel().services">
+                            <span ng-class="{active: service.val}" ng-click="toggleService($index)">
+                                <i class="ikon-{{ikons[$index]}}"> </i>
+                            </span>
+                        </div>
+                        <!-- <i class="ikon-mobile active"></i>
+                        <i class="ikon-wrench"></i>
+                        <i class="ikon-stats"></i> -->
+                    </div>
+                    <div class="report-row">
+                        <div class="module split-1-3">
+                            <h2 class="report-title leftcol">Financials</h2>
+                            <h2 class="report-title sub-heading"><span>per/Flight</span></h2>
+                            <div class="summary-table report">
+                                <!-- <h3 class="heading small">Route Total</h3> -->
+                                <div ng-repeat="metric in metricsBase() | filter:{isCurrency:'true'}">
+                                    <div class="row-wrap bullet-row">
+                                        <h4 class="left">{{metric.name}}:</h4>
+                                        <h4 class="number per-flight delta">
+                                            <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                            <span ng-show="metric.isExpense">(</span>
+                                            {{metric.val | number:metric.decimals }}
+                                            <span ng-show="metric.isExpense">)</span>
+                                        </h4>
+                                        <h4 class="number per-flight delta highlight">
+                                            <span class="dollar" ng-show="metric.isCurrency">$</span>
+                                            <span ng-show="metric.isExpense">(</span>
+                                            {{ deltaMetric(metric.name) | number:0 }}
+                                            <span ng-show="metric.isExpense">)</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="row-wrap total bullet-row">
+                                    <h4 class="left"><strong>Operating Profit:</strong></h4>
+                                    <h4 class="number total delta">
+                                        <span class="dollar">$</span>
+                                        <strong>{{operatingProfit('base') | number:0}}</strong>
+                                    </h4>
+                                    <h4 class="number total delta highlight">
+                                        <span class="dollar">+$</span>
+                                        <strong>{{operatingProfit('delta') | number:0}}</strong>
+                                        <span class="dollar">/flt</span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module split-2-3 bullet-chart">
+                            <bullet-chart data="metricChartData"></bullet-chart>
+                        </div>
+                    </div>
+
+                    <div class="report-row">
+                        <div class="module split">
+                            <h2 class="report-title">Forecast</h2>
+                            <stacked-chart data="revenueForecast"></stacked-chart>
+                        </div>
+                        <div class="module split">
+                            <h2 class="report-title">NPV Analysis</h2>
+                            <div class="npv">${{-npvTotal() | number:0}}</div>
+                            <div class="rate-wrapper">
+                                <div class="rate-btns">
+                                    <div class="increment-btn" ng-click="incrementRate(.01)"><i class="ikon-chevron-up"></i></div>
+                                    <div class="increment-btn" ng-click="incrementRate(-.01)"><i class="ikon-chevron-down"></i></div>
+                                </div>
+                                <div class="settings">
+                                    <div class="title">Discount Rate: </div>
+                                    <div class="value">{{ rate * 100 | number:1}} %</div>
+                                </div>
+                            </div>
+                            <div class="duration-wrapper">
+                                <div class="settings wider">
+                                    <div class="title">Duration: <span class="value">{{years}} years</span></div>
+                                    <div class="year-btns">
+                                        <div class="year" ng-class="{active: years==1}" ng-click="changeDuration(1)">1</div>
+                                        <div class="year" ng-class="{active: years==2}" ng-click="changeDuration(2)">2</div>
+                                        <div class="year" ng-class="{active: years==3}" ng-click="changeDuration(3)">3</div>
+                                        <div class="year" ng-class="{active: years==4}" ng-click="changeDuration(4)">4</div>
+                                        <div class="year" ng-class="{active: years==5}" ng-click="changeDuration(5)">5</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

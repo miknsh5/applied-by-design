@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Applied by Design</title>
+    <meta name="description" content="">
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+
+    <link rel="stylesheet" href="styles/14b98732.main.css">
+    <!--[if lt IE 9]>
+      <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('footer');
+      </script>
+    <![endif]-->
+
+  </head>
+  <body ng-app="appliedByDesignApp">
+
+
+    <!-- PRIMARY NAVIGATION -->
+
+    <header>
+      <div class="container">
+        <nav>
+          <a class="logo" href="/#/">
+            <!-- <img src="../images/e29b90da.logo-blue-lt.png" alt="Applied by Design"> -->
+            <img src="../images/20af8386.logo-04-lt.png" alt="Applied by Design">
+          </a>
+            
+          <ul class="nav-list pull-right">
+            <!-- <li class="active"><a href="#">Thoughts</a></li> -->
+            <li class="nav-btn"><a href="#/services/">Services</a></li>
+            <li class="nav-btn"><a href="#/about/">About</a></li>
+            <!-- <li class="nav-btn"><a href="#/blog/">Thoughts</a></li> -->
+            <li id="contact-info" class="nav-btn"><a>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header> 
+
+    <!-- END PRIMARY NAVIGATION -->
+
+
+
+    <!-- Add your site or application content here -->
+
+    <!--[if lt IE 9]>
+      <p style="margin: 80px 40px; background-color: red; text-align: center; padding: 10px;">
+        Uh oh! You are using an embarassingly outdated browser - so outdated that we needed to make this error message just for you.  Get with the times!  Please upgrade to a more modern browser (Firefox, Chrome, IE9+, Safari).
+      </p>
+    <![endif]-->
+
+
+    <div ng-view=""></div>
+
+
+    <!-- BEGIN FOOTER -->
+    
+
+    <div id="contact-anchor" class="anchor-strip"></div>
+
+    <div class="contact-us">
+      <section class="section-summary">
+        <div class="container">
+
+          <div class="inner footer">
+            <div class="summary-logo">
+              <img src="../images/20af8386.logo-04-lt.png">
+              <!-- <img src="../images/e29b90da.logo-blue-lt.png"> -->
+            </div>
+              <p>A continuous and concurrent focus on project strategy, experience design and engineering development throughout the life of your project.</p>
+
+              <a href="mailto:info@appliedbydesign.com">
+                <div class="btn btn-info btn-large btn-contact">
+                  <i class="icon-envelope icon-white"> </i> info@appliedbydesign.com
+                </div>
+              </a>
+
+              <div class="btn btn-info btn-large btn-contact">
+                <i class="icon-signal icon-white"> </i> 206-331-4529
+              </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row foot">
+          <div class="span4 city">
+            <p><i class="icon-map-marker"> </i> Seattle, WA</p>
+          </div>
+          <div class="span4 email">
+            <a href="mailto:info@appliedbydesign.com">
+              <p><i class="icon-envelope"> </i> info@appliedbydesign.com</p>
+            </a>
+          </div>
+
+          <div class="span4 phone">
+            <a href="tel:+12063314529"><p> <i class="icon-signal"> </i> 206-331-4529</p></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12 copyright"><p>© Applied by Design 2013</p></div>
+        </div>
+      </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <script src="components/angular/angular.js"></script> 
+    <script src="components/angular-route/angular-route.js"></script> 
+    <script src="components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/modernizr/modernizr.js"></script>
+    <script src="components/skrollr/dist/skrollr.min.js"></script>
+    <script src="components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="components/d3/d3.min.js"></script>
+    <script src="components/topojson/topojson.js"></script>
+    <script src="components/underscore/underscore-min.js"></script>
+    <script src="scripts/directives/d3.custom.routeMap.js"></script>
+    <script src="scripts/directives/d3.custom.bullet.js"></script>
+
+    <script src="scripts/2b5a46e8.scripts.js"></script>
+
+    <script>
+    $('#contact-info').click(function (){
+      $.scrollTo('#contact-anchor',{duration: 0});
+    });
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41740032-1', 'www.appliedbydesign.com');
+      ga('send', 'pageview');
+
+    </script>
+
+
+  </body>
+</html>
