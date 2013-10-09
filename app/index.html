@@ -91,10 +91,11 @@
        <div class="container">
 
          <div scroll-position="scroll"></div>
-         <div class="greeting" ng-style="fadeTitle()">
-           <h2 class="underline" itemprop="name">Applied by Design</h2>
+         <div class="greeting fade-in fade-in-0" ng-style="fadeTitle()">
+           <h2 class="underline " itemprop="name">Applied by Design</h2>
            <div class="divider"></div>
-           <h1 itemprop="description">Modern Application Solutions for the Aviation World</h1>
+           <!-- <h1 itemprop="description">Modern Application Solutions for the Aviation World</h1> -->
+           <h1 itemprop="description">Modern Application Solutions</h1>
            <div id="services-btn"><img src="../images/more-arrow-lt.png" alt="more arrow"></div>
          </div>
 
@@ -117,19 +118,19 @@
         </div>
 
 
-        <div class="copy-intro">
-          <h2>Bridging the gap between <br />
-            <span class="mgmt-text"><strong>business needs</strong></span> and <span class="app-text"><strong>application development</strong></span>.
-          </h2>
+        <div class="copy-intro fade-in fade-in-1">
+            <h2>Bridging the gap between <br />
+              <span class="mgmt-text"><strong>business needs</strong></span> and <span class="app-text"><strong>application development</strong></span>.
+            </h2>
           <div class="row">
             <div class="mgmt-text col-md-6">
               <div class="mgmt-list">
                 <p class="title"><i class="ikon-user"></i></p>
-                <p>Strategy &nbsp<i class="ikon-airplane"></i></p>
-                <p>What to do &nbsp<i class="ikon-airplane"></i></p>
-                <p>Why we're doing it &nbsp<i class="ikon-airplane"></i></p>
-                <p>Measuring Progress &nbsp<i class="ikon-airplane"></i></p>
-                <p>Ideas &nbsp<i class="ikon-airplane"></i></p>
+                <p>Strategy &nbsp<i class="ikon-file"></i></p>
+                <p>What to do &nbsp<i class="ikon-file"></i></p>
+                <p>Why we're doing it &nbsp<i class="ikon-file"></i></p>
+                <p>Measuring Progress &nbsp<i class="ikon-file"></i></p>
+                <p>Ideas &nbsp<i class="ikon-file"></i></p>
               </div>
             </div>
             <div class="app-text col-md-6">
@@ -143,11 +144,17 @@
               </div>
             </div>
             <div id="connections">
-              <div class="connector con1"></div>
-              <div class="connector con2"></div>
-              <div class="connector con3"></div>
-              <div class="connector con4"></div>
-              <div class="connector con5"></div>
+              <div class="connector path-h static con1"></div>
+              <div class="connector path-h static con2"></div>
+              <div class="connector path-h static con3"></div>
+              <div class="connector path-h static con4"></div>
+              <div class="connector path-h static con5"></div>
+
+              <div class="connector path-h draw con1"></div>
+              <div class="connector path-h draw con2"></div>
+              <div class="connector path-h draw con3"></div>
+              <div class="connector path-h draw con4"></div>
+              <div class="connector path-h draw con5"></div>
             </div>            
           </div>
 
@@ -169,11 +176,19 @@
           <p>Build the right product</p>
           <p>Build the product right</p> -->
 
-          <div id="bridge-diagram" class="row">
+          <div id="bridge-diagram" class="row fade-in fade-in-2">
+          <!-- <h2>Successful Application Projects Need:</h2> -->
+
             <div class="col-md-6">
               <img src="images/bridge-diagram-wht.png" alt="">
             </div>
+
+
             <div class="col-md-6">
+             
+              <div class="path path-v static"></div>
+              <div class="path path-v draw con6"></div>
+             
               <div class="objective">
                 <div class="bullet">1</div>
                 <h4>Strategic Alignment</h4>
@@ -198,8 +213,49 @@
         <!-- </div> -->
 
 
-        <div id="venn-diagram">
-          <img src="images/venn-diagram.png" alt="">
+        <div id="venn-diagram" class="row fade-in fade-in-3">
+          <!-- <img src="images/venn-diagram.png" alt=""> -->
+          <div class="wrapper">
+            <div class="bubble axd">
+              <img src="../images/logo-lt.png" alt="Applied by Design">
+            </div>
+            <div class="bubble mgmt"><p class="mgmt-text">Strategy</p></div>
+            <div class="bubble app"><p class="app-text">Development</p></div>
+            <div id="solutions">
+              <div class="solution s00 fade-in fade-in-6"><i class="ikon-user"></i>
+                <div class="title left">User Personas</div>
+              </div>
+              <div class="solution s01 fade-in fade-in-6"><i class="ikon-list-2"></i>
+                <div class="title left">Scenario Definition</div>
+              </div>
+              <div class="solution s02 fade-in fade-in-6"><i class="ikon-briefcase"></i>
+                <div class="title left">Use Cases</div>
+              </div>
+              <div class="solution s40 fade-in fade-in-6"><i class="ikon-screen"></i>
+                <div class="title right">UI/UX Design</div>
+              </div>
+              <div class="solution s41 fade-in fade-in-6"><i class="ikon-stats"></i>
+                <div class="title right">Data Modeling</div>
+              </div>
+              <div class="solution s42 fade-in fade-in-6"><i class="ikon-menu"></i>
+                <div class="title right">Analytical Modeling</div>
+              </div>
+              <div class="solution s20 fade-in fade-in-6"><i class="ikon-airplane"></i></div>
+              <div class="solution s05 fade-in fade-in-6"><i class="ikon-file"></i>
+                <div class="title bottom">Strategic Framework</div>
+              </div>
+              <div class="solution s15 fade-in fade-in-6"><i class="ikon-html5"></i>
+                <div class="title bottom">Technology Strategy</div>
+              </div>
+              <div class="solution s35 fade-in fade-in-6"><i class="ikon-bars"></i>
+                <div class="title bottom">Data Visualization</div>
+              </div>
+              <div class="solution s55 fade-in fade-in-6"><i class="ikon-switch"></i>
+                <div class="title bottom">Functional Prototypes</div>
+              </div>
+            </div>
+
+          </div>
 
         </div>
 
@@ -212,7 +268,7 @@
        <div id="about-anchor" class="anchor-strip"></div>
 
        <div class="container">
-         <div class="row">
+         <div class="row fade-in fade-in-4">
            <h2>Our Team</h2>
            <div class="bio col-md-6">
              <div class="headshot">
@@ -240,7 +296,7 @@
 
      <div class="contact">
        <div id="contact-anchor" class="anchor-strip"></div>
-       <div class="container">
+       <div class="container fade-in fade-in-5">
          <h2>Connect</h2>
 
          <div class="social-media">

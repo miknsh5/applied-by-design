@@ -73,7 +73,7 @@ function checkAnimation(item) {
     var $elem = $(item);
 
     // If the animation has already been started
-    // if ($elem.hasClass('pos-active')) return;
+    // if ($elem.hasClass('anim-active')) return;
 
     if (isElementInViewport($elem)) {
         // Start the animation
@@ -92,5 +92,15 @@ $(window).scroll(function(){
     checkAnimation('.con3');
     checkAnimation('.con4');
     checkAnimation('.con5');
+    checkAnimation('.con6');
+    checkAnimation('.fade-in-0');
+    checkAnimation('.fade-in-1');
+    checkAnimation('.fade-in-2');
+    checkAnimation('.fade-in-3');
+    checkAnimation('.fade-in-4');
+    checkAnimation('.fade-in-5');
+    checkAnimation('.fade-in-6');
+    checkAnimation('.bubble');
+    checkAnimation('.solution');
 });
-
+checkAnimation('.fade-in-0');

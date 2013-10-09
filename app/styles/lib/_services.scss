@@ -21,28 +21,21 @@
 
 
 $diagram-h: 300px;
-$diagram-w: 600px;
-$box-h: 150px;
+$diagram-w: 400px;
+$box-h: 100px;
 $box-w: $box-h;
+$bubble-opacity: 0.75;
 
 
 .services-section {
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 200;
   }
   
 }
 
 
-// Hybrid Consulting Diagram
-#hybrid-diagram {
-  position: relative;
-  width: $diagram-w;
-  height: $diagram-h;
-  margin: 0 auto;
-  margin-top: 300px;
-}
 
 .mgmt-text {
   color: $color-orange;
@@ -53,63 +46,74 @@ $box-w: $box-h;
   // font-weight: 600;
 }
 
-.mgmt {
-  background-color: $color-orange;
-  &.pos-initial {
+
+
+
+// Hybrid Consulting Diagram
+#hybrid-diagram {
+  position: relative;
+  width: $diagram-w;
+  height: $diagram-h;
+  margin: 0 auto;
+  margin-top: 70px;
+
+  .mgmt {
     left: 0;
     top: $diagram-h/2 - $box-h/2;
-  }
-  &.anim-active {
-    left: $diagram-w/2 - $box-w*3/4;
-    top: $diagram-h/2 - $box-h/2 - $box-h/4;
+    background-color: $color-orange;
+
+    &.anim-active {
+      left: $diagram-w/2 - $box-w*3/4;
+      top: $diagram-h/2 - $box-h/2 - $box-h/4;
+      opacity: $bubble-opacity;
+    }
+
+    p {
+      text-align: right;
+      margin-left: -180px;
+      margin-top: 35px;
+      width: 150px;
+      color: $color-orange;
+    }
   }
 
-  p {
-    text-align: right;
-    margin-left: -180px;
-    margin-top: 35px;
-    width: 150px;
-    color: $color-orange;
-  }
-}
-
-.app {
-  background-color: $color-blue;
-  &.pos-initial {
+  .app {
     right: 0;
     top: $diagram-h/2 - $box-h/2;
+    background-color: $color-blue;
+
+    &.anim-active {
+      right: $diagram-w/2 - $box-w*3/4;
+      top: $diagram-h/2 - $box-h/2 + $box-h/4;
+      opacity: $bubble-opacity;
+    }
+    p {
+      text-align: left;
+      margin-left: 130px;
+      margin-top: 35px;
+      width: 150px;
+      color: $color-blue;
+    }
   }
-  &.anim-active {
-    right: $diagram-w/2 - $box-w*3/4;
-    top: $diagram-h/2 - $box-h/2 + $box-h/4;
-  }
-  p {
-    text-align: left;
-    margin-left: 180px;
-    margin-top: 35px;
-    width: 150px;
-    color: $color-blue;
+
+  .axd-logo {
+    @include transition-property(opacity);
+    @include transition-duration(1s);
+    @include transition-delay(1.0s);
+    opacity: 0;
+    width: 180px;
+    position: absolute;
+    right: -80px;
+    top: 0;
+    img {
+      width: 100%;
+    }
+
+    &.anim-active {
+      opacity: 1;
+    }
   }
 }
-
-.axd-logo {
-  @include transition-property(opacity);
-  @include transition-duration(1s);
-  @include transition-delay(1.5s);
-  opacity: 0;
-  width: 180px;
-  position: absolute;
-  right: 20px;
-  top: 0;
-  img {
-    width: 100%;
-  }
-
-  &.anim-active {
-    opacity: 1;
-  }
-}
-
 #axd-line {
   @include rotate(-45deg);
   width: 150px;
@@ -120,18 +124,18 @@ $box-w: $box-h;
 }
 
 .box {
-  @include transition-property(left, top, right);
-  @include transition-duration(1.5s);
+  @include transition-property(left, top, right, opacity);
+  @include transition-duration(1.0s);
   // @include transition-timing-function(ease-in);
   width: $box-w;
   height: $box-h;
   position: absolute;
-  opacity: 0.75;
+  opacity: 0;
 }
 
 .copy-intro {
   text-align: center;
-  padding: 100px 0;
+  margin: 50px 0;
 
   .title {
     margin: 0 20px;
@@ -147,7 +151,7 @@ $box-w: $box-h;
       font-size: 3rem;
     }
 
-    .ikon-airplane {
+    .ikon-file {
       font-size: 1.5rem;
     }
 
@@ -174,6 +178,28 @@ $box-w: $box-h;
 
 }
 
+.path-h {
+  &.static {
+    border-bottom: solid 1px #ddd;
+  }
+
+  &.draw {
+    border-bottom: solid 3px $color-blue;
+  }
+  // width: 0%;
+}
+.path-v {
+  &.static {
+    border-left: solid 2px #ddd;
+  }
+
+  &.draw {
+    border-left: solid 3px $color-blue;
+    
+  }
+  // width: 0%;
+}
+
 $con-top: 60px;
 $con-delta: 40px;
 #connections {
@@ -186,7 +212,6 @@ $con-delta: 40px;
     position: absolute;
     width: 0%;
     left: 47.5%;
-    border-bottom: solid 3px #888;
 
     &.con1 {top: $con-top;}
     &.con2 {top: $con-top + $con-delta;}
@@ -197,20 +222,53 @@ $con-delta: 40px;
     &.anim-active {
       width: 5%;
     }
+
+    &.static{
+      width: 5%;
+    }
   }
 
 }
+
+.fade-in {
+  @include transition-property(opacity);
+  @include transition-duration(1.5s);
+  opacity: 0;
+
+  &.anim-active {
+    opacity: 1;
+  }
+}
+
+
 
 #bridge-diagram {
   position: relative;
   // width: $diagram-w;
   width: 100%;
-  height: $diagram-h;
+  // height: $diagram-h;
   // margin: 0 auto;
   img {
     width: 100%;
   }
   // margin-top: 300px;
+
+  .path {
+    position: absolute;
+    top: 10px;
+    @include transition-property(height);
+    @include transition-duration(1.0s);
+    height: 0px;
+
+    &.static {
+      height: 100px;
+    }
+
+    &.anim-active {
+      height: 300px;
+    }
+    // @include rotate(90deg);
+  }
 }
 
 .objective {
@@ -224,7 +282,7 @@ $con-delta: 40px;
     text-align: center;
     left: -45px;
     top: -5px;
-    background-color: #333;
+    background-color: $color-darkgray;
     width: 30px;
     height: 30px;
     color: $color-text-white;
@@ -236,11 +294,153 @@ $con-delta: 40px;
 
 #venn-diagram {
   text-align: center;
-  margin: 100px 0;
+  margin: 120px 0;
+  width: 100%;
+  min-height: 400px;
+
   img {
     width: 70%;
   }
+
+  .wrapper {
+    position: relative;
+
+
+    #solutions {
+      position: absolute;
+      left: 53%;
+      top: 170px;
+      .solution {
+        @include transition-property(width, height, left, top, opacity);
+        @include transition-duration(1.0s);
+        
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 40px;
+        height: 40px;
+        @include border-radius(50px);
+
+        background-color: $color-darkgray;
+        color: $color-text-white;
+
+        i {
+          line-height: 2.5em;
+          font-size: 1.2em;
+
+          &.ikon-bars, &.ikon-switch, &.ikon-menu {
+            line-height: 2.4em;
+          }
+        }
+        .title {
+          position: absolute;
+          width: 140px;
+          color: $color-darkgray;
+          top: 10px;
+          &.left{
+            text-align: right;
+            margin-left: -150px;
+          }
+          &.right{
+            text-align: left;
+            margin-left: 50px;
+          } 
+          &.bottom{
+            text-align: center;
+            margin-top: 35px;
+            margin-left: -30px;
+            width: 100px;
+          }
+        }
+
+        &:hover {
+          background-color: $color-gray;
+        }
+
+      }
+      .anim-active {
+        &.s00 { left: #{100 * -2}px; top: #{50 * -3}px; }
+        &.s01 { left: #{100 * -2}px; top: #{50 * -2}px; }
+        &.s02 { left: #{100 * -2}px; top: #{50 * -1}px; }
+        &.s40 { left: #{100 *  2}px; top: #{50 * -3}px; }
+        &.s41 { left: #{100 *  2}px; top: #{50 * -2}px; }
+        &.s42 { left: #{100 *  2}px; top: #{50 * -1}px; }
+        &.s05 { left: #{100 * -2}px; top: #{50 *  5}px; }
+        &.s15 { left: #{100 * -1}px; top: #{50 *  5}px; }
+        &.s35 { left: #{100 *  1}px; top: #{50 *  5}px; }
+        &.s55 { left: #{100 *  2}px; top: #{50 *  5}px; }
+        &.s20 { left: #{100 *  0}px; top: #{50 * -4}px; }
+      }
+    }
+
+    .bubble {
+      @include border-radius(1000px);
+      @include transition-property(width, height, left, top, opacity);
+      @include transition-duration(1.0s);
+      // @include transition-delay(0.5s);
+      position: absolute;
+      opacity: $bubble-opacity;
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+
+      &.mgmt {
+        background-color: $color-orange;
+        left: 44%;
+        top: 200px;
+      }
+      &.app {
+        background-color: $color-blue;
+        left: 56%;
+        top: 200px;
+      }
+
+      &.axd {
+        background-color: $color-darkgray;
+        left: 50%;
+        top: 100px;
+        img {
+          margin-top: 60px;
+        }
+      }
+
+      p {
+        margin-top:200px;
+      }
+    }
+
+    .anim-active {
+      width: 200px;
+      height: 200px;
+      &.mgmt {
+        left: 40%;
+        top: 170px;
+        opacity: $bubble-opacity;
+      }    
+      &.app {
+        left: 52%;
+        top: 170px;
+        opacity: $bubble-opacity;
+      }
+      &.axd {
+        left: 46%;
+        top: 50px;
+        opacity: 0.9 !important;
+      }
+    }
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

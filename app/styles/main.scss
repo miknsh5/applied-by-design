@@ -128,7 +128,9 @@
       @include border-radius(120px);
       margin-top: 2px;
       background-color: white;
-      border: solid #666 5px;
+
+      // doesn't work on safari!
+      // border: solid #666 5px; 
     }
   }
 }
