@@ -21,7 +21,7 @@ angular.module('appliedByDesignApp')
 
         if (Modernizr.cssanimations) {
           return {
-            'margin-top': 200-($scope.scroll/3) + 'px',
+            'margin-top': 300-($scope.scroll/3) + 'px',
             'opacity': 1-($scope.scroll/500)
           };
         } else {

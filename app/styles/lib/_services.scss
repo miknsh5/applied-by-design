@@ -8,6 +8,12 @@
   }
 }
 
+.col-single {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
 
 .row-services {
   padding: 50px 0;
@@ -88,6 +94,7 @@ $bubble-opacity: 0.75;
       margin-top: 15px;
       width: 120px;
       color: $color-orange;
+      font-weight: 400;
     }
   }
 
@@ -107,6 +114,7 @@ $bubble-opacity: 0.75;
       margin-top: 20px;
       width: 150px;
       color: $color-blue;
+      font-weight: 400;
     }
   }
 
@@ -258,10 +266,8 @@ $con-delta: 40px;
 
 #bridge-diagram {
   position: relative;
-  // width: $diagram-w;
-  width: 100%;
-  // height: $diagram-h;
-  // margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
   img {
     width: 100%;
   }
@@ -388,34 +394,35 @@ $con-delta: 40px;
     }
 
     .bubble {
-      @include border-radius(1000px);
+      // @include border-radius(1000px);
       @include transition-property(width, height, left, top, opacity);
       @include transition-duration(1.0s);
       // @include transition-delay(0.5s);
       position: absolute;
       opacity: $bubble-opacity;
-      width: 100px;
-      height: 100px;
+      width: 50px;
+      height: 50px;
       opacity: 0;
 
       &.mgmt {
         background-color: $color-orange;
-        left: 44%;
+        left: 48%;
         top: 200px;
       }
       &.app {
         background-color: $color-blue;
-        left: 56%;
+        left: 50%;
         top: 200px;
       }
 
       &.axd {
         background-color: $color-darkgray;
         left: 50%;
-        top: 100px;
-        img {
-          margin-top: 60px;
-        }
+        top: 140px;
+        border: solid white 10px;
+        // img {
+          // margin-top: 60px;
+        // }
       }
 
       p {
@@ -424,22 +431,23 @@ $con-delta: 40px;
     }
 
     .anim-active {
-      width: 200px;
-      height: 200px;
+      width: 70px;
+      height: 70px;
       &.mgmt {
-        left: 40%;
-        top: 170px;
+        left: 47%;
+        top: 110px;
         opacity: $bubble-opacity;
       }    
       &.app {
-        left: 52%;
+        left: 53%;
         top: 170px;
         opacity: $bubble-opacity;
       }
       &.axd {
-        left: 46%;
-        top: 50px;
-        opacity: 0.9 !important;
+        left: 50%;
+        top: 140px;
+        opacity: 1;
+        z-index: 5;
       }
     }
   }
