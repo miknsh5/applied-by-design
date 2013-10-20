@@ -2,7 +2,10 @@
 // __________________________________
 @import 'compass/css3/background-size';
 
+
 .landing {
+  // font-family: 'Open Sans', sans-serif !important;
+
   @include background-size(cover);
   height: 100%;
   max-width: 100%;
@@ -45,7 +48,12 @@
   width: 100%;
   text-align: center;
   margin-top: 230px;
-  z-index: 10;
+  z-index: 1;
+  opacity: 1;
+
+  &.fade {
+    opacity: 0 !important;
+  }
 
   h2 {
     @include font-size(5);

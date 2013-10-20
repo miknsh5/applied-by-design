@@ -1,4 +1,18 @@
 
+
+.col-right {
+  text-align: center;
+
+  @media (min-width: $screen-md) {
+    text-align: left;
+  }
+}
+
+
+.row-services {
+  padding: 50px 0;
+}
+
 .service-section {
   // padding: 0 20px;
   
@@ -20,7 +34,7 @@
 
 
 
-$diagram-h: 300px;
+$diagram-h: 250px;
 $diagram-w: 400px;
 $box-h: 100px;
 $box-w: $box-h;
@@ -55,7 +69,7 @@ $bubble-opacity: 0.75;
   width: $diagram-w;
   height: $diagram-h;
   margin: 0 auto;
-  margin-top: 70px;
+  // margin-top: 70px;
 
   .mgmt {
     left: 0;
@@ -70,9 +84,9 @@ $bubble-opacity: 0.75;
 
     p {
       text-align: right;
-      margin-left: -180px;
-      margin-top: 35px;
-      width: 150px;
+      margin-left: -140px;
+      margin-top: 15px;
+      width: 120px;
       color: $color-orange;
     }
   }
@@ -89,8 +103,8 @@ $bubble-opacity: 0.75;
     }
     p {
       text-align: left;
-      margin-left: 130px;
-      margin-top: 35px;
+      margin-left: 120px;
+      margin-top: 20px;
       width: 150px;
       color: $color-blue;
     }
@@ -103,8 +117,8 @@ $bubble-opacity: 0.75;
     opacity: 0;
     width: 180px;
     position: absolute;
-    right: -80px;
-    top: 0;
+    right: -25px;
+    top: 15px;
     img {
       width: 100%;
     }
@@ -116,10 +130,10 @@ $bubble-opacity: 0.75;
 }
 #axd-line {
   @include rotate(-45deg);
-  width: 150px;
+  width: 95px;
   position: absolute;
-  right: 150px;
-  top: 95px;
+  right: 145px;
+  top: 75px;
   border-bottom: dotted #999 4px;
 }
 

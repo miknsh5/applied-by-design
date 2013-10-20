@@ -18,10 +18,15 @@ angular.module('appliedByDesignApp')
     $scope.scroll = 0;
 
     $scope.fadeTitle = function(){
-      return {
-        'margin-top': 200-($scope.scroll/3) + 'px',
-        'opacity': 1-($scope.scroll/500)
-      };
+
+        if (Modernizr.cssanimations) {
+          return {
+            'margin-top': 200-($scope.scroll/3) + 'px',
+            'opacity': 1-($scope.scroll/500)
+          };
+        } else {
+            console.log('Whoops!!!')
+        }
     };
 
     var timer;
@@ -78,23 +83,52 @@ function checkAnimation(item) {
     if (isElementInViewport($elem)) {
         // Start the animation
         $elem.addClass('anim-active');
-    } else {
-        $elem.removeClass('anim-active');
+    } 
+    // else {
+    //     $elem.removeClass('anim-active');
 
-    }
+    // }
+}
+
+function overrideAnim(item) {
+    var $elem = $(item);
+
+    $elem.addClass('anim-active');
+}
+
+if (!Modernizr.cssanimations){
+    // if browser doesn't support css animations then set them all to their 
+    // final state off the bat
+    overrideAnim('.dg1');
+    // overrideAnim('.con1');
+    // overrideAnim('.con2');
+    // overrideAnim('.con3');
+    // overrideAnim('.con4');
+    // overrideAnim('.con5');
+    // overrideAnim('.con6');
+    // overrideAnim('.fade-in-0');
+    // overrideAnim('.fade-in-1');
+    // overrideAnim('.fade-in-2');
+    // overrideAnim('.fade-in-3');
+    // overrideAnim('.fade-in-4');
+    // overrideAnim('.fade-in-5');
+    // overrideAnim('.fade-in-6');
+    overrideAnim('.bubble');
+    overrideAnim('.solution');
 }
 
 // Capture scroll events
 $(window).scroll(function(){
+
     checkAnimation('.dg1');
-    checkAnimation('.con1');
-    checkAnimation('.con2');
-    checkAnimation('.con3');
-    checkAnimation('.con4');
-    checkAnimation('.con5');
-    checkAnimation('.con6');
-    checkAnimation('.fade-in-0');
-    checkAnimation('.fade-in-1');
+    // checkAnimation('.con1');
+    // checkAnimation('.con2');
+    // checkAnimation('.con3');
+    // checkAnimation('.con4');
+    // checkAnimation('.con5');
+    // checkAnimation('.con6');
+    // checkAnimation('.fade-in-0');
+    // checkAnimation('.fade-in-1');
     checkAnimation('.fade-in-2');
     checkAnimation('.fade-in-3');
     checkAnimation('.fade-in-4');
@@ -103,4 +137,5 @@ $(window).scroll(function(){
     checkAnimation('.bubble');
     checkAnimation('.solution');
 });
+
 checkAnimation('.fade-in-0');
