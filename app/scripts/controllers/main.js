@@ -30,6 +30,14 @@ angular.module('appliedByDesignApp')
     $('#services-btn').click(function (){
       $.scrollTo('#services-anchor',{duration: 'medium'});
     });
+    
+    $('#about-btn').click(function (){
+      $.scrollTo('#about-anchor',{duration: 'medium'});
+    });
+
+    $('#contact-btn').click(function (){
+      $.scrollTo('#contact-anchor',{duration: 'medium'});
+    });
 
     
   });
