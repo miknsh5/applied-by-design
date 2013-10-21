@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/44fb01a9.main.css">
+    <link rel="stylesheet" href="styles/fc2cc47b.main.css">
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,14 +25,14 @@
 
       ga('create', 'UA-41740032-1', 'www.appliedbydesign.com');
       ga('send', 'pageview');
-
-
     </script>
 
     <!-- <script src="//platform.linkedin.com/in.js" type="text/javascript">
      lang: en_US
     </script> -->
-    
+
+
+
   </head>
   <body ng-app="appliedByDesignApp" ng-controller="MainCtrl">
 
@@ -92,6 +92,7 @@
          <div class="greeting" ng-style="fadeTitle()">
            <h2 class="underline" itemprop="name">Applied by Design</h2>
            <div class="divider"></div>
+
            <h1 itemprop="description">Modern Application Solutions</h1>
            <div id="services-btn"><img src="../images/6d79c9fe.more-arrow-lt.png" alt="more arrow"></div>
          </div>
@@ -103,93 +104,99 @@
      <!-- service sections -->
      <div id="services-anchor" class="anchor-strip shim-anchor"></div>
      <div class="service-bg">
-       <div class="container">
-         <div class="service-btn-wrap hidden-xs">
-           <div class="diamond signage" ng-click="showPanel(0)">
-             <div class="overlay" ng-class="{active:activePanel==0}">
-               <p>Business Solutions</p>
-             </div>
-           </div>
-           <div class="diamond plane" ng-click="showPanel(1)">
-             <div class="overlay" ng-class="{active:activePanel==1}">
-               <p>Project Consulting</p>
-             </div>
-           </div>
-           <div class="diamond engine" ng-click="showPanel(2)">
-             <div class="overlay" ng-class="{active:activePanel==2}">
-               <p>Domain Expertise</p>
-             </div>
-           </div>
-         </div>
+       <div class="container services-section">
+         
+        <div class="row row-services">
+          <div class="col-md-6">
+            <div id="hybrid-diagram">
+              <div class="mgmt box dg1 pos-initial"><p>Business Strategy</p></div>
+              <div class="app box dg1 pos-initial"><p>Application Development</p></div>
+              <div class="axd-logo dg1">
+                <img src="../images/138195fb.logo-dk.png" alt="Applied by Design">
+                <div id="axd-line"></div>
+              </div>
+            </div>
+          </div>
 
-         <!-- Business -->
-         <div class="service-wrapper animate-show" ng-show="activePanel==0">
-           <h2><span class="subtle">Extending Capabilities</span> for your <strong>Business</strong></h2>
-           <p class="lead-copy">We'll work with you to understand every aspect of your business needs, create an appropriate web-application strategy, and provide all the leg work to turn your vision into a fully functioning solution.</p>
-           <!-- <a href="/#/services"><button type="button" class="btn btn-primary">Learn More</button></a>  -->
-           <h3 class="hidden-xs">Example Solutions</h3>
+          <div class="col-md-6 col-right">
+            <h2>We Help Build Better Applications</h2>
+            <p>We operate at the intersection of business strategy and application development. Our team combines technical and development experience with the tools needed to synthesize user and organizational strategic needs. <strong>We help companies build better applications.</strong></p>
+          </div>
 
-           <div class="service-items hidden-xs">
-             <div class="service-item">
-               <div class="ikon-home-2 ikon"></div>
-               <p>Modernizing home-grown legacy tools</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-tree ikon"></div>
-               <p>Developing integrated application suites</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-user-2 ikon"></div>
-               <p>Improving current operational processes</p>
-             </div>
-           </div>
-         </div>
 
-         <!-- Projects -->
-         <div class="service-wrapper animate-show" ng-show="activePanel==1">
-           <h2><span class="subtle">Risk Reduction</span> for your <strong>Project</strong></h2>
-           <p class="lead-copy">We help new and existing application projects better translate business needs into technical requirements by providing the tools needed to bridge communication gaps between all project roles. By enabling more effective communication, projects can better align with their strategic objectives, reducing schedule and budget risk over the life of the project.</p>
-           <!-- <button type="button" class="btn btn-primary">Learn More</button>    -->
-           <h3 class="hidden-xs">Example Solutions</h3>
+        </div>
 
-           <div class="service-items hidden-xs">
-             <div class="service-item">
-               <div class="ikon-earth ikon"></div>
-               <p>Strategic Alignment</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-file ikon"></div>
-               <p>UI/UX Wireframes, Mockups, and Comps</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-equalizer ikon"></div>
-               <p>Application Proof of Concept / Prototype</p>
-             </div>
-           </div>
-         </div>
+        <div class="row row-services">
 
-         <!-- Teams -->
-         <div class="service-wrapper animate-show" ng-show="activePanel==2">
-           <h2><span class="subtle">Domain Expertise</span> for your <strong>Team</strong></h2>
-           <p class="lead-copy">We love challenges, and we excel at building complex analytical models and functional prototypes with a systematic mindset.  If you're looking for these specific skills and a technical background, contact us to discuss opportunities for embedding us in your existing team to help resolve technical hurdles or provide on-site problem solving.</p>
-           <!-- <button type="button" class="btn btn-primary">Learn More</button>    -->
-           <h3 class="hidden-xs">Example Solutions</h3>
+          <div class="col-sm-12 col-single fade-in fade-in-1">
+            <h2>Connecting the Dots</h2>
+            <p>We focus on building shared mental models that make it easier for teams to communicate in a typical development environment. We help connect the dots by ensuring everyone's speaking the same language and sharing the same ideas. This bridges the communication gap between business strategy and application development leading to <strong>better requirements definition</strong> and <strong>more efficient development</strong> cycles.</p>
+          </div>
 
-           <div class="service-items hidden-xs">
-             <div class="service-item">
-               <div class="ikon-plane ikon"></div>
-               <p>Real-time Analytics</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-earth ikon"></div>
-               <p>Economics Analysis</p>
-             </div>
-             <div class="service-item">
-               <div class="ikon-stats ikon"></div>
-               <p>Data Visualization</p>
-             </div>
-           </div>
-         </div>
+          <div id="bridge-diagram" class="fade-in fade-in-2 col-sm-12">
+              <img src="images/6cff419b.bridge-gap.png" alt="">
+          </div>
+
+        </div>
+
+        <div class="row row-services fade-in fade-in-3">
+          <div class="col-sm-12 col-single">
+            <h2>Our Solutions</h2>
+            <p>We approach development projects with a <strong>user-centered design</strong> mentality. We offer a suite of solutions that complement the development lifecycle at all stages to help you <strong>build the right application</strong>, on track and on schedule.</p>
+          </div>
+        </div>
+
+        <div class="row solutions tall-diagram">
+          <div id="venn-diagram" class="row fade-in fade-in-4">
+            <!-- <img src="images/57cc3e1f.venn-diagram.png" alt=""> -->
+            <!-- <div class="wrapper"> -->
+              <div class="bubble axd">
+                <!-- <img src="../images/f2055a7a.logo-lt.png" alt="Applied by Design"> -->
+              </div>
+              <div class="bubble mgmt"><p class="mgmt-text">Strategy</p></div>
+              <div class="bubble app"><p class="app-text">Development</p></div>
+              <div id="solutions">
+                <div id="line-biz"></div>
+                <div id="line-65"></div>
+                <div id="app-line"></div>
+
+                <div class="solution s00 fade-in fade-in-5"><i class="ikon-user"></i>
+                  <div class="title left">User Personas</div>
+                </div>
+                <div class="solution s01 fade-in fade-in-5"><i class="ikon-list-2"></i>
+                  <div class="title left">Scenario Definition</div>
+                </div>
+                <div class="solution s02 fade-in fade-in-5"><i class="ikon-briefcase"></i>
+                  <div class="title left">Use Cases</div>
+                </div>
+                <div class="solution s40 fade-in fade-in-5"><i class="ikon-screen"></i>
+                  <div class="title right">UI/UX Design</div>
+                </div>
+                <div class="solution s41 fade-in fade-in-5"><i class="ikon-stats"></i>
+                  <div class="title right">Data Modeling</div>
+                </div>
+                <div class="solution s42 fade-in fade-in-5"><i class="ikon-menu"></i>
+                  <div class="title right">Analytical Modeling</div>
+                </div>
+                <!-- <div class="solution s20 fade-in fade-in-5"><i class="ikon-airplane"></i></div> -->
+                <div class="solution s05 fade-in fade-in-5"><i class="ikon-file"></i>
+                  <div class="title left">Strategic Framework</div>
+                </div>
+                <div class="solution s15 fade-in fade-in-5"><i class="ikon-html5"></i>
+                  <div class="title left">Technology Strategy</div>
+                </div>
+                <div class="solution s35 fade-in fade-in-5"><i class="ikon-bars"></i>
+                  <div class="title right">Data Visualization</div>
+                </div>
+                <div class="solution s55 fade-in fade-in-5"><i class="ikon-switch"></i>
+                  <div class="title right">Functional Prototypes</div>
+                </div>
+              </div>
+
+            <!-- </div> -->
+
+          </div>
+        </div>
 
        </div>
      </div>
@@ -199,7 +206,7 @@
        <div id="about-anchor" class="anchor-strip"></div>
 
        <div class="container">
-         <div class="row">
+         <div class="row fade-in fade-in-6">
            <h2>Our Team</h2>
            <div class="bio col-md-6">
              <div class="headshot">
@@ -217,7 +224,7 @@
                <!-- <img src="../images/headshot-nash.png" alt="Mike Nash Photo" itemprop="image" /> -->
                <h4>Mike Nash</h4>
                <!-- <h4 itemprop="name">Mike Nash</h4> -->
-               <p>For eight years Mike has worked in the aviation industry developing new tools and methods for mission critical engineering analysis and customer facing marketing applications. In addition, Mike has worked in freelance graphic and web design building modern solutions for ecommerce firms. Most recently, Mike has been developing web-based applications to facilitate the understanding of complex datasets and integrated product value to airline executives.</p>
+               <p>For eight years Mike has worked in the aviation industry developing engineering analysis tools, helping customers improve airline operations, and building product marketing solutions. Mike has served as Product Manager for web-application suites, lead front-end agile development teams, and implemented user-centered design in enterprise environments. He has been responsible for user experience design, web technology strategy, and web-application architecture.</p>
              </div>
            </div>
 
@@ -227,7 +234,7 @@
 
      <div class="contact">
        <div id="contact-anchor" class="anchor-strip"></div>
-       <div class="container">
+       <div class="container fade-in fade-in-7">
          <h2>Connect</h2>
 
          <div class="social-media">
@@ -299,7 +306,7 @@
      document.body.appendChild(e); 
     } 
     </script> 
-    <script src="scripts/e71e750a.scripts.js"></script>
+    <script src="scripts/bd450fc8.scripts.js"></script>
 
   </body>
 </html>
