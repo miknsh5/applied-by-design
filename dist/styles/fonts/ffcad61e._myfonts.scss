@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-.ikon-airplane, .ikon-bars, .ikon-user, .ikon-location, .ikon-mobile, .ikon-pie, .ikon-stats, .ikon-bars-2, .ikon-linkedin, .ikon-github, .ikon-github-2, .ikon-dribbble, .ikon-facebook, .ikon-google-plus, .ikon-google-plus-2, .ikon-facebook-2, .ikon-twitter, .ikon-clock, .ikon-mobile-2, .ikon-calendar, .ikon-user-2, .ikon-user-3, .ikon-users, .ikon-cog, .ikon-cogs, .ikon-cog-2, .ikon-settings, .ikon-equalizer, .ikon-wrench, .ikon-earth, .ikon-tree, .ikon-menu, .ikon-switch, .ikon-road, .ikon-list, .ikon-list-2, .ikon-home, .ikon-home-2, .ikon-file, .ikon-connection, .ikon-coin, .ikon-html5, .ikon-chrome, .ikon-firefox, .ikon-IE, .ikon-safari, .ikon-chevron-down, .ikon-chevron-up, .ikon-chevron-left, .ikon-chevron-right, .ikon-download-alt, .ikon-print, .ikon-plane, .ikon-fighter-jet, .ikon-dashboard, .ikon-phone, .ikon-envelope {
+.ikon-airplane, .ikon-bars, .ikon-user, .ikon-location, .ikon-mobile, .ikon-pie, .ikon-stats, .ikon-bars-2, .ikon-linkedin, .ikon-github, .ikon-github-2, .ikon-dribbble, .ikon-facebook, .ikon-google-plus, .ikon-google-plus-2, .ikon-facebook-2, .ikon-twitter, .ikon-clock, .ikon-mobile-2, .ikon-calendar, .ikon-user-2, .ikon-user-3, .ikon-users, .ikon-cog, .ikon-cogs, .ikon-settings, .ikon-equalizer, .ikon-wrench, .ikon-earth, .ikon-tree, .ikon-menu, .ikon-switch, .ikon-road, .ikon-list, .ikon-list-2, .ikon-home, .ikon-file, .ikon-connection, .ikon-coin, .ikon-html5, .ikon-chrome, .ikon-firefox, .ikon-IE, .ikon-safari, .ikon-chevron-down, .ikon-chevron-up, .ikon-chevron-left, .ikon-chevron-right, .ikon-download-alt, .ikon-print, .ikon-plane, .ikon-fighter-jet, .ikon-dashboard, .ikon-refresh, .ikon-briefcase, .ikon-group, .ikon-bolt, .ikon-css3, .ikon-cloud, .ikon-lab, .ikon-mug, .ikon-briefcase-2, .ikon-screen, .ikon-phone, .ikon-envelope, .ikon-puzzle, .ikon-brush {
   font-family: 'myfont';
   speak: none;
   font-style: normal;
@@ -94,9 +94,6 @@
 .ikon-cogs:before {
   content: "\e018";
 }
-.ikon-cog-2:before {
-  content: "\e019";
-}
 .ikon-settings:before {
   content: "\e01a";
 }
@@ -128,9 +125,6 @@
   content: "\e023";
 }
 .ikon-home:before {
-  content: "\e024";
-}
-.ikon-home-2:before {
   content: "\e025";
 }
 .ikon-file:before {
@@ -184,9 +178,45 @@
 .ikon-dashboard:before {
   content: "\f0e4";
 }
+.ikon-refresh:before {
+  content: "\f021";
+}
+.ikon-briefcase:before {
+  content: "\f0b1";
+}
+.ikon-group:before {
+  content: "\f0c0";
+}
+.ikon-bolt:before {
+  content: "\f0e7";
+}
+.ikon-css3:before {
+  content: "\e02e";
+}
+.ikon-cloud:before {
+  content: "\e02f";
+}
+.ikon-lab:before {
+  content: "\e030";
+}
+.ikon-mug:before {
+  content: "\e031";
+}
+.ikon-briefcase-2:before {
+  content: "\e032";
+}
+.ikon-screen:before {
+  content: "\e033";
+}
 .ikon-phone:before {
   content: "\f095";
 }
 .ikon-envelope:before {
   content: "\f003";
+}
+.ikon-puzzle:before {
+  content: "\f12e";
+}
+.ikon-brush:before {
+  content: "\f1b8";
 }
