@@ -17,7 +17,15 @@
 
 .row-services {
   padding: 50px 0;
+  border-top: solid 1px #CCC;
+
+
 }
+
+.tall-diagram {
+  height: 500px;
+}
+
 
 .service-section {
   // padding: 0 20px;
@@ -266,7 +274,7 @@ $con-delta: 40px;
 
 #bridge-diagram {
   position: relative;
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   img {
     width: 100%;
@@ -313,23 +321,48 @@ $con-delta: 40px;
 }
 
 #venn-diagram {
+  position: relative;
   text-align: center;
-  margin: 120px 0;
-  width: 100%;
-  min-height: 400px;
+  // margin: 120px 0;
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 200px;
+  height: 200px;
+  // max-width: 720px;
+  // min-height: 400px;
 
   img {
     width: 70%;
   }
 
-  .wrapper {
-    position: relative;
+  // .wrapper {
+  //   position: relative;
 
 
     #solutions {
       position: absolute;
-      left: 53%;
-      top: 170px;
+      left: 80px;
+      top: 80px;
+
+
+      #line-65 {
+        @include rotate(-65deg);
+        width: 430px;
+        position: absolute;
+        left: -200px;
+        top: 25px;
+        border-bottom: solid #CCC 2px;
+      }
+
+      #line-biz {
+        @include rotate(45deg);
+        width: 430px;
+        position: absolute;
+        left: -195px;
+        top: 20px;
+        border-bottom: solid #CCC 2px;
+      }
+
       .solution {
         @include transition-property(width, height, left, top, opacity);
         @include transition-duration(1.0s);
@@ -379,54 +412,61 @@ $con-delta: 40px;
 
       }
       .anim-active {
-        &.s00 { left: #{100 * -2}px; top: #{50 * -3}px; }
-        &.s01 { left: #{100 * -2}px; top: #{50 * -2}px; }
-        &.s02 { left: #{100 * -2}px; top: #{50 * -1}px; }
-        &.s40 { left: #{100 *  2}px; top: #{50 * -3}px; }
-        &.s41 { left: #{100 *  2}px; top: #{50 * -2}px; }
-        &.s42 { left: #{100 *  2}px; top: #{50 * -1}px; }
-        &.s05 { left: #{100 * -2}px; top: #{50 *  5}px; }
-        &.s15 { left: #{100 * -1}px; top: #{50 *  5}px; }
-        &.s35 { left: #{100 *  1}px; top: #{50 *  5}px; }
-        &.s55 { left: #{100 *  2}px; top: #{50 *  5}px; }
-        &.s20 { left: #{100 *  0}px; top: #{50 * -4}px; }
+        &.s00 { left: #{6 *  -8}px; top: #{10 *  10}px; }
+        &.s01 { left: #{6 * -12}px; top: #{10 *  15}px; }
+        &.s02 { left: #{6 * -16}px; top: #{10 *  20}px; }
+        &.s40 { left: #{6 *   7}px; top: #{10 * -10}px; }
+        &.s41 { left: #{6 *  11}px; top: #{10 * -15}px; }
+        &.s42 { left: #{6 *  15}px; top: #{10 * -20}px; }
+        &.s05 { left: #{5 * -22}px; top: #{10 * -11}px; }
+        &.s15 { left: #{5 * -32}px; top: #{10 * -16}px; }
+        &.s35 { left: #{5 *  22}px; top: #{10 *  11}px; }
+        &.s55 { left: #{5 *  32}px; top: #{10 *  16}px; }
+        // &.s20 { left: #{100 *  0}px; top: #{50 * -4}px; }
       }
     }
 
     .bubble {
       // @include border-radius(1000px);
-      @include transition-property(width, height, left, top, opacity);
-      @include transition-duration(1.0s);
-      // @include transition-delay(0.5s);
+      @include transition-property(width, height, left, top, right, bottom, opacity);
+      @include transition-duration(0.5s);
+      @include transition-delay(1.0s);
       position: absolute;
       opacity: $bubble-opacity;
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       opacity: 0;
 
       &.mgmt {
-        background-color: $color-orange;
-        left: 48%;
-        top: 200px;
+        background-color: $color-orange-fade;
+        left: 50px;
+        top: 50px;
+        z-index: 2;
       }
       &.app {
-        background-color: $color-blue;
-        left: 50%;
-        top: 200px;
+        background-color: $color-blue-fade;
+        right: 50px;
+        bottom: 50px;
+        z-index: 2;
       }
 
       &.axd {
         background-color: $color-darkgray;
-        left: 50%;
-        top: 140px;
+        left: 65px;
+        top: 65px;
         border: solid white 10px;
-        // img {
-          // margin-top: 60px;
-        // }
+
       }
 
       p {
-        margin-top:200px;
+        // margin-top:200px;
+        &.mgmt-text {
+          margin-left: -160px;
+        }
+        &.app-text {
+          margin-left: 85px;
+        }
+
       }
     }
 
@@ -434,23 +474,25 @@ $con-delta: 40px;
       width: 70px;
       height: 70px;
       &.mgmt {
-        left: 47%;
-        top: 110px;
-        opacity: $bubble-opacity;
+        left: 30px;
+        top: 30px;
+        opacity: 1;
+        // opacity: $bubble-opacity;
       }    
       &.app {
-        left: 53%;
-        top: 170px;
-        opacity: $bubble-opacity;
+        right: 30px;
+        bottom: 30px;
+        opacity: 1;
+        // opacity: $bubble-opacity;
       }
       &.axd {
-        left: 50%;
-        top: 140px;
+        left: 65px;
+        top: 65px;
         opacity: 1;
         z-index: 5;
       }
     }
-  }
+  
 
 }
 
