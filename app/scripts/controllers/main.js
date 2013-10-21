@@ -27,7 +27,11 @@ angular.module('appliedByDesignApp')
         // } 
     };
 
+    $('#services-btn').click(function (){
+      $.scrollTo('#services-anchor',{duration: 'medium'});
+    });
 
+    
   });
 
 
