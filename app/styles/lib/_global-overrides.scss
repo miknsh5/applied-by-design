@@ -18,10 +18,17 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica Neue;
+  // font-family: Helvetica Neue;
+  font-family: 'Open Sans', sans-serif; 
   color: $color-text-black;
   line-height: 1.1em;
 }
+
+p {
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 1.6rem !important;
+}
+
 h1 {
   // page title, white font on dark background
   color: $color-text-white;

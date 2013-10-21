@@ -5,8 +5,7 @@
 @import "compass/css3/transition";
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
-
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600);
 // My Styles
 //-------------------
 @import "sass-bootstrap/lib/bootstrap";
@@ -19,6 +18,7 @@
 @import 'lib/logo'; 
 @import 'lib/landing'; 
 @import 'lib/buttons'; 
+@import 'lib/services'; 
 // @import 'lib/navigation'; 
 @import 'lib/footer'; 
 
@@ -34,7 +34,8 @@
   @include background-size(cover);
   position: relative;
   margin-top: $landing-height;
-  background-image: url('../images/plane-light-bg.jpg');
+  // background-image: url('../images/plane-light-bg.jpg');
+  background-color: rgba(255,255,255,1);
   min-height: 580px;
 
   @media (max-width: $screen-sm) {
@@ -42,6 +43,8 @@
     // height: 300px;
     padding-top: 20px;
   }
+
+  z-index: 5;
 }
 
 
@@ -126,7 +129,6 @@
       @include border-radius(120px);
       margin-top: 2px;
       background-color: white;
-      // border: solid #666 5px;
     }
   }
 }
