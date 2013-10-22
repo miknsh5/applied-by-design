@@ -438,13 +438,13 @@ $con-delta: 40px;
       opacity: 0;
 
       &.mgmt {
-        background-color: $color-orange-fade;
+        background-color: $color-orange;
         left: 50px;
         top: 50px;
         z-index: 2;
       }
       &.app {
-        background-color: $color-blue-fade;
+        background-color: $color-blue;
         right: 50px;
         bottom: 50px;
         z-index: 2;

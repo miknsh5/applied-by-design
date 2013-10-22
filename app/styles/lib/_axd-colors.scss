@@ -16,12 +16,16 @@ $color-text-gray: #555555;
 $color-blue-fade:   rgb(100, 160, 197);
 $color-orange-fade: rgb(244, 141, 91);
 
-$color-blue: rgb(48,128,178);
-$color-orange: rgb(241,90,36);
+// $color-blue: rgb(48,128,178);
+// $color-orange: rgb(241,90,36);
+$color-blue: rgb(70,128,187);
+$color-orange: rgb(245,129,0);
 
 .blue-text {
     color: $color-blue !important;
 }
+
 .orange-text {
     color: $color-orange !important;
 }
+
