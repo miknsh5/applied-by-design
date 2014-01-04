@@ -110,7 +110,8 @@
   }
 
   .bio {
-    margin: 40px 0;
+    max-width: 700px;
+    margin: 40px auto;
 
     p {
       color: $color-text-white;
@@ -304,6 +305,28 @@
 
 }
 
+.careers {
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #222;
+  min-height: 300px;
+  color: #eee;
+  
+  .inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  // .intro {
+    // margin: 20px 0;
+  // }
+
+  h2, p {
+    color: #eee;
+  }
+
+}
 
 .clients {
   position: relative;
