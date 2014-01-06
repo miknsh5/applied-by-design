@@ -48,10 +48,10 @@
 
 
 
-$diagram-h: 250px;
-$diagram-w: 400px;
-$box-h: 100px;
-$box-w: $box-h;
+
+
+
+
 $bubble-opacity: 0.75;
 
 
@@ -75,66 +75,179 @@ $bubble-opacity: 0.75;
 }
 
 
+// small screens
+@media screen and (max-width: $screen-md) {
+  $diagram-w: 200px;
+  $diagram-h: 125px;
+  $box-h: 70px;
+  $box-w: $box-h;
+
+  .box {
+    @include transition-property(left, top, right, opacity);
+    @include transition-duration(1.0s);
+    // @include transition-timing-function(ease-in);
+    width: $box-w;
+    height: $box-h;
+    position: absolute;
+    opacity: 0;
+  }
+
+  #hybrid-diagram {
+    width: $diagram-w;
+    height: $diagram-h;
+
+
+    .axd-logo {
+      width: 110px;
+      right: -33px;
+      top: 0px;
+    }
+    #axd-line {
+      width: 45px;
+      right: 90px;
+      top: 40px;
+    }
+
+    .mgmt {
+      left: 0;
+      top: $diagram-h/2 - $box-h/2;
+      background-color: $color-orange;
+
+      &.anim-active {
+        left: $diagram-w/2 - $box-w*3/4;
+        top: $diagram-h/2 - $box-h/2 - $box-h/4;
+        opacity: $bubble-opacity;
+      }
+
+      p {
+        text-align: right;
+        margin-left: -100px;
+        margin-top: 0px;
+        width: 80px;
+        color: $color-orange;
+        font-weight: 400;
+      }
+    }
+
+    .app {
+      right: 0;
+      top: $diagram-h/2 - $box-h/2;
+      background-color: $color-blue;
+
+      &.anim-active {
+        right: $diagram-w/2 - $box-w*3/4;
+        top: $diagram-h/2 - $box-h/2 + $box-h/4;
+        opacity: $bubble-opacity;
+      }
+
+      p {
+        text-align: left;
+        margin-left: 90px;
+        margin-top: 20px;
+        width: 100px;
+        color: $color-blue;
+        font-weight: 400;
+      }
+    }
+  }
+
+}
+
+// big screens
+@media screen and (min-width: $screen-md + 1) {
+  $diagram-w: 400px;
+  $diagram-h: 250px;
+  $box-h: 100px;
+  $box-w: $box-h;
+
+  .box {
+    @include transition-property(left, top, right, opacity);
+    @include transition-duration(1.0s);
+    // @include transition-timing-function(ease-in);
+    width: $box-w;
+    height: $box-h;
+    position: absolute;
+    opacity: 0;
+  }
+
+  #hybrid-diagram {
+    width: $diagram-w;
+    height: $diagram-h;
+
+    .axd-logo {
+      width: 180px;
+      right: -25px;
+      top: 15px;
+    }
+
+    #axd-line {
+      width: 95px;
+      right: 145px;
+      top: 75px;
+    }
+
+    .mgmt {
+      left: 0;
+      top: $diagram-h/2 - $box-h/2;
+      background-color: $color-orange;
+
+      &.anim-active {
+        left: $diagram-w/2 - $box-w*3/4;
+        top: $diagram-h/2 - $box-h/2 - $box-h/4;
+        opacity: $bubble-opacity;
+      }
+
+      p {
+        text-align: right;
+        margin-left: -140px;
+        margin-top: 15px;
+        width: 120px;
+        color: $color-orange;
+        font-weight: 400;
+      }
+    }
+
+    .app {
+      right: 0;
+      top: $diagram-h/2 - $box-h/2;
+      background-color: $color-blue;
+
+      &.anim-active {
+        right: $diagram-w/2 - $box-w*3/4;
+        top: $diagram-h/2 - $box-h/2 + $box-h/4;
+        opacity: $bubble-opacity;
+      }
+      p {
+        text-align: left;
+        margin-left: 120px;
+        margin-top: 20px;
+        width: 150px;
+        color: $color-blue;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
 
 
 // Hybrid Consulting Diagram
 #hybrid-diagram {
   position: relative;
-  width: $diagram-w;
-  height: $diagram-h;
+  // width: $diagram-w;
+  // height: $diagram-h;
   margin: 0 auto;
   // margin-top: 70px;
-
-  .mgmt {
-    left: 0;
-    top: $diagram-h/2 - $box-h/2;
-    background-color: $color-orange;
-
-    &.anim-active {
-      left: $diagram-w/2 - $box-w*3/4;
-      top: $diagram-h/2 - $box-h/2 - $box-h/4;
-      opacity: $bubble-opacity;
-    }
-
-    p {
-      text-align: right;
-      margin-left: -140px;
-      margin-top: 15px;
-      width: 120px;
-      color: $color-orange;
-      font-weight: 400;
-    }
-  }
-
-  .app {
-    right: 0;
-    top: $diagram-h/2 - $box-h/2;
-    background-color: $color-blue;
-
-    &.anim-active {
-      right: $diagram-w/2 - $box-w*3/4;
-      top: $diagram-h/2 - $box-h/2 + $box-h/4;
-      opacity: $bubble-opacity;
-    }
-    p {
-      text-align: left;
-      margin-left: 120px;
-      margin-top: 20px;
-      width: 150px;
-      color: $color-blue;
-      font-weight: 400;
-    }
-  }
 
   .axd-logo {
     @include transition-property(opacity);
     @include transition-duration(1s);
     @include transition-delay(1.0s);
     opacity: 0;
-    width: 180px;
     position: absolute;
-    right: -25px;
-    top: 15px;
+    // width: 180px;
+    // right: -25px;
+    // top: 15px;
     img {
       width: 100%;
     }
@@ -143,25 +256,16 @@ $bubble-opacity: 0.75;
       opacity: 1;
     }
   }
+
+
 }
 #axd-line {
   @include rotate(-45deg);
-  width: 95px;
   position: absolute;
-  right: 145px;
-  top: 75px;
   border-bottom: dotted #999 4px;
 }
 
-.box {
-  @include transition-property(left, top, right, opacity);
-  @include transition-duration(1.0s);
-  // @include transition-timing-function(ease-in);
-  width: $box-w;
-  height: $box-h;
-  position: absolute;
-  opacity: 0;
-}
+
 
 .copy-intro {
   text-align: center;

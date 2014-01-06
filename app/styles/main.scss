@@ -68,16 +68,9 @@
   }
 
   &.ng-hide-remove{
-    // @include transition-delay(0.2s);
-    // @include transition-property(opacity);
-    // @include transition-duration(0.5s);
-
-    // opacity:0;
-    // margin-right:-200px;
 
     &.ng-hide-remove-active{
-      // opacity:1;
-      // margin-right:0px;
+
     }
   }
 
@@ -144,93 +137,93 @@
 
 
 
-.diamond {
-  @include transform(rotate(45deg));
-  width: 130px;
-  height: 130px;
-  background-color: #333;
-  z-index: 100;
-  display: inline-block;
-  margin: 0 25px;
-  top: -65px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+// .diamond {
+//   @include transform(rotate(45deg));
+//   width: 130px;
+//   height: 130px;
+//   background-color: #333;
+//   z-index: 100;
+//   display: inline-block;
+//   margin: 0 25px;
+//   top: -65px;
+//   position: relative;
+//   overflow: hidden;
+//   cursor: pointer;
 
-  .overlay {
-    position: absolute;
-    width:100%;
-    height:100%;
-    // @include transform(rotate(45deg));
-    background-color: rgba(30,30,30,0.70);
+//   .overlay {
+//     position: absolute;
+//     width:100%;
+//     height:100%;
+//     // @include transform(rotate(45deg));
+//     background-color: rgba(30,30,30,0.70);
 
-    p {
-      @include transform(rotate(-45deg));
-      @include font-size(1.5);
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 3px;
-      position: relative;
-      left: -2px;
-      top: 18px;
-      color: #aaa;
-    }
+//     p {
+//       @include transform(rotate(-45deg));
+//       @include font-size(1.5);
+//       text-transform: uppercase;
+//       font-weight: 700;
+//       letter-spacing: 3px;
+//       position: relative;
+//       left: -2px;
+//       top: 18px;
+//       color: #aaa;
+//     }
 
-    &:hover{
-      background-color: rgba(30,30,30,0.50);
-    }
+//     &:hover{
+//       background-color: rgba(30,30,30,0.50);
+//     }
 
-    &.active {
-      background-color: rgba(30,30,30,0.20) !important;
+//     &.active {
+//       background-color: rgba(30,30,30,0.20) !important;
 
-      p {
-        color: $color-text-whitewhite !important;
-        // color: $color-orange !important;
-        // font-weight: 1000 !important;
-        // width: 220px;
-        // top: 15px;
-        // left: -45px;
-        // background-color: rgba(0, 0, 0, 0.7);
-        // padding: 5px 20px;
-      }
-      border-bottom: solid 5px #888;
-      border-right: solid 5px #888;
-    }
-  }
-  &.signage:before{
-    content:url(../images/diamonds_08.jpg);
-    position: absolute;
-    width: 450%;
-    height: 450%;
-    top: -65%;
-    left: -65%;
-    z-index: -1;
-    @include transform(rotate(-45deg));
-  }
-  &.plane:before{
-    // content:url(../images/diamonds_05.jpg);
-    content:url(../images/diamonds_09.jpg);
-    position: absolute;
-    width: 450%;
-    height: 450%;
-    top: -85%;
-    left: -45%;
-    z-index: -1;
-    @include transform(rotate(-45deg));
-  }
-  &.engine:before{
-    content:url(../images/diamonds_06.jpg);
-    position: absolute;
-    width: 450%;
-    height: 450%;
-    top: -65%;
-    left: -65%;
-    z-index: -1;
-    @include transform(rotate(-45deg));
-  }
+//       p {
+//         color: $color-text-whitewhite !important;
+//         // color: $color-orange !important;
+//         // font-weight: 1000 !important;
+//         // width: 220px;
+//         // top: 15px;
+//         // left: -45px;
+//         // background-color: rgba(0, 0, 0, 0.7);
+//         // padding: 5px 20px;
+//       }
+//       border-bottom: solid 5px #888;
+//       border-right: solid 5px #888;
+//     }
+//   }
+//   &.signage:before{
+//     content:url(../images/diamonds_08.jpg);
+//     position: absolute;
+//     width: 450%;
+//     height: 450%;
+//     top: -65%;
+//     left: -65%;
+//     z-index: -1;
+//     @include transform(rotate(-45deg));
+//   }
+//   &.plane:before{
+//     // content:url(../images/diamonds_05.jpg);
+//     content:url(../images/diamonds_09.jpg);
+//     position: absolute;
+//     width: 450%;
+//     height: 450%;
+//     top: -85%;
+//     left: -45%;
+//     z-index: -1;
+//     @include transform(rotate(-45deg));
+//   }
+//   &.engine:before{
+//     content:url(../images/diamonds_06.jpg);
+//     position: absolute;
+//     width: 450%;
+//     height: 450%;
+//     top: -65%;
+//     left: -65%;
+//     z-index: -1;
+//     @include transform(rotate(-45deg));
+//   }
 
 
-}
+// }
 
 .service-wrapper {
   text-align: center;
@@ -317,10 +310,6 @@
     max-width: 700px;
     margin: 0 auto;
   }
-
-  // .intro {
-    // margin: 20px 0;
-  // }
 
   h2, p {
     color: #eee;
