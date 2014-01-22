@@ -2,18 +2,12 @@
 // __________________________________
 @import 'compass/css3/background-size';
 
-
 .landing {
-  // font-family: 'Open Sans', sans-serif !important;
 
   @include background-size(cover);
   height: 100%;
   max-width: 100%;
   top: 0;
-
-  // @media (max-width: 480px) {
-  //   height: 400px;
-  // }
 
   &.home {
     // background-image: url('../images/runway-02.jpg');
@@ -44,10 +38,10 @@
 
 .greeting {
   position: relative;
-  top: 0;
+  // top: 0;
   width: 100%;
   text-align: center;
-  margin-top: 300px;
+  // margin-top: 300px;
   z-index: 1;
   opacity: 1;
 
@@ -55,21 +49,16 @@
     opacity: 0 !important;
   }
 
-  h2 {
-    @include font-size(5);
-    font-weight: 600;
+  h1 {
+    // @include font-size(3);
+    font-weight: 100;
     color: $color-text-white;
   }
 
-  h3 {
-    @include font-size(3);
-    font-weight: 100;
+  h2 {
+    @include font-size(5);
+    font-weight: 500;
     color: $color-text-white;
-    max-width: 80%;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
   }
 
   .divider {

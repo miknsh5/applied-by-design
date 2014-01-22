@@ -16,53 +16,127 @@
 
 
 .row-services {
-  padding: 50px 0;
-  border-top: solid 1px #CCC;
-
-
-}
-
-.tall-diagram {
-  height: 500px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  // border-top: solid 1px #CCC;
 }
 
 
 .service-section {
-  // padding: 0 20px;
-  
-  .text-pos {
-    clear: both;
-    margin-left: 90px;
-    top: -50px;
-    position: relative;
-    // padding-right: 20px;
+  padding: 0 20px;
+
+  p.byline {
+    @include font-size(2);
   }
 
-  .title-pos {
+  .lead-in {
+    line-height: 1.3em;
+    max-width: 700px;
+    // margin: 0 auto;
+    text-align: center;
+    margin: auto;
+    margin-top: 60px;
+    // margin-bottom: 60px;
     position: relative;
-    margin-top: 0;
+
+    p {
+      margin-top: 60px;
+    }
+
   }
 
+  h2 {
+    font-size: 3rem;
+    font-weight: 200;
+    line-height: 1.3em;
+    // &.lead-in {
+    //   font-size: 2em;
+    // }
+  }
+
+  .ikon {
+    font-size: 5em;
+    color: $color-blue-fade;
+  }
+
+  .service {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    max-width: 420px;
+
+    // p.title {
+    //   font-weight: 600;
+    //   letter-spacing: 2px;
+    // }
+
+    p {
+      border-top: dotted 1px #ccc;
+      padding-top: 10px;
+    }
+
+  }
 
 }
 
 
+
+.solution {
+  text-align: center;
+  // margin: auto;
+  margin: 40px 0;
+  // position: relative;
+  
+  p.title, h4.title {
+    // font-weight: 700;
+    // letter-spacing: 1px;
+    // min-height: 0;
+
+    @media (min-width: $screen-md) {
+      min-height: 50px;
+    }
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: dotted 1px #ccc;
+  }
+
+  p {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .circle-icon {
+    margin: 0 auto;
+    text-align: center;
+    @include border-radius(200px);
+
+    width: 100px;
+    height: 100px;
+    border: solid $color-text-gray 2px;
+    // background-color: #444;
+    // background-color: $color-orange-fade;
+    color: #eee;
+
+    .ikon {
+      font-size: 2em;
+      position: relative;
+      top: 32px;
+      color: $color-text-gray;
+    }
+    // margin: 0 auto;
+    // position: relative;
+  }
+
+
+
+}
 
 
 
 
 
 $bubble-opacity: 0.75;
-
-
-.services-section {
-  h2 {
-    font-size: 3rem;
-    font-weight: 200;
-  }
-  
-}
-
 
 
 .mgmt-text {
@@ -443,159 +517,159 @@ $con-delta: 40px;
   //   position: relative;
 
 
-    #solutions {
-      position: absolute;
-      left: 80px;
-      top: 80px;
+    // #solutions {
+    //   position: absolute;
+    //   left: 80px;
+    //   top: 80px;
 
 
-      #line-65 {
-        @include rotate(-65deg);
-        width: 430px;
-        position: absolute;
-        left: -200px;
-        top: 25px;
-        border-bottom: solid #CCC 2px;
-      }
+    //   #line-65 {
+    //     @include rotate(-65deg);
+    //     width: 430px;
+    //     position: absolute;
+    //     left: -200px;
+    //     top: 25px;
+    //     border-bottom: solid #CCC 2px;
+    //   }
 
-      #line-biz {
-        @include rotate(45deg);
-        width: 430px;
-        position: absolute;
-        left: -195px;
-        top: 20px;
-        border-bottom: solid #CCC 2px;
-      }
+    //   #line-biz {
+    //     @include rotate(45deg);
+    //     width: 430px;
+    //     position: absolute;
+    //     left: -195px;
+    //     top: 20px;
+    //     border-bottom: solid #CCC 2px;
+    //   }
 
-      .solution {
-        @include transition-property(width, height, left, top, opacity);
-        @include transition-duration(1.0s);
+    //   .solution {
+    //     @include transition-property(width, height, left, top, opacity);
+    //     @include transition-duration(1.0s);
         
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        width: 40px;
-        height: 40px;
-        @include border-radius(50px);
+    //     position: absolute;
+    //     left: 0px;
+    //     top: 0px;
+    //     width: 40px;
+    //     height: 40px;
+    //     @include border-radius(50px);
 
-        background-color: $color-darkgray;
-        color: $color-text-white;
+    //     background-color: $color-darkgray;
+    //     color: $color-text-white;
 
-        i {
-          line-height: 2.5em;
-          font-size: 1.2em;
+    //     i {
+    //       line-height: 2.5em;
+    //       font-size: 1.2em;
 
-          &.ikon-bars, &.ikon-switch, &.ikon-menu {
-            line-height: 2.4em;
-          }
-        }
-        .title {
-          position: absolute;
-          width: 140px;
-          color: $color-darkgray;
-          top: 10px;
-          &.left{
-            text-align: right;
-            margin-left: -150px;
-          }
-          &.right{
-            text-align: left;
-            margin-left: 50px;
-          } 
-          &.bottom{
-            text-align: center;
-            margin-top: 35px;
-            margin-left: -30px;
-            width: 100px;
-          }
-        }
+    //       &.ikon-bars, &.ikon-switch, &.ikon-menu {
+    //         line-height: 2.4em;
+    //       }
+    //     }
+    //     .title {
+    //       position: absolute;
+    //       width: 140px;
+    //       color: $color-darkgray;
+    //       top: 10px;
+    //       &.left{
+    //         text-align: right;
+    //         margin-left: -150px;
+    //       }
+    //       &.right{
+    //         text-align: left;
+    //         margin-left: 50px;
+    //       } 
+    //       &.bottom{
+    //         text-align: center;
+    //         margin-top: 35px;
+    //         margin-left: -30px;
+    //         width: 100px;
+    //       }
+    //     }
 
-        &:hover {
-          background-color: $color-gray;
-        }
+    //     &:hover {
+    //       background-color: $color-gray;
+    //     }
 
-      }
-      .anim-active {
-        &.s00 { left: #{6 *  -8}px; top: #{10 *  10}px; }
-        &.s01 { left: #{6 * -12}px; top: #{10 *  15}px; }
-        &.s02 { left: #{6 * -16}px; top: #{10 *  20}px; }
-        &.s40 { left: #{6 *   7}px; top: #{10 * -10}px; }
-        &.s41 { left: #{6 *  11}px; top: #{10 * -15}px; }
-        &.s42 { left: #{6 *  15}px; top: #{10 * -20}px; }
-        &.s05 { left: #{5 * -22}px; top: #{10 * -11}px; }
-        &.s15 { left: #{5 * -32}px; top: #{10 * -16}px; }
-        &.s35 { left: #{5 *  22}px; top: #{10 *  11}px; }
-        &.s55 { left: #{5 *  32}px; top: #{10 *  16}px; }
-        // &.s20 { left: #{100 *  0}px; top: #{50 * -4}px; }
-      }
-    }
+    //   }
+    //   .anim-active {
+    //     &.s00 { left: #{6 *  -8}px; top: #{10 *  10}px; }
+    //     &.s01 { left: #{6 * -12}px; top: #{10 *  15}px; }
+    //     &.s02 { left: #{6 * -16}px; top: #{10 *  20}px; }
+    //     &.s40 { left: #{6 *   7}px; top: #{10 * -10}px; }
+    //     &.s41 { left: #{6 *  11}px; top: #{10 * -15}px; }
+    //     &.s42 { left: #{6 *  15}px; top: #{10 * -20}px; }
+    //     &.s05 { left: #{5 * -22}px; top: #{10 * -11}px; }
+    //     &.s15 { left: #{5 * -32}px; top: #{10 * -16}px; }
+    //     &.s35 { left: #{5 *  22}px; top: #{10 *  11}px; }
+    //     &.s55 { left: #{5 *  32}px; top: #{10 *  16}px; }
+    //     // &.s20 { left: #{100 *  0}px; top: #{50 * -4}px; }
+    //   }
+    // }
 
-    .bubble {
-      // @include border-radius(1000px);
-      @include transition-property(width, height, left, top, right, bottom, opacity);
-      @include transition-duration(0.5s);
-      @include transition-delay(1.0s);
-      position: absolute;
-      opacity: $bubble-opacity;
-      width: 70px;
-      height: 70px;
-      opacity: 0;
+    // .bubble {
+    //   // @include border-radius(1000px);
+    //   @include transition-property(width, height, left, top, right, bottom, opacity);
+    //   @include transition-duration(0.5s);
+    //   @include transition-delay(1.0s);
+    //   position: absolute;
+    //   opacity: $bubble-opacity;
+    //   width: 70px;
+    //   height: 70px;
+    //   opacity: 0;
 
-      &.mgmt {
-        background-color: $color-orange;
-        left: 50px;
-        top: 50px;
-        z-index: 2;
-      }
-      &.app {
-        background-color: $color-blue;
-        right: 50px;
-        bottom: 50px;
-        z-index: 2;
-      }
+    //   &.mgmt {
+    //     background-color: $color-orange;
+    //     left: 50px;
+    //     top: 50px;
+    //     z-index: 2;
+    //   }
+    //   &.app {
+    //     background-color: $color-blue;
+    //     right: 50px;
+    //     bottom: 50px;
+    //     z-index: 2;
+    //   }
 
-      &.axd {
-        background-color: $color-darkgray;
-        left: 65px;
-        top: 65px;
-        border: solid white 10px;
+    //   &.axd {
+    //     background-color: $color-darkgray;
+    //     left: 65px;
+    //     top: 65px;
+    //     border: solid white 10px;
 
-      }
+    //   }
 
-      p {
-        // margin-top:200px;
-        &.mgmt-text {
-          margin-left: -160px;
-        }
-        &.app-text {
-          margin-left: 85px;
-        }
+    //   p {
+    //     // margin-top:200px;
+    //     &.mgmt-text {
+    //       margin-left: -160px;
+    //     }
+    //     &.app-text {
+    //       margin-left: 85px;
+    //     }
 
-      }
-    }
+    //   }
+    // }
 
-    .anim-active {
-      width: 70px;
-      height: 70px;
-      &.mgmt {
-        left: 30px;
-        top: 30px;
-        opacity: 1;
-        // opacity: $bubble-opacity;
-      }    
-      &.app {
-        right: 30px;
-        bottom: 30px;
-        opacity: 1;
-        // opacity: $bubble-opacity;
-      }
-      &.axd {
-        left: 65px;
-        top: 65px;
-        opacity: 1;
-        z-index: 5;
-      }
-    }
+    // .anim-active {
+    //   width: 70px;
+    //   height: 70px;
+    //   &.mgmt {
+    //     left: 30px;
+    //     top: 30px;
+    //     opacity: 1;
+    //     // opacity: $bubble-opacity;
+    //   }    
+    //   &.app {
+    //     right: 30px;
+    //     bottom: 30px;
+    //     opacity: 1;
+    //     // opacity: $bubble-opacity;
+    //   }
+    //   &.axd {
+    //     left: 65px;
+    //     top: 65px;
+    //     opacity: 1;
+    //     z-index: 5;
+    //   }
+    // }
   
 
 }

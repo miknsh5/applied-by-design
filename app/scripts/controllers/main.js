@@ -19,12 +19,10 @@ angular.module('appliedByDesignApp')
 
     $scope.fadeTitle = function(){
 
-        // if (Modernizr.cssanimations) {
           return {
-            'margin-top': 300-($scope.scroll/3) + 'px',
+            'top': ($scope.scroll/3) + 'px',
             'opacity': 1-($scope.scroll/500)
           };
-        // } 
     };
 
     $('#services-btn').click(function (){
@@ -100,43 +98,41 @@ function overrideAnim(item) {
     $elem.addClass('anim-active');
 }
 
-// if (!Modernizr.cssanimations){
-//     // if browser doesn't support css animations then set them all to their 
-//     // final state off the bat
-//     overrideAnim('.dg1');
-//     // overrideAnim('.con1');
-//     // overrideAnim('.con2');
-//     // overrideAnim('.con3');
-//     // overrideAnim('.con4');
-//     // overrideAnim('.con5');
-//     // overrideAnim('.con6');
-//     // overrideAnim('.fade-in-0');
-//     // overrideAnim('.fade-in-1');
-//     // overrideAnim('.fade-in-2');
-//     // overrideAnim('.fade-in-3');
-//     // overrideAnim('.fade-in-4');
-//     // overrideAnim('.fade-in-5');
-//     // overrideAnim('.fade-in-6');
-//     overrideAnim('.bubble');
-//     overrideAnim('.solution');
-// }
 
 // Capture scroll events
 $(window).scroll(function(){
 
-    checkAnimation('.dg1');
+    // checkAnimation('.dg1');
     // checkAnimation('.fade-in-0');
-    checkAnimation('.fade-in-1');
-    checkAnimation('.fade-in-2');
-    checkAnimation('.fade-in-3');
-    checkAnimation('.fade-in-4');
-    checkAnimation('.fade-in-5');
-    checkAnimation('.fade-in-6');
+    // checkAnimation('.fade-in-1');
+    // checkAnimation('.fade-in-2');
+    // checkAnimation('.fade-in-3');
+    // checkAnimation('.fade-in-4');
+    // checkAnimation('.fade-in-5');
+    // checkAnimation('.fade-in-6');
     checkAnimation('.fade-in-7');
-    checkAnimation('.bubble');
-    checkAnimation('.solution');
-    checkGreetingVis('.greeting');
+    // checkAnimation('.bubble');
+    // checkAnimation('.solution');
+    // checkGreetingVis('.greeting');
 });
 
 // checkAnimation('.fade-in-0');
-checkAnimation('.dg1');
+// checkAnimation('.dg1');
+
+
+
+function resize() {
+    var heights = window.innerHeight;
+    document.getElementById("landing").style.height = heights + "px";
+    document.getElementById("first-section").style.marginTop = heights + "px";
+    document.getElementById("services-btn").style.bottom = 60 + "px";
+    var content = $(".greeting");
+    content.css({"margin-top": heights*.30 + "px"});
+}
+resize();
+
+window.onresize = function() {
+    resize();
+};
+
+
