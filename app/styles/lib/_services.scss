@@ -21,22 +21,31 @@
   // border-top: solid 1px #CCC;
 }
 
+.section-title {
+  margin: 0 auto;
+  text-align: center;
 
+  &.title-left {
+    margin: 0;
+    text-align: left;
+  }
+
+  h2, p {
+    color: $color-text-white;
+  }
+}
 .service-section {
   padding: 0 20px;
 
-  p.byline {
-    @include font-size(2);
-  }
+  // p.byline {
+    // @include font-size(2);
+  // }
 
   .lead-in {
     line-height: 1.3em;
     max-width: 700px;
-    // margin: 0 auto;
     text-align: center;
     margin: auto;
-    margin-top: 60px;
-    // margin-bottom: 60px;
     position: relative;
 
     p {
@@ -44,14 +53,15 @@
     }
 
   }
+  
+  h4.title {
+    font-weight: 600;
+  }
 
   h2 {
     font-size: 3rem;
     font-weight: 200;
     line-height: 1.3em;
-    // &.lead-in {
-    //   font-size: 2em;
-    // }
   }
 
   .ikon {
@@ -65,11 +75,6 @@
     margin-top: 40px;
     max-width: 420px;
 
-    // p.title {
-    //   font-weight: 600;
-    //   letter-spacing: 2px;
-    // }
-
     p {
       border-top: dotted 1px #ccc;
       padding-top: 10px;
@@ -81,51 +86,57 @@
 
 
 
+
 .solution {
   text-align: center;
-  // margin: auto;
   margin: 40px 0;
-  // position: relative;
-  
-  p.title, h4.title {
-    // font-weight: 700;
-    // letter-spacing: 1px;
-    // min-height: 0;
+  @media (min-width: $screen-md) {
+    text-align: left;
+  }
 
-    @media (min-width: $screen-md) {
-      min-height: 50px;
-    }
+
+
+  h4.title {
+
+    font-weight: 600;
+    margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-bottom: dotted 1px #ccc;
+    max-width: 360px;
   }
 
   p {
     max-width: 450px;
     margin: 0 auto;
+    color: $color-text-white;
+  }
+
+  h4 {
+    color: $color-text-whitewhite;
   }
 
   .circle-icon {
+    @include border-radius(200px);
+    background-color: rgba(1,1,1,0.4);
     margin: 0 auto;
     text-align: center;
-    @include border-radius(200px);
-
-    width: 100px;
-    height: 100px;
-    border: solid $color-text-gray 2px;
-    // background-color: #444;
-    // background-color: $color-orange-fade;
+    width: 60px;
+    height: 60px;
+    border: solid $color-text-whitewhite 2px;
     color: #eee;
 
-    .ikon {
-      font-size: 2em;
-      position: relative;
-      top: 32px;
-      color: $color-text-gray;
+    @media (min-width: $screen-md) {
+      margin: 0;
     }
-    // margin: 0 auto;
-    // position: relative;
+
+    .ikon {
+      font-size: 1.3em;
+      position: relative;
+      top: 19px;
+      color: $color-text-whitewhite;
+    }
   }
 
 

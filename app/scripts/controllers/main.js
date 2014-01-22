@@ -127,7 +127,7 @@ function resize() {
     document.getElementById("first-section").style.marginTop = heights + "px";
     document.getElementById("services-btn").style.bottom = 60 + "px";
     var content = $(".greeting");
-    content.css({"margin-top": heights*.30 + "px"});
+    content.css({"margin-top": heights*.40 + "px"});
 }
 resize();
 
