@@ -25,6 +25,10 @@ angular.module('appliedByDesignApp')
           };
     };
 
+    $('#scroll-btn').click(function (){
+      $.scrollTo('#scroll-anchor',{duration: 'medium'});
+    });
+
     $('#services-btn').click(function (){
       $.scrollTo('#services-anchor',{duration: 'medium'});
     });
@@ -109,7 +113,7 @@ $(window).scroll(function(){
     // checkAnimation('.fade-in-3');
     // checkAnimation('.fade-in-4');
     // checkAnimation('.fade-in-5');
-    // checkAnimation('.fade-in-6');
+    checkAnimation('.fade-in-6');
     checkAnimation('.fade-in-7');
     // checkAnimation('.bubble');
     // checkAnimation('.solution');
@@ -125,7 +129,7 @@ function resize() {
     var heights = window.innerHeight;
     document.getElementById("landing").style.height = heights + "px";
     document.getElementById("first-section").style.marginTop = heights + "px";
-    document.getElementById("services-btn").style.bottom = 60 + "px";
+    document.getElementById("scroll-btn").style.bottom = 60 + "px";
     var content = $(".greeting");
     content.css({"margin-top": heights*.40 + "px"});
 }
