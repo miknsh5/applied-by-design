@@ -214,9 +214,11 @@ p.byline {
   position: relative;
   border-top: 1px solid #333;
   z-index: 6;
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 80px;
   color: #ccc;
   letter-spacing: 1px;
+  margin-bottom: 200px;
 
   h4 {
     color: $color-text-gray;
