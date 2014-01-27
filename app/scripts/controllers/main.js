@@ -59,22 +59,22 @@ function checkAnimation(item) {
   }
 }
 
-// function checkGreetingVis(item) {
-//     var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
-//     var viewportTop = $(scrollElem).scrollTop();
+function checkGreetingVis(item) {
+    var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+    var viewportTop = $(scrollElem).scrollTop();
 
-//     var $elem = $(item);
+    var $elem = $(item);
 
-//     if (viewportTop > 1000 ) {
-//         // remove the class to hide the element
-//         $elem.removeClass('anim-active');
-//         $elem.css({'opacity': 0});
-//     } else {
-//         // add the anim class back so it's visibile at the top
-//         $elem.addClass('anim-active');
-//         $elem.css({'opacity': 1});
-//     }
-// }
+    if (viewportTop > 1000 ) {
+        // remove the class to hide the element
+        $elem.removeClass('anim-active');
+        $elem.css({'opacity': 0});
+    } else {
+        // add the anim class back so it's visibile at the top
+        $elem.addClass('anim-active');
+        $elem.css({'opacity': 1});
+    }
+}
 
 // function overrideAnim(item) {
 //     var $elem = $(item);
@@ -85,7 +85,7 @@ function checkAnimation(item) {
 
 // Capture scroll events
 $(window).scroll(function () {
-
+  checkGreetingVis('.greeting');
   // checkAnimation('.dg1');
   // checkAnimation('.fade-in-0');
   // checkAnimation('.fade-in-1');
