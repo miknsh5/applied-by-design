@@ -1,18 +1,32 @@
+1.4.9
+[Enhancement]
+- "offset" setting can now be a function as well (#60)
+
+1.4.8
+[Enhancement]
+- Added support for AMD
+
+1.4.7
+[Misc]
+- Changed spacing
+- Changed licensing to MIT
+- Repo is compliant with official jquery plugins repository
+
 1.4.6
 [Fix]
-Fixed first argument of onAfter and onAfterFirst was original target and should be "parsed" target
+- Fixed first argument of onAfter and onAfterFirst was original target and should be "parsed" target
 
 1.4.5
 [Fix]
-Fixed passing a negative scroll value crashes
+- Fixed passing a negative scroll value crashes
 
 1.4.4
 [Change]
-Re-released as 1.4.4 to avoid issues with bower
+- Re-released as 1.4.4 to avoid issues with bower
 
 1.4.3.1
 [Fix]
-Fixed $.scrollTo(0) broken on 1.4.3
+- Fixed $.scrollTo(0) broken on 1.4.3
 
 1.4.3
 [Enhancement]

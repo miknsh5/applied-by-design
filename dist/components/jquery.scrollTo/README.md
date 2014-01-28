@@ -7,6 +7,10 @@ Using [bower](https://github.com/twitter/bower):
 bower install jquery.scrollTo
 ```
 
+### Downloading Manually
+
+If you want the latest stable version, get the latest release from the [releases page](https://github.com/flesler/jquery.scrollTo/releases).
+
 ### Notes
 
 * Apart from the target and duration, the plugin can receive a hash of settings. Documentation and examples are included in the source file.
@@ -35,7 +39,7 @@ bower install jquery.scrollTo
 
 * 'margin' will only be valid, if the target is a selector, a DOM element, or a jQuery Object.
 
-* The option 'offset' allows to scroll less or more than the actual target by a defined amount of pixels. Can be a number(both axes) or { top:x, left:y }.
+* The option 'offset' allows to scroll less or more than the actual target by a defined amount of pixels. Can be a number(both axes), { top:x, left:y } or a function that returns an object with top & left.
 
 * The option 'over' lets you add or deduct a fraction of the element's height and width from the final position. so over:0.5 will scroll to the middle of the object. can be specified with {top:x, left:y}
 

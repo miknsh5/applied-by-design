@@ -1,3 +1,24 @@
 // Colors
+// $color-darkgray: rgb(80,80,80);
+$color-gray: #888888;
+$color-black: #222222;
+$color-white: #EEEEEE;
+$color-text-black: $color-black;
+$color-text-white: #EEEEEE;
+$color-text-whitewhite: #FFFFFF;
+$color-text-gray: #999999;
+$color-text-dkgray: #555555;
 
+$color-blue: rgb(70,128,187);
+$color-orange: rgb(245,129,0);
+$color-blue-fade: rgba(70,128,187, 0.7);
+$color-orange-fade: rgba(245,129,0, 0.7);
+
+.blue-text {
+    color: $color-blue !important;
+}
+
+.orange-text {
+    color: $color-orange !important;
+}
 

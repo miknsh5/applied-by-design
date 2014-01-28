@@ -15,9 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/d17b823c.main.css">
+    <link rel="stylesheet" href="styles/067e6062.main.css">
 
-    <script src="scripts/vendor/d41d8cd9.modernizr.js"></script>
+    <script src="scripts/vendor/d7100892.modernizr.js"></script>
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -36,325 +36,34 @@
 
 
   </head>
-  <body ng-app="appliedByDesignApp" ng-controller="MainCtrl">
+  <body ng-app="appliedByDesignApp">
 
-
-    <!-- Add your site or application content here -->
-    
-   <span itemscope="" itemtype="http://schema.org/Organization">
-     <div class="navbar navbar-inverse navbar-fixed-top">
-       <div class="container">
-         <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand logo" href="#">
-            <img itemprop="logo" src="../images/f0997979.logo-lt-1.png" alt="Applied by Design">
-           </a>
-         </div>
-         <div class="navbar-collapse collapse">
-           <ul class="nav navbar-nav pull-right">
-
-                 <li id="services-btn"><a href="#">Services</a></li>
-                 <li id="contact-btn"><a href="#">Contact</a></li>
-                 <li><a href="http://blog.appliedbydesign.com">Blog</a></li>
-           </ul>
-
-         </div><!--/.navbar-collapse -->
-       </div>
-     </div>
-
-     <!-- Seats background image, fixed, scroll over -->
-     <div class="landing home" id="landing">
-       <div class="container">
-
-         <div scroll-position="scroll"></div>
-         <div class="greeting" ng-style="fadeTitle()">
-           <h2 class="underline" itemprop="name">Applied by Design</h2>
-           <div class="divider"></div>
-
-           <!-- <h1 itemprop="description">Modern Application Solutions</h1> -->
-           <h1 itemprop="description">Technology Consulting & Application Solutions</h1>
-           <div id="scroll-btn"><img src="../images/6d79c9fe.more-arrow-lt.png" alt="more arrow"></div>
-         </div>
-
-       </div>
-     </div>
-
-
-     <!-- service sections -->
-     <div id="scroll-anchor" class="anchor-strip"></div>
-
-     <div class="service-bg" id="first-section">
-       <div class="container service-section">
-<!--         <div class="row row-services">
-          <div class="col-md-6">
-            <div id="hybrid-diagram">
-              <div class="mgmt box dg1 pos-initial"><p>Business Strategy</p></div>
-              <div class="app box dg1 pos-initial"><p>Application Development</p></div>
-              <div class="axd-logo dg1">
-                <img src="../images/138195fb.logo-dk.png" alt="Applied by Design">
-                <div id="axd-line"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-right">
-            <h2>We Help Build Better Applications</h2>
-            <p>We’re a technology consulting firm specializing in cloud-based application solutions. We help businesses understand and transition to modern computing platforms. We also <strong>design</strong> and help <strong>build</strong> the applications that live in this environment.</p>
-          </div>
-
-        </div> -->
-
-
-
-        <div class="row row-services">
-
-
-          <div class="service col-md-4">
-            <div class="circle-icon"><span class="ikon-cloud ikon"></span></div>
-            <h4 class="title">Cloud</h4>
-            <p>Browser-based applications are in, desktop installations are out. We'll help you make the transition.</p>
-          </div>
-
-          <div class="service col-md-4">
-            <div class="circle-icon"><span class="ikon-bars ikon"></span></div>
-            <h4 class="title">Data</h4>
-            <p>We're engineers and we love data. We'll help build the tools and applications needed to make your data meaningful.</p>
-          </div>
-
-          <div class="service col-md-4">
-            <div class="circle-icon"><span class="ikon-html5 ikon"></span></div>
-            <h4 class="title">Web Applications</h4>
-            <p>Moving your tools to the browser introduces a new world of capabilities for your applications. We develop the IT strategies needed to capture them.</p>
-          </div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo" href="#" id="home-btn">
+           <img itemprop="logo" src="../images/f0997979.logo-lt-1.png" alt="Applied by Design">
+          </a>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+             <!-- <li id=""><a ui-sref="home">Home</a></li> -->
+             <li id="services-btn"><a href="#">Services</a></li>
+             <li id="contact-btn"><a href="#">Contact</a></li>
+             <!-- <li><a ui-sref="company">Company</a></li> -->
+             <!-- <li><a ui-sref="work">Case Studies</a></li> -->
+             <li><a href="http://blog.appliedbydesign.com">Blog</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
       </div>
     </div>
 
-
-    <div class="segue-bg">
-      <div class="container service-section">
-        <div class="col-md-12 lead-in">
-          <h2>We help businesses make the right technology decisions and build modern applications.</h2>
-          <!-- <p class="byline">What we <strong>know</strong> best.</p> -->
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="solution-bg" id="second-section">
-    <div id="services-anchor" class="anchor-strip"></div>
-    <div class="container service-section">
-
-        <div class="row row-services">
-          <div class="col-md-12 section-title title-left">
-            <h2 class="title">Services & Solutions</h2>
-            <p class="byline">Here's what we do best</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="solution col-md-4">
-            <div class="circle-icon"><i class="ikon-group ikon"></i></div>
-            <h4 class="title">User Centered Design</h4>
-            <p>We involve users in the design process to make sure we're building the right application for the right audience in a way that works from day one.</p>
-          </div>
-
-          <div class="solution col-md-4">
-            <div class="circle-icon"><i class="ikon-screen ikon"></i></div>
-            <h4 class="title">Interaction & UX Design</h4>
-            <p>Good design is problem solving. We help clients design intuitive and effective solutions.</p>
-          </div>
-
-          <div class="solution col-md-4">
-            <div class="circle-icon"><i class="ikon-stats ikon"></i></div>
-            <h4 class="title">Data Visualization</h4>
-            <p> We design interactive data visualization tools to help users discover meaning and extract value from information.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="solution col-md-4">
-            <div class="circle-icon"><i class="ikon-briefcase ikon"></i></div>
-            <h4 class="title">Product Management</h4>
-            <p>Converting big ideas into actionable concepts for application design is at the center of what we’re about. We help clients turn bullet points into application solutions.</p>
-          </div>
-
-          <div class="solution col-md-4">
-            <div class="circle-icon"><i class="ikon-switch ikon"></i></div>
-            <h4 class="title">Application Prototyping</h4>
-            <p>We don’t just talk about ideas, we bring them to life. We build prototypes to explore capabilities, mitigate technical issues, and validate business assumptions throughout development.</p>
-          </div>
-
-        </div>
-
-
-        <!-- <div class="row row-services"> -->
-
-          <!-- <div class="col-sm-12 col-single fade-in fade-in-1"> -->
-            <!-- <h2>Connecting the Dots</h2>
-            <p>We focus on building shared mental models that make it easier for teams to communicate in a typical development environment. We help connect the dots by ensuring everyone's speaking the same language and sharing the same ideas. This bridges the communication gap between business strategy and application development leading to <strong>better requirements definition</strong> and <strong>more efficient development</strong> cycles.</p> -->
-          <!-- </div> -->
-
-          <!-- <div id="bridge-diagram" class="fade-in fade-in-2 col-sm-12"> -->
-              <!-- <img src="images/6cff419b.bridge-gap.png" alt=""> -->
-          <!-- </div> -->
-
-        <!-- </div> -->
-
-        <!-- <div class="row row-services fade-in fade-in-3"> -->
-          <!-- <div class="col-sm-12 col-single"> -->
-            <!-- <h2>Our Solutions</h2>
-            <p>We approach development projects with a <strong>user-centered design</strong> mentality. We offer a suite of solutions that complement the development lifecycle at all stages to help you <strong>build the right application</strong>, on track and on schedule.</p> -->
-          <!-- </div> -->
-        <!-- </div> -->
-
-        <!-- <div class="row solutions tall-diagram"> -->
-<!--           <div id="venn-diagram" class="row fade-in fade-in-4">
-              <div class="bubble axd">
-              </div>
-              <div class="bubble mgmt"><p class="mgmt-text">Strategy</p></div>
-              <div class="bubble app"><p class="app-text">Development</p></div>
-              <div id="solutions">
-                <div id="line-biz"></div>
-                <div id="line-65"></div>
-                <div id="app-line"></div>
-
-                <div class="solution s00 fade-in fade-in-5"><i class="ikon-user"></i>
-                  <div class="title left">User Personas</div>
-                </div>
-                <div class="solution s01 fade-in fade-in-5"><i class="ikon-list-2"></i>
-                  <div class="title left">Scenario Definition</div>
-                </div>
-                <div class="solution s02 fade-in fade-in-5"><i class="ikon-briefcase"></i>
-                  <div class="title left">Use Cases</div>
-                </div>
-                <div class="solution s40 fade-in fade-in-5"><i class="ikon-screen"></i>
-                  <div class="title right">UI/UX Design</div>
-                </div>
-                <div class="solution s41 fade-in fade-in-5"><i class="ikon-stats"></i>
-                  <div class="title right">Data Modeling</div>
-                </div>
-                <div class="solution s42 fade-in fade-in-5"><i class="ikon-menu"></i>
-                  <div class="title right">Analytical Modeling</div>
-                </div>
-                <div class="solution s05 fade-in fade-in-5"><i class="ikon-file"></i>
-                  <div class="title left">Strategic Framework</div>
-                </div>
-                <div class="solution s15 fade-in fade-in-5"><i class="ikon-html5"></i>
-                  <div class="title left">Technology Strategy</div>
-                </div>
-                <div class="solution s35 fade-in fade-in-5"><i class="ikon-bars"></i>
-                  <div class="title right">Data Visualization</div>
-                </div>
-                <div class="solution s55 fade-in fade-in-5"><i class="ikon-switch"></i>
-                  <div class="title right">Functional Prototypes</div>
-                </div>
-              </div>
-          </div> -->
-        <!-- </div> -->
-
-       </div>
-     </div>
-
-
-     <div class="about-us">
-       <div class="container">
-         <div class="row fade-in fade-in-6">
-<!--            <h2>Our Company</h2>
-           <div class="bio intro">
-            <p>At Applied by Design we believe that web based application development has become cheap and fast enough to revolutionize traditional, legacy IT portfolios. By using modern web application tools as both a means and an end to client application needs, we provide both a new, rich way of communicating application requirements and a future facing, adaptable end product.</p>
-           </div> -->
-           <h2 class="title">Our Team</h2>
-           <div class="bio col-md-6">
-             <div class="headshot">
-               <img src="../images/b95c4faf.headshot-ben.jpg" alt="Ben Parkison Photo">
-               <h4>Ben Parkison</h4>
-               <p>Ben has worked in the aviation industry for ten years, and since then has been involved in a number of engineering and marketing tool development projects. Ben has been responsible for designing solutions to meet airplane structural certification, new analytical tools to forecast airplane maintenance and engineering workload requirements, and advanced market modeling and simulation tools in support of customer facing airplane marketing engagements.</p>
-             </div>
-           </div>
-
-           <div class="bio col-md-6">
-             <div class="headshot">
-               <img src="../images/8ea47f29.headshot-nash.jpg" alt="Mike Nash Photo">
-               <h4>Mike Nash</h4>
-               <p>For eight years Mike has worked in the aviation industry developing engineering analysis tools, helping customers improve business operations, and building technical application solutions. Mike has led front-end agile development teams and thrives in creative environments acting as both lead designer and front-end developer. He is typically responsible for user experience design, web technology strategy, and application architecture.</p>
-             </div>
-           </div>
-
-         </div>
-       </div>
-     </div>
-
-
-
-    <div class="contact-bg">
-        <div id="contact-anchor" class="anchor-strip shim-anchor"></div>
-        <div class="container contact-info fade-in fade-in-7">
-          
-          <div class="row row-services">
-            <div class="section-title title-left col-md-12">
-              <h2 class="title">Get in Touch</h2>
-              <p class="byline">Have a project in mind? Let us know what you need. We're here to help.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <h4>Connect</h4>
-              <div class="social-media">
-                <a href="http://twitter.com/appliedbydesign"><i class="ikon-twitter"></i></a>
-                <a href="http://www.linkedin.com/company/applied-by-design"><i class="ikon-linkedin"></i></a>
-                <a href="http://plus.google.com/+Appliedbydesign" rel="publisher"><i class="ikon-google-plus"></i></a>
-              </div>
-<!-- 
-              <h4>Careers</h4>
-              <p>AngularJS, Node, D3. If these are your cup of tea, let's talk.</p> -->
-            </div>
-
-            
-            <div class="col-md-8">
-              <div class="row">
-                <div class="col-md-6">
-                  <h4>Contact</h4>
-
-                  <address>
-                    General Inquiries<br>
-                    <a href="mailto:info@appliedbydesign.com" itemprop="email">info@appliedbydesign.com</a> <br>
-                    <span itemprop="telephone"> (206) 745-0307</span>
-                  </address>
-                  
-                  <address>
-                    Ben Parkison<br>
-                    <a href="mailto:ben@appliedbydesign.com">ben@appliedbydesign.com</a><br>
-                  </address>  
-
-                  <address>
-                    Mike Nash<br>
-                    <a href="mailto:mike@appliedbydesign.com">mike@appliedbydesign.com</a><br>
-                  </address>
-                </div>
-                <div class="col-md-6">
-                  <h4>Office</h4>
-                  <address>
-                    Applied by Design, LLC<br>
-                    <!-- P.O. Box <span itemprop="postOfficeBoxNumber">16473</span><br> -->
-                    <span itemprop="addressLocality">Seattle</span>, 
-                    <span itemprop="addressRegion">WA</span><br>
-                    <!-- <span itemprop="postalCode">98116</span><br> -->
-                  </address>
-                </div>  
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-    </div>
-
-     
+    <div ui-view=""><!-- ui-router views loaded here --></div>
 
     <footer>
       <div class="container">
@@ -364,7 +73,6 @@
       </div>
     </footer>
 
-    </span>
 
     <script type="text/javascript"> 
     var $buoop = {vs:{i:8,f:15,o:10.6,s:4,n:9}} 
@@ -377,7 +85,8 @@
      document.body.appendChild(e); 
     } 
     </script> 
-    <script src="scripts/63b440e6.scripts.js"></script>
+
+    <script src="scripts/dbc42185.scripts.js"></script>
 
   </body>
 </html>
