@@ -5,7 +5,6 @@
 angular.module('appliedByDesignApp')
   .controller('MainCtrl', function ($scope) {
 
-  $.scrollTo(0, 500);
 
   $scope.scroll = 0;
 

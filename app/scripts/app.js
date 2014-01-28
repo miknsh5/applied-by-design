@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('appliedByDesignApp', ['ngAnimate', 'ui.router'])
-  .config(function ($stateProvider, $urlRouterProvider) {
-
+  .config(function ($stateProvider, $urlRouterProvider, $uiViewScrollProvider) {
+    
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise('/home');
+    $uiViewScrollProvider.useAnchorScroll();
 
     // Now set up the states
       $stateProvider
@@ -32,4 +33,3 @@ angular.module('appliedByDesignApp', ['ngAnimate', 'ui.router'])
         })
 
     });
-
