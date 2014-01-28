@@ -23,6 +23,13 @@
     position: fixed;
     width: 100%;
   }
+  &.company {
+    background-image: url('../images/runway-02.jpg');
+    // background-image: url('../images/seats-02.jpg');
+    // background-image: url('../image/plane-header.jpg');
+    position: fixed;
+    width: 100%;
+  }
 
   img {
     @include transition(margin-top, 0.2s);
@@ -42,10 +49,8 @@
 
 .greeting {
   position: relative;
-  // top: 0;
   width: 100%;
   text-align: center;
-  // margin-top: 300px;
   z-index: 1;
   opacity: 1;
 
@@ -54,7 +59,6 @@
   }
 
   h1 {
-    // @include font-size(3);
     font-weight: 100;
     color: $color-text-white;
   }
@@ -75,9 +79,6 @@
     margin-top: 120px;
   }
 
-  @media (max-width: 480px) {
-    margin-top: 150px;
-  }
 
   .inner {
     max-width: 600px;

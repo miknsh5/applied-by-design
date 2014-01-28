@@ -38,15 +38,9 @@
 .service-section {
   padding: 0 20px;
 
-  // p.byline {
-    // @include font-size(2);
-  // }
-
   .lead-in {
     line-height: 1.3em;
-    max-width: 700px;
     text-align: center;
-    margin: auto;
     position: relative;
 
     p {
@@ -169,7 +163,7 @@ $bubble-opacity: 0.75;
   $box-w: $box-h;
 
   .box {
-    @include transition-property(left, top, right, opacity);
+    // @include transition-property(left, top, right, opacity);
     @include transition-duration(1.0s);
     // @include transition-timing-function(ease-in);
     width: $box-w;
@@ -247,7 +241,7 @@ $bubble-opacity: 0.75;
   $box-w: $box-h;
 
   .box {
-    @include transition-property(left, top, right, opacity);
+    // @include transition-property(left, top, right, opacity);
     @include transition-duration(1.0s);
     // @include transition-timing-function(ease-in);
     width: $box-w;

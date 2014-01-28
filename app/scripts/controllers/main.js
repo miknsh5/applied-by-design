@@ -5,11 +5,12 @@
 angular.module('appliedByDesignApp')
   .controller('MainCtrl', function ($scope) {
 
+
   $scope.scroll = 0;
 
   $scope.fadeTitle = function () {
     return {
-      'top': ($scope.scroll / 3) + 'px',
+      'top': (-$scope.scroll / 3) + 'px',
       'opacity': 1 - ($scope.scroll / 500)
     };
   };
@@ -29,6 +30,10 @@ angular.module('appliedByDesignApp')
   $('#contact-btn').click(function () {
     $.scrollTo('#contact-anchor', {duration: 'medium'});
   });
+
+
+  resize();
+
 });
 
 
@@ -111,7 +116,7 @@ function resize() {
   var content = $('.greeting');
   content.css({'margin-top': heights * 0.40 + 'px'});
 }
-resize();
+
 
 window.onresize = function () {
   resize();

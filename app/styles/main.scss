@@ -13,7 +13,7 @@
 // 2.0 - IMPORTS
 // ================================
 @import "sass-bootstrap/lib/bootstrap";
-@import 'fonts/myfonts'; 
+@import "fonts/myfonts"; 
 // @import 'lib/axd-mixins'; 
 // @import 'lib/axd-colors'; 
 // @import 'lib/global-overrides'; 
@@ -147,6 +147,12 @@ $divider-height: 470px;
 }
 
 
+.vimeo-player {
+  padding: 40px 0;
+  background-color: #000;
+  text-align: center;
+}
+
 
 
 .service-bg {
@@ -174,6 +180,9 @@ $divider-height: 470px;
 
   h2 {
     color: $color-text-white;
+    margin: auto;
+    max-width: 700px;
+
   }
 }
 .solution-bg {
