@@ -9,26 +9,26 @@
   max-width: 100%;
   top: 0;
 
-  &.home {
-    // background-image: url('../images/runway-02.jpg');
-    // background-image: url('../images/seats-02.jpg');
-    background-image: url('../images/seats-dark-bg.jpg');
+  &.bg {
     position: fixed;
     width: 100%;
   }
-  &.blog {
+  
     // background-image: url('../images/runway-02.jpg');
     // background-image: url('../images/seats-02.jpg');
+    // background-image: url('../images/seats-dark-bg.jpg');
+    // background-image: url('../image/plane-header.jpg');
+  &.home {
+    background-image: url('../images/seats-dark-bg.jpg');
+  }
+  &.blog {
     background-image: url('../image/plane-header.jpg');
-    position: fixed;
-    width: 100%;
   }
   &.company {
     background-image: url('../images/runway-02.jpg');
-    // background-image: url('../images/seats-02.jpg');
-    // background-image: url('../image/plane-header.jpg');
-    position: fixed;
-    width: 100%;
+  }
+  &.case-studies {
+    background-image: url('../images/runway-02.jpg');
   }
 
   img {
