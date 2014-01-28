@@ -3,6 +3,10 @@ section {
   padding: 80px 0;
   position: relative;
 
+  &:last-child {
+    margin-bottom: 250px;
+  }
+
   &.landing {
     @include background-size(cover);
     height: 100%;

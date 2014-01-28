@@ -26,21 +26,24 @@
   }
   &.blue {
     background-color: $color-blue;
-    border-bottom: solid 1px #777;
+    border-bottom: solid 1px #444;
     @include fontcolor($color-text-white);
   }
 
   &.blacka {
     background-color: rgba(0,0,0,0.4);
+    border-bottom: solid 1px #444;
     @include fontcolor($color-text-white);
   }
 
   &.black {
     background-color: rgb(0,0,0);
+    border-bottom: solid 1px #444;
     @include fontcolor($color-text-white);
   }
 
   &.none {
+    border-bottom: solid 1px #444;
     @include fontcolor($color-text-white);
   }
 
