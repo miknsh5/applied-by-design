@@ -5,6 +5,7 @@
 angular.module('appliedByDesignApp')
   .controller('MainCtrl', function ($scope) {
 
+  $.scrollTo(0, 500);
 
   $scope.scroll = 0;
 
@@ -29,6 +30,10 @@ angular.module('appliedByDesignApp')
 
   $('#contact-btn').click(function () {
     $.scrollTo('#contact-anchor', {duration: 'medium'});
+  });
+
+  $('#home-btn').click(function () {
+    $.scrollTo(0, 500);
   });
 
 
@@ -81,32 +86,12 @@ function checkGreetingVis(item) {
     }
 }
 
-// function overrideAnim(item) {
-//     var $elem = $(item);
-
-//     $elem.addClass('anim-active');
-// }
-
-
 // Capture scroll events
 $(window).scroll(function () {
   checkGreetingVis('.greeting');
-  // checkAnimation('.dg1');
-  // checkAnimation('.fade-in-0');
-  // checkAnimation('.fade-in-1');
-  // checkAnimation('.fade-in-2');
-  // checkAnimation('.fade-in-3');
-  // checkAnimation('.fade-in-4');
-  // checkAnimation('.fade-in-5');
   checkAnimation('.fade-in-6');
   checkAnimation('.fade-in-7');
-  // checkAnimation('.bubble');
-  // checkAnimation('.solution');
-  // checkGreetingVis('.greeting');
 });
-
-// checkAnimation('.fade-in-0');
-// checkAnimation('.dg1');
 
 function resize() {
   var heights = window.innerHeight;
@@ -114,7 +99,7 @@ function resize() {
   document.getElementById('first-section').style.marginTop = heights + 'px';
   document.getElementById('scroll-btn').style.bottom = 60 + 'px';
   var content = $('.greeting');
-  content.css({'margin-top': heights * 0.40 + 'px'});
+  content.css({'margin-top': heights * 0.30 + 'px'});
 }
 
 

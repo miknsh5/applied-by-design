@@ -2,50 +2,50 @@
 // __________________________________
 @import 'compass/css3/background-size';
 
-.landing {
+// .landing {
 
-  @include background-size(cover);
-  height: 100%;
-  max-width: 100%;
-  top: 0;
+//   @include background-size(cover);
+//   height: 100%;
+//   max-width: 100%;
+//   top: 0;
 
-  &.bg {
-    position: fixed;
-    width: 100%;
-  }
+//   &.bg {
+//     position: fixed;
+//     width: 100%;
+//   }
   
-    // background-image: url('../images/runway-02.jpg');
-    // background-image: url('../images/seats-02.jpg');
-    // background-image: url('../images/seats-dark-bg.jpg');
-    // background-image: url('../image/plane-header.jpg');
-  &.home {
-    background-image: url('../images/seats-dark-bg.jpg');
-  }
-  &.blog {
-    background-image: url('../image/plane-header.jpg');
-  }
-  &.company {
-    background-image: url('../images/runway-02.jpg');
-  }
-  &.case-studies {
-    background-image: url('../images/runway-02.jpg');
-  }
+//     // background-image: url('../images/runway-02.jpg');
+//     // background-image: url('../images/seats-02.jpg');
+//     // background-image: url('../images/seats-dark-bg.jpg');
+//     // background-image: url('../image/plane-header.jpg');
+//   &.home {
+//     background-image: url('../images/seats-dark-bg.jpg');
+//   }
+//   &.blog {
+//     background-image: url('../image/plane-header.jpg');
+//   }
+//   &.company {
+//     background-image: url('../images/runway-02.jpg');
+//   }
+//   &.case-studies {
+//     background-image: url('../images/runway-02.jpg');
+//   }
 
-  img {
-    @include transition(margin-top, 0.2s);
-    margin-top: 0px;
-    width: 50px;
+//   img {
+//     @include transition(margin-top, 0.2s);
+//     margin-top: 0px;
+//     width: 50px;
 
-    &:hover {
-      margin-top: 5px;
-    }
-  }
+//     &:hover {
+//       margin-top: 5px;
+//     }
+//   }
 
-  h1 {
-    margin-bottom: 20px;
-  }
+//   h1 {
+//     margin-bottom: 20px;
+//   }
 
-}
+// }
 
 .greeting {
   position: relative;
