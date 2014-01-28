@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 /*global $:false */
 /*jslint white: false */
 
@@ -21,6 +21,7 @@ angular.module('appliedByDesignApp')
 
   $('#services-btn').click(function () {
     $.scrollTo('#services-anchor', {duration: 'medium'});
+    console.log('scroll to services')
   });
 
   $('#about-btn').click(function () {
@@ -87,7 +88,7 @@ angular.module('appliedByDesignApp')
   });
 
 
-  
+
   function resize() {
     var heights = window.innerHeight;
     document.getElementById('landing').style.height = heights + 'px';
