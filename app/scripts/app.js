@@ -20,7 +20,8 @@ angular.module('appliedByDesignApp', ['ngAnimate', 'ui.router'])
         // })
         .state('work', {
           url: '/work',
-          templateUrl: 'views/work.html'
+          templateUrl: 'views/work.html',
+          controller: 'WorkCtrl'
         })
 
         // .state('service', {
