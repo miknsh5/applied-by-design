@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/832ff956.main.css">
+    <link rel="stylesheet" href="styles/6c6220ba.main.css">
 
     <script src="scripts/vendor/d7100892.modernizr.js"></script>
     
@@ -37,8 +37,9 @@
 
   </head>
   <body ng-app="appliedByDesignApp">
+    <div id="home-anchor"></div>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavigationCtrl">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,24 +47,25 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand logo" href="#" id="home-btn">
+
+          <a class="navbar-brand logo" scroll-on-click="" href="#home-anchor">
            <img itemprop="logo" src="../images/f0997979.logo-lt-1.png" alt="Applied by Design">
           </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
              <!-- <li id=""><a ui-sref="home">Home</a></li> -->
-             <li id="services-btn"><a href="/">Services</a></li>
-             <li id="contact-btn"><a href="/">Contact</a></li>
+             <li><a scroll-on-click="" href="#services-anchor">Services</a></li>
+             <li><a scroll-on-click="" href="#contact-anchor">Contact</a></li>
              <!-- <li><a ui-sref="company">Company</a></li> -->
-             <!-- <li><a ui-sref="work">Case Study</a></li> -->
+             <li><a ui-sref="work">Work</a></li>
              <li><a href="http://blog.appliedbydesign.com">Blog</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
 
-    <div ui-view=""><!-- ui-router views loaded here --></div>
+    <div ui-view=""></div>
 
     <footer>
       <div class="container">
@@ -86,7 +88,7 @@
     } 
     </script> 
 
-    <script src="scripts/c960da48.scripts.js"></script>
+    <script src="scripts/3b609f46.scripts.js"></script>
 
   </body>
 </html>

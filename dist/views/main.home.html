@@ -1,12 +1,16 @@
 <!-- Seats background image, fixed, scroll over -->
+<a id="top"></a>
 <section class="landing photo seats" id="landing">
   <div class="container">
     <div scroll-position="scroll"></div>
-    <div class="greeting" ng-style="fadeTitle()">
+    <div class="greeting" ng-style="fadeTitle()" id="greeting-intro">
       <h2 class="underline" itemprop="name">Applied by Design</h2>
       <div class="divider"></div>
       <h1 itemprop="description">Technology Consulting & Application Solutions</h1>
-      <div class="nav-arrow" id="scroll-btn"><img src="../images/6d79c9fe.more-arrow-lt.png" alt="more arrow"></div>
+      <div class="nav-arrow" id="scroll-btn">
+        <a scroll-on-click="" href="#services-anchor">
+        <img src="../images/6d79c9fe.more-arrow-lt.png" alt="more arrow"></a>
+      </div>
     </div>
   </div>
 </section>

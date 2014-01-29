@@ -11,7 +11,7 @@ angular.module('appliedByDesignApp', ['ngAnimate', 'ui.router'])
       $stateProvider
         .state('home', {
           url: '/home',
-          templateUrl: 'views/main.home.html',
+          templateUrl: 'views/main.html',
           controller: 'MainCtrl'
         })
         .state('company', {
@@ -22,14 +22,15 @@ angular.module('appliedByDesignApp', ['ngAnimate', 'ui.router'])
           url: '/work',
           templateUrl: 'views/work.html'
         })
-        .state('study1', {
-          url: '/work/airline-fleet-demo',
-          parent: 'work',
-          views: {
-            // "header": { templateUrl: "views/work.header.html" },
-            "case": { templateUrl: "views/work.caseStudy.html" }
-          }
-          // templateUrl: 'views/work.airlineDashboard.html'
-        })
+        // .state('study1', {
+        //   url: '/airline-fleet-demo',
+        //   parent: 'work',
+        //   views: {
+        //     // "header": { templateUrl: "views/work.header.html" },
+        //     "case": { 
+        //       templateUrl: "views/work.caseStudy.html"
+        //      }
+        //   }
+        // })
 
     });

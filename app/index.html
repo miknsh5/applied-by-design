@@ -41,8 +41,9 @@
 
   </head>
   <body ng-app="appliedByDesignApp">
+    <div id="home-anchor"></div>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavigationCtrl">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -50,24 +51,25 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand logo" href="#" id="home-btn">
+
+          <a class="navbar-brand logo" scroll-on-click href="#home-anchor">
            <img itemprop="logo" src="../images/logo-lt-1.png" alt="Applied by Design">
           </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
              <!-- <li id=""><a ui-sref="home">Home</a></li> -->
-             <li id="services-btn"><a href="/">Services</a></li>
-             <li id="contact-btn"><a href="/">Contact</a></li>
+             <li><a scroll-on-click href="#services-anchor">Services</a></li>
+             <li><a scroll-on-click href="#contact-anchor">Contact</a></li>
              <!-- <li><a ui-sref="company">Company</a></li> -->
-             <!-- <li><a ui-sref="work">Case Study</a></li> -->
+             <li><a ui-sref="work">Work</a></li>
              <li><a href="http://blog.appliedbydesign.com">Blog</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
 
-    <div ui-view><!-- ui-router views loaded here --></div>
+    <div ui-view></div>
 
     <footer>
       <div class="container">
@@ -101,6 +103,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/directives/scrollPosition.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/navigation.js"></script>
     <!-- endbuild -->
 
   </body>

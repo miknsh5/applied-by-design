@@ -3,6 +3,11 @@ section {
   padding: 80px 0;
   position: relative;
 
+  p.date {
+    margin-top:10px;
+    letter-spacing: 5px;
+  }
+
   &:last-child {
     margin-bottom: 250px;
   }
@@ -32,6 +37,15 @@ section {
   // greeting text and layout styling for landing sections
   @include greeting;
 
+  .intro {
+    position: relative;
+  }
+
+  // .case-study {
+  //   h4 {
+  //     border-bottom:
+  //   }
+  // }
 }
 
 
@@ -89,7 +103,10 @@ section {
 
 }
 
-
+.vimeo-player {
+  text-align: center;
+  padding: 40px 0;
+}
 
 
 .solution {
@@ -106,14 +123,23 @@ section {
     margin-bottom: 5px;
     padding-bottom: 10px;
     border-bottom: dotted 1px #ccc;
-    max-width: 360px;
+    max-width: 400px;
     color: $color-text-whitewhite;
+
+    // @media (min-width: $screen-md) {
+      // margin: 0;
+    // }
   }
 
   p {
     max-width: 450px;
     margin: 0 auto;
     color: $color-text-white;
+
+    @media (min-width: $screen-md) {
+      margin: 0;
+    }
+    
   }
 
   .circle-icon {
