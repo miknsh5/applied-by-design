@@ -127,7 +127,9 @@ section {
     border-bottom: dotted 1px #ccc;
     max-width: 400px;
     color: $color-text-whitewhite;
-
+    @media (min-width: $screen-md) {
+      max-width: 100%;
+    }
     // @media (min-width: $screen-md) {
       // margin: 0;
     // }

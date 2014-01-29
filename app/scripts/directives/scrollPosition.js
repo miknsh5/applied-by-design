@@ -41,13 +41,14 @@ angular.module('appliedByDesignApp')
       $elm.on('click', function() {
         var $target;
         if (idToScroll) {
+          console.log('scrolltotarget:' + idToScroll);
           $target = $(idToScroll);
         } else {
           $target = $elm;
         }
         
         if ($target.length === 1){
-          $('body').animate({scrollTop: $target.offset().top}, 'slow');
+          $("body,html").animate({scrollTop: $target.offset().top}, "slow");
         } 
 
       });
