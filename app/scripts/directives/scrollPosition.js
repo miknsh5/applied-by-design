@@ -10,11 +10,13 @@ angular.module('appliedByDesignApp')
           });
         });
 
-        windowEl.on('resize', function(){
-          scope.$apply(function(){
-            resize();
+        if ( !Modernizr.touch ) { 
+          windowEl.on('resize', function(){
+            scope.$apply(function(){
+              resize();
+            })
           })
-        })
+        }
 
         var resize = function(){
           var heights = window.innerHeight;
@@ -25,8 +27,10 @@ angular.module('appliedByDesignApp')
 
           if ($landing.length === 1) { $landing.css({'height': heights + 'px'});}
           if ($section1.length === 1) { $section1.css({'margin-top': heights + 'px'});}
-          if ($greeting.length === 1) { $greeting.css({'margin-top': heights * 0.30 + 'px'});}
-          
+
+          if (!Modernizr.touch) {
+            if ($greeting.length === 1) { $greeting.css({'margin-top': heights * 0.30 + 'px'});}
+          }
         }
 
         resize();
