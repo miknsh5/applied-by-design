@@ -2,6 +2,7 @@
 section {
   padding: 80px 0;
   position: relative;
+  z-index: 1;
 
   p.date {
     margin-top:10px;
@@ -17,6 +18,7 @@ section {
     height: 100%;
     max-width: 100%;
     top: 0;
+    z-index: 0 !important;
 
   }
 

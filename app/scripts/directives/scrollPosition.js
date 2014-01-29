@@ -47,7 +47,7 @@ angular.module('appliedByDesignApp')
         }
         
         if ($target.length === 1){
-          $("body").animate({scrollTop: $target.offset().top}, "slow");
+          $('body').animate({scrollTop: $target.offset().top}, 'slow');
         } 
 
       });

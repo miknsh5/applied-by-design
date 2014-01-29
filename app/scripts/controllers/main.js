@@ -17,14 +17,14 @@ angular.module('appliedByDesignApp')
 
 
   $scope.$watch('scroll', function(oldPos, newPos){
-    var $elem = $('.greeting');
+    var $elem = $('#greeting');
     if ($elem.length === 1) {
       if (newPos > 500 ){
         $elem.removeClass('anim-active');
-        $elem.css({'opacity': 0});
+        $elem.css({'opacity': 0 });
       } else {
         $elem.addClass('anim-active');
-        $elem.css({'opacity': 1});
+        $elem.css({'opacity': 1 });
       }
     }
   });
