@@ -7,6 +7,7 @@ angular.module('appliedByDesignApp')
 
 
   $scope.scroll = 0;
+  $scope.showIntro = true;
 
   $scope.fadeTitle = function () {
     return {
@@ -17,16 +18,18 @@ angular.module('appliedByDesignApp')
 
 
   $scope.$watch('scroll', function(oldPos, newPos){
-    var $elem = $('#greeting');
-    if ($elem.length === 1) {
+    // var $elem = $('#greeting');
+    // if ($elem.length === 1) {
       if (newPos > 500 ){
-        $elem.removeClass('anim-active');
-        $elem.css({'opacity': 0 });
+        $scope.showIntro = false;
+        // $elem.removeClass('anim-active');
+        // $elem.css({'opacity': 0 });
       } else {
-        $elem.addClass('anim-active');
-        $elem.css({'opacity': 1 });
+        $scope.showIntro = true;
+        // $elem.addClass('anim-active');
+        // $elem.css({'opacity': 1 });
       }
-    }
+    
   });
 
 });

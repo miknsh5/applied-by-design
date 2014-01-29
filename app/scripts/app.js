@@ -14,14 +14,37 @@ angular.module('appliedByDesignApp', ['ngAnimate', 'ui.router'])
           templateUrl: 'views/main.html',
           controller: 'MainCtrl'
         })
-        .state('company', {
-          url: '/company',
-          templateUrl: 'views/main.company.html'
-        })
+        // .state('company', {
+        //   url: '/company',
+        //   templateUrl: 'views/main.company.html'
+        // })
         .state('work', {
           url: '/work',
           templateUrl: 'views/work.html'
         })
+
+        // .state('service', {
+        //   url: '^/home#services-anchor',
+        //   templateUrl: 'views/main.html',
+        //   controller: 'MainCtrl'
+        // })
+
+        // .state('contact', {
+        //   url: '^/home#contact-anchor',
+        //   templateUrl: 'views/main.html',
+        //   controller: 'MainCtrl'
+        // })
+
+        // .state('home2', {
+        //   url: '/home/work',
+        //   views: {
+        //     "services": { templateUrl: "views/main.home.html" },
+        //     "contact": { templateUrl: "views/main.contact.html" },
+        //     "work": { templateUrl: "views/main.work.html" }
+        // })
+
+
+
         // .state('study1', {
         //   url: '/airline-fleet-demo',
         //   parent: 'work',
