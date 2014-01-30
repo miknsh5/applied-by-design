@@ -37,15 +37,17 @@ angular.module('appliedByDesignApp')
       };
   })
 
-  .directive('scrollOnClick', function() {
+  .directive('scrollOnClick', function () {
   return {
     restrict: 'A',
+    // scope: {},
     link: function(scope, $elm, attrs) {
       var idToScroll = attrs.href;
-      $elm.on('click', function() {
+     
+      $elm.on('click', function(myState) {
         var $target;
         if (idToScroll) {
-          console.log('scrolltotarget:' + idToScroll);
+          // console.log('scrolltotarget:' + idToScroll);
           $target = $(idToScroll);
         } else {
           $target = $elm;

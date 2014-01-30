@@ -3,8 +3,7 @@
 /*jslint white: false */
 
 angular.module('appliedByDesignApp')
-  .controller('MainCtrl', function ($scope) {
-
+  .controller('MainCtrl', function ($scope, $state) {
 
   $scope.scroll = 0;
   $scope.showIntro = true;

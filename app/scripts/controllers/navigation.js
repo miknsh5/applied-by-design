@@ -3,7 +3,9 @@
 /*jslint white: false */
 
 angular.module('appliedByDesignApp')
-  .controller('NavigationCtrl', function ($scope, $location, $anchorScroll) {
+  .controller('NavigationCtrl', function ($scope, $state) {
+
+  	$scope.$state = $state;
 
   // $scope.gotoTop = function(){
   //   $location.hash('top');

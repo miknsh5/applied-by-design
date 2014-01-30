@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/e6335466.main.css">
+    <link rel="stylesheet" href="styles/a5e516d7.main.css">
 
     <script src="scripts/vendor/d7100892.modernizr.js"></script>
     
@@ -43,7 +43,7 @@
 
     <div id="home-anchor"></div>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavigationCtrl">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,14 +58,14 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
-             <!-- <li id=""><a ui-sref="home">Home</a></li> -->
-             <!-- <li><a scroll-on-click ui-sref="service">Services</a></li>
-             <li><a scroll-on-click ui-sref="contact">Contact</a></li> -->
-             <li><a scroll-on-click="" href="#services-anchor">Services</a></li>
-             <li><a scroll-on-click="" href="#contact-anchor">Contact</a></li>
-             <!-- <li><a ui-sref="company">Company</a></li> -->
-             <li><a ui-sref="work">Work</a></li>
-             <li><a href="http://blog.appliedbydesign.com">Blog</a></li>
+
+            <li ng-show="$state.includes('home')"><a scroll-on-click="" href="#services-anchor">Services</a></li>
+            <li ng-show="$state.includes('home')"><a scroll-on-click="" href="#contact-anchor">Contact</a></li>
+            <li ng-show="$state.includes('work')"><a ui-sref="services">Services</a></li>
+            <li ng-show="$state.includes('work')"><a ui-sref="contact">Contact</a></li>
+
+            <li><a ui-sref="work">Our Work</a></li>
+            <li><a href="http://blog.appliedbydesign.com">Blog</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -94,7 +94,7 @@
     } 
     </script> 
 
-    <script src="scripts/7480131e.scripts.js"></script>
+    <script src="scripts/32f16cbc.scripts.js"></script>
 
   </body>
 </html>
