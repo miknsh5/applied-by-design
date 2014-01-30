@@ -24,14 +24,14 @@ angular.module('appliedByDesignApp', ['ngAnimate', 'ui.router'])
         .state('contact', {
           // parent: 'home',
           url: '^/home#contact-anchor',
-          templateUrl: 'views/main.html',
-          controller: 'MainCtrl'
+          templateUrl: 'views/main.html'
+          // controller: 'MainCtrl'
         })
         .state('services', {
           // parent: 'home',
           url: '^/home#services-anchor',
-          templateUrl: 'views/main.html',
-          controller: 'MainCtrl'
+          templateUrl: 'views/main.html'
+          // controller: 'MainCtrl'
         })
 
 
