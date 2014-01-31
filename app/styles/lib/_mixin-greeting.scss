@@ -1,6 +1,7 @@
 @mixin greeting {
   .greeting {
-    position: relative;
+    // position: relative;
+    position: absolute;
     width: 100%;
     text-align: center;
     z-index: 1;

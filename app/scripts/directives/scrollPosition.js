@@ -29,7 +29,7 @@ angular.module('appliedByDesignApp')
           if ($section1.length === 1) { $section1.css({'margin-top': heights + 'px'});}
 
           if (!Modernizr.touch) {
-            if ($greeting.length === 1) { $greeting.css({'margin-top': heights * 0.30 + 'px'});}
+            if ($greeting.length === 1) { $greeting.css({'margin-top': heights * 0.25 + 'px'});}
           }
         }
 
