@@ -4,18 +4,6 @@ section {
   position: relative;
   z-index: 1;
 
-  p.tech {
-    font-weight: 400;
-    color: #666 !important;
-
-    span {
-      color: $color-blue;
-      font-weight: 400;
-    }
-    // color: $color-blue !important;
-  }
-
-
   p.date {
     margin-top:10px;
     letter-spacing: 5px;
@@ -66,79 +54,9 @@ section {
   margin-top: 150px;
 }
 
-.left-sm {
-  text-align: center;
-  @media (min-width: $screen-sm) {
-    text-align: left;
-    .drop-line {
-      float: left;
-    }
-  }
-}
-
-.right-sm {
-  text-align: center;
-  @media (min-width: $screen-sm) {
-    text-align: right;
-    .drop-line {
-      float: right;
-    }
-  }
-}
-
-.tech-wrapper {
-  position: relative;
-  width: 100%;
-
-  p.byline {
-    letter-spacing: 3px;
-    margin-top: 10px;
-  }
-
-  .drop-line {
-    width: 20px;
-    border-bottom: dotted 1px $gray;
-    margin: auto;
-  }
-
-  h2 {
-    @include font-size(3);
-    letter-spacing: 5px;
-    font-weight: 600;
-    margin-bottom: 0;
-    line-height: 1.3em;
-  }
-
-  .category {
-    margin-top: 20px;
-
-    p.title {
-      color: $gray-light;
-      font-weight: 600;
-      // width: 100px;
-      margin: auto;
-      padding-bottom: 5px;
-      // margin-bottom: 5px;
-      // border-bottom: dotted 1px $gray;
-
-      @media (min-width: $screen-sm) {
-        margin: 0;
-      }
-      
-    }
-    p.tech {
-      color: $color-blue;
-      font-weight: 400;
-      margin-top: 3px;
-
-    }
-  }
-
-}
 
 .section-title {
   margin-bottom: 40px;
-  
 
   h2 {
     @include font-size(3);
@@ -153,9 +71,6 @@ section {
     color: $color-text-gray !important;
     font-weight: 400;
     max-width: 400px;
-    &.wide {
-      max-width: 600px;
-    }
   }
 
   &.center p {
