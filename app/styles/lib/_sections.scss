@@ -68,21 +68,38 @@ section {
 
 .left-sm {
   text-align: center;
-  // @media (min-width: $screen-sm) {
-  //   text-align: left;
-  // }
+  @media (min-width: $screen-sm) {
+    text-align: left;
+    .drop-line {
+      float: left;
+    }
+  }
 }
 
 .right-sm {
   text-align: center;
-  // @media (min-width: $screen-sm) {
-  //  text-align: right;
-  // }
+  @media (min-width: $screen-sm) {
+    text-align: right;
+    .drop-line {
+      float: right;
+    }
+  }
 }
 
 .tech-wrapper {
   position: relative;
   width: 100%;
+
+  p.byline {
+    letter-spacing: 3px;
+    margin-top: 10px;
+  }
+
+  .drop-line {
+    width: 20px;
+    border-bottom: dotted 1px $gray;
+    margin: auto;
+  }
 
   h2 {
     @include font-size(3);
@@ -97,22 +114,23 @@ section {
 
     p.title {
       color: $gray-light;
-      font-weight: 400;
-      max-width: 150px;
+      font-weight: 600;
+      // width: 100px;
       margin: auto;
       padding-bottom: 5px;
-      margin-bottom: 5px;
+      // margin-bottom: 5px;
+      // border-bottom: dotted 1px $gray;
 
-      border-bottom: dotted 1px $gray;
-      // @media (min-width: $screen-sm) {
-      //   border-bottom: none;
-      //   float: right;
-      // }
+      @media (min-width: $screen-sm) {
+        margin: 0;
+      }
       
     }
     p.tech {
       color: $color-blue;
       font-weight: 400;
+      margin-top: 3px;
+
     }
   }
 
