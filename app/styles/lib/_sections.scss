@@ -4,6 +4,16 @@ section {
   position: relative;
   z-index: 1;
 
+  &.contact {
+    text-align: center;
+
+    h4 {
+      color: $color-text-gray !important;
+      font-weight: 400 !important;
+    }
+    
+  }
+
   p.tech {
     font-weight: 400;
     color: #666 !important;
@@ -76,6 +86,12 @@ section {
   }
 }
 
+.drop-line {
+  width: 20px;
+  border-bottom: dotted 1px $gray;
+  margin: auto;
+}
+
 .right-sm {
   text-align: center;
   @media (min-width: $screen-sm) {
@@ -91,15 +107,16 @@ section {
   width: 100%;
 
   p.byline {
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     margin-top: 10px;
+    max-width: 650px;
+    margin: auto;
+    padding-top: 10px;
+    margin-bottom: 40px;
+
   }
 
-  .drop-line {
-    width: 20px;
-    border-bottom: dotted 1px $gray;
-    margin: auto;
-  }
+
 
   h2 {
     @include font-size(3);
@@ -258,6 +275,8 @@ section {
   }
 
 }
+
+
 
 .bio {
   max-width: 700px;
